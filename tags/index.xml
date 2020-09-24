@@ -9,7 +9,7 @@
 		
 		<managingEditor>Page(/tags) (hugo author)</managingEditor>
     	
-  		<lastBuildDate>Thu, 24 Sep 2020 13:50:21 +0200</lastBuildDate>
+  		<lastBuildDate>Thu, 24 Sep 2020 14:02:49 +0200</lastBuildDate>
 		
 		<atom:link href="/tags/" rel="self" type="application/rss+xml" />
 		
@@ -66,12 +66,12 @@ DT = data.table(x=rep(c(&amp;#34;b&amp;#34;,&amp;#34;a&amp;#34;,&amp;#34;c&amp;#
 		<item>
 			<title>git submodule</title>
 			<link>https://yusbk.github.io/2020/09/24/git-submodule/</link>
-			<pubDate>Thu, 24 Sep 2020 13:50:21 +0200</pubDate>
+			<pubDate>Thu, 24 Sep 2020 14:02:49 +0200</pubDate>
 			<guid>https://yusbk.github.io/2020/09/24/git-submodule/</guid>
 			<description>Untuk buat submodule tema harbor
 git submodule add https://github.com/matsuyoshi30/harbor.git themes/harbor # update git submodule update --remote --merge Untuk update submodule pakai komando di bawah. Penting push ke submodule dahulu sebelum push ke parent repo.
-git push origin master --recurse-submodules=on-demand Sekiranya HEAD detaching dengan submodule boleh guna script ini untuk kembali ke MASTER.
-#!/bin/bash echo &amp;#34;Good Day Friend, building all submodules while checking out from MASTER branch.&amp;#34; git submodule update git submodule foreach git checkout master git submodule foreach git pull origin master </description>
+git push origin master --recurse-submodules=on-demand Sekiranya HEAD detaching dengan submodule boleh guna script ini untuk kembali ke MASTER. Rujukan di StackOverflow.
+#!/bin/bash echo &amp;#34;Building all submodules while checking out from MASTER branch.&amp;#34; git submodule update git submodule foreach git checkout master git submodule foreach git pull origin master </description>
 		</item>
       	
 		<item>

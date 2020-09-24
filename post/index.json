@@ -56,7 +56,7 @@
                 "title": "git submodule",
                 "section": "post",
                 "date" : "2020.09.24",
-                "body": "Untuk buat submodule tema harbor\ngit submodule add https://github.com/matsuyoshi30/harbor.git themes/harbor # update git submodule update --remote --merge Untuk update submodule pakai komando di bawah. Penting push ke submodule dahulu sebelum push ke parent repo.\ngit push origin master --recurse-submodules=on-demand Sekiranya HEAD detaching dengan submodule boleh guna script ini untuk kembali ke MASTER.\n#!/bin/bash echo \u0026#34;Good Day Friend, building all submodules while checking out from MASTER branch.\u0026#34; git submodule update git submodule foreach git checkout master git submodule foreach git pull origin master "
+                "body": "Untuk buat submodule tema harbor\ngit submodule add https://github.com/matsuyoshi30/harbor.git themes/harbor # update git submodule update --remote --merge Untuk update submodule pakai komando di bawah. Penting push ke submodule dahulu sebelum push ke parent repo.\ngit push origin master --recurse-submodules=on-demand Sekiranya HEAD detaching dengan submodule boleh guna script ini untuk kembali ke MASTER. Rujukan di StackOverflow.\n#!/bin/bash echo \u0026#34;Building all submodules while checking out from MASTER branch.\u0026#34; git submodule update git submodule foreach git checkout master git submodule foreach git pull origin master "
             }
         
     ,
