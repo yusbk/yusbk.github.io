@@ -92,17 +92,24 @@
   <div class="container" role="main">
     <article class="article" class="blog-post">
       
-    <p>Untuk buat submodule tema <a href="https://themes.gohugo.io/harbor/">harbor</a></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">git submodule add https://github.com/matsuyoshi30/harbor.git themes/harbor
+    <p>Untuk buat submodule tema <a href="https://themes.gohugo.io/harbor/">harbor</a> dan folder <em>public</em> ke <a href="https://yusbk.github.io">yusbk.github.io</a>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text"># themes
+git submodule add https://github.com/matsuyoshi30/harbor.git themes/harbor
+
+# yusbk.github.io
+git submodule add git@personal:yusbk/yusbk.github.io.git public
 
 # update
 git submodule update --remote --merge
-</code></pre></div><p>Untuk update submodule pakai komando di bawah. Penting push ke submodule dahulu sebelum push ke
-parent repo.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">git push origin master --recurse-submodules=on-demand
+</code></pre></div><p>Untuk update submodule pakai komando di bawah. Penting commit submodule dahulu kemudian commit
+parent repo sebelum push dari parent repos. Caranya:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">cd public
+git commit -am &#39;Tambah pertukaran di public submodule&#39;
+cd ..
+git push origin master --recurse-submodules=on-demand
 </code></pre></div><p>Sekiranya HEAD detaching dengan submodule boleh guna script ini untuk kembali ke MASTER. Rujukan di <a href="https://stackoverflow.com/questions/18770545/why-is-my-git-submodule-head-detached-from-master/49997119#49997119">StackOverflow</a>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">#!/bin/bash
-echo &#34;Building all submodules while checking out from MASTER branch.&#34;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e">#!/bin/bash
+</span><span style="color:#75715e"></span>echo <span style="color:#e6db74">&#34;Building all submodules while checking out from MASTER branch.&#34;</span>
 
 git submodule update
 git submodule foreach git checkout master

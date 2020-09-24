@@ -159,6 +159,11 @@ DT = data.table(x=rep(c(&#34;b&#34;,&#34;a&#34;,&#34;c&#34;),each=3), v=c(1,1,1,
   </a>
   <div class="post-entry">
     
+      <p>Untuk buat submodule tema harbor dan folder public ke yusbk.github.io.
+# themes git submodule add https://github.com/matsuyoshi30/harbor.git themes/harbor # yusbk.github.io git submodule add git@personal:yusbk/yusbk.github.io.git public # update git submodule update --remote --merge Untuk update submodule pakai komando di bawah. Penting commit submodule dahulu kemudian commit parent repo sebelum push dari parent repos. Caranya:
+cd public git commit -am &#39;Tambah pertukaran di public submodule&#39; cd .. git push origin master --recurse-submodules=on-demand Sekiranya HEAD detaching dengan submodule boleh guna script ini untuk kembali ke MASTER.</p>
+        <a href="https://yusbk.github.io/2020/09/24/git-submodule/" class="post-read-more">Read More</a>
+    
   </div>
 
   <div class="postmeta">
