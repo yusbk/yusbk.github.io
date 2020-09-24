@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+<title>git fork</title>
+
+
+  
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="alternate" type="application/rss+xml" href="https://example.org/index.xml" title="Hugo Themes">
+
+<link id="dark-mode-theme" rel="stylesheet" href="https://example.org/css/dark.css" />
+<link rel="stylesheet" href="https://example.org/fontawesome/css/all.min.css" />
+
+<script src="https://example.org/js/bundle.js"></script>
+<script src="https://example.org/js/instantpage.js" type="module" defer></script>
+<meta name="generator" content="Hugo 0.69.2" />
+  </head>
+  <body>
+    
+  
+
+
+
+
+  <header>
+    <nav class="navbar">
+  <div class="nav">
+    
+      <a href="https://example.org/" class="nav-logo">
+      <img src="https://example.org/images/icon.png"
+           width="50"
+           height="50"
+           alt="Logo">
+      </a>
+    
+
+    <ul class="nav-links">
+      
+        
+          <li><a href="/about/" name="About"><i class="fas fa-user fa-lg"></i></a></li>
+        
+      
+        
+          <li><a href="/tags/" name="Tags"><i class="fas fa-tag fa-lg"></i></a></li>
+        
+      
+        
+          <li><a href="/search/" name="Search"><i class="fas fa-search fa-lg"></i></a></li>
+        
+      
+    </ul>
+  </div>
+</nav>
+
+    <div class="intro-header">
+      <div class="container">
+        <div class="post-heading">
+          
+            <h1>git fork</h1>
+          
+          
+            <span class="meta-post">
+  <i class="fa fa-calendar-alt"></i>&nbsp;Sep 24, 2020
+  
+    &nbsp;&nbsp;&nbsp;<i class="fa fa-folder-open"></i>&nbsp;
+    
+      <a href="https://example.org//categories/dt/">DT</a>&nbsp;
+    
+      <a href="https://example.org//categories/programming/">programming</a>&nbsp;
+    
+      <a href="https://example.org//categories/bash/">bash</a>&nbsp;
+    
+      <a href="https://example.org//categories/plot/">plot</a>&nbsp;
+    
+      <a href="https://example.org//categories/git/">Git</a>&nbsp;
+    
+  
+</span>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+  <div class="container" role="main">
+    <article class="article" class="blog-post">
+      
+    <p>This is just 100% a copy from <a href="https://gist.github.com/jagregory/710671">gist</a> so I can check it when needed.</p>
+<p>So you&rsquo;ve cloned somebody&rsquo;s repo from github, but now you want to fork it and contribute back. Never fear!</p>
+<p>Technically, when you fork &ldquo;origin&rdquo; should be your fork and &ldquo;upstream&rdquo; should be the project you forked; however, if you&rsquo;re willing to break this convention then it&rsquo;s easy.</p>
+<p><strong>Off the top of my head</strong></p>
+<ol>
+<li>Fork their repo on Github</li>
+<li>In your local, add a new remote to your fork; then fetch it, and push your changes up to it</li>
+</ol>
+<!-- raw HTML omitted -->
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git remote add my-fork git@github...my-fork.git
+git fetch my-fork
+git push my-fork
+</code></pre></div><p>Otherwise, if you want to follow convention:</p>
+<ol>
+<li>Fork their repo on Github</li>
+<li>In your local, rename your origin remote to upstream</li>
+</ol>
+<!-- raw HTML omitted -->
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git remote rename origin upstream
+</code></pre></div><ol>
+<li>Add a new origin</li>
+</ol>
+<!-- raw HTML omitted -->
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git remote add origin git@github...my-fork
+</code></pre></div><ol>
+<li>Fetch &amp; push</li>
+</ol>
+<!-- raw HTML omitted -->
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git fetch origin
+git push origin
+</code></pre></div>
+
+
+      
+        <div class="blog-tags">
+          
+            <a href="https://example.org//tags/fork/">fork</a>&nbsp;
+          
+        </div>
+      
+    </article>
+    
+    
+      
+      
+</div>
+
+    <footer>
+  
+<div>
+    
+    <a href="https://twitter.com/GoHugoIO" name="twitter"><i class="fab fa-twitter"></i></a>
+    
+</div>
+
+  <div class="container">
+    <p class="credits copyright">
+      <a href="https://example.org/about">hugo author</a>
+      &nbsp;&copy;
+      2020
+      
+      &nbsp;/&nbsp;
+      <a href="https://example.org/">Hugo Themes</a>
+      
+      &nbsp;&ndash;&nbsp;
+      <i class="fas fa-moon" id="dark-mode-toggle"></i>
+
+    <p class="credits theme-by">
+      Powered By <a href="https://gohugo.io">Hugo</a>&nbsp;Theme <a
+        href="https://github.com/matsuyoshi30/harbor">Harbor</a>
+    </p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
