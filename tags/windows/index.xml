@@ -64,6 +64,15 @@ DT = data.table(x=rep(c(&amp;#34;b&amp;#34;,&amp;#34;a&amp;#34;,&amp;#34;c&amp;#
 		</item>
       	
 		<item>
+			<title>git submodule</title>
+			<link>https://yusbk.github.io/2020/09/24/git-submodule/</link>
+			<pubDate>Thu, 24 Sep 2020 13:05:23 +0200</pubDate>
+			<guid>https://yusbk.github.io/2020/09/24/git-submodule/</guid>
+			<description>Untuk buat submodule tema harbor
+git submodule add https://github.com/matsuyoshi30/harbor.git themes/harbor # update git submodule update --remote --merge </description>
+		</item>
+      	
+		<item>
 			<title>Test figure</title>
 			<link>https://yusbk.github.io/2017/08/31/test-figure/</link>
 			<pubDate>Thu, 31 Aug 2017 00:00:00 +0200</pubDate>

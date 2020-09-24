@@ -9,7 +9,7 @@
 		
 		<managingEditor>Page(/categories/programming) (hugo author)</managingEditor>
     	
-  		<lastBuildDate>Thu, 24 Sep 2020 12:02:22 +0200</lastBuildDate>
+  		<lastBuildDate>Thu, 24 Sep 2020 13:05:23 +0200</lastBuildDate>
 		
 		<atom:link href="/categories/programming/" rel="self" type="application/rss+xml" />
 		
@@ -61,6 +61,15 @@ Ubuntu Bila pasang program di Ubuntu melalui source boleh tetapkan dimana progra
 			<description>.N Mult .SD dan .SDcols .I .GRP dan rleid Contoh dari manual  Hari ni bersempena Hari kemerdekaan Malaysia ada masa untuk ulang kaji pakej data.table. Hari ni ialah mengenai Special Symbol seperti .N, .I, .GRP, .BY. Penerangan ini diambil dari manual di data.table tetapi diedit sedikit. Untuk rujukan di sini.
 Ini data yang dipakai untuk membuat contoh:
 DT = data.table(x=rep(c(&amp;#34;b&amp;#34;,&amp;#34;a&amp;#34;,&amp;#34;c&amp;#34;),each=3), v=c(1,1,1,2,2,1,1,2,2), y=c(1,6,3,7,8), a=1:9, b=9:1) X = data.table(x=c(&amp;#34;c&amp;#34;,&amp;#34;b&amp;#34;), v=8:7, foo=c(4,2)) .</description>
+		</item>
+      	
+		<item>
+			<title>git submodule</title>
+			<link>https://yusbk.github.io/2020/09/24/git-submodule/</link>
+			<pubDate>Thu, 24 Sep 2020 13:05:23 +0200</pubDate>
+			<guid>https://yusbk.github.io/2020/09/24/git-submodule/</guid>
+			<description>Untuk buat submodule tema harbor
+git submodule add https://github.com/matsuyoshi30/harbor.git themes/harbor # update git submodule update --remote --merge </description>
 		</item>
       	
 		<item>
