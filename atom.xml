@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
     <title type="text">ყųʂƙąɱ</title>
     <subtitle type="html">Personal blog for yusKam.</subtitle>
-    <updated>2020-09-24T09:45:00&#43;02:00</updated>
+    <updated>2020-09-24T10:30:13&#43;02:00</updated>
     <id>https://yusbk.github.io/</id>
     <link rel="alternate" type="text/html" href="https://yusbk.github.io/" />
     <link rel="self" type="application/atom&#43;xml" href="https://yusbk.github.io/atom.xml" />
@@ -20,7 +20,7 @@
             <title type="text">Basic use of drake</title>
             <link rel="alternate" type="text/html" href="https://yusbk.github.io/posts/basic-drake/" />
             <id>https://yusbk.github.io/posts/basic-drake/</id>
-            <updated>2020-09-24T09:43:50&#43;02:00</updated>
+            <updated>2020-09-24T10:30:01&#43;02:00</updated>
             <published>2020-06-15T00:00:00&#43;00:00</published>
             
             <summary type="html">There are various ways to organise your R workflow. If you are working with a big project, then Airflow might be for you. But for the majority of R project codes, drake package will fullfilled your need.
@@ -206,7 +206,7 @@ collections of functions.&lt;/p&gt;
             <title type="text">git fork</title>
             <link rel="alternate" type="text/html" href="https://yusbk.github.io/posts/git-fork/" />
             <id>https://yusbk.github.io/posts/git-fork/</id>
-            <updated>2020-09-24T09:43:51&#43;02:00</updated>
+            <updated>2020-09-24T10:30:01&#43;02:00</updated>
             <published>2020-06-14T00:00:00&#43;00:00</published>
             
             <summary type="html">This is just 100% a copy from gist so I can check it when needed.
@@ -480,7 +480,7 @@ arahan di bawah di &lt;em&gt;power shell&lt;/em&gt; atau &lt;em&gt;terminal&lt;/
             <title type="text">Susun factor</title>
             <link rel="alternate" type="text/html" href="https://yusbk.github.io/posts/susun-factor/" />
             <id>https://yusbk.github.io/posts/susun-factor/</id>
-            <updated>2020-09-24T09:43:50&#43;02:00</updated>
+            <updated>2020-09-24T10:30:00&#43;02:00</updated>
             <published>2017-10-11T00:00:00&#43;00:00</published>
             
             <summary type="html">Table of Contents Susun ketinggian bar Nama di aksis  Bila buat bar plot cara asas di R atau menggunakan pakej ggplot2, susunan levels di x-aksis disusun semula menggikut abjad. Oleh sebab itu sekiranya ingin menyusun mengikut aturcara tertentu, levels di x-aksis harus disusun semula.</summary>
