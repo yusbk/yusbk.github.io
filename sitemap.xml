@@ -4,27 +4,22 @@
   
   <url>
     <loc>https://yusbk.github.io/</loc>
-    <lastmod>2020-09-22T12:43:26+02:00</lastmod>
+    <lastmod>2020-09-24T09:43:49+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://yusbk.github.io/about/</loc>
-    <lastmod>2020-09-22T12:43:30+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/posts/hugo-blog-in-org-subtree-export/</loc>
-    <lastmod>2020-05-30T00:39:05+02:00</lastmod>
+    <lastmod>2020-09-24T09:43:51+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://yusbk.github.io/posts/basic-drake/</loc>
-    <lastmod>2020-09-22T14:33:28+02:00</lastmod>
+    <lastmod>2020-09-24T09:43:50+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://yusbk.github.io/posts/git-fork/</loc>
-    <lastmod>2020-09-22T12:43:29+02:00</lastmod>
+    <lastmod>2020-09-24T09:43:51+02:00</lastmod>
   </url>
   
   <url>
@@ -34,7 +29,7 @@
   
   <url>
     <loc>https://yusbk.github.io/posts/susun-factor/</loc>
-    <lastmod>2020-09-22T12:43:28+02:00</lastmod>
+    <lastmod>2020-09-24T09:43:50+02:00</lastmod>
   </url>
   
   <url>
@@ -49,212 +44,42 @@
   
   <url>
     <loc>https://yusbk.github.io/categories/</loc>
-    <lastmod>2020-09-22T14:33:28+02:00</lastmod>
+    <lastmod>2020-09-24T09:43:51+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://yusbk.github.io/tags/drake/</loc>
-    <lastmod>2020-09-22T14:33:28+02:00</lastmod>
+    <lastmod>2020-09-24T09:43:50+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://yusbk.github.io/posts/</loc>
-    <lastmod>2020-09-22T14:33:28+02:00</lastmod>
+    <lastmod>2020-09-24T09:43:51+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://yusbk.github.io/categories/programming/</loc>
-    <lastmod>2020-09-22T14:33:28+02:00</lastmod>
+    <lastmod>2020-09-24T09:43:50+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://yusbk.github.io/tags/r/</loc>
-    <lastmod>2020-09-22T14:33:28+02:00</lastmod>
+    <lastmod>2020-09-24T09:43:50+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://yusbk.github.io/tags/</loc>
-    <lastmod>2020-09-22T14:33:28+02:00</lastmod>
+    <lastmod>2020-09-24T09:43:51+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://yusbk.github.io/tags/fork/</loc>
-    <lastmod>2020-09-22T12:43:29+02:00</lastmod>
+    <lastmod>2020-09-24T09:43:51+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://yusbk.github.io/categories/git/</loc>
-    <lastmod>2020-09-22T12:43:29+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/tags/data.table/</loc>
-    <lastmod>2020-09-22T13:26:40+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/posts/look-up-table/</loc>
-    <lastmod>2020-09-22T13:26:40+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/categories/r/</loc>
-    <lastmod>2020-09-22T13:26:40+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/tags/basic/</loc>
-    <lastmod>2020-09-22T13:26:40+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/tags/package/</loc>
-    <lastmod>2020-09-22T13:26:40+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/posts/package-r/</loc>
-    <lastmod>2020-09-22T13:26:40+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/categories/data.table/</loc>
-    <lastmod>2020-09-22T13:26:40+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/posts/row-delete/</loc>
-    <lastmod>2020-09-22T13:26:40+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/tags/row/</loc>
-    <lastmod>2020-09-22T13:26:40+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/tags/aturcara/</loc>
-    <lastmod>2020-09-22T13:26:40+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/categories/aturcara/</loc>
-    <lastmod>2020-09-22T13:26:40+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/tags/encrypt/</loc>
-    <lastmod>2020-09-22T13:26:40+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/tags/html/</loc>
-    <lastmod>2020-09-22T13:26:40+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/posts/static-encrypt/</loc>
-    <lastmod>2020-09-22T13:26:40+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/tags/loop/</loc>
-    <lastmod>2020-09-22T13:26:40+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/posts/loop-set/</loc>
-    <lastmod>2020-09-22T13:26:40+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/tags/geom_line/</loc>
-    <lastmod>2020-09-22T13:26:40+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/tags/ggplot/</loc>
-    <lastmod>2020-09-22T13:26:40+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/tags/plot/</loc>
-    <lastmod>2020-09-22T13:26:40+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/categories/plot/</loc>
-    <lastmod>2020-09-22T13:26:40+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/posts/geom-line/</loc>
-    <lastmod>2020-09-22T13:26:40+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/posts/aliran-kerja/</loc>
-    <lastmod>2020-09-22T13:26:40+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/tags/ifelse/</loc>
-    <lastmod>2020-09-22T13:26:40+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/tags/nasihat/</loc>
-    <lastmod>2020-09-22T13:26:40+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/categories/nasihat/</loc>
-    <lastmod>2020-09-22T13:26:40+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/posts/ifelse/</loc>
-    <lastmod>2020-09-22T13:26:40+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/posts/vector-object/</loc>
-    <lastmod>2020-09-22T13:26:40+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/tags/object/</loc>
-    <lastmod>2020-09-22T13:26:40+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/posts/credit-site/</loc>
-    <lastmod>2020-09-22T13:26:40+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/categories/credits/</loc>
-    <lastmod>2020-09-22T13:26:40+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/tags/js/</loc>
-    <lastmod>2020-09-22T13:26:40+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/tags/lithium/</loc>
-    <lastmod>2020-09-22T13:26:40+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/posts/peta-sf/</loc>
-    <lastmod>2020-09-22T13:26:40+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/tags/r-peta/</loc>
-    <lastmod>2020-09-22T13:26:40+02:00</lastmod>
+    <lastmod>2020-09-24T09:43:51+02:00</lastmod>
   </url>
   
   <url>
@@ -264,7 +89,7 @@
   
   <url>
     <loc>https://yusbk.github.io/tags/ubuntu/</loc>
-    <lastmod>2020-09-22T13:26:40+02:00</lastmod>
+    <lastmod>2020-06-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -273,268 +98,13 @@
   </url>
   
   <url>
-    <loc>https://yusbk.github.io/tags/anroid/</loc>
-    <lastmod>2020-09-22T13:26:40+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/categories/anroid/</loc>
-    <lastmod>2020-09-22T13:26:40+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/posts/nvim-termux/</loc>
-    <lastmod>2020-09-22T13:26:40+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/tags/termux/</loc>
-    <lastmod>2020-09-22T13:26:40+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/categories/data-mining/</loc>
-    <lastmod>2020-03-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/tags/duplicate/</loc>
-    <lastmod>2020-03-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/posts/duplikasi/</loc>
-    <lastmod>2020-03-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/tags/unique/</loc>
-    <lastmod>2020-03-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/tags/encrypting/</loc>
-    <lastmod>2020-09-22T13:26:40+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/posts/encrypting-file/</loc>
-    <lastmod>2020-09-22T13:26:40+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/tags/linux/</loc>
-    <lastmod>2020-09-22T13:26:40+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/categories/ubuntu/</loc>
-    <lastmod>2020-09-22T13:26:40+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/posts/basic-shiny/</loc>
-    <lastmod>2020-09-22T13:26:40+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/tags/shiny/</loc>
-    <lastmod>2020-09-22T13:26:40+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/posts/tambah-kolom/</loc>
-    <lastmod>2020-09-22T13:26:40+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/tags/grid/</loc>
-    <lastmod>2020-09-22T13:26:40+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/posts/grid/</loc>
-    <lastmod>2020-09-22T13:26:40+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/tags/ggplot2/</loc>
-    <lastmod>2020-09-22T13:26:40+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/categories/ggplot2/</loc>
-    <lastmod>2020-09-22T13:26:40+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/posts/plot-table/</loc>
-    <lastmod>2020-09-22T13:26:40+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/tags/table/</loc>
-    <lastmod>2020-09-22T13:26:40+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/tags/geom_bar/</loc>
-    <lastmod>2020-09-22T13:26:40+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/tags/geom_point/</loc>
-    <lastmod>2020-09-22T13:26:40+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/posts/legend-plot-banding/</loc>
-    <lastmod>2020-09-22T13:26:40+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/posts/tambah-jumlah/</loc>
-    <lastmod>2020-09-22T13:26:40+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/tags/total/</loc>
-    <lastmod>2020-09-22T13:26:40+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/tags/get/</loc>
-    <lastmod>2020-09-22T13:26:40+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/tags/join/</loc>
-    <lastmod>2020-09-22T13:26:40+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/tags/merge/</loc>
-    <lastmod>2020-09-22T13:26:40+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/posts/merge-join/</loc>
-    <lastmod>2020-09-22T13:26:40+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/tags/mget/</loc>
-    <lastmod>2020-09-22T13:26:40+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/tags/compute/</loc>
-    <lastmod>2020-09-22T13:26:40+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/tags/recode/</loc>
-    <lastmod>2020-09-22T13:26:40+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/posts/recode/</loc>
-    <lastmod>2020-09-22T13:26:40+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/tags/colnames/</loc>
-    <lastmod>2020-09-22T13:26:40+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/tags/mining/</loc>
-    <lastmod>2020-09-22T13:26:40+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/tags/rownames/</loc>
-    <lastmod>2020-09-22T13:26:40+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/posts/col-and-row/</loc>
-    <lastmod>2020-09-22T13:26:40+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/categories/package/</loc>
-    <lastmod>2020-09-22T13:26:40+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/posts/pkg-rreg/</loc>
-    <lastmod>2020-09-22T13:26:40+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/tags/faktor/</loc>
-    <lastmod>2020-09-22T13:26:40+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/posts/menamakan-level-di-faktor/</loc>
-    <lastmod>2020-09-22T13:26:40+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/posts/locale/</loc>
-    <lastmod>2020-09-22T13:26:40+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/categories/emacs/</loc>
-    <lastmod>2020-05-30T00:39:05+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/tags/hugo/</loc>
-    <lastmod>2020-05-30T00:39:05+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/tags/org/</loc>
-    <lastmod>2020-05-30T00:39:05+02:00</lastmod>
+    <loc>https://yusbk.github.io/categories/plot/</loc>
+    <lastmod>2020-09-24T09:43:50+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://yusbk.github.io/categories/dt/</loc>
     <lastmod>2020-04-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/tags/indeks/</loc>
-    <lastmod>2020-09-22T13:26:40+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/posts/kolom-index/</loc>
-    <lastmod>2020-09-22T13:26:40+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/categories/markdown/</loc>
-    <lastmod>2020-09-22T13:26:40+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/posts/markdown/</loc>
-    <lastmod>2020-09-22T13:26:40+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/tags/markdown/</loc>
-    <lastmod>2020-09-22T13:26:40+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/tags/world/</loc>
-    <lastmod>2020-09-22T13:26:40+02:00</lastmod>
   </url>
   
 </urlset>
