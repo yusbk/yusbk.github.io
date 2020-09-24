@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+<title>Susun factor</title>
+
+
+  
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="alternate" type="application/rss+xml" href="https://example.org/index.xml" title="Hugo Themes">
+
+<link id="dark-mode-theme" rel="stylesheet" href="https://example.org/css/dark.css" />
+<link rel="stylesheet" href="https://example.org/fontawesome/css/all.min.css" />
+
+<script src="https://example.org/js/bundle.js"></script>
+<script src="https://example.org/js/instantpage.js" type="module" defer></script>
+<meta name="generator" content="Hugo 0.75.1" />
+  </head>
+  <body>
+    
+  
+
+
+
+
+  <header>
+    <nav class="navbar">
+  <div class="nav">
+    
+      <a href="https://example.org/" class="nav-logo">
+      <img src="https://example.org/images/icon.png"
+           width="50"
+           height="50"
+           alt="Logo">
+      </a>
+    
+
+    <ul class="nav-links">
+      
+        
+          <li><a href="/about/" name="About"><i class="fas fa-user fa-lg"></i></a></li>
+        
+      
+        
+          <li><a href="/tags/" name="Tags"><i class="fas fa-tag fa-lg"></i></a></li>
+        
+      
+        
+          <li><a href="/search/" name="Search"><i class="fas fa-search fa-lg"></i></a></li>
+        
+      
+    </ul>
+  </div>
+</nav>
+
+    <div class="intro-header">
+      <div class="container">
+        <div class="post-heading">
+          
+            <h1>Susun factor</h1>
+          
+          
+            <span class="meta-post">
+  <i class="fa fa-calendar-alt"></i>&nbsp;Sep 24, 2020
+  
+    &nbsp;&nbsp;&nbsp;<i class="fa fa-folder-open"></i>&nbsp;
+    
+      <a href="https://example.org//categories/plot/">plot</a>&nbsp;
+    
+  
+</span>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+  <div class="container" role="main">
+    <article class="article" class="blog-post">
+      
+    <!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<ul>
+<li><a href="#susun-ketinggian-bar">Susun ketinggian bar</a></li>
+<li><a href="#nama-di-aksis">Nama di aksis</a></li>
+</ul>
+<!-- raw HTML omitted -->
+<p>Bila buat bar plot cara asas di R atau menggunakan pakej <code>ggplot2</code>, susunan levels di
+x-aksis disusun semula menggikut abjad. Oleh sebab itu sekiranya ingin menyusun
+mengikut aturcara tertentu, levels di x-aksis harus disusun semula. Pelbagai cara
+untuk menyusun variable boleh dibuat contohnya menggunakan <code>order</code> (dari &ldquo;base&rdquo;) dan
+<code>reorder</code> (dari &ldquo;stat&rdquo;). Kedua-dua fungsi ini sudah tersedia di R tanpa perlu memuat
+turun sebarang pakej.</p>
+<p>Cara <code>reorder</code> adalah yang paling mudah tetapi agak lambat berbanding <code>order</code> sekiranya
+ingin dipakai untuk fungsi di <strong>Big Data</strong>.</p>
+<p>Untuk memakai cara <code>order</code> dari &ldquo;base&rdquo;. Dengan menggunakan <code>with</code> akan lebih
+mempercepatkan proses:</p>
+<h2 id="susun-ketinggian-bar">Susun ketinggian bar</h2>
+<p>Cara untuk menyusun bar menaik atau menurun</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#75715e">## data</span>
+data <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">data.frame</span>(a <span style="color:#f92672">=</span> <span style="color:#66d9ef">LETTERS</span>[1<span style="color:#f92672">:</span><span style="color:#ae81ff">10</span>], b <span style="color:#f92672">=</span> <span style="color:#a6e22e">rnorm</span>(<span style="color:#ae81ff">10</span>, mean <span style="color:#f92672">=</span> <span style="color:#ae81ff">30</span>, sd <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>),
+                   c <span style="color:#f92672">=</span> <span style="color:#a6e22e">runif</span>(<span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">50</span>), d <span style="color:#f92672">=</span> <span style="color:#66d9ef">letters</span>[1<span style="color:#f92672">:</span><span style="color:#ae81ff">10</span>],
+                   e <span style="color:#f92672">=</span> <span style="color:#a6e22e">sample</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">100</span>, size <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>, replace <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>))
+
+<span style="color:#75715e">## susun &#34;a&#34; mengikut nilai &#34;b&#34; menaik</span>
+data<span style="color:#f92672">$</span>a <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">factor</span>(data<span style="color:#f92672">$</span>a, levels <span style="color:#f92672">=</span> data<span style="color:#f92672">$</span>a<span style="color:#a6e22e">[order</span>(data<span style="color:#f92672">$</span>b)])
+
+<span style="color:#75715e">## susun &#34;a&#34; mengikut nilai &#34;b&#34; menurun</span>
+data<span style="color:#f92672">$</span>a <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">factor</span>(data<span style="color:#f92672">$</span>a, levels <span style="color:#f92672">=</span> data<span style="color:#f92672">$</span>a<span style="color:#a6e22e">[order</span>(data<span style="color:#f92672">$</span>b, decreasing <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>)])
+
+<span style="color:#75715e">## Buat plot</span>
+<span style="color:#a6e22e">library</span>(ggplot2)
+data2 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">copy</span>(data)
+<span style="color:#a6e22e">ggplot</span>(data2, <span style="color:#a6e22e">aes</span>(a, b)) <span style="color:#f92672">+</span> <span style="color:#a6e22e">geom_bar</span>(stat <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;identity&#39;</span>)
+</code></pre></div><figure>
+    <img src="/img/plotdic.png" width="350px"/> 
+</figure>
+
+<p>Bila menggunakan <code>with</code>, penulisan kode juga akan lebih mudah. Contohnya:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">data<span style="color:#f92672">$</span>d <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">with</span>(data2, <span style="color:#a6e22e">factor</span>(d, levels <span style="color:#f92672">=</span> d<span style="color:#a6e22e">[order</span>(e, decreasing <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>)]))
+</code></pre></div><h2 id="nama-di-aksis">Nama di aksis</h2>
+<p>Sekiranya ingin menyusun x-aksis mengikut cara lain selain dari nilai menurun atau
+menaik melalui pilihan <code>decreasing = TRUE</code>, boleh juga menetapkan susunan cara
+manual. Bila memakai cara ini harus memberikan nama susunan dengan tepat seperti nama
+di variable.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#75715e">## contoh data</span>
+data3 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">data.frame</span>(a <span style="color:#f92672">=</span> <span style="color:#66d9ef">LETTERS</span>[1<span style="color:#f92672">:</span><span style="color:#ae81ff">4</span>], b <span style="color:#f92672">=</span> <span style="color:#a6e22e">sample</span>(<span style="color:#ae81ff">20</span><span style="color:#f92672">:</span><span style="color:#ae81ff">50</span>, size <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>))
+<span style="color:#75715e">## Susun cara sendiri</span>
+data3<span style="color:#f92672">$</span>a <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">factor</span>(data3<span style="color:#f92672">$</span>a, levels <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;B&#34;</span>, <span style="color:#e6db74">&#34;D&#34;</span>, <span style="color:#e6db74">&#34;A&#34;</span>, <span style="color:#e6db74">&#34;C&#34;</span>))
+<span style="color:#75715e">## plot</span>
+<span style="color:#a6e22e">ggplot</span>(data3, <span style="color:#a6e22e">aes</span>(a, b)) <span style="color:#f92672">+</span> <span style="color:#a6e22e">geom_bar</span>(stat <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;identity&#39;</span>)
+</code></pre></div><figure>
+    <img src="/img/plotaksis.jpg"/> 
+</figure>
+
+<p>Untuk memakai cara <code>reorder</code> dari &ldquo;stat&rdquo;:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#75715e">## pakai data sama seperti di atas cumpa pakai factor &#34;d&#34; dan nilai &#34;e&#34;</span>
+data<span style="color:#f92672">$</span>d <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">reorder</span>(data<span style="color:#f92672">$</span>d, data<span style="color:#f92672">$</span>e)
+</code></pre></div><p>Cara lain untuk menyusun semula faktor variable menggikut susunan tertentu boleh juga
+dilaksanakan dengan menggunakan fungsi <code>fct_reorder</code> atau <code>fct_reorder2</code> dari pakej
+<code>fotcats</code> yang boleh dibaca di <a href="https://github.com/tidyverse/forcats">sini</a>. Pakej ini juga ialah sebahagian daripada pakej
+<code>tidyverse</code> yang mengandungi pakej-pakej lain seperti <code>dplyr</code> dan <code>ggplot2</code>.</p>
+
+
+
+      
+    </article>
+    
+    
+      
+      
+</div>
+
+    <footer>
+  
+<div>
+    
+    <a href="https://twitter.com/GoHugoIO" name="twitter"><i class="fab fa-twitter"></i></a>
+    
+</div>
+
+  <div class="container">
+    <p class="credits copyright">
+      <a href="https://example.org/about">hugo author</a>
+      &nbsp;&copy;
+      2020
+      
+      &nbsp;/&nbsp;
+      <a href="https://example.org/">Hugo Themes</a>
+      
+      &nbsp;&ndash;&nbsp;
+      <i class="fas fa-moon" id="dark-mode-toggle"></i>
+
+    <p class="credits theme-by">
+      Powered By <a href="https://gohugo.io">Hugo</a>&nbsp;Theme <a
+        href="https://github.com/matsuyoshi30/harbor">Harbor</a>
+    </p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
