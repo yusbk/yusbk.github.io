@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+<title>Tetapkan PATH</title>
+
+
+  
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="alternate" type="application/rss+xml" href="https://yusbk.github.io/index.xml" title="ყųʂƙąɱ">
+
+<link id="dark-mode-theme" rel="stylesheet" href="https://yusbk.github.io/css/dark.css" />
+<link rel="stylesheet" href="https://yusbk.github.io/fontawesome/css/all.min.css" />
+
+<script src="https://yusbk.github.io/js/bundle.js"></script>
+<script src="https://yusbk.github.io/js/instantpage.js" type="module" defer></script>
+<meta name="generator" content="Hugo 0.69.2" />
+  </head>
+  <body>
+    
+  
+
+
+
+
+  <header>
+    <nav class="navbar">
+  <div class="nav">
+    
+      <a href="https://yusbk.github.io/" class="nav-logo">
+      <img src="https://yusbk.github.io/images/yuskam.png"
+           width="50"
+           height="50"
+           alt="Logo">
+      </a>
+    
+
+    <ul class="nav-links">
+      
+        
+          <li><a href="/about/" name="About"><i class="fas fa-user fa-lg"></i></a></li>
+        
+      
+        
+          <li><a href="/tags/" name="Tags"><i class="fas fa-tag fa-lg"></i></a></li>
+        
+      
+        
+          <li><a href="/search/" name="Search"><i class="fas fa-search fa-lg"></i></a></li>
+        
+      
+    </ul>
+  </div>
+</nav>
+
+    <div class="intro-header">
+      <div class="container">
+        <div class="post-heading">
+          
+            <h1>Tetapkan PATH</h1>
+          
+          
+            <span class="meta-post">
+  <i class="fa fa-calendar-alt"></i>&nbsp;Jun 19, 2020
+  
+    &nbsp;&nbsp;&nbsp;<i class="fa fa-folder-open"></i>&nbsp;
+    
+      <a href="https://yusbk.github.io//categories/dt/">DT</a>&nbsp;
+    
+      <a href="https://yusbk.github.io//categories/git/">Git</a>&nbsp;
+    
+      <a href="https://yusbk.github.io//categories/programming/">programming</a>&nbsp;
+    
+      <a href="https://yusbk.github.io//categories/plot/">plot</a>&nbsp;
+    
+      <a href="https://yusbk.github.io//categories/bash/">bash</a>&nbsp;
+    
+  
+</span>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+  <div class="container" role="main">
+    <article class="article" class="blog-post">
+      
+    <!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<ul>
+<li><a href="#ubuntu">Ubuntu</a></li>
+<li><a href="#windows">Windows</a></li>
+</ul>
+<!-- raw HTML omitted -->
+<p>Bila ingin memakai program di Ubuntu atau Windows melalui terminal, perlu
+daftarkan program tersebut di <strong>PATH</strong>. Disini saya terangkan caranya di Ubuntu dan Windows.</p>
+<h2 id="ubuntu">Ubuntu</h2>
+<p>Bila pasang program di Ubuntu melalui <strong>source</strong> boleh tetapkan dimana program disimpan
+melalui penetapkan <code>--prefix</code> bila melarikan <code>./configure</code>. Cara biasa bila pasang
+program dari source ialah:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">./configure
+make
+make install
+</code></pre></div><p>Bila <code>./configure</code> tidak menetapkan <code>prefix</code> secara tidak langsung komando yang
+dipakai ialah <code>./configure --prefix=/usr/local</code> dimana folder <code>/usr/local</code> dipakai
+untuk menyimpan fail-fail berkaitan program yang dipasang. Biasanya fail untuk
+larikan program akan disimpan seterusnya di folder <code>bin</code>, libraries di folder <code>lib</code>,
+manual di folder <code>man</code> dan seterusnya.</p>
+<p>Untuk tetapkan folder semasa memasng program dari <strong>source</strong> boleh buat begini:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">./configure --prefix=$HOME/local
+# atau
+./configure --prefix=/home/ybk
+</code></pre></div><p>Bila menetapkan <code>prefix</code> selain dari <code>/usr/local</code> seperti di atas, perlu tetapkan
+folder tersebut di <code>$PATH</code> agar Ubuntu dapat melarikan program yang ingin dipakai. Untuk
+periksa folder-folder yang sudah ditetapkan boleh pakai:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">&gt; echo $PATH
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">/home/ybk/.local/bin:/home/ybk/bin:/home/ybk/.local/bin:/usr/local/games:/snap/bin:/usr/local/stata
+</code></pre></div><p>Penetapan folder di <code>$PATH</code> boleh dibuat dengan cara di bawah. Cara ini akan
+memasukkan PATH di fail <code>/.profile</code> atau <code>/.bashrc</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">&gt; export PATH=&#34;$PATH:/path/folder&#34;
+</code></pre></div><p>Bila melarikan komando <code>export</code> penetapan di <code>$PATH</code> hanya sementara dan hilang bila
+mematikan komputer. Untuk memasukan folder yang ditetapkan di <code>--prefix</code> ke <code>$PATH</code>
+selama-lamanya, harus larikan:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">source ~/.profile
+<span style="color:#75715e"># atau</span>
+source ~/.bashrc
+</code></pre></div><p>Sekiranya tidak menetapkan di <code>$PATH</code> boleh juga menggunakan <code>symlink</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">sudo ln -s /path/ke/folder/baru/ ~/bin
+</code></pre></div><h2 id="windows">Windows</h2>
+<p>Cara daftarkan <code>PATH</code> untuk <code>.exe</code> program bergantung samada kita memiliki
+<em>administrator right</em> atau tidak. Cara yang ditunjukkan disini ialah disituasi
+tanpa <em>admin right</em>.</p>
+<p>Kita boleh lihat semua program-program yang didaftarkan di <code>PATH</code> dengan melarikan
+arahan di bawah di <em>power shell</em> atau <em>terminal</em>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">echo %PATH%
+</code></pre></div><p>Sekiranya tidak pasti bagimana untuk membuka terminal, tulis di <em>search</em> samada
+<code>cmd</code> atau <code>powershell</code>.</p>
+<p>Kemudian buka <code>control panel</code> [kontrolpanel] &gt; <code>user</code> [brukerkontoer] &gt; <code>environment variable</code> [miljøvariablene]</p>
+<p>Window baru akan dibuka dan pilih <em>Variable</em> &gt; <em>Path</em> &gt; <em>edit</em> &gt; <em>new</em>.</p>
+<p>Masukkan path program yang menggandungi <code>.exe</code>. Penting tidak memasukkan nama fail
+<code>.exe</code>, cuma path ke fail tersebut sahaja. Contohnya:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">C:\Program Files\R\R-4.0.0\bin
+</code></pre></div>
+
+
+      
+        <div class="blog-tags">
+          
+            <a href="https://yusbk.github.io//tags/ubuntu/">ubuntu</a>&nbsp;
+          
+            <a href="https://yusbk.github.io//tags/windows/">windows</a>&nbsp;
+          
+        </div>
+      
+    </article>
+    
+    
+      
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        (function() {
+            
+            
+            if (window.location.hostname == "localhost") return;
+
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            var disqus_shortname = 'yusbk-github-io';
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="https://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+      
+</div>
+
+    <footer>
+  
+<div>
+    
+    <a href="https://twitter.com/GoHugoIO" name="twitter"><i class="fab fa-twitter"></i></a>
+    
+</div>
+
+  <div class="container">
+    <p class="credits copyright">
+      <a href="https://yusbk.github.io/about">Yusman Kamaleri</a>
+      &nbsp;&copy;
+      2020
+      
+      &nbsp;/&nbsp;
+      <a href="https://yusbk.github.io/">ყųʂƙąɱ</a>
+      
+      &nbsp;&ndash;&nbsp;
+      <i class="fas fa-moon" id="dark-mode-toggle"></i>
+
+    <p class="credits theme-by">
+      Powered By <a href="https://gohugo.io">Hugo</a>&nbsp;Theme <a
+        href="https://github.com/matsuyoshi30/harbor">Harbor</a>
+    </p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
