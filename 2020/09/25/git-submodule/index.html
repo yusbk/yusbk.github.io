@@ -68,14 +68,6 @@
   
     &nbsp;&nbsp;&nbsp;<i class="fa fa-folder-open"></i>&nbsp;
     
-      <a href="https://yusbk.github.io//categories/dt/">DT</a>&nbsp;
-    
-      <a href="https://yusbk.github.io//categories/programming/">programming</a>&nbsp;
-    
-      <a href="https://yusbk.github.io//categories/bash/">bash</a>&nbsp;
-    
-      <a href="https://yusbk.github.io//categories/plot/">plot</a>&nbsp;
-    
       <a href="https://yusbk.github.io//categories/git/">Git</a>&nbsp;
     
   
@@ -127,6 +119,7 @@ git submodule update --rebase --merge
 </code></pre></div><p>Sekiranya masih kosong, boleh letak <code>--recursive</code> disebabkan nested submodules <code>../themes/harbor</code>.
 Sekiranya masih tidak berhasil, padamkan folder submodule <code>harbor</code> dan larikan semua komando:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git submodule set-url themes/harbor https://github.com/matsuyoshi30/harbor.git
+git submodule sync
 git submodule update --rebase --remote --merge --recursive
 </code></pre></div><p>Bila <code>HEAD detached</code>, boleh coba <code>checkout master</code> dan <code>pull</code> semula. Cara seperti diatas,</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git submodule foreach git checkout master
