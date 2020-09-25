@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-<title>Test figure</title>
+<title>git submodule</title>
 
 
   
@@ -60,15 +60,15 @@
       <div class="container">
         <div class="post-heading">
           
-            <h1>Test figure</h1>
+            <h1>git submodule</h1>
           
           
             <span class="meta-post">
-  <i class="fa fa-calendar-alt"></i>&nbsp;Apr 27, 2020
+  <i class="fa fa-calendar-alt"></i>&nbsp;Sep 25, 2020
   
     &nbsp;&nbsp;&nbsp;<i class="fa fa-folder-open"></i>&nbsp;
     
-      <a href="https://yusbk.github.io//categories/git/">Git</a>&nbsp;
+      <a href="https://yusbk.github.io//categories/dt/">DT</a>&nbsp;
     
       <a href="https://yusbk.github.io//categories/programming/">programming</a>&nbsp;
     
@@ -76,7 +76,7 @@
     
       <a href="https://yusbk.github.io//categories/plot/">plot</a>&nbsp;
     
-      <a href="https://yusbk.github.io//categories/dt/">DT</a>&nbsp;
+      <a href="https://yusbk.github.io//categories/git/">Git</a>&nbsp;
     
   
 </span>
@@ -92,15 +92,51 @@
   <div class="container" role="main">
     <article class="article" class="blog-post">
       
-    <p>Percobaan untuk memasukkan gambar di post dan penetapan size.</p>
-<figure>
-    <img src="/images/plot.jpg"
-         alt="Test figure" width="400"/> 
-</figure>
+    <h2 id="repo-baru">Repo baru</h2>
+<p>Bila buat repo baru dan ingin tetapkan submodule untuk tema <a href="https://themes.gohugo.io/harbor/">harbor</a> dan folder <em>public</em> ke
+<a href="https://yusbk.github.io">yusbk.github.io</a>. Submodule dipakai untuk memasukkan fungsi yang terdapat di repos lain ke dalam
+repos sendiri ie. subfolder di folder utama repos.</p>
+<p>Contoh dibawah ialah untuk memasukkan folder <em>harbor</em> ke dalam folder <em>themes</em> di folder utama.
+Subfolder <em>public</em> pula ialah submodule dari repo blog di <a href="https://github.com/yusbk/yusbk.github.io">Github</a>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text"># themes
+git submodule add https://github.com/matsuyoshi30/harbor.git themes/harbor
+
+# yusbk.github.io
+git submodule add git@personal:yusbk/yusbk.github.io.git public
+
+# update
+git submodule update --remote --merge
+</code></pre></div><p>Untuk update submodule pakai komando di bawah. Penting commit submodule dahulu kemudian commit
+parent repo sebelum push dari parent repos. Caranya:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">cd public
+git commit -am &#39;Tambah pertukaran di public submodule&#39;
+cd ..
+git push origin master --recurse-submodules=on-demand
+</code></pre></div><p>Sekiranya HEAD detaching dengan submodule boleh guna script ini untuk kembali ke MASTER. Rujukan di <a href="https://stackoverflow.com/questions/18770545/why-is-my-git-submodule-head-detached-from-master/49997119#49997119">StackOverflow</a>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e">#!/bin/bash
+</span><span style="color:#75715e"></span>echo <span style="color:#e6db74">&#34;Building all submodules while checking out from MASTER branch.&#34;</span>
+
+git submodule update
+git submodule foreach git checkout master
+git submodule foreach git pull origin master
+</code></pre></div><h2 id="clone">Clone</h2>
+<p>Bila clone repos yang mempunyai submodules, folder-folder submodule akan hanya kosong. Untuk
+dapatkan isi kandungan submodels tersebut harus larikan komando:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git submodule init
+git submodule update --rebase --merge
+</code></pre></div><p>Sekiranya masih kosong, boleh letak <code>--recursive</code> disebabkan nested submodules <code>../themes/harbor</code>.
+Sekiranya masih tidak berhasil, padamkan folder submodule <code>harbor</code> dan larikan semua komando:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git submodule set-url themes/harbor https://github.com/matsuyoshi30/harbor.git
+git submodule update --rebase --remote --merge --recursive
+</code></pre></div>
 
 
-
-
+      
+        <div class="blog-tags">
+          
+            <a href="https://yusbk.github.io//tags/submodule/">submodule</a>&nbsp;
+          
+        </div>
       
     </article>
     
