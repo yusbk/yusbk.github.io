@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+<title>Pemakaian lookup table</title>
+
+
+  
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="alternate" type="application/rss+xml" href="https://yusbk.github.io/index.xml" title="ყųʂƙąɱ">
+
+<link id="dark-mode-theme" rel="stylesheet" href="https://yusbk.github.io/css/dark.css" />
+<link rel="stylesheet" href="https://yusbk.github.io/fontawesome/css/all.min.css" />
+
+<script src="https://yusbk.github.io/js/bundle.js"></script>
+<script src="https://yusbk.github.io/js/instantpage.js" type="module" defer></script>
+<meta name="generator" content="Hugo 0.75.1" />
+  </head>
+  <body>
+    
+  
+
+
+
+
+  <header>
+    <nav class="navbar">
+  <div class="nav">
+    
+      <a href="https://yusbk.github.io/" class="nav-logo">
+      <img src="https://yusbk.github.io/images/yuskam.png"
+           width="50"
+           height="50"
+           alt="Logo">
+      </a>
+    
+
+    <ul class="nav-links">
+      
+        
+          <li><a href="/about/" name="About"><i class="fas fa-user fa-lg"></i></a></li>
+        
+      
+        
+          <li><a href="/tags/" name="Tags"><i class="fas fa-tag fa-lg"></i></a></li>
+        
+      
+        
+          <li><a href="/search/" name="Search"><i class="fas fa-search fa-lg"></i></a></li>
+        
+      
+    </ul>
+  </div>
+</nav>
+
+    <div class="intro-header">
+      <div class="container">
+        <div class="post-heading">
+          
+            <h1>Pemakaian lookup table</h1>
+          
+          
+            <span class="meta-post">
+  <i class="fa fa-calendar-alt"></i>&nbsp;Feb 9, 2020
+  
+    &nbsp;&nbsp;&nbsp;<i class="fa fa-folder-open"></i>&nbsp;
+    
+      <a href="https://yusbk.github.io//categories/r/">R</a>&nbsp;
+    
+  
+</span>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+  <div class="container" role="main">
+    <article class="article" class="blog-post">
+      
+    <p>Lookup table dipakai untuk mempercepatkan proses dan mengelakkan pemakaian <code>ifelse</code>. Untuk mempercepatkan proses, <code>ordered index</code> untuk data.table harus dipakai.</p>
+<h1 id="cara-1">Cara 1</h1>
+<p>Kode ini dipakai sekiranya ingin mendapakan nilai di lookup tabel yang berhampiran. Contohnya nilai 1.3730682 adalah berhampiran dengan nilai 1.35.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">setDT</span>(df1)[, ScoreLU  <span style="color:#f92672">:=</span> <span style="color:#a6e22e">setDT</span>(df2)[df1, ScoreLU , on <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;DSCRpd&#34;</span>, roll <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;nearest&#34;</span>]]
+</code></pre></div><!-- raw HTML omitted -->
+<p>Hasilnya seperti begini:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">      DSCRpd Leverage         TCB ScoreLU
+ <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1.3730682</span> <span style="color:#ae81ff">2.010122</span> <span style="color:#ae81ff">-1590099.11</span>      <span style="color:#ae81ff">60</span>
+ <span style="color:#ae81ff">2</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1.0449597</span> <span style="color:#ae81ff">2.680051</span>   <span style="color:#ae81ff">493370.85</span>      <span style="color:#ae81ff">30</span>
+ <span style="color:#ae81ff">3</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1.0311141</span> <span style="color:#ae81ff">4.790531</span>    <span style="color:#ae81ff">21594.63</span>      <span style="color:#ae81ff">30</span>
+ <span style="color:#ae81ff">4</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1.3923007</span> <span style="color:#ae81ff">3.279903</span>  <span style="color:#ae81ff">-499326.76</span>      <span style="color:#ae81ff">60</span>
+ <span style="color:#ae81ff">5</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1.6443938</span> <span style="color:#ae81ff">3.853003</span>   <span style="color:#ae81ff">988780.79</span>      <span style="color:#ae81ff">70</span>
+ <span style="color:#ae81ff">6</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0.6265976</span> <span style="color:#ae81ff">1.814359</span>  <span style="color:#ae81ff">1003736.73</span>       <span style="color:#ae81ff">0</span>
+ <span style="color:#ae81ff">7</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2.1025253</span> <span style="color:#ae81ff">4.412528</span>  <span style="color:#ae81ff">1245305.83</span>      <span style="color:#ae81ff">80</span>
+ <span style="color:#ae81ff">8</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1.2872873</span> <span style="color:#ae81ff">2.074424</span>  <span style="color:#ae81ff">-688305.83</span>      <span style="color:#ae81ff">50</span>
+ <span style="color:#ae81ff">9</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0.5088294</span> <span style="color:#ae81ff">2.504510</span>  <span style="color:#ae81ff">1406986.68</span>       <span style="color:#ae81ff">0</span>
+<span style="color:#ae81ff">10</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1.7794307</span> <span style="color:#ae81ff">3.724905</span>  <span style="color:#ae81ff">1132513.33</span>      <span style="color:#ae81ff">70</span>
+</code></pre></div><p>Cara ini ialah untuk mendapakan nilai <code>ScoreLU</code> yang terdapat di data <strong>ScoreLU</strong> melalui kolom kekunci <code>DSCRpd</code> dikedua-dua data.table. Sekiranya nilai di <code>DSCRpd</code> di <strong>df1</strong> tidak sama dengan <strong>ScoreLU</strong>, kekunci yang berhampiran dirujuk untuk mendapatkan nilai <code>ScoreLU</code>. Contohnya:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">df1
+   DSCRpd Leverage         TCB
+<span style="color:#ae81ff">1</span>  <span style="color:#ae81ff">1.3730682</span> <span style="color:#ae81ff">2.010122</span> <span style="color:#ae81ff">-1590099.11</span>
+<span style="color:#ae81ff">2</span>  <span style="color:#ae81ff">1.0449597</span> <span style="color:#ae81ff">2.680051</span>   <span style="color:#ae81ff">493370.85</span>
+<span style="color:#ae81ff">3</span>  <span style="color:#ae81ff">1.0311141</span> <span style="color:#ae81ff">4.790531</span>    <span style="color:#ae81ff">21594.63</span>
+<span style="color:#ae81ff">4</span>  <span style="color:#ae81ff">1.3923007</span> <span style="color:#ae81ff">3.279903</span>  <span style="color:#ae81ff">-499326.76</span>
+
+ScoreLU
+   ScoreLU DSCRpd Leverage     TCB
+ <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span>       <span style="color:#ae81ff">0</span>   <span style="color:#ae81ff">0.65</span>      <span style="color:#ae81ff">5.0</span>       <span style="color:#ae81ff">0</span>
+ <span style="color:#ae81ff">2</span><span style="color:#f92672">:</span>      <span style="color:#ae81ff">10</span>   <span style="color:#ae81ff">0.80</span>      <span style="color:#ae81ff">4.5</span>  <span style="color:#ae81ff">100000</span>
+ <span style="color:#ae81ff">3</span><span style="color:#f92672">:</span>      <span style="color:#ae81ff">20</span>   <span style="color:#ae81ff">0.95</span>      <span style="color:#ae81ff">4.0</span>  <span style="color:#ae81ff">250000</span>
+ <span style="color:#ae81ff">4</span><span style="color:#f92672">:</span>      <span style="color:#ae81ff">30</span>   <span style="color:#ae81ff">1.10</span>      <span style="color:#ae81ff">3.5</span>  <span style="color:#ae81ff">500000</span>
+ <span style="color:#ae81ff">5</span><span style="color:#f92672">:</span>      <span style="color:#ae81ff">40</span>   <span style="color:#ae81ff">1.20</span>      <span style="color:#ae81ff">3.0</span>  <span style="color:#ae81ff">850000</span>
+ <span style="color:#ae81ff">6</span><span style="color:#f92672">:</span>      <span style="color:#ae81ff">50</span>   <span style="color:#ae81ff">1.26</span>      <span style="color:#ae81ff">2.5</span> <span style="color:#ae81ff">1250000</span>
+ <span style="color:#ae81ff">7</span><span style="color:#f92672">:</span>      <span style="color:#ae81ff">60</span>   <span style="color:#ae81ff">1.35</span>      <span style="color:#ae81ff">2.0</span> <span style="color:#ae81ff">1700000</span>
+</code></pre></div><p>Untuk dapatkan nilai <code>ScoreLU</code> bagi kekunci <code>DSCRpd</code> 1.3730682 di <strong>df1</strong> ialah 60 kerana nilai <code>DSCRpd</code> yang berhapiran di data <strong>ScoreLU</strong> ialah 1.35.</p>
+<h1 id="cara-2">Cara 2</h1>
+<p>Cara ini sama seperti di atas cuma diterangkan secara mudah. Untuk menunjukkan cara ini kita buatkan data sebagai contoh:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">DT <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">data.table</span>(V1<span style="color:#f92672">=</span><span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">0L</span>,<span style="color:#ae81ff">1L</span>,<span style="color:#ae81ff">2L</span>),
+                 V2<span style="color:#f92672">=</span><span style="color:#66d9ef">LETTERS</span>[1<span style="color:#f92672">:</span><span style="color:#ae81ff">3</span>],
+                 V4<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">12</span>)
+</code></pre></div><p>Untuk tukarkan <code>V1</code> dari nilai <code>c(1,2)</code> ke nilai <code>c(0,1)</code> atau tukar huruf, caranya:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">DT<span style="color:#a6e22e">[.</span>(V1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">2</span>, to <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>), on <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;V1&#34;</span>, V1 <span style="color:#f92672">:=</span> i.to]
+DT<span style="color:#a6e22e">[.</span>(V2 <span style="color:#f92672">=</span> <span style="color:#66d9ef">LETTERS</span>[1<span style="color:#f92672">:</span><span style="color:#ae81ff">3</span>], to <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;T&#34;</span>, <span style="color:#e6db74">&#34;K&#34;</span>, <span style="color:#e6db74">&#34;D&#34;</span>)), on <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;V2&#34;</span>, V2 <span style="color:#f92672">:=</span> i.to]
+</code></pre></div><p>Di sini <code>.(V1 = 1:2, to = 0:1)</code> ialah sebagai table rujukan. Sekiranya rujukkan (<em>lookup table)</em> tidak tersedia, boleh di buat berasingan:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">lut1 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">data.table</span>(V1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">2</span>, to <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>)
+lut2 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">data.table</span>(V2 <span style="color:#f92672">=</span> <span style="color:#66d9ef">LETTERS</span>[1<span style="color:#f92672">:</span><span style="color:#ae81ff">3</span>], to <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;T&#34;</span>, <span style="color:#e6db74">&#34;K&#34;</span>, <span style="color:#e6db74">&#34;D&#34;</span>))
+
+lut1
+   V1 to
+<span style="color:#ae81ff">1</span><span style="color:#f92672">:</span>  <span style="color:#ae81ff">1</span>  <span style="color:#ae81ff">0</span>
+<span style="color:#ae81ff">2</span><span style="color:#f92672">:</span>  <span style="color:#ae81ff">2</span>  <span style="color:#ae81ff">1</span>
+
+lut2
+   V2 to
+<span style="color:#ae81ff">1</span><span style="color:#f92672">:</span>  A  T
+<span style="color:#ae81ff">2</span><span style="color:#f92672">:</span>  B  K
+<span style="color:#ae81ff">3</span><span style="color:#f92672">:</span>  C  D
+</code></pre></div><p>Kemudian bolehlah di <em>update joins</em> data:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">DT[lut1, on <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;V1&#34;</span>, V1 <span style="color:#f92672">:=</span> i.to]
+DT[lut2, on <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;V2&#34;</span>, V2 <span style="color:#f92672">:=</span> i.to]
+</code></pre></div><p>Cara ini diambil dari <a href="https://stackoverflow.com/questions/44590935/recode-a-variable-using-data-table">stackoverflow</a>.</p>
+
+
+
+      
+        <div class="blog-tags">
+          
+            <a href="https://yusbk.github.io//tags/r/">R</a>&nbsp;
+          
+            <a href="https://yusbk.github.io//tags/data.table/">data.table</a>&nbsp;
+          
+        </div>
+      
+    </article>
+    
+    
+      
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        (function() {
+            
+            
+            if (window.location.hostname == "localhost") return;
+
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            var disqus_shortname = 'yusbk-github-io';
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="https://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+      
+</div>
+
+    <footer>
+  
+<div>
+    
+    <a href="https://twitter.com/GoHugoIO" name="twitter"><i class="fab fa-twitter"></i></a>
+    
+</div>
+
+  <div class="container">
+    <p class="credits copyright">
+      <a href="https://yusbk.github.io/about">Yusman Kamaleri</a>
+      &nbsp;&copy;
+      2020
+      
+      &nbsp;/&nbsp;
+      <a href="https://yusbk.github.io/">ყųʂƙąɱ</a>
+      
+      &nbsp;&ndash;&nbsp;
+      <i class="fas fa-moon" id="dark-mode-toggle"></i>
+
+    <p class="credits theme-by">
+      Powered By <a href="https://gohugo.io">Hugo</a>&nbsp;Theme <a
+        href="https://github.com/matsuyoshi30/harbor">Harbor</a>
+    </p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

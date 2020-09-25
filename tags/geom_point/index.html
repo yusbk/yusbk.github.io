@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+<title>geom_point</title>
+
+
+  
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="alternate" type="application/rss+xml" href="https://yusbk.github.io/index.xml" title="ყųʂƙąɱ">
+
+<link id="dark-mode-theme" rel="stylesheet" href="https://yusbk.github.io/css/dark.css" />
+<link rel="stylesheet" href="https://yusbk.github.io/fontawesome/css/all.min.css" />
+
+<script src="https://yusbk.github.io/js/bundle.js"></script>
+<script src="https://yusbk.github.io/js/instantpage.js" type="module" defer></script>
+<meta name="generator" content="Hugo 0.75.1" />
+  </head>
+  <body>
+    
+  
+
+
+
+
+  <header>
+    <nav class="navbar">
+  <div class="nav">
+    
+      <a href="https://yusbk.github.io/" class="nav-logo">
+      <img src="https://yusbk.github.io/images/yuskam.png"
+           width="50"
+           height="50"
+           alt="Logo">
+      </a>
+    
+
+    <ul class="nav-links">
+      
+        
+          <li><a href="/about/" name="About"><i class="fas fa-user fa-lg"></i></a></li>
+        
+      
+        
+          <li><a href="/tags/" name="Tags"><i class="fas fa-tag fa-lg"></i></a></li>
+        
+      
+        
+          <li><a href="/search/" name="Search"><i class="fas fa-search fa-lg"></i></a></li>
+        
+      
+    </ul>
+  </div>
+</nav>
+
+    <div class="intro-header">
+      <div class="container">
+        <div class="tags-heading">
+          
+            <h1>geom_point</h1>
+          
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+    <div class="posts-list">
+      
+        
+      
+
+      
+        <article class="post-preview">
+  <a href="https://yusbk.github.io/2018/01/28/legend-plot-banding/">
+      <h2 class="post-title">Legend untuk plot perbandingan</h2>
+  </a>
+  <div class="post-entry">
+    
+      <p>Tunjuk ajar ini ialah berasaskan penggunaan pekej ggplot2. Untuk membuat plot perbandingan dan memasukkan legend untuk perbandingan boleh dibuat seperti berikut.
+library(&#34;data.table&#34;) data &lt;- fread(&#34;https://raw.githubusercontent.com/ybkamaleri/dataset/master/gdata.csv&#34;) ## lage tabellen alder group ageWyoming &lt;- data[location == &#34;Wyoming&#34;, list(n = .N), by = .(agegp)] dataW &lt;- ageWyoming[, { N = sum(n) pros = round(n / N * 100, digits = 1) list(agegp = agegp, n = n, N = N, pros = pros)}] dataW[, location := &#34;Wyoming&#34;] ageRest &lt;- data[location !</p>
+        <a href="https://yusbk.github.io/2018/01/28/legend-plot-banding/" class="post-read-more">Read More</a>
+    
+  </div>
+
+  <div class="postmeta">
+    <span class="meta-post">
+  <i class="fa fa-calendar-alt"></i>&nbsp;Jan 28, 2018
+  
+    &nbsp;&nbsp;&nbsp;<i class="fa fa-folder-open"></i>&nbsp;
+    
+      <a href="https://yusbk.github.io//categories/plot/">plot</a>&nbsp;
+    
+  
+</span>
+
+  </div>
+</article>
+
+      
+      </div>
+    
+</div>
+
+    <footer>
+  
+<div>
+    
+    <a href="https://twitter.com/GoHugoIO" name="twitter"><i class="fab fa-twitter"></i></a>
+    
+</div>
+
+  <div class="container">
+    <p class="credits copyright">
+      <a href="https://yusbk.github.io/about">Yusman Kamaleri</a>
+      &nbsp;&copy;
+      2020
+      
+      &nbsp;/&nbsp;
+      <a href="https://yusbk.github.io/">ყųʂƙąɱ</a>
+      
+      &nbsp;&ndash;&nbsp;
+      <i class="fas fa-moon" id="dark-mode-toggle"></i>
+
+    <p class="credits theme-by">
+      Powered By <a href="https://gohugo.io">Hugo</a>&nbsp;Theme <a
+        href="https://github.com/matsuyoshi30/harbor">Harbor</a>
+    </p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

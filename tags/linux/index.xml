@@ -1,0 +1,113 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Linux on ყųʂƙąɱ</title>
+		<link>https://yusbk.github.io/tags/linux/</link>
+		<description>Recent content in Linux </description>
+		<generator>Hugo -- gohugo.io</generator>
+		
+  		<language>en</language>
+		
+		<managingEditor>Page(/tags/linux) (Yusman Kamaleri)</managingEditor>
+    	
+  		<lastBuildDate>Wed, 25 Jul 2018 00:00:00 +0000</lastBuildDate>
+		
+		<atom:link href="/tags/linux/" rel="self" type="application/rss+xml" />
+		
+		<item>
+			<title>Writing Hugo blog in Org</title>
+			<link>https://yusbk.github.io/2017/09/10/hugo-blog-in-org-subtree-export/</link>
+			<pubDate>Sun, 10 Sep 2017 00:00:00 +0000</pubDate>
+			<guid>https://yusbk.github.io/2017/09/10/hugo-blog-in-org-subtree-export/</guid>
+			<description>First heading within the post  This post will be exported as content/posts/writing-hugo-blog-in-org-subtree-export.md. Its title will be &amp;ldquo;Writing Hugo blog in Org&amp;rdquo;. It will have hugo and org tags and emacs as category. The menu item weight and post weight are auto-calculated. The menu item identifier is auto-set. The lastmod property in the front-matter is set automatically to the time of export.  A sub-heading under that heading  It&amp;rsquo;s draft state will be marked as true as the subtree has the todo state set to TODO.</description>
+		</item>
+      	
+		<item>
+			<title>Basic use of drake</title>
+			<link>https://yusbk.github.io/2020/06/15/basic-drake/</link>
+			<pubDate>Mon, 15 Jun 2020 23:22:00 +0200</pubDate>
+			<guid>https://yusbk.github.io/2020/06/15/basic-drake/</guid>
+			<description>There are various ways to organise your R workflow. If you are working with a big project, then Airflow might be for you. But for the majority of R project codes, drake package will fullfilled your need.
+Here is the basic use of drake. The example here will be using a simple collections of functions.
+fun1 &amp;lt;- function(x = globalenv()$x){ x + 2 } fun2 &amp;lt;- function(i = 3){ i * 10 } fun3 &amp;lt;- function(){ x1 = fun1() x2 = fun2(5) x1 + x2 } fun4 &amp;lt;- function(z = globalenv()$z){ x1 = 1 + z x2 = fun2(2) x3 = fun3() x1 + x2 + x3 } Install drake development version in Github here.</description>
+		</item>
+      	
+		<item>
+			<title>git fork</title>
+			<link>https://yusbk.github.io/2020/06/14/git-fork/</link>
+			<pubDate>Sun, 14 Jun 2020 00:00:00 +0200</pubDate>
+			<guid>https://yusbk.github.io/2020/06/14/git-fork/</guid>
+			<description>This is just 100% a copy from gist so I can check it when needed.
+So you&amp;rsquo;ve cloned somebody&amp;rsquo;s repo from github, but now you want to fork it and contribute back. Never fear!
+Technically, when you fork &amp;ldquo;origin&amp;rdquo; should be your fork and &amp;ldquo;upstream&amp;rdquo; should be the project you forked; however, if you&amp;rsquo;re willing to break this convention then it&amp;rsquo;s easy.
+Off the top of my head
+ Fork their repo on Github In your local, add a new remote to your fork; then fetch it, and push your changes up to it  git remote add my-fork git@github.</description>
+		</item>
+      	
+		<item>
+			<title>Tetapkan PATH</title>
+			<link>https://yusbk.github.io/2019/01/20/tetapkan-path/</link>
+			<pubDate>Sun, 20 Jan 2019 00:00:00 +0100</pubDate>
+			<guid>https://yusbk.github.io/2019/01/20/tetapkan-path/</guid>
+			<description>Ubuntu Windows  Bila ingin memakai program di Ubuntu atau Windows melalui terminal, perlu daftarkan program tersebut di PATH. Disini saya terangkan caranya di Ubuntu dan Windows.
+Ubuntu Bila pasang program di Ubuntu melalui source boleh tetapkan dimana program disimpan melalui penetapkan --prefix bila melarikan ./configure. Cara biasa bila pasang program dari source ialah:
+./configure make make install Bila ./configure tidak menetapkan prefix secara tidak langsung komando yang dipakai ialah .</description>
+		</item>
+      	
+		<item>
+			<title>Susun factor</title>
+			<link>https://yusbk.github.io/2017/10/11/susun-factor/</link>
+			<pubDate>Wed, 11 Oct 2017 00:00:00 +0200</pubDate>
+			<guid>https://yusbk.github.io/2017/10/11/susun-factor/</guid>
+			<description>Susun ketinggian bar Nama di aksis  Bila buat bar plot cara asas di R atau menggunakan pakej ggplot2, susunan levels di x-aksis disusun semula menggikut abjad. Oleh sebab itu sekiranya ingin menyusun mengikut aturcara tertentu, levels di x-aksis harus disusun semula. Pelbagai cara untuk menyusun variable boleh dibuat contohnya menggunakan order (dari &amp;ldquo;base&amp;rdquo;) dan reorder (dari &amp;ldquo;stat&amp;rdquo;). Kedua-dua fungsi ini sudah tersedia di R tanpa perlu memuat turun sebarang pakej.</description>
+		</item>
+      	
+		<item>
+			<title>special symbol</title>
+			<link>https://yusbk.github.io/2017/08/31/dt-special-symbol/</link>
+			<pubDate>Thu, 31 Aug 2017 00:00:00 +0200</pubDate>
+			<guid>https://yusbk.github.io/2017/08/31/dt-special-symbol/</guid>
+			<description>.N Mult .SD dan .SDcols .I .GRP dan rleid Contoh dari manual  Hari ni bersempena Hari kemerdekaan Malaysia ada masa untuk ulang kaji pakej data.table. Hari ni ialah mengenai Special Symbol seperti .N, .I, .GRP, .BY. Penerangan ini diambil dari manual di data.table tetapi diedit sedikit. Untuk rujukan di sini.
+Ini data yang dipakai untuk membuat contoh:
+DT = data.table(x=rep(c(&amp;#34;b&amp;#34;,&amp;#34;a&amp;#34;,&amp;#34;c&amp;#34;),each=3), v=c(1,1,1,2,2,1,1,2,2), y=c(1,6,3,7,8), a=1:9, b=9:1) X = data.table(x=c(&amp;#34;c&amp;#34;,&amp;#34;b&amp;#34;), v=8:7, foo=c(4,2)) .</description>
+		</item>
+      	
+		<item>
+			<title>git submodule</title>
+			<link>https://yusbk.github.io/2020/09/25/git-submodule/</link>
+			<pubDate>Fri, 25 Sep 2020 13:02:14 +0200</pubDate>
+			<guid>https://yusbk.github.io/2020/09/25/git-submodule/</guid>
+			<description>Repo baru Bila buat repo baru dan ingin tetapkan submodule untuk tema harbor dan folder public ke yusbk.github.io. Submodule dipakai untuk memasukkan fungsi yang terdapat di repos lain ke dalam repos sendiri ie. subfolder di folder utama repos.
+Contoh dibawah ialah untuk memasukkan folder harbor ke dalam folder themes di folder utama. Subfolder public pula ialah submodule dari repo blog di Github.
+# themes git submodule add https://github.com/matsuyoshi30/harbor.git themes/harbor # yusbk.</description>
+		</item>
+      	
+		<item>
+			<title>Test figure</title>
+			<link>https://yusbk.github.io/2017/08/31/test-figure/</link>
+			<pubDate>Thu, 31 Aug 2017 00:00:00 +0200</pubDate>
+			<guid>https://yusbk.github.io/2017/08/31/test-figure/</guid>
+			<description>Percobaan untuk memasukkan gambar di post dan penetapan size.
+  </description>
+		</item>
+      	
+		<item>
+			<title>Hello World</title>
+			<link>https://yusbk.github.io/2020/06/11/hello-world/</link>
+			<pubDate>Thu, 11 Jun 2020 13:10:08 +0200</pubDate>
+			<guid>https://yusbk.github.io/2020/06/11/hello-world/</guid>
+			<description></description>
+		</item>
+      	
+		<item>
+			<title>Pemakaian lookup table</title>
+			<link>https://yusbk.github.io/2020/02/09/look-up-table/</link>
+			<pubDate>Sun, 09 Feb 2020 00:00:00 +0000</pubDate>
+			<guid>https://yusbk.github.io/2020/02/09/look-up-table/</guid>
+			<description>Lookup table dipakai untuk mempercepatkan proses dan mengelakkan pemakaian ifelse. Untuk mempercepatkan proses, ordered index untuk data.table harus dipakai.
+Cara 1 Kode ini dipakai sekiranya ingin mendapakan nilai di lookup tabel yang berhampiran. Contohnya nilai 1.3730682 adalah berhampiran dengan nilai 1.35.
+setDT(df1)[, ScoreLU := setDT(df2)[df1, ScoreLU , on = &amp;#34;DSCRpd&amp;#34;, roll = &amp;#34;nearest&amp;#34;]] Hasilnya seperti begini:
+DSCRpd Leverage TCB ScoreLU 1: 1.3730682 2.010122 -1590099.11 60 2: 1.0449597 2.680051 493370.85 30 3: 1.</description>
+		</item>
+      	
+	</channel>
+</rss>

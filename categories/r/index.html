@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+<title>R</title>
+
+
+  
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="alternate" type="application/rss+xml" href="https://yusbk.github.io/index.xml" title="ყųʂƙąɱ">
+
+<link id="dark-mode-theme" rel="stylesheet" href="https://yusbk.github.io/css/dark.css" />
+<link rel="stylesheet" href="https://yusbk.github.io/fontawesome/css/all.min.css" />
+
+<script src="https://yusbk.github.io/js/bundle.js"></script>
+<script src="https://yusbk.github.io/js/instantpage.js" type="module" defer></script>
+<meta name="generator" content="Hugo 0.75.1" />
+  </head>
+  <body>
+    
+  
+
+
+
+
+  <header>
+    <nav class="navbar">
+  <div class="nav">
+    
+      <a href="https://yusbk.github.io/" class="nav-logo">
+      <img src="https://yusbk.github.io/images/yuskam.png"
+           width="50"
+           height="50"
+           alt="Logo">
+      </a>
+    
+
+    <ul class="nav-links">
+      
+        
+          <li><a href="/about/" name="About"><i class="fas fa-user fa-lg"></i></a></li>
+        
+      
+        
+          <li><a href="/tags/" name="Tags"><i class="fas fa-tag fa-lg"></i></a></li>
+        
+      
+        
+          <li><a href="/search/" name="Search"><i class="fas fa-search fa-lg"></i></a></li>
+        
+      
+    </ul>
+  </div>
+</nav>
+
+    <div class="intro-header">
+      <div class="container">
+        <div class="categories-heading">
+          
+            <h1>R</h1>
+          
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+    <div class="posts-list">
+      
+        
+      
+
+      
+        <article class="post-preview">
+  <a href="https://yusbk.github.io/2020/02/09/look-up-table/">
+      <h2 class="post-title">Pemakaian lookup table</h2>
+  </a>
+  <div class="post-entry">
+    
+      <p>Lookup table dipakai untuk mempercepatkan proses dan mengelakkan pemakaian ifelse. Untuk mempercepatkan proses, ordered index untuk data.table harus dipakai.
+Cara 1 Kode ini dipakai sekiranya ingin mendapakan nilai di lookup tabel yang berhampiran. Contohnya nilai 1.3730682 adalah berhampiran dengan nilai 1.35.
+setDT(df1)[, ScoreLU := setDT(df2)[df1, ScoreLU , on = &#34;DSCRpd&#34;, roll = &#34;nearest&#34;]] Hasilnya seperti begini:
+DSCRpd Leverage TCB ScoreLU 1: 1.3730682 2.010122 -1590099.11 60 2: 1.0449597 2.680051 493370.85 30 3: 1.</p>
+        <a href="https://yusbk.github.io/2020/02/09/look-up-table/" class="post-read-more">Read More</a>
+    
+  </div>
+
+  <div class="postmeta">
+    <span class="meta-post">
+  <i class="fa fa-calendar-alt"></i>&nbsp;Feb 9, 2020
+  
+    &nbsp;&nbsp;&nbsp;<i class="fa fa-folder-open"></i>&nbsp;
+    
+      <a href="https://yusbk.github.io//categories/r/">R</a>&nbsp;
+    
+  
+</span>
+
+  </div>
+</article>
+
+      
+        <article class="post-preview">
+  <a href="https://yusbk.github.io/2019/09/02/package-r/">
+      <h2 class="post-title">Pasang pakej di R</h2>
+  </a>
+  <div class="post-entry">
+    
+      <p>Ini ialah beberapa penggunaan asas R yang amat berguna walaupun jarang dipakai. Antaranya:
+Pasang pakej Cara biasa untuk pasang pakej ialah menggunakan install.packages(). Tetapi sekiranya ingin memasang banyak pekej secara serentank dan memuatkan di R setelah pakej dipasang, cara begini boleh dipakai:
+list.of.packages &lt;- c(&#34;leaflet&#34;,&#34;ggplot2&#34;,&#34;dplyr&#34;,&#34;gridExtra&#34;,&#34;psych&#34;,&#34;data.table&#34;,&#34;sf&#34;,&#34;ggrepel&#34;) new.packages &lt;- list.of.packages[!(list.of.packages %in% installed.packages()[,&#34;Package&#34;])] if(length(new.packages)) install.packages(new.packages, repos = &#34;https://cloud.r-project.org/&#34;) sapply(list.of.packages, require, character.only = TRUE) Untuk pasang satu pakej boleh juga buat sebegini:
+if(!require(&#34;rreg&#34;)) {install.packages(&#34;rreg&#34;)} else {require(&#34;rreg&#34;)} Cara ini akan periksa sekiranya pakej rreg belum dipasang makan akan dipasang, sekiranya sudah ada maka akan diaktifkan.</p>
+        <a href="https://yusbk.github.io/2019/09/02/package-r/" class="post-read-more">Read More</a>
+    
+  </div>
+
+  <div class="postmeta">
+    <span class="meta-post">
+  <i class="fa fa-calendar-alt"></i>&nbsp;Sep 2, 2019
+  
+    &nbsp;&nbsp;&nbsp;<i class="fa fa-folder-open"></i>&nbsp;
+    
+      <a href="https://yusbk.github.io//categories/r/">R</a>&nbsp;
+    
+  
+</span>
+
+  </div>
+</article>
+
+      
+        <article class="post-preview">
+  <a href="https://yusbk.github.io/2019/07/24/ifelse/">
+      <h2 class="post-title">Pengunaan ifelse</h2>
+  </a>
+  <div class="post-entry">
+    
+      <p>Untuk menukarkan kode penggunaan ifelse adalah cara yang senang dipakai. Akan tetapi penggunaannya di base R memakai masa yang panjang terutama sekirannya melarikan di data yang besar. Ini kerana penggunaan ifelse di base terlebih dahulu menyusun data sebelum membuat pilihan.
+Cara yang diterangkan disini ialah untuk pemakaian ifelse di data.table dan cara-cara lain yang diperkenalkan di pakej dplyr atau pakej yang lainnya.
+Cara data.table Cara yang biasa di data.table ialah menggunakan teknik DT[i,j,by].</p>
+        <a href="https://yusbk.github.io/2019/07/24/ifelse/" class="post-read-more">Read More</a>
+    
+  </div>
+
+  <div class="postmeta">
+    <span class="meta-post">
+  <i class="fa fa-calendar-alt"></i>&nbsp;Jul 24, 2019
+  
+    &nbsp;&nbsp;&nbsp;<i class="fa fa-folder-open"></i>&nbsp;
+    
+      <a href="https://yusbk.github.io//categories/r/">R</a>&nbsp;
+    
+  
+</span>
+
+  </div>
+</article>
+
+      
+        <article class="post-preview">
+  <a href="https://yusbk.github.io/2019/06/24/vector-object/">
+      <h2 class="post-title">Dapatkan objekt sebagai vektor</h2>
+  </a>
+  <div class="post-entry">
+    
+      <p>Untuk menggunakan pelbagai objekt tanpa mengulangi komando beberapa kali boleh dilakukan semada menggunakan loop atau salah satu cara apply. Masalahnya bila objekt-objekt disenaraikan sebagai vektor, objekt tersebut ditukarkan ke struktur chr. Oleh sebab itu objekt tersebut tidak dapat diproses seterusnya.
+Salah satu penyelesaian masalah ini ialah menggunakan sapply. Akan tetapi ianya bergantung dengan penggunaan argument:
+- `USE.NAME = TRUE`. - `get()`  Contohnya, bila ingin menggunakan objekt2 ini di .GlobalEnv:</p>
+        <a href="https://yusbk.github.io/2019/06/24/vector-object/" class="post-read-more">Read More</a>
+    
+  </div>
+
+  <div class="postmeta">
+    <span class="meta-post">
+  <i class="fa fa-calendar-alt"></i>&nbsp;Jun 24, 2019
+  
+    &nbsp;&nbsp;&nbsp;<i class="fa fa-folder-open"></i>&nbsp;
+    
+      <a href="https://yusbk.github.io//categories/r/">R</a>&nbsp;
+    
+  
+</span>
+
+  </div>
+</article>
+
+      
+        <article class="post-preview">
+  <a href="https://yusbk.github.io/2019/02/25/peta-sf/">
+      <h2 class="post-title">Buat peta cara sf</h2>
+  </a>
+  <div class="post-entry">
+    
+      <p>Untuk membuat peta menggunakan R boleh memakai pelbagai jenis pakej. Cara yang senang ialah samada cara sp atau sf. Penerangan di sini menggunakan cara sf. Untuk mengikuti cara ini, pakej-pekej di bawah perlu dipasangkan terlebih dahulu.
+list.of.packages &lt;- c(&#34;ggplot2&#34;,&#34;dplyr&#34;,&#34;sf&#34;,&#34;ggrepel&#34;) new.packages &lt;- list.of.packages[!(list.of.packages %in% installed.packages()[,&#34;Package&#34;])] if(length(new.packages)) install.packages(new.packages) sapply(list.of.packages, require, character.only = TRUE) kart_sf = sf::st_read(&#34;~/Git-personal/Rujukan-R/norge/NOR_adm1.shp&#34;, stringsAsFactors = FALSE) class(kart_sf) Sekiranya ada masalah memasang pekej sf di Ubuntu disebabkan masalah di gdal-config, pasangkan libgdal-dev diterminal.</p>
+        <a href="https://yusbk.github.io/2019/02/25/peta-sf/" class="post-read-more">Read More</a>
+    
+  </div>
+
+  <div class="postmeta">
+    <span class="meta-post">
+  <i class="fa fa-calendar-alt"></i>&nbsp;Feb 25, 2019
+  
+    &nbsp;&nbsp;&nbsp;<i class="fa fa-folder-open"></i>&nbsp;
+    
+      <a href="https://yusbk.github.io//categories/r/">R</a>&nbsp;
+    
+  
+</span>
+
+  </div>
+</article>
+
+      
+      </div>
+    
+    <ul class="pager">
+      
+      
+        <li class="next">
+          <a href="https://yusbk.github.io/categories/r/page/2/">Older &rarr;</a>
+        </li>
+      
+    </ul>
+  
+</div>
+
+    <footer>
+  
+<div>
+    
+    <a href="https://twitter.com/GoHugoIO" name="twitter"><i class="fab fa-twitter"></i></a>
+    
+</div>
+
+  <div class="container">
+    <p class="credits copyright">
+      <a href="https://yusbk.github.io/about">Yusman Kamaleri</a>
+      &nbsp;&copy;
+      2020
+      
+      &nbsp;/&nbsp;
+      <a href="https://yusbk.github.io/">ყųʂƙąɱ</a>
+      
+      &nbsp;&ndash;&nbsp;
+      <i class="fas fa-moon" id="dark-mode-toggle"></i>
+
+    <p class="credits theme-by">
+      Powered By <a href="https://gohugo.io">Hugo</a>&nbsp;Theme <a
+        href="https://github.com/matsuyoshi30/harbor">Harbor</a>
+    </p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

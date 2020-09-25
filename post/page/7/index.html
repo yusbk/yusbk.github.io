@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+<title>Posts</title>
+
+
+  
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="alternate" type="application/rss+xml" href="https://yusbk.github.io/index.xml" title="ყųʂƙąɱ">
+
+<link id="dark-mode-theme" rel="stylesheet" href="https://yusbk.github.io/css/dark.css" />
+<link rel="stylesheet" href="https://yusbk.github.io/fontawesome/css/all.min.css" />
+
+<script src="https://yusbk.github.io/js/bundle.js"></script>
+<script src="https://yusbk.github.io/js/instantpage.js" type="module" defer></script>
+<meta name="generator" content="Hugo 0.75.1" />
+  </head>
+  <body>
+    
+  
+
+
+
+
+  <header>
+    <nav class="navbar">
+  <div class="nav">
+    
+      <a href="https://yusbk.github.io/" class="nav-logo">
+      <img src="https://yusbk.github.io/images/yuskam.png"
+           width="50"
+           height="50"
+           alt="Logo">
+      </a>
+    
+
+    <ul class="nav-links">
+      
+        
+          <li><a href="/about/" name="About"><i class="fas fa-user fa-lg"></i></a></li>
+        
+      
+        
+          <li><a href="/tags/" name="Tags"><i class="fas fa-tag fa-lg"></i></a></li>
+        
+      
+        
+          <li><a href="/search/" name="Search"><i class="fas fa-search fa-lg"></i></a></li>
+        
+      
+    </ul>
+  </div>
+</nav>
+
+    <div class="intro-header">
+      <div class="container">
+        <div class="post-heading">
+          
+            <h1>Posts</h1>
+          
+          
+            <span class="meta-post">
+  <i class="fa fa-calendar-alt"></i>&nbsp;Sep 25, 2020
+  
+</span>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+    <div class="posts-list">
+      
+        
+      
+
+      
+        <article class="post-preview">
+  <a href="https://yusbk.github.io/2018/01/02/recode/">
+      <h2 class="post-title">Recode atau compute data</h2>
+  </a>
+  <div class="post-entry">
+    
+      <p>Ini ialah cara untuk recode atau compute data menggunakan pakej data.table.
+Recode Mendukarkan nilai dikolom tanpa membuat kolom baru boleh dilakukan seperti begini. Contoh dataset yang digunakan untuk proses ini ialah DT.
+library(data.table) DT &lt;- data.table(a=rep(0:1, 5), b=letters[1:10]) &gt; DT a b 1: 0 a 2: 1 b 3: 0 c 4: 1 d 5: 0 e 6: 1 f 7: 0 g 8: 1 h 9: 0 i 10: 1 j  Bagaimana untuk menukarkan kod di kolom a dari [0,1] ke [3,4]?</p>
+        <a href="https://yusbk.github.io/2018/01/02/recode/" class="post-read-more">Read More</a>
+    
+  </div>
+
+  <div class="postmeta">
+    <span class="meta-post">
+  <i class="fa fa-calendar-alt"></i>&nbsp;Jan 2, 2018
+  
+    &nbsp;&nbsp;&nbsp;<i class="fa fa-folder-open"></i>&nbsp;
+    
+      <a href="https://yusbk.github.io//categories/data.table/">data.table</a>&nbsp;
+    
+  
+</span>
+
+  </div>
+</article>
+
+      
+        <article class="post-preview">
+  <a href="https://yusbk.github.io/2017/12/22/col-and-row/">
+      <h2 class="post-title">Rownames atau colnames</h2>
+  </a>
+  <div class="post-entry">
+    
+      <p>Rownames Pernahkah melihat data frame dimana kolom pertama tidak ada nama dan anda tidak tahu bagaimana untuk merujuk kolom tersebut? Sekiranya anda pernah menemui masalah tersebut sila baca penerangan dan penyelesaian di sini.
+Situasi ini adalah disebabkan nama tersebut ialah nama untuk barisan sahaja i.e rownames, seperti nama untuk kolom i.e colnames. Contohnya:
+DT &lt;- mtcars[1:5, 1:5] DT Di sini anda lihat kolom pertama tidak mempunyai nama. Untuk mengetahui nama barisan boleh gunakan rownames(DT).</p>
+        <a href="https://yusbk.github.io/2017/12/22/col-and-row/" class="post-read-more">Read More</a>
+    
+  </div>
+
+  <div class="postmeta">
+    <span class="meta-post">
+  <i class="fa fa-calendar-alt"></i>&nbsp;Dec 22, 2017
+  
+    &nbsp;&nbsp;&nbsp;<i class="fa fa-folder-open"></i>&nbsp;
+    
+      <a href="https://yusbk.github.io//categories/r/">R</a>&nbsp;
+    
+  
+</span>
+
+  </div>
+</article>
+
+      
+        <article class="post-preview">
+  <a href="https://yusbk.github.io/2017/11/09/pkg-rreg/">
+      <h2 class="post-title">R pakej `rreg`</h2>
+  </a>
+  <div class="post-entry">
+    
+      <p>Pakej rreg sudah dimuatkan di CRAN pada 8 Ogos 2017. Pakej ini dibuat untuk memudahkan kerja-kerja visualisasi untuk data-data daripada pendaftaran kesihatan di Nasjonalt Servicemiljø for medisinske kvalitetsregistre. Untuk memakai pakej rreg boleh dipasang secara langsung dari CRAN.
+install.packages(&#34;rreg&#34;, dependencies = TRUE) Pakaj ini menggandungi beberapa fungsi untuk visualisasi data. Fungsi-fungsi berikut ialah:
+ Bar chart dengan regbar Radar diagram menggunakan regrad Untuk menunjukkan tren dengan regline Menggunakan &ldquo;confidence interval&rdquo; atau &ldquo;standard error&rdquo; dengan regerr  Contoh penggunaan boleh dilihat dengan melarikan contoh-contoh yang tersedia dengan menggunakan fungsi example.</p>
+        <a href="https://yusbk.github.io/2017/11/09/pkg-rreg/" class="post-read-more">Read More</a>
+    
+  </div>
+
+  <div class="postmeta">
+    <span class="meta-post">
+  <i class="fa fa-calendar-alt"></i>&nbsp;Nov 9, 2017
+  
+    &nbsp;&nbsp;&nbsp;<i class="fa fa-folder-open"></i>&nbsp;
+    
+      <a href="https://yusbk.github.io//categories/package/">package</a>&nbsp;
+    
+  
+</span>
+
+  </div>
+</article>
+
+      
+        <article class="post-preview">
+  <a href="https://yusbk.github.io/2017/10/23/menamakan-level-di-faktor/">
+      <h2 class="post-title">Menamakan level di faktor</h2>
+  </a>
+  <div class="post-entry">
+    
+      <p>Kekadang nama untuk level yang diberikan di faktor bagi variabel jenis kumpulan (category) tidak bersesuaian dengan yang kita inginkan. Untuk menukarkan nama level tersebut kepada nama-nama yang lain, beberapa cara boleh dipakai. Sesetengah cara yang ditunjukkan di sini bergantung dengan jenis data yang dipakai iaitu data.frame atau data.table.
+Data frame Untuk menggunakan cara data.frame ialah seperti di bawah. Sekiranya df$bandar tidak ditukarkan ke factor, nilai levels yang ditetapkan iaitu nama bandar-bandar hanya akan diketahui bila melihat struktur data dengan str (structure) atau attr (attribute).</p>
+        <a href="https://yusbk.github.io/2017/10/23/menamakan-level-di-faktor/" class="post-read-more">Read More</a>
+    
+  </div>
+
+  <div class="postmeta">
+    <span class="meta-post">
+  <i class="fa fa-calendar-alt"></i>&nbsp;Oct 23, 2017
+  
+    &nbsp;&nbsp;&nbsp;<i class="fa fa-folder-open"></i>&nbsp;
+    
+      <a href="https://yusbk.github.io//categories/data.table/">data.table</a>&nbsp;
+    
+  
+</span>
+
+  </div>
+</article>
+
+      
+        <article class="post-preview">
+  <a href="https://yusbk.github.io/2017/09/13/locale/">
+      <h2 class="post-title">Masalah locale</h2>
+  </a>
+  <div class="post-entry">
+    
+      <p>Kekadang bila buat analisis contohnya dengan menggunakan funksi grep timbul masalah seperti begini:
+grep(&#34;settav&#34;, colnames(regdata), value = TRUE) character(0) Warning messages: 1: In grep(&#34;settav&#34;, colnames(regdata), value = TRUE) : input string 9 is invalid in this locale 2: In grep(&#34;settav&#34;, colnames(regdata), value = TRUE) : input string 10 is invalid in this locale 3: In grep(&#34;settav&#34;, colnames(regdata), value = TRUE) : input string 12 is invalid in this locale 4: In grep(&#34;settav&#34;, colnames(regdata), value = TRUE) : input string 13 is invalid in this locale 5: In grep(&#34;settav&#34;, colnames(regdata), value = TRUE) : input string 14 is invalid in this locale Ini adalah disebabkan oleh penetapan bahasa yang digunakan.</p>
+        <a href="https://yusbk.github.io/2017/09/13/locale/" class="post-read-more">Read More</a>
+    
+  </div>
+
+  <div class="postmeta">
+    <span class="meta-post">
+  <i class="fa fa-calendar-alt"></i>&nbsp;Sep 13, 2017
+  
+    &nbsp;&nbsp;&nbsp;<i class="fa fa-folder-open"></i>&nbsp;
+    
+      <a href="https://yusbk.github.io//categories/aturcara/">aturcara</a>&nbsp;
+    
+  
+</span>
+
+  </div>
+</article>
+
+      
+      </div>
+    
+    <ul class="pager">
+      
+        <li class="previous">
+          <a href="https://yusbk.github.io/post/page/6/">&larr; Newer</a>
+        </li>
+      
+      
+        <li class="next">
+          <a href="https://yusbk.github.io/post/page/8/">Older &rarr;</a>
+        </li>
+      
+    </ul>
+  
+</div>
+
+    <footer>
+  
+<div>
+    
+    <a href="https://twitter.com/GoHugoIO" name="twitter"><i class="fab fa-twitter"></i></a>
+    
+</div>
+
+  <div class="container">
+    <p class="credits copyright">
+      <a href="https://yusbk.github.io/about">Yusman Kamaleri</a>
+      &nbsp;&copy;
+      2020
+      
+      &nbsp;/&nbsp;
+      <a href="https://yusbk.github.io/">ყųʂƙąɱ</a>
+      
+      &nbsp;&ndash;&nbsp;
+      <i class="fas fa-moon" id="dark-mode-toggle"></i>
+
+    <p class="credits theme-by">
+      Powered By <a href="https://gohugo.io">Hugo</a>&nbsp;Theme <a
+        href="https://github.com/matsuyoshi30/harbor">Harbor</a>
+    </p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

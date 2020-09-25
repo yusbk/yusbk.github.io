@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+<title>Dapatkan objekt sebagai vektor</title>
+
+
+  
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="alternate" type="application/rss+xml" href="https://yusbk.github.io/index.xml" title="ყųʂƙąɱ">
+
+<link id="dark-mode-theme" rel="stylesheet" href="https://yusbk.github.io/css/dark.css" />
+<link rel="stylesheet" href="https://yusbk.github.io/fontawesome/css/all.min.css" />
+
+<script src="https://yusbk.github.io/js/bundle.js"></script>
+<script src="https://yusbk.github.io/js/instantpage.js" type="module" defer></script>
+<meta name="generator" content="Hugo 0.75.1" />
+  </head>
+  <body>
+    
+  
+
+
+
+
+  <header>
+    <nav class="navbar">
+  <div class="nav">
+    
+      <a href="https://yusbk.github.io/" class="nav-logo">
+      <img src="https://yusbk.github.io/images/yuskam.png"
+           width="50"
+           height="50"
+           alt="Logo">
+      </a>
+    
+
+    <ul class="nav-links">
+      
+        
+          <li><a href="/about/" name="About"><i class="fas fa-user fa-lg"></i></a></li>
+        
+      
+        
+          <li><a href="/tags/" name="Tags"><i class="fas fa-tag fa-lg"></i></a></li>
+        
+      
+        
+          <li><a href="/search/" name="Search"><i class="fas fa-search fa-lg"></i></a></li>
+        
+      
+    </ul>
+  </div>
+</nav>
+
+    <div class="intro-header">
+      <div class="container">
+        <div class="post-heading">
+          
+            <h1>Dapatkan objekt sebagai vektor</h1>
+          
+          
+            <span class="meta-post">
+  <i class="fa fa-calendar-alt"></i>&nbsp;Jun 24, 2019
+  
+    &nbsp;&nbsp;&nbsp;<i class="fa fa-folder-open"></i>&nbsp;
+    
+      <a href="https://yusbk.github.io//categories/r/">R</a>&nbsp;
+    
+  
+</span>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+  <div class="container" role="main">
+    <article class="article" class="blog-post">
+      
+    <p>Untuk menggunakan pelbagai objekt tanpa mengulangi komando beberapa kali boleh dilakukan semada menggunakan <em>loop</em> atau salah satu cara <em>apply</em>. Masalahnya bila objekt-objekt disenaraikan sebagai vektor, objekt tersebut ditukarkan ke struktur <em>chr</em>. Oleh sebab itu objekt tersebut tidak dapat diproses seterusnya.</p>
+<p>Salah satu penyelesaian masalah ini ialah menggunakan <em>sapply</em>. Akan tetapi ianya bergantung dengan penggunaan argument:</p>
+<pre><code>- `USE.NAME = TRUE`.
+- `get()`
+</code></pre>
+<p>Contohnya, bila ingin menggunakan objekt2 ini di <em>.GlobalEnv</em>:</p>
+<pre><code>dt2000
+dt2001
+dt2002
+dt2013
+dt2014
+</code></pre>
+<p>Untuk dapatkan semua objekt-objekt diatas, boleh dikumpulkan menggunakan vector seperti begini:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">objAll <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">grep</span>(<span style="color:#e6db74">&#34;^(dt200|dt201)*$&#34;</span>, <span style="color:#a6e22e">ls</span>(), ignore.case <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>, value <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>)
+
+objAll
+[1] <span style="color:#e6db74">&#34;dt2000&#34;</span> <span style="color:#e6db74">&#34;dt2001&#34;</span> <span style="color:#e6db74">&#34;dt2002&#34;</span> <span style="color:#e6db74">&#34;dt2013&#34;</span> <span style="color:#e6db74">&#34;dt2014&#34;</span>
+</code></pre></div><p>Untuk mencapai objekt2 itu melalui <code>objAll</code>, boleh menggunakan <em>sapply</em>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">sapply</span>(objAll, <span style="color:#a6e22e">function</span>(x) <span style="color:#a6e22e">setDT</span>(<span style="color:#a6e22e">get</span>(x)), USE.NAMES <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>)
+</code></pre></div><p>Atau untuk menggunakan fungsi lain:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#75715e">## Convert til excel</span>
+indK <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">grep</span>(<span style="color:#e6db74">&#34;^dt200&#34;</span>, <span style="color:#a6e22e">ls</span>(), value <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>)
+pathXL <span style="color:#f92672">&lt;-</span> <span style="color:#e6db74">&#34;~/Git-work/bdr/rapport/portal/excel/&#34;</span>
+<span style="color:#a6e22e">sapply</span>(indK, <span style="color:#a6e22e">function</span>(x) <span style="color:#a6e22e">write.xlsx</span>(<span style="color:#a6e22e">get</span>(x), <span style="color:#a6e22e">paste0</span>(pathXL, x, <span style="color:#e6db74">&#34;.xlsx&#34;</span>)), USE.NAMES <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>)
+</code></pre></div><p>Komando diatas menukarkan semua object di <code>objAll</code> ke <em>data.table</em>. Tanpa memakai <code>USE.NAMES</code> komando ini tidak akan berhasil kerana vector di <code>objAll</code> dibaca sebagai <em>character</em>. Selain itu penggunaan <em>get</em> juga penting untuk memastikan yang kandungan di <code>objAll</code> mempunyai nilai.</p>
+<p>Contoh komando untuk dapatkan semua nama kolom <code>sykehus</code> di semua data.table. Penggunaan <code>\\b</code> diawal dan akhir perkataan ialah untuk menetapkan nama kolom betul-betul hanya <code>sykehus</code> tanpa tambahan contohnya <code>inn_sykehus</code> atau <code>sykehus_2</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">sapply</span>(objAll, <span style="color:#a6e22e">function</span>(x), <span style="color:#a6e22e">grep</span>(<span style="color:#e6db74">&#34;\\bsykehus\\b&#34;</span>, <span style="color:#a6e22e">names</span>(<span style="color:#a6e22e">get</span>(x)), ignore.case <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>, value <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>), USE.NAMES <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>)
+</code></pre></div>
+
+
+      
+        <div class="blog-tags">
+          
+            <a href="https://yusbk.github.io//tags/r/">R</a>&nbsp;
+          
+            <a href="https://yusbk.github.io//tags/object/">object</a>&nbsp;
+          
+        </div>
+      
+    </article>
+    
+    
+      
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        (function() {
+            
+            
+            if (window.location.hostname == "localhost") return;
+
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            var disqus_shortname = 'yusbk-github-io';
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="https://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+      
+</div>
+
+    <footer>
+  
+<div>
+    
+    <a href="https://twitter.com/GoHugoIO" name="twitter"><i class="fab fa-twitter"></i></a>
+    
+</div>
+
+  <div class="container">
+    <p class="credits copyright">
+      <a href="https://yusbk.github.io/about">Yusman Kamaleri</a>
+      &nbsp;&copy;
+      2020
+      
+      &nbsp;/&nbsp;
+      <a href="https://yusbk.github.io/">ყųʂƙąɱ</a>
+      
+      &nbsp;&ndash;&nbsp;
+      <i class="fas fa-moon" id="dark-mode-toggle"></i>
+
+    <p class="credits theme-by">
+      Powered By <a href="https://gohugo.io">Hugo</a>&nbsp;Theme <a
+        href="https://github.com/matsuyoshi30/harbor">Harbor</a>
+    </p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+<title>Tambah kolom pelbagai data.table</title>
+
+
+  
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="alternate" type="application/rss+xml" href="https://yusbk.github.io/index.xml" title="ყųʂƙąɱ">
+
+<link id="dark-mode-theme" rel="stylesheet" href="https://yusbk.github.io/css/dark.css" />
+<link rel="stylesheet" href="https://yusbk.github.io/fontawesome/css/all.min.css" />
+
+<script src="https://yusbk.github.io/js/bundle.js"></script>
+<script src="https://yusbk.github.io/js/instantpage.js" type="module" defer></script>
+<meta name="generator" content="Hugo 0.75.1" />
+  </head>
+  <body>
+    
+  
+
+
+
+
+  <header>
+    <nav class="navbar">
+  <div class="nav">
+    
+      <a href="https://yusbk.github.io/" class="nav-logo">
+      <img src="https://yusbk.github.io/images/yuskam.png"
+           width="50"
+           height="50"
+           alt="Logo">
+      </a>
+    
+
+    <ul class="nav-links">
+      
+        
+          <li><a href="/about/" name="About"><i class="fas fa-user fa-lg"></i></a></li>
+        
+      
+        
+          <li><a href="/tags/" name="Tags"><i class="fas fa-tag fa-lg"></i></a></li>
+        
+      
+        
+          <li><a href="/search/" name="Search"><i class="fas fa-search fa-lg"></i></a></li>
+        
+      
+    </ul>
+  </div>
+</nav>
+
+    <div class="intro-header">
+      <div class="container">
+        <div class="post-heading">
+          
+            <h1>Tambah kolom pelbagai data.table</h1>
+          
+          
+            <span class="meta-post">
+  <i class="fa fa-calendar-alt"></i>&nbsp;Jun 24, 2018
+  
+    &nbsp;&nbsp;&nbsp;<i class="fa fa-folder-open"></i>&nbsp;
+    
+      <a href="https://yusbk.github.io//categories/data.table/">data.table</a>&nbsp;
+    
+  
+</span>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+  <div class="container" role="main">
+    <article class="article" class="blog-post">
+      
+    <p>Untuk menambah kolom baru di data.table boleh menggunakan <code>:=</code>. Sekiranya ingin membuat kolom baru secara loop di pelbagai data.table, cara begini boleh dibuat. Cara-cara ini diambil dari <a href="https://stackoverflow.com/questions/37059663/data-table-adding-column-to-several-data-tables-in-loop">StackOverflow</a>.</p>
+<h1 id="list">List</h1>
+<p>Cara pertama boleh dibuat dengan mebuat <em>list</em> untuk semua data.table dimana kolom baru ingin ditambah.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">library</span>(data.table)
+
+my_dts <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">list </span>(
+  centro <span style="color:#f92672">=</span> <span style="color:#a6e22e">data.table</span>(x<span style="color:#f92672">=</span><span style="color:#66d9ef">letters</span>[1<span style="color:#f92672">:</span><span style="color:#ae81ff">5</span>], y <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">5</span>),
+  sur <span style="color:#f92672">=</span> <span style="color:#a6e22e">data.table</span>(x<span style="color:#f92672">=</span><span style="color:#66d9ef">letters</span>[2<span style="color:#f92672">:</span><span style="color:#ae81ff">7</span>], y <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span><span style="color:#f92672">:</span><span style="color:#ae81ff">8</span>),
+  norte <span style="color:#f92672">=</span> <span style="color:#a6e22e">data.table</span>(x<span style="color:#f92672">=</span><span style="color:#66d9ef">letters</span>[2<span style="color:#f92672">:</span><span style="color:#ae81ff">10</span>], y <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span><span style="color:#f92672">:</span><span style="color:#ae81ff">11</span>)
+)
+
+st <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;centro&#34;</span>, <span style="color:#e6db74">&#34;sur&#34;</span>, <span style="color:#e6db74">&#34;norte&#34;</span>)
+<span style="color:#a6e22e">for </span>(i in st) my_dts[[i]][, store <span style="color:#f92672">:=</span> i]
+</code></pre></div><p>Sekiranya rawdata belum disatukan, boleh dilaksanakan seperti begini. Cara ini membaca semua data sebagai <em>csv</em> dan disatukan sebagai list.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">st <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;centro&#34;</span>, <span style="color:#e6db74">&#34;sur&#34;</span>, <span style="color:#e6db74">&#34;norte&#34;</span>)
+
+all_stores <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">do.call</span>(
+  what <span style="color:#f92672">=</span> rbind,
+  args <span style="color:#f92672">=</span> <span style="color:#a6e22e">lapply</span>(
+    X <span style="color:#f92672">=</span> st,
+    FUN <span style="color:#f92672">=</span> <span style="color:#a6e22e">function</span>(storeNM){
+      temp <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">fread</span>(input <span style="color:#f92672">=</span> <span style="color:#a6e22e">paste0</span>(storeNM, <span style="color:#e6db74">&#39;.csv&#39;</span>))
+      temp[, store <span style="color:#f92672">:=</span> storeNM]
+      <span style="color:#a6e22e">return</span>(temp)
+    }
+  )
+)
+</code></pre></div><h1 id="vector">Vector</h1>
+<p>Semua data.table yang disatukan ke vektor. Cara ini menggunakan fungsi <em>assign</em> dan <em>get</em>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">for </span>(i in st){
+  <span style="color:#a6e22e">assign</span>(i, <span style="color:#a6e22e">get</span>(i)[, store <span style="color:#f92672">:=</span> i])
+}
+</code></pre></div>
+
+
+      
+        <div class="blog-tags">
+          
+            <a href="https://yusbk.github.io//tags/r/">R</a>&nbsp;
+          
+            <a href="https://yusbk.github.io//tags/data.table/">data.table</a>&nbsp;
+          
+        </div>
+      
+    </article>
+    
+    
+      
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        (function() {
+            
+            
+            if (window.location.hostname == "localhost") return;
+
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            var disqus_shortname = 'yusbk-github-io';
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="https://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+      
+</div>
+
+    <footer>
+  
+<div>
+    
+    <a href="https://twitter.com/GoHugoIO" name="twitter"><i class="fab fa-twitter"></i></a>
+    
+</div>
+
+  <div class="container">
+    <p class="credits copyright">
+      <a href="https://yusbk.github.io/about">Yusman Kamaleri</a>
+      &nbsp;&copy;
+      2020
+      
+      &nbsp;/&nbsp;
+      <a href="https://yusbk.github.io/">ყųʂƙąɱ</a>
+      
+      &nbsp;&ndash;&nbsp;
+      <i class="fas fa-moon" id="dark-mode-toggle"></i>
+
+    <p class="credits theme-by">
+      Powered By <a href="https://gohugo.io">Hugo</a>&nbsp;Theme <a
+        href="https://github.com/matsuyoshi30/harbor">Harbor</a>
+    </p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

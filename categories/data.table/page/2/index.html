@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+<title>data.table</title>
+
+
+  
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="alternate" type="application/rss+xml" href="https://yusbk.github.io/index.xml" title="ყųʂƙąɱ">
+
+<link id="dark-mode-theme" rel="stylesheet" href="https://yusbk.github.io/css/dark.css" />
+<link rel="stylesheet" href="https://yusbk.github.io/fontawesome/css/all.min.css" />
+
+<script src="https://yusbk.github.io/js/bundle.js"></script>
+<script src="https://yusbk.github.io/js/instantpage.js" type="module" defer></script>
+<meta name="generator" content="Hugo 0.75.1" />
+  </head>
+  <body>
+    
+  
+
+
+
+
+  <header>
+    <nav class="navbar">
+  <div class="nav">
+    
+      <a href="https://yusbk.github.io/" class="nav-logo">
+      <img src="https://yusbk.github.io/images/yuskam.png"
+           width="50"
+           height="50"
+           alt="Logo">
+      </a>
+    
+
+    <ul class="nav-links">
+      
+        
+          <li><a href="/about/" name="About"><i class="fas fa-user fa-lg"></i></a></li>
+        
+      
+        
+          <li><a href="/tags/" name="Tags"><i class="fas fa-tag fa-lg"></i></a></li>
+        
+      
+        
+          <li><a href="/search/" name="Search"><i class="fas fa-search fa-lg"></i></a></li>
+        
+      
+    </ul>
+  </div>
+</nav>
+
+    <div class="intro-header">
+      <div class="container">
+        <div class="categories-heading">
+          
+            <h1>data.table</h1>
+          
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+    <div class="posts-list">
+      
+        
+      
+
+      
+        <article class="post-preview">
+  <a href="https://yusbk.github.io/2018/01/02/recode/">
+      <h2 class="post-title">Recode atau compute data</h2>
+  </a>
+  <div class="post-entry">
+    
+      <p>Ini ialah cara untuk recode atau compute data menggunakan pakej data.table.
+Recode Mendukarkan nilai dikolom tanpa membuat kolom baru boleh dilakukan seperti begini. Contoh dataset yang digunakan untuk proses ini ialah DT.
+library(data.table) DT &lt;- data.table(a=rep(0:1, 5), b=letters[1:10]) &gt; DT a b 1: 0 a 2: 1 b 3: 0 c 4: 1 d 5: 0 e 6: 1 f 7: 0 g 8: 1 h 9: 0 i 10: 1 j  Bagaimana untuk menukarkan kod di kolom a dari [0,1] ke [3,4]?</p>
+        <a href="https://yusbk.github.io/2018/01/02/recode/" class="post-read-more">Read More</a>
+    
+  </div>
+
+  <div class="postmeta">
+    <span class="meta-post">
+  <i class="fa fa-calendar-alt"></i>&nbsp;Jan 2, 2018
+  
+    &nbsp;&nbsp;&nbsp;<i class="fa fa-folder-open"></i>&nbsp;
+    
+      <a href="https://yusbk.github.io//categories/data.table/">data.table</a>&nbsp;
+    
+  
+</span>
+
+  </div>
+</article>
+
+      
+        <article class="post-preview">
+  <a href="https://yusbk.github.io/2017/10/23/menamakan-level-di-faktor/">
+      <h2 class="post-title">Menamakan level di faktor</h2>
+  </a>
+  <div class="post-entry">
+    
+      <p>Kekadang nama untuk level yang diberikan di faktor bagi variabel jenis kumpulan (category) tidak bersesuaian dengan yang kita inginkan. Untuk menukarkan nama level tersebut kepada nama-nama yang lain, beberapa cara boleh dipakai. Sesetengah cara yang ditunjukkan di sini bergantung dengan jenis data yang dipakai iaitu data.frame atau data.table.
+Data frame Untuk menggunakan cara data.frame ialah seperti di bawah. Sekiranya df$bandar tidak ditukarkan ke factor, nilai levels yang ditetapkan iaitu nama bandar-bandar hanya akan diketahui bila melihat struktur data dengan str (structure) atau attr (attribute).</p>
+        <a href="https://yusbk.github.io/2017/10/23/menamakan-level-di-faktor/" class="post-read-more">Read More</a>
+    
+  </div>
+
+  <div class="postmeta">
+    <span class="meta-post">
+  <i class="fa fa-calendar-alt"></i>&nbsp;Oct 23, 2017
+  
+    &nbsp;&nbsp;&nbsp;<i class="fa fa-folder-open"></i>&nbsp;
+    
+      <a href="https://yusbk.github.io//categories/data.table/">data.table</a>&nbsp;
+    
+  
+</span>
+
+  </div>
+</article>
+
+      
+        <article class="post-preview">
+  <a href="https://yusbk.github.io/2017/07/17/kolom-index/">
+      <h2 class="post-title">Pilih kolom cara indeks atau nama kolom</h2>
+  </a>
+  <div class="post-entry">
+    
+      <p>Bila memakai pakej data.table untuk membuat fungsi sebagai kode R, pemilihan kolom boleh dibuat dengan menetapkan nama kolom atau indeks kolom. Akan tetapi pemakaian indeks untuk memilih kolom tidak disarankan kerana ia akan mengakibatkan kode susah untuk difahami. Selain itu sekiranya ada kesilapan kode disebabkan indeks yang merujuk kolom yang tidak diingini, mesej amaran tidak akan diberikan. Oleh itu adalah disarankan untuk memakai nama kolom berbanding indeks kolom.
+Walaubagaimanapun, sekiranya masih ingin memakai indeks kolom juga atas sebab-sebab tertentu, terdapat tiga cara yang boleh dipakai.</p>
+        <a href="https://yusbk.github.io/2017/07/17/kolom-index/" class="post-read-more">Read More</a>
+    
+  </div>
+
+  <div class="postmeta">
+    <span class="meta-post">
+  <i class="fa fa-calendar-alt"></i>&nbsp;Jul 17, 2017
+  
+    &nbsp;&nbsp;&nbsp;<i class="fa fa-folder-open"></i>&nbsp;
+    
+      <a href="https://yusbk.github.io//categories/data.table/">data.table</a>&nbsp;
+    
+  
+</span>
+
+  </div>
+</article>
+
+      
+      </div>
+    
+    <ul class="pager">
+      
+        <li class="previous">
+          <a href="https://yusbk.github.io/categories/data.table/page/1/">&larr; Newer</a>
+        </li>
+      
+      
+    </ul>
+  
+</div>
+
+    <footer>
+  
+<div>
+    
+    <a href="https://twitter.com/GoHugoIO" name="twitter"><i class="fab fa-twitter"></i></a>
+    
+</div>
+
+  <div class="container">
+    <p class="credits copyright">
+      <a href="https://yusbk.github.io/about">Yusman Kamaleri</a>
+      &nbsp;&copy;
+      2020
+      
+      &nbsp;/&nbsp;
+      <a href="https://yusbk.github.io/">ყųʂƙąɱ</a>
+      
+      &nbsp;&ndash;&nbsp;
+      <i class="fas fa-moon" id="dark-mode-toggle"></i>
+
+    <p class="credits theme-by">
+      Powered By <a href="https://gohugo.io">Hugo</a>&nbsp;Theme <a
+        href="https://github.com/matsuyoshi30/harbor">Harbor</a>
+    </p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
