@@ -128,7 +128,11 @@ git submodule update --rebase --merge
 Sekiranya masih tidak berhasil, padamkan folder submodule <code>harbor</code> dan larikan semua komando:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git submodule set-url themes/harbor https://github.com/matsuyoshi30/harbor.git
 git submodule update --rebase --remote --merge --recursive
-</code></pre></div>
+</code></pre></div><p>Bila <code>HEAD detached</code>, boleh buat <code>pull request</code> dengan cara:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cd public
+git push origin HEAD:refs/heads/37f62cf
+</code></pre></div><p>Nombor <code>37f62cf</code> ialah contoh rujukan HEAD semasa dari GitHub commit.</p>
+
 
 
       
