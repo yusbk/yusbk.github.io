@@ -103,6 +103,61 @@
 </article>
 
       
+        <article class="post-preview">
+  <a href="https://yusbk.github.io/2019/07/30/geom-line/">
+      <h2 class="post-title">Tips untuk guna geom_line</h2>
+  </a>
+  <div class="post-entry">
+    
+      <p>geom_line() sering digunakan untuk menunjukkan trend. Pengguaannya mudah tetapi untuk memastikan yang garisan akan bersambung, variabel di x haruslah jenis continuous. Fungsi ini boleh juga dipakai untuk data jenis category akan tetapi pendekatannya agak berlainan. Pembakaian cara biasa menyebabkan garisan tidak bersambung.
+Kategori Cara ini ialah dengan memakai aes(group=1) untuk memastikan yang ggplot() tahu bahawa data point di x adalah dikumpulan yang sama dan garisan harus disambungkan. Contohnya:
+ggplot(data, aes(x = kategoriVar, y = peratus, group = 1)) + geom_line() NA Antara sebab lain yang menjadikan geom_line() tidak bersambung ialah apabilah terdatap nilai NA atau missing data.</p>
+        <a href="https://yusbk.github.io/2019/07/30/geom-line/" class="post-read-more">Read More</a>
+    
+  </div>
+
+  <div class="postmeta">
+    <span class="meta-post">
+  <i class="fa fa-calendar-alt"></i>&nbsp;Jul 30, 2019
+  
+    &nbsp;&nbsp;&nbsp;<i class="fa fa-folder-open"></i>&nbsp;
+    
+      <a href="https://yusbk.github.io//categories/plot/">plot</a>&nbsp;
+    
+  
+</span>
+
+  </div>
+</article>
+
+      
+        <article class="post-preview">
+  <a href="https://yusbk.github.io/2018/01/28/legend-plot-banding/">
+      <h2 class="post-title">Legend untuk plot perbandingan</h2>
+  </a>
+  <div class="post-entry">
+    
+      <p>Tunjuk ajar ini ialah berasaskan penggunaan pekej ggplot2. Untuk membuat plot perbandingan dan memasukkan legend untuk perbandingan boleh dibuat seperti berikut.
+library(&#34;data.table&#34;) data &lt;- fread(&#34;https://raw.githubusercontent.com/ybkamaleri/dataset/master/gdata.csv&#34;) ## lage tabellen alder group ageWyoming &lt;- data[location == &#34;Wyoming&#34;, list(n = .N), by = .(agegp)] dataW &lt;- ageWyoming[, { N = sum(n) pros = round(n / N * 100, digits = 1) list(agegp = agegp, n = n, N = N, pros = pros)}] dataW[, location := &#34;Wyoming&#34;] ageRest &lt;- data[location !</p>
+        <a href="https://yusbk.github.io/2018/01/28/legend-plot-banding/" class="post-read-more">Read More</a>
+    
+  </div>
+
+  <div class="postmeta">
+    <span class="meta-post">
+  <i class="fa fa-calendar-alt"></i>&nbsp;Jan 28, 2018
+  
+    &nbsp;&nbsp;&nbsp;<i class="fa fa-folder-open"></i>&nbsp;
+    
+      <a href="https://yusbk.github.io//categories/plot/">plot</a>&nbsp;
+    
+  
+</span>
+
+  </div>
+</article>
+
+      
       </div>
     
 </div>

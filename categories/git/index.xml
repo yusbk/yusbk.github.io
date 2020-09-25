@@ -9,10 +9,18 @@
 		
 		<managingEditor>Page(/categories/git) (Yusman Kamaleri)</managingEditor>
     	
-  		<lastBuildDate>Fri, 25 Sep 2020 12:24:12 +0200</lastBuildDate>
+  		<lastBuildDate>Fri, 25 Sep 2020 13:02:14 +0200</lastBuildDate>
 		
 		<atom:link href="/categories/git/" rel="self" type="application/rss+xml" />
 		
+		<item>
+			<title>Writing Hugo blog in Org</title>
+			<link>https://yusbk.github.io/2017/09/10/hugo-blog-in-org-subtree-export/</link>
+			<pubDate>Sun, 10 Sep 2017 00:00:00 +0000</pubDate>
+			<guid>https://yusbk.github.io/2017/09/10/hugo-blog-in-org-subtree-export/</guid>
+			<description>First heading within the post  This post will be exported as content/posts/writing-hugo-blog-in-org-subtree-export.md. Its title will be &amp;ldquo;Writing Hugo blog in Org&amp;rdquo;. It will have hugo and org tags and emacs as category. The menu item weight and post weight are auto-calculated. The menu item identifier is auto-set. The lastmod property in the front-matter is set automatically to the time of export.  A sub-heading under that heading  It&amp;rsquo;s draft state will be marked as true as the subtree has the todo state set to TODO.</description>
+		</item>
+      	
 		<item>
 			<title>Basic use of drake</title>
 			<link>https://yusbk.github.io/2020/06/15/basic-drake/</link>
@@ -66,7 +74,7 @@ DT = data.table(x=rep(c(&amp;#34;b&amp;#34;,&amp;#34;a&amp;#34;,&amp;#34;c&amp;#
 		<item>
 			<title>git submodule</title>
 			<link>https://yusbk.github.io/2020/09/25/git-submodule/</link>
-			<pubDate>Fri, 25 Sep 2020 12:24:12 +0200</pubDate>
+			<pubDate>Fri, 25 Sep 2020 13:02:14 +0200</pubDate>
 			<guid>https://yusbk.github.io/2020/09/25/git-submodule/</guid>
 			<description>Repo baru Bila buat repo baru dan ingin tetapkan submodule untuk tema harbor dan folder public ke yusbk.github.io. Submodule dipakai untuk memasukkan fungsi yang terdapat di repos lain ke dalam repos sendiri ie. subfolder di folder utama repos.
 Contoh dibawah ialah untuk memasukkan folder harbor ke dalam folder themes di folder utama. Subfolder public pula ialah submodule dari repo blog di Github.
@@ -80,6 +88,25 @@ Contoh dibawah ialah untuk memasukkan folder harbor ke dalam folder themes di fo
 			<guid>https://yusbk.github.io/2017/08/31/test-figure/</guid>
 			<description>Percobaan untuk memasukkan gambar di post dan penetapan size.
   </description>
+		</item>
+      	
+		<item>
+			<title>Hello World</title>
+			<link>https://yusbk.github.io/2020/06/11/hello-world/</link>
+			<pubDate>Thu, 11 Jun 2020 13:10:08 +0200</pubDate>
+			<guid>https://yusbk.github.io/2020/06/11/hello-world/</guid>
+			<description></description>
+		</item>
+      	
+		<item>
+			<title>Pemakaian lookup table</title>
+			<link>https://yusbk.github.io/2020/02/09/look-up-table/</link>
+			<pubDate>Sun, 09 Feb 2020 00:00:00 +0000</pubDate>
+			<guid>https://yusbk.github.io/2020/02/09/look-up-table/</guid>
+			<description>Lookup table dipakai untuk mempercepatkan proses dan mengelakkan pemakaian ifelse. Untuk mempercepatkan proses, ordered index untuk data.table harus dipakai.
+Cara 1 Kode ini dipakai sekiranya ingin mendapakan nilai di lookup tabel yang berhampiran. Contohnya nilai 1.3730682 adalah berhampiran dengan nilai 1.35.
+setDT(df1)[, ScoreLU := setDT(df2)[df1, ScoreLU , on = &amp;#34;DSCRpd&amp;#34;, roll = &amp;#34;nearest&amp;#34;]] Hasilnya seperti begini:
+DSCRpd Leverage TCB ScoreLU 1: 1.3730682 2.010122 -1590099.11 60 2: 1.0449597 2.680051 493370.85 30 3: 1.</description>
 		</item>
       	
 	</channel>
