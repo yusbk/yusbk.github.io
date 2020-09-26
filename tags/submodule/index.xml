@@ -9,7 +9,7 @@
 		
 		<managingEditor>Page(/tags/submodule) (Yusman Kamaleri)</managingEditor>
     	
-  		<lastBuildDate>Fri, 25 Sep 2020 13:13:48 +0200</lastBuildDate>
+  		<lastBuildDate>Sat, 26 Sep 2020 18:17:13 +0200</lastBuildDate>
 		
 		<atom:link href="/tags/submodule/" rel="self" type="application/rss+xml" />
 		
@@ -73,12 +73,12 @@ DT = data.table(x=rep(c(&amp;#34;b&amp;#34;,&amp;#34;a&amp;#34;,&amp;#34;c&amp;#
       	
 		<item>
 			<title>git submodule</title>
-			<link>https://yusbk.github.io/2020/09/25/git-submodule/</link>
-			<pubDate>Fri, 25 Sep 2020 13:13:48 +0200</pubDate>
-			<guid>https://yusbk.github.io/2020/09/25/git-submodule/</guid>
-			<description>Repo baru Bila buat repo baru dan ingin tetapkan submodule untuk tema harbor dan folder public ke yusbk.github.io. Submodule dipakai untuk memasukkan fungsi yang terdapat di repos lain ke dalam repos sendiri ie. subfolder di folder utama repos.
-Contoh dibawah ialah untuk memasukkan folder harbor ke dalam folder themes di folder utama. Subfolder public pula ialah submodule dari repo blog di Github.
-# themes git submodule add https://github.com/matsuyoshi30/harbor.git themes/harbor # yusbk.</description>
+			<link>https://yusbk.github.io/2020/09/26/git-submodule/</link>
+			<pubDate>Sat, 26 Sep 2020 18:17:13 +0200</pubDate>
+			<guid>https://yusbk.github.io/2020/09/26/git-submodule/</guid>
+			<description>Rujukan di sini lebih teratur. Penerangan dibawah ialah berasaskan pengalaman sendiri tanpa struktur.
+Repo baru Bila buat repo baru dan ingin tetapkan submodule untuk tema harbor dan folder public ke yusbk.github.io. Submodule dipakai untuk memasukkan fungsi yang terdapat di repos lain ke dalam repos sendiri ie. subfolder di folder utama repos.
+Contoh dibawah ialah untuk memasukkan folder harbor ke dalam folder themes di folder utama. Subfolder public pula ialah submodule dari repo blog di Github.</description>
 		</item>
       	
 		<item>
