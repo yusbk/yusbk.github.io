@@ -144,23 +144,6 @@ git push origin HEAD:refs/heads/37f62cf
 </code></pre></div><p>Nombor <code>37f62cf</code> ialah contoh rujukan HEAD semasa dari GitHub commit.</p>
 <p>Coba tukar branch ke <code>master</code>.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git checkout master
-</code></pre></div><h2 id="kekunci-ssh">Kekunci ssh</h2>
-<p>Sekiranya ingin pakai kekunci <code>ssh</code> boleh tukar di file <code>config</code> di:</p>
-<ul>
-<li>.git/config</li>
-</ul>
-<!-- raw HTML omitted -->
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#f92672">[</span>submodule <span style="color:#e6db74">&#34;public&#34;</span><span style="color:#f92672">]</span>
-          <span style="color:#75715e"># url = https://github.com/yusbk/yusbk.github.io.git</span>
-          url <span style="color:#f92672">=</span> git@personal:yusbk/yusbk.github.io.git
-</code></pre></div><ul>
-<li>.git/module/public/config</li>
-</ul>
-<!-- raw HTML omitted -->
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#f92672">[</span>remote <span style="color:#e6db74">&#34;origin&#34;</span><span style="color:#f92672">]</span>
-        <span style="color:#75715e"># url = https://github.com/yusbk/yusbk.github.io.git</span>
-        url <span style="color:#f92672">=</span> git@personal:yusbk/yusbk.github.io.git
-        fetch <span style="color:#f92672">=</span> +refs/heads/*:refs/remotes/origin/*
 </code></pre></div>
 
 
