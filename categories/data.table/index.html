@@ -31,9 +31,9 @@
   <div class="nav">
     
       <a href="https://yusbk.github.io/" class="nav-logo">
-      <img src="https://yusbk.github.io/images/yuskam.png"
-           width="50"
-           height="50"
+      <img src="https://yusbk.github.io/images/home2.png"
+           width="40"
+           height="40"
            alt="Logo">
       </a>
     
@@ -41,11 +41,11 @@
     <ul class="nav-links">
       
         
-          <li><a href="/about/" name="About"><i class="fas fa-user fa-lg"></i></a></li>
+          <li><a href="/about/" name="About"><i class="fas fa-user-secret fa-lg"></i></a></li>
         
       
         
-          <li><a href="/tags/" name="Tags"><i class="fas fa-tag fa-lg"></i></a></li>
+          <li><a href="/tags/" name="Tags"><i class="fas fa-tags fa-lg"></i></a></li>
         
       
         
@@ -84,7 +84,7 @@
   <div class="post-entry">
     
       <p>Untuk memadamkan barisan di data.table menggunakan reference seperti penggunaan .SD masih belum dilaksanakan. Cara ini diambil dari perbincangan di GitHub data.table. Fungsi delete dibuat seperti begini:
-delete &lt;- function(DT, del.idxs) { # pls note &#39;del.idxs&#39; vs. &#39;keep.idxs&#39; keep.idxs &lt;- setdiff(DT[, .I], del.idxs); # select row indexes to keep cols = names(DT); DT.subset &lt;- data.table(DT[[1]][keep.idxs]); # this is the subsetted table setnames(DT.subset, cols[1]); for (col in cols[2:length(cols)]) { DT.subset[, (col) := DT[[col]][keep.</p>
+delete &lt;- function(DT, del.idxs) { # pls note &#39;del.idxs&#39; vs. &#39;keep.idxs&#39; keep.idxs &lt;- setdiff(DT[, .</p>
         <a href="https://yusbk.github.io/2019/08/21/row-delete/" class="post-read-more">Read More</a>
     
   </div>
@@ -111,8 +111,7 @@ delete &lt;- function(DT, del.idxs) { # pls note &#39;del.idxs&#39; vs. &#39;kee
   <div class="post-entry">
     
       <p>Secara umumnya penggunaan loop tidak disarankan di R kerana ianya akan mengunakan banyak memory dan memakan masa yang lambat. Akan tetapi data.table menperkenalkan fungsi set untuk mempercepatkan proses. Asasnya ialah sebegini:
-set(dt, i, j, value)  Contoh pemakainnya bila ingin menukarkan NA ke angka yang diinginkan sepert 99.
-for (j in seq_len(ncol(DT))){ set(DT, which(is.na(DT[[j]])), j = j, value = 99) } Contoh lain bila ingin membersihkan whitespace disemua kolom di data.</p>
+set(dt, i, j, value)  Contoh pemakainnya bila ingin menukarkan NA ke angka yang diinginkan sepert 99.</p>
         <a href="https://yusbk.github.io/2019/07/31/loop-set/" class="post-read-more">Read More</a>
     
   </div>
@@ -139,8 +138,7 @@ for (j in seq_len(ncol(DT))){ set(DT, which(is.na(DT[[j]])), j = j, value = 99) 
   <div class="post-entry">
     
       <p>Untuk menambah kolom baru di data.table boleh menggunakan :=. Sekiranya ingin membuat kolom baru secara loop di pelbagai data.table, cara begini boleh dibuat. Cara-cara ini diambil dari StackOverflow.
-List Cara pertama boleh dibuat dengan mebuat list untuk semua data.table dimana kolom baru ingin ditambah.
-library(data.table) my_dts &lt;- list ( centro = data.table(x=letters[1:5], y = 1:5), sur = data.table(x=letters[2:7], y = 3:8), norte = data.table(x=letters[2:10], y = 3:11) ) st &lt;- c(&#34;centro&#34;, &#34;sur&#34;, &#34;norte&#34;) for (i in st) my_dts[[i]][, store := i] Sekiranya rawdata belum disatukan, boleh dilaksanakan seperti begini.</p>
+List Cara pertama boleh dibuat dengan mebuat list untuk semua data.table dimana kolom baru ingin ditambah.</p>
         <a href="https://yusbk.github.io/2018/06/24/tambah-kolom/" class="post-read-more">Read More</a>
     
   </div>
@@ -167,8 +165,7 @@ library(data.table) my_dts &lt;- list ( centro = data.table(x=letters[1:5], y = 
   <div class="post-entry">
     
       <p>Bagaimana untuk tambah garis baru di data.frame dengan memasukkan jumlah keseluruhan atau Total. Cara yang ditunjukkan di sini ialah dengan menggunakan pakej data.table. Fungsi rbind atau rbindlist boleh digunakan, tetapi cara rbindlist melalui pakej data.table lebih cepat.
-library(data.table) df &lt;- data.table(v1 = letters[1:10], v2 = 1:10) Contoh data
-head(df, n=4) v1 v2 1: a 1 2: b 2 3: c 3 4: d 4  Cara yang paling singkat untuk meletakkan Jumlah di bawah data.</p>
+library(data.table) df &lt;- data.</p>
         <a href="https://yusbk.github.io/2018/01/22/tambah-jumlah/" class="post-read-more">Read More</a>
     
   </div>
@@ -195,8 +192,7 @@ head(df, n=4) v1 v2 1: a 1 2: b 2 3: c 3 4: d 4  Cara yang paling singkat untuk 
   <div class="post-entry">
     
       <p>Fungsi yang selalu dipakai bila mengemaskini dan menyusun data ialah penggunaan merge atau join. Cara biasa menggunakan teknik data frame ialah seperti begini:
-library(data.table) DT1 = data.table(area=c(&#39;US&#39;, &#39;UK&#39;, &#39;EU&#39;, &#39;Asia&#39;), id=c(&#39;c001&#39;, &#39;c002&#39;, &#39;c003&#39;, &#39;c004&#39;), value=c(100, 200, 300, 400) ) DT2 = data.table(ID=c(&#39;c001&#39;, &#39;c002&#39;, &#39;c003&#39;), price=c(500, 200, 400), sales=c(20, 30, 15) ) DT1 menggandungi 4 baris dan DT2 hanya 3 baris
-R&gt; DT1 area id value 1: US c001 100 2: UK c002 200 3: EU c003 300 4: Asia c004 400 R&gt; DT2 ID price sales 1: c001 500 20 2: c002 200 30 3: c003 400 15  Guna fungsi &lsquo;merge&rsquo; Cara ini menggabungkan data.</p>
+library(data.table) DT1 = data.table(area=c(&#39;US&#39;, &#39;UK&#39;, &#39;EU&#39;, &#39;Asia&#39;), id=c(&#39;c001&#39;, &#39;c002&#39;, &#39;c003&#39;, &#39;c004&#39;), value=c(100, 200, 300, 400) ) DT2 = data.</p>
         <a href="https://yusbk.github.io/2018/01/04/merge-join/" class="post-read-more">Read More</a>
     
   </div>

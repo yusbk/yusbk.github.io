@@ -31,9 +31,9 @@
   <div class="nav">
     
       <a href="https://yusbk.github.io/" class="nav-logo">
-      <img src="https://yusbk.github.io/images/yuskam.png"
-           width="50"
-           height="50"
+      <img src="https://yusbk.github.io/images/home2.png"
+           width="40"
+           height="40"
            alt="Logo">
       </a>
     
@@ -41,11 +41,11 @@
     <ul class="nav-links">
       
         
-          <li><a href="/about/" name="About"><i class="fas fa-user fa-lg"></i></a></li>
+          <li><a href="/about/" name="About"><i class="fas fa-user-secret fa-lg"></i></a></li>
         
       
         
-          <li><a href="/tags/" name="Tags"><i class="fas fa-tag fa-lg"></i></a></li>
+          <li><a href="/tags/" name="Tags"><i class="fas fa-tags fa-lg"></i></a></li>
         
       
         
@@ -84,8 +84,7 @@
   <div class="post-entry">
     
       <p>Untuk menambah kolom baru di data.table boleh menggunakan :=. Sekiranya ingin membuat kolom baru secara loop di pelbagai data.table, cara begini boleh dibuat. Cara-cara ini diambil dari StackOverflow.
-List Cara pertama boleh dibuat dengan mebuat list untuk semua data.table dimana kolom baru ingin ditambah.
-library(data.table) my_dts &lt;- list ( centro = data.table(x=letters[1:5], y = 1:5), sur = data.table(x=letters[2:7], y = 3:8), norte = data.table(x=letters[2:10], y = 3:11) ) st &lt;- c(&#34;centro&#34;, &#34;sur&#34;, &#34;norte&#34;) for (i in st) my_dts[[i]][, store := i] Sekiranya rawdata belum disatukan, boleh dilaksanakan seperti begini.</p>
+List Cara pertama boleh dibuat dengan mebuat list untuk semua data.table dimana kolom baru ingin ditambah.</p>
         <a href="https://yusbk.github.io/2018/06/24/tambah-kolom/" class="post-read-more">Read More</a>
     
   </div>
@@ -112,8 +111,7 @@ library(data.table) my_dts &lt;- list ( centro = data.table(x=letters[1:5], y = 
   <div class="post-entry">
     
       <p>Pakej grid dipakai untuk membuat grafik secara asas membolehkan pemakaian aturcara dan peraturan yang lebih anjal mengikut kemahuan sendiri. Ia juga boleh dipakai untuk mengatur kedudukan grafik. Fungsi penting yang dipakai ialah:
- viewport pushViewport grid.draw  viewport dipakai untuk menetapkan kawasan grafik. Fungsi viewport() digunakan untuk tujuan ini. Contohnya:
-library(grid) vp1 &lt;- viewport(x = 0.5, y = 0.5, width = 0.2, height = 0.4, just = c(&#34;left&#34;, &#34;bottom&#34;), name = &#34;vp1&#34;) grid.</p>
+ viewport pushViewport grid.draw  viewport dipakai untuk menetapkan kawasan grafik.</p>
         <a href="https://yusbk.github.io/2018/02/21/grid/" class="post-read-more">Read More</a>
     
   </div>
@@ -140,8 +138,7 @@ library(grid) vp1 &lt;- viewport(x = 0.5, y = 0.5, width = 0.2, height = 0.4, ju
   <div class="post-entry">
     
       <p>Bagaimana untuk tambah garis baru di data.frame dengan memasukkan jumlah keseluruhan atau Total. Cara yang ditunjukkan di sini ialah dengan menggunakan pakej data.table. Fungsi rbind atau rbindlist boleh digunakan, tetapi cara rbindlist melalui pakej data.table lebih cepat.
-library(data.table) df &lt;- data.table(v1 = letters[1:10], v2 = 1:10) Contoh data
-head(df, n=4) v1 v2 1: a 1 2: b 2 3: c 3 4: d 4  Cara yang paling singkat untuk meletakkan Jumlah di bawah data.</p>
+library(data.table) df &lt;- data.</p>
         <a href="https://yusbk.github.io/2018/01/22/tambah-jumlah/" class="post-read-more">Read More</a>
     
   </div>

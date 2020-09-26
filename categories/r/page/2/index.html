@@ -31,9 +31,9 @@
   <div class="nav">
     
       <a href="https://yusbk.github.io/" class="nav-logo">
-      <img src="https://yusbk.github.io/images/yuskam.png"
-           width="50"
-           height="50"
+      <img src="https://yusbk.github.io/images/home2.png"
+           width="40"
+           height="40"
            alt="Logo">
       </a>
     
@@ -41,11 +41,11 @@
     <ul class="nav-links">
       
         
-          <li><a href="/about/" name="About"><i class="fas fa-user fa-lg"></i></a></li>
+          <li><a href="/about/" name="About"><i class="fas fa-user-secret fa-lg"></i></a></li>
         
       
         
-          <li><a href="/tags/" name="Tags"><i class="fas fa-tag fa-lg"></i></a></li>
+          <li><a href="/tags/" name="Tags"><i class="fas fa-tags fa-lg"></i></a></li>
         
       
         
@@ -84,8 +84,7 @@
   <div class="post-entry">
     
       <p>Terdapat pelbagai cara untuk larikan Shiny App. Sebagai rujukan boleh dibaca di laman Shiny. Penggunaan fungsi runApp() dan shinyAppDir() akan diterangkan disini.
-Menggunakan runApp() Satu fail app.R Untuk menggunakan fungsi runApp(), cara yang senang digunakan ialah dengan menyediakan fail app.R. Fail ini harus mengandungi ui dan server. Contohnya:
-library(shiny) ui &lt;- fluidPage() server &lt;- function(input, output) {} shinyApp(ui = ui, server = server) Sekiranya menggunakan program RStudio maka butang Run App akan keluar dan boleh digunakan untuk melarikan app.</p>
+Menggunakan runApp() Satu fail app.R Untuk menggunakan fungsi runApp(), cara yang senang digunakan ialah dengan menyediakan fail app.R. Fail ini harus mengandungi ui dan server.</p>
         <a href="https://yusbk.github.io/2018/07/02/basic-shiny/" class="post-read-more">Read More</a>
     
   </div>
@@ -112,8 +111,7 @@ library(shiny) ui &lt;- fluidPage() server &lt;- function(input, output) {} shin
   <div class="post-entry">
     
       <p>Pakej grid dipakai untuk membuat grafik secara asas membolehkan pemakaian aturcara dan peraturan yang lebih anjal mengikut kemahuan sendiri. Ia juga boleh dipakai untuk mengatur kedudukan grafik. Fungsi penting yang dipakai ialah:
- viewport pushViewport grid.draw  viewport dipakai untuk menetapkan kawasan grafik. Fungsi viewport() digunakan untuk tujuan ini. Contohnya:
-library(grid) vp1 &lt;- viewport(x = 0.5, y = 0.5, width = 0.2, height = 0.4, just = c(&#34;left&#34;, &#34;bottom&#34;), name = &#34;vp1&#34;) grid.</p>
+ viewport pushViewport grid.draw  viewport dipakai untuk menetapkan kawasan grafik.</p>
         <a href="https://yusbk.github.io/2018/02/21/grid/" class="post-read-more">Read More</a>
     
   </div>
@@ -140,8 +138,7 @@ library(grid) vp1 &lt;- viewport(x = 0.5, y = 0.5, width = 0.2, height = 0.4, ju
   <div class="post-entry">
     
       <p>Rownames Pernahkah melihat data frame dimana kolom pertama tidak ada nama dan anda tidak tahu bagaimana untuk merujuk kolom tersebut? Sekiranya anda pernah menemui masalah tersebut sila baca penerangan dan penyelesaian di sini.
-Situasi ini adalah disebabkan nama tersebut ialah nama untuk barisan sahaja i.e rownames, seperti nama untuk kolom i.e colnames. Contohnya:
-DT &lt;- mtcars[1:5, 1:5] DT Di sini anda lihat kolom pertama tidak mempunyai nama. Untuk mengetahui nama barisan boleh gunakan rownames(DT).</p>
+Situasi ini adalah disebabkan nama tersebut ialah nama untuk barisan sahaja i.</p>
         <a href="https://yusbk.github.io/2017/12/22/col-and-row/" class="post-read-more">Read More</a>
     
   </div>

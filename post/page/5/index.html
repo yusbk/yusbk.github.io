@@ -31,9 +31,9 @@
   <div class="nav">
     
       <a href="https://yusbk.github.io/" class="nav-logo">
-      <img src="https://yusbk.github.io/images/yuskam.png"
-           width="50"
-           height="50"
+      <img src="https://yusbk.github.io/images/home2.png"
+           width="40"
+           height="40"
            alt="Logo">
       </a>
     
@@ -41,11 +41,11 @@
     <ul class="nav-links">
       
         
-          <li><a href="/about/" name="About"><i class="fas fa-user fa-lg"></i></a></li>
+          <li><a href="/about/" name="About"><i class="fas fa-user-secret fa-lg"></i></a></li>
         
       
         
-          <li><a href="/tags/" name="Tags"><i class="fas fa-tag fa-lg"></i></a></li>
+          <li><a href="/tags/" name="Tags"><i class="fas fa-tags fa-lg"></i></a></li>
         
       
         
@@ -113,8 +113,7 @@
   <div class="post-entry">
     
       <p>Cari mendapatkan unik data atau penduaan menggunakan data.table. Caranya hampir sama dengan cara di base. Disini akan diterangkan cara pemakaian fungsi unique dan duplicated.
-Unik Untuk mendapatkan barisan yang unik di dataset atau unik di kolom tertentu sahaja boleh menggunakan fungsi unique atau !duplicated. Tunjukajar ini akan menggunakan data contoh di bawah:
-library(data.table) dat &lt;- data.table(a = c(12, 15,16, rep(11:12, 2),15, rep(12,3), 17, 17, 18), b = c(&quot;h&quot;,NA,letters[1:8],&quot;e&quot;, &quot;s&quot;, rep(&quot;q&quot;,2))) &gt; dat a b 1: 12 h 2: 15 &lt;NA&gt; 3: 16 a 4: 11 b 5: 12 c 6: 11 d 7: 12 e 8: 15 f 9: 12 g 10: 12 h 11: 12 e 12: 17 s 13: 17 q 14: 18 q  Barisan ke 10 12 h dan 11 12 e berpendua.</p>
+Unik Untuk mendapatkan barisan yang unik di dataset atau unik di kolom tertentu sahaja boleh menggunakan fungsi unique atau !</p>
         <a href="https://yusbk.github.io/2018/08/16/duplikasi/" class="post-read-more">Read More</a>
     
   </div>
@@ -143,7 +142,7 @@ library(data.table) dat &lt;- data.table(a = c(12, 15,16, rep(11:12, 2),15, rep(
       <p>Untuk meng-encrypt guna EncFS dan meletakkan fail-fail di Dropbox boleh dibuat seperti begini:
 Perlu pasang program EncFS
 $ sudo apt-get install encfs  Kemudian gunakan program EncFS dengan menetapkan folder yang akan di encrypt. Caranya:
-$ encfs ~/Dropbox/.encrypted ~/Private  Ini akan membuat dua directori, dimana folder di Dropbox ialah tempat fail-fail encrypted disimpan. Folder Private ialah untuk menyapai fail-fail yang di decrypted. EncFS akan meminta untuk membuat kata kekunci dan bila diminta untuk tetapkan jenis kekunci, pilih &ldquo;p&rdquo; untuk paranoia mode sudah memadai.</p>
+$ encfs ~/Dropbox/.encrypted ~/Private  Ini akan membuat dua directori, dimana folder di Dropbox ialah tempat fail-fail encrypted disimpan.</p>
         <a href="https://yusbk.github.io/2018/07/25/encrypting-file/" class="post-read-more">Read More</a>
     
   </div>
@@ -170,8 +169,7 @@ $ encfs ~/Dropbox/.encrypted ~/Private  Ini akan membuat dua directori, dimana f
   <div class="post-entry">
     
       <p>Terdapat pelbagai cara untuk larikan Shiny App. Sebagai rujukan boleh dibaca di laman Shiny. Penggunaan fungsi runApp() dan shinyAppDir() akan diterangkan disini.
-Menggunakan runApp() Satu fail app.R Untuk menggunakan fungsi runApp(), cara yang senang digunakan ialah dengan menyediakan fail app.R. Fail ini harus mengandungi ui dan server. Contohnya:
-library(shiny) ui &lt;- fluidPage() server &lt;- function(input, output) {} shinyApp(ui = ui, server = server) Sekiranya menggunakan program RStudio maka butang Run App akan keluar dan boleh digunakan untuk melarikan app.</p>
+Menggunakan runApp() Satu fail app.R Untuk menggunakan fungsi runApp(), cara yang senang digunakan ialah dengan menyediakan fail app.R. Fail ini harus mengandungi ui dan server.</p>
         <a href="https://yusbk.github.io/2018/07/02/basic-shiny/" class="post-read-more">Read More</a>
     
   </div>
@@ -198,8 +196,7 @@ library(shiny) ui &lt;- fluidPage() server &lt;- function(input, output) {} shin
   <div class="post-entry">
     
       <p>Untuk menambah kolom baru di data.table boleh menggunakan :=. Sekiranya ingin membuat kolom baru secara loop di pelbagai data.table, cara begini boleh dibuat. Cara-cara ini diambil dari StackOverflow.
-List Cara pertama boleh dibuat dengan mebuat list untuk semua data.table dimana kolom baru ingin ditambah.
-library(data.table) my_dts &lt;- list ( centro = data.table(x=letters[1:5], y = 1:5), sur = data.table(x=letters[2:7], y = 3:8), norte = data.table(x=letters[2:10], y = 3:11) ) st &lt;- c(&#34;centro&#34;, &#34;sur&#34;, &#34;norte&#34;) for (i in st) my_dts[[i]][, store := i] Sekiranya rawdata belum disatukan, boleh dilaksanakan seperti begini.</p>
+List Cara pertama boleh dibuat dengan mebuat list untuk semua data.table dimana kolom baru ingin ditambah.</p>
         <a href="https://yusbk.github.io/2018/06/24/tambah-kolom/" class="post-read-more">Read More</a>
     
   </div>

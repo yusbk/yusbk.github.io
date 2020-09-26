@@ -31,9 +31,9 @@
   <div class="nav">
     
       <a href="https://yusbk.github.io/" class="nav-logo">
-      <img src="https://yusbk.github.io/images/yuskam.png"
-           width="50"
-           height="50"
+      <img src="https://yusbk.github.io/images/home2.png"
+           width="40"
+           height="40"
            alt="Logo">
       </a>
     
@@ -41,11 +41,11 @@
     <ul class="nav-links">
       
         
-          <li><a href="/about/" name="About"><i class="fas fa-user fa-lg"></i></a></li>
+          <li><a href="/about/" name="About"><i class="fas fa-user-secret fa-lg"></i></a></li>
         
       
         
-          <li><a href="/tags/" name="Tags"><i class="fas fa-tag fa-lg"></i></a></li>
+          <li><a href="/tags/" name="Tags"><i class="fas fa-tags fa-lg"></i></a></li>
         
       
         
@@ -83,9 +83,7 @@
   </a>
   <div class="post-entry">
     
-      <p>Bila menjalankan pembersihan dan penyusunan data adalah disarankan untuk membuat nota-nota mengenai langkah-langkah yang diambil dalam menyelesaikan kerja. Ini adalah sebagai nasihat berkenaan dengan aliran kerja yang boleh dibuat supaya rujukan akan lebih jelas dan senang untuk dipakai beberapa kali.
-Bahagikan kerja-kerja menyusun dan membersikan data kepada bahagian seperti berikut:
- Data asal (raw data) Pemeriksaan (validation) Pembetulan tambahan (additional info.)  Data asal Bahagian ini ialah berkaitan dengan kerja-kerja secara langusung dari data asal.</p>
+      <p>Bila menjalankan pembersihan dan penyusunan data adalah disarankan untuk membuat nota-nota mengenai langkah-langkah yang diambil dalam menyelesaikan kerja. Ini adalah sebagai nasihat berkenaan dengan aliran kerja yang boleh dibuat supaya rujukan akan lebih jelas dan senang untuk dipakai beberapa kali.</p>
         <a href="https://yusbk.github.io/2019/07/24/aliran-kerja/" class="post-read-more">Read More</a>
     
   </div>
@@ -111,9 +109,7 @@ Bahagikan kerja-kerja menyusun dan membersikan data kepada bahagian seperti beri
   </a>
   <div class="post-entry">
     
-      <p>Untuk menukarkan kode penggunaan ifelse adalah cara yang senang dipakai. Akan tetapi penggunaannya di base R memakai masa yang panjang terutama sekirannya melarikan di data yang besar. Ini kerana penggunaan ifelse di base terlebih dahulu menyusun data sebelum membuat pilihan.
-Cara yang diterangkan disini ialah untuk pemakaian ifelse di data.table dan cara-cara lain yang diperkenalkan di pakej dplyr atau pakej yang lainnya.
-Cara data.table Cara yang biasa di data.table ialah menggunakan teknik DT[i,j,by].</p>
+      <p>Untuk menukarkan kode penggunaan ifelse adalah cara yang senang dipakai. Akan tetapi penggunaannya di base R memakai masa yang panjang terutama sekirannya melarikan di data yang besar. Ini kerana penggunaan ifelse di base terlebih dahulu menyusun data sebelum membuat pilihan.</p>
         <a href="https://yusbk.github.io/2019/07/24/ifelse/" class="post-read-more">Read More</a>
     
   </div>
@@ -139,9 +135,7 @@ Cara data.table Cara yang biasa di data.table ialah menggunakan teknik DT[i,j,by
   </a>
   <div class="post-entry">
     
-      <p>Untuk menggunakan pelbagai objekt tanpa mengulangi komando beberapa kali boleh dilakukan semada menggunakan loop atau salah satu cara apply. Masalahnya bila objekt-objekt disenaraikan sebagai vektor, objekt tersebut ditukarkan ke struktur chr. Oleh sebab itu objekt tersebut tidak dapat diproses seterusnya.
-Salah satu penyelesaian masalah ini ialah menggunakan sapply. Akan tetapi ianya bergantung dengan penggunaan argument:
-- `USE.NAME = TRUE`. - `get()`  Contohnya, bila ingin menggunakan objekt2 ini di .GlobalEnv:</p>
+      <p>Untuk menggunakan pelbagai objekt tanpa mengulangi komando beberapa kali boleh dilakukan semada menggunakan loop atau salah satu cara apply. Masalahnya bila objekt-objekt disenaraikan sebagai vektor, objekt tersebut ditukarkan ke struktur chr. Oleh sebab itu objekt tersebut tidak dapat diproses seterusnya.</p>
         <a href="https://yusbk.github.io/2019/06/24/vector-object/" class="post-read-more">Read More</a>
     
   </div>
@@ -191,8 +185,7 @@ Salah satu penyelesaian masalah ini ialah menggunakan sapply. Akan tetapi ianya 
   <div class="post-entry">
     
       <p>Cari mendapatkan unik data atau penduaan menggunakan data.table. Caranya hampir sama dengan cara di base. Disini akan diterangkan cara pemakaian fungsi unique dan duplicated.
-Unik Untuk mendapatkan barisan yang unik di dataset atau unik di kolom tertentu sahaja boleh menggunakan fungsi unique atau !duplicated. Tunjukajar ini akan menggunakan data contoh di bawah:
-library(data.table) dat &lt;- data.table(a = c(12, 15,16, rep(11:12, 2),15, rep(12,3), 17, 17, 18), b = c(&quot;h&quot;,NA,letters[1:8],&quot;e&quot;, &quot;s&quot;, rep(&quot;q&quot;,2))) &gt; dat a b 1: 12 h 2: 15 &lt;NA&gt; 3: 16 a 4: 11 b 5: 12 c 6: 11 d 7: 12 e 8: 15 f 9: 12 g 10: 12 h 11: 12 e 12: 17 s 13: 17 q 14: 18 q  Barisan ke 10 12 h dan 11 12 e berpendua.</p>
+Unik Untuk mendapatkan barisan yang unik di dataset atau unik di kolom tertentu sahaja boleh menggunakan fungsi unique atau !</p>
         <a href="https://yusbk.github.io/2018/08/16/duplikasi/" class="post-read-more">Read More</a>
     
   </div>

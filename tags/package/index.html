@@ -31,9 +31,9 @@
   <div class="nav">
     
       <a href="https://yusbk.github.io/" class="nav-logo">
-      <img src="https://yusbk.github.io/images/yuskam.png"
-           width="50"
-           height="50"
+      <img src="https://yusbk.github.io/images/home2.png"
+           width="40"
+           height="40"
            alt="Logo">
       </a>
     
@@ -41,11 +41,11 @@
     <ul class="nav-links">
       
         
-          <li><a href="/about/" name="About"><i class="fas fa-user fa-lg"></i></a></li>
+          <li><a href="/about/" name="About"><i class="fas fa-user-secret fa-lg"></i></a></li>
         
       
         
-          <li><a href="/tags/" name="Tags"><i class="fas fa-tag fa-lg"></i></a></li>
+          <li><a href="/tags/" name="Tags"><i class="fas fa-tags fa-lg"></i></a></li>
         
       
         
@@ -84,9 +84,7 @@
   <div class="post-entry">
     
       <p>Ini ialah beberapa penggunaan asas R yang amat berguna walaupun jarang dipakai. Antaranya:
-Pasang pakej Cara biasa untuk pasang pakej ialah menggunakan install.packages(). Tetapi sekiranya ingin memasang banyak pekej secara serentank dan memuatkan di R setelah pakej dipasang, cara begini boleh dipakai:
-list.of.packages &lt;- c(&#34;leaflet&#34;,&#34;ggplot2&#34;,&#34;dplyr&#34;,&#34;gridExtra&#34;,&#34;psych&#34;,&#34;data.table&#34;,&#34;sf&#34;,&#34;ggrepel&#34;) new.packages &lt;- list.of.packages[!(list.of.packages %in% installed.packages()[,&#34;Package&#34;])] if(length(new.packages)) install.packages(new.packages, repos = &#34;https://cloud.r-project.org/&#34;) sapply(list.of.packages, require, character.only = TRUE) Untuk pasang satu pakej boleh juga buat sebegini:
-if(!require(&#34;rreg&#34;)) {install.packages(&#34;rreg&#34;)} else {require(&#34;rreg&#34;)} Cara ini akan periksa sekiranya pakej rreg belum dipasang makan akan dipasang, sekiranya sudah ada maka akan diaktifkan.</p>
+Pasang pakej Cara biasa untuk pasang pakej ialah menggunakan install.packages(). Tetapi sekiranya ingin memasang banyak pekej secara serentank dan memuatkan di R setelah pakej dipasang, cara begini boleh dipakai:</p>
         <a href="https://yusbk.github.io/2019/09/02/package-r/" class="post-read-more">Read More</a>
     
   </div>

@@ -31,9 +31,9 @@
   <div class="nav">
     
       <a href="https://yusbk.github.io/" class="nav-logo">
-      <img src="https://yusbk.github.io/images/yuskam.png"
-           width="50"
-           height="50"
+      <img src="https://yusbk.github.io/images/home2.png"
+           width="40"
+           height="40"
            alt="Logo">
       </a>
     
@@ -41,11 +41,11 @@
     <ul class="nav-links">
       
         
-          <li><a href="/about/" name="About"><i class="fas fa-user fa-lg"></i></a></li>
+          <li><a href="/about/" name="About"><i class="fas fa-user-secret fa-lg"></i></a></li>
         
       
         
-          <li><a href="/tags/" name="Tags"><i class="fas fa-tag fa-lg"></i></a></li>
+          <li><a href="/tags/" name="Tags"><i class="fas fa-tags fa-lg"></i></a></li>
         
       
         
@@ -89,9 +89,7 @@
   </a>
   <div class="post-entry">
     
-      <p>Bila menjalankan pembersihan dan penyusunan data adalah disarankan untuk membuat nota-nota mengenai langkah-langkah yang diambil dalam menyelesaikan kerja. Ini adalah sebagai nasihat berkenaan dengan aliran kerja yang boleh dibuat supaya rujukan akan lebih jelas dan senang untuk dipakai beberapa kali.
-Bahagikan kerja-kerja menyusun dan membersikan data kepada bahagian seperti berikut:
- Data asal (raw data) Pemeriksaan (validation) Pembetulan tambahan (additional info.)  Data asal Bahagian ini ialah berkaitan dengan kerja-kerja secara langusung dari data asal.</p>
+      <p>Bila menjalankan pembersihan dan penyusunan data adalah disarankan untuk membuat nota-nota mengenai langkah-langkah yang diambil dalam menyelesaikan kerja. Ini adalah sebagai nasihat berkenaan dengan aliran kerja yang boleh dibuat supaya rujukan akan lebih jelas dan senang untuk dipakai beberapa kali.</p>
         <a href="https://yusbk.github.io/2019/07/24/aliran-kerja/" class="post-read-more">Read More</a>
     
   </div>
@@ -117,9 +115,7 @@ Bahagikan kerja-kerja menyusun dan membersikan data kepada bahagian seperti beri
   </a>
   <div class="post-entry">
     
-      <p>Untuk menukarkan kode penggunaan ifelse adalah cara yang senang dipakai. Akan tetapi penggunaannya di base R memakai masa yang panjang terutama sekirannya melarikan di data yang besar. Ini kerana penggunaan ifelse di base terlebih dahulu menyusun data sebelum membuat pilihan.
-Cara yang diterangkan disini ialah untuk pemakaian ifelse di data.table dan cara-cara lain yang diperkenalkan di pakej dplyr atau pakej yang lainnya.
-Cara data.table Cara yang biasa di data.table ialah menggunakan teknik DT[i,j,by].</p>
+      <p>Untuk menukarkan kode penggunaan ifelse adalah cara yang senang dipakai. Akan tetapi penggunaannya di base R memakai masa yang panjang terutama sekirannya melarikan di data yang besar. Ini kerana penggunaan ifelse di base terlebih dahulu menyusun data sebelum membuat pilihan.</p>
         <a href="https://yusbk.github.io/2019/07/24/ifelse/" class="post-read-more">Read More</a>
     
   </div>
@@ -145,9 +141,7 @@ Cara data.table Cara yang biasa di data.table ialah menggunakan teknik DT[i,j,by
   </a>
   <div class="post-entry">
     
-      <p>Untuk menggunakan pelbagai objekt tanpa mengulangi komando beberapa kali boleh dilakukan semada menggunakan loop atau salah satu cara apply. Masalahnya bila objekt-objekt disenaraikan sebagai vektor, objekt tersebut ditukarkan ke struktur chr. Oleh sebab itu objekt tersebut tidak dapat diproses seterusnya.
-Salah satu penyelesaian masalah ini ialah menggunakan sapply. Akan tetapi ianya bergantung dengan penggunaan argument:
-- `USE.NAME = TRUE`. - `get()`  Contohnya, bila ingin menggunakan objekt2 ini di .GlobalEnv:</p>
+      <p>Untuk menggunakan pelbagai objekt tanpa mengulangi komando beberapa kali boleh dilakukan semada menggunakan loop atau salah satu cara apply. Masalahnya bila objekt-objekt disenaraikan sebagai vektor, objekt tersebut ditukarkan ke struktur chr. Oleh sebab itu objekt tersebut tidak dapat diproses seterusnya.</p>
         <a href="https://yusbk.github.io/2019/06/24/vector-object/" class="post-read-more">Read More</a>
     
   </div>
@@ -173,6 +167,10 @@ Salah satu penyelesaian masalah ini ialah menggunakan sapply. Akan tetapi ianya 
   </a>
   <div class="post-entry">
     
+      <p>I shifted from Jekyll to Hugo. But this transition won&rsquo;t have been easy without the available theme and contribution of people who shared their knowledge on the web. Credits to the reference and theme used for this site.
+The theme used for this site is hugo-lithium-theme.</p>
+        <a href="https://yusbk.github.io/2019/06/07/credit-site/" class="post-read-more">Read More</a>
+    
   </div>
 
   <div class="postmeta">
@@ -197,7 +195,7 @@ Salah satu penyelesaian masalah ini ialah menggunakan sapply. Akan tetapi ianya 
   <div class="post-entry">
     
       <p>Untuk membuat peta menggunakan R boleh memakai pelbagai jenis pakej. Cara yang senang ialah samada cara sp atau sf. Penerangan di sini menggunakan cara sf. Untuk mengikuti cara ini, pakej-pekej di bawah perlu dipasangkan terlebih dahulu.
-list.of.packages &lt;- c(&#34;ggplot2&#34;,&#34;dplyr&#34;,&#34;sf&#34;,&#34;ggrepel&#34;) new.packages &lt;- list.of.packages[!(list.of.packages %in% installed.packages()[,&#34;Package&#34;])] if(length(new.packages)) install.packages(new.packages) sapply(list.of.packages, require, character.only = TRUE) kart_sf = sf::st_read(&#34;~/Git-personal/Rujukan-R/norge/NOR_adm1.shp&#34;, stringsAsFactors = FALSE) class(kart_sf) Sekiranya ada masalah memasang pekej sf di Ubuntu disebabkan masalah di gdal-config, pasangkan libgdal-dev diterminal.</p>
+list.of.packages &lt;- c(&#34;ggplot2&#34;,&#34;dplyr&#34;,&#34;sf&#34;,&#34;ggrepel&#34;) new.packages &lt;- list.</p>
         <a href="https://yusbk.github.io/2019/02/25/peta-sf/" class="post-read-more">Read More</a>
     
   </div>

@@ -31,9 +31,9 @@
   <div class="nav">
     
       <a href="https://yusbk.github.io/" class="nav-logo">
-      <img src="https://yusbk.github.io/images/yuskam.png"
-           width="50"
-           height="50"
+      <img src="https://yusbk.github.io/images/home2.png"
+           width="40"
+           height="40"
            alt="Logo">
       </a>
     
@@ -41,11 +41,11 @@
     <ul class="nav-links">
       
         
-          <li><a href="/about/" name="About"><i class="fas fa-user fa-lg"></i></a></li>
+          <li><a href="/about/" name="About"><i class="fas fa-user-secret fa-lg"></i></a></li>
         
       
         
-          <li><a href="/tags/" name="Tags"><i class="fas fa-tag fa-lg"></i></a></li>
+          <li><a href="/tags/" name="Tags"><i class="fas fa-tags fa-lg"></i></a></li>
         
       
         
@@ -84,8 +84,7 @@
   <div class="post-entry">
     
       <p>There are various ways to organise your R workflow. If you are working with a big project, then Airflow might be for you. But for the majority of R project codes, drake package will fullfilled your need.
-Here is the basic use of drake. The example here will be using a simple collections of functions.
-fun1 &lt;- function(x = globalenv()$x){ x + 2 } fun2 &lt;- function(i = 3){ i * 10 } fun3 &lt;- function(){ x1 = fun1() x2 = fun2(5) x1 + x2 } fun4 &lt;- function(z = globalenv()$z){ x1 = 1 + z x2 = fun2(2) x3 = fun3() x1 + x2 + x3 } Install drake development version in Github here.</p>
+Here is the basic use of drake.</p>
         <a href="https://yusbk.github.io/2020/06/15/basic-drake/" class="post-read-more">Read More</a>
     
   </div>
@@ -111,9 +110,7 @@ fun1 &lt;- function(x = globalenv()$x){ x + 2 } fun2 &lt;- function(i = 3){ i * 
   </a>
   <div class="post-entry">
     
-      <p>.N Mult .SD dan .SDcols .I .GRP dan rleid Contoh dari manual  Hari ni bersempena Hari kemerdekaan Malaysia ada masa untuk ulang kaji pakej data.table. Hari ni ialah mengenai Special Symbol seperti .N, .I, .GRP, .BY. Penerangan ini diambil dari manual di data.table tetapi diedit sedikit. Untuk rujukan di sini.
-Ini data yang dipakai untuk membuat contoh:
-DT = data.table(x=rep(c(&#34;b&#34;,&#34;a&#34;,&#34;c&#34;),each=3), v=c(1,1,1,2,2,1,1,2,2), y=c(1,6,3,7,8), a=1:9, b=9:1) X = data.table(x=c(&#34;c&#34;,&#34;b&#34;), v=8:7, foo=c(4,2)) .</p>
+      <p>.N Mult .SD dan .SDcols .I .GRP dan rleid Contoh dari manual  Hari ni bersempena Hari kemerdekaan Malaysia ada masa untuk ulang kaji pakej data.table. Hari ni ialah mengenai Special Symbol seperti .N, .I, .GRP, .BY. Penerangan ini diambil dari manual di data.</p>
         <a href="https://yusbk.github.io/2017/08/31/dt-special-symbol/" class="post-read-more">Read More</a>
     
   </div>
@@ -140,9 +137,7 @@ DT = data.table(x=rep(c(&#34;b&#34;,&#34;a&#34;,&#34;c&#34;),each=3), v=c(1,1,1,
   <div class="post-entry">
     
       <p>Lookup table dipakai untuk mempercepatkan proses dan mengelakkan pemakaian ifelse. Untuk mempercepatkan proses, ordered index untuk data.table harus dipakai.
-Cara 1 Kode ini dipakai sekiranya ingin mendapakan nilai di lookup tabel yang berhampiran. Contohnya nilai 1.3730682 adalah berhampiran dengan nilai 1.35.
-setDT(df1)[, ScoreLU := setDT(df2)[df1, ScoreLU , on = &#34;DSCRpd&#34;, roll = &#34;nearest&#34;]] Hasilnya seperti begini:
-DSCRpd Leverage TCB ScoreLU 1: 1.3730682 2.010122 -1590099.11 60 2: 1.0449597 2.680051 493370.85 30 3: 1.</p>
+Cara 1 Kode ini dipakai sekiranya ingin mendapakan nilai di lookup tabel yang berhampiran. Contohnya nilai 1.3730682 adalah berhampiran dengan nilai 1.</p>
         <a href="https://yusbk.github.io/2020/02/09/look-up-table/" class="post-read-more">Read More</a>
     
   </div>
@@ -169,7 +164,7 @@ DSCRpd Leverage TCB ScoreLU 1: 1.3730682 2.010122 -1590099.11 60 2: 1.0449597 2.
   <div class="post-entry">
     
       <p>Untuk memadamkan barisan di data.table menggunakan reference seperti penggunaan .SD masih belum dilaksanakan. Cara ini diambil dari perbincangan di GitHub data.table. Fungsi delete dibuat seperti begini:
-delete &lt;- function(DT, del.idxs) { # pls note &#39;del.idxs&#39; vs. &#39;keep.idxs&#39; keep.idxs &lt;- setdiff(DT[, .I], del.idxs); # select row indexes to keep cols = names(DT); DT.subset &lt;- data.table(DT[[1]][keep.idxs]); # this is the subsetted table setnames(DT.subset, cols[1]); for (col in cols[2:length(cols)]) { DT.subset[, (col) := DT[[col]][keep.</p>
+delete &lt;- function(DT, del.idxs) { # pls note &#39;del.idxs&#39; vs. &#39;keep.idxs&#39; keep.idxs &lt;- setdiff(DT[, .</p>
         <a href="https://yusbk.github.io/2019/08/21/row-delete/" class="post-read-more">Read More</a>
     
   </div>
@@ -196,8 +191,7 @@ delete &lt;- function(DT, del.idxs) { # pls note &#39;del.idxs&#39; vs. &#39;kee
   <div class="post-entry">
     
       <p>Secara umumnya penggunaan loop tidak disarankan di R kerana ianya akan mengunakan banyak memory dan memakan masa yang lambat. Akan tetapi data.table menperkenalkan fungsi set untuk mempercepatkan proses. Asasnya ialah sebegini:
-set(dt, i, j, value)  Contoh pemakainnya bila ingin menukarkan NA ke angka yang diinginkan sepert 99.
-for (j in seq_len(ncol(DT))){ set(DT, which(is.na(DT[[j]])), j = j, value = 99) } Contoh lain bila ingin membersihkan whitespace disemua kolom di data.</p>
+set(dt, i, j, value)  Contoh pemakainnya bila ingin menukarkan NA ke angka yang diinginkan sepert 99.</p>
         <a href="https://yusbk.github.io/2019/07/31/loop-set/" class="post-read-more">Read More</a>
     
   </div>

@@ -33,9 +33,9 @@
   <div class="nav">
     
       <a href="https://yusbk.github.io/" class="nav-logo">
-      <img src="https://yusbk.github.io/images/yuskam.png"
-           width="50"
-           height="50"
+      <img src="https://yusbk.github.io/images/home2.png"
+           width="40"
+           height="40"
            alt="Logo">
       </a>
     
@@ -43,11 +43,11 @@
     <ul class="nav-links">
       
         
-          <li><a href="/about/" name="About"><i class="fas fa-user fa-lg"></i></a></li>
+          <li><a href="/about/" name="About"><i class="fas fa-user-secret fa-lg"></i></a></li>
         
       
         
-          <li><a href="/tags/" name="Tags"><i class="fas fa-tag fa-lg"></i></a></li>
+          <li><a href="/tags/" name="Tags"><i class="fas fa-tags fa-lg"></i></a></li>
         
       
         
@@ -86,9 +86,7 @@
   <div class="post-entry">
     
       <p>Ini ialah beberapa penggunaan asas R yang amat berguna walaupun jarang dipakai. Antaranya:
-Pasang pakej Cara biasa untuk pasang pakej ialah menggunakan install.packages(). Tetapi sekiranya ingin memasang banyak pekej secara serentank dan memuatkan di R setelah pakej dipasang, cara begini boleh dipakai:
-list.of.packages &lt;- c(&#34;leaflet&#34;,&#34;ggplot2&#34;,&#34;dplyr&#34;,&#34;gridExtra&#34;,&#34;psych&#34;,&#34;data.table&#34;,&#34;sf&#34;,&#34;ggrepel&#34;) new.packages &lt;- list.of.packages[!(list.of.packages %in% installed.packages()[,&#34;Package&#34;])] if(length(new.packages)) install.packages(new.packages, repos = &#34;https://cloud.r-project.org/&#34;) sapply(list.of.packages, require, character.only = TRUE) Untuk pasang satu pakej boleh juga buat sebegini:
-if(!require(&#34;rreg&#34;)) {install.packages(&#34;rreg&#34;)} else {require(&#34;rreg&#34;)} Cara ini akan periksa sekiranya pakej rreg belum dipasang makan akan dipasang, sekiranya sudah ada maka akan diaktifkan.</p>
+Pasang pakej Cara biasa untuk pasang pakej ialah menggunakan install.packages(). Tetapi sekiranya ingin memasang banyak pekej secara serentank dan memuatkan di R setelah pakej dipasang, cara begini boleh dipakai:</p>
         <a href="https://yusbk.github.io/2019/09/02/package-r/" class="post-read-more">Read More</a>
     
   </div>
@@ -115,7 +113,7 @@ if(!require(&#34;rreg&#34;)) {install.packages(&#34;rreg&#34;)} else {require(&#
   <div class="post-entry">
     
       <p>Untuk memadamkan barisan di data.table menggunakan reference seperti penggunaan .SD masih belum dilaksanakan. Cara ini diambil dari perbincangan di GitHub data.table. Fungsi delete dibuat seperti begini:
-delete &lt;- function(DT, del.idxs) { # pls note &#39;del.idxs&#39; vs. &#39;keep.idxs&#39; keep.idxs &lt;- setdiff(DT[, .I], del.idxs); # select row indexes to keep cols = names(DT); DT.subset &lt;- data.table(DT[[1]][keep.idxs]); # this is the subsetted table setnames(DT.subset, cols[1]); for (col in cols[2:length(cols)]) { DT.subset[, (col) := DT[[col]][keep.</p>
+delete &lt;- function(DT, del.idxs) { # pls note &#39;del.idxs&#39; vs. &#39;keep.idxs&#39; keep.idxs &lt;- setdiff(DT[, .</p>
         <a href="https://yusbk.github.io/2019/08/21/row-delete/" class="post-read-more">Read More</a>
     
   </div>
@@ -143,9 +141,7 @@ delete &lt;- function(DT, del.idxs) { # pls note &#39;del.idxs&#39; vs. &#39;kee
     
       <p>Cara ini diambil dari GitHub robinmoisson. Boleh baca disitu untuk cara selanjutnya. Antaranya:
 Pemasangan NVM (Node Version Manager) diperlukan untuk memudahkan pemasangan Node.js dan program staticrypt. Curl diperlukan untuk dapatkan Node.js.
-Untuk memasang hanya NVM, boleh dibuat seperti dibawah atau dibaca di sini:
-sudo apt-get install curl curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash Kemudian harus reload environment sebelum memakai komando nvm:
-source ~/.profile Kemudian boleh memasang versi Node. yang diingini, samapada versi LTS atau versi terbaru.</p>
+Untuk memasang hanya NVM, boleh dibuat seperti dibawah atau dibaca di sini:</p>
         <a href="https://yusbk.github.io/2019/08/01/static-encrypt/" class="post-read-more">Read More</a>
     
   </div>
@@ -172,8 +168,7 @@ source ~/.profile Kemudian boleh memasang versi Node. yang diingini, samapada ve
   <div class="post-entry">
     
       <p>Secara umumnya penggunaan loop tidak disarankan di R kerana ianya akan mengunakan banyak memory dan memakan masa yang lambat. Akan tetapi data.table menperkenalkan fungsi set untuk mempercepatkan proses. Asasnya ialah sebegini:
-set(dt, i, j, value)  Contoh pemakainnya bila ingin menukarkan NA ke angka yang diinginkan sepert 99.
-for (j in seq_len(ncol(DT))){ set(DT, which(is.na(DT[[j]])), j = j, value = 99) } Contoh lain bila ingin membersihkan whitespace disemua kolom di data.</p>
+set(dt, i, j, value)  Contoh pemakainnya bila ingin menukarkan NA ke angka yang diinginkan sepert 99.</p>
         <a href="https://yusbk.github.io/2019/07/31/loop-set/" class="post-read-more">Read More</a>
     
   </div>
@@ -199,9 +194,7 @@ for (j in seq_len(ncol(DT))){ set(DT, which(is.na(DT[[j]])), j = j, value = 99) 
   </a>
   <div class="post-entry">
     
-      <p>geom_line() sering digunakan untuk menunjukkan trend. Pengguaannya mudah tetapi untuk memastikan yang garisan akan bersambung, variabel di x haruslah jenis continuous. Fungsi ini boleh juga dipakai untuk data jenis category akan tetapi pendekatannya agak berlainan. Pembakaian cara biasa menyebabkan garisan tidak bersambung.
-Kategori Cara ini ialah dengan memakai aes(group=1) untuk memastikan yang ggplot() tahu bahawa data point di x adalah dikumpulan yang sama dan garisan harus disambungkan. Contohnya:
-ggplot(data, aes(x = kategoriVar, y = peratus, group = 1)) + geom_line() NA Antara sebab lain yang menjadikan geom_line() tidak bersambung ialah apabilah terdatap nilai NA atau missing data.</p>
+      <p>geom_line() sering digunakan untuk menunjukkan trend. Pengguaannya mudah tetapi untuk memastikan yang garisan akan bersambung, variabel di x haruslah jenis continuous. Fungsi ini boleh juga dipakai untuk data jenis category akan tetapi pendekatannya agak berlainan. Pembakaian cara biasa menyebabkan garisan tidak bersambung.</p>
         <a href="https://yusbk.github.io/2019/07/30/geom-line/" class="post-read-more">Read More</a>
     
   </div>
