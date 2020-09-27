@@ -4,27 +4,20 @@
   
   <url>
     <loc>https://yusbk.github.io/about/</loc>
-    <lastmod>2020-09-27T23:04:44+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://yusbk.github.io/search/</loc>
-    <lastmod>2020-09-27T23:04:44+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/2017/09/10/hugo-blog-in-org-subtree-export/</loc>
-    <lastmod>2020-05-30T00:39:05+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://yusbk.github.io/2020/06/15/basic-drake/</loc>
-    <lastmod>2020-09-27T23:04:45+02:00</lastmod>
+    <lastmod>2020-06-15T23:22:00+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://yusbk.github.io/2020/06/14/git-fork/</loc>
-    <lastmod>2020-09-27T23:04:46+02:00</lastmod>
+    <lastmod>2020-06-14T00:00:00+02:00</lastmod>
   </url>
   
   <url>
@@ -39,7 +32,7 @@
   
   <url>
     <loc>https://yusbk.github.io/2017/10/11/susun-factor/</loc>
-    <lastmod>2020-09-27T23:04:45+02:00</lastmod>
+    <lastmod>2017-10-11T00:00:00+02:00</lastmod>
   </url>
   
   <url>
@@ -49,7 +42,7 @@
   
   <url>
     <loc>https://yusbk.github.io/2020/09/27/git-submodule/</loc>
-    <lastmod>2020-09-27T23:04:46+02:00</lastmod>
+    <lastmod>2020-09-27T00:00:00+02:00</lastmod>
   </url>
   
   <url>
@@ -64,57 +57,52 @@
   
   <url>
     <loc>https://yusbk.github.io/categories/</loc>
-    <lastmod>2020-09-27T23:04:46+02:00</lastmod>
+    <lastmod>2020-09-27T00:00:00+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://yusbk.github.io/categories/git/</loc>
-    <lastmod>2020-09-27T23:04:46+02:00</lastmod>
+    <lastmod>2020-09-27T00:00:00+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://yusbk.github.io/post/</loc>
-    <lastmod>2020-09-27T23:04:46+02:00</lastmod>
+    <lastmod>2020-09-27T00:00:00+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://yusbk.github.io/tags/submodule/</loc>
-    <lastmod>2020-09-27T23:04:46+02:00</lastmod>
+    <lastmod>2020-09-27T00:00:00+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://yusbk.github.io/tags/</loc>
-    <lastmod>2020-09-27T23:04:46+02:00</lastmod>
+    <lastmod>2020-09-27T00:00:00+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://yusbk.github.io/</loc>
-    <lastmod>2020-09-27T23:04:46+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/page/</loc>
-    <lastmod>2020-09-27T23:04:44+02:00</lastmod>
+    <lastmod>2020-09-27T00:00:00+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://yusbk.github.io/tags/drake/</loc>
-    <lastmod>2020-09-27T23:04:45+02:00</lastmod>
+    <lastmod>2020-06-15T23:22:00+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://yusbk.github.io/tags/r/</loc>
-    <lastmod>2020-09-27T23:04:45+02:00</lastmod>
+    <lastmod>2020-06-15T23:22:00+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://yusbk.github.io/categories/r-en/</loc>
-    <lastmod>2020-09-27T23:04:45+02:00</lastmod>
+    <lastmod>2020-06-15T23:22:00+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://yusbk.github.io/tags/fork/</loc>
-    <lastmod>2020-09-27T23:04:46+02:00</lastmod>
+    <lastmod>2020-06-14T00:00:00+02:00</lastmod>
   </url>
   
   <url>
@@ -129,12 +117,12 @@
   
   <url>
     <loc>https://yusbk.github.io/categories/r-my/</loc>
-    <lastmod>2020-09-27T23:04:45+02:00</lastmod>
+    <lastmod>2020-04-27T00:00:00+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://yusbk.github.io/tags/setting/</loc>
-    <lastmod>2020-09-27T23:04:45+02:00</lastmod>
+    <lastmod>2020-04-27T00:00:00+02:00</lastmod>
   </url>
   
   <url>
@@ -419,7 +407,7 @@
   
   <url>
     <loc>https://yusbk.github.io/tags/factor/</loc>
-    <lastmod>2020-09-27T23:04:45+02:00</lastmod>
+    <lastmod>2017-10-23T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -434,17 +422,22 @@
   
   <url>
     <loc>https://yusbk.github.io/categories/emacs/</loc>
-    <lastmod>2020-05-30T00:39:05+02:00</lastmod>
+    <lastmod>2020-05-30T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://yusbk.github.io/tags/hugo/</loc>
-    <lastmod>2020-05-30T00:39:05+02:00</lastmod>
+    <lastmod>2020-05-30T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://yusbk.github.io/tags/org/</loc>
-    <lastmod>2020-05-30T00:39:05+02:00</lastmod>
+    <lastmod>2020-05-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yusbk.github.io/2017/09/10/hugo-blog-in-org-subtree-export/</loc>
+    <lastmod>2020-05-30T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -455,6 +448,10 @@
   <url>
     <loc>https://yusbk.github.io/2017/07/17/kolom-index/</loc>
     <lastmod>2017-07-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yusbk.github.io/page/</loc>
   </url>
   
 </urlset>

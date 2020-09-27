@@ -9,18 +9,10 @@
 		
 		<managingEditor>Page(/categories) (Yusman Kamaleri)</managingEditor>
     	
-  		<lastBuildDate>Sun, 27 Sep 2020 23:04:46 +0200</lastBuildDate>
+  		<lastBuildDate>Sun, 27 Sep 2020 00:00:00 +0200</lastBuildDate>
 		
 		<atom:link href="/categories/" rel="self" type="application/rss+xml" />
 		
-		<item>
-			<title>Writing Hugo blog in Org</title>
-			<link>https://yusbk.github.io/2017/09/10/hugo-blog-in-org-subtree-export/</link>
-			<pubDate>Sun, 10 Sep 2017 00:00:00 +0000</pubDate>
-			<guid>https://yusbk.github.io/2017/09/10/hugo-blog-in-org-subtree-export/</guid>
-			<description>First heading within the post  This post will be exported as content/posts/writing-hugo-blog-in-org-subtree-export.md. Its title will be &amp;ldquo;Writing Hugo blog in Org&amp;rdquo;. It will have hugo and org tags and emacs as category. The menu item weight and post weight are auto-calculated.</description>
-		</item>
-      	
 		<item>
 			<title>Basic use of drake</title>
 			<link>https://yusbk.github.io/2020/06/15/basic-drake/</link>
@@ -76,7 +68,7 @@ Ubuntu Bila pasang program di Ubuntu melalui source boleh tetapkan dimana progra
 		<item>
 			<title>git submodule</title>
 			<link>https://yusbk.github.io/2020/09/27/git-submodule/</link>
-			<pubDate>Sun, 27 Sep 2020 23:04:46 +0200</pubDate>
+			<pubDate>Sun, 27 Sep 2020 00:00:00 +0200</pubDate>
 			<guid>https://yusbk.github.io/2020/09/27/git-submodule/</guid>
 			<description>Rujukan di sini lebih teratur. Penerangan dibawah ialah berasaskan pengalaman sendiri tanpa struktur.
 Repo baru Bila buat repo baru dan ingin tetapkan submodule untuk tema harbor dan folder public ke yusbk.github.io. Submodule dipakai untuk memasukkan fungsi yang terdapat di repos lain ke dalam repos sendiri ie.</description>
@@ -98,6 +90,15 @@ Menggunakan runApp() Satu fail app.R Untuk menggunakan fungsi runApp(), cara yan
 			<guid>https://yusbk.github.io/2017/08/31/test-figure/</guid>
 			<description>Percobaan untuk memasukkan gambar di post dan penetapan size.
   </description>
+		</item>
+      	
+		<item>
+			<title>Pemakaian lookup table</title>
+			<link>https://yusbk.github.io/2020/02/09/look-up-table/</link>
+			<pubDate>Sun, 09 Feb 2020 00:00:00 +0000</pubDate>
+			<guid>https://yusbk.github.io/2020/02/09/look-up-table/</guid>
+			<description>Lookup table dipakai untuk mempercepatkan proses dan mengelakkan pemakaian ifelse. Untuk mempercepatkan proses, ordered index untuk data.table harus dipakai.
+Cara 1 Kode ini dipakai sekiranya ingin mendapakan nilai di lookup tabel yang berhampiran. Contohnya nilai 1.3730682 adalah berhampiran dengan nilai 1.</description>
 		</item>
       	
 	</channel>

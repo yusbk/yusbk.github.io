@@ -2,16 +2,6 @@
     
         
             {
-                "ref": "https://yusbk.github.io/2017/09/10/hugo-blog-in-org-subtree-export/",
-                "title": "Writing Hugo blog in Org",
-                "section": "post",
-                "date" : "2017.09.10",
-                "body": "First heading within the post  This post will be exported as content/posts/writing-hugo-blog-in-org-subtree-export.md. Its title will be \u0026ldquo;Writing Hugo blog in Org\u0026rdquo;. It will have hugo and org tags and emacs as category. The menu item weight and post weight are auto-calculated. The menu item identifier is auto-set. The lastmod property in the front-matter is set automatically to the time of export.  A sub-heading under that heading  It\u0026rsquo;s draft state will be marked as true as the subtree has the todo state set to TODO.    Figure 2: plot example\n  With the point anywherein this Writing Hugo blog in Org post subtree, do C-c C-e H H to export just this post.\nThe exported Markdown has a little comment footer as set in the Local Variables section\nKeep on testing Just keep on testing\n"
-            }
-        
-    ,
-        
-            {
                 "ref": "https://yusbk.github.io/2020/06/15/basic-drake/",
                 "title": "Basic use of drake",
                 "section": "post",
@@ -327,6 +317,16 @@
                 "section": "post",
                 "date" : "2017.09.13",
                 "body": "Kekadang bila buat analisis contohnya dengan menggunakan funksi grep timbul masalah seperti begini:\ngrep(\u0026#34;settav\u0026#34;, colnames(regdata), value = TRUE) character(0) Warning messages: 1: In grep(\u0026#34;settav\u0026#34;, colnames(regdata), value = TRUE) : input string 9 is invalid in this locale 2: In grep(\u0026#34;settav\u0026#34;, colnames(regdata), value = TRUE) : input string 10 is invalid in this locale 3: In grep(\u0026#34;settav\u0026#34;, colnames(regdata), value = TRUE) : input string 12 is invalid in this locale 4: In grep(\u0026#34;settav\u0026#34;, colnames(regdata), value = TRUE) : input string 13 is invalid in this locale 5: In grep(\u0026#34;settav\u0026#34;, colnames(regdata), value = TRUE) : input string 14 is invalid in this locale Ini adalah disebabkan oleh penetapan bahasa yang digunakan. Larikan sessionInfo() untuk lihat locale yang terdapat di komputer atau Sys.getlocale() untuk melihat aturcara locale di komputer yang dipakai. Kemudian boleh tukarkan ke bahasa yang dipakai. Aturcara boleh dibace di R manual. Kekadang matikan locale tertentu dengan cara seperti dibawah dapat selesaikan masalah:\nSys.setlocale(locale = \u0026#34;C\u0026#34;) Kemudian boleh atifkan semula ke sistem locale default. Pemakaian locale = \u0026quot;\u0026quot; untuk menetapkan yang sistem default dipakai.\nSys.setlocale(categories: = \u0026#34;LC_ALL\u0026#34;, locale = \u0026#34;\u0026#34;) Untuk penetapan locale default boleh dibuat di .Rprofile\nBila memakai Linux, Sys.locale boleh di lihat di /etc/default/locale dan jika mahu menukarkan locale di Linux boleh pakai komando seperti ini di shell.\nsudo locale-gen nb_NO.UTF-8 sudo dpkg-reconfigure locales "
+            }
+        
+    ,
+        
+            {
+                "ref": "https://yusbk.github.io/2017/09/10/hugo-blog-in-org-subtree-export/",
+                "title": "Writing Hugo blog in Org",
+                "section": "post",
+                "date" : "2017.09.10",
+                "body": "First heading within the post  This post will be exported as content/posts/writing-hugo-blog-in-org-subtree-export.md. Its title will be \u0026ldquo;Writing Hugo blog in Org\u0026rdquo;. It will have hugo and org tags and emacs as category. The menu item weight and post weight are auto-calculated. The menu item identifier is auto-set. The lastmod property in the front-matter is set automatically to the time of export.  A sub-heading under that heading  It\u0026rsquo;s draft state will be marked as true as the subtree has the todo state set to TODO.    Figure 2: plot example\n  With the point anywherein this Writing Hugo blog in Org post subtree, do C-c C-e H H to export just this post.\nThe exported Markdown has a little comment footer as set in the Local Variables section\nKeep on testing Just keep on testing\n"
             }
         
     ,
