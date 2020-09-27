@@ -88,19 +88,77 @@
 
       
         <article class="post-preview">
-  <a href="https://yusbk.github.io/2017/08/31/dt-special-symbol/">
-      <h2 class="post-title">special symbol</h2>
+  <a href="https://yusbk.github.io/2019/08/21/row-delete/">
+      <h2 class="post-title">Padamkan barisan (row)</h2>
   </a>
   <div class="post-entry">
     
-      <p>.N Mult .SD dan .SDcols .I .GRP dan rleid Contoh dari manual  Hari ni bersempena Hari kemerdekaan Malaysia ada masa untuk ulang kaji pakej data.table. Hari ni ialah mengenai Special Symbol seperti .N, .I, .GRP, .BY. Penerangan ini diambil dari manual di data.</p>
-        <a href="https://yusbk.github.io/2017/08/31/dt-special-symbol/" class="post-read-more">Read More</a>
+      <p>Untuk memadamkan barisan di data.table menggunakan reference seperti penggunaan .SD masih belum dilaksanakan. Cara ini diambil dari perbincangan di GitHub data.table. Fungsi delete dibuat seperti begini:
+delete &lt;- function(DT, del.idxs) { # pls note &#39;del.idxs&#39; vs. &#39;keep.idxs&#39; keep.idxs &lt;- setdiff(DT[, .</p>
+        <a href="https://yusbk.github.io/2019/08/21/row-delete/" class="post-read-more">Read More</a>
     
   </div>
 
   <div class="postmeta">
     <span class="meta-post">
-  <i class="fa fa-calendar-alt"></i>&nbsp;Apr 27, 2020
+  <i class="fa fa-calendar-alt"></i>&nbsp;Aug 21, 2019
+  
+    &nbsp;&nbsp;&nbsp;<i class="fa fa-folder-open"></i>&nbsp;
+    
+      <a href="https://yusbk.github.io//categories/dt/">DT</a>&nbsp;
+    
+      <a href="https://yusbk.github.io//categories/r-my/">R-My</a>&nbsp;
+    
+  
+</span>
+
+  </div>
+</article>
+
+      
+        <article class="post-preview">
+  <a href="https://yusbk.github.io/2019/08/01/static-encrypt/">
+      <h2 class="post-title">Static encrypting HTML</h2>
+  </a>
+  <div class="post-entry">
+    
+      <p>Cara ini diambil dari GitHub robinmoisson. Boleh baca disitu untuk cara selanjutnya. Antaranya:
+Pemasangan NVM (Node Version Manager) diperlukan untuk memudahkan pemasangan Node.js dan program staticrypt. Curl diperlukan untuk dapatkan Node.js.
+Untuk memasang hanya NVM, boleh dibuat seperti dibawah atau dibaca di sini:</p>
+        <a href="https://yusbk.github.io/2019/08/01/static-encrypt/" class="post-read-more">Read More</a>
+    
+  </div>
+
+  <div class="postmeta">
+    <span class="meta-post">
+  <i class="fa fa-calendar-alt"></i>&nbsp;Aug 1, 2019
+  
+    &nbsp;&nbsp;&nbsp;<i class="fa fa-folder-open"></i>&nbsp;
+    
+      <a href="https://yusbk.github.io//categories/ubuntu/">Ubuntu</a>&nbsp;
+    
+  
+</span>
+
+  </div>
+</article>
+
+      
+        <article class="post-preview">
+  <a href="https://yusbk.github.io/2019/07/31/loop-set/">
+      <h2 class="post-title">Loop atau set di data.table</h2>
+  </a>
+  <div class="post-entry">
+    
+      <p>Secara umumnya penggunaan loop tidak disarankan di R kerana ianya akan mengunakan banyak memory dan memakan masa yang lambat. Akan tetapi data.table menperkenalkan fungsi set untuk mempercepatkan proses. Asasnya ialah sebegini:
+set(dt, i, j, value)  Contoh pemakainnya bila ingin menukarkan NA ke angka yang diinginkan sepert 99.</p>
+        <a href="https://yusbk.github.io/2019/07/31/loop-set/" class="post-read-more">Read More</a>
+    
+  </div>
+
+  <div class="postmeta">
+    <span class="meta-post">
+  <i class="fa fa-calendar-alt"></i>&nbsp;Jul 31, 2019
   
     &nbsp;&nbsp;&nbsp;<i class="fa fa-folder-open"></i>&nbsp;
     
@@ -114,47 +172,19 @@
 
       
         <article class="post-preview">
-  <a href="https://yusbk.github.io/2020/09/27/git-submodule/">
-      <h2 class="post-title">git submodule</h2>
+  <a href="https://yusbk.github.io/2019/07/30/geom-line/">
+      <h2 class="post-title">Tips untuk guna geom_line</h2>
   </a>
   <div class="post-entry">
     
-      <p>Rujukan di sini lebih teratur. Penerangan dibawah ialah berasaskan pengalaman sendiri tanpa struktur.
-Repo baru Bila buat repo baru dan ingin tetapkan submodule untuk tema harbor dan folder public ke yusbk.github.io. Submodule dipakai untuk memasukkan fungsi yang terdapat di repos lain ke dalam repos sendiri ie.</p>
-        <a href="https://yusbk.github.io/2020/09/27/git-submodule/" class="post-read-more">Read More</a>
+      <p>geom_line() sering digunakan untuk menunjukkan trend. Pengguaannya mudah tetapi untuk memastikan yang garisan akan bersambung, variabel di x haruslah jenis continuous. Fungsi ini boleh juga dipakai untuk data jenis category akan tetapi pendekatannya agak berlainan. Pembakaian cara biasa menyebabkan garisan tidak bersambung.</p>
+        <a href="https://yusbk.github.io/2019/07/30/geom-line/" class="post-read-more">Read More</a>
     
   </div>
 
   <div class="postmeta">
     <span class="meta-post">
-  <i class="fa fa-calendar-alt"></i>&nbsp;Sep 27, 2020
-  
-    &nbsp;&nbsp;&nbsp;<i class="fa fa-folder-open"></i>&nbsp;
-    
-      <a href="https://yusbk.github.io//categories/git/">Git</a>&nbsp;
-    
-  
-</span>
-
-  </div>
-</article>
-
-      
-        <article class="post-preview">
-  <a href="https://yusbk.github.io/2018/07/02/basic-shiny/">
-      <h2 class="post-title">Cara deloy Shiny</h2>
-  </a>
-  <div class="post-entry">
-    
-      <p>Menggunakan runApp() Menggunakan shinyAppDir() Tips lain  Terdapat pelbagai cara untuk larikan Shiny App. Sebagai rujukan boleh dibaca di laman Shiny. Penggunaan fungsi runApp() dan shinyAppDir() akan diterangkan disini.
-Menggunakan runApp() Satu fail app.R Untuk menggunakan fungsi runApp(), cara yang senang digunakan ialah dengan menyediakan fail app.</p>
-        <a href="https://yusbk.github.io/2018/07/02/basic-shiny/" class="post-read-more">Read More</a>
-    
-  </div>
-
-  <div class="postmeta">
-    <span class="meta-post">
-  <i class="fa fa-calendar-alt"></i>&nbsp;Apr 27, 2020
+  <i class="fa fa-calendar-alt"></i>&nbsp;Jul 30, 2019
   
     &nbsp;&nbsp;&nbsp;<i class="fa fa-folder-open"></i>&nbsp;
     
@@ -168,43 +198,19 @@ Menggunakan runApp() Satu fail app.R Untuk menggunakan fungsi runApp(), cara yan
 
       
         <article class="post-preview">
-  <a href="https://yusbk.github.io/2017/08/31/test-figure/">
-      <h2 class="post-title">Test figure</h2>
+  <a href="https://yusbk.github.io/2019/07/24/ifelse/">
+      <h2 class="post-title">Pengunaan ifelse</h2>
   </a>
   <div class="post-entry">
+    
+      <p>Untuk menukarkan kode penggunaan ifelse adalah cara yang senang dipakai. Akan tetapi penggunaannya di base R memakai masa yang panjang terutama sekirannya melarikan di data yang besar. Ini kerana penggunaan ifelse di base terlebih dahulu menyusun data sebelum membuat pilihan.</p>
+        <a href="https://yusbk.github.io/2019/07/24/ifelse/" class="post-read-more">Read More</a>
     
   </div>
 
   <div class="postmeta">
     <span class="meta-post">
-  <i class="fa fa-calendar-alt"></i>&nbsp;Apr 27, 2020
-  
-    &nbsp;&nbsp;&nbsp;<i class="fa fa-folder-open"></i>&nbsp;
-    
-      <a href="https://yusbk.github.io//categories/dt/">DT</a>&nbsp;
-    
-  
-</span>
-
-  </div>
-</article>
-
-      
-        <article class="post-preview">
-  <a href="https://yusbk.github.io/2020/02/09/look-up-table/">
-      <h2 class="post-title">Pemakaian lookup table</h2>
-  </a>
-  <div class="post-entry">
-    
-      <p>Lookup table dipakai untuk mempercepatkan proses dan mengelakkan pemakaian ifelse. Untuk mempercepatkan proses, ordered index untuk data.table harus dipakai.
-Cara 1 Kode ini dipakai sekiranya ingin mendapakan nilai di lookup tabel yang berhampiran. Contohnya nilai 1.3730682 adalah berhampiran dengan nilai 1.</p>
-        <a href="https://yusbk.github.io/2020/02/09/look-up-table/" class="post-read-more">Read More</a>
-    
-  </div>
-
-  <div class="postmeta">
-    <span class="meta-post">
-  <i class="fa fa-calendar-alt"></i>&nbsp;Feb 9, 2020
+  <i class="fa fa-calendar-alt"></i>&nbsp;Jul 24, 2019
   
     &nbsp;&nbsp;&nbsp;<i class="fa fa-folder-open"></i>&nbsp;
     

@@ -14,6 +14,15 @@
 		<atom:link href="/tags/encrypt/" rel="self" type="application/rss+xml" />
 		
 		<item>
+			<title>git submodule</title>
+			<link>https://yusbk.github.io/2020/09/27/git-submodule/</link>
+			<pubDate>Sun, 27 Sep 2020 00:00:00 +0200</pubDate>
+			<guid>https://yusbk.github.io/2020/09/27/git-submodule/</guid>
+			<description>Rujukan di sini lebih teratur. Penerangan dibawah ialah berasaskan pengalaman sendiri tanpa struktur.
+Repo baru Bila buat repo baru dan ingin tetapkan submodule untuk tema harbor dan folder public ke yusbk.github.io. Submodule dipakai untuk memasukkan fungsi yang terdapat di repos lain ke dalam repos sendiri ie.</description>
+		</item>
+      	
+		<item>
 			<title>Basic use of drake</title>
 			<link>https://yusbk.github.io/2020/06/15/basic-drake/</link>
 			<pubDate>Mon, 15 Jun 2020 23:22:00 +0200</pubDate>
@@ -33,72 +42,65 @@ Technically, when you fork &amp;ldquo;origin&amp;rdquo; should be your fork and 
 		</item>
       	
 		<item>
-			<title>Aliran kerja buat kod R</title>
-			<link>https://yusbk.github.io/2019/07/24/aliran-kerja/</link>
-			<pubDate>Wed, 24 Jul 2019 00:00:00 +0200</pubDate>
-			<guid>https://yusbk.github.io/2019/07/24/aliran-kerja/</guid>
-			<description>Data asal Pemeriksaan Pembetulan tambahan  Bila menjalankan pembersihan dan penyusunan data adalah disarankan untuk membuat nota-nota mengenai langkah-langkah yang diambil dalam menyelesaikan kerja. Ini adalah sebagai nasihat berkenaan dengan aliran kerja yang boleh dibuat supaya rujukan akan lebih jelas dan senang untuk dipakai beberapa kali.</description>
-		</item>
-      	
-		<item>
-			<title>Tetapkan PATH</title>
-			<link>https://yusbk.github.io/2019/01/20/tetapkan-path/</link>
-			<pubDate>Sun, 20 Jan 2019 00:00:00 +0100</pubDate>
-			<guid>https://yusbk.github.io/2019/01/20/tetapkan-path/</guid>
-			<description>Ubuntu Windows  Bila ingin memakai program di Ubuntu atau Windows melalui terminal, perlu daftarkan program tersebut di PATH. Disini saya terangkan caranya di Ubuntu dan Windows.
-Ubuntu Bila pasang program di Ubuntu melalui source boleh tetapkan dimana program disimpan melalui penetapkan --prefix bila melarikan .</description>
-		</item>
-      	
-		<item>
-			<title>Susun factor</title>
-			<link>https://yusbk.github.io/2017/10/11/susun-factor/</link>
-			<pubDate>Wed, 11 Oct 2017 00:00:00 +0200</pubDate>
-			<guid>https://yusbk.github.io/2017/10/11/susun-factor/</guid>
-			<description>Susun ketinggian bar Nama di aksis  Bila buat bar plot cara asas di R atau menggunakan pakej ggplot2, susunan levels di x-aksis disusun semula menggikut abjad. Oleh sebab itu sekiranya ingin menyusun mengikut aturcara tertentu, levels di x-aksis harus disusun semula.</description>
-		</item>
-      	
-		<item>
-			<title>special symbol</title>
-			<link>https://yusbk.github.io/2017/08/31/dt-special-symbol/</link>
-			<pubDate>Thu, 31 Aug 2017 00:00:00 +0200</pubDate>
-			<guid>https://yusbk.github.io/2017/08/31/dt-special-symbol/</guid>
-			<description>.N Mult .SD dan .SDcols .I .GRP dan rleid Contoh dari manual  Hari ni bersempena Hari kemerdekaan Malaysia ada masa untuk ulang kaji pakej data.table. Hari ni ialah mengenai Special Symbol seperti .N, .I, .GRP, .BY. Penerangan ini diambil dari manual di data.</description>
-		</item>
-      	
-		<item>
-			<title>git submodule</title>
-			<link>https://yusbk.github.io/2020/09/27/git-submodule/</link>
-			<pubDate>Sun, 27 Sep 2020 00:00:00 +0200</pubDate>
-			<guid>https://yusbk.github.io/2020/09/27/git-submodule/</guid>
-			<description>Rujukan di sini lebih teratur. Penerangan dibawah ialah berasaskan pengalaman sendiri tanpa struktur.
-Repo baru Bila buat repo baru dan ingin tetapkan submodule untuk tema harbor dan folder public ke yusbk.github.io. Submodule dipakai untuk memasukkan fungsi yang terdapat di repos lain ke dalam repos sendiri ie.</description>
-		</item>
-      	
-		<item>
-			<title>Cara deloy Shiny</title>
-			<link>https://yusbk.github.io/2018/07/02/basic-shiny/</link>
-			<pubDate>Mon, 02 Jul 2018 00:00:00 +0200</pubDate>
-			<guid>https://yusbk.github.io/2018/07/02/basic-shiny/</guid>
-			<description>Menggunakan runApp() Menggunakan shinyAppDir() Tips lain  Terdapat pelbagai cara untuk larikan Shiny App. Sebagai rujukan boleh dibaca di laman Shiny. Penggunaan fungsi runApp() dan shinyAppDir() akan diterangkan disini.
-Menggunakan runApp() Satu fail app.R Untuk menggunakan fungsi runApp(), cara yang senang digunakan ialah dengan menyediakan fail app.</description>
-		</item>
-      	
-		<item>
-			<title>Test figure</title>
-			<link>https://yusbk.github.io/2017/08/31/test-figure/</link>
-			<pubDate>Thu, 31 Aug 2017 00:00:00 +0200</pubDate>
-			<guid>https://yusbk.github.io/2017/08/31/test-figure/</guid>
-			<description>Percobaan untuk memasukkan gambar di post dan penetapan size.
-  </description>
-		</item>
-      	
-		<item>
 			<title>Pemakaian lookup table</title>
 			<link>https://yusbk.github.io/2020/02/09/look-up-table/</link>
 			<pubDate>Sun, 09 Feb 2020 00:00:00 +0000</pubDate>
 			<guid>https://yusbk.github.io/2020/02/09/look-up-table/</guid>
 			<description>Lookup table dipakai untuk mempercepatkan proses dan mengelakkan pemakaian ifelse. Untuk mempercepatkan proses, ordered index untuk data.table harus dipakai.
 Cara 1 Kode ini dipakai sekiranya ingin mendapakan nilai di lookup tabel yang berhampiran. Contohnya nilai 1.3730682 adalah berhampiran dengan nilai 1.</description>
+		</item>
+      	
+		<item>
+			<title>Pasang pakej di R</title>
+			<link>https://yusbk.github.io/2019/09/02/package-r/</link>
+			<pubDate>Mon, 02 Sep 2019 00:00:00 +0000</pubDate>
+			<guid>https://yusbk.github.io/2019/09/02/package-r/</guid>
+			<description>Ini ialah beberapa penggunaan asas R yang amat berguna walaupun jarang dipakai. Antaranya:
+Pasang pakej Cara biasa untuk pasang pakej ialah menggunakan install.packages(). Tetapi sekiranya ingin memasang banyak pekej secara serentank dan memuatkan di R setelah pakej dipasang, cara begini boleh dipakai:</description>
+		</item>
+      	
+		<item>
+			<title>Padamkan barisan (row)</title>
+			<link>https://yusbk.github.io/2019/08/21/row-delete/</link>
+			<pubDate>Wed, 21 Aug 2019 00:00:00 +0000</pubDate>
+			<guid>https://yusbk.github.io/2019/08/21/row-delete/</guid>
+			<description>Untuk memadamkan barisan di data.table menggunakan reference seperti penggunaan .SD masih belum dilaksanakan. Cara ini diambil dari perbincangan di GitHub data.table. Fungsi delete dibuat seperti begini:
+delete &amp;lt;- function(DT, del.idxs) { # pls note &amp;#39;del.idxs&amp;#39; vs. &amp;#39;keep.idxs&amp;#39; keep.idxs &amp;lt;- setdiff(DT[, .</description>
+		</item>
+      	
+		<item>
+			<title>Static encrypting HTML</title>
+			<link>https://yusbk.github.io/2019/08/01/static-encrypt/</link>
+			<pubDate>Thu, 01 Aug 2019 00:00:00 +0000</pubDate>
+			<guid>https://yusbk.github.io/2019/08/01/static-encrypt/</guid>
+			<description>Cara ini diambil dari GitHub robinmoisson. Boleh baca disitu untuk cara selanjutnya. Antaranya:
+Pemasangan NVM (Node Version Manager) diperlukan untuk memudahkan pemasangan Node.js dan program staticrypt. Curl diperlukan untuk dapatkan Node.js.
+Untuk memasang hanya NVM, boleh dibuat seperti dibawah atau dibaca di sini:</description>
+		</item>
+      	
+		<item>
+			<title>Loop atau set di data.table</title>
+			<link>https://yusbk.github.io/2019/07/31/loop-set/</link>
+			<pubDate>Wed, 31 Jul 2019 00:00:00 +0000</pubDate>
+			<guid>https://yusbk.github.io/2019/07/31/loop-set/</guid>
+			<description>Secara umumnya penggunaan loop tidak disarankan di R kerana ianya akan mengunakan banyak memory dan memakan masa yang lambat. Akan tetapi data.table menperkenalkan fungsi set untuk mempercepatkan proses. Asasnya ialah sebegini:
+set(dt, i, j, value)  Contoh pemakainnya bila ingin menukarkan NA ke angka yang diinginkan sepert 99.</description>
+		</item>
+      	
+		<item>
+			<title>Tips untuk guna geom_line</title>
+			<link>https://yusbk.github.io/2019/07/30/geom-line/</link>
+			<pubDate>Tue, 30 Jul 2019 00:00:00 +0000</pubDate>
+			<guid>https://yusbk.github.io/2019/07/30/geom-line/</guid>
+			<description>geom_line() sering digunakan untuk menunjukkan trend. Pengguaannya mudah tetapi untuk memastikan yang garisan akan bersambung, variabel di x haruslah jenis continuous. Fungsi ini boleh juga dipakai untuk data jenis category akan tetapi pendekatannya agak berlainan. Pembakaian cara biasa menyebabkan garisan tidak bersambung.</description>
+		</item>
+      	
+		<item>
+			<title>Pengunaan ifelse</title>
+			<link>https://yusbk.github.io/2019/07/24/ifelse/</link>
+			<pubDate>Wed, 24 Jul 2019 00:00:00 +0000</pubDate>
+			<guid>https://yusbk.github.io/2019/07/24/ifelse/</guid>
+			<description>Untuk menukarkan kode penggunaan ifelse adalah cara yang senang dipakai. Akan tetapi penggunaannya di base R memakai masa yang panjang terutama sekirannya melarikan di data yang besar. Ini kerana penggunaan ifelse di base terlebih dahulu menyusun data sebelum membuat pilihan.</description>
 		</item>
       	
 	</channel>
