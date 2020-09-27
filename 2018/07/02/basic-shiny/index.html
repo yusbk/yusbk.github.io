@@ -68,11 +68,11 @@
           
           
             <span class="meta-post">
-  <i class="fa fa-calendar-alt"></i>&nbsp;Jul 2, 2018
+  <i class="fa fa-calendar-alt"></i>&nbsp;Apr 27, 2020
   
     &nbsp;&nbsp;&nbsp;<i class="fa fa-folder-open"></i>&nbsp;
     
-      <a href="https://yusbk.github.io//categories/r/">R</a>&nbsp;
+      <a href="https://yusbk.github.io//categories/r-my/">R-My</a>&nbsp;
     
   
 </span>
@@ -88,43 +88,64 @@
   <div class="container" role="main">
     <article class="article" class="blog-post">
       
-    <p>Terdapat pelbagai cara untuk larikan <strong>Shiny App</strong>. Sebagai rujukan boleh dibaca di <a href="http://shiny.rstudio.com/articles/app-formats.html">laman Shiny</a>. Penggunaan fungsi <code>runApp()</code> dan <code>shinyAppDir()</code> akan diterangkan disini.</p>
-<h1 id="menggunakan-runapp">Menggunakan <code>runApp()</code></h1>
-<h2 id="satu-fail-appr">Satu fail <em>app.R</em></h2>
-<p>Untuk menggunakan fungsi <em>runApp()</em>, cara yang senang digunakan ialah dengan menyediakan fail <em>app.R</em>. Fail ini harus mengandungi <strong>ui</strong> dan <strong>server</strong>. Contohnya:</p>
+    <!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<ul>
+<li><a href="#menggunakan-runapp">Menggunakan <code>runApp()</code></a></li>
+<li><a href="#menggunakan-shinyappdir">Menggunakan <code>shinyAppDir()</code></a></li>
+<li><a href="#tips-lain">Tips lain</a></li>
+</ul>
+<!-- raw HTML omitted -->
+<p>Terdapat pelbagai cara untuk larikan <strong>Shiny App</strong>. Sebagai rujukan boleh
+dibaca di <a href="http://shiny.rstudio.com/articles/app-formats.html">laman
+Shiny</a>. Penggunaan fungsi <code>runApp()</code> dan <code>shinyAppDir()</code> akan
+diterangkan disini.</p>
+<h2 id="menggunakan-runapp">Menggunakan <code>runApp()</code></h2>
+<h4 id="satu-fail-app" class="r">Satu fail <em>app.R</em></h4>
+<p>Untuk menggunakan fungsi <em>runApp()</em>, cara yang senang digunakan ialah
+dengan menyediakan fail <em>app.R</em>. Fail ini harus mengandungi <strong>ui</strong> dan
+<strong>server</strong>. Contohnya:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">library</span>(shiny)
 ui <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">fluidPage</span>()
 server <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function</span>(input, output) {}
 <span style="color:#a6e22e">shinyApp</span>(ui <span style="color:#f92672">=</span> ui, server <span style="color:#f92672">=</span> server)
-
-</code></pre></div><p>Sekiranya menggunakan program <em>RStudio</em> maka butang <em>Run App</em> akan keluar dan boleh digunakan untuk melarikan app. Sekiranya mengunakan program lain contohnya <em>Emacs ESS</em> maka boleh larikan dengan cara :</p>
+</code></pre></div><p>Sekiranya menggunakan program <em>RStudio</em> maka butang <em>Run App</em> akan
+keluar dan boleh digunakan untuk melarikan app. Sekiranya mengunakan
+program lain contohnya <em>Emacs ESS</em> maka boleh larikan dengan cara :</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">library(shiny)
 runApp(<span style="color:#e6db74">&#34;app.R&#34;</span>)
-</code></pre></div><h2 id="pelbagai-fail-di-folder">Pelbagai fail di folder</h2>
-<p>Sekiranya app mengandungi kod yang panjang dimana <em>ui</em> dan <em>server</em> di letakkan di fail-fail berasingan, fail-fail ini harus diletakkan di folder sendiri bersama dengan fail-fail lain contohnya <em>global.R</em>, <em>data.R</em> atau <em>module.R</em> termasuk folder <em>www</em>. Fungsi <em>shinyApp()</em> tidak diperlukan untuk melarikan app ini. Penggunaan <em>runApp()</em> boleh digunakan dengan menetapkan nama folder dimana fail-fail tersebut diletakkan. Contohnya isi kandungan di folder <em>myApp</em></p>
-<pre><code>/home/Git/myApp/
+</code></pre></div><h4 id="pelbagai-fail-di-folder">Pelbagai fail di folder</h4>
+<p>Sekiranya app mengandungi kod yang panjang dimana <em>ui</em> dan <em>server</em> di
+letakkan di fail-fail berasingan, fail-fail ini harus diletakkan di
+folder sendiri bersama dengan fail-fail lain contohnya <em>global.R</em>,
+<em>data.R</em> atau <em>module.R</em> termasuk folder <em>www</em>. Fungsi <em>shinyApp()</em>
+tidak diperlukan untuk melarikan app ini. Penggunaan <em>runApp()</em> boleh
+digunakan dengan menetapkan nama folder dimana fail-fail tersebut
+diletakkan. Contohnya isi kandungan di folder <em>myApp</em></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">/home/Git/myApp/
 ├── data.R
 ├── global.R
 ├── server.R
 ├── ui.R
 └── www
     └── custom.css
-</code></pre>
-<p>Folder <em>www</em> digunakan untuk menyimpan elemen-element lain seperti gambar, javaScript, CSS dan lain-lainnya. Untuk melayarkan app boleh dilakukan pelbagai cara. Antaranya:</p>
+</code></pre></div><p>Folder <em>www</em> digunakan untuk menyimpan elemen-element lain seperti
+gambar, javaScript, CSS dan lain-lainnya. Untuk melayarkan app boleh
+dilakukan pelbagai cara. Antaranya:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">library(shiny)
 runApp(<span style="color:#e6db74">&#34;myApp&#34;</span>)
 </code></pre></div><p>Sekiranya Shinyapps dibuat sebagai object.</p>
-<pre><code>app &lt;- shinyApp(ui = ui, server = server)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">app &lt;- shinyApp(ui = ui, server = server)
 runApp(app)
-</code></pre>
-<p>Atau hanya terus melarikan <em>app</em> di console tanpa mengunakan <em>runApp</em></p>
-<pre><code>app &lt;- shinyApp(ui = ui, server = server)
+</code></pre></div><p>Atau hanya terus melarikan <em>app</em> di console tanpa mengunakan <em>runApp</em></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">app &lt;- shinyApp(ui = ui, server = server)
 app
-</code></pre>
-<h1 id="menggunakan-shinyappdir">Menggunakan <code>shinyAppDir()</code></h1>
-<p>Melarikan app dengan menetapkan folder sekiranya folder tidak terletak di folder yang sedang digunakan.</p>
-<h1 id="tips-lain">Tips lain</h1>
-<p>Sekiranya ingin dapatkan <em>clientData</em> boleh menggunakan <em>session</em>. Contohnya:</p>
+</code></pre></div><h2 id="menggunakan-shinyappdir">Menggunakan <code>shinyAppDir()</code></h2>
+<p>Melarikan app dengan menetapkan folder sekiranya folder tidak terletak
+di folder yang sedang digunakan.</p>
+<h2 id="tips-lain">Tips lain</h2>
+<p>Sekiranya ingin dapatkan <em>clientData</em> boleh menggunakan <em>session</em>.
+Contohnya:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">function</span>(input, output, session) {
   output<span style="color:#f92672">$</span>txt <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">renderPrint</span>({
     session<span style="color:#f92672">$</span>clientData
