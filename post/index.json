@@ -2,6 +2,16 @@
     
         
             {
+                "ref": "https://yusbk.github.io/2020/09/28/git-account/",
+                "title": "Multiple account",
+                "section": "post",
+                "date" : "2020.09.28",
+                "body": "Setting when using multiple git accounts. After cloning repo inside a folder eg. ~/Git.work/ then you can edit config file called ~/.gitconfig in HOME dir. Reference can be found here.\n[user] name = Your Name email = your@email.com [includeIf \u0026#34;gitdir:~/Git-work/\u0026#34;] path = .gitconfig-work Then create a file named .gitconfig-work with\n[user] name = Your Name email = your@email.com [core] sshCommand = ssh -i ~/.ssh/id_work Here -i is identifying file. This setting makes all repositories under ~/Git-work folder to use work credentials automatically without needing to change hostname when cloning a repo.\n"
+            }
+        
+    ,
+        
+            {
                 "ref": "https://yusbk.github.io/2020/09/27/git-submodule/",
                 "title": "git submodule",
                 "section": "post",

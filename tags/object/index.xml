@@ -14,6 +14,15 @@
 		<atom:link href="/tags/object/" rel="self" type="application/rss+xml" />
 		
 		<item>
+			<title>Multiple account</title>
+			<link>https://yusbk.github.io/2020/09/28/git-account/</link>
+			<pubDate>Mon, 28 Sep 2020 00:00:00 +0200</pubDate>
+			<guid>https://yusbk.github.io/2020/09/28/git-account/</guid>
+			<description>Setting when using multiple git accounts. After cloning repo inside a folder eg. ~/Git.work/ then you can edit config file called ~/.gitconfig in HOME dir. Reference can be found here.
+[user] name = Your Name email = your@email.com [includeIf &amp;#34;gitdir:~/Git-work/&amp;#34;] path = .</description>
+		</item>
+      	
+		<item>
 			<title>git submodule</title>
 			<link>https://yusbk.github.io/2020/09/27/git-submodule/</link>
 			<pubDate>Sun, 27 Sep 2020 00:00:00 +0200</pubDate>
@@ -93,14 +102,6 @@ set(dt, i, j, value)  Contoh pemakainnya bila ingin menukarkan NA ke angka yang 
 			<pubDate>Tue, 30 Jul 2019 00:00:00 +0000</pubDate>
 			<guid>https://yusbk.github.io/2019/07/30/geom-line/</guid>
 			<description>geom_line() sering digunakan untuk menunjukkan trend. Pengguaannya mudah tetapi untuk memastikan yang garisan akan bersambung, variabel di x haruslah jenis continuous. Fungsi ini boleh juga dipakai untuk data jenis category akan tetapi pendekatannya agak berlainan. Pembakaian cara biasa menyebabkan garisan tidak bersambung.</description>
-		</item>
-      	
-		<item>
-			<title>Pengunaan ifelse</title>
-			<link>https://yusbk.github.io/2019/07/24/ifelse/</link>
-			<pubDate>Wed, 24 Jul 2019 00:00:00 +0000</pubDate>
-			<guid>https://yusbk.github.io/2019/07/24/ifelse/</guid>
-			<description>Untuk menukarkan kode penggunaan ifelse adalah cara yang senang dipakai. Akan tetapi penggunaannya di base R memakai masa yang panjang terutama sekirannya melarikan di data yang besar. Ini kerana penggunaan ifelse di base terlebih dahulu menyusun data sebelum membuat pilihan.</description>
 		</item>
       	
 	</channel>
