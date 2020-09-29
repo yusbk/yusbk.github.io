@@ -14,12 +14,12 @@
 		<atom:link href="/categories/r-en/" rel="self" type="application/rss+xml" />
 		
 		<item>
-			<title>SSH</title>
+			<title>SSH-key with Git on Windows</title>
 			<link>https://yusbk.github.io/2020/09/29/git-ssh/</link>
 			<pubDate>Tue, 29 Sep 2020 00:00:00 +0200</pubDate>
 			<guid>https://yusbk.github.io/2020/09/29/git-ssh/</guid>
-			<description>Generally, these are what you have to do:
- Install git-with-openssh Create SSH-key Add SSH-key to ssh-agent Create ~/.bashrc for auto-launching ssh-agent  SSH with Windows Windows 10 include openSSH. But I can&amp;rsquo;t make it work with git so I use git-with-openssh installed via scoop.</description>
+			<description>Generally, these are what I did:
+ Install git-with-openssh Create SSH-key Add SSH-key to ssh-agent Create ~/.bashrc for auto-launching ssh-agent  openSSH Windows 10 include openSSH. But I can&amp;rsquo;t make it work with git so I use git-with-openssh installed via scoop.</description>
 		</item>
       	
 		<item>
