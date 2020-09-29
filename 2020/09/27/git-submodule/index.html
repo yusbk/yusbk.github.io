@@ -108,6 +108,7 @@ git submodule update --remote --merge
 </code></pre></div><p>Untuk update submodule pakai komando di bawah. Penting commit submodule dahulu kemudian commit
 parent repo sebelum push dari parent repos. Caranya:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">cd public
+git add .
 git commit -am &#39;Tambah pertukaran di public submodule&#39;
 cd ..
 git push origin master --recurse-submodules=on-demand
