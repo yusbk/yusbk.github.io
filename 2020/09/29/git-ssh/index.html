@@ -90,7 +90,14 @@
   <div class="container" role="main">
     <article class="article" class="blog-post">
       
-    <h2 id="ssh-with-windows">SSH with Windows</h2>
+    <p>Generally, these are what you have to do:</p>
+<ul>
+<li>Install git-with-openssh</li>
+<li>Create SSH-key</li>
+<li>Add SSH-key to ssh-agent</li>
+<li>Create <a href="https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/working-with-ssh-key-passphrases#auto-launching-ssh-agent-on-git-for-windows">~/.bashrc</a> for auto-launching ssh-agent</li>
+</ul>
+<h2 id="ssh-with-windows">SSH with Windows</h2>
 <p>Windows 10 include <strong>openSSH</strong>. But I can&rsquo;t make it work with git so I use <strong>git-with-openssh</strong> installed
 via <a href="https://scoop-docs.now.sh/docs/overview/So-What.html#why-should-you-care-about-scoop">scoop</a>. This will install Git and openSSH together. After installation, it&rsquo;s important check
 where is your <code>~/.ssh</code> folder via <code>Git bash.</code> This is the folder where you will save your SSH-key.</p>
@@ -107,6 +114,11 @@ where is your <code>~/.ssh</code> folder via <code>Git bash.</code> This is the 
 (defun git-bash () (interactive)
        (let ((explicit-shell-file-name <span style="color:#e6db74">&#34;C:/Users/ybka/scoop/apps/git-with-openssh/current/bin/bash.exe&#34;</span> ))
          (<span style="color:#a6e22e">call-interactively</span> <span style="color:#e6db74">&#39;shell</span>)))
+</code></pre></div><p>Then as suggested from StackExchange, I created <code>~/.bash_profile</code> (root for Git-bash) and add the
+codes below to display shell prompt properly in Emacs.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">if [ -n &#34;$INSIDE_EMACS&#34; ]; then
+export PS1=&#39;\[\033[32m\]\u@\h \[\033[33m\]\w\[\033[36m\]`__git_ps1`\[\033[0m\]\n$ &#39;
+fi
 </code></pre></div><p>To be on the safe side, I also add the PATH to Windows Environment. You can find guides for doing it
 in many places eg. <a href="https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/">here</a>.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">C:/Users/ybka/scoop/apps/git-with-openssh/current/bin/

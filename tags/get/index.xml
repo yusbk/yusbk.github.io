@@ -18,7 +18,8 @@
 			<link>https://yusbk.github.io/2020/09/29/git-ssh/</link>
 			<pubDate>Tue, 29 Sep 2020 00:00:00 +0200</pubDate>
 			<guid>https://yusbk.github.io/2020/09/29/git-ssh/</guid>
-			<description>SSH with Windows Windows 10 include openSSH. But I can&amp;rsquo;t make it work with git so I use git-with-openssh installed via scoop. This will install Git and openSSH together. After installation, it&amp;rsquo;s important check where is your ~/.ssh folder via Git bash.</description>
+			<description>Generally, these are what you have to do:
+ Install git-with-openssh Create SSH-key Add SSH-key to ssh-agent Create ~/.bashrc for auto-launching ssh-agent  SSH with Windows Windows 10 include openSSH. But I can&amp;rsquo;t make it work with git so I use git-with-openssh installed via scoop.</description>
 		</item>
       	
 		<item>
