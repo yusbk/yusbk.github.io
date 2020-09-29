@@ -17,7 +17,7 @@
 
 <script src="https://yusbk.github.io/js/bundle.js"></script>
 <script src="https://yusbk.github.io/js/instantpage.js" type="module" defer></script>
-<meta name="generator" content="Hugo 0.69.2" />
+<meta name="generator" content="Hugo 0.75.1" />
   </head>
   <body>
     
@@ -68,7 +68,7 @@
           
           
             <span class="meta-post">
-  <i class="fa fa-calendar-alt"></i>&nbsp;Sep 28, 2020
+  <i class="fa fa-calendar-alt"></i>&nbsp;Sep 29, 2020
   
 </span>
 
@@ -88,13 +88,41 @@
 
       
         <article class="post-preview">
+  <a href="https://yusbk.github.io/2020/09/29/git-ssh/">
+      <h2 class="post-title">SSH</h2>
+  </a>
+  <div class="post-entry">
+    
+      <p>SSH with Windows Windows 10 include openSSH. But I can&rsquo;t make it work with git so I use git-with-openssh installed via scoop. This will install Git and openSSH together. After installation, it&rsquo;s important check where is your ~/.ssh folder via Git bash.</p>
+        <a href="https://yusbk.github.io/2020/09/29/git-ssh/" class="post-read-more">Read More</a>
+    
+  </div>
+
+  <div class="postmeta">
+    <span class="meta-post">
+  <i class="fa fa-calendar-alt"></i>&nbsp;Sep 29, 2020
+  
+    &nbsp;&nbsp;&nbsp;<i class="fa fa-folder-open"></i>&nbsp;
+    
+      <a href="https://yusbk.github.io//categories/git/">Git</a>&nbsp;
+    
+      <a href="https://yusbk.github.io//categories/emacs/">emacs</a>&nbsp;
+    
+  
+</span>
+
+  </div>
+</article>
+
+      
+        <article class="post-preview">
   <a href="https://yusbk.github.io/2020/09/28/git-account/">
       <h2 class="post-title">Multiple account</h2>
   </a>
   <div class="post-entry">
     
-      <p>Setting when using multiple git accounts. After cloning repo inside a folder eg. ~/Git.work/ then you can edit config file called ~/.gitconfig in HOME dir. Reference can be found here.
-[user] name = Your Name email = your@email.com [includeIf &#34;gitdir:~/Git-work/&#34;] path = .</p>
+      <p>config file Create a config file in your ~/.ssh folder that will manage your accounts.
+Host personal HostName github.com User git IdentityFile ~/.ssh/id_rsa_personal Host work HostName github.com User git IdentityFile ~/.ssh/id_rsa_work When cloning a new repo then you only have to specify hostname to your Git account.</p>
         <a href="https://yusbk.github.io/2020/09/28/git-account/" class="post-read-more">Read More</a>
     
   </div>
@@ -188,35 +216,6 @@ Technically, when you fork &ldquo;origin&rdquo; should be your fork and &ldquo;u
     &nbsp;&nbsp;&nbsp;<i class="fa fa-folder-open"></i>&nbsp;
     
       <a href="https://yusbk.github.io//categories/git/">Git</a>&nbsp;
-    
-  
-</span>
-
-  </div>
-</article>
-
-      
-        <article class="post-preview">
-  <a href="https://yusbk.github.io/2020/02/09/look-up-table/">
-      <h2 class="post-title">Pemakaian lookup table</h2>
-  </a>
-  <div class="post-entry">
-    
-      <p>Lookup table dipakai untuk mempercepatkan proses dan mengelakkan pemakaian ifelse. Untuk mempercepatkan proses, ordered index untuk data.table harus dipakai.
-Cara 1 Kode ini dipakai sekiranya ingin mendapakan nilai di lookup tabel yang berhampiran. Contohnya nilai 1.3730682 adalah berhampiran dengan nilai 1.</p>
-        <a href="https://yusbk.github.io/2020/02/09/look-up-table/" class="post-read-more">Read More</a>
-    
-  </div>
-
-  <div class="postmeta">
-    <span class="meta-post">
-  <i class="fa fa-calendar-alt"></i>&nbsp;Feb 9, 2020
-  
-    &nbsp;&nbsp;&nbsp;<i class="fa fa-folder-open"></i>&nbsp;
-    
-      <a href="https://yusbk.github.io//categories/r-my/">R-My</a>&nbsp;
-    
-      <a href="https://yusbk.github.io//categories/dt/">DT</a>&nbsp;
     
   
 </span>

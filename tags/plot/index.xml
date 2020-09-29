@@ -14,12 +14,20 @@
 		<atom:link href="/tags/plot/" rel="self" type="application/rss+xml" />
 		
 		<item>
+			<title>SSH</title>
+			<link>https://yusbk.github.io/2020/09/29/git-ssh/</link>
+			<pubDate>Tue, 29 Sep 2020 00:00:00 +0200</pubDate>
+			<guid>https://yusbk.github.io/2020/09/29/git-ssh/</guid>
+			<description>SSH with Windows Windows 10 include openSSH. But I can&amp;rsquo;t make it work with git so I use git-with-openssh installed via scoop. This will install Git and openSSH together. After installation, it&amp;rsquo;s important check where is your ~/.ssh folder via Git bash.</description>
+		</item>
+      	
+		<item>
 			<title>Multiple account</title>
 			<link>https://yusbk.github.io/2020/09/28/git-account/</link>
 			<pubDate>Mon, 28 Sep 2020 00:00:00 +0200</pubDate>
 			<guid>https://yusbk.github.io/2020/09/28/git-account/</guid>
-			<description>Setting when using multiple git accounts. After cloning repo inside a folder eg. ~/Git.work/ then you can edit config file called ~/.gitconfig in HOME dir. Reference can be found here.
-[user] name = Your Name email = your@email.com [includeIf &amp;#34;gitdir:~/Git-work/&amp;#34;] path = .</description>
+			<description>config file Create a config file in your ~/.ssh folder that will manage your accounts.
+Host personal HostName github.com User git IdentityFile ~/.ssh/id_rsa_personal Host work HostName github.com User git IdentityFile ~/.ssh/id_rsa_work When cloning a new repo then you only have to specify hostname to your Git account.</description>
 		</item>
       	
 		<item>
@@ -93,15 +101,7 @@ Untuk memasang hanya NVM, boleh dibuat seperti dibawah atau dibaca di sini:</des
 			<pubDate>Wed, 31 Jul 2019 00:00:00 +0000</pubDate>
 			<guid>https://yusbk.github.io/2019/07/31/loop-set/</guid>
 			<description>Secara umumnya penggunaan loop tidak disarankan di R kerana ianya akan mengunakan banyak memory dan memakan masa yang lambat. Akan tetapi data.table menperkenalkan fungsi set untuk mempercepatkan proses. Asasnya ialah sebegini:
-set(dt, i, j, value)  Contoh pemakainnya bila ingin menukarkan NA ke angka yang diinginkan sepert 99.</description>
-		</item>
-      	
-		<item>
-			<title>Tips untuk guna geom_line</title>
-			<link>https://yusbk.github.io/2019/07/30/geom-line/</link>
-			<pubDate>Tue, 30 Jul 2019 00:00:00 +0000</pubDate>
-			<guid>https://yusbk.github.io/2019/07/30/geom-line/</guid>
-			<description>geom_line() sering digunakan untuk menunjukkan trend. Pengguaannya mudah tetapi untuk memastikan yang garisan akan bersambung, variabel di x haruslah jenis continuous. Fungsi ini boleh juga dipakai untuk data jenis category akan tetapi pendekatannya agak berlainan. Pembakaian cara biasa menyebabkan garisan tidak bersambung.</description>
+set(dt, i, j, value) Contoh pemakainnya bila ingin menukarkan NA ke angka yang diinginkan sepert 99.</description>
 		</item>
       	
 	</channel>

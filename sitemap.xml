@@ -4,36 +4,51 @@
   
   <url>
     <loc>https://yusbk.github.io/categories/</loc>
-    <lastmod>2020-09-28T00:00:00+02:00</lastmod>
+    <lastmod>2020-09-29T00:00:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yusbk.github.io/categories/emacs/</loc>
+    <lastmod>2020-09-29T00:00:00+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://yusbk.github.io/categories/git/</loc>
-    <lastmod>2020-09-28T00:00:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/2020/09/28/git-account/</loc>
-    <lastmod>2020-09-28T00:00:00+02:00</lastmod>
+    <lastmod>2020-09-29T00:00:00+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://yusbk.github.io/post/</loc>
-    <lastmod>2020-09-28T00:00:00+02:00</lastmod>
+    <lastmod>2020-09-29T00:00:00+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://yusbk.github.io/tags/setting/</loc>
-    <lastmod>2020-09-28T00:00:00+02:00</lastmod>
+    <lastmod>2020-09-29T00:00:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yusbk.github.io/2020/09/29/git-ssh/</loc>
+    <lastmod>2020-09-29T00:00:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yusbk.github.io/tags/ssh/</loc>
+    <lastmod>2020-09-29T00:00:00+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://yusbk.github.io/tags/</loc>
-    <lastmod>2020-09-28T00:00:00+02:00</lastmod>
+    <lastmod>2020-09-29T00:00:00+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://yusbk.github.io/</loc>
+    <lastmod>2020-09-29T00:00:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yusbk.github.io/2020/09/28/git-account/</loc>
     <lastmod>2020-09-28T00:00:00+02:00</lastmod>
   </url>
   
@@ -405,11 +420,6 @@
   <url>
     <loc>https://yusbk.github.io/2017/09/13/locale/</loc>
     <lastmod>2017-09-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/categories/emacs/</loc>
-    <lastmod>2017-09-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
