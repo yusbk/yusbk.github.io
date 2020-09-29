@@ -102,6 +102,16 @@ IdentityFile ~/.ssh/id_rsa_work
 </code></pre></div><p>When cloning a new repo then you only have to specify hostname to your Git account. Example:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git clone git@personal:yusbk/nama_rep.git
 git clone git@work:ybkamaleri/nama_rep.git
+</code></pre></div><p>When your repo has <code>submodule</code> to be able to push changes to remote, I have to change the <strong>config</strong> files in</p>
+<ul>
+<li><code>../cloned_repo/.git</code></li>
+<li><code>../cloned_repo/.git/modules/module_repo</code></li>
+</ul>
+<!-- raw HTML omitted -->
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">[remote <span style="color:#e6db74">&#34;origin&#34;</span>]
+        <span style="color:#960050;background-color:#1e0010">#</span> url <span style="color:#a6e22e">=</span> https://github.com/yusbk/yusbk.github.io.git
+        url <span style="color:#a6e22e">=</span> git@personal:yusbk/yusbk.github.io.git
+        fetch <span style="color:#a6e22e">=</span> +refs/heads/*:refs/remotes/origin/*
 </code></pre></div><h2 id="gitconfig-file">gitconfig file</h2>
 <p>This is another setting when using multiple git accounts without needing to change hostname. After
 cloning repo inside a folder eg. <code>~/Git.work/</code> then you can edit config file called <code>~/.gitconfig</code> in
