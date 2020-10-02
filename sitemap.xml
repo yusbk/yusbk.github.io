@@ -4,7 +4,42 @@
   
   <url>
     <loc>https://yusbk.github.io/categories/</loc>
-    <lastmod>2020-09-29T00:00:00+02:00</lastmod>
+    <lastmod>2020-10-02T12:49:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yusbk.github.io/2020/10/02/access-db/</loc>
+    <lastmod>2020-10-02T12:49:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yusbk.github.io/tags/database/</loc>
+    <lastmod>2020-10-02T12:49:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yusbk.github.io/categories/en/</loc>
+    <lastmod>2020-10-02T12:49:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yusbk.github.io/post/</loc>
+    <lastmod>2020-10-02T12:49:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yusbk.github.io/categories/r/</loc>
+    <lastmod>2020-10-02T12:49:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yusbk.github.io/tags/</loc>
+    <lastmod>2020-10-02T12:49:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yusbk.github.io/</loc>
+    <lastmod>2020-10-02T12:49:00+02:00</lastmod>
   </url>
   
   <url>
@@ -14,11 +49,6 @@
   
   <url>
     <loc>https://yusbk.github.io/categories/git/</loc>
-    <lastmod>2020-09-29T00:00:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/post/</loc>
     <lastmod>2020-09-29T00:00:00+02:00</lastmod>
   </url>
   
@@ -34,16 +64,6 @@
   
   <url>
     <loc>https://yusbk.github.io/2020/09/29/git-ssh/</loc>
-    <lastmod>2020-09-29T00:00:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/tags/</loc>
-    <lastmod>2020-09-29T00:00:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/</loc>
     <lastmod>2020-09-29T00:00:00+02:00</lastmod>
   </url>
   
@@ -69,16 +89,6 @@
   
   <url>
     <loc>https://yusbk.github.io/tags/drake/</loc>
-    <lastmod>2020-06-15T23:22:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/tags/r/</loc>
-    <lastmod>2020-06-15T23:22:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/categories/r-en/</loc>
     <lastmod>2020-06-15T23:22:00+02:00</lastmod>
   </url>
   
@@ -203,6 +213,11 @@
   </url>
   
   <url>
+    <loc>https://yusbk.github.io/categories/my/</loc>
+    <lastmod>2019-07-24T00:00:00+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://yusbk.github.io/2019/06/24/vector-object/</loc>
     <lastmod>2019-06-24T00:00:00+00:00</lastmod>
   </url>
@@ -234,6 +249,11 @@
   
   <url>
     <loc>https://yusbk.github.io/tags/bash/</loc>
+    <lastmod>2019-01-20T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yusbk.github.io/categories/linux/</loc>
     <lastmod>2019-01-20T00:00:00+01:00</lastmod>
   </url>
   
