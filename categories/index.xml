@@ -9,10 +9,20 @@
 		
 		<managingEditor>Page(/categories) (Yusman Kamaleri)</managingEditor>
     	
-  		<lastBuildDate>Fri, 02 Oct 2020 12:49:00 +0200</lastBuildDate>
+  		<lastBuildDate>Wed, 07 Oct 2020 22:58:00 +0200</lastBuildDate>
 		
 		<atom:link href="/categories/" rel="self" type="application/rss+xml" />
 		
+		<item>
+			<title>Case when</title>
+			<link>https://yusbk.github.io/2020/10/07/case-when/</link>
+			<pubDate>Wed, 07 Oct 2020 22:58:00 +0200</pubDate>
+			<guid>https://yusbk.github.io/2020/10/07/case-when/</guid>
+			<description>It&amp;rsquo;s often easier to use ifelse to implement conditioning. The fast and implementation in data.table if fifelse. Other approach to do multiple conditioning is to use data.table::fcase or dplyr::case_when.
+fcase fcase can be used directly
+x &amp;lt;- 1:6 data.table::fcase(x &amp;lt; 3, 1, x &amp;gt;= 4, 2) To implement in a data.</description>
+		</item>
+      	
 		<item>
 			<title>Connect to MS Access DB</title>
 			<link>https://yusbk.github.io/2020/10/02/access-db/</link>
@@ -93,16 +103,6 @@ Pasang pakej Cara biasa untuk pasang pakej ialah menggunakan install.packages().
 			<guid>https://yusbk.github.io/2019/08/21/row-delete/</guid>
 			<description>Untuk memadamkan barisan di data.table menggunakan reference seperti penggunaan .SD masih belum dilaksanakan. Cara ini diambil dari perbincangan di GitHub data.table. Fungsi delete dibuat seperti begini:
 delete &amp;lt;- function(DT, del.idxs) { # pls note &amp;#39;del.idxs&amp;#39; vs. &amp;#39;keep.idxs&amp;#39; keep.idxs &amp;lt;- setdiff(DT[, .</description>
-		</item>
-      	
-		<item>
-			<title>Static encrypting HTML</title>
-			<link>https://yusbk.github.io/2019/08/01/static-encrypt/</link>
-			<pubDate>Thu, 01 Aug 2019 00:00:00 +0000</pubDate>
-			<guid>https://yusbk.github.io/2019/08/01/static-encrypt/</guid>
-			<description>Cara ini diambil dari GitHub robinmoisson. Boleh baca disitu untuk cara selanjutnya. Antaranya:
-Pemasangan NVM (Node Version Manager) diperlukan untuk memudahkan pemasangan Node.js dan program staticrypt. Curl diperlukan untuk dapatkan Node.js.
-Untuk memasang hanya NVM, boleh dibuat seperti dibawah atau dibaca di sini:</description>
 		</item>
       	
 	</channel>
