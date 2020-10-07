@@ -97,14 +97,14 @@
     <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <ul>
-<li><a href="#ubuntu">Ubuntu</a></li>
+<li><a href="#ubuntu">Linux</a></li>
 <li><a href="#windows">Windows</a></li>
 </ul>
 <!-- raw HTML omitted -->
-<p>Bila ingin memakai program di Ubuntu atau Windows melalui terminal, perlu
-daftarkan program tersebut di <strong>PATH</strong>. Disini saya terangkan caranya di Ubuntu dan Windows.</p>
-<h2 id="ubuntu">Ubuntu</h2>
-<p>Bila pasang program di Ubuntu melalui <strong>source</strong> boleh tetapkan dimana program disimpan
+<p>Bila ingin memakai program di Linux atau Windows melalui terminal, perlu
+daftarkan program tersebut di <strong>PATH</strong>. Disini saya terangkan caranya di Linux dan Windows.</p>
+<h2 id="ubuntu">Linux</h2>
+<p>Bila pasang program di Linux melalui <strong>source</strong> boleh tetapkan dimana program disimpan
 melalui penetapkan <code>--prefix</code> bila melarikan <code>./configure</code>. Cara biasa bila pasang
 program dari source ialah:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">./configure
@@ -120,7 +120,7 @@ manual di folder <code>man</code> dan seterusnya.</p>
 # atau
 ./configure --prefix=/home/ybk
 </code></pre></div><p>Bila menetapkan <code>prefix</code> selain dari <code>/usr/local</code> seperti di atas, perlu tetapkan
-folder tersebut di <code>$PATH</code> agar Ubuntu dapat melarikan program yang ingin dipakai. Untuk
+folder tersebut di <code>$PATH</code> agar Linux dapat melarikan program yang ingin dipakai. Untuk
 periksa folder-folder yang sudah ditetapkan boleh pakai:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">&gt; echo $PATH
 </code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">/home/ybk/.local/bin:/home/ybk/bin:/home/ybk/.local/bin:/usr/local/games:/snap/bin:/usr/local/stata

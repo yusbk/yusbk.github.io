@@ -74,7 +74,7 @@ Technically, when you fork &amp;ldquo;origin&amp;rdquo; should be your fork and 
 			<pubDate>Sun, 09 Feb 2020 00:00:00 +0000</pubDate>
 			<guid>https://yusbk.github.io/2020/02/09/look-up-table/</guid>
 			<description>Lookup table dipakai untuk mempercepatkan proses dan mengelakkan pemakaian ifelse. Untuk mempercepatkan proses, ordered index untuk data.table harus dipakai.
-Cara 1 Kode ini dipakai sekiranya ingin mendapakan nilai di lookup tabel yang berhampiran. Contohnya nilai 1.3730682 adalah berhampiran dengan nilai 1.</description>
+Cara 1 Cara ini ialah untuk mendapakan nilai ScoreLU yang terdapat di dataset dt2 melalui kolom kekunci DSCRpd dikedua-dua data.table. Sekiranya nilai di DSCRpd di dt1 tidak sama dengan dt2, nilai yang berhampiran di DSCRpd dirujuk untuk mendapatkan nilai ScoreLU.</description>
 		</item>
       	
 		<item>
