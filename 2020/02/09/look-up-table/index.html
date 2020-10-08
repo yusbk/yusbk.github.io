@@ -21,7 +21,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="manifest" href="/site.webmanifest">
-<meta name="generator" content="Hugo 0.69.2" />
+<meta name="generator" content="Hugo 0.75.1" />
   </head>
   <body>
     
@@ -119,10 +119,10 @@ dt2
  <span style="color:#ae81ff">5</span><span style="color:#f92672">:</span>      <span style="color:#ae81ff">40</span>   <span style="color:#ae81ff">1.20</span>      <span style="color:#ae81ff">3.0</span>  <span style="color:#ae81ff">850000</span>
  <span style="color:#ae81ff">6</span><span style="color:#f92672">:</span>      <span style="color:#ae81ff">50</span>   <span style="color:#ae81ff">1.26</span>      <span style="color:#ae81ff">2.5</span> <span style="color:#ae81ff">1250000</span>
  <span style="color:#ae81ff">7</span><span style="color:#f92672">:</span>      <span style="color:#ae81ff">60</span>   <span style="color:#ae81ff">1.35</span>      <span style="color:#ae81ff">2.0</span> <span style="color:#ae81ff">1700000</span>
-</code></pre></div><p>Kode ini dipakai sekiranya ingin mendapakan nilai di lookup tabel yang berhampiran <code>roll = &quot;nearest&quot;</code>.</p>
+</code></pre></div><p>Kode ini dipakai sekiranya ingin mendapakan nilai di lookup tabel yang berhampiran <code>roll = &quot;nearest&quot;</code>.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">setDT</span>(df1)[, ScoreLU  <span style="color:#f92672">:=</span> <span style="color:#a6e22e">setDT</span>(df2)[df1, ScoreLU , on <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;DSCRpd&#34;</span>, roll <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;nearest&#34;</span>]]
 </code></pre></div><p>Nilai <code>ScoreLU</code> bagi kekunci <code>DSCRpd</code> 1.3730682 dan 1.3923007 di <strong>dt1</strong> ialah 60 kerana nilai
-<code>DSCRpd</code> yang berhampiran di data <strong>dt2</strong> ialah 1.35. Hasil yang sama dilihat untuk <code>dt1$DSCRpd %in% c(1.0449597 , 1.0311141)</code> yang hampir dengan <code>dt2$DSCRpd == 1.10</code> yang memberikan nilai <code>ScoreLU == 30</code>. Hasilnay seperti begini:</p>
+<code>DSCRpd</code> yang berhampiran di data <strong>dt2</strong> ialah 1.35. Hasil yang sama dilihat untuk <code>dt1$DSCRpd %in% c(1.0449597 , 1.0311141)</code> yang hampir dengan <code>dt2$DSCRpd == 1.10</code> yang memberikan nilai <code>ScoreLU == 30</code>. Hasilnay seperti begini:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">      DSCRpd Leverage         TCB ScoreLU
  <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1.3730682</span> <span style="color:#ae81ff">2.010122</span> <span style="color:#ae81ff">-1590099.11</span>      <span style="color:#ae81ff">60</span>
  <span style="color:#ae81ff">2</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1.0449597</span> <span style="color:#ae81ff">2.680051</span>   <span style="color:#ae81ff">493370.85</span>      <span style="color:#ae81ff">30</span>
@@ -240,9 +240,10 @@ DT[lut2, on <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</
   
 <div>
     
-    <a href="https://twitter.com/GoHugoIO" name="twitter"><i class="fab fa-twitter"></i></a>
+    <a href="https://twitter.com/GoHugoIO" name="twitter"><em class="fab fa-twitter"></em></a>
     
 </div>
+
 
   <div class="container">
     <p class="credits copyright">
