@@ -3,8 +3,38 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://yusbk.github.io/2020/10/07/case-when/</loc>
+    <lastmod>2020-10-07T22:58:00+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://yusbk.github.io/categories/</loc>
-    <lastmod>2020-10-02T12:49:00+02:00</lastmod>
+    <lastmod>2020-10-07T22:58:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yusbk.github.io/categories/dt/</loc>
+    <lastmod>2020-10-07T22:58:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yusbk.github.io/categories/en/</loc>
+    <lastmod>2020-10-07T22:58:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yusbk.github.io/post/</loc>
+    <lastmod>2020-10-07T22:58:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yusbk.github.io/categories/r/</loc>
+    <lastmod>2020-10-07T22:58:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yusbk.github.io/</loc>
+    <lastmod>2020-10-07T22:58:00+02:00</lastmod>
   </url>
   
   <url>
@@ -18,27 +48,7 @@
   </url>
   
   <url>
-    <loc>https://yusbk.github.io/categories/en/</loc>
-    <lastmod>2020-10-02T12:49:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/post/</loc>
-    <lastmod>2020-10-02T12:49:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/categories/r/</loc>
-    <lastmod>2020-10-02T12:49:00+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://yusbk.github.io/tags/</loc>
-    <lastmod>2020-10-02T12:49:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/</loc>
     <lastmod>2020-10-02T12:49:00+02:00</lastmod>
   </url>
   
@@ -100,11 +110,6 @@
   <url>
     <loc>https://yusbk.github.io/2020/06/14/git-fork/</loc>
     <lastmod>2020-06-14T00:00:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/categories/dt/</loc>
-    <lastmod>2020-02-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>

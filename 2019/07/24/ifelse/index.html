@@ -96,7 +96,12 @@
   <div class="container" role="main">
     <article class="article" class="blog-post">
       
-    <p>Untuk menukarkan kode penggunaan <em>ifelse</em> adalah cara yang senang dipakai. Akan tetapi penggunaannya di base R memakai masa yang panjang terutama sekirannya melarikan di data yang besar. Ini kerana penggunaan <em>ifelse</em> di base terlebih dahulu menyusun data sebelum membuat pilihan.</p>
+    <p><em>Terbaru</em> [08.10.2020]</p>
+<ul>
+<li>Sila lihat cara <a href="https://yusbk.github.io/2020/10/07/case-when/" title="fcase">data.table::fcase</a></li>
+<li>Fungsi <a href="https://rdatatable.gitlab.io/data.table/reference/fifelse.html" title="fifelse">fifelse</a> lebih laju dari <code>ifelse</code> biase.</li>
+</ul>
+<p>Untuk menukarkan kode penggunaan <em>ifelse</em> adalah cara yang senang dipakai. Akan tetapi penggunaannya di base R memakai masa yang panjang terutama sekirannya melarikan di data yang besar. Ini kerana penggunaan <em>ifelse</em> di base terlebih dahulu menyusun data sebelum membuat pilihan.</p>
 <p>Cara yang diterangkan disini ialah untuk pemakaian <em>ifelse</em> di <strong>data.table</strong> dan cara-cara lain yang diperkenalkan di pakej <strong>dplyr</strong> atau pakej yang lainnya.</p>
 <h1 id="cara-datatable">Cara data.table</h1>
 <p>Cara yang biasa di <em>data.table</em> ialah menggunakan teknik <code>DT[i,j,by]</code>. Contoh lain bila ingin menukarkan <code>var2</code> kepada angka 2 sekiranya <code>var1</code> ialah <em>ja</em>.</p>
