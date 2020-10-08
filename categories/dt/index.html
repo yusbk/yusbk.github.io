@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -123,6 +124,133 @@ x &lt;- 1:6 data.table::fcase(x &lt; 3, 1, x &gt;= 4, 2) To implement in a data.
   </a>
   <div class="post-entry">
     
+=======
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+<title>DT</title>
+
+
+  
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="alternate" type="application/rss+xml" href="https://yusbk.github.io/index.xml" title="ყųʂƙąɱ">
+
+<link id="dark-mode-theme" rel="stylesheet" href="https://yusbk.github.io/css/dark.css" />
+<link rel="stylesheet" href="https://yusbk.github.io/fontawesome/css/all.min.css" />
+
+<script src="https://yusbk.github.io/js/bundle.js"></script>
+<script src="https://yusbk.github.io/js/instantpage.js" type="module" defer></script>
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="generator" content="Hugo 0.69.2" />
+  </head>
+  <body>
+    
+  
+
+
+
+
+  <header>
+    <nav class="navbar">
+  <div class="nav">
+    
+      <a href="https://yusbk.github.io/" class="nav-logo">
+      <img src="https://yusbk.github.io/images/yk.png"
+           width="40"
+           height="40"
+           alt="Logo">
+      </a>
+    
+
+    <ul class="nav-links">
+      
+        
+          <li><a href="/about/" name="About"><i class="fas fa-user-secret fa-lg"></i></a></li>
+        
+      
+        
+          <li><a href="/categories/" name="Categories"><i class="fas fa-folder-open fa-lg"></i></a></li>
+        
+      
+        
+          <li><a href="/tags/" name="Tags"><i class="fas fa-tags fa-lg"></i></a></li>
+        
+      
+        
+          <li><a href="/search/" name="Search"><i class="fas fa-search fa-lg"></i></a></li>
+        
+      
+    </ul>
+  </div>
+</nav>
+
+    <div class="intro-header">
+      <div class="container">
+        <div class="categories-heading">
+          
+            <h1>DT</h1>
+          
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+    <div class="posts-list">
+      
+        
+      
+
+      
+        <article class="post-preview">
+  <a href="https://yusbk.github.io/2020/10/07/case-when/">
+      <h2 class="post-title">Case when</h2>
+  </a>
+  <div class="post-entry">
+    
+      <p>It&rsquo;s often easier to use ifelse to implement conditioning. The fast and implementation in data.table if fifelse. Other approach to do multiple conditioning is to use data.table::fcase or dplyr::case_when.
+fcase fcase can be used directly
+x &lt;- 1:6 data.table::fcase(x &lt; 3, 1, x &gt;= 4, 2) To implement in a data.</p>
+        <a href="https://yusbk.github.io/2020/10/07/case-when/" class="post-read-more">Read More</a>
+    
+  </div>
+
+  <div class="postmeta">
+    <span class="meta-post">
+  <i class="fa fa-calendar-alt"></i>&nbsp;Oct 7, 2020
+  
+    &nbsp;&nbsp;&nbsp;<i class="fa fa-folder-open"></i>&nbsp;
+    
+      <a href="https://yusbk.github.io//categories/en/">en</a>&nbsp;
+    
+      <a href="https://yusbk.github.io//categories/r/">R</a>&nbsp;
+    
+      <a href="https://yusbk.github.io//categories/dt/">DT</a>&nbsp;
+    
+  
+</span>
+
+  </div>
+</article>
+
+      
+        <article class="post-preview">
+  <a href="https://yusbk.github.io/2020/02/09/look-up-table/">
+      <h2 class="post-title">Pemakaian lookup table</h2>
+  </a>
+  <div class="post-entry">
+    
+>>>>>>> 4b33fd459789f6b092dc9438cbdb7fc920eed5cf
       <p>Lookup table dipakai untuk mempercepatkan proses dan mengelakkan pemakaian ifelse. Untuk mempercepatkan proses, ordered index untuk data.table harus dipakai.
 Cara 1 Cara ini ialah untuk mendapakan nilai ScoreLU yang terdapat di dataset dt2 melalui kolom kekunci DSCRpd dikedua-dua data.table. Sekiranya nilai di DSCRpd di dt1 tidak sama dengan dt2, nilai yang berhampiran di DSCRpd dirujuk untuk mendapatkan nilai ScoreLU.</p>
         <a href="https://yusbk.github.io/2020/02/09/look-up-table/" class="post-read-more">Read More</a>
@@ -186,6 +314,7 @@ delete &lt;- function(DT, del.idxs) { # pls note &#39;del.idxs&#39; vs. &#39;kee
   <div class="post-entry">
     
       <p>Secara umumnya penggunaan loop tidak disarankan di R kerana ianya akan mengunakan banyak memory dan memakan masa yang lambat. Akan tetapi data.table menperkenalkan fungsi set untuk mempercepatkan proses. Asasnya ialah sebegini:
+<<<<<<< HEAD
 set(dt, i, j, value) Contoh pemakainnya bila ingin menukarkan NA ke angka yang diinginkan sepert 99.</p>
         <a href="https://yusbk.github.io/2019/07/31/loop-set/" class="post-read-more">Read More</a>
     
@@ -279,3 +408,97 @@ set(dt, i, j, value) Contoh pemakainnya bila ingin menukarkan NA ke angka yang 
 </footer>
   </body>
 </html>
+=======
+set(dt, i, j, value)  Contoh pemakainnya bila ingin menukarkan NA ke angka yang diinginkan sepert 99.</p>
+        <a href="https://yusbk.github.io/2019/07/31/loop-set/" class="post-read-more">Read More</a>
+    
+  </div>
+
+  <div class="postmeta">
+    <span class="meta-post">
+  <i class="fa fa-calendar-alt"></i>&nbsp;Jul 31, 2019
+  
+    &nbsp;&nbsp;&nbsp;<i class="fa fa-folder-open"></i>&nbsp;
+    
+      <a href="https://yusbk.github.io//categories/dt/">DT</a>&nbsp;
+    
+  
+</span>
+
+  </div>
+</article>
+
+      
+        <article class="post-preview">
+  <a href="https://yusbk.github.io/2019/07/24/ifelse/">
+      <h2 class="post-title">Pengunaan ifelse</h2>
+  </a>
+  <div class="post-entry">
+    
+      <p>Untuk menukarkan kode penggunaan ifelse adalah cara yang senang dipakai. Akan tetapi penggunaannya di base R memakai masa yang panjang terutama sekirannya melarikan di data yang besar. Ini kerana penggunaan ifelse di base terlebih dahulu menyusun data sebelum membuat pilihan.</p>
+        <a href="https://yusbk.github.io/2019/07/24/ifelse/" class="post-read-more">Read More</a>
+    
+  </div>
+
+  <div class="postmeta">
+    <span class="meta-post">
+  <i class="fa fa-calendar-alt"></i>&nbsp;Jul 24, 2019
+  
+    &nbsp;&nbsp;&nbsp;<i class="fa fa-folder-open"></i>&nbsp;
+    
+      <a href="https://yusbk.github.io//categories/r/">R</a>&nbsp;
+    
+      <a href="https://yusbk.github.io//categories/my/">my</a>&nbsp;
+    
+      <a href="https://yusbk.github.io//categories/dt/">DT</a>&nbsp;
+    
+  
+</span>
+
+  </div>
+</article>
+
+      
+      </div>
+    
+    <ul class="pager">
+      
+      
+        <li class="next">
+          <a href="https://yusbk.github.io/categories/dt/page/2/">Older &rarr;</a>
+        </li>
+      
+    </ul>
+  
+</div>
+
+    <footer>
+  
+<div>
+    
+    <a href="https://twitter.com/GoHugoIO" name="twitter"><i class="fab fa-twitter"></i></a>
+    
+</div>
+
+  <div class="container">
+    <p class="credits copyright">
+      <a href="https://yusbk.github.io/about">Yusman Kamaleri</a>
+      &nbsp;&copy;
+      2020
+      
+      &nbsp;/&nbsp;
+      <a href="https://yusbk.github.io/">ყųʂƙąɱ</a>
+      
+      &nbsp;&ndash;&nbsp;
+      <i class="fas fa-moon" id="dark-mode-toggle"></i>
+
+    <p class="credits theme-by">
+      Powered By <a href="https://gohugo.io">Hugo</a>&nbsp;Theme <a
+        href="https://github.com/matsuyoshi30/harbor">Harbor</a>
+    </p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
+>>>>>>> 4b33fd459789f6b092dc9438cbdb7fc920eed5cf
