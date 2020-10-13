@@ -18,7 +18,7 @@
 			<link>https://yusbk.github.io/2020/10/07/case-when/</link>
 			<pubDate>Wed, 07 Oct 2020 22:58:00 +0200</pubDate>
 			<guid>https://yusbk.github.io/2020/10/07/case-when/</guid>
-			<description>It&amp;rsquo;s often easier to use ifelse to implement conditioning. The fast and implementation in data.table if fifelse. Other approach to do multiple conditioning is to use data.table::fcase or dplyr::case_when.
+			<description>It&amp;rsquo;s often easier to use ifelse to implement conditioning. The fast implementation in data.table of ifelse is fifelse. Other approach to do multiple conditioning is to use data.table::fcase or dplyr::case_when.
 fcase fcase can be used directly
 x &amp;lt;- 1:6 data.table::fcase(x &amp;lt; 3, 1, x &amp;gt;= 4, 2) To implement in a data.</description>
 		</item>
