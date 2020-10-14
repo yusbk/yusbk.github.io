@@ -9,10 +9,18 @@
 		
 		<managingEditor>Page(/categories) (Yusman Kamaleri)</managingEditor>
     	
-  		<lastBuildDate>Wed, 07 Oct 2020 22:58:00 +0200</lastBuildDate>
+  		<lastBuildDate>Wed, 14 Oct 2020 00:00:00 +0200</lastBuildDate>
 		
 		<atom:link href="/categories/" rel="self" type="application/rss+xml" />
 		
+		<item>
+			<title>Git upstream</title>
+			<link>https://yusbk.github.io/2020/10/14/git-upstream/</link>
+			<pubDate>Wed, 14 Oct 2020 00:00:00 +0200</pubDate>
+			<guid>https://yusbk.github.io/2020/10/14/git-upstream/</guid>
+			<description>When you forked a repo then your copy of forked-repo in your Github profile will be referred to as origin while upstream refers to the real origin where the repo was forked from. If you cloned a repo then you will only have local copy of the repo.</description>
+		</item>
+      	
 		<item>
 			<title>Case when</title>
 			<link>https://yusbk.github.io/2020/10/07/case-when/</link>
@@ -69,7 +77,17 @@ Here is the basic use of drake.</description>
 		</item>
       	
 		<item>
-			<title>git fork</title>
+			<title>git clone</title>
+			<link>https://yusbk.github.io/2020/06/14/git-clone/</link>
+			<pubDate>Sun, 14 Jun 2020 00:00:00 +0200</pubDate>
+			<guid>https://yusbk.github.io/2020/06/14/git-clone/</guid>
+			<description>This is just 100% a copy from gist so I can check it when needed.
+So you&amp;rsquo;ve cloned somebody&amp;rsquo;s repo from github, but now you want to fork it and contribute back. Never fear!
+Technically, when you fork &amp;ldquo;origin&amp;rdquo; should be your fork and &amp;ldquo;upstream&amp;rdquo; should be the project you forked; however, if you&amp;rsquo;re willing to break this convention then it&amp;rsquo;s easy.</description>
+		</item>
+      	
+		<item>
+			<title>git clone</title>
 			<link>https://yusbk.github.io/2020/06/14/git-fork/</link>
 			<pubDate>Sun, 14 Jun 2020 00:00:00 +0200</pubDate>
 			<guid>https://yusbk.github.io/2020/06/14/git-fork/</guid>
@@ -85,24 +103,6 @@ Technically, when you fork &amp;ldquo;origin&amp;rdquo; should be your fork and 
 			<guid>https://yusbk.github.io/2020/02/09/look-up-table/</guid>
 			<description>Lookup table dipakai untuk mempercepatkan proses dan mengelakkan pemakaian ifelse. Untuk mempercepatkan proses, ordered index untuk data.table harus dipakai.
 Cara 1 Cara ini ialah untuk mendapakan nilai ScoreLU yang terdapat di dataset dt2 melalui kolom kekunci DSCRpd dikedua-dua data.table. Sekiranya nilai di DSCRpd di dt1 tidak sama dengan dt2, nilai yang berhampiran di DSCRpd dirujuk untuk mendapatkan nilai ScoreLU.</description>
-		</item>
-      	
-		<item>
-			<title>Pasang pakej di R</title>
-			<link>https://yusbk.github.io/2019/09/02/package-r/</link>
-			<pubDate>Mon, 02 Sep 2019 00:00:00 +0000</pubDate>
-			<guid>https://yusbk.github.io/2019/09/02/package-r/</guid>
-			<description>Ini ialah beberapa penggunaan asas R yang amat berguna walaupun jarang dipakai. Antaranya:
-Pasang pakej Cara biasa untuk pasang pakej ialah menggunakan install.packages(). Tetapi sekiranya ingin memasang banyak pekej secara serentank dan memuatkan di R setelah pakej dipasang, cara begini boleh dipakai:</description>
-		</item>
-      	
-		<item>
-			<title>Padamkan barisan (row)</title>
-			<link>https://yusbk.github.io/2019/08/21/row-delete/</link>
-			<pubDate>Wed, 21 Aug 2019 00:00:00 +0000</pubDate>
-			<guid>https://yusbk.github.io/2019/08/21/row-delete/</guid>
-			<description>Untuk memadamkan barisan di data.table menggunakan reference seperti penggunaan .SD masih belum dilaksanakan. Cara ini diambil dari perbincangan di GitHub data.table. Fungsi delete dibuat seperti begini:
-delete &amp;lt;- function(DT, del.idxs) { # pls note &amp;#39;del.idxs&amp;#39; vs. &amp;#39;keep.idxs&amp;#39; keep.idxs &amp;lt;- setdiff(DT[, .</description>
 		</item>
       	
 	</channel>

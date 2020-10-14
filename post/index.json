@@ -2,6 +2,16 @@
     
         
             {
+                "ref": "https://yusbk.github.io/2020/10/14/git-upstream/",
+                "title": "Git upstream",
+                "section": "post",
+                "date" : "2020.10.14",
+                "body": "When you forked a repo then your copy of forked-repo in your Github profile will be referred to as origin while upstream refers to the real origin where the repo was forked from. If you cloned a repo then you will only have local copy of the repo. You can read here to convert it as a forked repo.\nTo sync your forked repo then you have to add the upstream url.\ngit remote add upstream https://github.com/repo-name.git git fetch upstream git checkout master git merge upstream/master If you want to see the changes from upstream before merging to master, you can use one of these alternatives. Specifying git log -10 will show the last 10 commits.\ngit diff master origin/master git log --oneline --graph -10 git show If you have error for displaying the diff you might have to specify editor with -git config --global\rcore.editor emacs. In this case I use emacs as my diff editor.\nWhen everything is updated without conflict then you can push to your origin. Sometime you get error when pushing to origin because your local copy have different HEAD from the origin. You could force push with\ngit push -f origin master "
+            }
+        
+    ,
+        
+            {
                 "ref": "https://yusbk.github.io/2020/10/07/case-when/",
                 "title": "Case when",
                 "section": "post",
@@ -62,8 +72,18 @@
     ,
         
             {
+                "ref": "https://yusbk.github.io/2020/06/14/git-clone/",
+                "title": "git clone",
+                "section": "post",
+                "date" : "2020.06.14",
+                "body": "This is just 100% a copy from gist so I can check it when needed.\nSo you\u0026rsquo;ve cloned somebody\u0026rsquo;s repo from github, but now you want to fork it and contribute back. Never fear!\nTechnically, when you fork \u0026ldquo;origin\u0026rdquo; should be your fork and \u0026ldquo;upstream\u0026rdquo; should be the project you forked; however, if you\u0026rsquo;re willing to break this convention then it\u0026rsquo;s easy.\nOff the top of my head\n Fork their repo on Github In your local, add a new remote to your fork; then fetch it, and push your changes up to it  git remote add my-fork git@github...my-fork.git git fetch my-fork git push my-fork Otherwise, if you want to follow convention:\n Fork their repo on Github In your local, rename your origin remote to upstream  git remote rename origin upstream  Add a new origin  git remote add origin git@github...my-fork  Fetch \u0026amp; push  git fetch origin git push origin "
+            }
+        
+    ,
+        
+            {
                 "ref": "https://yusbk.github.io/2020/06/14/git-fork/",
-                "title": "git fork",
+                "title": "git clone",
                 "section": "post",
                 "date" : "2020.06.14",
                 "body": "This is just 100% a copy from gist so I can check it when needed.\nSo you\u0026rsquo;ve cloned somebody\u0026rsquo;s repo from github, but now you want to fork it and contribute back. Never fear!\nTechnically, when you fork \u0026ldquo;origin\u0026rdquo; should be your fork and \u0026ldquo;upstream\u0026rdquo; should be the project you forked; however, if you\u0026rsquo;re willing to break this convention then it\u0026rsquo;s easy.\nOff the top of my head\n Fork their repo on Github In your local, add a new remote to your fork; then fetch it, and push your changes up to it  git remote add my-fork git@github...my-fork.git git fetch my-fork git push my-fork Otherwise, if you want to follow convention:\n Fork their repo on Github In your local, rename your origin remote to upstream  git remote rename origin upstream  Add a new origin  git remote add origin git@github...my-fork  Fetch \u0026amp; push  git fetch origin git push origin "
