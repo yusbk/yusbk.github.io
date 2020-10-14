@@ -95,13 +95,12 @@ Technically, when you fork &amp;ldquo;origin&amp;rdquo; should be your fork and 
 		</item>
       	
 		<item>
-			<title>git clone</title>
-			<link>https://yusbk.github.io/2020/06/14/git-fork/</link>
-			<pubDate>Sun, 14 Jun 2020 00:00:00 +0200</pubDate>
-			<guid>https://yusbk.github.io/2020/06/14/git-fork/</guid>
-			<description>This is just 100% a copy from gist so I can check it when needed.
-So you&amp;rsquo;ve cloned somebody&amp;rsquo;s repo from github, but now you want to fork it and contribute back. Never fear!
-Technically, when you fork &amp;ldquo;origin&amp;rdquo; should be your fork and &amp;ldquo;upstream&amp;rdquo; should be the project you forked; however, if you&amp;rsquo;re willing to break this convention then it&amp;rsquo;s easy.</description>
+			<title>Pemakaian lookup table</title>
+			<link>https://yusbk.github.io/2020/02/09/look-up-table/</link>
+			<pubDate>Sun, 09 Feb 2020 00:00:00 +0000</pubDate>
+			<guid>https://yusbk.github.io/2020/02/09/look-up-table/</guid>
+			<description>Lookup table dipakai untuk mempercepatkan proses dan mengelakkan pemakaian ifelse. Untuk mempercepatkan proses, ordered index untuk data.table harus dipakai.
+Cara 1 Cara ini ialah untuk mendapakan nilai ScoreLU yang terdapat di dataset dt2 melalui kolom kekunci DSCRpd dikedua-dua data.table. Sekiranya nilai di DSCRpd di dt1 tidak sama dengan dt2, nilai yang berhampiran di DSCRpd dirujuk untuk mendapatkan nilai ScoreLU.</description>
 		</item>
       	
 	</channel>
