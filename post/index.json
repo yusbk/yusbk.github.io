@@ -12,6 +12,16 @@
     ,
         
             {
+                "ref": "https://yusbk.github.io/2020/10/14/git-worktree/",
+                "title": "Git Worktree",
+                "section": "post",
+                "date" : "2020.10.14",
+                "body": "Normally I created a new branch when I intent to do some changes to the master branch. But the problem is I have to stash changes when switching back and forth. To avoid this create worktree for the branches you want to work seperately. Basically it creates a new folder and work independently.\nFor instance, to start worktree with newfix from master branch. You can create newfix branch first then worktree or directly to create worktree with newfix branch\ngit branch fix git worktree add ./path/newfix fix # direct from origin/master git worktree add -b fix ./path/newfix origin/master This will create newfix branch and folder ./path/newfix. The example above uses origin/master which is the default and can be ignored. If you select different branch then you can specify origin/fix. To work with the new worktree newfix branch then you just need to change folder\ncd ./path/newfix To list down all the workrees you can use git worktree list. Deleting a worktree can be done by deleting the folder directly and run git worktree prune to delete it from the list. If you have error because your branch already checked out then delete .git/worktrees/hotfix. See https://www.saltycrane.com/blog/2017/05/git-worktree-notes/\n"
+            }
+        
+    ,
+        
+            {
                 "ref": "https://yusbk.github.io/2020/10/07/case-when/",
                 "title": "Case when",
                 "section": "post",

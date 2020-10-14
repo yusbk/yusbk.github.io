@@ -1,17 +1,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
-		<title>duplicate on ყųʂƙąɱ</title>
-		<link>https://yusbk.github.io/tags/duplicate/</link>
-		<description>Recent content in duplicate </description>
+		<title>worktree on ყųʂƙąɱ</title>
+		<link>https://yusbk.github.io/tags/worktree/</link>
+		<description>Recent content in worktree </description>
 		<generator>Hugo -- gohugo.io</generator>
 		
   		<language>en</language>
 		
-		<managingEditor>Page(/tags/duplicate) (Yusman Kamaleri)</managingEditor>
+		<managingEditor>Page(/tags/worktree) (Yusman Kamaleri)</managingEditor>
     	
-  		<lastBuildDate>Thu, 16 Aug 2018 00:00:00 +0000</lastBuildDate>
+  		<lastBuildDate>Wed, 14 Oct 2020 00:00:00 +0200</lastBuildDate>
 		
-		<atom:link href="/tags/duplicate/" rel="self" type="application/rss+xml" />
+		<atom:link href="/tags/worktree/" rel="self" type="application/rss+xml" />
 		
 		<item>
 			<title>Git upstream</title>
