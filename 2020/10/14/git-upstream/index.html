@@ -21,7 +21,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="manifest" href="/site.webmanifest">
-<meta name="generator" content="Hugo 0.75.1" />
+<meta name="generator" content="Hugo 0.76.5" />
   </head>
   <body>
     
@@ -102,8 +102,11 @@ git checkout master
 git merge upstream/master
 </code></pre></div><p>If you want to see the changes from upstream before merging to master, you can use one of these
 alternatives. Specifying <code>git log -10</code> will show the last 10 commits.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git diff master origin/master
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git diff master upstream/master
+<span style="color:#75715e"># OR</span>
+git diff ..upstream/master
 git log --oneline --graph -10
+git log --since<span style="color:#f92672">=</span>2.day
 git show
 </code></pre></div><p>If you have error for displaying the <code>diff</code> you might have to specify editor with <code>-git config --global core.editor emacs</code>. In this case I use <em>emacs</em> as my diff editor.</p>
 <p>When everything is updated without conflict then you can push to your origin. Sometime you get error
