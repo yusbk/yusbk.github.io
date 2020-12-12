@@ -2,6 +2,16 @@
     
         
             {
+                "ref": "https://yusbk.github.io/2020/12/12/ellipsis/",
+                "title": "Ellipsis …",
+                "section": "post",
+                "date" : "2020.12.12",
+                "body": "Just to remind me how I could use ellipsis or the three dots ... in my coding. There are two scenarios I find it useful:\nFunction wrapper When creating a function wrapper and instead of providing all the arguments to be send further, you could just use ... ellipsis. For example:\nget_mean \u0026lt;- function(x, print = TRUE){ x1 \u0026lt;- mean(x) if (print){ print(x1) }else{ print(\u0026#34;Nothing\u0026#34;) } } get_mean(1:10) show_mean \u0026lt;- function(...){ get_mean(...) } show_mean(x = 1:10, print = F) do.call(show_mean, list(x = 1:20)) do.call(show_it, list(x = 1:20, print = FALSE)) In show_mean the arguments given will be sent further to get_mean without the need to define explicitly in show_mean function.\nGet values When you want to provide certain values to a specific use or send to global value.\ngo_global \u0026lt;- function(...) { args \u0026lt;- list(...) paste(args) for(i in 1:length(args)) { assign(x = names(args)[i], value = args[[i]], envir = .GlobalEnv) } } go_global(\u0026#34;Hello\u0026#34;, \u0026#34;World\u0026#34;) This is of course not advisable sending value to global environment but here is just to show how you could manipulate the value as you wish. The values in ellipsis should be captured as a list.\nYou could also capture the names of the list by names(list(...)).\n"
+            }
+        
+    ,
+        
+            {
                 "ref": "https://yusbk.github.io/2020/10/14/git-upstream/",
                 "title": "Git upstream",
                 "section": "post",
