@@ -1,0 +1,108 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Docker on ყųʂƙąɱ</title>
+		<link>https://yusbk.github.io/tags/docker/</link>
+		<description>Recent content in Docker </description>
+		<generator>Hugo -- gohugo.io</generator>
+		
+  		<language>en</language>
+		
+		<managingEditor>Page(/tags/docker) (Yusman Kamaleri)</managingEditor>
+    	
+  		<lastBuildDate>Mon, 15 Feb 2021 00:00:00 +0100</lastBuildDate>
+		
+		<atom:link href="/tags/docker/" rel="self" type="application/rss+xml" />
+		
+		<item>
+			<title>Docker</title>
+			<link>https://yusbk.github.io/2021/02/15/docker-basic/</link>
+			<pubDate>Mon, 15 Feb 2021 00:00:00 +0100</pubDate>
+			<guid>https://yusbk.github.io/2021/02/15/docker-basic/</guid>
+			<description>Important commands:
+docker pull image-name docker run local-name image-name docker ps Some basic commands to start using Docker. Two things are important ie. Docker Image and Docker Container. To fetch RStudio image from Docker Hub run the command:
+docker pull rocker/rstudio When the image has been pulled to the local Docker engine, you could use the image with</description>
+		</item>
+      	
+		<item>
+			<title>Connect to MS Access DB</title>
+			<link>https://yusbk.github.io/2020/12/12/access-db/</link>
+			<pubDate>Sat, 12 Dec 2020 12:49:00 +0100</pubDate>
+			<guid>https://yusbk.github.io/2020/12/12/access-db/</guid>
+			<description>This article first published in 02.10.2020.
+Before connecting to your Access DBMS via Windows OS, you can check if you have the MS Access driver installed in your machine by running
+## List everything odbc::odbcListDrivers() ## You will get the results someting like this.</description>
+		</item>
+      	
+		<item>
+			<title>Ellipsis …</title>
+			<link>https://yusbk.github.io/2020/12/12/ellipsis/</link>
+			<pubDate>Sat, 12 Dec 2020 00:00:00 +0100</pubDate>
+			<guid>https://yusbk.github.io/2020/12/12/ellipsis/</guid>
+			<description>Just to remind me how I could use ellipsis or the three dots ... in my coding. There are two scenarios I find it useful:
+Function wrapper When creating a function wrapper and instead of providing all the arguments to be send further, you could just use .</description>
+		</item>
+      	
+		<item>
+			<title>Git upstream</title>
+			<link>https://yusbk.github.io/2020/10/14/git-upstream/</link>
+			<pubDate>Wed, 14 Oct 2020 00:00:00 +0200</pubDate>
+			<guid>https://yusbk.github.io/2020/10/14/git-upstream/</guid>
+			<description>When you forked a repo then your copy of forked-repo in your Github profile will be referred to as origin while upstream refers to the real origin where the repo was forked from. If you cloned a repo then you will only have local copy of the repo.</description>
+		</item>
+      	
+		<item>
+			<title>Git worktree</title>
+			<link>https://yusbk.github.io/2020/10/14/git-worktree/</link>
+			<pubDate>Wed, 14 Oct 2020 00:00:00 +0200</pubDate>
+			<guid>https://yusbk.github.io/2020/10/14/git-worktree/</guid>
+			<description>Normally I created a new branch when I intent to do some changes to the master branch. But the problem is I have to stash changes when switching back and forth. To avoid this create worktree for the branches you want to work seperately.</description>
+		</item>
+      	
+		<item>
+			<title>Case when</title>
+			<link>https://yusbk.github.io/2020/10/07/case-when/</link>
+			<pubDate>Wed, 07 Oct 2020 22:58:00 +0200</pubDate>
+			<guid>https://yusbk.github.io/2020/10/07/case-when/</guid>
+			<description>It&amp;rsquo;s often easier to use ifelse to implement conditioning. The fast implementation in data.table of ifelse is fifelse. Other approach to do multiple conditioning is to use data.table::fcase or dplyr::case_when.
+fcase fcase can be used directly
+x &amp;lt;- 1:6 data.table::fcase(x &amp;lt; 3, 1, x &amp;gt;= 4, 2) To implement in a data.</description>
+		</item>
+      	
+		<item>
+			<title>SSH-key with Git on Windows</title>
+			<link>https://yusbk.github.io/2020/09/29/git-ssh/</link>
+			<pubDate>Tue, 29 Sep 2020 00:00:00 +0200</pubDate>
+			<guid>https://yusbk.github.io/2020/09/29/git-ssh/</guid>
+			<description>Generally, these are what I did:
+ Install git-with-openssh Create SSH-key Add SSH-key to ssh-agent Create ~/.bashrc for auto-launching ssh-agent  openSSH Windows 10 include openSSH. But I can&amp;rsquo;t make it work with git so I use git-with-openssh installed via scoop.</description>
+		</item>
+      	
+		<item>
+			<title>Multiple account</title>
+			<link>https://yusbk.github.io/2020/09/28/git-account/</link>
+			<pubDate>Mon, 28 Sep 2020 00:00:00 +0200</pubDate>
+			<guid>https://yusbk.github.io/2020/09/28/git-account/</guid>
+			<description>config file Create a config file in your ~/.ssh folder that will manage your accounts.
+Host personal HostName github.com User git IdentityFile ~/.ssh/id_rsa_personal Host work HostName github.com User git IdentityFile ~/.ssh/id_rsa_work When cloning a new repo then you only have to specify hostname to your Git account.</description>
+		</item>
+      	
+		<item>
+			<title>git submodule</title>
+			<link>https://yusbk.github.io/2020/09/27/git-submodule/</link>
+			<pubDate>Sun, 27 Sep 2020 00:00:00 +0200</pubDate>
+			<guid>https://yusbk.github.io/2020/09/27/git-submodule/</guid>
+			<description>Rujukan di sini lebih teratur. Penerangan dibawah ialah berasaskan pengalaman sendiri tanpa struktur.
+Repo baru Bila buat repo baru dan ingin tetapkan submodule untuk tema harbor dan folder public ke yusbk.github.io. Submodule dipakai untuk memasukkan fungsi yang terdapat di repos lain ke dalam repos sendiri ie.</description>
+		</item>
+      	
+		<item>
+			<title>Basic use of drake</title>
+			<link>https://yusbk.github.io/2020/06/15/basic-drake/</link>
+			<pubDate>Mon, 15 Jun 2020 23:22:00 +0200</pubDate>
+			<guid>https://yusbk.github.io/2020/06/15/basic-drake/</guid>
+			<description>There are various ways to organise your R workflow. If you are working with a big project, then Airflow might be for you. But for the majority of R project codes, drake package will fullfilled your need.
+Here is the basic use of drake.</description>
+		</item>
+      	
+	</channel>
+</rss>

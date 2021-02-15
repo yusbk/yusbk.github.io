@@ -14,6 +14,16 @@
 		<atom:link href="/tags/org/" rel="self" type="application/rss+xml" />
 		
 		<item>
+			<title>Docker</title>
+			<link>https://yusbk.github.io/2021/02/15/docker-basic/</link>
+			<pubDate>Mon, 15 Feb 2021 00:00:00 +0100</pubDate>
+			<guid>https://yusbk.github.io/2021/02/15/docker-basic/</guid>
+			<description>Important commands:
+docker pull image-name docker run local-name image-name docker ps Some basic commands to start using Docker. Two things are important ie. Docker Image and Docker Container. To fetch RStudio image from Docker Hub run the command:
+docker pull rocker/rstudio When the image has been pulled to the local Docker engine, you could use the image with</description>
+		</item>
+      	
+		<item>
 			<title>Connect to MS Access DB</title>
 			<link>https://yusbk.github.io/2020/12/12/access-db/</link>
 			<pubDate>Sat, 12 Dec 2020 12:49:00 +0100</pubDate>
@@ -92,16 +102,6 @@ Repo baru Bila buat repo baru dan ingin tetapkan submodule untuk tema harbor dan
 			<guid>https://yusbk.github.io/2020/06/15/basic-drake/</guid>
 			<description>There are various ways to organise your R workflow. If you are working with a big project, then Airflow might be for you. But for the majority of R project codes, drake package will fullfilled your need.
 Here is the basic use of drake.</description>
-		</item>
-      	
-		<item>
-			<title>git clone</title>
-			<link>https://yusbk.github.io/2020/06/14/git-clone/</link>
-			<pubDate>Sun, 14 Jun 2020 00:00:00 +0200</pubDate>
-			<guid>https://yusbk.github.io/2020/06/14/git-clone/</guid>
-			<description>This is just 100% a copy from gist so I can check it when needed.
-So you&amp;rsquo;ve cloned somebody&amp;rsquo;s repo from github, but now you want to fork it and contribute back. Never fear!
-Technically, when you fork &amp;ldquo;origin&amp;rdquo; should be your fork and &amp;ldquo;upstream&amp;rdquo; should be the project you forked; however, if you&amp;rsquo;re willing to break this convention then it&amp;rsquo;s easy.</description>
 		</item>
       	
 	</channel>
