@@ -135,8 +135,10 @@
 <li>N: = \\fhi.no\fil\styrt</li>
 </ul>
 <h2 id="install">Install</h2>
-<p>Install</p>
-<h2 id="settings">Settings</h2>
+<p>Install CIFS utilities package.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo apt update
+sudo apt install cifs-utils
+</code></pre></div><h2 id="settings">Settings</h2>
 <p>Create file <code>auto.cifs</code> in directory <code>/etc/</code></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">N -fstype=cifs,rw,username=&lt;your-username&gt;,password=&lt;your-password&gt;,vers=3.0,uid=1000,file_mode=0777,dir_mode=0777,users ://fhi.no/fil/styrt
 F -fstype=cifs,rw,username=&lt;your-username&gt;,password=&lt;your-password&gt;,vers=3.0,uid=1000,file_mode=0777,dir_mode=0777,users ://fhi.no/felles
