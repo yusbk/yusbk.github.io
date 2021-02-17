@@ -27,10 +27,10 @@ docker pull image-name docker run local-name image-name docker ps docker build U
 			<link>https://yusbk.github.io/2021/02/17/mount-drive/</link>
 			<pubDate>Wed, 17 Feb 2021 00:00:00 +0100</pubDate>
 			<guid>https://yusbk.github.io/2021/02/17/mount-drive/</guid>
-			<description>Install Settings Execute Credential  This is only relevant to my personal reference at work.
+			<description>Install Settings Execute Credential Access to folders  This is only relevant to my personal reference at work.
 The address for drive F and N is as follow:
  F: = \\fhi.no\felles N: = \\fhi.no\fil\styrt  Install Install
-Settings Create file auto.cifs in directory /etc/</description>
+Settings Create file auto.</description>
 		</item>
       	
 		<item>

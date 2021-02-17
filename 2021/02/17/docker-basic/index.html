@@ -196,6 +196,7 @@ externally on port 8888. Head over to the URL with port 8888 with <a href="https
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">docker run -it --name &lt;WHATEVER&gt; -p &lt;LOCAL_PORT&gt;:&lt;CONTAINER_PORT&gt; -v &lt;LOCAL_PATH&gt;:&lt;CONTAINER_PATH&gt; -d &lt;IMAGE&gt;:&lt;TAG&gt;
 </code></pre></div><p>To implement then run:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">docker run -v myfolder:/data/myfolder image-name
+docker run --rm -it -v /mnt/F:/F silver/emacs
 </code></pre></div>
 
 

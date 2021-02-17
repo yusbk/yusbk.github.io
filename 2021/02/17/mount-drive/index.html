@@ -125,6 +125,7 @@
 <li><a href="#settings">Settings</a></li>
 <li><a href="#execute">Execute</a></li>
 <li><a href="#credential">Credential</a></li>
+<li><a href="#access-to-folders">Access to folders</a></li>
 </ul>
 <!-- raw HTML omitted -->
 <p>This is only relevant to my personal reference at work.</p>
@@ -141,13 +142,16 @@
 F -fstype=cifs,rw,username=&lt;your-username&gt;,password=&lt;your-password&gt;,vers=3.0,uid=1000,file_mode=0777,dir_mode=0777,users ://fhi.no/felles
 </code></pre></div><p>To understand how mount settings is done can be referred from this <a href="https://access.redhat.com/documentation/en-us/red%5Fhat%5Fenterprise%5Flinux/7/html/storage%5Fadministration%5Fguide/nfs-autofs">website on AUTOFS</a>. Basically the structure is</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">mount-point map-name options
-</code></pre></div><p>The primary configuration file for the automounter is <code>/etc/auto.master</code>, also referred to as the master map which may be changed.</p>
-<h2 id="execute">Execute</h2>
+</code></pre></div><p>The primary configuration file for the automounter is <code>/etc/auto.master</code>, also referred to as the
+master map which may be changed. Open <code>auto.master</code> file and mounting directory to <code>/mnt</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">/mnt /etc/auto.cifs
+</code></pre></div><h2 id="execute">Execute</h2>
 <p>To run <code>autofs</code> the execute these command in terminal:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo systemctl enable autofs
 sudo systemctl start autofs
-</code></pre></div><p>Other options includes <code>restart</code> or <code>stop</code>.</p>
-<h2 id="credential">Credential</h2>
+</code></pre></div><p>Other options includes <code>restart</code> or <code>stop</code>. To check if you have access to directory <strong>F</strong> and <strong>N</strong> run this in terminal:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cd ~ <span style="color:#f92672">&amp;&amp;</span> cd /mnt/F <span style="color:#f92672">&amp;&amp;</span> ls
+</code></pre></div><h2 id="credential">Credential</h2>
 <p>To ensure that your username and password secure, use credential file for example <code>/etc/win-credentials</code> with:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">username=user
 password=password
@@ -158,7 +162,11 @@ sudo chmod <span style="color:#ae81ff">600</span> /etc/win-credentials
 </code></pre></div><p>Then to use the credentials run:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo mount -t cifs -o credentials<span style="color:#f92672">=</span>/etc/win-credentials file_mode<span style="color:#f92672">=</span>0777,dir_mode<span style="color:#f92672">=</span>0777,users ://fhi.no/fil/styrt
 </code></pre></div><p>Read more <a href="https://linuxize.com/post/how-to-mount-cifs-windows-share-on-linux/">here</a></p>
-
+<h2 id="access-to-folders">Access to folders</h2>
+<p>Since it&rsquo;s defined in the file <code>/etc/auto.master</code> that mounting will be in <code>/mnt</code> to access the folders is done with:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cd /mnt/N
+cd /mnt/F
+</code></pre></div>
 
 
 
