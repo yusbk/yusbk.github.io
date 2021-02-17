@@ -15,12 +15,11 @@
 		
 		<item>
 			<title>Docker basic</title>
-			<link>https://yusbk.github.io/2021/02/15/docker-basic/</link>
-			<pubDate>Mon, 15 Feb 2021 00:00:00 +0100</pubDate>
-			<guid>https://yusbk.github.io/2021/02/15/docker-basic/</guid>
-			<description>Important commands:
-docker pull image-name docker run local-name image-name docker ps Some basic commands to start using Docker. Two things are important ie. Docker Image and Docker Container. To fetch RStudio image from Docker Hub run the command:
-docker pull rocker/rstudio When the image has been pulled to the local Docker engine, you could use the image with</description>
+			<link>https://yusbk.github.io/2021/02/17/docker-basic/</link>
+			<pubDate>Wed, 17 Feb 2021 00:00:00 +0100</pubDate>
+			<guid>https://yusbk.github.io/2021/02/17/docker-basic/</guid>
+			<description>Use image Create Image  Important commands:
+docker pull image-name docker run local-name image-name docker ps docker build Use image Some basic commands to start using Docker. Two things are important ie. Docker Image and Docker Container. To fetch RStudio image from Docker Hub run the command:</description>
 		</item>
       	
 		<item>
