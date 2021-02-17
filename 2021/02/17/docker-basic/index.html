@@ -123,6 +123,7 @@
 <ul>
 <li><a href="#use-image">Use image</a></li>
 <li><a href="#create-image">Create Image</a></li>
+<li><a href="#mount-directory">Mount directory</a></li>
 </ul>
 <!-- raw HTML omitted -->
 <p>Important commands:</p>
@@ -158,9 +159,7 @@ docker ps -a
 </code></pre></div><p>The options <code>-a</code> will also list the containers with <code>existed</code> status. To delete all containers that are
 already existed, use the command <code>docker container prune</code>. Else, ordinary bash method defining all the
 options as shown in the second command line below:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">docker container prune
-
-docker rm <span style="color:#66d9ef">$(</span>docker ps -a -q -f status<span style="color:#f92672">=</span>existed<span style="color:#66d9ef">)</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">docker rm <span style="color:#66d9ef">$(</span>docker ps -a -q -f status<span style="color:#f92672">=</span>existed<span style="color:#66d9ef">)</span>
 </code></pre></div><p>Without defining the specific options will only remove a certain container ie. <code>docker rm rstudio</code>.
 The option <code>-q</code> for just returning the numeric ID and <code>-f</code> for filtering output based on conditions
 provided.</p>
@@ -192,7 +191,12 @@ then run:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">docker run -p 8888:5000 yourusername/catnip
 </code></pre></div><p>The command we just ran used port 5000 for the server inside the container and exposed this
 externally on port 8888. Head over to the URL with port 8888 with <a href="https://localhost:8888/">https://localhost:8888/</a></p>
-
+<h2 id="mount-directory">Mount directory</h2>
+<p>If you want to make local directory available in your container, the basic structure is as follow:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">docker run -it --name &lt;WHATEVER&gt; -p &lt;LOCAL_PORT&gt;:&lt;CONTAINER_PORT&gt; -v &lt;LOCAL_PATH&gt;:&lt;CONTAINER_PATH&gt; -d &lt;IMAGE&gt;:&lt;TAG&gt;
+</code></pre></div><p>To implement then run:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">docker run -v myfolder:/data/myfolder image-name
+</code></pre></div>
 
 
 
