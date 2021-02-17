@@ -12,6 +12,16 @@
     ,
         
             {
+                "ref": "https://yusbk.github.io/2021/02/17/mount-drive/",
+                "title": "Mount drive",
+                "section": "post",
+                "date" : "2021.02.17",
+                "body": " Install Settings Execute Credential  This is only relevant to my personal reference at work.\nThe address for drive F and N is as follow:\n F: = \\\\fhi.no\\felles N: = \\\\fhi.no\\fil\\styrt  Install Install\nSettings Create file auto.cifs in directory /etc/\nN -fstype=cifs,rw,username=\u0026lt;your-username\u0026gt;,password=\u0026lt;your-password\u0026gt;,vers=3.0,uid=1000,file_mode=0777,dir_mode=0777,users ://fhi.no/fil/styrt F -fstype=cifs,rw,username=\u0026lt;your-username\u0026gt;,password=\u0026lt;your-password\u0026gt;,vers=3.0,uid=1000,file_mode=0777,dir_mode=0777,users ://fhi.no/felles To understand how mount settings is done can be referred from this website on AUTOFS. Basically the structure is\nmount-point map-name options The primary configuration file for the automounter is /etc/auto.master, also referred to as the master map which may be changed.\nExecute To run autofs the execute these command in terminal:\nsudo systemctl enable autofs sudo systemctl start autofs Other options includes restart or stop.\nCredential To ensure that your username and password secure, use credential file for example /etc/win-credentials with:\nusername=user password=password domain=domain Then make it unreadable to others with\nsudo chown root: /etc/win-credentials sudo chmod 600 /etc/win-credentials Then to use the credentials run:\nsudo mount -t cifs -o credentials=/etc/win-credentials file_mode=0777,dir_mode=0777,users ://fhi.no/fil/styrt Read more here\n"
+            }
+        
+    ,
+        
+            {
                 "ref": "https://yusbk.github.io/2020/12/12/access-db/",
                 "title": "Connect to MS Access DB",
                 "section": "post",

@@ -23,6 +23,17 @@ docker pull image-name docker run local-name image-name docker ps docker build U
 		</item>
       	
 		<item>
+			<title>Mount drive</title>
+			<link>https://yusbk.github.io/2021/02/17/mount-drive/</link>
+			<pubDate>Wed, 17 Feb 2021 00:00:00 +0100</pubDate>
+			<guid>https://yusbk.github.io/2021/02/17/mount-drive/</guid>
+			<description>Install Settings Execute Credential  This is only relevant to my personal reference at work.
+The address for drive F and N is as follow:
+ F: = \\fhi.no\felles N: = \\fhi.no\fil\styrt  Install Install
+Settings Create file auto.cifs in directory /etc/</description>
+		</item>
+      	
+		<item>
 			<title>Connect to MS Access DB</title>
 			<link>https://yusbk.github.io/2020/12/12/access-db/</link>
 			<pubDate>Sat, 12 Dec 2020 12:49:00 +0100</pubDate>
@@ -92,15 +103,6 @@ Host personal HostName github.com User git IdentityFile ~/.ssh/id_rsa_personal H
 			<guid>https://yusbk.github.io/2020/09/27/git-submodule/</guid>
 			<description>Rujukan di sini lebih teratur. Penerangan dibawah ialah berasaskan pengalaman sendiri tanpa struktur.
 Repo baru Bila buat repo baru dan ingin tetapkan submodule untuk tema harbor dan folder public ke yusbk.github.io. Submodule dipakai untuk memasukkan fungsi yang terdapat di repos lain ke dalam repos sendiri ie.</description>
-		</item>
-      	
-		<item>
-			<title>Basic use of drake</title>
-			<link>https://yusbk.github.io/2020/06/15/basic-drake/</link>
-			<pubDate>Mon, 15 Jun 2020 23:22:00 +0200</pubDate>
-			<guid>https://yusbk.github.io/2020/06/15/basic-drake/</guid>
-			<description>There are various ways to organise your R workflow. If you are working with a big project, then Airflow might be for you. But for the majority of R project codes, drake package will fullfilled your need.
-Here is the basic use of drake.</description>
 		</item>
       	
 	</channel>
