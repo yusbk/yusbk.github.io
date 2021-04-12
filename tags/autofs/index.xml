@@ -9,18 +9,19 @@
 		
 		<managingEditor>Page(/tags/autofs) (Yusman Kamaleri)</managingEditor>
     	
-  		<lastBuildDate>Mon, 22 Feb 2021 00:00:00 +0100</lastBuildDate>
+  		<lastBuildDate>Mon, 12 Apr 2021 00:00:00 +0200</lastBuildDate>
 		
 		<atom:link href="/tags/autofs/" rel="self" type="application/rss+xml" />
 		
 		<item>
 			<title>Mount drive</title>
-			<link>https://yusbk.github.io/2021/02/22/mount-drive/</link>
-			<pubDate>Mon, 22 Feb 2021 00:00:00 +0100</pubDate>
-			<guid>https://yusbk.github.io/2021/02/22/mount-drive/</guid>
-			<description>Install Settings Execute Credential Access to folders  This is only relevant to my personal reference at work.
+			<link>https://yusbk.github.io/2021/04/12/mount-drive/</link>
+			<pubDate>Mon, 12 Apr 2021 00:00:00 +0200</pubDate>
+			<guid>https://yusbk.github.io/2021/04/12/mount-drive/</guid>
+			<description>Install Mount Execute Credential Access to folders  First published date: 2021-02-22
+This is only relevant to my personal reference at work.
 The address for drive F and N is as follow:
- F: = \\fhi.no\felles N: = \\fhi.no\fil\styrt H: = \\fhi.no\home\brukere_Y$\YOUR-USERNAME  To check the path where the folders are mounted, in Windows run command net use in terminal with cmd or PowerShell.</description>
+ F: = \\fhi.no\felles N: = \\fhi.no\fil\styrt H: = \\fhi.</description>
 		</item>
       	
 		<item>
