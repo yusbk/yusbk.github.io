@@ -148,7 +148,8 @@ but this has to be done every time you login to you machine.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">sudo mount -t cifs -o username=YourWindowsUserName,password=YourWindowsPassword //fhi.no/Felles /mnt/F
 </code></pre></div><p>You can run <code>df -h</code> to verify that mounting windows share folder in Linux was successful.</p>
 <p>Alternatively you can automount the drive. Here I use <a href="https://help.ubuntu.com/community/Autofs#The%5FMaster%5FMap%5FFile">autofs</a> to automount instead of <code>fstad</code>. To do
-the <code>fstad</code> way you can read <a href="https://linoxide.com/mount-windows-share-on-ubuntu-linux/">here</a>. If you wonder why then you can read <a href="https://www.linux.com/topic/desktop/how-configure-autofs-automount-linux/">here.</a> To start <code>create file =auto.cifs</code> in directory <code>/etc/</code></p>
+the <code>fstad</code> way you can read <a href="https://linoxide.com/mount-windows-share-on-ubuntu-linux/">here</a>. If you wonder why then you can read <a href="https://www.linux.com/topic/desktop/how-configure-autofs-automount-linux/">here.</a> To start create file
+<code>auto.cifs</code> in directory <code>/etc/</code></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">F -fstype=cifs,rw,credential=/etc/cifs-credentials,uid=1000,iocharset=utf8 ://fhi.no/Felles
 N -fstype=cifs,rw,credential=/etc/cifs-credentials,uid=1000,iocharset=utf8 ://fhi.no/styrt
 H -fstype=cifs,rw,credential=/etc/cifs-credentials,uid=1000,iocharset=utf8 ://fhi.no/home/Brukere_Y\$/MYUSERNAME
@@ -168,13 +169,13 @@ sudo systemctl start autofs
 </code></pre></div><p>Other options includes <code>restart</code> or <code>stop</code>. To check if you have access to directory <strong>F</strong> and <strong>N</strong> run this in terminal:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cd ~ <span style="color:#f92672">&amp;&amp;</span> cd /mnt/F <span style="color:#f92672">&amp;&amp;</span> ls
 </code></pre></div><h2 id="credential">Credential</h2>
-<p>To ensure that your username and password secure, use credential file for example <code>/etc/win-credentials</code> with:</p>
+<p>To ensure that your username and password secure, use credential file for example <code>/etc/cifs-credentials</code> with:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">username=user
 password=password
 domain=domain
 </code></pre></div><p>Then make it unreadable to others with</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo chown root: /etc/win-credentials
-sudo chmod <span style="color:#ae81ff">600</span> /etc/win-credentials
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo chown root: /etc/cifs-credentials
+sudo chmod <span style="color:#ae81ff">600</span> /etc/cifs-credentials
 </code></pre></div><p>Then to use the credentials run:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo mount -t cifs -o credentials<span style="color:#f92672">=</span>/etc/cifs-credentials,file_mode<span style="color:#f92672">=</span>0777,dir_mode<span style="color:#f92672">=</span><span style="color:#ae81ff">0777</span> ://fhi.no/fil/styrt
 </code></pre></div><p>Read more <a href="https://linuxize.com/post/how-to-mount-cifs-windows-share-on-linux/">here</a></p>
