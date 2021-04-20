@@ -14,6 +14,16 @@
 		<atom:link href="/tags/database/" rel="self" type="application/rss+xml" />
 		
 		<item>
+			<title>data.table tips</title>
+			<link>https://yusbk.github.io/2021/04/20/datatable_tips/</link>
+			<pubDate>Tue, 20 Apr 2021 00:00:00 +0200</pubDate>
+			<guid>https://yusbk.github.io/2021/04/20/datatable_tips/</guid>
+			<description>Some tips for data.table that I came across while googling which might be useful.
+Print To print more rows that default can be done with either:
+options(datatable.print.topn = 70) print(DT, topn = 70) Using options will implement the changes globally. Else to make print nicer is using:</description>
+		</item>
+      	
+		<item>
 			<title>Mount drive</title>
 			<link>https://yusbk.github.io/2021/04/12/mount-drive/</link>
 			<pubDate>Mon, 12 Apr 2021 00:00:00 +0200</pubDate>
@@ -94,15 +104,6 @@ x &amp;lt;- 1:6 data.table::fcase(x &amp;lt; 3, 1, x &amp;gt;= 4, 2) To implemen
 			<guid>https://yusbk.github.io/2020/09/28/git-account/</guid>
 			<description>config file Create a config file in your ~/.ssh folder that will manage your accounts.
 Host personal HostName github.com User git IdentityFile ~/.ssh/id_rsa_personal Host work HostName github.com User git IdentityFile ~/.ssh/id_rsa_work When cloning a new repo then you only have to specify hostname to your Git account.</description>
-		</item>
-      	
-		<item>
-			<title>git submodule</title>
-			<link>https://yusbk.github.io/2020/09/27/git-submodule/</link>
-			<pubDate>Sun, 27 Sep 2020 00:00:00 +0200</pubDate>
-			<guid>https://yusbk.github.io/2020/09/27/git-submodule/</guid>
-			<description>Rujukan di sini lebih teratur. Penerangan dibawah ialah berasaskan pengalaman sendiri tanpa struktur.
-Repo baru Bila buat repo baru dan ingin tetapkan submodule untuk tema harbor dan folder public ke yusbk.github.io. Submodule dipakai untuk memasukkan fungsi yang terdapat di repos lain ke dalam repos sendiri ie.</description>
 		</item>
       	
 	</channel>
