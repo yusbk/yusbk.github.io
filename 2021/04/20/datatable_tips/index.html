@@ -138,8 +138,8 @@ backward).</p>
 <code>roll=Inf</code> the data will be joined closest to the keyed value where <code>dt &gt;= DT</code>. Specifying with
 <code>roll=-Inf</code> will be the opposite. With <code>roll=&quot;nearest&quot;</code> will roll both ways to the nearest value. Else
 you can specify an absolute value to roll on ie. <code>roll=2</code> will roll to <code>dt</code> with <code>key_col + 2</code>.</p>
-<p>Using <code>forlaps(DT, dt, type = &quot;any&quot;)</code> will join <strong>DT</strong> and <strong>dt</strong> as long as the value ranges give a match. As
-in the given example:</p>
+<p>Using <code>foverlaps(DT, dt, type = &quot;any&quot;)</code> will join <strong>DT</strong> and <strong>dt</strong> as long as the value ranges give a match.
+As in the given example:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">foverlaps(dt4, dt3, type = &#34;any&#34;)
 
 ##    min_y max_y x dt4_y dt4_y_end
@@ -154,6 +154,16 @@ in the given example:</p>
 
 
 
+      
+        <div class="blog-tags">
+          
+            <a href="https://yusbk.github.io/tags/join/">join</a
+            >&nbsp;
+          
+            <a href="https://yusbk.github.io/tags/merge/">merge</a
+            >&nbsp;
+          
+        </div>
       
     </article>
     
