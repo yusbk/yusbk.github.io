@@ -130,30 +130,30 @@
 via <a href="https://scoop-docs.now.sh/docs/overview/So-What.html#why-should-you-care-about-scoop">scoop</a>. This will install Git and openSSH together. After installation, it&rsquo;s important to check
 where is your <code>~/.ssh</code> folder via <code>Git bash.</code> This is the folder where you will save your SSH-key.</p>
 <p>Since I use Emacs, I add this code to use git-bash in shell. This is taken from <a href="https://emacs.stackexchange.com/questions/22049/git-bash-in-emacs-on-windows">StackExchange</a>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">(if (<span style="color:#a6e22e">equal</span> system-type <span style="color:#e6db74">&#39;windows-nt</span>)
-    (progn (setq explicit-shell-file-name
-                 <span style="color:#e6db74">&#34;C:/Users/ybka/scoop/apps/git-with-openssh/current/bin/bash.exe&#34;</span>)
-           (setq shell-file-name explicit-shell-file-name)
-           (setq explicit-bash.exe-args <span style="color:#f92672">&#39;</span>(<span style="color:#e6db74">&#34;--login&#34;</span> <span style="color:#e6db74">&#34;-i&#34;</span>))
-           (add-to-list <span style="color:#e6db74">&#39;exec-path</span> <span style="color:#e6db74">&#34;C:/Users/ybka/scoop/apps/git-with-openssh/current/bin&#34;</span>)
-           (setenv <span style="color:#e6db74">&#34;SHELL&#34;</span> shell-file-name)
-           (add-hook <span style="color:#e6db74">&#39;comint-output-filter-functions</span> <span style="color:#e6db74">&#39;comint-strip-ctrl-m</span>)))
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (if (<span style="color:#a6e22e">equal</span> system-type <span style="color:#e6db74">&#39;windows-nt</span>)
+      (progn (setq explicit-shell-file-name
+                   <span style="color:#e6db74">&#34;C:/Users/ybka/scoop/apps/git-with-openssh/current/bin/bash.exe&#34;</span>)
+             (setq shell-file-name explicit-shell-file-name)
+             (setq explicit-bash.exe-args <span style="color:#f92672">&#39;</span>(<span style="color:#e6db74">&#34;--login&#34;</span> <span style="color:#e6db74">&#34;-i&#34;</span>))
+             (add-to-list <span style="color:#e6db74">&#39;exec-path</span> <span style="color:#e6db74">&#34;C:/Users/ybka/scoop/apps/git-with-openssh/current/bin&#34;</span>)
+             (setenv <span style="color:#e6db74">&#34;SHELL&#34;</span> shell-file-name)
+             (add-hook <span style="color:#e6db74">&#39;comint-output-filter-functions</span> <span style="color:#e6db74">&#39;comint-strip-ctrl-m</span>)))
 
-(defun git-bash () (interactive)
-       (let ((explicit-shell-file-name <span style="color:#e6db74">&#34;C:/Users/ybka/scoop/apps/git-with-openssh/current/bin/bash.exe&#34;</span> ))
-         (<span style="color:#a6e22e">call-interactively</span> <span style="color:#e6db74">&#39;shell</span>)))
+  (defun git-bash () (interactive)
+         (let ((explicit-shell-file-name <span style="color:#e6db74">&#34;C:/Users/ybka/scoop/apps/git-with-openssh/current/bin/bash.exe&#34;</span> ))
+           (<span style="color:#a6e22e">call-interactively</span> <span style="color:#e6db74">&#39;shell</span>)))
 </code></pre></div><p>Then as suggested from StackExchange, I created <code>~/.bash_profile</code> (root for Git-bash) and add the
 codes below to display shell prompt properly in Emacs.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">if [ -n &#34;$INSIDE_EMACS&#34; ]; then
-export PS1=&#39;\[\033[32m\]\u@\h \[\033[33m\]\w\[\033[36m\]`__git_ps1`\[\033[0m\]\n$ &#39;
-fi
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">  if [ -n &#34;$INSIDE_EMACS&#34; ]; then
+  export PS1=&#39;\[\033[32m\]\u@\h \[\033[33m\]\w\[\033[36m\]`__git_ps1`\[\033[0m\]\n$ &#39;
+  fi
 </code></pre></div><p>To be on the safe side, I also add <strong>git-with-openssh</strong> the PATH in Windows Environment. You can find guides for doing it
 in many places eg. <a href="https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/">here</a>. In my pc, the path is:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">C:/Users/ybka/scoop/apps/git-with-openssh/current/bin/
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">   C:/Users/ybka/scoop/apps/git-with-openssh/current/bin/
 </code></pre></div><h2 id="create-ssh-key">Create SSH key</h2>
 <p>If you haven&rsquo;t created an SSH-key then do so by running the code below in your Git bash. Else you
 can read more <a href="https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/connecting-to-github-with-ssh">here</a>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">ssh-keygen -t rsa -b <span style="color:#ae81ff">4096</span> -C <span style="color:#e6db74">&#34;your_email@example.com&#34;</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">  ssh-keygen -t rsa -b <span style="color:#ae81ff">4096</span> -C <span style="color:#e6db74">&#34;your_email@example.com&#34;</span>
 </code></pre></div><p>Paramters specification:</p>
 <ul>
 <li><code>-t</code> is to specify RSA as the type of key to generate</li>
@@ -164,17 +164,17 @@ can read more <a href="https://docs.github.com/en/free-pro-team@latest/github/au
 started then you can do so silently and has it running in the background. You will get an output
 something like <code>&gt; Agent pid 4353</code>. For Windows user, you can auto-launching the <code>ssh-agent</code> by following
 the guide <a href="https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/working-with-ssh-key-passphrases">here</a>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">eval <span style="color:#66d9ef">$(</span>ssh-agent -s<span style="color:#66d9ef">)</span>
-ssh-add ~/.ssh/id_rsa_personal
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">  eval <span style="color:#66d9ef">$(</span>ssh-agent -s<span style="color:#66d9ef">)</span>
+  ssh-add ~/.ssh/id_rsa_personal
 </code></pre></div><p>Copy your public SSH-key either manually or by running <code>clip</code> which will copy it to clipboard then add
 it to your GitHub account.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">clip &lt; ~/.ssh/id_rsa_personal
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">  clip &lt; ~/.ssh/id_rsa_personal
 </code></pre></div><p>You can test the connection and verify your loaded SSH-key</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># Check connection</span>
-ssh -T git@github.com
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">  <span style="color:#75715e"># Check connection</span>
+  ssh -T git@github.com
 
-<span style="color:#75715e"># Verify</span>
-ssh-add -l -E md5
+  <span style="color:#75715e"># Verify</span>
+  ssh-add -l -E md5
 </code></pre></div>
 
 

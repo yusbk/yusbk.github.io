@@ -14,6 +14,15 @@
 		<atom:link href="/tags/org/" rel="self" type="application/rss+xml" />
 		
 		<item>
+			<title>Doom Emacs</title>
+			<link>https://yusbk.github.io/2021/04/27/doom-emacs-tips/</link>
+			<pubDate>Tue, 27 Apr 2021 00:00:00 +0200</pubDate>
+			<guid>https://yusbk.github.io/2021/04/27/doom-emacs-tips/</guid>
+			<description>Doom tips Some tips to learn the keybindings in Doom and Vim in the process of migrating from my vanilla Emacs settings.
+Doom leader-key is SPC and localleader-key is SPC-m. When in Insert mode use M-SPC or M-SPC-m to call the menu available as in the Normal mode.</description>
+		</item>
+      	
+		<item>
 			<title>data.table tips</title>
 			<link>https://yusbk.github.io/2021/04/20/datatable_tips/</link>
 			<pubDate>Tue, 20 Apr 2021 00:00:00 +0200</pubDate>
@@ -95,15 +104,6 @@ x &amp;lt;- 1:6 data.table::fcase(x &amp;lt; 3, 1, x &amp;gt;= 4, 2) To implemen
 			<guid>https://yusbk.github.io/2020/09/29/git-ssh/</guid>
 			<description>Generally, these are what I did:
  Install git-with-openssh Create SSH-key Add SSH-key to ssh-agent Create ~/.bashrc for auto-launching ssh-agent  openSSH Windows 10 include openSSH. But I can&amp;rsquo;t make it work with git so I use git-with-openssh installed via scoop.</description>
-		</item>
-      	
-		<item>
-			<title>Multiple account</title>
-			<link>https://yusbk.github.io/2020/09/28/git-account/</link>
-			<pubDate>Mon, 28 Sep 2020 00:00:00 +0200</pubDate>
-			<guid>https://yusbk.github.io/2020/09/28/git-account/</guid>
-			<description>config file Create a config file in your ~/.ssh folder that will manage your accounts.
-Host personal HostName github.com User git IdentityFile ~/.ssh/id_rsa_personal Host work HostName github.com User git IdentityFile ~/.ssh/id_rsa_work When cloning a new repo then you only have to specify hostname to your Git account.</description>
 		</item>
       	
 	</channel>

@@ -1,17 +1,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
-		<title>R on ყųʂƙąɱ</title>
-		<link>https://yusbk.github.io/categories/r/</link>
-		<description>Recent content in R </description>
+		<title>doom on ყųʂƙąɱ</title>
+		<link>https://yusbk.github.io/tags/doom/</link>
+		<description>Recent content in doom </description>
 		<generator>Hugo -- gohugo.io</generator>
 		
   		<language>en</language>
 		
-		<managingEditor>Page(/categories/r) (Yusman Kamaleri)</managingEditor>
+		<managingEditor>Page(/tags/doom) (Yusman Kamaleri)</managingEditor>
     	
-  		<lastBuildDate>Tue, 20 Apr 2021 00:00:00 +0200</lastBuildDate>
+  		<lastBuildDate>Tue, 27 Apr 2021 00:00:00 +0200</lastBuildDate>
 		
-		<atom:link href="/categories/r/" rel="self" type="application/rss+xml" />
+		<atom:link href="/tags/doom/" rel="self" type="application/rss+xml" />
 		
 		<item>
 			<title>Doom Emacs</title>

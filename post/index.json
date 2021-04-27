@@ -2,6 +2,16 @@
     
         
             {
+                "ref": "https://yusbk.github.io/2021/04/27/doom-emacs-tips/",
+                "title": "Doom Emacs",
+                "section": "post",
+                "date" : "2021.04.27",
+                "body": "Doom tips Some tips to learn the keybindings in Doom and Vim in the process of migrating from my vanilla Emacs settings.\nDoom leader-key is SPC and localleader-key is SPC-m. When in Insert mode use M-SPC or M-SPC-m to call the menu available as in the Normal mode. Else change mode with ESC or jk binding. To get into Emacs\nNavigation When in the Normalmode:\n C-b and C-f for page backward and page forward (whole page) C-u and C-d for half page up and down z-z line to center gsj and gsk go to line forward (j) or backward (k) ie. avy-goto gsf and gsF go to forward (f) or backward(F) fw and Fw find w or any word/symbols specified forward or backward '' and   `` jump to mark-line and goto-mark but works as jump cursor to previous position too C-i and C-o jump to previous cursor forward or backward ma to mark position as a and use 'a to go to the line where the mark is or `a (backtick) to go to the position of the marked ie. a  Editing In Normalmode:\n db delete backward till next whitespace d$ delete to end of line from cursor d0 delete to start of line from cursor ds( delete columns or any parantheses specify after s ie. symbols  In Insertmode:\n C-w delete word backward  In Visualmode:\n Block all line and press = to do indentation  "
+            }
+        
+    ,
+        
+            {
                 "ref": "https://yusbk.github.io/2021/04/20/datatable_tips/",
                 "title": "data.table tips",
                 "section": "post",
