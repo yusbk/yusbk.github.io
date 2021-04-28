@@ -18,7 +18,7 @@
 			<link>https://yusbk.github.io/2021/04/27/doom-emacs-tips/</link>
 			<pubDate>Tue, 27 Apr 2021 00:00:00 +0200</pubDate>
 			<guid>https://yusbk.github.io/2021/04/27/doom-emacs-tips/</guid>
-			<description>Doom tips Some tips to learn the keybindings in Doom and Vim in the process of migrating from my vanilla Emacs settings.
+			<description>Doom tips Some tips to learn the keybindings in Doom and Evil in the process of migrating from my vanilla Emacs settings.
 Doom leader-key is SPC and localleader-key is SPC-m. When in Insert mode use M-SPC or M-SPC-m to call the menu available as in the Normal mode.</description>
 		</item>
       	
