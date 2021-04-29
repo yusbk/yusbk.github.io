@@ -1,0 +1,110 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Recipe on ყųʂƙąɱ</title>
+		<link>https://yusbk.github.io/categories/recipe/</link>
+		<description>Recent content in Recipe </description>
+		<generator>Hugo -- gohugo.io</generator>
+		
+  		<language>en</language>
+		
+		<managingEditor>Page(/categories/recipe) (Yusman Kamaleri)</managingEditor>
+    	
+  		<lastBuildDate>Thu, 29 Apr 2021 16:38:00 +0200</lastBuildDate>
+		
+		<atom:link href="/categories/recipe/" rel="self" type="application/rss+xml" />
+		
+		<item>
+			<title>Biskut Italy</title>
+			<link>https://yusbk.github.io/2021/04/29/biskut-italy/</link>
+			<pubDate>Thu, 29 Apr 2021 16:38:00 +0200</pubDate>
+			<guid>https://yusbk.github.io/2021/04/29/biskut-italy/</guid>
+			<description>Care buat biskut simple. Biasa bah jumpa di Italy ini biskut dan namanya dorang panggek bicotti.
+Bahan-bahannya  200 g kacang-kacang campuran sukak hati. Boleh jugak campur kismis sikit kalo mau. 1 sm kulit oren atau limau nipis. Mana-mana sak la yang ada.</description>
+		</item>
+      	
+		<item>
+			<title>Doom tips</title>
+			<link>https://yusbk.github.io/2021/04/29/doom-emacs-tips/</link>
+			<pubDate>Thu, 29 Apr 2021 00:00:00 +0200</pubDate>
+			<guid>https://yusbk.github.io/2021/04/29/doom-emacs-tips/</guid>
+			<description>First published date: 2021-04-27 Some tips to learn the keybindings in Doom and Evil in the process of migrating from my vanilla Emacs settings. For overview of keybindings can be seen with SPC-h-b-b.
+Doom leader-key is SPC and localleader-key is SPC-m.</description>
+		</item>
+      	
+		<item>
+			<title>data.table tips</title>
+			<link>https://yusbk.github.io/2021/04/20/datatable_tips/</link>
+			<pubDate>Tue, 20 Apr 2021 00:00:00 +0200</pubDate>
+			<guid>https://yusbk.github.io/2021/04/20/datatable_tips/</guid>
+			<description>Some tips for data.table that I came across while googling which might be useful.
+Print To print more rows that default can be done with either:
+options(datatable.print.topn = 70) print(DT, topn = 70) Using options will implement the changes globally. Else to make print nicer is using:</description>
+		</item>
+      	
+		<item>
+			<title>Mount drive</title>
+			<link>https://yusbk.github.io/2021/04/12/mount-drive/</link>
+			<pubDate>Mon, 12 Apr 2021 00:00:00 +0200</pubDate>
+			<guid>https://yusbk.github.io/2021/04/12/mount-drive/</guid>
+			<description>Install Mount Execute Credential Access to folders  First published date: 2021-02-22
+This is only relevant to my personal reference at work.
+The address for drive F and N is as follow:
+ F: = \\fhi.no\felles N: = \\fhi.no\fil\styrt H: = \\fhi.</description>
+		</item>
+      	
+		<item>
+			<title>Docker basic</title>
+			<link>https://yusbk.github.io/2021/02/17/docker-basic/</link>
+			<pubDate>Wed, 17 Feb 2021 00:00:00 +0100</pubDate>
+			<guid>https://yusbk.github.io/2021/02/17/docker-basic/</guid>
+			<description>Use image Create Image Mount directory  Important commands:
+docker pull image-name docker run local-name image-name docker ps docker build Use image Some basic commands to start using Docker. Two things are important ie. Docker Image and Docker Container. To fetch RStudio image from Docker Hub run the command:</description>
+		</item>
+      	
+		<item>
+			<title>Connect to MS Access DB</title>
+			<link>https://yusbk.github.io/2020/12/12/access-db/</link>
+			<pubDate>Sat, 12 Dec 2020 12:49:00 +0100</pubDate>
+			<guid>https://yusbk.github.io/2020/12/12/access-db/</guid>
+			<description>This article first published in 02.10.2020.
+Before connecting to your Access DBMS via Windows OS, you can check if you have the MS Access driver installed in your machine by running
+## List everything odbc::odbcListDrivers() ## You will get the results someting like this.</description>
+		</item>
+      	
+		<item>
+			<title>Ellipsis …</title>
+			<link>https://yusbk.github.io/2020/12/12/ellipsis/</link>
+			<pubDate>Sat, 12 Dec 2020 00:00:00 +0100</pubDate>
+			<guid>https://yusbk.github.io/2020/12/12/ellipsis/</guid>
+			<description>Just to remind me how I could use ellipsis or the three dots ... in my coding. There are two scenarios I find it useful:
+Function wrapper When creating a function wrapper and instead of providing all the arguments to be send further, you could just use .</description>
+		</item>
+      	
+		<item>
+			<title>Git upstream</title>
+			<link>https://yusbk.github.io/2020/10/14/git-upstream/</link>
+			<pubDate>Wed, 14 Oct 2020 00:00:00 +0200</pubDate>
+			<guid>https://yusbk.github.io/2020/10/14/git-upstream/</guid>
+			<description>When you forked a repo then your copy of forked-repo in your Github profile will be referred to as origin while upstream refers to the real origin where the repo was forked from. If you cloned a repo then you will only have local copy of the repo.</description>
+		</item>
+      	
+		<item>
+			<title>Git worktree</title>
+			<link>https://yusbk.github.io/2020/10/14/git-worktree/</link>
+			<pubDate>Wed, 14 Oct 2020 00:00:00 +0200</pubDate>
+			<guid>https://yusbk.github.io/2020/10/14/git-worktree/</guid>
+			<description>Normally I created a new branch when I intent to do some changes to the master branch. But the problem is I have to stash changes when switching back and forth. To avoid this create worktree for the branches you want to work seperately.</description>
+		</item>
+      	
+		<item>
+			<title>Case when</title>
+			<link>https://yusbk.github.io/2020/10/07/case-when/</link>
+			<pubDate>Wed, 07 Oct 2020 22:58:00 +0200</pubDate>
+			<guid>https://yusbk.github.io/2020/10/07/case-when/</guid>
+			<description>It&amp;rsquo;s often easier to use ifelse to implement conditioning. The fast implementation in data.table of ifelse is fifelse. Other approach to do multiple conditioning is to use data.table::fcase or dplyr::case_when.
+fcase fcase can be used directly
+x &amp;lt;- 1:6 data.table::fcase(x &amp;lt; 3, 1, x &amp;gt;= 4, 2) To implement in a data.</description>
+		</item>
+      	
+	</channel>
+</rss>

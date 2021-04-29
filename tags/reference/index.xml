@@ -14,6 +14,15 @@
 		<atom:link href="/tags/reference/" rel="self" type="application/rss+xml" />
 		
 		<item>
+			<title>Biskut Italy</title>
+			<link>https://yusbk.github.io/2021/04/29/biskut-italy/</link>
+			<pubDate>Thu, 29 Apr 2021 16:38:00 +0200</pubDate>
+			<guid>https://yusbk.github.io/2021/04/29/biskut-italy/</guid>
+			<description>Care buat biskut simple. Biasa bah jumpa di Italy ini biskut dan namanya dorang panggek bicotti.
+Bahan-bahannya  200 g kacang-kacang campuran sukak hati. Boleh jugak campur kismis sikit kalo mau. 1 sm kulit oren atau limau nipis. Mana-mana sak la yang ada.</description>
+		</item>
+      	
+		<item>
 			<title>Doom tips</title>
 			<link>https://yusbk.github.io/2021/04/29/doom-emacs-tips/</link>
 			<pubDate>Thu, 29 Apr 2021 00:00:00 +0200</pubDate>
@@ -95,15 +104,6 @@ Function wrapper When creating a function wrapper and instead of providing all t
 			<description>It&amp;rsquo;s often easier to use ifelse to implement conditioning. The fast implementation in data.table of ifelse is fifelse. Other approach to do multiple conditioning is to use data.table::fcase or dplyr::case_when.
 fcase fcase can be used directly
 x &amp;lt;- 1:6 data.table::fcase(x &amp;lt; 3, 1, x &amp;gt;= 4, 2) To implement in a data.</description>
-		</item>
-      	
-		<item>
-			<title>SSH-key with Git on Windows</title>
-			<link>https://yusbk.github.io/2020/09/29/git-ssh/</link>
-			<pubDate>Tue, 29 Sep 2020 00:00:00 +0200</pubDate>
-			<guid>https://yusbk.github.io/2020/09/29/git-ssh/</guid>
-			<description>Generally, these are what I did:
- Install git-with-openssh Create SSH-key Add SSH-key to ssh-agent Create ~/.bashrc for auto-launching ssh-agent  openSSH Windows 10 include openSSH. But I can&amp;rsquo;t make it work with git so I use git-with-openssh installed via scoop.</description>
 		</item>
       	
 	</channel>
