@@ -14,6 +14,16 @@
 		<atom:link href="/tags/merge/" rel="self" type="application/rss+xml" />
 		
 		<item>
+			<title>Smerge and ediff</title>
+			<link>https://yusbk.github.io/2021/04/30/magit-ediff/</link>
+			<pubDate>Fri, 30 Apr 2021 11:42:00 +0200</pubDate>
+			<guid>https://yusbk.github.io/2021/04/30/magit-ediff/</guid>
+			<description>For enditing conflict in git, use smerge or ediff.
+Smerge Basic workflow:
+ Open magit status with SPC g g in Doom Identify the mark with Unmerged under Unstage list Go to the file and press Enter to open the file The base command for Smerge is C-c ^ You will see the conflict and selecting the upper with C-c ^ u and lower with C-c ^ l To select all &amp;lsquo;conflicting&amp;rsquo; changes press C-c ^ a To navigate the conflicts use C-c ^ n and C-c ^ p for next and previous conflict To see all the keybindings use C-c ^ h  Ediff When you are in the file with conflict, type M-x smerge-ediff or M-xvc-resolve-conflicts.</description>
+		</item>
+      	
+		<item>
 			<title>Biskut Italy</title>
 			<link>https://yusbk.github.io/2021/04/29/biskut-italy/</link>
 			<pubDate>Thu, 29 Apr 2021 16:38:00 +0200</pubDate>
@@ -27,8 +37,9 @@ Bahan-bahannya    Unit Bahan     200 g kacang-kacang campuran sukak hati. Boleh 
 			<link>https://yusbk.github.io/2021/04/29/doom-emacs-tips/</link>
 			<pubDate>Thu, 29 Apr 2021 00:00:00 +0200</pubDate>
 			<guid>https://yusbk.github.io/2021/04/29/doom-emacs-tips/</guid>
-			<description>First published date: 2021-04-27 Some tips to learn the keybindings in Doom and Evil in the process of migrating from my vanilla Emacs settings. For overview of keybindings can be seen with SPC-h-b-b.
-Doom leader-key is SPC and localleader-key is SPC-m.</description>
+			<description>First published date: 2021-04-27
+Some tips to learn the keybindings in Doom and Evil in the process of migrating from my vanilla Emacs settings. For overview of keybindings type SPC-h-b-b.
+Doom leader-key is SPC and localleader-key is SPC-m. When in Insert mode use M-SPC or M-SPC-m to call the menu available as in the Normal mode.</description>
 		</item>
       	
 		<item>
@@ -94,16 +105,6 @@ Function wrapper When creating a function wrapper and instead of providing all t
 			<pubDate>Wed, 14 Oct 2020 00:00:00 +0200</pubDate>
 			<guid>https://yusbk.github.io/2020/10/14/git-worktree/</guid>
 			<description>Normally I created a new branch when I intent to do some changes to the master branch. But the problem is I have to stash changes when switching back and forth. To avoid this create worktree for the branches you want to work seperately.</description>
-		</item>
-      	
-		<item>
-			<title>Case when</title>
-			<link>https://yusbk.github.io/2020/10/07/case-when/</link>
-			<pubDate>Wed, 07 Oct 2020 22:58:00 +0200</pubDate>
-			<guid>https://yusbk.github.io/2020/10/07/case-when/</guid>
-			<description>It&amp;rsquo;s often easier to use ifelse to implement conditioning. The fast implementation in data.table of ifelse is fifelse. Other approach to do multiple conditioning is to use data.table::fcase or dplyr::case_when.
-fcase fcase can be used directly
-x &amp;lt;- 1:6 data.table::fcase(x &amp;lt; 3, 1, x &amp;gt;= 4, 2) To implement in a data.</description>
 		</item>
       	
 	</channel>
