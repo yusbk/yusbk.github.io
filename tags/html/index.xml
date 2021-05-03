@@ -14,6 +14,16 @@
 		<atom:link href="/tags/html/" rel="self" type="application/rss+xml" />
 		
 		<item>
+			<title>Pasang pakej di R</title>
+			<link>https://yusbk.github.io/2021/05/03/package-r/</link>
+			<pubDate>Mon, 03 May 2021 00:00:00 +0000</pubDate>
+			<guid>https://yusbk.github.io/2021/05/03/package-r/</guid>
+			<description>First publish date: 02.09.2019
+Ini ialah beberapa penggunaan asas R yang amat berguna walaupun jarang dipakai. Antaranya:
+Pasang pakej Cara biasa untuk pasang pakej ialah menggunakan install.packages(). Tetapi sekiranya ingin memasang banyak pekej secara serentank dan memuatkan di R setelah pakej dipasang, cara begini boleh dipakai:</description>
+		</item>
+      	
+		<item>
 			<title>Smerge and ediff</title>
 			<link>https://yusbk.github.io/2021/04/30/magit-ediff/</link>
 			<pubDate>Fri, 30 Apr 2021 11:42:00 +0200</pubDate>
@@ -97,14 +107,6 @@ Function wrapper When creating a function wrapper and instead of providing all t
 			<pubDate>Wed, 14 Oct 2020 00:00:00 +0200</pubDate>
 			<guid>https://yusbk.github.io/2020/10/14/git-upstream/</guid>
 			<description>When you forked a repo then your copy of forked-repo in your Github profile will be referred to as origin while upstream refers to the real origin where the repo was forked from. If you cloned a repo then you will only have local copy of the repo.</description>
-		</item>
-      	
-		<item>
-			<title>Git worktree</title>
-			<link>https://yusbk.github.io/2020/10/14/git-worktree/</link>
-			<pubDate>Wed, 14 Oct 2020 00:00:00 +0200</pubDate>
-			<guid>https://yusbk.github.io/2020/10/14/git-worktree/</guid>
-			<description>Normally I created a new branch when I intent to do some changes to the master branch. But the problem is I have to stash changes when switching back and forth. To avoid this create worktree for the branches you want to work seperately.</description>
 		</item>
       	
 	</channel>

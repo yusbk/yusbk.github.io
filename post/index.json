@@ -2,6 +2,16 @@
     
         
             {
+                "ref": "https://yusbk.github.io/2021/05/03/package-r/",
+                "title": "Pasang pakej di R",
+                "section": "post",
+                "date" : "2021.05.03",
+                "body": "First publish date: 02.09.2019\nIni ialah beberapa penggunaan asas R yang amat berguna walaupun jarang dipakai. Antaranya:\nPasang pakej Cara biasa untuk pasang pakej ialah menggunakan install.packages(). Tetapi sekiranya ingin memasang banyak pekej secara serentank dan memuatkan di R setelah pakej dipasang, cara begini boleh dipakai:\nlist.of.packages \u0026lt;- c(\u0026#34;leaflet\u0026#34;,\u0026#34;ggplot2\u0026#34;,\u0026#34;dplyr\u0026#34;,\u0026#34;gridExtra\u0026#34;,\u0026#34;psych\u0026#34;,\u0026#34;data.table\u0026#34;,\u0026#34;sf\u0026#34;,\u0026#34;ggrepel\u0026#34;) new.packages \u0026lt;- list.of.packages[!(list.of.packages %in% installed.packages()[,\u0026#34;Package\u0026#34;])] if(length(new.packages)) install.packages(new.packages, repos = \u0026#34;https://cloud.r-project.org/\u0026#34;) sapply(list.of.packages, require, character.only = TRUE) Untuk pasang satu pakej boleh juga buat sebegini:\nif(!require(\u0026#34;rreg\u0026#34;)) {install.packages(\u0026#34;rreg\u0026#34;)} else {require(\u0026#34;rreg\u0026#34;)} Cara ini akan periksa sekiranya pakej rreg belum dipasang makan akan dipasang, sekiranya sudah ada maka akan diaktifkan.\nPasang pakej dari Github Untuk senang pasang pakej dari Github boleh guna pakej devtools. Boleh baca sini untuk guide. Singkatannya:\nlibrary(devtools) install_github(\u0026#34;ybkamaleri/norgeo\u0026#34;) Untuk pasang dari branch tertentu contohnya branch dev:\ninstall_github(\u0026#34;ybkamaleri/norgeo@dev\u0026#34;) Sekiranya package disimpan di subdirectory both pakai\ninstall_github(\u0026#34;ybkamaleri/norgeo\u0026#34;, subdir = \u0026#34;fhi\u0026#34;) "
+            }
+        
+    ,
+        
+            {
                 "ref": "https://yusbk.github.io/2021/04/30/magit-ediff/",
                 "title": "Smerge and ediff",
                 "section": "post",
@@ -167,16 +177,6 @@
                 "section": "post",
                 "date" : "2020.02.09",
                 "body": "Lookup table dipakai untuk mempercepatkan proses dan mengelakkan pemakaian ifelse. Untuk mempercepatkan proses, ordered index untuk data.table harus dipakai.\nCara 1 Cara ini ialah untuk mendapakan nilai ScoreLU yang terdapat di dataset dt2 melalui kolom kekunci DSCRpd dikedua-dua data.table. Sekiranya nilai di DSCRpd di dt1 tidak sama dengan dt2, nilai yang berhampiran di DSCRpd dirujuk untuk mendapatkan nilai ScoreLU.\ndt1 DSCRpd Leverage TCB 1 1.3730682 2.010122 -1590099.11 2 1.0449597 2.680051 493370.85 3 1.0311141 4.790531 21594.63 4 1.3923007 3.279903 -499326.76 dt2 ScoreLU DSCRpd Leverage TCB 1: 0 0.65 5.0 0 2: 10 0.80 4.5 100000 3: 20 0.95 4.0 250000 4: 30 1.10 3.5 500000 5: 40 1.20 3.0 850000 6: 50 1.26 2.5 1250000 7: 60 1.35 2.0 1700000 Kode ini dipakai sekiranya ingin mendapakan nilai di lookup tabel yang berhampiran roll =\r\u0026quot;nearest\u0026quot;.\nsetDT(df1)[, ScoreLU := setDT(df2)[df1, ScoreLU , on = \u0026#34;DSCRpd\u0026#34;, roll = \u0026#34;nearest\u0026#34;]] Nilai ScoreLU bagi kekunci DSCRpd 1.3730682 dan 1.3923007 di dt1 ialah 60 kerana nilai DSCRpd yang berhampiran di data dt2 ialah 1.35. Hasil yang sama dilihat untuk dt1$DSCRpd %in%\rc(1.0449597 , 1.0311141) yang hampir dengan dt2$DSCRpd == 1.10 yang memberikan nilai ScoreLU ==\r30. Hasilnay seperti begini:\nDSCRpd Leverage TCB ScoreLU 1: 1.3730682 2.010122 -1590099.11 60 2: 1.0449597 2.680051 493370.85 30 3: 1.0311141 4.790531 21594.63 30 4: 1.3923007 3.279903 -499326.76 60 5: 1.6443938 3.853003 988780.79 70 6: 0.6265976 1.814359 1003736.73 0 7: 2.1025253 4.412528 1245305.83 80 8: 1.2872873 2.074424 -688305.83 50 9: 0.5088294 2.504510 1406986.68 0 10: 1.7794307 3.724905 1132513.33 70 Cara 2 Cara ini sama seperti di atas cuma diterangkan secara mudah. Untuk menunjukkan cara ini kita buatkan data sebagai contoh:\nDT \u0026lt;- data.table(V1=0:2, V2=LETTERS[1:3], V4=1:12) V1 V2 V4 1: 0 A 1 2: 1 B 2 3: 2 C 3 4: 0 A 4 5: 1 B 5 6: 2 C 6 ...truncated Untuk tukarkan V1 dari nilai c(1,2) ke nilai c(0,1) atau tukar huruf, caranya:\nDT[.(V1 = 1:2, to = 0:1), on = \u0026#34;V1\u0026#34;, V1 := i.to] V1 V2 V4 1: 0 A 1 2: 0 B 2 3: 1 C 3 4: 0 A 4 5: 0 B 5 6: 1 C 6 ...truncated DT[.(V2 = LETTERS[1:3], to = c(\u0026#34;T\u0026#34;, \u0026#34;K\u0026#34;, \u0026#34;D\u0026#34;)), on = \u0026#34;V2\u0026#34;, V2 := i.to] V1 V2 V4 1: 0 T 1 2: 0 K 2 3: 1 D 3 4: 0 T 4 5: 0 K 5 6: 1 D 6 ...truncated Di sini .(V1 = 1:2, to = 0:1) ialah sebagai table rujukan. Sekiranya rujukkan (lookup table) tidak tersedia, boleh di buat berasingan:\nlut1 \u0026lt;- data.table(V2 = LETTERS[1:3], to = c(\u0026#34;T\u0026#34;, \u0026#34;K\u0026#34;, \u0026#34;D\u0026#34;)) V2 to 1: A T 2: B K 3: C D ## Pakai 2 kekunci lut2 \u0026lt;- data.table(V1 = 1:2, V4 = 2:3, to = 11:12) V1 V4 to 1: 1 2 11 2: 2 3 12 Kemudian bolehlah di update joins data:\nDT[lut1, on = \u0026#34;V2\u0026#34;, V2 := i.to] DT[lut2, on = c(\u0026#34;V1\u0026#34;, \u0026#34;V4\u0026#34;), V1 := i.to] V1 V2 V4 1: 0 A 1 2: 11 B 2 3: 12 C 3 4: 0 A 4 5: 1 B 5 6: 2 C 6 .. truncated Cara ini diambil dari stackoverflow.\n"
-            }
-        
-    ,
-        
-            {
-                "ref": "https://yusbk.github.io/2019/09/02/package-r/",
-                "title": "Pasang pakej di R",
-                "section": "post",
-                "date" : "2019.09.02",
-                "body": "Ini ialah beberapa penggunaan asas R yang amat berguna walaupun jarang dipakai. Antaranya:\nPasang pakej Cara biasa untuk pasang pakej ialah menggunakan install.packages(). Tetapi sekiranya ingin memasang banyak pekej secara serentank dan memuatkan di R setelah pakej dipasang, cara begini boleh dipakai:\nlist.of.packages \u0026lt;- c(\u0026#34;leaflet\u0026#34;,\u0026#34;ggplot2\u0026#34;,\u0026#34;dplyr\u0026#34;,\u0026#34;gridExtra\u0026#34;,\u0026#34;psych\u0026#34;,\u0026#34;data.table\u0026#34;,\u0026#34;sf\u0026#34;,\u0026#34;ggrepel\u0026#34;) new.packages \u0026lt;- list.of.packages[!(list.of.packages %in% installed.packages()[,\u0026#34;Package\u0026#34;])] if(length(new.packages)) install.packages(new.packages, repos = \u0026#34;https://cloud.r-project.org/\u0026#34;) sapply(list.of.packages, require, character.only = TRUE) Untuk pasang satu pakej boleh juga buat sebegini:\nif(!require(\u0026#34;rreg\u0026#34;)) {install.packages(\u0026#34;rreg\u0026#34;)} else {require(\u0026#34;rreg\u0026#34;)} Cara ini akan periksa sekiranya pakej rreg belum dipasang makan akan dipasang, sekiranya sudah ada maka akan diaktifkan.\n"
             }
         
     ,
