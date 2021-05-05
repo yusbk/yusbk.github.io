@@ -14,6 +14,16 @@
 		<atom:link href="/tags/package/" rel="self" type="application/rss+xml" />
 		
 		<item>
+			<title>SSH-key with Git on Windows</title>
+			<link>https://yusbk.github.io/2021/05/05/git-ssh/</link>
+			<pubDate>Wed, 05 May 2021 14:11:00 +0200</pubDate>
+			<guid>https://yusbk.github.io/2021/05/05/git-ssh/</guid>
+			<description>First published: 2020-09-29
+Generally, these are what I did:
+ Install git-with-openssh Create SSH-key Add SSH-key to ssh-agent Create ~/.bashrc for auto-launching ssh-agent  openSSH Windows 10 include openSSH. But I can&amp;rsquo;t make it work with git so I use git-with-openssh installed via scoop.</description>
+		</item>
+      	
+		<item>
 			<title>Pasang pakej di R</title>
 			<link>https://yusbk.github.io/2021/05/03/package-r/</link>
 			<pubDate>Mon, 03 May 2021 00:00:00 +0000</pubDate>
@@ -99,14 +109,6 @@ Before connecting to your Access DBMS via Windows OS, you can check if you have 
 			<guid>https://yusbk.github.io/2020/12/12/ellipsis/</guid>
 			<description>Just to remind me how I could use ellipsis or the three dots ... in my coding. There are two scenarios I find it useful:
 Function wrapper When creating a function wrapper and instead of providing all the arguments to be send further, you could just use .</description>
-		</item>
-      	
-		<item>
-			<title>Git upstream</title>
-			<link>https://yusbk.github.io/2020/10/14/git-upstream/</link>
-			<pubDate>Wed, 14 Oct 2020 00:00:00 +0200</pubDate>
-			<guid>https://yusbk.github.io/2020/10/14/git-upstream/</guid>
-			<description>When you forked a repo then your copy of forked-repo in your Github profile will be referred to as origin while upstream refers to the real origin where the repo was forked from. If you cloned a repo then you will only have local copy of the repo.</description>
 		</item>
       	
 	</channel>
