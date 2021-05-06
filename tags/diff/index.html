@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-<title>Smerge, ediff and diff</title>
+<title>diff</title>
 
 
   
@@ -85,14 +85,44 @@
 
     <div class="intro-header">
       <div class="container">
-        <div class="post-heading">
+        <div class="tags-heading">
           
             <h1>
-              Smerge, ediff and diff
+              diff
             </h1>
           
           
-            <span class="meta-post">
+        </div>
+      </div>
+    </div>
+  </header>
+  
+
+    
+  <div class="container" role="main">
+    <div class="posts-list">
+      
+        
+      
+
+      
+        <article class="post-preview">
+  <a href="https://yusbk.github.io/2021/04/30/magit-ediff/">
+    <h2 class="post-title">Smerge, ediff and diff</h2>
+  </a>
+  <div class="post-entry">
+    
+      <p>For enditing conflict in git, use smerge or ediff.
+Smerge Basic workflow:
+ Open magit status with SPC g g in Doom Identify the mark with Unmerged under Unstage list Go to the file and press Enter to open the file The base command for Smerge is C-c ^ You will see the conflict and selecting the upper with C-c ^ u and lower with C-c ^ l To select all &lsquo;conflicting&rsquo; changes press C-c ^ a To navigate the conflicts use C-c ^ n and C-c ^ p for next and previous conflict To see all the keybindings use C-c ^ h  Ediff When you are in the file with conflict, type M-x smerge-ediff or M-xvc-resolve-conflicts.</p>
+      <a href="https://yusbk.github.io/2021/04/30/magit-ediff/" class="post-read-more"
+        >Read More</a
+      >
+    
+  </div>
+
+  <div class="postmeta">
+    <span class="meta-post">
   <em class="fa fa-calendar-alt"></em
   >&nbsp;Apr 30, 2021
   
@@ -107,87 +137,11 @@
   
 </span>
 
-          
-        </div>
-      </div>
+  </div>
+</article>
+
+      
     </div>
-  </header>
-  
-
-    
-  <div class="container" role="main">
-    <article class="article" class="blog-post">
-      
-  <p>For enditing conflict in git, use smerge or ediff.</p>
-<h2 id="smerge">Smerge</h2>
-<p>Basic workflow:</p>
-<ul>
-<li>Open magit status with <code>SPC g g</code> in Doom</li>
-<li>Identify the mark with <code>Unmerged</code> under <code>Unstage</code> list</li>
-<li>Go to the file and press <code>Enter</code> to open the file</li>
-<li>The base command for <em>Smerge</em> is <code>C-c ^</code></li>
-<li>You will see the conflict and selecting the upper with <code>C-c ^ u</code> and lower with <code>C-c ^ l</code></li>
-<li>To select all &lsquo;conflicting&rsquo; changes press <code>C-c ^ a</code></li>
-<li>To navigate the conflicts use <code>C-c ^ n</code> and <code>C-c ^ p</code> for next and previous conflict</li>
-<li>To see all the keybindings use <code>C-c ^ h</code></li>
-</ul>
-<h2 id="ediff">Ediff</h2>
-<p>When you are in the file with conflict, type <code>M-x smerge-ediff</code> or <code>M-x vc-resolve-conflicts</code>. You will get 3 windows showing your HEAD and origin/HEAD
-that you have fetched and the outcome or end product. You can select A or B to
-select which you can to keep or delete. Use <code>?</code> to see all the shortcuts to use.</p>
-<p>This YouTube video explains it in more detail: <a href="https://www.youtube.com/watch?v=9S2pMZ6U5Tc">Smerge and Ediff</a></p>
-<h2 id="diff">Diff</h2>
-<p>To use diff directly from git comparing local and origin can be done with:</p>
-<ul>
-<li>Fetch changes from remotes <code>git fetch origin</code></li>
-<li>Check log <code>git log master..origin/master</code></li>
-<li>Show the changes <code>git diff master..origin/master</code></li>
-<li>Merge changes <code>git merge origin/master</code></li>
-</ul>
-<p>Else you could use <code>git pull</code> if you aren&rsquo;t interested to check the changes
-before merging.</p>
-
-
-
-
-      
-        <div class="blog-tags">
-          
-            <a href="https://yusbk.github.io/tags/diff/">diff</a
-            >&nbsp;
-          
-        </div>
-      
-    </article>
-    
-    
-      
-  <div id="disqus_thread"></div>
-  <script type="text/javascript">
-        (function() {
-            
-            
-            if (window.location.hostname == "localhost") return;
-
-            var dsq = document.createElement('script');
-            dsq.type = 'text/javascript';
-            dsq.async = true;
-            var disqus_shortname = 'yusbk-github-io';
-            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
-    </script>
-  <noscript
-    >Please enable JavaScript to view the
-    <a href="https://disqus.com/?ref_noscript"
-      >comments powered by Disqus.</a
-    ></noscript
-  >
-  <a href="https://disqus.com/" class="dsq-brlink"
-    >comments powered by <span class="logo-disqus">Disqus</span></a
-  >
-
-
     
   </div>
 

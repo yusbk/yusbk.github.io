@@ -34,7 +34,7 @@ Pasang pakej Cara biasa untuk pasang pakej ialah menggunakan install.packages().
 		</item>
       	
 		<item>
-			<title>Smerge and ediff</title>
+			<title>Smerge, ediff and diff</title>
 			<link>https://yusbk.github.io/2021/04/30/magit-ediff/</link>
 			<pubDate>Fri, 30 Apr 2021 11:42:00 +0200</pubDate>
 			<guid>https://yusbk.github.io/2021/04/30/magit-ediff/</guid>

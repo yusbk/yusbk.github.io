@@ -23,10 +23,10 @@
         
             {
                 "ref": "https://yusbk.github.io/2021/04/30/magit-ediff/",
-                "title": "Smerge and ediff",
+                "title": "Smerge, ediff and diff",
                 "section": "post",
                 "date" : "2021.04.30",
-                "body": "For enditing conflict in git, use smerge or ediff.\nSmerge Basic workflow:\n Open magit status with SPC g g in Doom Identify the mark with Unmerged under Unstage list Go to the file and press Enter to open the file The base command for Smerge is C-c ^ You will see the conflict and selecting the upper with C-c ^ u and lower with C-c ^ l To select all \u0026lsquo;conflicting\u0026rsquo; changes press C-c ^ a To navigate the conflicts use C-c ^ n and C-c ^ p for next and previous conflict To see all the keybindings use C-c ^ h  Ediff When you are in the file with conflict, type M-x smerge-ediff or M-x\rvc-resolve-conflicts. You will get 3 windows showing your HEAD and origin/HEAD that you have fetched and the outcome or end product. You can select A or B to select which you can to keep or delete. Use ? to see all the shortcuts to use.\nThis YouTube video explains it in more detail: Smerge and Ediff\n"
+                "body": "For enditing conflict in git, use smerge or ediff.\nSmerge Basic workflow:\n Open magit status with SPC g g in Doom Identify the mark with Unmerged under Unstage list Go to the file and press Enter to open the file The base command for Smerge is C-c ^ You will see the conflict and selecting the upper with C-c ^ u and lower with C-c ^ l To select all \u0026lsquo;conflicting\u0026rsquo; changes press C-c ^ a To navigate the conflicts use C-c ^ n and C-c ^ p for next and previous conflict To see all the keybindings use C-c ^ h  Ediff When you are in the file with conflict, type M-x smerge-ediff or M-x\rvc-resolve-conflicts. You will get 3 windows showing your HEAD and origin/HEAD that you have fetched and the outcome or end product. You can select A or B to select which you can to keep or delete. Use ? to see all the shortcuts to use.\nThis YouTube video explains it in more detail: Smerge and Ediff\nDiff To use diff directly from git comparing local and origin can be done with:\n Fetch changes from remotes git fetch origin Check log git log master..origin/master Show the changes git diff master..origin/master Merge changes git merge origin/master  Else you could use git pull if you aren\u0026rsquo;t interested to check the changes before merging.\n"
             }
         
     ,
