@@ -1,17 +1,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
-		<title>my on ყųʂƙąɱ</title>
-		<link>https://yusbk.github.io/categories/my/</link>
-		<description>Recent content in my </description>
+		<title>ess on ყųʂƙąɱ</title>
+		<link>https://yusbk.github.io/tags/ess/</link>
+		<description>Recent content in ess </description>
 		<generator>Hugo -- gohugo.io</generator>
 		
   		<language>en</language>
 		
-		<managingEditor>Page(/categories/my) (Yusman Kamaleri)</managingEditor>
+		<managingEditor>Page(/tags/ess) (Yusman Kamaleri)</managingEditor>
     	
-  		<lastBuildDate>Mon, 03 May 2021 00:00:00 +0000</lastBuildDate>
+  		<lastBuildDate>Thu, 06 May 2021 15:54:00 +0200</lastBuildDate>
 		
-		<atom:link href="/categories/my/" rel="self" type="application/rss+xml" />
+		<atom:link href="/tags/ess/" rel="self" type="application/rss+xml" />
 		
 		<item>
 			<title>ESS tips</title>

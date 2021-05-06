@@ -14,6 +14,15 @@
 		<atom:link href="/tags/package/" rel="self" type="application/rss+xml" />
 		
 		<item>
+			<title>ESS tips</title>
+			<link>https://yusbk.github.io/2021/05/06/ess-tips/</link>
+			<pubDate>Thu, 06 May 2021 15:54:00 +0200</pubDate>
+			<guid>https://yusbk.github.io/2021/05/06/ess-tips/</guid>
+			<description>Some tips to use ESS. This documents will keep on growing as I find more shortcuts to help me work efficiently.
+ C-c C-s to switch R processes when running multiple processes C-c C-z to switch to inferior or scripts  </description>
+		</item>
+      	
+		<item>
 			<title>SSH-key with Git on Windows</title>
 			<link>https://yusbk.github.io/2021/05/05/git-ssh/</link>
 			<pubDate>Wed, 05 May 2021 14:11:00 +0200</pubDate>
@@ -100,15 +109,6 @@ docker pull image-name docker run local-name image-name docker ps docker build U
 			<description>This article first published in 02.10.2020.
 Before connecting to your Access DBMS via Windows OS, you can check if you have the MS Access driver installed in your machine by running
 ## List everything odbc::odbcListDrivers() ## You will get the results someting like this.</description>
-		</item>
-      	
-		<item>
-			<title>Ellipsis …</title>
-			<link>https://yusbk.github.io/2020/12/12/ellipsis/</link>
-			<pubDate>Sat, 12 Dec 2020 00:00:00 +0100</pubDate>
-			<guid>https://yusbk.github.io/2020/12/12/ellipsis/</guid>
-			<description>Just to remind me how I could use ellipsis or the three dots ... in my coding. There are two scenarios I find it useful:
-Function wrapper When creating a function wrapper and instead of providing all the arguments to be send further, you could just use .</description>
 		</item>
       	
 	</channel>

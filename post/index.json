@@ -2,6 +2,16 @@
     
         
             {
+                "ref": "https://yusbk.github.io/2021/05/06/ess-tips/",
+                "title": "ESS tips",
+                "section": "post",
+                "date" : "2021.05.06",
+                "body": "Some tips to use ESS. This documents will keep on growing as I find more shortcuts to help me work efficiently.\n C-c C-s to switch R processes when running multiple processes C-c C-z to switch to inferior or scripts  "
+            }
+        
+    ,
+        
+            {
                 "ref": "https://yusbk.github.io/2021/05/05/git-ssh/",
                 "title": "SSH-key with Git on Windows",
                 "section": "post",
