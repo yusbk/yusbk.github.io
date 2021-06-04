@@ -1,0 +1,114 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>CI on ყųʂƙąɱ</title>
+		<link>https://yusbk.github.io/tags/ci/</link>
+		<description>Recent content in CI </description>
+		<generator>Hugo -- gohugo.io</generator>
+		
+  		<language>en</language>
+		
+		<managingEditor>Page(/tags/ci) (Yusman Kamaleri)</managingEditor>
+    	
+  		<lastBuildDate>Fri, 04 Jun 2021 00:00:00 +0200</lastBuildDate>
+		
+		<atom:link href="/tags/ci/" rel="self" type="application/rss+xml" />
+		
+		<item>
+			<title>CI/CD with Github Actions</title>
+			<link>https://yusbk.github.io/2021/06/04/github_actions/</link>
+			<pubDate>Fri, 04 Jun 2021 00:00:00 +0200</pubDate>
+			<guid>https://yusbk.github.io/2021/06/04/github_actions/</guid>
+			<description>This is a simple process to use GitHub Actions with usethis package. Basically the steps here is a summary from Dean Attali with slide changes:
+ If you already use Travis and want to change to Github Actions, you have to delete all Travis related files and references.</description>
+		</item>
+      	
+		<item>
+			<title>ESS tips</title>
+			<link>https://yusbk.github.io/2021/05/06/ess-tips/</link>
+			<pubDate>Thu, 06 May 2021 15:54:00 +0200</pubDate>
+			<guid>https://yusbk.github.io/2021/05/06/ess-tips/</guid>
+			<description>Some tips to use ESS. This documents will keep on growing as I find more shortcuts to help me work efficiently.
+ C-c C-s to switch R processes when running multiple processes C-c C-z to switch to inferior or scripts  RMarkdown I keep on forgetting these keys after moving to Doom.</description>
+		</item>
+      	
+		<item>
+			<title>SSH-key with Git on Windows</title>
+			<link>https://yusbk.github.io/2021/05/05/git-ssh/</link>
+			<pubDate>Wed, 05 May 2021 14:11:00 +0200</pubDate>
+			<guid>https://yusbk.github.io/2021/05/05/git-ssh/</guid>
+			<description>First published: 2020-09-29
+Generally, these are what I did:
+ Install git-with-openssh Create SSH-key Add SSH-key to ssh-agent Create ~/.bashrc for auto-launching ssh-agent  openSSH Windows 10 include openSSH. But I can&amp;rsquo;t make it work with git so I use git-with-openssh installed via scoop.</description>
+		</item>
+      	
+		<item>
+			<title>Pasang pakej di R</title>
+			<link>https://yusbk.github.io/2021/05/03/package-r/</link>
+			<pubDate>Mon, 03 May 2021 00:00:00 +0000</pubDate>
+			<guid>https://yusbk.github.io/2021/05/03/package-r/</guid>
+			<description>First publish date: 02.09.2019
+Ini ialah beberapa penggunaan asas R yang amat berguna walaupun jarang dipakai. Antaranya:
+Pasang pakej Cara biasa untuk pasang pakej ialah menggunakan install.packages(). Tetapi sekiranya ingin memasang banyak pekej secara serentank dan memuatkan di R setelah pakej dipasang, cara begini boleh dipakai:</description>
+		</item>
+      	
+		<item>
+			<title>Smerge, ediff and diff</title>
+			<link>https://yusbk.github.io/2021/04/30/magit-ediff/</link>
+			<pubDate>Fri, 30 Apr 2021 11:42:00 +0200</pubDate>
+			<guid>https://yusbk.github.io/2021/04/30/magit-ediff/</guid>
+			<description>For enditing conflict in git, use smerge or ediff.
+Smerge Basic workflow:
+ Open magit status with SPC g g in Doom Identify the mark with Unmerged under Unstage list Go to the file and press Enter to open the file The base command for Smerge is C-c ^ You will see the conflict and selecting the upper with C-c ^ u and lower with C-c ^ l To select all &amp;lsquo;conflicting&amp;rsquo; changes press C-c ^ a To navigate the conflicts use C-c ^ n and C-c ^ p for next and previous conflict To see all the keybindings use C-c ^ h  Ediff When you are in the file with conflict, type M-x smerge-ediff or M-xvc-resolve-conflicts.</description>
+		</item>
+      	
+		<item>
+			<title>Biskut Italy</title>
+			<link>https://yusbk.github.io/2021/04/29/biskut-italy/</link>
+			<pubDate>Thu, 29 Apr 2021 16:38:00 +0200</pubDate>
+			<guid>https://yusbk.github.io/2021/04/29/biskut-italy/</guid>
+			<description>Care buat biskut simple. Biasa bah jumpa di Italy ini biskut dan namanya dorang panggek biscotti.
+Bahan-bahannya    Unit Bahan     200 g kacang-kacang campuran sukak hati. Boleh jugak campur kismis sikit kalo mau.   1 sm kulit oren atau limau nipis.</description>
+		</item>
+      	
+		<item>
+			<title>Doom tips</title>
+			<link>https://yusbk.github.io/2021/04/29/doom-emacs-tips/</link>
+			<pubDate>Thu, 29 Apr 2021 00:00:00 +0200</pubDate>
+			<guid>https://yusbk.github.io/2021/04/29/doom-emacs-tips/</guid>
+			<description>First published date: 2021-04-27
+Some tips to learn the keybindings in Doom and Evil in the process of migrating from my vanilla Emacs settings. For overview of keybindings type SPC-h-b-b.
+Doom leader-key is SPC and localleader-key is SPC-m. When in Insert mode use M-SPC or M-SPC-m to call the menu available as in the Normal mode.</description>
+		</item>
+      	
+		<item>
+			<title>data.table tips</title>
+			<link>https://yusbk.github.io/2021/04/20/datatable_tips/</link>
+			<pubDate>Tue, 20 Apr 2021 00:00:00 +0200</pubDate>
+			<guid>https://yusbk.github.io/2021/04/20/datatable_tips/</guid>
+			<description>Some tips for data.table that I came across while googling which might be useful.
+Print To print more rows that default can be done with either:
+options(datatable.print.topn = 70) print(DT, topn = 70) Using options will implement the changes globally. Else to make print nicer is using:</description>
+		</item>
+      	
+		<item>
+			<title>Mount drive</title>
+			<link>https://yusbk.github.io/2021/04/12/mount-drive/</link>
+			<pubDate>Mon, 12 Apr 2021 00:00:00 +0200</pubDate>
+			<guid>https://yusbk.github.io/2021/04/12/mount-drive/</guid>
+			<description>Install Mount Execute Credential Access to folders  First published date: 2021-02-22
+This is only relevant to my personal reference at work.
+The address for drive F and N is as follow:
+ F: = \\fhi.no\felles N: = \\fhi.no\fil\styrt H: = \\fhi.</description>
+		</item>
+      	
+		<item>
+			<title>Docker basic</title>
+			<link>https://yusbk.github.io/2021/02/17/docker-basic/</link>
+			<pubDate>Wed, 17 Feb 2021 00:00:00 +0100</pubDate>
+			<guid>https://yusbk.github.io/2021/02/17/docker-basic/</guid>
+			<description>Use image Create Image Mount directory  Important commands:
+docker pull image-name docker run local-name image-name docker ps docker build Use image Some basic commands to start using Docker. Two things are important ie. Docker Image and Docker Container. To fetch RStudio image from Docker Hub run the command:</description>
+		</item>
+      	
+	</channel>
+</rss>

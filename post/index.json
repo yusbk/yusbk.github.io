@@ -2,11 +2,21 @@
     
         
             {
+                "ref": "https://yusbk.github.io/2021/06/04/github_actions/",
+                "title": "CI/CD with Github Actions",
+                "section": "post",
+                "date" : "2021.06.04",
+                "body": "This is a simple process to use GitHub Actions with usethis package. Basically the steps here is a summary from Dean Attali with slide changes:\n If you already use Travis and want to change to Github Actions, you have to delete all Travis related files and references. Easier to search with project SPC s p. Among those will be:  .travis.yml link in README.md file in .Rbuildignore file   usethis has problem with ssh so you have to change the origin to your Git repo url either using terminal or usethis::use_git_remote() functions. You can check your remote origin with git remote -v in the terminal just to check where the repos origin is.  # with R usethis package usethis::use_git_remote(\u0026#34;origin\u0026#34;, url = \u0026#34;https://github.com/username/reponame.git\u0026#34;, overwrite = TRUE) # from terminal git remote add origin https://github.com/username/reponame  Get the CI url with:  usethis::use_github_action_check_standard()  Paste the URL to your README file. The URL is allready copy to your clipboard when running step 3. You can edit R-CMD-check.yml file in folder .github/workflow to suit your need.  "
+            }
+        
+    ,
+        
+            {
                 "ref": "https://yusbk.github.io/2021/05/06/ess-tips/",
                 "title": "ESS tips",
                 "section": "post",
                 "date" : "2021.05.06",
-                "body": "Some tips to use ESS. This documents will keep on growing as I find more shortcuts to help me work efficiently.\n C-c C-s to switch R processes when running multiple processes C-c C-z to switch to inferior or scripts  "
+                "body": "Some tips to use ESS. This documents will keep on growing as I find more shortcuts to help me work efficiently.\n C-c C-s to switch R processes when running multiple processes C-c C-z to switch to inferior or scripts  RMarkdown I keep on forgetting these keys after moving to Doom. So for reference:\n M-n e to evaluate RMarkdown with Poly and using standard Doom evaluate.  "
             }
         
     ,

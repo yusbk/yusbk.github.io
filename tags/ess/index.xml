@@ -14,12 +14,21 @@
 		<atom:link href="/tags/ess/" rel="self" type="application/rss+xml" />
 		
 		<item>
+			<title>CI/CD with Github Actions</title>
+			<link>https://yusbk.github.io/2021/06/04/github_actions/</link>
+			<pubDate>Fri, 04 Jun 2021 00:00:00 +0200</pubDate>
+			<guid>https://yusbk.github.io/2021/06/04/github_actions/</guid>
+			<description>This is a simple process to use GitHub Actions with usethis package. Basically the steps here is a summary from Dean Attali with slide changes:
+ If you already use Travis and want to change to Github Actions, you have to delete all Travis related files and references.</description>
+		</item>
+      	
+		<item>
 			<title>ESS tips</title>
 			<link>https://yusbk.github.io/2021/05/06/ess-tips/</link>
 			<pubDate>Thu, 06 May 2021 15:54:00 +0200</pubDate>
 			<guid>https://yusbk.github.io/2021/05/06/ess-tips/</guid>
 			<description>Some tips to use ESS. This documents will keep on growing as I find more shortcuts to help me work efficiently.
- C-c C-s to switch R processes when running multiple processes C-c C-z to switch to inferior or scripts  </description>
+ C-c C-s to switch R processes when running multiple processes C-c C-z to switch to inferior or scripts  RMarkdown I keep on forgetting these keys after moving to Doom.</description>
 		</item>
       	
 		<item>
@@ -99,16 +108,6 @@ The address for drive F and N is as follow:
 			<guid>https://yusbk.github.io/2021/02/17/docker-basic/</guid>
 			<description>Use image Create Image Mount directory  Important commands:
 docker pull image-name docker run local-name image-name docker ps docker build Use image Some basic commands to start using Docker. Two things are important ie. Docker Image and Docker Container. To fetch RStudio image from Docker Hub run the command:</description>
-		</item>
-      	
-		<item>
-			<title>Connect to MS Access DB</title>
-			<link>https://yusbk.github.io/2020/12/12/access-db/</link>
-			<pubDate>Sat, 12 Dec 2020 12:49:00 +0100</pubDate>
-			<guid>https://yusbk.github.io/2020/12/12/access-db/</guid>
-			<description>This article first published in 02.10.2020.
-Before connecting to your Access DBMS via Windows OS, you can check if you have the MS Access driver installed in your machine by running
-## List everything odbc::odbcListDrivers() ## You will get the results someting like this.</description>
 		</item>
       	
 	</channel>
