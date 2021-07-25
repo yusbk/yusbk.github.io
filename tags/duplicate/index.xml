@@ -14,12 +14,13 @@
 		<atom:link href="/tags/duplicate/" rel="self" type="application/rss+xml" />
 		
 		<item>
-			<title>CI/CD with Github Actions</title>
-			<link>https://yusbk.github.io/2021/06/04/github_actions/</link>
-			<pubDate>Fri, 04 Jun 2021 00:00:00 +0200</pubDate>
-			<guid>https://yusbk.github.io/2021/06/04/github_actions/</guid>
-			<description>This is a simple process to use GitHub Actions with usethis package. Basically the steps here is a summary from Dean Attali with slight changes:
- If you already use Travis and want to change to Github Actions, you have to delete all Travis related files and references.</description>
+			<title>CI/CD and Code Coverage</title>
+			<link>https://yusbk.github.io/2021/07/25/github_actions/</link>
+			<pubDate>Sun, 25 Jul 2021 00:00:00 +0200</pubDate>
+			<guid>https://yusbk.github.io/2021/07/25/github_actions/</guid>
+			<description>First published date: 2021-06-04
+A simple guide to use CI/CD and Code coverage.
+CI/CD This is a simple process to implement CI/CD using GitHub Actions with usethis package. Basically the steps here is a summary from Dean Attali with slight changes:</description>
 		</item>
       	
 		<item>

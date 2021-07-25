@@ -22,7 +22,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="manifest" href="/site.webmanifest">
-<meta name="generator" content="Hugo 0.80.0" />
+<meta name="generator" content="Hugo 0.84.0" />
   </head>
   <body>
     
@@ -152,8 +152,7 @@ data<span style="color:#f92672">$</span>a <span style="color:#f92672">&lt;-</spa
 <span style="color:#a6e22e">library</span>(ggplot2)
 data2 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">copy</span>(data)
 <span style="color:#a6e22e">ggplot</span>(data2, <span style="color:#a6e22e">aes</span>(a, b)) <span style="color:#f92672">+</span> <span style="color:#a6e22e">geom_bar</span>(stat <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;identity&#39;</span>)
-</code></pre></div><figure>
-    <img src="/images/plotdic.png" width="350px"/> 
+</code></pre></div><figure><img src="/images/plotdic.png" width="350px"/>
 </figure>
 
 <p>Bila menggunakan <code>with</code>, penulisan kode juga akan lebih mudah. Contohnya:</p>
@@ -169,8 +168,7 @@ data3 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">data.
 data3<span style="color:#f92672">$</span>a <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">factor</span>(data3<span style="color:#f92672">$</span>a, levels <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;B&#34;</span>, <span style="color:#e6db74">&#34;D&#34;</span>, <span style="color:#e6db74">&#34;A&#34;</span>, <span style="color:#e6db74">&#34;C&#34;</span>))
 <span style="color:#75715e">## plot</span>
 <span style="color:#a6e22e">ggplot</span>(data3, <span style="color:#a6e22e">aes</span>(a, b)) <span style="color:#f92672">+</span> <span style="color:#a6e22e">geom_bar</span>(stat <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;identity&#39;</span>)
-</code></pre></div><figure>
-    <img src="/images/plotaksis.jpg"/> 
+</code></pre></div><figure><img src="/images/plotaksis.jpg"/>
 </figure>
 
 <p>Untuk memakai cara <code>reorder</code> dari &ldquo;stat&rdquo;:</p>
