@@ -77,8 +77,8 @@ Bahan-bahannya    Unit Bahan     200 g kacang-kacang campuran sukak hati. Boleh 
 			<pubDate>Thu, 29 Apr 2021 00:00:00 +0200</pubDate>
 			<guid>https://yusbk.github.io/2021/04/29/doom-emacs-tips/</guid>
 			<description>First published date: 2021-04-27
-Some tips to learn the keybindings in Doom and Evil in the process of migrating from my vanilla Emacs settings. For overview of keybindings type SPC-h-b-b.
-Doom leader-key is SPC and localleader-key is SPC-m. When in Insert mode use M-SPC or M-SPC-m to call the menu available as in the Normal mode.</description>
+Some tips to learn the keybindings in Doom and Evil in the process of migrating from my vanilla Emacs settings. For overview of keybindings type SPC-h-b-b. Other good references:
+ Narra&amp;rsquo;s Blog - Doom Tips and Howtos Org Mode Shortcuts for Emacs Doom Gist of Hjertnes Evil-mode collection  Doom leader-key is SPC and localleader-key is SPC-m.</description>
 		</item>
       	
 		<item>
