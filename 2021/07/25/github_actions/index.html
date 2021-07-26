@@ -159,17 +159,30 @@ git remote add origin https://github.com/username/reponame
 </ol>
 <h2 id="covr">Covr</h2>
 <p>For Code coverage we will use both <code>covr</code> and <code>usethis</code> packages. You can also
-read the guide from this <a href="https://www.r-bloggers.com/2017/06/how-to-add-code-coverage-codecov-to-your-r-package/">blog</a>. This is a sorter guide with slide change:</p>
+read general guide from this <a href="https://www.r-bloggers.com/2017/06/how-to-add-code-coverage-codecov-to-your-r-package/">blog</a>. This short guide below is especially relevant if you are using
+<strong>Github Action</strong>:</p>
 <ul>
-<li>When you are loaded into you package with <code>devtools::load_all()</code>, then run
-<code>usethis::use_coverage()</code> or <code>usethis::use_coverage(pkg = &quot;.&quot;, type = c(&quot;codecov&quot;))</code> to add the batch to your <code>README.Rmd</code> file.</li>
-<li>Run <code>usethis::use_github_action(&quot;test-coverage-pak&quot;)</code>. This is optional.</li>
-<li>Log in to <a href="https://app.codecov.io/gh/">codecov.io</a> with you GitHub account to get the access token and copy to clipboard.</li>
-<li>Run <code>covr::codevar(token = &quot;Your copied token&quot;)</code>. If you get error then you
-should unload you package or open a new R session.</li>
-<li>To check, run <code>covr::report()</code>. Again if you get error then you should run in
+<li>
+<p>When your package are loaded with <code>devtools::load_all()</code>, then run
+<code>usethis::use_coverage()</code> to add the batch to your <code>README.Rmd</code> file.</p>
+</li>
+<li>
+<p>Run <code>usethis::use_github_action(&quot;test-coverage&quot;)</code> to add file
+<code>test-coverage.yaml</code> in folder <code>./github/workflow</code>.</p>
+</li>
+<li>
+<p>If you use a private repos, you need to add your token to <a href="https://app.codecov.io/gh/">codecov.io</a> by
+running this code:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">  covr::codecov(token = &#34;${{secret.CODECOV_TOKEN}}&#34;)
+</code></pre></div></li>
+<li>
+<p>To check, run <code>covr::report()</code>. If you get error then you should run in
 a new session without loading your package. Basically this error happens only
-to Windows user. Read as <a href="https://github.com/r-lib/covr/issues/443">discussed here</a> by Jim Hester.</li>
+to Windows OS as <a href="https://github.com/r-lib/covr/issues/443">discussed here</a> by Jim Hester.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">  # Run R in your package folder without running devtools::load_all()
+  pkg &lt;- covr::package_coverage(path = getwd())
+  covr::report(pkg)
+</code></pre></div></li>
 </ul>
 
 
