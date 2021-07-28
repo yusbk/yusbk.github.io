@@ -29,7 +29,7 @@ CI/CD This is a simple process to implement CI/CD using GitHub Actions with uset
 			<pubDate>Thu, 06 May 2021 15:54:00 +0200</pubDate>
 			<guid>https://yusbk.github.io/2021/05/06/ess-tips/</guid>
 			<description>Some tips to use ESS. This documents will keep on growing as I find more shortcuts to help me work efficiently.
- C-c C-s to switch R processes when running multiple processes C-c C-z to switch to inferior or scripts  RMarkdown I keep on forgetting these keys after moving to Doom.</description>
+ C-c C-s to switch R processes when running multiple processes C-c C-z to switch to inferior or scripts C-C C-e C-r reload R inferior via inferior-ess-r-reload-hook SPC-m v for debugging eg.</description>
 		</item>
       	
 		<item>
