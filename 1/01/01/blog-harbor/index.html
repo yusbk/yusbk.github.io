@@ -56,7 +56,7 @@ read my posts and would like to contribute, you are very much welcome!</p>
 <div id="searchResults" class="searchResults"></div>
 <script src="https://yusbk.github.io/js/bundle.js"></script>
 
-<h2 id="blog-posts">Blog Posts</h2>
+<h2 id="posts">Posts</h2>
 <h3 id="r-my">R-my</h3>
 <h4 id="aliran-kerja-buat-kod-r">Aliran kerja buat kod R</h4>
 <p>Bila menjalankan pembersihan dan penyusunan data adalah disarankan untuk
@@ -886,6 +886,80 @@ As in the given example with both columns are the key columns:</p>
 </code></pre></div><p>Else specifying <code>type=&quot;within&quot;</code> will join only those that match within the range.</p>
 </li>
 </ul>
+<h4 id="ci-cd-and-code-coverage">CI/CD and Code Coverage</h4>
+<p><em>First published date: 2021-06-04</em></p>
+<p>A simple guide to use CI/CD and Code coverage.</p>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>CI/CD</p>
+<p>This is a simple process to implement CI/CD using GitHub Actions with <a href="https://usethis.r-lib.org/index.html">usethis</a>
+package. Basically the steps here is a summary from <a href="https://deanattali.com/blog/migrating-travis-to-github/">Dean Attali</a> with slight
+changes:</p>
+<ol>
+<li>If you already use <code>Travis</code> and want to change to Github Actions, you have to
+delete all Travis related files and references. Easier to search with project
+<code>SPC s p</code> if you use Doom Emacs. Among those will be:
+<ul>
+<li>.travis.yml</li>
+<li>link in README.md file</li>
+<li>in .Rbuildignore file</li>
+</ul>
+</li>
+<li><code>usethis</code> has problem with ssh so you have to change the <code>origin</code> to your Git
+repo url either using terminal or <code>usethis::use_git_remote()</code> functions. You
+can check your remote origin with <code>git remote -v</code> in the terminal just to
+check where the repos origin is.</li>
+</ol>
+<!-- raw HTML omitted -->
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text"># with R usethis package
+usethis::use_git_remote(&#34;origin&#34;, url = &#34;https://github.com/username/reponame.git&#34;, overwrite = TRUE)
+
+# from terminal
+git remote add origin https://github.com/username/reponame
+</code></pre></div><ol>
+<li>Get the CI url with:</li>
+</ol>
+<!-- raw HTML omitted -->
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">usethis::use_github_action_check_standard()
+</code></pre></div><ol>
+<li>Paste the URL to your README file. The URL is allready copy to your clipboard when running step 3.</li>
+<li>You can edit <code>R-CMD-check.yml</code> file in folder <code>.github/workflow</code> to suit your need.</li>
+</ol>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>Covr</p>
+<p>For Code coverage we will use both <code>covr</code> and <code>usethis</code> packages. You can also
+read general guide from this <a href="https://www.r-bloggers.com/2017/06/how-to-add-code-coverage-codecov-to-your-r-package/">blog</a>. This short guide below is especially relevant if you are using
+<strong>Github Action</strong>:</p>
+<ul>
+<li>
+<p>When your package are loaded with <code>devtools::load_all()</code>, then run
+<code>usethis::use_coverage()</code> to add the batch to your <code>README.Rmd</code> file.</p>
+</li>
+<li>
+<p>Run <code>usethis::use_github_action(&quot;test-coverage&quot;)</code> to add file
+<code>test-coverage.yaml</code> in folder <code>./github/workflow</code>.</p>
+</li>
+<li>
+<p>If you use a private repos, you need to add your token to <a href="https://app.codecov.io/gh/">codecov.io</a> by
+running this code:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">covr::codecov(token = &#34;${{secret.CODECOV_TOKEN}}&#34;)
+</code></pre></div></li>
+<li>
+<p>To check, run <code>covr::report()</code>. If you get error then you should run in
+a new session without loading your package. Basically this error happens only
+to Windows OS as <a href="https://github.com/r-lib/covr/issues/443">discussed here</a> by Jim Hester.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text"># Run R in your package folder without running devtools::load_all()
+pkg &lt;- covr::package_coverage(path = getwd())
+covr::report(pkg)
+</code></pre></div></li>
+</ul>
+</li>
+</ul>
 <h3 id="coding">Coding</h3>
 <h4 id="tetapkan-path">Tetapkan <code>PATH</code></h4>
 <p>Bila ingin memakai program di Ubuntu atau Windows melalui terminal, perlu
@@ -1121,74 +1195,6 @@ master map which may be changed accordingly. Open <code>auto.master</code> file 
 </code></pre></div><p>** Git :@Git:</p>
 </li>
 </ul>
-<h4 id="ssh-key-with-git-on-windows">SSH-key with Git on Windows</h4>
-<p>Generally, these are what I did:</p>
-<ul>
-<li>Install git-with-openssh</li>
-<li>Create SSH-key</li>
-<li>Add SSH-key to ssh-agent</li>
-<li>Create <a href="https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/working-with-ssh-key-passphrases#auto-launching-ssh-agent-on-git-for-windows">~/.bashrc</a> for auto-launching ssh-agent</li>
-</ul>
-<!-- raw HTML omitted -->
-<ul>
-<li>
-<p>openSSH</p>
-<p>Windows 10 include <strong>openSSH</strong>. But I can&rsquo;t make it work with git so I use <strong>git-with-openssh</strong> installed
-via <a href="https://scoop-docs.now.sh/docs/overview/So-What.html#why-should-you-care-about-scoop">scoop</a>. This will install Git and openSSH together. After installation, it&rsquo;s important to check
-where is your <code>~/.ssh</code> folder via <code>Git bash.</code> This is the folder where you will save your SSH-key.</p>
-<p>Since I use Emacs, I add this code to use git-bash in shell. This is taken from <a href="https://emacs.stackexchange.com/questions/22049/git-bash-in-emacs-on-windows">StackExchange</a>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (if (<span style="color:#a6e22e">equal</span> system-type <span style="color:#e6db74">&#39;windows-nt</span>)
-      (progn (setq explicit-shell-file-name
-                   <span style="color:#e6db74">&#34;C:/Users/ybka/scoop/apps/git-with-openssh/current/bin/bash.exe&#34;</span>)
-             (setq shell-file-name explicit-shell-file-name)
-             (setq explicit-bash.exe-args <span style="color:#f92672">&#39;</span>(<span style="color:#e6db74">&#34;--login&#34;</span> <span style="color:#e6db74">&#34;-i&#34;</span>))
-             (add-to-list <span style="color:#e6db74">&#39;exec-path</span> <span style="color:#e6db74">&#34;C:/Users/ybka/scoop/apps/git-with-openssh/current/bin&#34;</span>)
-             (setenv <span style="color:#e6db74">&#34;SHELL&#34;</span> shell-file-name)
-             (add-hook <span style="color:#e6db74">&#39;comint-output-filter-functions</span> <span style="color:#e6db74">&#39;comint-strip-ctrl-m</span>)))
-
-  (defun git-bash () (interactive)
-         (let ((explicit-shell-file-name <span style="color:#e6db74">&#34;C:/Users/ybka/scoop/apps/git-with-openssh/current/bin/bash.exe&#34;</span> ))
-           (<span style="color:#a6e22e">call-interactively</span> <span style="color:#e6db74">&#39;shell</span>)))
-</code></pre></div><p>Then as suggested from StackExchange, I created <code>~/.bash_profile</code> (root for Git-bash) and add the
-codes below to display shell prompt properly in Emacs.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">  if [ -n &#34;$INSIDE_EMACS&#34; ]; then
-  export PS1=&#39;\[\033[32m\]\u@\h \[\033[33m\]\w\[\033[36m\]`__git_ps1`\[\033[0m\]\n$ &#39;
-  fi
-</code></pre></div><p>To be on the safe side, I also add <strong>git-with-openssh</strong> the PATH in Windows Environment. You can find guides for doing it
-in many places eg. <a href="https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/">here</a>. In my pc, the path is:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">   C:/Users/ybka/scoop/apps/git-with-openssh/current/bin/
-</code></pre></div></li>
-</ul>
-<!-- raw HTML omitted -->
-<ul>
-<li>
-<p>Create SSH key</p>
-<p>If you haven&rsquo;t created an SSH-key then do so by running the code below in your Git bash. Else you
-can read more <a href="https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/connecting-to-github-with-ssh">here</a>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">  ssh-keygen -t rsa -b <span style="color:#ae81ff">4096</span> -C <span style="color:#e6db74">&#34;your_email@example.com&#34;</span>
-</code></pre></div><p>Paramters specification:</p>
-<ul>
-<li><code>-t</code> is to specify RSA as the type of key to generate</li>
-<li><code>-b</code> for 4096-bit keys</li>
-<li><code>-C</code> for comment</li>
-</ul>
-<p>Then add your newly created SSH-key to <code>ssh-agent</code> to manage your key. If your <code>ssh-agent</code> haven&rsquo;t been
-started then you can do so silently and has it running in the background. You will get an output
-something like <code>&gt; Agent pid 4353</code>. For Windows user, you can auto-launching the <code>ssh-agent</code> by following
-the guide <a href="https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/working-with-ssh-key-passphrases">here</a>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">  eval <span style="color:#66d9ef">$(</span>ssh-agent -s<span style="color:#66d9ef">)</span>
-  ssh-add ~/.ssh/id_rsa_personal
-</code></pre></div><p>Copy your public SSH-key either manually or by running <code>clip</code> which will copy it to clipboard then add
-it to your GitHub account.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">  clip &lt; ~/.ssh/id_rsa_personal
-</code></pre></div><p>You can test the connection and verify your loaded SSH-key</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">  <span style="color:#75715e"># Check connection</span>
-  ssh -T git@github.com
-
-  <span style="color:#75715e"># Verify</span>
-  ssh-add -l -E md5
-</code></pre></div></li>
-</ul>
 <h4 id="git-clone">git clone</h4>
 <p>This is just 100% a copy from <a href="https://gist.github.com/jagregory/710671">gist</a> so I can check it when needed.</p>
 <p>So you&rsquo;ve cloned somebody&rsquo;s repo from github, but now you want to fork it and contribute back. Never fear!</p>
@@ -1419,11 +1425,39 @@ error because your branch already checked out then delete <code>.git/worktrees/n
 <p><em>First published date: 2021-04-27</em></p>
 <p>Some tips to learn the keybindings in Doom and Evil in the process of migrating
 from my vanilla Emacs settings. For overview of keybindings type
-<code>SPC-h-b-b</code>.</p>
+<code>SPC-h-b-b</code>. Other good references:</p>
+<ul>
+<li><a href="https://narra.co.za/doom-tips-and-howtos/">Narra&rsquo;s Blog - Doom Tips and Howtos</a></li>
+<li><a href="https://cheatography.com/alexandresalome/cheat-sheets/emacs-doom-org-mode/">Org Mode Shortcuts for Emacs Doom</a></li>
+<li><a href="https://gist.github.com/hjertnes/9e14416e8962ff5f03c6b9871945b165">Gist of Hjertnes</a></li>
+<li><a href="https://github.com/emacs-evil/evil-collection">Evil-mode collection</a></li>
+</ul>
 <p>Doom leader-key is <code>SPC</code> and localleader-key is <code>SPC-m</code>. When in <em>Insert</em> mode
 use <code>M-SPC</code> or <code>M-SPC-m</code> to call the menu available as in the <em>Normal</em> mode.
 Else change mode with <code>ESC</code> or <code>jk</code> binding. To toggle between Emacs state and
 Evil use <code>C-z</code>.</p>
+<p>To show all your keybindings <code>SPC-h b b</code></p>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>Most used keys</p>
+<p>There are keys I mostly need to remember and there are also listen in their
+respective groups below:</p>
+<ul>
+<li><code>zx</code> kill buffer</li>
+<li><code>SPC-&lt;</code> switch buffer or <code>Ctr-up/down</code></li>
+<li><code>zz</code> center line</li>
+<li><code>SPC-i r</code> insert from evil-register or <code>0p</code> when you know it&rsquo;s register number
+<code>0</code> in evil register or 1,2,&hellip;</li>
+<li><code>viw</code> select word under cursor or <em>inner</em> word under the cursor</li>
+<li><code>vio</code> select all inner and inclding a symbol</li>
+<li><code>va(</code> selecte all around the bracket <code>(</code> or any specific symbol that you can specify eg. <code>va&quot;</code></li>
+<li><code>di(</code> and <code>yi(</code> is both delete and yank inner words respectively.</li>
+<li><code>ciw</code> clear the inner word under the cursor and move to inner mode.</li>
+<li><code>Spc-s s</code> search word or <code>fw</code> and <code>Fw</code></li>
+</ul>
+</li>
+</ul>
 <!-- raw HTML omitted -->
 <ul>
 <li>
@@ -1433,15 +1467,21 @@ Evil use <code>C-z</code>.</p>
 <li><code>C-b</code> and <code>C-f</code> for page backward and page forward (whole page)</li>
 <li><code>C-u</code> and <code>C-d</code> for half page up and down</li>
 <li><code>z-z</code> move line to center of screen</li>
-<li><code>gsj</code> and <code>gsk</code> go to line forward (j) or backward (k) ie. avy-goto</li>
-<li><code>gsf</code> and <code>gsF</code> go to forward (f) or backward(F)</li>
-<li><code>fw</code> and <code>Fw</code> find <code>w</code> or any word/symbols specified forward or backward</li>
+<li><code>gsj</code> and <code>gsk</code> go to line downward (j) or upward (k) ie. avy-goto</li>
+<li><code>gsf</code> and <code>gsF</code> go to forward (f) or backward(F) for selected letter</li>
+<li><code>fw</code> and <code>Fw</code> find <code>w</code> or any word/symbols specified forward or backward in a
+line. Move to next foward or backward with <code>f</code></li>
+<li><code>g:</code> go to last changed</li>
 <li><code>''</code> and <code> </code> `` jump to mark-line and goto-mark but works as jump cursor to previous position too</li>
 <li><code>C-i</code> and <code>C-o</code> jump to previous cursor forward or backward</li>
 <li><code>ma</code> to mark position as <strong>a</strong> and use <code>'a</code> to go to the line where the mark is
 or <code>`a</code> (backtick) to go to the position of the marked ie. <code>a</code></li>
 <li><code>Shift-L</code> and <code>Shift-H</code> moves cursor to lower (L) or higher (H) screen</li>
 <li><code>Shift-M</code> moves cursor to the middle of the screen</li>
+<li>Split windows with Evil shorcut <code>:sp</code> or <em>evil-window-split</em> <code>C-w s</code> or
+<em>evil-window-vsplit</em> <code>C-w v</code>.</li>
+<li><code>SPC-s d</code> search current directory or <code>Spc-s p</code> current project</li>
+<li><code>SPC-'</code> resume last search</li>
 </ul>
 </li>
 </ul>
@@ -1460,6 +1500,20 @@ or <code>`a</code> (backtick) to go to the position of the marked ie. <code>a</c
 <li><code>ci{</code> kill all within the curly bracket when the cursor is inside. Other
 symbols can also be specified and when cursor is inside the specified symbols
 all text inside will be deleted.</li>
+<li><code>[o</code> and <code>]o</code> will insert newline above or below respectively</li>
+<li><code>C-j</code> will cut/split the sentence</li>
+<li><code>gU</code> for UPPERCASE or <code>gu</code> lowercase or <code>g~</code> to toggle between</li>
+<li><code>:e</code> edit file</li>
+<li><code>:w</code> save file</li>
+<li><code>viw</code> select a word under the cursor</li>
+<li><code>*</code> select all word under the cursor in the buffer</li>
+<li><code>#</code> select all word in the same line</li>
+<li><code>/</code> search word</li>
+<li><code>vio</code> select all inner and inclding a symbol</li>
+<li><code>va(</code> selecte all around the bracket <code>(</code> or any specific symbol that you can specify eg. <code>va&quot;</code></li>
+<li><code>di(</code> and <code>yi(</code> is both delete and yank inner words respectively.</li>
+<li><code>ciw</code> clear the inner word under the cursor and move to inner mode.</li>
+<li><code>Spc-s s</code> search word or <code>fw</code> and <code>Fw</code></li>
 </ul>
 <p>In <!-- raw HTML omitted -->Insert<!-- raw HTML omitted --> mode:</p>
 <ul>
@@ -1475,6 +1529,10 @@ all text inside will be deleted.</li>
 <ul>
 <li>
 <p>Multiedit</p>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>In a file one at a time</p>
 <p>Doom uses <a href="https://github.com/hlissner/evil-multiedit">multiedit</a> package otherwise it&rsquo;s like <a href="https://github.com/magnars/multiple-cursors.el">multiple-cursors</a> package plus <a href="https://github.com/victorhge/iedit">iedit</a>
 package. Basic keybinding is <code>M-d</code> or <code>M-D</code>. It works both in Normal and
 Visual mode.</p>
@@ -1487,16 +1545,41 @@ the whole document.</p>
 <!-- raw HTML omitted -->
 <ul>
 <li>
+<p>All in a file</p>
+<p>Select the text then <code>R</code></p>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>Search and replace in a project</p>
+<ul>
+<li>Search the text with <code>SPC-s p</code>.</li>
+<li>When all the files are listed, enter swiper edit with <code>C-c C-e</code>.</li>
+<li>Select the word then multiedit all word with <code>R</code> key, then edit.</li>
+<li>Save the file with <code>C-c C-c</code> or cancel with <code>C-c C-k</code>.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
 <p>Org related</p>
 <ul>
 <li><code>SPC-m-h</code> to change to heading</li>
 <li><code>SPC-m-i</code> to change to item</li>
+<li><code>Shift-TAB</code> to move backward in table</li>
 </ul>
 </li>
 </ul>
-<h4 id="smerge-and-ediff"><!-- raw HTML omitted -->TODO<!-- raw HTML omitted --> Smerge and ediff</h4>
+<h4 id="smerge-ediff-and-diff"><!-- raw HTML omitted -->DONE<!-- raw HTML omitted --> Smerge, ediff and diff</h4>
 <p>For enditing conflict in git, use smerge or ediff.</p>
-<h4 id="smerge">Smerge</h4>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>Smerge</p>
 <p>Basic workflow:</p>
 <ul>
 <li>Open magit status with <code>SPC g g</code> in Doom</li>
@@ -1508,11 +1591,145 @@ the whole document.</p>
 <li>To navigate the conflicts use <code>C-c ^ n</code> and <code>C-c ^ p</code> for next and previous conflict</li>
 <li>To see all the keybindings use <code>C-c ^ h</code></li>
 </ul>
-<h4 id="ediff">Ediff</h4>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>Ediff</p>
 <p>When you are in the file with conflict, type <code>M-x smerge-ediff</code> or <code>M-x vc-resolve-conflicts</code>. You will get 3 windows showing your HEAD and origin/HEAD
 that you have fetched and the outcome or end product. You can select A or B to
 select which you can to keep or delete. Use <code>?</code> to see all the shortcuts to use.</p>
 <p>This YouTube video explains it in more detail: <a href="https://www.youtube.com/watch?v=9S2pMZ6U5Tc">Smerge and Ediff</a></p>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>Diff</p>
+<p>To use diff directly from git comparing local and origin can be done with:</p>
+<ul>
+<li>Fetch changes from remotes <code>git fetch origin</code></li>
+<li>Check log <code>git log master..origin/master</code></li>
+<li>Show the changes <code>git diff master..origin/master</code></li>
+<li>Merge changes <code>git merge origin/master</code></li>
+</ul>
+<p>Else you could use <code>git pull</code> if you aren&rsquo;t interested to check the changes
+before merging.</p>
+</li>
+</ul>
+<h4 id="ssh-key-with-git-on-windows"><!-- raw HTML omitted -->DONE<!-- raw HTML omitted --> SSH-key with Git on Windows</h4>
+<p><em>First published: 2020-09-29</em></p>
+<p>Generally, these are what I did:</p>
+<ul>
+<li>Install git-with-openssh</li>
+<li>Create SSH-key</li>
+<li>Add SSH-key to ssh-agent</li>
+<li>Create <a href="https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/working-with-ssh-key-passphrases#auto-launching-ssh-agent-on-git-for-windows">~/.bashrc</a> for auto-launching ssh-agent</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>openSSH</p>
+<p>Windows 10 include <strong>openSSH</strong>. But I can&rsquo;t make it work with git so I use <strong>git-with-openssh</strong> installed
+via <a href="https://scoop-docs.now.sh/docs/overview/So-What.html#why-should-you-care-about-scoop">scoop</a>. This will install Git and openSSH together. After installation, it&rsquo;s important to check
+where is your <code>~/.ssh</code> root folder via <code>Git bash.</code> This is the folder where you will save your SSH-key.</p>
+<p>Since I use Emacs, I add this code to use git-bash in shell. This is taken from <a href="https://emacs.stackexchange.com/questions/22049/git-bash-in-emacs-on-windows">StackExchange</a>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  (if (<span style="color:#a6e22e">equal</span> system-type <span style="color:#e6db74">&#39;windows-nt</span>)
+      (progn (setq explicit-shell-file-name
+                   <span style="color:#e6db74">&#34;C:/Users/ybka/scoop/apps/git-with-openssh/current/bin/bash.exe&#34;</span>)
+             (setq shell-file-name explicit-shell-file-name)
+             (setq explicit-bash.exe-args <span style="color:#f92672">&#39;</span>(<span style="color:#e6db74">&#34;--login&#34;</span> <span style="color:#e6db74">&#34;-i&#34;</span>))
+             (add-to-list <span style="color:#e6db74">&#39;exec-path</span> <span style="color:#e6db74">&#34;C:/Users/ybka/scoop/apps/git-with-openssh/current/bin&#34;</span>)
+             (setenv <span style="color:#e6db74">&#34;SHELL&#34;</span> shell-file-name)
+             (add-hook <span style="color:#e6db74">&#39;comint-output-filter-functions</span> <span style="color:#e6db74">&#39;comint-strip-ctrl-m</span>)))
+
+  (defun git-bash () (interactive)
+         (let ((explicit-shell-file-name <span style="color:#e6db74">&#34;C:/Users/ybka/scoop/apps/git-with-openssh/current/bin/bash.exe&#34;</span> ))
+           (<span style="color:#a6e22e">call-interactively</span> <span style="color:#e6db74">&#39;shell</span>)))
+</code></pre></div><p>Then as suggested from StackExchange, I created <code>~/.bash_profile</code> (root for Git-bash) and add the
+codes below to display shell prompt properly in Emacs.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">  if [ -n &#34;$INSIDE_EMACS&#34; ]; then
+  export PS1=&#39;\[\033[32m\]\u@\h \[\033[33m\]\w\[\033[36m\]`__git_ps1`\[\033[0m\]\n$ &#39;
+  fi
+</code></pre></div><p>To be on the safe side, I also add <strong>git-with-openssh</strong> the PATH in Windows Environment. You can find guides for doing it
+in many places eg. <a href="https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/">here</a>. In my pc, the path is:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">   C:/Users/ybka/scoop/apps/git-with-openssh/current/bin/
+</code></pre></div></li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>Create SSH key</p>
+<p>If you haven&rsquo;t created an SSH-key then do so by running the code below in your Git bash. Else you
+can read more <a href="https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/connecting-to-github-with-ssh">here</a>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">  ssh-keygen -t rsa -b <span style="color:#ae81ff">4096</span> -C <span style="color:#e6db74">&#34;your_email@example.com&#34;</span>
+</code></pre></div><p>Paramters specification:</p>
+<ul>
+<li><code>-t</code> is to specify RSA as the type of key to generate</li>
+<li><code>-b</code> for 4096-bit keys</li>
+<li><code>-C</code> for comment</li>
+</ul>
+<p>Then add your newly created SSH-key to <code>ssh-agent</code> to manage your key. If your <code>ssh-agent</code> haven&rsquo;t been
+started then you can do so silently and has it running in the background. You will get an output
+something like <code>&gt; Agent pid 4353</code>. Run this command to start ssh-agent for Windows in PowerShell:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">start-ssh-agent.cmd
+</code></pre></div><p>or run silently with <code>eval $(ssh-agent -s)</code>. Then adding your ssh-key with:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">  ssh-add ~/.ssh/id_rsa_personal
+</code></pre></div><p>For Windows user, you can auto-launching the <code>ssh-agent</code> by following the guide
+<a href="https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/working-with-ssh-key-passphrases">here</a>. Basically adding file <code>~/.profile</code> or <code>~/.bashrc</code> in your git ssh root
+which you find via Git bash. The content of <code>~/.bashrc</code> file is:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">env=~/.ssh/agent.env
+
+agent_load_env () { test -f &#34;$env&#34; &amp;&amp; . &#34;$env&#34; &gt;| /dev/null ; }
+
+agent_start () {
+(umask 077; ssh-agent &gt;| &#34;$env&#34;)
+. &#34;$env&#34; &gt;| /dev/null ; }
+
+agent_load_env
+
+# agent_run_state: 0=agent running w/ key; 1=agent w/o key; 2= agent not running
+agent_run_state=$(ssh-add -l &gt;| /dev/null 2&gt;&amp;1; echo $?)
+
+if [ ! &#34;$SSH_AUTH_SOCK&#34; ] || [ $agent_run_state = 2 ]; then
+agent_start
+ssh-add
+elif [ &#34;$SSH_AUTH_SOCK&#34; ] &amp;&amp; [ $agent_run_state = 1 ]; then
+ssh-add
+fi
+
+unset env
+</code></pre></div><p>Copy your public SSH-key either manually or by running <code>clip</code> which will copy it to clipboard then add
+it to your GitHub account.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">  clip &lt; ~/.ssh/id_rsa_personal
+</code></pre></div><p>You can test the connection and verify your loaded SSH-key</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">  <span style="color:#75715e"># Check connection</span>
+  ssh -T git@github.com
+
+  <span style="color:#75715e"># Verify</span>
+  ssh-add -l -E md5
+</code></pre></div></li>
+</ul>
+<h4 id="ess-tips"><!-- raw HTML omitted -->TODO<!-- raw HTML omitted --> ESS tips</h4>
+<p>Some tips to use <code>ESS</code>. This documents will keep on growing as I find more
+shortcuts to help me work efficiently.</p>
+<ul>
+<li><code>C-c C-s</code> to switch R processes when running multiple processes</li>
+<li><code>C-c C-z</code> to switch to inferior or scripts</li>
+<li><code>C-C C-e C-r</code> reload R inferior via <code>inferior-ess-r-reload-hook</code></li>
+<li><code>SPC-m v</code> for debugging eg. <code>b</code> for brakepoint or <code>K</code> kill all breakpoint</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>RMarkdown</p>
+<p>I keep on forgetting these keys after moving to Doom. So for reference:</p>
+<ul>
+<li><code>M-n e</code> to evaluate RMarkdown with Poly and using standard Doom evaluate.</li>
+</ul>
+</li>
+</ul>
 <h3 id="recipe">Recipe</h3>
 <h4 id="biskut-italy">Biskut Italy</h4>
 <p>Care buat biskut simple. Biasa bah jumpa di Italy ini biskut dan namanya dorang panggek <em>biscotti</em>.</p>

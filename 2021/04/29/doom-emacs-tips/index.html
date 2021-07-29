@@ -133,14 +133,25 @@ Evil use <code>C-z</code>.</p>
 <h2 id="most-used-keys">Most used keys</h2>
 <p>There are keys I mostly need to remember and there are also listen in their
 respective groups below:</p>
+<h3 id="normal-mode">Normal mode</h3>
 <ul>
 <li><code>zx</code> kill buffer</li>
-<li><code>SPC-&lt;</code> switch buffer or <code>Ctr-up/down</code></li>
+<li><code>SPC-w w</code> move to buffer</li>
 <li><code>zz</code> center line</li>
 <li><code>SPC-i r</code> insert from evil-register or <code>0p</code> when you know it&rsquo;s register number
 <code>0</code> in evil register or 1,2,&hellip;</li>
-<li><code>viw</code> to copy word or <code>vio</code> to copy symbol</li>
-<li><code>Spc-s s</code> search word or <code>fw</code> and <code>Fw</code></li>
+<li><code>viw</code> select word under cursor or <em>inner</em> word under the cursor</li>
+<li><code>vio</code> select all inner and inclding a symbol</li>
+<li><code>va(</code> selecte all around the bracket <code>(</code> or any specific symbol that you can specify eg. <code>va&quot;</code></li>
+<li><code>di(</code> and <code>yi(</code> is both delete and yank inner words respectively.</li>
+<li><code>ciw</code> clear the inner word under the cursor and move to inner mode.</li>
+<li><code>SPC-s s</code> search word or <code>fw</code> and <code>Fw</code>.</li>
+<li><code>SPC-TAB .</code> change workspace.</li>
+</ul>
+<h3 id="insert-mode">Insert mode</h3>
+<ul>
+<li><code>C-w</code> kill word bakword</li>
+<li><code>M-d</code> kill word forward</li>
 </ul>
 <h2 id="navigation">Navigation</h2>
 <p>When in the <!-- raw HTML omitted -->Normal<!-- raw HTML omitted --> mode:</p>
@@ -181,6 +192,15 @@ all text inside will be deleted.</li>
 <li><code>gU</code> for UPPERCASE or <code>gu</code> lowercase or <code>g~</code> to toggle between</li>
 <li><code>:e</code> edit file</li>
 <li><code>:w</code> save file</li>
+<li><code>viw</code> select a word under the cursor</li>
+<li><code>*</code> select all word under the cursor in the buffer</li>
+<li><code>#</code> select all word in the same line</li>
+<li><code>/</code> search word</li>
+<li><code>vio</code> select all inner and inclding a symbol</li>
+<li><code>va(</code> selecte all around the bracket <code>(</code> or any specific symbol that you can specify eg. <code>va&quot;</code></li>
+<li><code>di(</code> and <code>yi(</code> is both delete and yank inner words respectively.</li>
+<li><code>ciw</code> clear the inner word under the cursor and move to inner mode.</li>
+<li><code>Spc-s s</code> search word or <code>fw</code> and <code>Fw</code></li>
 </ul>
 <p>In <!-- raw HTML omitted -->Insert<!-- raw HTML omitted --> mode:</p>
 <ul>
