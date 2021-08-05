@@ -14,6 +14,16 @@
 		<atom:link href="/tags/row/" rel="self" type="application/rss+xml" />
 		
 		<item>
+			<title>Git Rebase</title>
+			<link>https://yusbk.github.io/2021/08/05/git-rebase/</link>
+			<pubDate>Thu, 05 Aug 2021 00:00:00 +0200</pubDate>
+			<guid>https://yusbk.github.io/2021/08/05/git-rebase/</guid>
+			<description>Rebase to previous commit or any previous commit.
+git log --oneline --graph -5 git reset --hard &amp;lt;commit id&amp;gt; git push origin HEAD --force The steps above:
+ Look at the previous 5 lines with -5 or any number you like. You will also find the commit id there Rebase to the selected commit id Force it back to the origin ie.</description>
+		</item>
+      	
+		<item>
 			<title>CI/CD and Code Coverage</title>
 			<link>https://yusbk.github.io/2021/07/25/github_actions/</link>
 			<pubDate>Sun, 25 Jul 2021 00:00:00 +0200</pubDate>
@@ -100,15 +110,6 @@ options(datatable.print.topn = 70) print(DT, topn = 70) Using options will imple
 This is only relevant to my personal reference at work.
 The address for drive F and N is as follow:
  F: = \\fhi.no\felles N: = \\fhi.no\fil\styrt H: = \\fhi.</description>
-		</item>
-      	
-		<item>
-			<title>Docker basic</title>
-			<link>https://yusbk.github.io/2021/02/17/docker-basic/</link>
-			<pubDate>Wed, 17 Feb 2021 00:00:00 +0100</pubDate>
-			<guid>https://yusbk.github.io/2021/02/17/docker-basic/</guid>
-			<description>Use image Create Image Mount directory  Important commands:
-docker pull image-name docker run local-name image-name docker ps docker build Use image Some basic commands to start using Docker. Two things are important ie. Docker Image and Docker Container. To fetch RStudio image from Docker Hub run the command:</description>
 		</item>
       	
 	</channel>

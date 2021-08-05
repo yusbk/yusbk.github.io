@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-<title>Git worktree</title>
+<title>Git Worktree</title>
 
 
   
@@ -88,7 +88,7 @@
         <div class="post-heading">
           
             <h1>
-              Git worktree
+              Git Worktree
             </h1>
           
           
@@ -120,25 +120,25 @@ problem is I have to stash changes when switching back and forth. To avoid this 
 the branches you want to work seperately. Basically it creates a new folder and work independently.</p>
 <p>For instance, to start worktree with newfix from master branch. You can create newfix branch first
 then worktree or directly to create worktree with newfix branch</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git branch fix
-git worktree add ./path/newfix fix
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">  git branch fix
+  git worktree add ./path/newfix fix
 
-<span style="color:#75715e"># direct from origin/master</span>
-git worktree add -b fix ./path/newfix origin/master
+  <span style="color:#75715e"># direct from origin/master</span>
+  git worktree add -b fix ./path/newfix origin/master
 </code></pre></div><p>This will create <em>fix</em> branch and <em>newfix</em> folder at <code>./path/newfix</code>. The example above uses <code>origin/master</code> which
 is the default and can be ignored. If you select different branch then you can specify
 <code>origin/fix</code>. To work with the new worktree newfix branch then you just need to change folder</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cd ./path/newfix
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">  cd ./path/newfix
 
-<span style="color:#75715e"># Check you are in fix branch</span>
-git status
+  <span style="color:#75715e"># Check you are in fix branch</span>
+  git status
 </code></pre></div><p>To list down all the workrees you can use <code>git worktree list</code>. Deleting a worktree can be done by
 deleting the folder directly and run <code>git worktree prune</code> to delete it from the list. If you have
 error because your branch already checked out then delete <code>.git/worktrees/newfix</code>. See
 <a href="https://www.saltycrane.com/blog/2017/05/git-worktree-notes/">https://www.saltycrane.com/blog/2017/05/git-worktree-notes/</a></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">rm -rf path/newfix
-git worktree prune
-git branch -d fix
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">  rm -rf path/newfix
+  git worktree prune
+  git branch -d fix
 </code></pre></div>
 
 

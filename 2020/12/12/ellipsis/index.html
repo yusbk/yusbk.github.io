@@ -123,40 +123,40 @@ scenarios I find it useful:</p>
 <h2 id="function-wrapper">Function wrapper</h2>
 <p>When creating a function wrapper and instead of providing all the arguments to be send further, you
 could just use <code>...</code> ellipsis. For example:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">get_mean <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function</span>(x, print <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>){
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">  get_mean <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function</span>(x, print <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>){
 
-  x1 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">mean</span>(x)
-  <span style="color:#a6e22e">if </span>(print){
-    <span style="color:#a6e22e">print</span>(x1)
-  }else{
-    <span style="color:#a6e22e">print</span>(<span style="color:#e6db74">&#34;Nothing&#34;</span>)
+    x1 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">mean</span>(x)
+    <span style="color:#a6e22e">if </span>(print){
+      <span style="color:#a6e22e">print</span>(x1)
+    }else{
+      <span style="color:#a6e22e">print</span>(<span style="color:#e6db74">&#34;Nothing&#34;</span>)
+    }
   }
-}
 
-<span style="color:#a6e22e">get_mean</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">10</span>)
+  <span style="color:#a6e22e">get_mean</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">10</span>)
 
-show_mean <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function</span>(<span style="color:#66d9ef">...</span>){
-  <span style="color:#a6e22e">get_mean</span>(<span style="color:#66d9ef">...</span>)
-}
+  show_mean <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function</span>(<span style="color:#66d9ef">...</span>){
+    <span style="color:#a6e22e">get_mean</span>(<span style="color:#66d9ef">...</span>)
+  }
 
-<span style="color:#a6e22e">show_mean</span>(x <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">10</span>, print <span style="color:#f92672">=</span> F)
+  <span style="color:#a6e22e">show_mean</span>(x <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">10</span>, print <span style="color:#f92672">=</span> F)
 
-<span style="color:#a6e22e">do.call</span>(show_mean, <span style="color:#a6e22e">list</span>(x <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">20</span>))
-<span style="color:#a6e22e">do.call</span>(show_it, <span style="color:#a6e22e">list</span>(x <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">20</span>, print <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>))
+  <span style="color:#a6e22e">do.call</span>(show_mean, <span style="color:#a6e22e">list</span>(x <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">20</span>))
+  <span style="color:#a6e22e">do.call</span>(show_it, <span style="color:#a6e22e">list</span>(x <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">20</span>, print <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>))
 </code></pre></div><p>In <code>show_mean</code> the arguments given will be sent further to <code>get_mean</code> without the need to define explicitly in <code>show_mean</code> function.</p>
 <h2 id="get-values">Get values</h2>
 <p>When you want to provide certain values to a specific use or send to global value.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">go_global <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function</span>(<span style="color:#66d9ef">...</span>) {
-  args <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">list</span>(<span style="color:#66d9ef">...</span>)
-  <span style="color:#a6e22e">paste</span>(args)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">  go_global <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function</span>(<span style="color:#66d9ef">...</span>) {
+    args <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">list</span>(<span style="color:#66d9ef">...</span>)
+    <span style="color:#a6e22e">paste</span>(args)
 
-  <span style="color:#a6e22e">for</span>(i in <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#a6e22e">length</span>(args)) {
-    <span style="color:#a6e22e">assign</span>(x <span style="color:#f92672">=</span> <span style="color:#a6e22e">names</span>(args)[i], value <span style="color:#f92672">=</span> args[[i]], envir <span style="color:#f92672">=</span> .GlobalEnv)
+    <span style="color:#a6e22e">for</span>(i in <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#a6e22e">length</span>(args)) {
+      <span style="color:#a6e22e">assign</span>(x <span style="color:#f92672">=</span> <span style="color:#a6e22e">names</span>(args)[i], value <span style="color:#f92672">=</span> args[[i]], envir <span style="color:#f92672">=</span> .GlobalEnv)
+    }
+
   }
 
-}
-
-<span style="color:#a6e22e">go_global</span>(<span style="color:#e6db74">&#34;Hello&#34;</span>, <span style="color:#e6db74">&#34;World&#34;</span>)
+  <span style="color:#a6e22e">go_global</span>(<span style="color:#e6db74">&#34;Hello&#34;</span>, <span style="color:#e6db74">&#34;World&#34;</span>)
 </code></pre></div><p>This is of course not advisable sending value to global environment but here is just to show how you
 could manipulate the value as you wish. The values in ellipsis should be captured as a <code>list</code>.</p>
 <p>You could also capture the names of the list by <code>names(list(...))</code>.</p>

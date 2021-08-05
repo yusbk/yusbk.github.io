@@ -121,28 +121,28 @@
   <p><em>This article first published in 02.10.2020.</em></p>
 <p>Before connecting to your Access DBMS via Windows OS, you can check if you have the MS Access driver
 installed in your machine by running</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#75715e">## List everything</span>
-odbc<span style="color:#f92672">::</span><span style="color:#a6e22e">odbcListDrivers</span>()
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">  <span style="color:#75715e">## List everything</span>
+  odbc<span style="color:#f92672">::</span><span style="color:#a6e22e">odbcListDrivers</span>()
 
-<span style="color:#75715e">## You will get the results someting like this..</span>
-<span style="color:#75715e">## ... truncated</span>
-<span style="color:#ae81ff">26</span>               Microsoft Access <span style="color:#a6e22e">Driver </span>(<span style="color:#f92672">*</span>.mdb, <span style="color:#f92672">*</span>.accdb)        FileUsage
-<span style="color:#ae81ff">27</span>               Microsoft Access <span style="color:#a6e22e">Driver </span>(<span style="color:#f92672">*</span>.mdb, <span style="color:#f92672">*</span>.accdb)        FileExtns
-<span style="color:#ae81ff">28</span>               Microsoft Access <span style="color:#a6e22e">Driver </span>(<span style="color:#f92672">*</span>.mdb, <span style="color:#f92672">*</span>.accdb)         SQLLevel
-<span style="color:#ae81ff">29</span> Microsoft Excel <span style="color:#a6e22e">Driver </span>(<span style="color:#f92672">*</span>.xls, <span style="color:#f92672">*</span>.xlsx, <span style="color:#f92672">*</span>.xlsm, <span style="color:#f92672">*</span>.xlsb)       UsageCount
-<span style="color:#ae81ff">30</span> Microsoft Excel <span style="color:#a6e22e">Driver </span>(<span style="color:#f92672">*</span>.xls, <span style="color:#f92672">*</span>.xlsx, <span style="color:#f92672">*</span>.xlsm, <span style="color:#f92672">*</span>.xlsb)         APILevel
-<span style="color:#ae81ff">31</span> Microsoft Excel <span style="color:#a6e22e">Driver </span>(<span style="color:#f92672">*</span>.xls, <span style="color:#f92672">*</span>.xlsx, <span style="color:#f92672">*</span>.xlsm, <span style="color:#f92672">*</span>.xlsb) ConnectFunctions
+  <span style="color:#75715e">## You will get the results someting like this..</span>
+  <span style="color:#75715e">## ... truncated</span>
+  <span style="color:#ae81ff">26</span>               Microsoft Access <span style="color:#a6e22e">Driver </span>(<span style="color:#f92672">*</span>.mdb, <span style="color:#f92672">*</span>.accdb)        FileUsage
+  <span style="color:#ae81ff">27</span>               Microsoft Access <span style="color:#a6e22e">Driver </span>(<span style="color:#f92672">*</span>.mdb, <span style="color:#f92672">*</span>.accdb)        FileExtns
+  <span style="color:#ae81ff">28</span>               Microsoft Access <span style="color:#a6e22e">Driver </span>(<span style="color:#f92672">*</span>.mdb, <span style="color:#f92672">*</span>.accdb)         SQLLevel
+  <span style="color:#ae81ff">29</span> Microsoft Excel <span style="color:#a6e22e">Driver </span>(<span style="color:#f92672">*</span>.xls, <span style="color:#f92672">*</span>.xlsx, <span style="color:#f92672">*</span>.xlsm, <span style="color:#f92672">*</span>.xlsb)       UsageCount
+  <span style="color:#ae81ff">30</span> Microsoft Excel <span style="color:#a6e22e">Driver </span>(<span style="color:#f92672">*</span>.xls, <span style="color:#f92672">*</span>.xlsx, <span style="color:#f92672">*</span>.xlsm, <span style="color:#f92672">*</span>.xlsb)         APILevel
+  <span style="color:#ae81ff">31</span> Microsoft Excel <span style="color:#a6e22e">Driver </span>(<span style="color:#f92672">*</span>.xls, <span style="color:#f92672">*</span>.xlsx, <span style="color:#f92672">*</span>.xlsm, <span style="color:#f92672">*</span>.xlsb) ConnectFunctions
 
-<span style="color:#75715e">## List only the driver</span>
-<span style="color:#a6e22e">sort</span>(<span style="color:#a6e22e">unique</span>(<span style="color:#a6e22e">odbcListDrivers</span>()[[1]]))
+  <span style="color:#75715e">## List only the driver</span>
+  <span style="color:#a6e22e">sort</span>(<span style="color:#a6e22e">unique</span>(<span style="color:#a6e22e">odbcListDrivers</span>()[[1]]))
 
-[1] <span style="color:#e6db74">&#34;Microsoft Access dBASE Driver (*.dbf, *.ndx, *.mdx)&#34;</span>
-[2] <span style="color:#e6db74">&#34;Microsoft Access Driver (*.mdb, *.accdb)&#34;</span>
-[3] <span style="color:#e6db74">&#34;Microsoft Access Text Driver (*.txt, *.csv)&#34;</span>
-[4] <span style="color:#e6db74">&#34;Microsoft Excel Driver (*.xls, *.xlsx, *.xlsm, *.xlsb)&#34;</span>
-[5] <span style="color:#e6db74">&#34;ODBC Driver 13 for SQL Server&#34;</span>
-[6] <span style="color:#e6db74">&#34;SQL Server&#34;</span>
-[7] <span style="color:#e6db74">&#34;SQL Server Native Client 11.0&#34;</span>
+  [1] <span style="color:#e6db74">&#34;Microsoft Access dBASE Driver (*.dbf, *.ndx, *.mdx)&#34;</span>
+  [2] <span style="color:#e6db74">&#34;Microsoft Access Driver (*.mdb, *.accdb)&#34;</span>
+  [3] <span style="color:#e6db74">&#34;Microsoft Access Text Driver (*.txt, *.csv)&#34;</span>
+  [4] <span style="color:#e6db74">&#34;Microsoft Excel Driver (*.xls, *.xlsx, *.xlsm, *.xlsb)&#34;</span>
+  [5] <span style="color:#e6db74">&#34;ODBC Driver 13 for SQL Server&#34;</span>
+  [6] <span style="color:#e6db74">&#34;SQL Server&#34;</span>
+  [7] <span style="color:#e6db74">&#34;SQL Server Native Client 11.0&#34;</span>
 </code></pre></div><p>If you don&rsquo;t get similar results then you have to set it up with this <a href="https://docs.microsoft.com/en-us/sql/odbc/admin/odbc-data-source-administrator?redirectedfrom=MSDN&amp;view=sql-server-ver15">instruction</a>. If you have
 trouble setting up <em>Data Source Name</em> (DSN) then you could try accessing the odbc driver by going to
 <em>control panel</em> -&gt; <em>administrative tools</em> -&gt; select <em>data sources(ODBC)</em> -&gt; right click the file -&gt; go to
@@ -154,84 +154,84 @@ some examples how I have used them to connect to MS Access DBMS.</p>
 <p>You need both <strong>DBI</strong> and <strong>odbc</strong> packages. Basically <strong>odbc</strong> is the connecting bridge from your R codes to
 Access file and <strong>DBI</strong> is the guy who do the actual work. I have to use a complete <em>.connection_string</em>
 to make it works.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">pkg <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;odbc&#34;</span>, <span style="color:#e6db74">&#34;DBI&#34;</span>, <span style="color:#e6db74">&#34;glue&#34;</span>)
-<span style="color:#a6e22e">sapply</span>(pkg, require, character.only <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">  pkg <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;odbc&#34;</span>, <span style="color:#e6db74">&#34;DBI&#34;</span>, <span style="color:#e6db74">&#34;glue&#34;</span>)
+  <span style="color:#a6e22e">sapply</span>(pkg, require, character.only <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>)
 
-db_con <span style="color:#f92672">&lt;-</span> <span style="color:#e6db74">&#34;Driver={Microsoft Access Driver (*.mdb, *.accdb)};DBQ=&#34;</span>
-MDBPATH <span style="color:#f92672">&lt;-</span> <span style="color:#e6db74">&#34;C:\\enc\\DBtest\\STYRING\\KHELSA_dev.accdb&#34;</span>
+  db_con <span style="color:#f92672">&lt;-</span> <span style="color:#e6db74">&#34;Driver={Microsoft Access Driver (*.mdb, *.accdb)};DBQ=&#34;</span>
+  MDBPATH <span style="color:#f92672">&lt;-</span> <span style="color:#e6db74">&#34;C:\\enc\\DBtest\\STYRING\\KHELSA_dev.accdb&#34;</span>
 
-cs <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">paste0</span>(db_con, MDBPATH)
-con <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">dbConnect</span>(odbc<span style="color:#f92672">::</span><span style="color:#a6e22e">odbc</span>(), .connection_string <span style="color:#f92672">=</span> cs)
-tblCols <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;FILID&#34;</span>,<span style="color:#e6db74">&#34;FILNAVN&#34;</span>, <span style="color:#e6db74">&#34;FORMAT&#34;</span>)
-orgTb <span style="color:#f92672">&lt;-</span> <span style="color:#e6db74">&#34;ORIGINALFILER&#34;</span>
-sqq <span style="color:#f92672">&lt;-</span> glue<span style="color:#f92672">::</span><span style="color:#a6e22e">glue_sql</span>(<span style="color:#e6db74">&#34;SELECT TOP 5 {`tblCols`*}
-</span><span style="color:#e6db74">                       FROM {`orgTb`}&#34;</span>,
-                      .con <span style="color:#f92672">=</span> DBI<span style="color:#f92672">::</span><span style="color:#a6e22e">ANSI</span>())
+  cs <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">paste0</span>(db_con, MDBPATH)
+  con <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">dbConnect</span>(odbc<span style="color:#f92672">::</span><span style="color:#a6e22e">odbc</span>(), .connection_string <span style="color:#f92672">=</span> cs)
+  tblCols <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;FILID&#34;</span>,<span style="color:#e6db74">&#34;FILNAVN&#34;</span>, <span style="color:#e6db74">&#34;FORMAT&#34;</span>)
+  orgTb <span style="color:#f92672">&lt;-</span> <span style="color:#e6db74">&#34;ORIGINALFILER&#34;</span>
+  sqq <span style="color:#f92672">&lt;-</span> glue<span style="color:#f92672">::</span><span style="color:#a6e22e">glue_sql</span>(<span style="color:#e6db74">&#34;SELECT TOP 5 {`tblCols`*}
+</span><span style="color:#e6db74">                         FROM {`orgTb`}&#34;</span>,
+                        .con <span style="color:#f92672">=</span> DBI<span style="color:#f92672">::</span><span style="color:#a6e22e">ANSI</span>())
 
-<span style="color:#75715e">## for interactive use dbGetquery</span>
-DBI<span style="color:#f92672">::</span><span style="color:#a6e22e">dbGetQuery</span>(con, sqq)
+  <span style="color:#75715e">## for interactive use dbGetquery</span>
+  DBI<span style="color:#f92672">::</span><span style="color:#a6e22e">dbGetQuery</span>(con, sqq)
 
-<span style="color:#75715e">## dbSendQuery should use dbFetch and dbClearResult</span>
-rq <span style="color:#f92672">&lt;-</span> DBI<span style="color:#f92672">::</span><span style="color:#a6e22e">dbSendQuery</span>(con, )
-DBI<span style="color:#f92672">::</span><span style="color:#a6e22e">dbFetch</span>(rq)
-DBI<span style="color:#f92672">::</span><span style="color:#a6e22e">dbClearResult</span>(rq)
+  <span style="color:#75715e">## dbSendQuery should use dbFetch and dbClearResult</span>
+  rq <span style="color:#f92672">&lt;-</span> DBI<span style="color:#f92672">::</span><span style="color:#a6e22e">dbSendQuery</span>(con, )
+  DBI<span style="color:#f92672">::</span><span style="color:#a6e22e">dbFetch</span>(rq)
+  DBI<span style="color:#f92672">::</span><span style="color:#a6e22e">dbClearResult</span>(rq)
 
-DBI<span style="color:#f92672">::</span><span style="color:#a6e22e">dbDisconnect</span>(con)
+  DBI<span style="color:#f92672">::</span><span style="color:#a6e22e">dbDisconnect</span>(con)
 </code></pre></div><h2 id="rodbc">RODBC</h2>
 <p>This is how I use this package.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">library</span>(RODBC)
-<span style="color:#75715e">## Set up driver info and database path</span>
-DRIVERINFO <span style="color:#f92672">&lt;-</span> <span style="color:#e6db74">&#34;Driver={Microsoft Access Driver (*.mdb, *.accdb)};DBQ=&#34;</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">  <span style="color:#a6e22e">library</span>(RODBC)
+  <span style="color:#75715e">## Set up driver info and database path</span>
+  DRIVERINFO <span style="color:#f92672">&lt;-</span> <span style="color:#e6db74">&#34;Driver={Microsoft Access Driver (*.mdb, *.accdb)};DBQ=&#34;</span>
 
-<span style="color:#75715e">## accdb file</span>
-MDBPATH <span style="color:#f92672">&lt;-</span> <span style="color:#e6db74">&#34;C:\\enc\\DBtest\\STYRING\\KHELSA_dev2.accdb&#34;</span>
-PATH <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">paste0</span>(DRIVERINFO, MDBPATH)
+  <span style="color:#75715e">## accdb file</span>
+  MDBPATH <span style="color:#f92672">&lt;-</span> <span style="color:#e6db74">&#34;C:\\enc\\DBtest\\STYRING\\KHELSA_dev2.accdb&#34;</span>
+  PATH <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">paste0</span>(DRIVERINFO, MDBPATH)
 
-<span style="color:#75715e">## Establish connection</span>
-channel <span style="color:#f92672">&lt;-</span> RODBC<span style="color:#f92672">::</span><span style="color:#a6e22e">odbcDriverConnect</span>(PATH)
+  <span style="color:#75715e">## Establish connection</span>
+  channel <span style="color:#f92672">&lt;-</span> RODBC<span style="color:#f92672">::</span><span style="color:#a6e22e">odbcDriverConnect</span>(PATH)
 
-<span style="color:#75715e">## Load data into R dataframe</span>
-RODBC<span style="color:#f92672">::</span><span style="color:#a6e22e">sqlQuery</span>(channel, <span style="color:#e6db74">&#34;SELECT TOP 5 * FROM KH_DELER&#34;</span>)
-RODBC<span style="color:#f92672">::</span><span style="color:#a6e22e">sqlFetch</span>(channel, <span style="color:#e6db74">&#34;KH_DELER&#34;</span>, max <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>)
+  <span style="color:#75715e">## Load data into R dataframe</span>
+  RODBC<span style="color:#f92672">::</span><span style="color:#a6e22e">sqlQuery</span>(channel, <span style="color:#e6db74">&#34;SELECT TOP 5 * FROM KH_DELER&#34;</span>)
+  RODBC<span style="color:#f92672">::</span><span style="color:#a6e22e">sqlFetch</span>(channel, <span style="color:#e6db74">&#34;KH_DELER&#34;</span>, max <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>)
 
-<span style="color:#75715e">## Close and remove channel</span>
-<span style="color:#a6e22e">close</span>(channel)
-<span style="color:#a6e22e">rm</span>(channel)
+  <span style="color:#75715e">## Close and remove channel</span>
+  <span style="color:#a6e22e">close</span>(channel)
+  <span style="color:#a6e22e">rm</span>(channel)
 </code></pre></div><h2 id="r6-class">R6 Class</h2>
 <p>To implement R6 Class with connection to database could be basically done as follows:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">library</span>(R6)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">  <span style="color:#a6e22e">library</span>(R6)
 
-HelseProfil <span style="color:#f92672">&lt;-</span> R6<span style="color:#f92672">::</span><span style="color:#a6e22e">R6Class</span>(
-                     classname <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;HelseProfil&#34;</span>,
-                     class <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>,
-                     cloneable <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>,
-                     public <span style="color:#f92672">=</span> <span style="color:#a6e22e">list</span>(
-                       dbname <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>,
-                       dbconn <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>,
-                       initialize <span style="color:#f92672">=</span> <span style="color:#a6e22e">function</span>(dbname <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>){
-                         <span style="color:#a6e22e">if </span>(<span style="color:#a6e22e">is.null</span>(dbname)) <span style="color:#a6e22e">return</span>(<span style="color:#a6e22e">message</span>(<span style="color:#e6db74">&#34;&gt;&gt;&gt; DB name is missing!&#34;</span>))
-                         else {
-                           self<span style="color:#f92672">$</span>dbname <span style="color:#f92672">&lt;-</span> dbname
+  HelseProfil <span style="color:#f92672">&lt;-</span> R6<span style="color:#f92672">::</span><span style="color:#a6e22e">R6Class</span>(
+                       classname <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;HelseProfil&#34;</span>,
+                       class <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>,
+                       cloneable <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>,
+                       public <span style="color:#f92672">=</span> <span style="color:#a6e22e">list</span>(
+                         dbname <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>,
+                         dbconn <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>,
+                         initialize <span style="color:#f92672">=</span> <span style="color:#a6e22e">function</span>(dbname <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>){
+                           <span style="color:#a6e22e">if </span>(<span style="color:#a6e22e">is.null</span>(dbname)) <span style="color:#a6e22e">return</span>(<span style="color:#a6e22e">message</span>(<span style="color:#e6db74">&#34;&gt;&gt;&gt; DB name is missing!&#34;</span>))
+                           else {
+                             self<span style="color:#f92672">$</span>dbname <span style="color:#f92672">&lt;-</span> dbname
+                           }
+                         },
+                         db_connect <span style="color:#f92672">=</span> <span style="color:#a6e22e">function</span>(){
+                           <span style="color:#a6e22e">stopifnot</span>(<span style="color:#f92672">!</span><span style="color:#a6e22e">is.null</span>(self<span style="color:#f92672">$</span>dbname))
+                           cs <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">paste0</span>(private<span style="color:#f92672">$</span>..drv, self<span style="color:#f92672">$</span>dbname)
+                           self<span style="color:#f92672">$</span>dbconn <span style="color:#f92672">&lt;-</span> DBI<span style="color:#f92672">::</span><span style="color:#a6e22e">dbConnect</span>(odbc<span style="color:#f92672">::</span><span style="color:#a6e22e">odbc</span>(),
+                                                         .connection_string <span style="color:#f92672">=</span> cs,
+                                                         encoding <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;latin1&#34;</span>)
+                         },
+                         db_close <span style="color:#f92672">=</span> <span style="color:#a6e22e">function</span>(){
+                           DBI<span style="color:#f92672">::</span><span style="color:#a6e22e">dbDisconnect</span>(self<span style="color:#f92672">$</span>dbconn)
                          }
-                       },
-                       db_connect <span style="color:#f92672">=</span> <span style="color:#a6e22e">function</span>(){
-                         <span style="color:#a6e22e">stopifnot</span>(<span style="color:#f92672">!</span><span style="color:#a6e22e">is.null</span>(self<span style="color:#f92672">$</span>dbname))
-                         cs <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">paste0</span>(private<span style="color:#f92672">$</span>..drv, self<span style="color:#f92672">$</span>dbname)
-                         self<span style="color:#f92672">$</span>dbconn <span style="color:#f92672">&lt;-</span> DBI<span style="color:#f92672">::</span><span style="color:#a6e22e">dbConnect</span>(odbc<span style="color:#f92672">::</span><span style="color:#a6e22e">odbc</span>(),
-                                                       .connection_string <span style="color:#f92672">=</span> cs,
-                                                       encoding <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;latin1&#34;</span>)
-                       },
-                       db_close <span style="color:#f92672">=</span> <span style="color:#a6e22e">function</span>(){
-                         DBI<span style="color:#f92672">::</span><span style="color:#a6e22e">dbDisconnect</span>(self<span style="color:#f92672">$</span>dbconn)
-                       }
-                     ),
-                     private <span style="color:#f92672">=</span> <span style="color:#a6e22e">list</span>(
-                       ..drv <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Driver={Microsoft Access Driver (*.mdb, *.accdb)};DBQ=&#34;</span>,
-                       finalize <span style="color:#f92672">=</span> <span style="color:#a6e22e">function</span>(){
-                         DBI<span style="color:#f92672">::</span><span style="color:#a6e22e">dbDisconnect</span>(self<span style="color:#f92672">$</span>dbconn)
-                       }
+                       ),
+                       private <span style="color:#f92672">=</span> <span style="color:#a6e22e">list</span>(
+                         ..drv <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Driver={Microsoft Access Driver (*.mdb, *.accdb)};DBQ=&#34;</span>,
+                         finalize <span style="color:#f92672">=</span> <span style="color:#a6e22e">function</span>(){
+                           DBI<span style="color:#f92672">::</span><span style="color:#a6e22e">dbDisconnect</span>(self<span style="color:#f92672">$</span>dbconn)
+                         }
+                       )
                      )
-                   )
 </code></pre></div><p>Here I actively disable <code>class</code> and <code>cloneable</code> for speed which you can read from <a href="https://r6.r-lib.org/articles/Performance.html">R&amp; document</a>.</p>
 
 

@@ -3,7 +3,25 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://yusbk.github.io/categories/</loc>
-    <lastmod>2021-07-25T00:00:00+02:00</lastmod>
+    <lastmod>2021-08-05T00:00:00+02:00</lastmod>
+  </url><url>
+    <loc>https://yusbk.github.io/categories/git/</loc>
+    <lastmod>2021-08-05T00:00:00+02:00</lastmod>
+  </url><url>
+    <loc>https://yusbk.github.io/2021/08/05/git-rebase/</loc>
+    <lastmod>2021-08-05T00:00:00+02:00</lastmod>
+  </url><url>
+    <loc>https://yusbk.github.io/post/</loc>
+    <lastmod>2021-08-05T00:00:00+02:00</lastmod>
+  </url><url>
+    <loc>https://yusbk.github.io/tags/rebase/</loc>
+    <lastmod>2021-08-05T00:00:00+02:00</lastmod>
+  </url><url>
+    <loc>https://yusbk.github.io/tags/</loc>
+    <lastmod>2021-08-05T00:00:00+02:00</lastmod>
+  </url><url>
+    <loc>https://yusbk.github.io/</loc>
+    <lastmod>2021-08-05T00:00:00+02:00</lastmod>
   </url><url>
     <loc>https://yusbk.github.io/tags/ci/</loc>
     <lastmod>2021-07-25T00:00:00+02:00</lastmod>
@@ -17,19 +35,7 @@
     <loc>https://yusbk.github.io/categories/en/</loc>
     <lastmod>2021-07-25T00:00:00+02:00</lastmod>
   </url><url>
-    <loc>https://yusbk.github.io/categories/git/</loc>
-    <lastmod>2021-07-25T00:00:00+02:00</lastmod>
-  </url><url>
-    <loc>https://yusbk.github.io/post/</loc>
-    <lastmod>2021-07-25T00:00:00+02:00</lastmod>
-  </url><url>
     <loc>https://yusbk.github.io/categories/r/</loc>
-    <lastmod>2021-07-25T00:00:00+02:00</lastmod>
-  </url><url>
-    <loc>https://yusbk.github.io/tags/</loc>
-    <lastmod>2021-07-25T00:00:00+02:00</lastmod>
-  </url><url>
-    <loc>https://yusbk.github.io/</loc>
     <lastmod>2021-07-25T00:00:00+02:00</lastmod>
   </url><url>
     <loc>https://yusbk.github.io/categories/emacs/</loc>
