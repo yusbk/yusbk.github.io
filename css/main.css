@@ -123,6 +123,10 @@ h1,h2,h3,h4,h5,h6 {
   color: #333333;
 }
 
+.container img {
+  width: 100%;
+}
+
 #blog-archives {
   margin: 20px auto;
   font-size: 14px;
@@ -465,9 +469,21 @@ footer {
   font-family: 'Roboto', Helvetica, sans-serif;
 }
 
+footer .social-icons a {
+  width: 1em;
+  height: 1em;
+}
+
+footer .social-icons a img {
+  width: 1em;
+  height: 1em;
+  vertical-align: top;
+}
+
 footer .copyright {
   font-family: 'Roboto', Helvetica, sans-serif;
   text-align: center;
+  margin-top: 10px;
   margin-bottom: 0;
 }
 
