@@ -166,7 +166,7 @@ respective groups below:</p>
 <li><code>gsf</code> and <code>gsF</code> go to forward (f) or backward(F) for selected letter</li>
 <li><code>fw</code> and <code>Fw</code> find <code>w</code> or any word/symbols specified forward or backward in a
 line. Move to next foward or backward with <code>f</code></li>
-<li><code>g:</code> go to last changed</li>
+<li><code>g;</code> go to last changed</li>
 <li><code>''</code> and <code> </code> `` jump to mark-line and goto-mark but works as jump cursor to previous position too</li>
 <li><code>C-i</code> and <code>C-o</code> jump to previous cursor forward or backward</li>
 <li><code>ma</code> to mark position as <strong>a</strong> and use <code>'a</code> to go to the line where the mark is
@@ -218,9 +218,10 @@ all text inside will be deleted.</li>
 <p>Doom uses <a href="https://github.com/hlissner/evil-multiedit">multiedit</a> package otherwise it&rsquo;s like <a href="https://github.com/magnars/multiple-cursors.el">multiple-cursors</a> package plus <a href="https://github.com/victorhge/iedit">iedit</a>
 package. Basic keybinding is <code>M-d</code> or <code>M-D</code>. It works both in Normal and
 Visual mode.</p>
-<p>In <strong>Normal</strong> mode, repeating <code>M-d</code> mark forward and <code>M-D</code> mark backward. In <strong>Visual</strong>
-mode, when you made selection pressing <code>R</code> will select all the marked section in
-the whole document.</p>
+<p>In <strong>Normal</strong> mode, when the course under a word, pressing <code>M-d</code> will select the
+word, repeating <code>M-d</code> mark forward and <code>M-D</code> mark backward. Use <code>C-n</code> and <code>C-p</code>
+for next and previous selected word. In <strong>Visual</strong> mode, when you have made
+selection pressing <code>R</code> will select all the marked section in the whole document.</p>
 <p>Press <code>Enter</code> to deselect or reselect the marked section.</p>
 <h3 id="all-in-a-file">All in a file</h3>
 <p>Select the text then <code>R</code></p>
