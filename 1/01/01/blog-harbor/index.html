@@ -1196,7 +1196,8 @@ master map which may be changed accordingly. Open <code>auto.master</code> file 
 </code></pre></div><p>** Git :@Git:</p>
 </li>
 </ul>
-<h4 id="git-clone">git clone</h4>
+<h3 id="git-related">Git Related</h3>
+<h4 id="git-clone">Git Clone</h4>
 <p>This is just 100% a copy from <a href="https://gist.github.com/jagregory/710671">gist</a> so I can check it when needed.</p>
 <p>So you&rsquo;ve cloned somebody&rsquo;s repo from github, but now you want to fork it and contribute back. Never fear!</p>
 <p>Technically, when you fork &ldquo;origin&rdquo; should be your fork and &ldquo;upstream&rdquo; should be the project you forked; however, if you&rsquo;re willing to break this convention then it&rsquo;s easy.</p>
@@ -1227,7 +1228,7 @@ master map which may be changed accordingly. Open <code>auto.master</code> file 
 <!-- raw HTML omitted -->
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">  git fetch origin
   git push origin
-</code></pre></div><h4 id="git-submodule">git submodule</h4>
+</code></pre></div><h4 id="git-submodule">Git Submodule</h4>
 <p>Rujukan di <a href="https://www.vogella.com/tutorials/GitSubmodules/article.html">sini</a> lebih teratur. Penerangan dibawah ialah berasaskan pengalaman sendiri tanpa
 struktur.</p>
 <!-- raw HTML omitted -->
@@ -1321,7 +1322,7 @@ sudah selesai pasang aturcara, bolehlah kemaskini submodule dengan <code>fetch/p
           fetch <span style="color:#f92672">=</span> +refs/heads/*:refs/remotes/origin/*
 </code></pre></div></li>
 </ul>
-<h4 id="multiple-account">Multiple account</h4>
+<h4 id="git-multiple-account">Git Multiple account</h4>
 <!-- raw HTML omitted -->
 <ul>
 <li>
@@ -1374,7 +1375,7 @@ HOME dir.</p>
 credentials automatically without needing to change hostname when cloning a repo.</p>
 </li>
 </ul>
-<h4 id="git-upstream">Git upstream</h4>
+<h4 id="git-upstream">Git Upstream</h4>
 <p>When you forked a repo then your copy of forked-repo in your Github profile will be referred to as
 <em>origin</em> while <em>upstream</em> refers to the real origin where the repo was forked from. If you cloned a repo
 then you will only have local copy of the repo. You can read <a href="https://yusbk.github.io/2020/06/14/git-clone/">here</a> to convert it as a forked repo.</p>
@@ -1396,7 +1397,7 @@ alternatives. Specifying <code>git log -10</code> will show the last 10 commits.
 when pushing to origin because your local copy have different HEAD from the origin. You could force
 push with</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">  git push -f origin master
-</code></pre></div><h4 id="git-worktree">Git worktree</h4>
+</code></pre></div><h4 id="git-worktree">Git Worktree</h4>
 <p>Normally I created a new branch when I intent to do some changes to the master branch. But the
 problem is I have to stash changes when switching back and forth. To avoid this create <em>worktree</em> for
 the branches you want to work seperately. Basically it creates a new folder and work independently.</p>
@@ -1421,7 +1422,28 @@ error because your branch already checked out then delete <code>.git/worktrees/n
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">  rm -rf path/newfix
   git worktree prune
   git branch -d fix
-</code></pre></div><h3 id="emacs">Emacs</h3>
+</code></pre></div><h4 id="git-rebase">Git Rebase</h4>
+<p>Rebase to previous commit or any previous commit.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git log --oneline --graph -5
+git reset --hard &lt;commit id&gt;
+git push origin HEAD --force
+</code></pre></div><p>The steps above:</p>
+<ul>
+<li>Look at the previous 5 lines with <code>-5</code> or any number you like. You will also
+find the commit id there</li>
+<li>Rebase to the selected commit id</li>
+<li>Force it back to the origin ie. rewriting the history :(</li>
+</ul>
+<p>Other alternative is to use interactive rebase.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git rebase -i HEAD~5
+</code></pre></div><p>You will be presented with somethig like this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">drop 3fg501 ...
+pick ab401s ...
+pick fas6ta ...
+pick 60gfab ...
+pick 4abs40 ...
+</code></pre></div><p>When you change to <code>drop</code> then the commit will be deleted.</p>
+<h3 id="emacs">Emacs</h3>
 <h4 id="doom-tips">Doom tips</h4>
 <p><em>First published date: 2021-04-27</em></p>
 <p>Some tips to learn the keybindings in Doom and Evil in the process of migrating
@@ -1444,9 +1466,13 @@ Evil use <code>C-z</code>.</p>
 <p>Most used keys</p>
 <p>There are keys I mostly need to remember and there are also listen in their
 respective groups below:</p>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>Normal mode</p>
 <ul>
 <li><code>zx</code> kill buffer</li>
-<li><code>SPC-&lt;</code> switch buffer or <code>Ctr-up/down</code></li>
+<li><code>SPC-w w</code> move to buffer</li>
 <li><code>zz</code> center line</li>
 <li><code>SPC-i r</code> insert from evil-register or <code>0p</code> when you know it&rsquo;s register number
 <code>0</code> in evil register or 1,2,&hellip;</li>
@@ -1455,7 +1481,20 @@ respective groups below:</p>
 <li><code>va(</code> selecte all around the bracket <code>(</code> or any specific symbol that you can specify eg. <code>va&quot;</code></li>
 <li><code>di(</code> and <code>yi(</code> is both delete and yank inner words respectively.</li>
 <li><code>ciw</code> clear the inner word under the cursor and move to inner mode.</li>
-<li><code>Spc-s s</code> search word or <code>fw</code> and <code>Fw</code></li>
+<li><code>SPC-s s</code> search word or <code>fw</code> and <code>Fw</code>.</li>
+<li><code>SPC-TAB .</code> change workspace.</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>Insert mode</p>
+<ul>
+<li><code>C-w</code> kill word bakword</li>
+<li><code>M-d</code> kill word forward</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -1472,7 +1511,7 @@ respective groups below:</p>
 <li><code>gsf</code> and <code>gsF</code> go to forward (f) or backward(F) for selected letter</li>
 <li><code>fw</code> and <code>Fw</code> find <code>w</code> or any word/symbols specified forward or backward in a
 line. Move to next foward or backward with <code>f</code></li>
-<li><code>g:</code> go to last changed</li>
+<li><code>g;</code> go to last changed</li>
 <li><code>''</code> and <code> </code> `` jump to mark-line and goto-mark but works as jump cursor to previous position too</li>
 <li><code>C-i</code> and <code>C-o</code> jump to previous cursor forward or backward</li>
 <li><code>ma</code> to mark position as <strong>a</strong> and use <code>'a</code> to go to the line where the mark is
@@ -1537,9 +1576,10 @@ all text inside will be deleted.</li>
 <p>Doom uses <a href="https://github.com/hlissner/evil-multiedit">multiedit</a> package otherwise it&rsquo;s like <a href="https://github.com/magnars/multiple-cursors.el">multiple-cursors</a> package plus <a href="https://github.com/victorhge/iedit">iedit</a>
 package. Basic keybinding is <code>M-d</code> or <code>M-D</code>. It works both in Normal and
 Visual mode.</p>
-<p>In <strong>Normal</strong> mode, repeating <code>M-d</code> mark forward and <code>M-D</code> mark backward. In <strong>Visual</strong>
-mode, when you made selection pressing <code>R</code> will select all the marked section in
-the whole document.</p>
+<p>In <strong>Normal</strong> mode, when the course under a word, pressing <code>M-d</code> will select the
+word, repeating <code>M-d</code> mark forward and <code>M-D</code> mark backward. Use <code>C-n</code> and <code>C-p</code>
+for next and previous selected word. In <strong>Visual</strong> mode, when you have made
+selection pressing <code>R</code> will select all the marked section in the whole document.</p>
 <p>Press <code>Enter</code> to deselect or reselect the marked section.</p>
 </li>
 </ul>
@@ -1572,6 +1612,16 @@ the whole document.</p>
 <li><code>SPC-m-h</code> to change to heading</li>
 <li><code>SPC-m-i</code> to change to item</li>
 <li><code>Shift-TAB</code> to move backward in table</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>Good to know</p>
+<ul>
+<li><code>SPC-h-v</code> or <code>C-h v</code> to check the value or default value of any function.</li>
+<li><code>SPC-TAB-TAB</code> change workspace</li>
 </ul>
 </li>
 </ul>
