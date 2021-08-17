@@ -9,10 +9,19 @@
 		
 		<managingEditor>Page(/tags/database) (Yusman Kamaleri)</managingEditor>
     	
-  		<lastBuildDate>Sat, 12 Dec 2020 12:49:00 +0100</lastBuildDate>
+  		<lastBuildDate>Tue, 17 Aug 2021 00:00:00 +0200</lastBuildDate>
 		
 		<atom:link href="/tags/database/" rel="self" type="application/rss+xml" />
 		
+		<item>
+			<title>MS Access split</title>
+			<link>https://yusbk.github.io/2021/08/17/access-split/</link>
+			<pubDate>Tue, 17 Aug 2021 00:00:00 +0200</pubDate>
+			<guid>https://yusbk.github.io/2021/08/17/access-split/</guid>
+			<description>En kort veiledning for å splitte eller slå sammen databasen i MS Access. Husk at det er alltid lurt å lage backup for du gjennomføre prosessene nedenfor.
+Å splitte  Pass på at alt tabeller og skjemaer er lukket I menyen Databasevertøy velger du Access-dabase under Flytt data Så velg Del database  Å slå sammen  Åpne frontend filen Slett alle koblet tabeller Velg Externe data i menyen Velg Ny datakilde og deretter fra database og Access  </description>
+		</item>
+      	
 		<item>
 			<title>Git Rebase</title>
 			<link>https://yusbk.github.io/2021/08/05/git-rebase/</link>
@@ -99,17 +108,6 @@ Some tips to learn the keybindings in Doom and Evil in the process of migrating 
 			<description>Some tips for data.table that I came across while googling which might be useful.
 Print To print more rows that default can be done with either:
 options(datatable.print.topn = 70) print(DT, topn = 70) Using options will implement the changes globally. Else to make print nicer is using:</description>
-		</item>
-      	
-		<item>
-			<title>Mount drive</title>
-			<link>https://yusbk.github.io/2021/04/12/mount-drive/</link>
-			<pubDate>Mon, 12 Apr 2021 00:00:00 +0200</pubDate>
-			<guid>https://yusbk.github.io/2021/04/12/mount-drive/</guid>
-			<description>Install Mount Execute Credential Access to folders  First published date: 2021-02-22
-This is only relevant to my personal reference at work.
-The address for drive F and N is as follow:
- F: = \\fhi.no\felles N: = \\fhi.no\fil\styrt H: = \\fhi.</description>
 		</item>
       	
 	</channel>
