@@ -9,17 +9,28 @@
 		
 		<managingEditor>Page(/tags/ssh) (Yusman Kamaleri)</managingEditor>
     	
-  		<lastBuildDate>Wed, 05 May 2021 14:11:00 +0200</lastBuildDate>
+  		<lastBuildDate>Fri, 20 Aug 2021 00:00:00 +0200</lastBuildDate>
 		
 		<atom:link href="/tags/ssh/" rel="self" type="application/rss+xml" />
 		
+		<item>
+			<title>Connect to Azure with ssh</title>
+			<link>https://yusbk.github.io/2021/08/20/azure-server/</link>
+			<pubDate>Fri, 20 Aug 2021 00:00:00 +0200</pubDate>
+			<guid>https://yusbk.github.io/2021/08/20/azure-server/</guid>
+			<description>This is to connect to Azure server via ssh at my work so it&amp;rsquo;s not relevant to others. Only for my personal reference.
+  To connect to the Shiny server
+ Figure 1: Connect to server
+    To copy files</description>
+		</item>
+      	
 		<item>
 			<title>MS Access split</title>
 			<link>https://yusbk.github.io/2021/08/17/access-split/</link>
 			<pubDate>Tue, 17 Aug 2021 00:00:00 +0200</pubDate>
 			<guid>https://yusbk.github.io/2021/08/17/access-split/</guid>
 			<description>En kort veiledning for å splitte eller slå sammen databasen i MS Access. Husk at det er alltid lurt å lage backup før du gjennomføre prosessene nedenfor.
-Å splitte  Pass på at alle tabeller og skjemaer er lukket I menyen Databasevertøy velger du Access-dabase under Flytt data Så velg Del database  Å slå sammen  Åpne frontend filen Slett alle koblet tabeller Velg Eksterne data i menyen Velg Ny datakilde og deretter fra database og Access  </description>
+Å splitte  Pass på at alle tabeller og skjemaer er lukket I menyen Databasevertøy velger du Access-dabase under Flytt data Så velg Del database  Å slå sammen  Åpne frontend filen Slett alle koblet tabeller Velg Eksterne data i menyen Velg Ny datakilde og deretter fra database og Access  Det er lurt å være tydelig hvilken av de filene er frontend og backend.</description>
 		</item>
       	
 		<item>
@@ -98,16 +109,6 @@ Bahan-bahannya    Unit Bahan     200 g kacang-kacang campuran sukak hati. Boleh 
 			<description>First published date: 2021-04-27
 Some tips to learn the keybindings in Doom and Evil in the process of migrating from my vanilla Emacs settings. For overview of keybindings type SPC-h-b-b. Other good references:
  Narra&amp;rsquo;s Blog - Doom Tips and Howtos Org Mode Shortcuts for Emacs Doom Gist of Hjertnes Evil-mode collection  Doom leader-key is SPC and localleader-key is SPC-m.</description>
-		</item>
-      	
-		<item>
-			<title>data.table tips</title>
-			<link>https://yusbk.github.io/2021/04/20/datatable_tips/</link>
-			<pubDate>Tue, 20 Apr 2021 00:00:00 +0200</pubDate>
-			<guid>https://yusbk.github.io/2021/04/20/datatable_tips/</guid>
-			<description>Some tips for data.table that I came across while googling which might be useful.
-Print To print more rows that default can be done with either:
-options(datatable.print.topn = 70) print(DT, topn = 70) Using options will implement the changes globally. Else to make print nicer is using:</description>
 		</item>
       	
 	</channel>

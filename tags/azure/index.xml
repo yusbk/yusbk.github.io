@@ -1,0 +1,115 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>azure on 𝔂𝓾𝓼𝓴𝓪𝓶</title>
+		<link>https://yusbk.github.io/tags/azure/</link>
+		<description>Recent content in azure </description>
+		<generator>Hugo -- gohugo.io</generator>
+		
+  		<language>en</language>
+		
+		<managingEditor>Page(/tags/azure) (Yusman Kamaleri)</managingEditor>
+    	
+  		<lastBuildDate>Fri, 20 Aug 2021 00:00:00 +0200</lastBuildDate>
+		
+		<atom:link href="/tags/azure/" rel="self" type="application/rss+xml" />
+		
+		<item>
+			<title>Connect to Azure with ssh</title>
+			<link>https://yusbk.github.io/2021/08/20/azure-server/</link>
+			<pubDate>Fri, 20 Aug 2021 00:00:00 +0200</pubDate>
+			<guid>https://yusbk.github.io/2021/08/20/azure-server/</guid>
+			<description>This is to connect to Azure server via ssh at my work so it&amp;rsquo;s not relevant to others. Only for my personal reference.
+  To connect to the Shiny server
+ Figure 1: Connect to server
+    To copy files</description>
+		</item>
+      	
+		<item>
+			<title>MS Access split</title>
+			<link>https://yusbk.github.io/2021/08/17/access-split/</link>
+			<pubDate>Tue, 17 Aug 2021 00:00:00 +0200</pubDate>
+			<guid>https://yusbk.github.io/2021/08/17/access-split/</guid>
+			<description>En kort veiledning for å splitte eller slå sammen databasen i MS Access. Husk at det er alltid lurt å lage backup før du gjennomføre prosessene nedenfor.
+Å splitte  Pass på at alle tabeller og skjemaer er lukket I menyen Databasevertøy velger du Access-dabase under Flytt data Så velg Del database  Å slå sammen  Åpne frontend filen Slett alle koblet tabeller Velg Eksterne data i menyen Velg Ny datakilde og deretter fra database og Access  Det er lurt å være tydelig hvilken av de filene er frontend og backend.</description>
+		</item>
+      	
+		<item>
+			<title>Git Rebase</title>
+			<link>https://yusbk.github.io/2021/08/05/git-rebase/</link>
+			<pubDate>Thu, 05 Aug 2021 00:00:00 +0200</pubDate>
+			<guid>https://yusbk.github.io/2021/08/05/git-rebase/</guid>
+			<description>Rebase to previous commit or any previous commit.
+git log --oneline --graph -5 git reset --hard &amp;lt;commit id&amp;gt; git push origin HEAD --force The steps above:
+ Look at the previous 5 lines with -5 or any number you like. You will also find the commit id there Rebase to the selected commit id Force it back to the origin ie.</description>
+		</item>
+      	
+		<item>
+			<title>CI/CD and Code Coverage</title>
+			<link>https://yusbk.github.io/2021/07/25/github_actions/</link>
+			<pubDate>Sun, 25 Jul 2021 00:00:00 +0200</pubDate>
+			<guid>https://yusbk.github.io/2021/07/25/github_actions/</guid>
+			<description>First published date: 2021-06-04
+A simple guide to use CI/CD and Code coverage.
+CI/CD This is a simple process to implement CI/CD using GitHub Actions with usethis package. Basically the steps here is a summary from Dean Attali with slight changes:</description>
+		</item>
+      	
+		<item>
+			<title>ESS tips</title>
+			<link>https://yusbk.github.io/2021/05/06/ess-tips/</link>
+			<pubDate>Thu, 06 May 2021 15:54:00 +0200</pubDate>
+			<guid>https://yusbk.github.io/2021/05/06/ess-tips/</guid>
+			<description>Some tips to use ESS. This documents will keep on growing as I find more shortcuts to help me work efficiently.
+ C-c C-s to switch R processes when running multiple processes C-c C-z to switch to inferior or scripts C-C C-e C-r reload R inferior via inferior-ess-r-reload-hook SPC-m v for debugging eg.</description>
+		</item>
+      	
+		<item>
+			<title>SSH-key with Git on Windows</title>
+			<link>https://yusbk.github.io/2021/05/05/git-ssh/</link>
+			<pubDate>Wed, 05 May 2021 14:11:00 +0200</pubDate>
+			<guid>https://yusbk.github.io/2021/05/05/git-ssh/</guid>
+			<description>First published: 2020-09-29
+Generally, these are what I did:
+ Install git-with-openssh Create SSH-key Add SSH-key to ssh-agent Create ~/.bashrc for auto-launching ssh-agent  openSSH Windows 10 include openSSH. But I can&amp;rsquo;t make it work with git so I use git-with-openssh installed via scoop.</description>
+		</item>
+      	
+		<item>
+			<title>Pasang pakej di R</title>
+			<link>https://yusbk.github.io/2021/05/03/package-r/</link>
+			<pubDate>Mon, 03 May 2021 00:00:00 +0000</pubDate>
+			<guid>https://yusbk.github.io/2021/05/03/package-r/</guid>
+			<description>First publish date: 02.09.2019
+Ini ialah beberapa penggunaan asas R yang amat berguna walaupun jarang dipakai. Antaranya:
+Pasang pakej Cara biasa untuk pasang pakej ialah menggunakan install.packages(). Tetapi sekiranya ingin memasang banyak pekej secara serentank dan memuatkan di R setelah pakej dipasang, cara begini boleh dipakai:</description>
+		</item>
+      	
+		<item>
+			<title>Smerge, ediff and diff</title>
+			<link>https://yusbk.github.io/2021/04/30/magit-ediff/</link>
+			<pubDate>Fri, 30 Apr 2021 11:42:00 +0200</pubDate>
+			<guid>https://yusbk.github.io/2021/04/30/magit-ediff/</guid>
+			<description>For enditing conflict in git, use smerge or ediff.
+Smerge Basic workflow:
+ Open magit status with SPC g g in Doom Identify the mark with Unmerged under Unstage list Go to the file and press Enter to open the file The base command for Smerge is C-c ^ You will see the conflict and selecting the upper with C-c ^ u and lower with C-c ^ l To select all &amp;lsquo;conflicting&amp;rsquo; changes press C-c ^ a To navigate the conflicts use C-c ^ n and C-c ^ p for next and previous conflict To see all the keybindings use C-c ^ h  Ediff When you are in the file with conflict, type M-x smerge-ediff or M-xvc-resolve-conflicts.</description>
+		</item>
+      	
+		<item>
+			<title>Biskut Italy</title>
+			<link>https://yusbk.github.io/2021/04/29/biskut-italy/</link>
+			<pubDate>Thu, 29 Apr 2021 16:38:00 +0200</pubDate>
+			<guid>https://yusbk.github.io/2021/04/29/biskut-italy/</guid>
+			<description>Care buat biskut simple. Biasa bah jumpa di Italy ini biskut dan namanya dorang panggek biscotti.
+Bahan-bahannya    Unit Bahan     200 g kacang-kacang campuran sukak hati. Boleh jugak campur kismis sikit kalo mau.   1 sm kulit oren atau limau nipis.</description>
+		</item>
+      	
+		<item>
+			<title>Doom tips</title>
+			<link>https://yusbk.github.io/2021/04/29/doom-emacs-tips/</link>
+			<pubDate>Thu, 29 Apr 2021 00:00:00 +0200</pubDate>
+			<guid>https://yusbk.github.io/2021/04/29/doom-emacs-tips/</guid>
+			<description>First published date: 2021-04-27
+Some tips to learn the keybindings in Doom and Evil in the process of migrating from my vanilla Emacs settings. For overview of keybindings type SPC-h-b-b. Other good references:
+ Narra&amp;rsquo;s Blog - Doom Tips and Howtos Org Mode Shortcuts for Emacs Doom Gist of Hjertnes Evil-mode collection  Doom leader-key is SPC and localleader-key is SPC-m.</description>
+		</item>
+      	
+	</channel>
+</rss>
