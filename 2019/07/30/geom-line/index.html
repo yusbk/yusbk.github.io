@@ -23,7 +23,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="manifest" href="/site.webmanifest">
-<meta name="generator" content="Hugo 0.84.0" />
+<meta name="generator" content="Hugo 0.88.0" />
   </head>
   <body>
     
@@ -126,15 +126,15 @@
   <p><code>geom_line()</code> sering digunakan untuk menunjukkan trend. Pengguaannya mudah tetapi untuk memastikan yang garisan akan bersambung, variabel di <em>x</em> haruslah jenis <em>continuous</em>. Fungsi ini boleh juga dipakai untuk data jenis <em>category</em> akan tetapi pendekatannya agak berlainan. Pembakaian cara biasa menyebabkan garisan tidak bersambung.</p>
 <h1 id="kategori">Kategori</h1>
 <p>Cara ini ialah dengan memakai <code>aes(group=1)</code> untuk memastikan yang <code>ggplot()</code> tahu bahawa data point di <em>x</em> adalah dikumpulan yang sama dan garisan harus disambungkan. Contohnya:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">ggplot</span>(data, <span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> kategoriVar, y <span style="color:#f92672">=</span> peratus, group <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>)) <span style="color:#f92672">+</span> <span style="color:#a6e22e">geom_line</span>()
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">ggplot</span>(data, <span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> kategoriVar, y <span style="color:#f92672">=</span> peratus, group <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>)) <span style="color:#f92672">+</span> <span style="color:#a6e22e">geom_line</span>()
 </code></pre></div><h1 id="na">NA</h1>
 <p>Antara sebab lain yang menjadikan <code>geom_line()</code> tidak bersambung ialah apabilah terdatap nilai <code>NA</code> atau missing data. Nilai ini harus dikeluarkan dari data agar barisan akan barsambung. Contohnya yang diambil dari <a href="https://stackoverflow.com/questions/45514143/geom-line-in-ggplot2-fails-to-connect-all-points-why-how-to-fix-it">StackOverflow</a>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">  <span style="color:#a6e22e">ggplot</span>(df) <span style="color:#f92672">+</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">  <span style="color:#a6e22e">ggplot</span>(df) <span style="color:#f92672">+</span>
   <span style="color:#a6e22e">geom_point</span>(<span style="color:#a6e22e">aes</span>(x<span style="color:#f92672">=</span>time, y<span style="color:#f92672">=</span>observation), color<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;grey&#34;</span>)<span style="color:#f92672">+</span>
   <span style="color:#a6e22e">geom_line</span>(data<span style="color:#f92672">=</span>df[<span style="color:#f92672">!</span><span style="color:#a6e22e">is.na</span>(df<span style="color:#f92672">$</span>prediction),],<span style="color:#a6e22e">aes</span>(x<span style="color:#f92672">=</span>time, y<span style="color:#f92672">=</span>prediction), color<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;black&#34;</span>)<span style="color:#f92672">+</span>
   <span style="color:#a6e22e">geom_point</span>(<span style="color:#a6e22e">aes</span>(x<span style="color:#f92672">=</span>time, y<span style="color:#f92672">=</span>prediction), color<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;blue&#34;</span>)
 </code></pre></div><p>Untuk melihat bagaimana plot dengan nilai <code>NA</code>. Diambil dari <a href="https://gist.github.com/danielmarcelino/6884a308619e1e6a9750">gist</a>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">library</span>(ggplot2)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">library</span>(ggplot2)
 
 <span style="color:#a6e22e">set.seed</span>(<span style="color:#ae81ff">234</span>)
 

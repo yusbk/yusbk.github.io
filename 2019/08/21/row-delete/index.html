@@ -23,7 +23,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="manifest" href="/site.webmanifest">
-<meta name="generator" content="Hugo 0.84.0" />
+<meta name="generator" content="Hugo 0.88.0" />
   </head>
   <body>
     
@@ -129,7 +129,7 @@
     <article class="article" class="blog-post">
       
   <p>Untuk memadamkan barisan di <em>data.table</em> menggunakan reference seperti penggunaan <code>.SD</code> masih belum dilaksanakan. Cara ini diambil dari perbincangan di <a href="https://github.com/Rdatatable/data.table/issues/635">GitHub</a> data.table. Fungsi <code>delete</code> dibuat seperti begini:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">delete <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function</span>(DT, del.idxs) {           <span style="color:#75715e"># pls note &#39;del.idxs&#39; vs. &#39;keep.idxs&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">delete <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function</span>(DT, del.idxs) {           <span style="color:#75715e"># pls note &#39;del.idxs&#39; vs. &#39;keep.idxs&#39;</span>
   keep.idxs <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">setdiff</span>(DT[, .I], del.idxs);  <span style="color:#75715e"># select row indexes to keep</span>
   cols <span style="color:#f92672">=</span> <span style="color:#a6e22e">names</span>(DT);
   DT.subset <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">data.table</span>(DT[[1]][keep.idxs]); <span style="color:#75715e"># this is the subsetted table</span>
@@ -141,7 +141,7 @@
    <span style="color:#a6e22e">return</span>(DT.subset);
 }
 </code></pre></div><p>Cara pemakaiannya ialah seperti dibawah. Barisan yang dibuang di <code>DT</code> memerlukan indeks barisan. Untuk dapatkan indeks untuk barisan yang ingin dipadakan boleh dibaca di baway tajuk <a href="https://yusbk.github.io/data%2520mining/2018/08/16/duplikasi/#orgcc091f9">duplikasi</a>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">DT <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">delete</span>(DT, del.idxs)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">DT <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">delete</span>(DT, del.idxs)
 </code></pre></div>
 
 

@@ -23,7 +23,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="manifest" href="/site.webmanifest">
-<meta name="generator" content="Hugo 0.84.0" />
+<meta name="generator" content="Hugo 0.88.0" />
   </head>
   <body>
     
@@ -124,7 +124,7 @@
     <article class="article" class="blog-post">
       
   <p>Tunjuk ajar ini ialah berasaskan penggunaan pekej <code>ggplot2</code>. Untuk membuat plot perbandingan dan memasukkan legend untuk perbandingan boleh dibuat seperti berikut.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">library</span>(<span style="color:#e6db74">&#34;data.table&#34;</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">library</span>(<span style="color:#e6db74">&#34;data.table&#34;</span>)
 
 data <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">fread</span>(<span style="color:#e6db74">&#34;https://raw.githubusercontent.com/ybkamaleri/dataset/master/gdata.csv&#34;</span>)
 
@@ -154,7 +154,7 @@ dataR <span style="color:#f92672">&lt;-</span> ageRest[, {
 
 dataR[, location <span style="color:#f92672">:=</span> <span style="color:#e6db74">&#34;National&#34;</span>]
 </code></pre></div><p>data telah tersedia, bolehlah menyediakan plot yang diinginkan</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">library</span>(<span style="color:#e6db74">&#34;ggplot2&#34;</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">library</span>(<span style="color:#e6db74">&#34;ggplot2&#34;</span>)
 <span style="color:#a6e22e">ggplot</span>(<span style="color:#66d9ef">NULL</span>, <span style="color:#a6e22e">aes</span>(agegp, pros)) <span style="color:#f92672">+</span>
  <span style="color:#a6e22e">geom_bar</span>(data <span style="color:#f92672">=</span> dataW,
           <span style="color:#75715e"># color = local di aes utk buat lagend</span>

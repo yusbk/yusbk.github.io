@@ -23,7 +23,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="manifest" href="/site.webmanifest">
-<meta name="generator" content="Hugo 0.84.0" />
+<meta name="generator" content="Hugo 0.88.0" />
   </head>
   <body>
     
@@ -129,7 +129,7 @@
     <article class="article" class="blog-post">
       
   <p>Bagaimana untuk tambah garis baru di data.frame dengan memasukkan jumlah keseluruhan atau <code>Total</code>. Cara yang ditunjukkan di sini ialah dengan menggunakan pakej <code>data.table</code>. Fungsi <code>rbind</code> atau <code>rbindlist</code> boleh digunakan, tetapi cara <code>rbindlist</code> melalui pakej <code>data.table</code> lebih cepat.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">library</span>(data.table)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">library</span>(data.table)
 df <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">data.table</span>(v1 <span style="color:#f92672">=</span> <span style="color:#66d9ef">letters</span>[1<span style="color:#f92672">:</span><span style="color:#ae81ff">10</span>], v2 <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">10</span>)
 </code></pre></div><p>Contoh data</p>
 <pre><code>head(df, n=4)
@@ -140,7 +140,7 @@ df <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">data.tab
 4:  d  4
 </code></pre>
 <p>Cara yang paling singkat untuk meletakkan <code>Jumlah</code> di bawah data.frame ialah seperti begini:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#75715e">## cara rbindlist</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#75715e">## cara rbindlist</span>
 dfj <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">rbindlist</span>(<span style="color:#a6e22e">list</span>(df, <span style="color:#a6e22e">list</span>(<span style="color:#e6db74">&#34;Jumlah&#34;</span>, <span style="color:#a6e22e">dim</span>(df)[1])))
 
 <span style="color:#75715e">## Masukkan jumlah keseluruhan</span>
@@ -164,7 +164,7 @@ dfjj <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">rbind<
 11: Jumlah 10
 </code></pre>
 <p>Cara lain ialah dengan membuat data.frame baru dan kombinasikan dengan <code>df</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">dftot <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">data.table</span>(v1 <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Jumlah&#34;</span>, <span style="color:#a6e22e">dim</span>(df)[1])
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">dftot <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">data.table</span>(v1 <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Jumlah&#34;</span>, <span style="color:#a6e22e">dim</span>(df)[1])
 dfcom <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">rbindlist</span>(<span style="color:#a6e22e">list</span>(df, dftot))
 </code></pre></div><p>Hasilnya bila <code>Jumlah</code> dimasukkan di bawah data.frame</p>
 <pre><code>R&gt; dfcom
@@ -182,7 +182,7 @@ dfcom <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">rbind
 11: Jumlah 10
 </code></pre>
 <p>Sekiranya ingin memasukkan informasi dibarisan tertentu boleh buat seperti begini:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#75715e">## Masukkan selepas barisan ke-3</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#75715e">## Masukkan selepas barisan ke-3</span>
 <span style="color:#a6e22e">rbindlist</span>(<span style="color:#a6e22e">list</span>(df[1<span style="color:#f92672">:</span><span style="color:#ae81ff">3</span>, ], <span style="color:#a6e22e">as.list</span>(<span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;ZZ&#34;</span>, <span style="color:#ae81ff">6</span>)), df[4<span style="color:#f92672">:</span><span style="color:#a6e22e">dim</span>(df)[1], ]))
 
 <span style="color:#75715e">## atau</span>

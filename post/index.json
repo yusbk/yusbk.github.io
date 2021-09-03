@@ -2,6 +2,16 @@
     
         
             {
+                "ref": "https://yusbk.github.io/2021/09/03/data-attributes/",
+                "title": "Clean attributes",
+                "section": "post",
+                "date" : "2021.09.03",
+                "body": "When reading data from SPSS or Stata into R, the metadata will also be inherited to the dataset. Sometimes it can be useful for extra information, but most of the time it\u0026rsquo;s not needed. To get rid of these metadata then do this:\n For specific columns ie. VAR with attribute format.stata, use one of these  attr(myData$VAR, \u0026#34;format.stata\u0026#34;) \u0026lt;- NULL attribute(myData$VAR) \u0026lt;- NULL  For all attributes of a dataset as data.frame or data.table  df[] \u0026lt;- lapply(df, as.vector) df \u0026lt;- df[, lapply(.SD, as.vector)] References from StackOverflow\n"
+            }
+        
+    ,
+        
+            {
                 "ref": "https://yusbk.github.io/2021/08/20/azure-server/",
                 "title": "Connect to Azure with ssh",
                 "section": "post",
@@ -272,21 +282,21 @@
     ,
         
             {
-                "ref": "https://yusbk.github.io/2019/07/24/ifelse/",
-                "title": "Pengunaan ifelse",
-                "section": "post",
-                "date" : "2019.07.24",
-                "body": "Terbaru [08.10.2020]\n Sila lihat cara data.table::fcase Fungsi fifelse lebih laju dari ifelse biase.  Untuk menukarkan kode penggunaan ifelse adalah cara yang senang dipakai. Akan tetapi penggunaannya di base R memakai masa yang panjang terutama sekirannya melarikan di data yang besar. Ini kerana penggunaan ifelse di base terlebih dahulu menyusun data sebelum membuat pilihan.\nCara yang diterangkan disini ialah untuk pemakaian ifelse di data.table dan cara-cara lain yang diperkenalkan di pakej dplyr atau pakej yang lainnya.\nCara data.table Cara yang biasa di data.table ialah menggunakan teknik DT[i,j,by]. Contoh lain bila ingin menukarkan var2 kepada angka 2 sekiranya var1 ialah ja.\nDT[var1 == \u0026#34;ja\u0026#34;, var2 := 2] Contoh di bawah menggunakan cara piping dengan magrittr.\nispDT[, ispad2 := 0] %\u0026gt;% .[alder \u0026gt;= 10 \u0026amp; diagVar \u0026gt;= 2, ispad2 := 1] %\u0026gt;% .[alder \u0026lt; 10 \u0026amp; diagVar \u0026gt;= 5, ispad2 := 1] Sekiranya ingin menukarkan pelbagai nilai di var1 contohnya ja = 1 dan nei = 2 di var2 boleh juga dibuat seperti cara begini menggunakan prinsip di SQL:\nDT[.(var1 = c(\u0026#34;ja\u0026#34;, \u0026#34;nei\u0026#34;), to = 1:2), on = \u0026#34;var1\u0026#34;, var2 := i.to] Pengunaan set juga disarankan untuk mempercepatkan proses di data.table sekiranya ingin memakai loop. Contoh bila ingin menukarkan semua kolom yang menggandungi angka 3 atau 5 kepada nilai NA boleh dibuat seperti begini:\nfor(j in seq_along(DT)) { set(DT, i=which(DT[[j]] %in% c(3,5)), j=j, value=NA) } Cara yang lebih advance boleh dibaca di Stack Overflow. Ringkasan penerangan cara ini:\nWe specify the \u0026lsquo;selectedcols\u0026rsquo; in .SDcols, grouped by sequence of rows, we unlist the Subset of Data.table (unlist(.SD)), get the index of the first non-NA value (\u0026lsquo;j1\u0026rsquo;), use that to get the \u0026lsquo;v1\u0026rsquo; corresponding to the index and the column names, assign (:=) to create two new columns.\nAim is to get the best value for each row which is the value of the first non-NA column in the given order of selected columns.\nlibrary(data.table) library(magrittr) n \u0026lt;- 7 set.seed(1234) dt \u0026lt;- sample.int(100, n*5, replace = TRUE) %\u0026gt;% ifelse(. \u0026lt; 35, NA, .) %\u0026gt;% matrix(, nrow = n) %\u0026gt;% as.data.table() selected_cols \u0026lt;- c(\u0026#34;V3\u0026#34;, \u0026#34;V4\u0026#34;, \u0026#34;V1\u0026#34;) dt[, c(\u0026#34;best_val\u0026#34;, \u0026#34;best_col\u0026#34;) := {v1 \u0026lt;- unlist(.SD) j1 \u0026lt;- which(!is.na(v1))[1] list(v1[j1], names(.SD)[j1]) }, .SDcols = selected_cols, by = 1:nrow(dt)] dt # V1 V2 V3 V4 V5 best_val best_col #1: NA NA NA NA 84 NA NA #2: 63 67 84 NA NA 84 V3 #3: 61 52 NA NA 46 61 V1 #4: 63 70 NA NA NA 63 V1 #5: 87 55 NA 82 NA 82 V4 #6: 65 NA NA 53 51 53 V4 #7: NA 93 NA 92 NA 92 V4 Cara dplyr Menggunakan fungsi ifelse dimana ianya lebih cepat dari base R ifelse. Penerangan lanjut boleh dibaca di blog Holly Emblem.\nispDT[, ispad1 := 0] ispDT[, ispad1 := dplyr::if_else(alder \u0026gt;=10 \u0026amp; diagVar \u0026gt;=2, 1, 0)] ispDT[, ispad1 := dplyr::if_else(alder \u0026lt; 10 \u0026amp; diagVar \u0026gt;=5, 1, ispad1)] "
-            }
-        
-    ,
-        
-            {
                 "ref": "https://yusbk.github.io/2019/07/24/aliran-kerja/",
                 "title": "Aliran kerja buat kod R",
                 "section": "post",
                 "date" : "2019.07.24",
                 "body": " Data asal Pemeriksaan Pembetulan tambahan  Bila menjalankan pembersihan dan penyusunan data adalah disarankan untuk membuat nota-nota mengenai langkah-langkah yang diambil dalam menyelesaikan kerja. Ini adalah sebagai nasihat berkenaan dengan aliran kerja yang boleh dibuat supaya rujukan akan lebih jelas dan senang untuk dipakai beberapa kali.\nBahagikan kerja-kerja menyusun dan membersikan data kepada bahagian seperti berikut:\n Data asal (raw data) Pemeriksaan (validation) Pembetulan tambahan (additional info.)  Data asal Bahagian ini ialah berkaitan dengan kerja-kerja secara langusung dari data asal. Dimana data tersebut diambil dan sekiranya terdapat kerja-kerja menggabungkan dengan data-data lain. Selain itu pembersihan teknikal seperti kode yang salah.\nPemeriksaan Ini adalah kumpulan kerja-kerja berkaitan dengan pemeriksaan data. Contohnya umur yang melebihi 150 tahun atau ketinggian 3 meter. Adakah informasi tersebut betul atau kesalahan semasa pendaftaran data.\nPembetulan tambahan Data juga boleh bertukar disebabkan informasi tambahan yang diberikan selepas kerja-kerja pembersihan dari data asal dan pemeriksaan data yang tidak logik dibuat. Kebanyakkan pembetulan yang dibuat di sini dijalankan secara manual dan berasaskan kepada informasi tambahan yang tidak terdapat di data asal.\n"
+            }
+        
+    ,
+        
+            {
+                "ref": "https://yusbk.github.io/2019/07/24/ifelse/",
+                "title": "Pengunaan ifelse",
+                "section": "post",
+                "date" : "2019.07.24",
+                "body": "Terbaru [08.10.2020]\n Sila lihat cara data.table::fcase Fungsi fifelse lebih laju dari ifelse biase.  Untuk menukarkan kode penggunaan ifelse adalah cara yang senang dipakai. Akan tetapi penggunaannya di base R memakai masa yang panjang terutama sekirannya melarikan di data yang besar. Ini kerana penggunaan ifelse di base terlebih dahulu menyusun data sebelum membuat pilihan.\nCara yang diterangkan disini ialah untuk pemakaian ifelse di data.table dan cara-cara lain yang diperkenalkan di pakej dplyr atau pakej yang lainnya.\nCara data.table Cara yang biasa di data.table ialah menggunakan teknik DT[i,j,by]. Contoh lain bila ingin menukarkan var2 kepada angka 2 sekiranya var1 ialah ja.\nDT[var1 == \u0026#34;ja\u0026#34;, var2 := 2] Contoh di bawah menggunakan cara piping dengan magrittr.\nispDT[, ispad2 := 0] %\u0026gt;% .[alder \u0026gt;= 10 \u0026amp; diagVar \u0026gt;= 2, ispad2 := 1] %\u0026gt;% .[alder \u0026lt; 10 \u0026amp; diagVar \u0026gt;= 5, ispad2 := 1] Sekiranya ingin menukarkan pelbagai nilai di var1 contohnya ja = 1 dan nei = 2 di var2 boleh juga dibuat seperti cara begini menggunakan prinsip di SQL:\nDT[.(var1 = c(\u0026#34;ja\u0026#34;, \u0026#34;nei\u0026#34;), to = 1:2), on = \u0026#34;var1\u0026#34;, var2 := i.to] Pengunaan set juga disarankan untuk mempercepatkan proses di data.table sekiranya ingin memakai loop. Contoh bila ingin menukarkan semua kolom yang menggandungi angka 3 atau 5 kepada nilai NA boleh dibuat seperti begini:\nfor(j in seq_along(DT)) { set(DT, i=which(DT[[j]] %in% c(3,5)), j=j, value=NA) } Cara yang lebih advance boleh dibaca di Stack Overflow. Ringkasan penerangan cara ini:\nWe specify the \u0026lsquo;selectedcols\u0026rsquo; in .SDcols, grouped by sequence of rows, we unlist the Subset of Data.table (unlist(.SD)), get the index of the first non-NA value (\u0026lsquo;j1\u0026rsquo;), use that to get the \u0026lsquo;v1\u0026rsquo; corresponding to the index and the column names, assign (:=) to create two new columns.\nAim is to get the best value for each row which is the value of the first non-NA column in the given order of selected columns.\nlibrary(data.table) library(magrittr) n \u0026lt;- 7 set.seed(1234) dt \u0026lt;- sample.int(100, n*5, replace = TRUE) %\u0026gt;% ifelse(. \u0026lt; 35, NA, .) %\u0026gt;% matrix(, nrow = n) %\u0026gt;% as.data.table() selected_cols \u0026lt;- c(\u0026#34;V3\u0026#34;, \u0026#34;V4\u0026#34;, \u0026#34;V1\u0026#34;) dt[, c(\u0026#34;best_val\u0026#34;, \u0026#34;best_col\u0026#34;) := {v1 \u0026lt;- unlist(.SD) j1 \u0026lt;- which(!is.na(v1))[1] list(v1[j1], names(.SD)[j1]) }, .SDcols = selected_cols, by = 1:nrow(dt)] dt # V1 V2 V3 V4 V5 best_val best_col #1: NA NA NA NA 84 NA NA #2: 63 67 84 NA NA 84 V3 #3: 61 52 NA NA 46 61 V1 #4: 63 70 NA NA NA 63 V1 #5: 87 55 NA 82 NA 82 V4 #6: 65 NA NA 53 51 53 V4 #7: NA 93 NA 92 NA 92 V4 Cara dplyr Menggunakan fungsi ifelse dimana ianya lebih cepat dari base R ifelse. Penerangan lanjut boleh dibaca di blog Holly Emblem.\nispDT[, ispad1 := 0] ispDT[, ispad1 := dplyr::if_else(alder \u0026gt;=10 \u0026amp; diagVar \u0026gt;=2, 1, 0)] ispDT[, ispad1 := dplyr::if_else(alder \u0026lt; 10 \u0026amp; diagVar \u0026gt;=5, 1, ispad1)] "
             }
         
     ,

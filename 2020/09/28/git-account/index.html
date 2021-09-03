@@ -23,7 +23,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="manifest" href="/site.webmanifest">
-<meta name="generator" content="Hugo 0.84.0" />
+<meta name="generator" content="Hugo 0.88.0" />
   </head>
   <body>
     
@@ -120,7 +120,7 @@
       
   <h2 id="config-file">config file</h2>
 <p>Create a <code>config</code> file in your <code>~/.ssh</code> folder that will manage your accounts.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">  Host personal
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">  Host personal
   HostName github.com
   User git
   IdentityFile ~/.ssh/id_rsa_personal
@@ -130,12 +130,12 @@
   User git
   IdentityFile ~/.ssh/id_rsa_work
 </code></pre></div><p>When cloning a new repo then you only have to specify hostname to your Git account. Example:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">  git clone git@personal:yusbk/nama_rep.git
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">  git clone git@personal:yusbk/nama_rep.git
   git clone git@work:ybkamaleri/nama_rep.git
 </code></pre></div><p>When your repo has <code>submodule</code> to be able to push changes to remote, I have to change this url</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">  url = https://github.com/yusbk/yusbk.github.io.git
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">  url = https://github.com/yusbk/yusbk.github.io.git
 </code></pre></div><p>to a new url with reference to SSH-key</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">  url = git@personal:yusbk/yusbk.github.io.git
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">  url = git@personal:yusbk/yusbk.github.io.git
 </code></pre></div><p>in the <strong>config</strong> files in these folder:</p>
 <ul>
 <li><code>../cloned_repo/.git</code></li>
@@ -145,14 +145,14 @@
 <p>This is another setting when using multiple git accounts without needing to change hostname. After
 cloning repo inside a folder eg. <code>~/Git.work/</code> then you can edit config file called <code>~/.gitconfig</code> in
 HOME dir.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">  [user]
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">  [user]
       name = Your Name
       email = your@email.com
 
   [includeIf &#34;gitdir:~/Git-work/&#34;]
       path = .gitconfig-work
 </code></pre></div><p>Then create a file named <code>.gitconfig-work</code> with</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">  [user]
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">  [user]
       name = Your Name
       email = your@email.com
 

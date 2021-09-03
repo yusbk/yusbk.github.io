@@ -23,7 +23,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="manifest" href="/site.webmanifest">
-<meta name="generator" content="Hugo 0.84.0" />
+<meta name="generator" content="Hugo 0.88.0" />
   </head>
   <body>
     
@@ -131,10 +131,10 @@
   <p>Some tips for <code>data.table</code> that I came across while googling which might be useful.</p>
 <h2 id="print">Print</h2>
 <p>To print more rows that default can be done with either:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">  options(datatable.print.topn = 70)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">  options(datatable.print.topn = 70)
   print(DT, topn = 70)
 </code></pre></div><p>Using <code>options</code> will implement the changes globally. Else to make print nicer is using:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">  options(datatable.prettyprint.char = 80L)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">  options(datatable.prettyprint.char = 80L)
 </code></pre></div><h2 id="na">NA</h2>
 <p>Use <code>nafill()</code> to replace <code>NA</code> with specified value such as <code>nafill(dt, fill==99)</code> will replace all <code>NA</code> in
 <strong>dt</strong> with <code>99</code>. To replace with front or back value of the vector then specify <code>fill=&quot;locf|nocb&quot;</code>
@@ -148,7 +148,7 @@ you can specify an absolute value to roll on ie. <code>roll=2</code> will roll t
 <p>Using <code>foverlaps(DT, dt, type = &quot;any&quot;)</code> will join <strong>DT</strong> and <strong>dt</strong> as long as the value ranges give a match
 to the key values. When using <code>foverlaps()</code> you need to specify two keys eg. <code>key = c(&quot;col1&quot;, &quot;col2&quot;)</code>.
 As in the given example with both columns are the key columns:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">  foverlaps(dt4, dt3, type = &#34;any&#34;)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">  foverlaps(dt4, dt3, type = &#34;any&#34;)
 
   ##    min_y max_y x dt4_y dt4_y_end
   ## 1:     0    10 c   5.7        10

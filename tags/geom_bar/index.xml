@@ -14,9 +14,17 @@
 		<atom:link href="/tags/geom_bar/" rel="self" type="application/rss+xml" />
 		
 		<item>
+			<title>Clean attributes</title>
+			<link>https://yusbk.github.io/2021/09/03/data-attributes/</link>
+			<pubDate>Fri, 03 Sep 2021 00:00:00 +0000</pubDate>
+			<guid>https://yusbk.github.io/2021/09/03/data-attributes/</guid>
+			<description>When reading data from SPSS or Stata into R, the metadata will also be inherited to the dataset. Sometimes it can be useful for extra information, but most of the time it&amp;rsquo;s not needed. To get rid of these metadata then do this:</description>
+		</item>
+      	
+		<item>
 			<title>Connect to Azure with ssh</title>
 			<link>https://yusbk.github.io/2021/08/20/azure-server/</link>
-			<pubDate>Fri, 20 Aug 2021 00:00:00 +0200</pubDate>
+			<pubDate>Fri, 20 Aug 2021 00:00:00 +0000</pubDate>
 			<guid>https://yusbk.github.io/2021/08/20/azure-server/</guid>
 			<description>This is to connect to Azure server via ssh at my work so it&amp;rsquo;s not relevant to others. Only for my personal reference.
   To connect to the Shiny server
@@ -27,7 +35,7 @@
 		<item>
 			<title>MS Access split</title>
 			<link>https://yusbk.github.io/2021/08/17/access-split/</link>
-			<pubDate>Tue, 17 Aug 2021 00:00:00 +0200</pubDate>
+			<pubDate>Tue, 17 Aug 2021 00:00:00 +0000</pubDate>
 			<guid>https://yusbk.github.io/2021/08/17/access-split/</guid>
 			<description>En kort veiledning for å splitte eller slå sammen databasen i MS Access. Husk at det er alltid lurt å lage backup før du gjennomføre prosessene nedenfor.
 Å splitte  Pass på at alle tabeller og skjemaer er lukket I menyen Databasevertøy velger du Access-dabase under Flytt data Så velg Del database  Å slå sammen  Åpne frontend filen Slett alle koblet tabeller Velg Eksterne data i menyen Velg Ny datakilde og deretter fra database og Access  Det er lurt å være tydelig hvilken av de filene er frontend og backend.</description>
@@ -36,7 +44,7 @@
 		<item>
 			<title>Git Rebase</title>
 			<link>https://yusbk.github.io/2021/08/05/git-rebase/</link>
-			<pubDate>Thu, 05 Aug 2021 00:00:00 +0200</pubDate>
+			<pubDate>Thu, 05 Aug 2021 00:00:00 +0000</pubDate>
 			<guid>https://yusbk.github.io/2021/08/05/git-rebase/</guid>
 			<description>Rebase to previous commit or any previous commit.
 git log --oneline --graph -5 git reset --hard &amp;lt;commit id&amp;gt; git push origin HEAD --force The steps above:
@@ -46,7 +54,7 @@ git log --oneline --graph -5 git reset --hard &amp;lt;commit id&amp;gt; git push
 		<item>
 			<title>CI/CD and Code Coverage</title>
 			<link>https://yusbk.github.io/2021/07/25/github_actions/</link>
-			<pubDate>Sun, 25 Jul 2021 00:00:00 +0200</pubDate>
+			<pubDate>Sun, 25 Jul 2021 00:00:00 +0000</pubDate>
 			<guid>https://yusbk.github.io/2021/07/25/github_actions/</guid>
 			<description>First published date: 2021-06-04
 A simple guide to use CI/CD and Code coverage.
@@ -99,16 +107,6 @@ Smerge Basic workflow:
 			<guid>https://yusbk.github.io/2021/04/29/biskut-italy/</guid>
 			<description>Care buat biskut simple. Biasa bah jumpa di Italy ini biskut dan namanya dorang panggek biscotti.
 Bahan-bahannya    Unit Bahan     200 g kacang-kacang campuran sukak hati. Boleh jugak campur kismis sikit kalo mau.   1 sm kulit oren atau limau nipis.</description>
-		</item>
-      	
-		<item>
-			<title>Doom tips</title>
-			<link>https://yusbk.github.io/2021/04/29/doom-emacs-tips/</link>
-			<pubDate>Thu, 29 Apr 2021 00:00:00 +0200</pubDate>
-			<guid>https://yusbk.github.io/2021/04/29/doom-emacs-tips/</guid>
-			<description>First published date: 2021-04-27
-Some tips to learn the keybindings in Doom and Evil in the process of migrating from my vanilla Emacs settings. For overview of keybindings type SPC-h-b-b. Other good references:
- Narra&amp;rsquo;s Blog - Doom Tips and Howtos Org Mode Shortcuts for Emacs Doom Gist of Hjertnes Evil-mode collection  Doom leader-key is SPC and localleader-key is SPC-m.</description>
 		</item>
       	
 	</channel>

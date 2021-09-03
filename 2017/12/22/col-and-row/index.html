@@ -23,7 +23,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="manifest" href="/site.webmanifest">
-<meta name="generator" content="Hugo 0.84.0" />
+<meta name="generator" content="Hugo 0.88.0" />
   </head>
   <body>
     
@@ -126,7 +126,7 @@
   <h1 id="rownames">Rownames</h1>
 <p>Pernahkah melihat data frame dimana kolom pertama tidak ada nama dan anda tidak tahu bagaimana untuk merujuk kolom tersebut? Sekiranya anda pernah menemui masalah tersebut sila baca penerangan dan penyelesaian di sini.</p>
 <p>Situasi ini adalah disebabkan nama tersebut ialah nama untuk barisan sahaja i.e <code>rownames</code>, seperti nama untuk kolom i.e <code>colnames</code>. Contohnya:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">DT <span style="color:#f92672">&lt;-</span> mtcars[1<span style="color:#f92672">:</span><span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">5</span>]
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">DT <span style="color:#f92672">&lt;-</span> mtcars[1<span style="color:#f92672">:</span><span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">5</span>]
 DT
 </code></pre></div><p>Di sini anda lihat kolom pertama tidak mempunyai nama. Untuk mengetahui nama barisan boleh gunakan <code>rownames(DT)</code>.</p>
 <pre><code>:                    mpg cyl disp  hp drat
@@ -137,7 +137,7 @@ DT
 : Hornet Sportabout 18.7   8  360 175 3.15
 </code></pre>
 <p>Untuk menggunakan kolom pertama dalam kode-kode, kolom pertama harus diberikan nama kolom. Hanya menggunakan <code>DT[1]</code> tidak akan berjaya. Cara untuk menukarkan rownames ke colnames boleh dibuat seperti berikut:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">DT <span style="color:#f92672">&lt;-</span> mtcars[1<span style="color:#f92672">:</span><span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">5</span>]
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">DT <span style="color:#f92672">&lt;-</span> mtcars[1<span style="color:#f92672">:</span><span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">5</span>]
 
 <span style="color:#75715e">## cara 1</span>
 DT2 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">cbind</span>(<span style="color:#a6e22e">rownames</span>(DT), DT)
@@ -159,7 +159,7 @@ R<span style="color:#f92672">&gt;</span> DT3
 <span style="color:#ae81ff">5</span> Hornet Sportabout <span style="color:#ae81ff">18.7</span>   <span style="color:#ae81ff">8</span>  <span style="color:#ae81ff">360</span> <span style="color:#ae81ff">175</span> <span style="color:#ae81ff">3.15</span>
 </code></pre></div><p>Sekarang kolom pertama mempunyai nama dan boleh dirujuk dalam memanipulasi data. Rownames sekarang digantikan ke nombor 1 ke 5.</p>
 <p>Untuk menggunakan cara <code>data.table</code> adalah seperti begini:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">DT4 <span style="color:#f92672">&lt;-</span> mtcars[1<span style="color:#f92672">:</span><span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">5</span>]
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">DT4 <span style="color:#f92672">&lt;-</span> mtcars[1<span style="color:#f92672">:</span><span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">5</span>]
 nama2 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">rownames</span>(DT4)
 
 <span style="color:#a6e22e">library</span>(data.table)
@@ -176,7 +176,7 @@ DT4
 </code></pre>
 <h1 id="colnames">Colnames</h1>
 <p>Kadang-kadang kita ingin menukarkan nama kolom ke nama lain. Untuk menukarkan nama kolom boleh dibuat dengan pelbagai cara. Cara <a href="#org14ed729">setNames</a> boleh dirujuk seperti di atas. Antara cara-cara lain ialah seperti berikut:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">DT <span style="color:#f92672">&lt;-</span> mtcars[1<span style="color:#f92672">:</span><span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">5</span>]
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">DT <span style="color:#f92672">&lt;-</span> mtcars[1<span style="color:#f92672">:</span><span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">5</span>]
 
 nama1 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;cth1&#34;</span>, <span style="color:#e6db74">&#34;cth2&#34;</span>)
 <span style="color:#a6e22e">names</span>(DT)<span style="color:#a6e22e">[c</span>(<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">5</span>)] <span style="color:#f92672">&lt;-</span> nama1
@@ -190,7 +190,7 @@ DT
 : Hornet Sportabout 18.7   8  360 175 3.15
 </code></pre>
 <p>Cara lain ialah menggunakan pakaj <code>data.table</code>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">DT <span style="color:#f92672">&lt;-</span> mtcars[1<span style="color:#f92672">:</span><span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">5</span>]
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">DT <span style="color:#f92672">&lt;-</span> mtcars[1<span style="color:#f92672">:</span><span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">5</span>]
 
 <span style="color:#a6e22e">library</span>(data.table)
 <span style="color:#a6e22e">setDT</span>(DT)
