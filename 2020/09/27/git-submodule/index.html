@@ -179,6 +179,16 @@ sudah selesai pasang aturcara, bolehlah kemaskini submodule dengan <code>fetch/p
 </code></pre></div><p>Nombor <code>37f62cf</code> ialah contoh rujukan HEAD semasa dari GitHub commit.</p>
 <p>Coba tukar branch ke <code>master</code>.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">  git checkout master
+</code></pre></div><h2 id="repo-already-exists-in-the-index">repo already exists in the index</h2>
+<p>Bila repo masih ada di indeks walaupun telah dibuang dengan <code>rm -r harbor</code>. Bila
+larikan</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">rm -r harbor
+git submodule add https://github.com/matsuyoshi30/harbor.git harbor
+<span style="color:#e6db74">&#39;rack&#39;</span> already exists in the index
+</code></pre></div><p>Harus unstage harbor direktori terlebih dahulu sebelum tambahkan submodule
+harbor.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git rm -r harbor
+git submodule add https://github.com/matsuyoshi30/harbor.git harbor
 </code></pre></div><h2 id="kekunci-ssh">Kekunci ssh</h2>
 <p>Sekiranya ingin pakai kekunci <code>ssh</code> boleh tukar di file <code>config</code> di:</p>
 <ul>
