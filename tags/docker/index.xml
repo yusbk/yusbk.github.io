@@ -14,6 +14,16 @@
 		<atom:link href="/tags/docker/" rel="self" type="application/rss+xml" />
 		
 		<item>
+			<title>Git Rebase or Reset</title>
+			<link>https://yusbk.github.io/2021/09/06/git-rebase/</link>
+			<pubDate>Mon, 06 Sep 2021 00:00:00 +0000</pubDate>
+			<guid>https://yusbk.github.io/2021/09/06/git-rebase/</guid>
+			<description>First published: 2021-08-05 Rebase to previous commit of a sepcific branch ie. master.
+git reset --hard origin/master git status or reset to any previous specific commit.
+git log --oneline --graph -5 git reset --hard &amp;lt;commit id&amp;gt; git push origin HEAD --force The steps above:</description>
+		</item>
+      	
+		<item>
 			<title>Clean attributes</title>
 			<link>https://yusbk.github.io/2021/09/03/data-attributes/</link>
 			<pubDate>Fri, 03 Sep 2021 00:00:00 +0000</pubDate>
@@ -39,16 +49,6 @@
 			<guid>https://yusbk.github.io/2021/08/17/access-split/</guid>
 			<description>En kort veiledning for å splitte eller slå sammen databasen i MS Access. Husk at det er alltid lurt å lage backup før du gjennomføre prosessene nedenfor.
 Å splitte  Pass på at alle tabeller og skjemaer er lukket I menyen Databasevertøy velger du Access-dabase under Flytt data Så velg Del database  Å slå sammen  Åpne frontend filen Slett alle koblet tabeller Velg Eksterne data i menyen Velg Ny datakilde og deretter fra database og Access  Det er lurt å være tydelig hvilken av de filene er frontend og backend.</description>
-		</item>
-      	
-		<item>
-			<title>Git Rebase</title>
-			<link>https://yusbk.github.io/2021/08/05/git-rebase/</link>
-			<pubDate>Thu, 05 Aug 2021 00:00:00 +0000</pubDate>
-			<guid>https://yusbk.github.io/2021/08/05/git-rebase/</guid>
-			<description>Rebase to previous commit or any previous commit.
-git log --oneline --graph -5 git reset --hard &amp;lt;commit id&amp;gt; git push origin HEAD --force The steps above:
- Look at the previous 5 lines with -5 or any number you like. You will also find the commit id there Rebase to the selected commit id Force it back to the origin ie.</description>
 		</item>
       	
 		<item>

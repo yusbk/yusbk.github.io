@@ -2,6 +2,16 @@
     
         
             {
+                "ref": "https://yusbk.github.io/2021/09/06/git-rebase/",
+                "title": "Git Rebase or Reset",
+                "section": "post",
+                "date" : "2021.09.06",
+                "body": "First published: 2021-08-05 Rebase to previous commit of a sepcific branch ie. master.\ngit reset --hard origin/master git status or reset to any previous specific commit.\ngit log --oneline --graph -5 git reset --hard \u0026lt;commit id\u0026gt; git push origin HEAD --force The steps above:\n Look at the previous 5 lines with -5 or any number you like. You will also find the commit id there Rebase to the selected commit id Force it back to the origin ie. rewriting the history :(  Other alternative is to use interactive rebase.\ngit rebase -i HEAD~5 You will be presented with somethig like this:\ndrop 3fg501 ... pick ab401s ... pick fas6ta ... pick 60gfab ... pick 4abs40 ... When you change to drop then the commit will be deleted.\n"
+            }
+        
+    ,
+        
+            {
                 "ref": "https://yusbk.github.io/2021/09/03/data-attributes/",
                 "title": "Clean attributes",
                 "section": "post",
@@ -27,16 +37,6 @@
                 "section": "post",
                 "date" : "2021.08.17",
                 "body": "En kort veiledning for å splitte eller slå sammen databasen i MS Access. Husk at det er alltid lurt å lage backup før du gjennomføre prosessene nedenfor.\nÅ splitte  Pass på at alle tabeller og skjemaer er lukket I menyen Databasevertøy velger du Access-dabase under Flytt data Så velg Del database  Å slå sammen  Åpne frontend filen Slett alle koblet tabeller Velg Eksterne data i menyen Velg Ny datakilde og deretter fra database og Access  Det er lurt å være tydelig hvilken av de filene er frontend og backend. Jeg pleier å bruker _BE for backend og _FE for frontend på slutten av filnavnet.\n"
-            }
-        
-    ,
-        
-            {
-                "ref": "https://yusbk.github.io/2021/08/05/git-rebase/",
-                "title": "Git Rebase",
-                "section": "post",
-                "date" : "2021.08.05",
-                "body": "Rebase to previous commit or any previous commit.\ngit log --oneline --graph -5 git reset --hard \u0026lt;commit id\u0026gt; git push origin HEAD --force The steps above:\n Look at the previous 5 lines with -5 or any number you like. You will also find the commit id there Rebase to the selected commit id Force it back to the origin ie. rewriting the history :(  Other alternative is to use interactive rebase.\ngit rebase -i HEAD~5 You will be presented with somethig like this:\ndrop 3fg501 ... pick ab401s ... pick fas6ta ... pick 60gfab ... pick 4abs40 ... When you change to drop then the commit will be deleted.\n"
             }
         
     ,
