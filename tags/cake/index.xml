@@ -14,6 +14,16 @@
 		<atom:link href="/tags/cake/" rel="self" type="application/rss+xml" />
 		
 		<item>
+			<title>SSH-key with Git on Windows</title>
+			<link>https://yusbk.github.io/2021/09/06/git-ssh/</link>
+			<pubDate>Mon, 06 Sep 2021 14:11:00 +0200</pubDate>
+			<guid>https://yusbk.github.io/2021/09/06/git-ssh/</guid>
+			<description>First published: 2020-09-29
+Generally, these are what I did:
+ Install git-with-openssh Create SSH-key Add SSH-key to ssh-agent Create ~/.bashrc for auto-launching ssh-agent  Common problems  Unable to push to origin with this error message.  ssh: Could not resolve hostname personal: Name or service not known fatal: Could not read from remote repository.</description>
+		</item>
+      	
+		<item>
 			<title>Git Rebase or Reset</title>
 			<link>https://yusbk.github.io/2021/09/06/git-rebase/</link>
 			<pubDate>Mon, 06 Sep 2021 00:00:00 +0000</pubDate>
@@ -68,16 +78,6 @@ CI/CD This is a simple process to implement CI/CD using GitHub Actions with uset
 			<guid>https://yusbk.github.io/2021/05/06/ess-tips/</guid>
 			<description>Some tips to use ESS. This documents will keep on growing as I find more shortcuts to help me work efficiently.
  C-c C-s to switch R processes when running multiple processes C-c C-z to switch to inferior or scripts C-C C-e C-r reload R inferior via inferior-ess-r-reload-hook SPC-m v for debugging eg.</description>
-		</item>
-      	
-		<item>
-			<title>SSH-key with Git on Windows</title>
-			<link>https://yusbk.github.io/2021/05/05/git-ssh/</link>
-			<pubDate>Wed, 05 May 2021 14:11:00 +0200</pubDate>
-			<guid>https://yusbk.github.io/2021/05/05/git-ssh/</guid>
-			<description>First published: 2020-09-29
-Generally, these are what I did:
- Install git-with-openssh Create SSH-key Add SSH-key to ssh-agent Create ~/.bashrc for auto-launching ssh-agent  openSSH Windows 10 include openSSH. But I can&amp;rsquo;t make it work with git so I use git-with-openssh installed via scoop.</description>
 		</item>
       	
 		<item>
