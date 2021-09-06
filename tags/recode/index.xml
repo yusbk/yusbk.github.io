@@ -28,7 +28,8 @@ Generally, these are what I did:
 			<link>https://yusbk.github.io/2021/09/06/git-rebase/</link>
 			<pubDate>Mon, 06 Sep 2021 00:00:00 +0000</pubDate>
 			<guid>https://yusbk.github.io/2021/09/06/git-rebase/</guid>
-			<description>First published: 2021-08-05 Rebase to previous commit of a sepcific branch ie. master.
+			<description>First published: 2021-08-05
+Rebase to previous commit of a sepcific branch ie. master.
 git reset --hard origin/master git status or reset to any previous specific commit.
 git log --oneline --graph -5 git reset --hard &amp;lt;commit id&amp;gt; git push origin HEAD --force The steps above:</description>
 		</item>
