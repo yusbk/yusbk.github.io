@@ -14,6 +14,15 @@
 		<atom:link href="/tags/submodule/" rel="self" type="application/rss+xml" />
 		
 		<item>
+			<title>data.table special symbol</title>
+			<link>https://yusbk.github.io/2021/09/17/dt-special-symbol/</link>
+			<pubDate>Fri, 17 Sep 2021 00:00:00 +0000</pubDate>
+			<guid>https://yusbk.github.io/2021/09/17/dt-special-symbol/</guid>
+			<description>.N Mult .SD dan .SDcols .I .GRP dan rleid Contoh dari manual  First published: 2017-08-31
+Hari ni bersempena Hari kemerdekaan Malaysia ada masa untuk ulang kaji pakej data.table. Hari ni ialah mengenai Special Symbol seperti .N, .I, .GRP, .</description>
+		</item>
+      	
+		<item>
 			<title>SSH-key with Git on Windows</title>
 			<link>https://yusbk.github.io/2021/09/06/git-ssh/</link>
 			<pubDate>Mon, 06 Sep 2021 14:11:00 +0200</pubDate>
@@ -99,15 +108,6 @@ Pasang pakej Cara biasa untuk pasang pakej ialah menggunakan install.packages().
 			<description>For enditing conflict in git, use smerge or ediff.
 Smerge Basic workflow:
  Open magit status with SPC g g in Doom Identify the mark with Unmerged under Unstage list Go to the file and press Enter to open the file The base command for Smerge is C-c ^ You will see the conflict and selecting the upper with C-c ^ u and lower with C-c ^ l To select all &amp;lsquo;conflicting&amp;rsquo; changes press C-c ^ a To navigate the conflicts use C-c ^ n and C-c ^ p for next and previous conflict To see all the keybindings use C-c ^ h  Ediff When you are in the file with conflict, type M-x smerge-ediff or M-xvc-resolve-conflicts.</description>
-		</item>
-      	
-		<item>
-			<title>Biskut Italy</title>
-			<link>https://yusbk.github.io/2021/04/29/biskut-italy/</link>
-			<pubDate>Thu, 29 Apr 2021 16:38:00 +0200</pubDate>
-			<guid>https://yusbk.github.io/2021/04/29/biskut-italy/</guid>
-			<description>Care buat biskut simple. Biasa bah jumpa di Italy ini biskut dan namanya dorang panggek biscotti.
-Bahan-bahannya    Unit Bahan     200 g kacang-kacang campuran sukak hati. Boleh jugak campur kismis sikit kalo mau.   1 sm kulit oren atau limau nipis.</description>
 		</item>
       	
 	</channel>
