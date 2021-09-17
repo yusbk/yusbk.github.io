@@ -9,7 +9,7 @@
 		
 		<managingEditor>Page(/tags/merge) (Yusman Kamaleri)</managingEditor>
     	
-  		<lastBuildDate>Tue, 20 Apr 2021 00:00:00 +0000</lastBuildDate>
+  		<lastBuildDate>Fri, 17 Sep 2021 00:00:00 +0000</lastBuildDate>
 		
 		<atom:link href="/tags/merge/" rel="self" type="application/rss+xml" />
 		
@@ -20,6 +20,17 @@
 			<guid>https://yusbk.github.io/2021/09/17/dt-special-symbol/</guid>
 			<description>.N Mult .SD dan .SDcols .I .GRP dan rleid Contoh dari manual  First published: 2017-08-31
 Hari ni bersempena Hari kemerdekaan Malaysia ada masa untuk ulang kaji pakej data.table. Hari ni ialah mengenai Special Symbol seperti .N, .I, .GRP, .</description>
+		</item>
+      	
+		<item>
+			<title>data.table tips</title>
+			<link>https://yusbk.github.io/2021/09/17/datatable_tips/</link>
+			<pubDate>Fri, 17 Sep 2021 00:00:00 +0000</pubDate>
+			<guid>https://yusbk.github.io/2021/09/17/datatable_tips/</guid>
+			<description>First published: 2021-04-20
+Some tips for data.table that I came across while googling which might be useful.
+Print To print more rows that default can be done with either:
+options(datatable.print.topn = 70) print(DT, topn = 70) Using options will implement the changes globally.</description>
 		</item>
       	
 		<item>
@@ -98,16 +109,6 @@ CI/CD This is a simple process to implement CI/CD using GitHub Actions with uset
 			<description>First publish date: 02.09.2019
 Ini ialah beberapa penggunaan asas R yang amat berguna walaupun jarang dipakai. Antaranya:
 Pasang pakej Cara biasa untuk pasang pakej ialah menggunakan install.packages(). Tetapi sekiranya ingin memasang banyak pekej secara serentank dan memuatkan di R setelah pakej dipasang, cara begini boleh dipakai:</description>
-		</item>
-      	
-		<item>
-			<title>Smerge, ediff and diff</title>
-			<link>https://yusbk.github.io/2021/04/30/magit-ediff/</link>
-			<pubDate>Fri, 30 Apr 2021 11:42:00 +0200</pubDate>
-			<guid>https://yusbk.github.io/2021/04/30/magit-ediff/</guid>
-			<description>For enditing conflict in git, use smerge or ediff.
-Smerge Basic workflow:
- Open magit status with SPC g g in Doom Identify the mark with Unmerged under Unstage list Go to the file and press Enter to open the file The base command for Smerge is C-c ^ You will see the conflict and selecting the upper with C-c ^ u and lower with C-c ^ l To select all &amp;lsquo;conflicting&amp;rsquo; changes press C-c ^ a To navigate the conflicts use C-c ^ n and C-c ^ p for next and previous conflict To see all the keybindings use C-c ^ h  Ediff When you are in the file with conflict, type M-x smerge-ediff or M-xvc-resolve-conflicts.</description>
 		</item>
       	
 	</channel>
