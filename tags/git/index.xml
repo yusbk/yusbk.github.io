@@ -34,6 +34,15 @@ options(datatable.print.topn = 70) print(DT, topn = 70) Using options will imple
 		</item>
       	
 		<item>
+			<title>names attribute</title>
+			<link>https://yusbk.github.io/2021/09/17/names-att/</link>
+			<pubDate>Fri, 17 Sep 2021 00:00:00 +0000</pubDate>
+			<guid>https://yusbk.github.io/2021/09/17/names-att/</guid>
+			<description>Sometime an object has attribute names for identification of the value with names instead of index. There are time you need to extract the names of a vector or object. The easiest way is to do:
+library(data.table) dt &amp;lt;- cars[1,] setDT(dt) str(dt) dt[, dist := as.</description>
+		</item>
+      	
+		<item>
 			<title>SSH-key with Git on Windows</title>
 			<link>https://yusbk.github.io/2021/09/06/git-ssh/</link>
 			<pubDate>Mon, 06 Sep 2021 14:11:00 +0200</pubDate>
@@ -99,16 +108,6 @@ CI/CD This is a simple process to implement CI/CD using GitHub Actions with uset
 			<guid>https://yusbk.github.io/2021/05/06/ess-tips/</guid>
 			<description>Some tips to use ESS. This documents will keep on growing as I find more shortcuts to help me work efficiently.
  C-c C-s to switch R processes when running multiple processes C-c C-z to switch to inferior or scripts C-C C-e C-r reload R inferior via inferior-ess-r-reload-hook SPC-m v for debugging eg.</description>
-		</item>
-      	
-		<item>
-			<title>Pasang pakej di R</title>
-			<link>https://yusbk.github.io/2021/05/03/package-r/</link>
-			<pubDate>Mon, 03 May 2021 00:00:00 +0000</pubDate>
-			<guid>https://yusbk.github.io/2021/05/03/package-r/</guid>
-			<description>First publish date: 02.09.2019
-Ini ialah beberapa penggunaan asas R yang amat berguna walaupun jarang dipakai. Antaranya:
-Pasang pakej Cara biasa untuk pasang pakej ialah menggunakan install.packages(). Tetapi sekiranya ingin memasang banyak pekej secara serentank dan memuatkan di R setelah pakej dipasang, cara begini boleh dipakai:</description>
 		</item>
       	
 	</channel>

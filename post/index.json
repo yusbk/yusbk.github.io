@@ -22,6 +22,16 @@
     ,
         
             {
+                "ref": "https://yusbk.github.io/2021/09/17/names-att/",
+                "title": "names attribute",
+                "section": "post",
+                "date" : "2021.09.17",
+                "body": "Sometime an object has attribute names for identification of the value with names instead of index. There are time you need to extract the names of a vector or object. The easiest way is to do:\nlibrary(data.table) dt \u0026lt;- cars[1,] setDT(dt) str(dt) dt[, dist := as.character(dist)] The above is just to make a toy data and convert column dist to character. In case we want to know later which column or names that we have converted to class `character`.\nbb \u0026lt;- dt[, lapply(.SD, class)] \u0026gt; names(bb)[bb == \u0026#34;character\u0026#34;] [1] \u0026#34;dist\u0026#34; This can then be implemented programmatically. Of course you can do str(bb) but that is not the point here and str() is only suitable for viewing purposes.\n"
+            }
+        
+    ,
+        
+            {
                 "ref": "https://yusbk.github.io/2021/09/06/git-ssh/",
                 "title": "SSH-key with Git on Windows",
                 "section": "post",

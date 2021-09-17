@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-<title>en</title>
+<title>names attribute</title>
 
 
   
@@ -86,84 +86,16 @@
 
     <div class="intro-header">
       <div class="container">
-        <div class="categories-heading">
+        <div class="post-heading">
           
             <h1>
-              en
+              names attribute
             </h1>
           
           
-        </div>
-      </div>
-    </div>
-  </header>
-  
-
-    
-  <div class="container" role="main">
-    <div class="posts-list">
-      
-        
-      
-
-      
-        <article class="post-preview">
-  <a href="https://yusbk.github.io/2020/12/12/ellipsis/">
-    <h2 class="post-title">Ellipsis …</h2>
-  </a>
-  <div class="post-entry">
-    
-      <p>Just to remind me how I could use ellipsis or the three dots ... in my coding. There are two scenarios I find it useful:
-Function wrapper When creating a function wrapper and instead of providing all the arguments to be send further, you could just use .</p>
-      <a href="https://yusbk.github.io/2020/12/12/ellipsis/" class="post-read-more"
-        >Read More</a
-      >
-    
-  </div>
-
-  <div class="postmeta">
-    <span class="meta-post">
+            <span class="meta-post">
   <em class="fa fa-calendar-alt"></em
-  >&nbsp;Dec 12, 2020
-  
-    &nbsp;&nbsp;&nbsp;<em class="fa fa-folder-open"></em>&nbsp;
-    
-      <a
-        href="https://yusbk.github.io/categories/en/"
-        >en</a
-      >&nbsp;
-    
-      <a
-        href="https://yusbk.github.io/categories/r/"
-        >R</a
-      >&nbsp;
-    
-  
-</span>
-
-  </div>
-</article>
-
-      
-        <article class="post-preview">
-  <a href="https://yusbk.github.io/2020/10/07/case-when/">
-    <h2 class="post-title">Case when</h2>
-  </a>
-  <div class="post-entry">
-    
-      <p>It&rsquo;s often easier to use ifelse to implement conditioning. The fast implementation in data.table of ifelse is fifelse. Other approach to do multiple conditioning is to use data.table::fcase or dplyr::case_when.
-fcase fcase can be used directly
-x &lt;- 1:6 data.table::fcase(x &lt; 3, 1, x &gt;= 4, 2) To implement in a data.</p>
-      <a href="https://yusbk.github.io/2020/10/07/case-when/" class="post-read-more"
-        >Read More</a
-      >
-    
-  </div>
-
-  <div class="postmeta">
-    <span class="meta-post">
-  <em class="fa fa-calendar-alt"></em
-  >&nbsp;Oct 7, 2020
+  >&nbsp;Sep 17, 2021
   
     &nbsp;&nbsp;&nbsp;<em class="fa fa-folder-open"></em>&nbsp;
     
@@ -185,62 +117,77 @@ x &lt;- 1:6 data.table::fcase(x &lt; 3, 1, x &gt;= 4, 2) To implement in a data.
   
 </span>
 
-  </div>
-</article>
-
-      
-        <article class="post-preview">
-  <a href="https://yusbk.github.io/2020/06/15/basic-drake/">
-    <h2 class="post-title">Basic use of drake</h2>
-  </a>
-  <div class="post-entry">
-    
-      <p>There are various ways to organise your R workflow. If you are working with a big project, then Airflow might be for you. But for the majority of R project codes, drake package will fullfilled your need.
-Here is the basic use of drake.</p>
-      <a href="https://yusbk.github.io/2020/06/15/basic-drake/" class="post-read-more"
-        >Read More</a
-      >
-    
-  </div>
-
-  <div class="postmeta">
-    <span class="meta-post">
-  <em class="fa fa-calendar-alt"></em
-  >&nbsp;Jun 15, 2020
-  
-    &nbsp;&nbsp;&nbsp;<em class="fa fa-folder-open"></em>&nbsp;
-    
-      <a
-        href="https://yusbk.github.io/categories/en/"
-        >en</a
-      >&nbsp;
-    
-      <a
-        href="https://yusbk.github.io/categories/r/"
-        >R</a
-      >&nbsp;
-    
-  
-</span>
-
-  </div>
-</article>
-
-      
+          
+        </div>
+      </div>
     </div>
+  </header>
+  
+
     
-      <ul class="pager">
-        
-          <li class="previous">
+  <div class="container" role="main">
+    <article class="article" class="blog-post">
+      
+  <p>Sometime an object has attribute names for identification of the value with
+names instead of index. There are time you need to extract the names of a vector
+or object. The easiest way is to do:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">library</span>(data.table)
+dt <span style="color:#f92672">&lt;-</span> cars[1,]
+<span style="color:#a6e22e">setDT</span>(dt)
+<span style="color:#a6e22e">str</span>(dt)
+dt[, dist <span style="color:#f92672">:=</span> <span style="color:#a6e22e">as.character</span>(dist)]
+</code></pre></div><p>The above is just to make a toy data and convert column <code>dist</code> to character. In
+case we want to know later which column or names that we have converted to class `character`.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">bb <span style="color:#f92672">&lt;-</span> dt[, <span style="color:#a6e22e">lapply</span>(.SD, class)]
+
+<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">names</span>(bb)[bb <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;character&#34;</span>]
+[1] <span style="color:#e6db74">&#34;dist&#34;</span>
+</code></pre></div><p>This can then be implemented programmatically. Of course you can do <code>str(bb)</code>
+but that is not the point here and <code>str()</code> is only suitable for viewing purposes.</p>
+
+
+
+
+      
+        <div class="blog-tags">
+          
+            <a
+              href="https://yusbk.github.io/tags/names/"
+              >names</a
+            >&nbsp;
+          
+        </div>
+      
+    </article>
+    
+    
+      
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+        (function() {
             
-              <a href="https://yusbk.github.io/categories/en/page/1/"
-                >&larr; Newer</a
-              >
             
-          </li>
-        
-        
-      </ul>
+            if (window.location.hostname == "localhost") return;
+
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            var disqus_shortname = 'yusbk-github-io';
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+  <noscript
+    >Please enable JavaScript to view the
+    <a href="https://disqus.com/?ref_noscript"
+      >comments powered by Disqus.</a
+    ></noscript
+  >
+  <a href="https://disqus.com/" class="dsq-brlink"
+    >comments powered by <span class="logo-disqus">Disqus</span></a
+  >
+
+
     
   </div>
 
