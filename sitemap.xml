@@ -3,7 +3,28 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://yusbk.github.io/categories/</loc>
-    <lastmod>2021-09-17T00:00:00+00:00</lastmod>
+    <lastmod>2021-09-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yusbk.github.io/tags/doom/</loc>
+    <lastmod>2021-09-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yusbk.github.io/2021/09/21/doom-emacs-tips/</loc>
+    <lastmod>2021-09-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yusbk.github.io/categories/emacs/</loc>
+    <lastmod>2021-09-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yusbk.github.io/post/</loc>
+    <lastmod>2021-09-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yusbk.github.io/tags/</loc>
+    <lastmod>2021-09-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yusbk.github.io/tags/tips/</loc>
+    <lastmod>2021-09-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yusbk.github.io/</loc>
+    <lastmod>2021-09-21T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://yusbk.github.io/2021/09/17/dt-special-symbol/</loc>
     <lastmod>2021-09-17T00:00:00+00:00</lastmod>
@@ -32,20 +53,8 @@
     <loc>https://yusbk.github.io/2021/09/17/names-att/</loc>
     <lastmod>2021-09-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://yusbk.github.io/post/</loc>
-    <lastmod>2021-09-17T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://yusbk.github.io/categories/r/</loc>
     <lastmod>2021-09-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://yusbk.github.io/tags/</loc>
-    <lastmod>2021-09-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://yusbk.github.io/</loc>
-    <lastmod>2021-09-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://yusbk.github.io/categories/emacs/</loc>
-    <lastmod>2021-09-06T14:11:00+02:00</lastmod>
   </url><url>
     <loc>https://yusbk.github.io/tags/git/</loc>
     <lastmod>2021-09-06T14:11:00+02:00</lastmod>
@@ -124,15 +133,6 @@
   </url><url>
     <loc>https://yusbk.github.io/categories/recipe/</loc>
     <lastmod>2021-04-29T16:38:00+02:00</lastmod>
-  </url><url>
-    <loc>https://yusbk.github.io/tags/doom/</loc>
-    <lastmod>2021-04-29T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://yusbk.github.io/2021/04/29/doom-emacs-tips/</loc>
-    <lastmod>2021-04-29T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://yusbk.github.io/tags/tips/</loc>
-    <lastmod>2021-04-29T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://yusbk.github.io/tags/autofs/</loc>
     <lastmod>2021-04-12T00:00:00+00:00</lastmod>
