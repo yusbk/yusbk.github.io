@@ -14,6 +14,17 @@
 		<atom:link href="/tags/recode/" rel="self" type="application/rss+xml" />
 		
 		<item>
+			<title>Merge Selected File</title>
+			<link>https://yusbk.github.io/2021/09/30/git-merge-selected-file/</link>
+			<pubDate>Thu, 30 Sep 2021 00:00:00 +0000</pubDate>
+			<guid>https://yusbk.github.io/2021/09/30/git-merge-selected-file/</guid>
+			<description>This guide is from StackOverflow on how to selectively merge files form one branch to another.
+Basically it&amp;rsquo;s:
+git merge --no-ff --no-commit dev Where dev is the branch you want to merge from into the current branch.
+The --no-commit option will stage the files that have been merged by Git without actually committing them.</description>
+		</item>
+      	
+		<item>
 			<title>Doom tips</title>
 			<link>https://yusbk.github.io/2021/09/21/doom-emacs-tips/</link>
 			<pubDate>Tue, 21 Sep 2021 00:00:00 +0000</pubDate>
@@ -99,16 +110,6 @@ git log --oneline --graph -5 git reset --hard &amp;lt;commit id&amp;gt; git push
 			<guid>https://yusbk.github.io/2021/08/17/access-split/</guid>
 			<description>En kort veiledning for å splitte eller slå sammen databasen i MS Access. Husk at det er alltid lurt å lage backup før du gjennomføre prosessene nedenfor.
 Å splitte  Pass på at alle tabeller og skjemaer er lukket I menyen Databasevertøy velger du Access-dabase under Flytt data Så velg Del database  Å slå sammen  Åpne frontend filen Slett alle koblet tabeller Velg Eksterne data i menyen Velg Ny datakilde og deretter fra database og Access  Det er lurt å være tydelig hvilken av de filene er frontend og backend.</description>
-		</item>
-      	
-		<item>
-			<title>CI/CD and Code Coverage</title>
-			<link>https://yusbk.github.io/2021/07/25/github_actions/</link>
-			<pubDate>Sun, 25 Jul 2021 00:00:00 +0000</pubDate>
-			<guid>https://yusbk.github.io/2021/07/25/github_actions/</guid>
-			<description>First published date: 2021-06-04
-A simple guide to use CI/CD and Code coverage.
-CI/CD This is a simple process to implement CI/CD using GitHub Actions with usethis package. Basically the steps here is a summary from Dean Attali with slight changes:</description>
 		</item>
       	
 	</channel>
