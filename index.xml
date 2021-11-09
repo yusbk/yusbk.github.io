@@ -9,10 +9,19 @@
 		
 		<managingEditor>Page(&#34;𝔂𝓾𝓼𝓴𝓪𝓶&#34;) (Yusman Kamaleri)</managingEditor>
     	
-  		<lastBuildDate>Thu, 30 Sep 2021 00:00:00 +0000</lastBuildDate>
+  		<lastBuildDate>Tue, 09 Nov 2021 00:00:00 +0000</lastBuildDate>
 		
 		<atom:link href="/" rel="self" type="application/rss+xml" />
 		
+		<item>
+			<title>MS Access Shutdown</title>
+			<link>https://yusbk.github.io/2021/11/09/access-shutdown/</link>
+			<pubDate>Tue, 09 Nov 2021 00:00:00 +0000</pubDate>
+			<guid>https://yusbk.github.io/2021/11/09/access-shutdown/</guid>
+			<description>How to shutdown all running Access when you need to do some changes. This is just a summary from Microsoft Docs. The steps are:
+Create empty text file  This file will be the key. Name the file to anything like checkfile.</description>
+		</item>
+      	
 		<item>
 			<title>Merge Selected File</title>
 			<link>https://yusbk.github.io/2021/09/30/git-merge-selected-file/</link>
@@ -101,15 +110,6 @@ git log --oneline --graph -5 git reset --hard &amp;lt;commit id&amp;gt; git push
   To connect to the Shiny server
  Figure 1: Connect to server
     To copy files</description>
-		</item>
-      	
-		<item>
-			<title>MS Access split</title>
-			<link>https://yusbk.github.io/2021/08/17/access-split/</link>
-			<pubDate>Tue, 17 Aug 2021 00:00:00 +0000</pubDate>
-			<guid>https://yusbk.github.io/2021/08/17/access-split/</guid>
-			<description>En kort veiledning for å splitte eller slå sammen databasen i MS Access. Husk at det er alltid lurt å lage backup før du gjennomføre prosessene nedenfor.
-Å splitte  Pass på at alle tabeller og skjemaer er lukket I menyen Databasevertøy velger du Access-dabase under Flytt data Så velg Del database  Å slå sammen  Åpne frontend filen Slett alle koblet tabeller Velg Eksterne data i menyen Velg Ny datakilde og deretter fra database og Access  Det er lurt å være tydelig hvilken av de filene er frontend og backend.</description>
 		</item>
       	
 	</channel>

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+<title>MS Access Shutdown</title>
+
+
+  
+
+
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="alternate" type="application/rss+xml" href="https://yusbk.github.io/index.xml" title="𝔂𝓾𝓼𝓴𝓪𝓶">
+
+<link id="dark-mode-theme" rel="stylesheet" href="https://yusbk.github.io/css/dark.css" />
+<link rel="stylesheet" href="https://yusbk.github.io/fontawesome/css/all.min.css" />
+
+<script src="https://yusbk.github.io/js/bundle.js"></script>
+<script src="https://yusbk.github.io/js/instantpage.js" type="module" defer></script>
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="generator" content="Hugo 0.88.0" />
+  </head>
+  <body>
+    
+  
+
+
+
+
+  <header>
+    <nav class="navbar">
+  <div class="nav">
+    
+      <a href="https://yusbk.github.io/" class="nav-logo">
+        <img
+          src="https://yusbk.github.io/images/yk.png"
+          width="40"
+          height="40"
+          alt="Logo"
+        />
+      </a>
+    
+
+    <ul class="nav-links">
+      
+        
+          <li>
+            <a href="/about/" id="About"
+              ><em class="fas fa-user-secret fa-lg"></em
+            ></a>
+          </li>
+          
+      
+        
+          <li>
+            <a href="/categories/" id="Categories"
+              ><em class="fas fa-folder-open fa-lg"></em
+            ></a>
+          </li>
+          
+      
+        
+          <li>
+            <a href="/tags/" id="Tags"
+              ><em class="fas fa-tags fa-lg"></em
+            ></a>
+          </li>
+          
+      
+        
+          <li>
+            <a href="/search/" id="Search"
+              ><em class="fas fa-search fa-lg"></em
+            ></a>
+          </li>
+          
+      
+    </ul>
+  </div>
+</nav>
+
+    <div class="intro-header">
+      <div class="container">
+        <div class="post-heading">
+          
+            <h1>
+              MS Access Shutdown
+            </h1>
+          
+          
+            <span class="meta-post">
+  <em class="fa fa-calendar-alt"></em
+  >&nbsp;Nov 9, 2021
+  
+</span>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+  
+
+    
+  <div class="container" role="main">
+    <article class="article" class="blog-post">
+      
+  <p>How to shutdown all running Access when you need to do some changes. This is
+just a summary from <a href="https://docs.microsoft.com/en-us/office/troubleshoot/access/shut-down-custom-application-remotely">Microsoft Docs</a>. The steps are:</p>
+<h2 id="create-empty-text-file">Create empty text file</h2>
+<ul>
+<li>This file will be the <code>key</code>.</li>
+<li>Name the file to anything like <code>checkfile.txt</code></li>
+</ul>
+<h2 id="split-dbms">Split DBMS</h2>
+<ul>
+<li>You need <code>frontend</code> (FE) and <code>backend</code> (BE).</li>
+<li>You can either create it separately and link the BE to FE later or <a href="/2021/08/17/access-split/">split</a> them.</li>
+</ul>
+<h2 id="create-linked-form">Create linked form</h2>
+<ul>
+<li>While in FE, create a form based on one of the linked tables from BE.</li>
+<li>Save the form and name it eg. <code>frm_Table1</code>.</li>
+</ul>
+<h2 id="create-empty-form">Create empty form</h2>
+<ul>
+<li>Create an empty from and name it eg. <code>frm_ShutDown</code>.</li>
+<li>Go to form settings and under <em>Hendelse</em> property (sorry I don&rsquo;t know what it&rsquo;s
+called in english version) specify 60000 milliseconds (1 minute) or any numbers.</li>
+<li>While in <code>Design</code> options, select <code>View Code</code> in the <code>Tools</code> group. Then you
+can paste the VB code below with changes to the form names accordingly.</li>
+</ul>
+<!-- raw HTML omitted -->
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c">Option Explicit
+Dim boolCountDown As Boolean
+Dim intCountDownMinutes As Integer
+
+Private Sub Form_Open(Cancel As Integer)
+    <span style="color:#960050;background-color:#1e0010">&#39;</span> Set Count Down variable to false
+    <span style="color:#960050;background-color:#1e0010">&#39;</span> on the initial opening of the form.
+    boolCountDown <span style="color:#f92672">=</span> False
+End Sub
+
+Private Sub Form_Timer()
+On Error GoTo Err_Form_Timer
+    Dim strFileName As String
+    strFileName <span style="color:#f92672">=</span> Dir(<span style="color:#e6db74">&#34;c:\MyData\chkfile.ozx&#34;</span>)
+    If boolCountDown <span style="color:#f92672">=</span> False Then
+        <span style="color:#960050;background-color:#1e0010">&#39;</span> Do nothing unless the check file is missing.
+        If strFileName <span style="color:#f92672">&lt;&gt;</span> <span style="color:#e6db74">&#34;chkfile.ozx&#34;</span> Then
+            <span style="color:#960050;background-color:#1e0010">&#39;</span> The check file is not found so
+            <span style="color:#960050;background-color:#1e0010">&#39;</span> set the count down variable to true and
+            <span style="color:#960050;background-color:#1e0010">&#39;</span> number of minutes until this session
+            <span style="color:#960050;background-color:#1e0010">&#39;</span> of Access will be shut down.
+            boolCountDown <span style="color:#f92672">=</span> True
+            intCountDownMinutes <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>
+        End If
+    Else
+        <span style="color:#960050;background-color:#1e0010">&#39;</span> Count down variable is true so warn
+        <span style="color:#960050;background-color:#1e0010">&#39;</span> the user that the application will be shut down
+        <span style="color:#960050;background-color:#1e0010">&#39;</span> in X number of minutes.  The number of minutes
+        <span style="color:#960050;background-color:#1e0010">&#39;</span> will be <span style="color:#ae81ff">1</span> less than the initial value of the
+        <span style="color:#960050;background-color:#1e0010">&#39;</span> intCountDownMinutes variable because the form timer
+        <span style="color:#960050;background-color:#1e0010">&#39;</span> event is set to fire every <span style="color:#ae81ff">60</span> seconds
+        intCountDownMinutes <span style="color:#f92672">=</span> intCountDownMinutes <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>
+        DoCmd.OpenForm <span style="color:#e6db74">&#34;frmAppShutDownWarn&#34;</span>
+        Forms<span style="color:#f92672">!</span>frmAppShutDownWarn<span style="color:#f92672">!</span>txtWarning <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;This application will be shut down in approximately &#34;</span> <span style="color:#f92672">&amp;</span> intCountDownMinutes <span style="color:#f92672">&amp;</span> <span style="color:#e6db74">&#34; minute(s).  Please save all work.&#34;</span>
+        If intCountDownMinutes <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">1</span> Then
+            <span style="color:#960050;background-color:#1e0010">&#39;</span> Shut down Access <span style="color:#66d9ef">if</span> the countdown is zero,
+            <span style="color:#960050;background-color:#1e0010">&#39;</span> saving all work by <span style="color:#66d9ef">default</span>.
+            Application.Quit acQuitSaveAll
+        End If
+    End If
+
+Exit_Form_Timer:
+    Exit Sub
+
+Err_Form_Timer:
+    Resume Next
+End Sub
+</code></pre></div><h2 id="create-form-to-give-warning">Create form to give warning</h2>
+<ul>
+<li>Create an empty form and called it <code>frm_ShutDownWarn</code>.</li>
+<li>While in the <code>Design</code> mode, add <code>text box</code> from options and put in the form.</li>
+<li>Select the created text box and open <code>property</code>.</li>
+<li>Open option for <code>Other</code> and in <code>Name</code> section write <code>txtWarning</code> as specified in the Visual Basic code above.</li>
+</ul>
+<h2 id="create-macro-to-execute-commands">Create macro to execute commands</h2>
+<ul>
+<li>Create a macro with <code>autoexec</code> to open these tables when launching the database.</li>
+<li>Go to option <code>Create</code> and choose <code>Macro</code>.</li>
+<li>Select an action with <code>Open form</code> and choose the form to open. Here it will be <code>frm_ShutDown</code>.</li>
+<li>Select <code>hiden</code> under <code>Window</code> options.</li>
+<li>Save the macro as <code>autoexec</code>. This will run this macro when database is launched.</li>
+</ul>
+<h2 id="shutdown">Shutdown</h2>
+<ul>
+<li>To shutdown all open Access database, you just need to change the name of the
+file <code>checkfile.txt</code> to something else eg. <code>checkfile.bla</code> and save it.</li>
+<li>The database will keep on checking this file every 1 minute (as specified with
+TimeInterval) and if the file is not found ie. the name has changed, then it
+will give warning and the database will be shutdown after 2 minutes (specified in VB code).</li>
+</ul>
+
+
+
+
+      
+    </article>
+    
+    
+      
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+        (function() {
+            
+            
+            if (window.location.hostname == "localhost") return;
+
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            var disqus_shortname = 'yusbk-github-io';
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+  <noscript
+    >Please enable JavaScript to view the
+    <a href="https://disqus.com/?ref_noscript"
+      >comments powered by Disqus.</a
+    ></noscript
+  >
+  <a href="https://disqus.com/" class="dsq-brlink"
+    >comments powered by <span class="logo-disqus">Disqus</span></a
+  >
+
+
+    
+  </div>
+
+    <footer>
+  
+
+<div class="social-icons">
+  
+    
+    
+      
+      <a href="https://twitter.com/GoHugoIO" name="twitter">
+        <em class="fab fa-twitter"></em>
+      </a>
+    
+  
+
+  
+</div>
+
+
+  
+  <div class="container">
+    <p class="credits copyright">
+      <a href="https://yusbk.github.io/about">Yusman Kamaleri</a>
+      &nbsp;&copy;
+      2021
+      
+        &nbsp;/&nbsp;
+        <a href="https://yusbk.github.io/">𝔂𝓾𝓼𝓴𝓪𝓶</a>
+      
+      &nbsp;&ndash;&nbsp;
+      <em class="fas fa-moon" id="dark-mode-toggle"></em>
+    </p>
+
+    <p class="credits theme-by">
+      Powered By <a href="https://gohugo.io">Hugo</a>&nbsp;
+      Theme
+      <a href="https://github.com/matsuyoshi30/harbor">Harbor</a>
+    </p>
+  </div>
+</footer>
+
+  </body>
+</html>
