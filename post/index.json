@@ -2,6 +2,16 @@
     
         
             {
+                "ref": "https://yusbk.github.io/2021/11/09/magit-ediff/",
+                "title": "Smerge, ediff and diff",
+                "section": "post",
+                "date" : "2021.11.09",
+                "body": "First published: 2021-04-30\nFor enditing conflict in git, use smerge or ediff.\nSmerge Basic workflow:\n Open magit status with SPC g g in Doom Identify the mark with Unmerged under Unstage list Go to the file and press Enter to open the file The base command for Smerge is C-c ^ You will see the conflict and selecting the upper with C-c ^ u and lower with C-c ^ l To select all \u0026lsquo;conflicting\u0026rsquo; changes press C-c ^ a To navigate the conflicts use C-c ^ n and C-c ^ p for next and previous conflict To see all the keybindings use C-c ^ h  With DOOM and hydra:\n SPC g m for SMerge will open hydra shortcuts.  Ediff When you are in the file with conflict, type M-x smerge-ediff or M-x\rvc-resolve-conflicts. You will get 3 windows showing your HEAD and origin/HEAD that you have fetched and the outcome or end product. You can select A or B to select which you can to keep or delete. Use ? to see all the shortcuts to use.\nThis YouTube video explains it in more detail: Smerge and Ediff\nDiff To use diff directly from git comparing local and origin can be done with:\n Fetch changes from remotes git fetch origin Check log git log master..origin/master Show the changes git diff master..origin/master Merge changes git merge origin/master  Else you could use git pull if you aren\u0026rsquo;t interested to check the changes before merging.\n"
+            }
+        
+    ,
+        
+            {
                 "ref": "https://yusbk.github.io/2021/11/09/access-shutdown/",
                 "title": "MS Access Shutdown",
                 "section": "post",
@@ -137,16 +147,6 @@
                 "section": "post",
                 "date" : "2021.05.03",
                 "body": "First publish date: 02.09.2019\nIni ialah beberapa penggunaan asas R yang amat berguna walaupun jarang dipakai. Antaranya:\nPasang pakej Cara biasa untuk pasang pakej ialah menggunakan install.packages(). Tetapi sekiranya ingin memasang banyak pekej secara serentank dan memuatkan di R setelah pakej dipasang, cara begini boleh dipakai:\nlist.of.packages \u0026lt;- c(\u0026#34;leaflet\u0026#34;,\u0026#34;ggplot2\u0026#34;,\u0026#34;dplyr\u0026#34;,\u0026#34;gridExtra\u0026#34;,\u0026#34;psych\u0026#34;,\u0026#34;data.table\u0026#34;,\u0026#34;sf\u0026#34;,\u0026#34;ggrepel\u0026#34;) new.packages \u0026lt;- list.of.packages[!(list.of.packages %in% installed.packages()[,\u0026#34;Package\u0026#34;])] if(length(new.packages)) install.packages(new.packages, repos = \u0026#34;https://cloud.r-project.org/\u0026#34;) sapply(list.of.packages, require, character.only = TRUE) Untuk pasang satu pakej boleh juga buat sebegini:\nif(!require(\u0026#34;rreg\u0026#34;)) {install.packages(\u0026#34;rreg\u0026#34;)} else {require(\u0026#34;rreg\u0026#34;)} Cara ini akan periksa sekiranya pakej rreg belum dipasang makan akan dipasang, sekiranya sudah ada maka akan diaktifkan.\nPasang pakej dari Github Untuk senang pasang pakej dari Github boleh guna pakej devtools. Boleh baca sini untuk guide. Singkatannya:\nlibrary(devtools) install_github(\u0026#34;ybkamaleri/norgeo\u0026#34;) Untuk pasang dari branch tertentu contohnya branch dev:\ninstall_github(\u0026#34;ybkamaleri/norgeo@dev\u0026#34;) Sekiranya package disimpan di subdirectory both pakai\ninstall_github(\u0026#34;ybkamaleri/norgeo\u0026#34;, subdir = \u0026#34;fhi\u0026#34;) "
-            }
-        
-    ,
-        
-            {
-                "ref": "https://yusbk.github.io/2021/04/30/magit-ediff/",
-                "title": "Smerge, ediff and diff",
-                "section": "post",
-                "date" : "2021.04.30",
-                "body": "For enditing conflict in git, use smerge or ediff.\nSmerge Basic workflow:\n Open magit status with SPC g g in Doom Identify the mark with Unmerged under Unstage list Go to the file and press Enter to open the file The base command for Smerge is C-c ^ You will see the conflict and selecting the upper with C-c ^ u and lower with C-c ^ l To select all \u0026lsquo;conflicting\u0026rsquo; changes press C-c ^ a To navigate the conflicts use C-c ^ n and C-c ^ p for next and previous conflict To see all the keybindings use C-c ^ h  Ediff When you are in the file with conflict, type M-x smerge-ediff or M-x\rvc-resolve-conflicts. You will get 3 windows showing your HEAD and origin/HEAD that you have fetched and the outcome or end product. You can select A or B to select which you can to keep or delete. Use ? to see all the shortcuts to use.\nThis YouTube video explains it in more detail: Smerge and Ediff\nDiff To use diff directly from git comparing local and origin can be done with:\n Fetch changes from remotes git fetch origin Check log git log master..origin/master Show the changes git diff master..origin/master Merge changes git merge origin/master  Else you could use git pull if you aren\u0026rsquo;t interested to check the changes before merging.\n"
             }
         
     ,

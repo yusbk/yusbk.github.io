@@ -14,6 +14,17 @@
 		<atom:link href="/tags/duplicate/" rel="self" type="application/rss+xml" />
 		
 		<item>
+			<title>Smerge, ediff and diff</title>
+			<link>https://yusbk.github.io/2021/11/09/magit-ediff/</link>
+			<pubDate>Tue, 09 Nov 2021 15:27:00 +0100</pubDate>
+			<guid>https://yusbk.github.io/2021/11/09/magit-ediff/</guid>
+			<description>First published: 2021-04-30
+For enditing conflict in git, use smerge or ediff.
+Smerge Basic workflow:
+ Open magit status with SPC g g in Doom Identify the mark with Unmerged under Unstage list Go to the file and press Enter to open the file The base command for Smerge is C-c ^ You will see the conflict and selecting the upper with C-c ^ u and lower with C-c ^ l To select all &amp;lsquo;conflicting&amp;rsquo; changes press C-c ^ a To navigate the conflicts use C-c ^ n and C-c ^ p for next and previous conflict To see all the keybindings use C-c ^ h  With DOOM and hydra:</description>
+		</item>
+      	
+		<item>
 			<title>MS Access Shutdown</title>
 			<link>https://yusbk.github.io/2021/11/09/access-shutdown/</link>
 			<pubDate>Tue, 09 Nov 2021 00:00:00 +0000</pubDate>
@@ -99,17 +110,6 @@ git log --oneline --graph -5 git reset --hard &amp;lt;commit id&amp;gt; git push
 			<pubDate>Fri, 03 Sep 2021 00:00:00 +0000</pubDate>
 			<guid>https://yusbk.github.io/2021/09/03/data-attributes/</guid>
 			<description>When reading data from SPSS or Stata into R, the metadata will also be inherited to the dataset. Sometimes it can be useful for extra information, but most of the time it&amp;rsquo;s not needed. To get rid of these metadata then do this:</description>
-		</item>
-      	
-		<item>
-			<title>Connect to Azure with ssh</title>
-			<link>https://yusbk.github.io/2021/08/20/azure-server/</link>
-			<pubDate>Fri, 20 Aug 2021 00:00:00 +0000</pubDate>
-			<guid>https://yusbk.github.io/2021/08/20/azure-server/</guid>
-			<description>This is to connect to Azure server via ssh at my work so it&amp;rsquo;s not relevant to others. Only for my personal reference.
-  To connect to the Shiny server
- Figure 1: Connect to server
-    To copy files</description>
 		</item>
       	
 	</channel>
