@@ -14,6 +14,16 @@
 		<atom:link href="/tags/merge/" rel="self" type="application/rss+xml" />
 		
 		<item>
+			<title>Ellipsis …</title>
+			<link>https://yusbk.github.io/2021/12/01/ellipsis/</link>
+			<pubDate>Wed, 01 Dec 2021 00:00:00 +0000</pubDate>
+			<guid>https://yusbk.github.io/2021/12/01/ellipsis/</guid>
+			<description>First published: 2020-12-12
+Just to remind me how I could use ellipsis or the three dots ... in my coding. There are two scenarios I find it useful:
+Function wrapper When creating a function wrapper and instead of providing all the arguments to be send further, you could just use .</description>
+		</item>
+      	
+		<item>
 			<title>Smerge, ediff and diff</title>
 			<link>https://yusbk.github.io/2021/11/09/magit-ediff/</link>
 			<pubDate>Tue, 09 Nov 2021 15:27:00 +0100</pubDate>
@@ -102,14 +112,6 @@ Generally, these are what I did:
 Rebase to previous commit of a sepcific branch ie. master.
 git reset --hard origin/master git status or reset to any previous specific commit.
 git log --oneline --graph -5 git reset --hard &amp;lt;commit id&amp;gt; git push origin HEAD --force The steps above:</description>
-		</item>
-      	
-		<item>
-			<title>Clean attributes</title>
-			<link>https://yusbk.github.io/2021/09/03/data-attributes/</link>
-			<pubDate>Fri, 03 Sep 2021 00:00:00 +0000</pubDate>
-			<guid>https://yusbk.github.io/2021/09/03/data-attributes/</guid>
-			<description>When reading data from SPSS or Stata into R, the metadata will also be inherited to the dataset. Sometimes it can be useful for extra information, but most of the time it&amp;rsquo;s not needed. To get rid of these metadata then do this:</description>
 		</item>
       	
 	</channel>

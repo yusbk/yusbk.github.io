@@ -3,7 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://yusbk.github.io/categories/</loc>
-    <lastmod>2021-11-09T15:27:00+01:00</lastmod>
+    <lastmod>2021-12-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yusbk.github.io/2021/12/01/ellipsis/</loc>
+    <lastmod>2021-12-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yusbk.github.io/categories/en/</loc>
+    <lastmod>2021-12-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yusbk.github.io/post/</loc>
+    <lastmod>2021-12-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yusbk.github.io/categories/r/</loc>
+    <lastmod>2021-12-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yusbk.github.io/</loc>
+    <lastmod>2021-12-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://yusbk.github.io/tags/diff/</loc>
     <lastmod>2021-11-09T15:27:00+01:00</lastmod>
@@ -14,16 +29,10 @@
     <loc>https://yusbk.github.io/categories/git/</loc>
     <lastmod>2021-11-09T15:27:00+01:00</lastmod>
   </url><url>
-    <loc>https://yusbk.github.io/post/</loc>
-    <lastmod>2021-11-09T15:27:00+01:00</lastmod>
-  </url><url>
     <loc>https://yusbk.github.io/2021/11/09/magit-ediff/</loc>
     <lastmod>2021-11-09T15:27:00+01:00</lastmod>
   </url><url>
     <loc>https://yusbk.github.io/tags/</loc>
-    <lastmod>2021-11-09T15:27:00+01:00</lastmod>
-  </url><url>
-    <loc>https://yusbk.github.io/</loc>
     <lastmod>2021-11-09T15:27:00+01:00</lastmod>
   </url><url>
     <loc>https://yusbk.github.io/tags/access/</loc>
@@ -56,9 +65,6 @@
     <loc>https://yusbk.github.io/categories/dt/</loc>
     <lastmod>2021-09-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://yusbk.github.io/categories/en/</loc>
-    <lastmod>2021-09-17T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://yusbk.github.io/tags/join/</loc>
     <lastmod>2021-09-17T00:00:00+00:00</lastmod>
   </url><url>
@@ -72,9 +78,6 @@
     <lastmod>2021-09-17T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://yusbk.github.io/2021/09/17/names-att/</loc>
-    <lastmod>2021-09-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://yusbk.github.io/categories/r/</loc>
     <lastmod>2021-09-17T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://yusbk.github.io/tags/git/</loc>
@@ -160,9 +163,6 @@
   </url><url>
     <loc>https://yusbk.github.io/2020/12/12/access-db/</loc>
     <lastmod>2020-12-12T12:49:00+01:00</lastmod>
-  </url><url>
-    <loc>https://yusbk.github.io/2020/12/12/ellipsis/</loc>
-    <lastmod>2020-12-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://yusbk.github.io/tags/clone/</loc>
     <lastmod>2020-10-14T00:00:00+00:00</lastmod>
