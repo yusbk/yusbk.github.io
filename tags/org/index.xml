@@ -15,11 +15,11 @@
 		
 		<item>
 			<title>Ellipsis …</title>
-			<link>https://yusbk.github.io/2021/12/01/ellipsis/</link>
-			<pubDate>Wed, 01 Dec 2021 00:00:00 +0000</pubDate>
-			<guid>https://yusbk.github.io/2021/12/01/ellipsis/</guid>
+			<link>https://yusbk.github.io/2021/12/03/ellipsis/</link>
+			<pubDate>Fri, 03 Dec 2021 00:00:00 +0000</pubDate>
+			<guid>https://yusbk.github.io/2021/12/03/ellipsis/</guid>
 			<description>First published: 2020-12-12
-Just to remind me how I could use ellipsis or the three dots ... in my coding. There are two scenarios I find it useful:
+Just to remind me how I could use ellipsis or the three dots ... in my coding. There are three scenarios I find it useful:
 Function wrapper When creating a function wrapper and instead of providing all the arguments to be send further, you could just use .</description>
 		</item>
       	
