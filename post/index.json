@@ -2,6 +2,16 @@
     
         
             {
+                "ref": "https://yusbk.github.io/2021/12/08/r-environment/",
+                "title": "Environment",
+                "section": "post",
+                "date" : "2021.12.08",
+                "body": "Several nice blogs and references on the net to read on this stuff. Among those:\n Environments in R How R Searches and Finds Stuff  This discussion from StackOverflow explains nicely with example on the difference between parent.env() and parent.frame(). Hadley wrote in Advanced R that use parent.env() to find\u0026hellip; surprise! surprise! To the parent of an environment!\nAnother useful options is sys.frames()[[1]] to access the environment of the first calling function. It\u0026rsquo;s like using parent.frame() if you don\u0026rsquo;t have a nested functions. But once your functions are nested, sys.frames() will be useful to access the first calling function.\nThis is how I use it to assign a value to an object back to the calling function:\nmain_function \u0026lt;- function(var, val){ sub_function(var, val) } sub_function \u0026lt;- function(var, val){ is_assign_var(var, val) } is_assign_var \u0026lt;- function(var, val){ assign(var, val, envir = sys.frames()[[1]]) } If you don\u0026rsquo;t have a nested function then using parent.frame() or sys.frames()[[1]] will be equivalent.\nmain_function \u0026lt;- function(var, val){ is_assign_var() } is_assign_var \u0026lt;- function(var, val){ assign(var, val, envir = parent.frame()) } "
+            }
+        
+    ,
+        
+            {
                 "ref": "https://yusbk.github.io/2021/12/03/ellipsis/",
                 "title": "Ellipsis …",
                 "section": "post",
