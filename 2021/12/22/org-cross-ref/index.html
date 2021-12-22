@@ -131,11 +131,11 @@ with number will be <code>'..refer to it with text (1)'</code>.</p>
 <h2 id="reference-to-table-or-figure">Reference to table or figure</h2>
 <p>Use <code>#+NAME:</code> to reference an element within the buffer. Name should be put in
 the line before the element it refers to.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="color:#960050;background-color:#1e0010">#</span>+NAME: tbl_target
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">#+NAME: tbl_target
 | a |  item|
 |---+------|
-| <span style="color:#ae81ff">1</span> | text |
-</code></pre></div><p>Then refer to with =See table <code>[[tbl_target]]</code> or <code>[[tbl_target][Name of something]]</code>.</p>
+| 1 | text |
+</code></pre></div><p>Then refer to it with <code>See table [[tbl_target]]</code> or <code>[[tbl_target][Name of something]]</code>.</p>
 <h2 id="dedicated-target">Dedicated target</h2>
 <p>When no description, then this will be linked as number and text link when
 description is added.</p>

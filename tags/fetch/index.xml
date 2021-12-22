@@ -1,17 +1,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
-		<title>html on 𝔂𝓾𝓼𝓴𝓪𝓶</title>
-		<link>https://yusbk.github.io/tags/html/</link>
-		<description>Recent content in html </description>
+		<title>fetch on 𝔂𝓾𝓼𝓴𝓪𝓶</title>
+		<link>https://yusbk.github.io/tags/fetch/</link>
+		<description>Recent content in fetch </description>
 		<generator>Hugo -- gohugo.io</generator>
 		
   		<language>en</language>
 		
-		<managingEditor>Page(/tags/html) (Yusman Kamaleri)</managingEditor>
+		<managingEditor>Page(/tags/fetch) (Yusman Kamaleri)</managingEditor>
     	
-  		<lastBuildDate>Thu, 01 Aug 2019 00:00:00 +0000</lastBuildDate>
+  		<lastBuildDate>Wed, 22 Dec 2021 15:27:00 +0100</lastBuildDate>
 		
-		<atom:link href="/tags/html/" rel="self" type="application/rss+xml" />
+		<atom:link href="/tags/fetch/" rel="self" type="application/rss+xml" />
 		
 		<item>
 			<title>Smerge, ediff and diff</title>

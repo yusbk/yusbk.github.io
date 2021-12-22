@@ -3,7 +3,31 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://yusbk.github.io/categories/</loc>
-    <lastmod>2021-12-22T00:00:00+00:00</lastmod>
+    <lastmod>2021-12-22T15:27:00+01:00</lastmod>
+  </url><url>
+    <loc>https://yusbk.github.io/tags/diff/</loc>
+    <lastmod>2021-12-22T15:27:00+01:00</lastmod>
+  </url><url>
+    <loc>https://yusbk.github.io/categories/emacs/</loc>
+    <lastmod>2021-12-22T15:27:00+01:00</lastmod>
+  </url><url>
+    <loc>https://yusbk.github.io/tags/fetch/</loc>
+    <lastmod>2021-12-22T15:27:00+01:00</lastmod>
+  </url><url>
+    <loc>https://yusbk.github.io/tags/merge/</loc>
+    <lastmod>2021-12-22T15:27:00+01:00</lastmod>
+  </url><url>
+    <loc>https://yusbk.github.io/post/</loc>
+    <lastmod>2021-12-22T15:27:00+01:00</lastmod>
+  </url><url>
+    <loc>https://yusbk.github.io/2021/12/22/magit-ediff/</loc>
+    <lastmod>2021-12-22T15:27:00+01:00</lastmod>
+  </url><url>
+    <loc>https://yusbk.github.io/tags/</loc>
+    <lastmod>2021-12-22T15:27:00+01:00</lastmod>
+  </url><url>
+    <loc>https://yusbk.github.io/</loc>
+    <lastmod>2021-12-22T15:27:00+01:00</lastmod>
   </url><url>
     <loc>https://yusbk.github.io/tags/cross/</loc>
     <lastmod>2021-12-22T00:00:00+00:00</lastmod>
@@ -17,28 +41,16 @@
     <loc>https://yusbk.github.io/2021/12/22/doom-emacs-tips/</loc>
     <lastmod>2021-12-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://yusbk.github.io/categories/emacs/</loc>
-    <lastmod>2021-12-22T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://yusbk.github.io/tags/link/</loc>
     <lastmod>2021-12-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://yusbk.github.io/categories/orgmode/</loc>
     <lastmod>2021-12-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://yusbk.github.io/post/</loc>
-    <lastmod>2021-12-22T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://yusbk.github.io/tags/reference/</loc>
     <lastmod>2021-12-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://yusbk.github.io/tags/</loc>
-    <lastmod>2021-12-22T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://yusbk.github.io/tags/tips/</loc>
-    <lastmod>2021-12-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://yusbk.github.io/</loc>
     <lastmod>2021-12-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://yusbk.github.io/categories/en/</loc>
@@ -81,9 +93,6 @@
     <lastmod>2021-09-17T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://yusbk.github.io/tags/join/</loc>
-    <lastmod>2021-09-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://yusbk.github.io/tags/merge/</loc>
     <lastmod>2021-09-17T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://yusbk.github.io/categories/my/</loc>
