@@ -144,7 +144,9 @@ respective groups below:</p>
 <li><code>SPC-i r</code> insert from evil-register or <code>0p</code> when you know it&rsquo;s register number
 <code>0</code> in evil register or 1,2,&hellip;</li>
 <li><code>di(</code> and <code>yi(</code> is both delete and yank inner words respectively.</li>
-<li><code>ciw</code> clear the inner word under the cursor and move to inner mode.</li>
+<li><code>ciw</code> change/clear the inner word under the cursor and move to inner mode.</li>
+<li><code>cw</code> change/clear from cursor position to next whitespace</li>
+<li><code>cs&quot;'</code> change/clear the surround or delimiter <code>&quot;</code> to <code>'</code> symbol</li>
 <li><code>SPC-s s</code> search word or <code>fw</code> and <code>Fw</code>.</li>
 <li><code>SPC-TAB .</code> change workspace.</li>
 </ul>
@@ -208,7 +210,7 @@ all text inside will be deleted.</li>
 <li><code>vio</code> select all inner and inclding a symbol</li>
 <li><code>va(</code> selecte all around the bracket <code>(</code> or any specific symbol that you can specify eg. <code>va&quot;</code></li>
 <li><code>di(</code> and <code>yi(</code> is both delete and yank inner words respectively.</li>
-<li><code>ciw</code> clear the inner word under the cursor and move to inner mode.</li>
+<li><code>ciw</code> change the inner word under the cursor and move to inner mode.</li>
 <li><code>Spc-s s</code> search word or <code>fw</code> and <code>Fw</code></li>
 <li><code>S-&quot;</code> surround the selected word ie. in visual mode, with selected symbol eg. <code>&quot;</code> in this case.</li>
 <li><code>g-S-&quot;</code> surround the selected word with symbol with additional newline</li>
