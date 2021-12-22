@@ -14,6 +14,16 @@
 		<atom:link href="/tags/termux/" rel="self" type="application/rss+xml" />
 		
 		<item>
+			<title>Doom tips</title>
+			<link>https://yusbk.github.io/2021/12/22/doom-emacs-tips/</link>
+			<pubDate>Wed, 22 Dec 2021 00:00:00 +0000</pubDate>
+			<guid>https://yusbk.github.io/2021/12/22/doom-emacs-tips/</guid>
+			<description>First published date: 2021-04-27
+Some tips to learn the keybindings in Doom and Evil in the process of migrating from my vanilla Emacs settings. For overview of keybindings type SPC-h-b-b. Other good references:
+ Narra&amp;rsquo;s Blog - Doom Tips and Howtos Org Mode Shortcuts for Emacs Doom Gist of Hjertnes Evil-mode collection  Doom leader-key is SPC and localleader-key is SPC-m.</description>
+		</item>
+      	
+		<item>
 			<title>Environment</title>
 			<link>https://yusbk.github.io/2021/12/08/r-environment/</link>
 			<pubDate>Wed, 08 Dec 2021 00:00:00 +0000</pubDate>
@@ -30,17 +40,6 @@
 			<description>First published: 2020-12-12
 Just to remind me how I could use ellipsis or the three dots ... in my coding. There are three scenarios I find it useful:
 Function wrapper When creating a function wrapper and instead of providing all the arguments to be send further, you could just use .</description>
-		</item>
-      	
-		<item>
-			<title>Smerge, ediff and diff</title>
-			<link>https://yusbk.github.io/2021/11/09/magit-ediff/</link>
-			<pubDate>Tue, 09 Nov 2021 15:27:00 +0100</pubDate>
-			<guid>https://yusbk.github.io/2021/11/09/magit-ediff/</guid>
-			<description>First published: 2021-04-30
-For enditing conflict in git, use smerge or ediff.
-Smerge Basic workflow:
- Open magit status with SPC g g in Doom Identify the mark with Unmerged under Unstage list Go to the file and press Enter to open the file The base command for Smerge is C-c ^ You will see the conflict and selecting the upper with C-c ^ u and lower with C-c ^ l To select all &amp;lsquo;conflicting&amp;rsquo; changes press C-c ^ a To navigate the conflicts use C-c ^ n and C-c ^ p for next and previous conflict To see all the keybindings use C-c ^ h  With DOOM and hydra:</description>
 		</item>
       	
 		<item>
@@ -61,16 +60,6 @@ Create empty text file  This file will be the key. Name the file to anything lik
 Basically it&amp;rsquo;s:
 git merge --no-ff --no-commit dev Where dev is the branch you want to merge from into the current branch.
 The --no-commit option will stage the files that have been merged by Git without actually committing them.</description>
-		</item>
-      	
-		<item>
-			<title>Doom tips</title>
-			<link>https://yusbk.github.io/2021/09/21/doom-emacs-tips/</link>
-			<pubDate>Tue, 21 Sep 2021 00:00:00 +0000</pubDate>
-			<guid>https://yusbk.github.io/2021/09/21/doom-emacs-tips/</guid>
-			<description>First published date: 2021-04-27
-Some tips to learn the keybindings in Doom and Evil in the process of migrating from my vanilla Emacs settings. For overview of keybindings type SPC-h-b-b. Other good references:
- Narra&amp;rsquo;s Blog - Doom Tips and Howtos Org Mode Shortcuts for Emacs Doom Gist of Hjertnes Evil-mode collection  Doom leader-key is SPC and localleader-key is SPC-m.</description>
 		</item>
       	
 		<item>
@@ -110,6 +99,17 @@ library(data.table) dt &amp;lt;- cars[1,] setDT(dt) str(dt) dt[, dist := as.</de
 			<description>First published: 2020-09-29
 Generally, these are what I did:
  Install git-with-openssh Create SSH-key Add SSH-key to ssh-agent Create ~/.bashrc for auto-launching ssh-agent  Common problems  Unable to push to origin with this error message.  ssh: Could not resolve hostname personal: Name or service not known fatal: Could not read from remote repository.</description>
+		</item>
+      	
+		<item>
+			<title>Git Rebase or Reset</title>
+			<link>https://yusbk.github.io/2021/09/06/git-rebase/</link>
+			<pubDate>Mon, 06 Sep 2021 00:00:00 +0000</pubDate>
+			<guid>https://yusbk.github.io/2021/09/06/git-rebase/</guid>
+			<description>First published: 2021-08-05
+Rebase to previous commit of a sepcific branch ie. master.
+git reset --hard origin/master git status or reset to any previous specific commit.
+git log --oneline --graph -5 git reset --hard &amp;lt;commit id&amp;gt; git push origin HEAD --force The steps above:</description>
 		</item>
       	
 	</channel>

@@ -151,11 +151,16 @@ is_assign_var <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22
 </code></pre></div><p>If you don&rsquo;t have a nested function then using <code>parent.frame()</code> or
 <code>sys.frames()[[1]]</code> will be equivalent.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">main_function <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function</span>(var, val){
-  <span style="color:#a6e22e">is_assign_var</span>()
+  <span style="color:#a6e22e">is_assign_var_01</span>()
+  <span style="color:#a6e22e">is_assign_var_02</span>()
 }
 
-is_assign_var <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function</span>(var, val){
+is_assign_var_01 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function</span>(var, val){
   <span style="color:#a6e22e">assign</span>(var, val, envir <span style="color:#f92672">=</span> <span style="color:#a6e22e">parent.frame</span>())
+}
+
+is_assign_var_02 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function</span>(var, val){
+  <span style="color:#a6e22e">assign</span>(var, val, envir <span style="color:#f92672">=</span> <span style="color:#a6e22e">as.environment</span>(<span style="color:#a6e22e">sys.frames</span>()[[1]]))
 }
 </code></pre></div>
 
