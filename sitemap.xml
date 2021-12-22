@@ -5,6 +5,12 @@
     <loc>https://yusbk.github.io/categories/</loc>
     <lastmod>2021-12-22T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://yusbk.github.io/tags/cross/</loc>
+    <lastmod>2021-12-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yusbk.github.io/2021/12/22/org-cross-ref/</loc>
+    <lastmod>2021-12-22T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://yusbk.github.io/tags/doom/</loc>
     <lastmod>2021-12-22T00:00:00+00:00</lastmod>
   </url><url>
@@ -14,7 +20,16 @@
     <loc>https://yusbk.github.io/categories/emacs/</loc>
     <lastmod>2021-12-22T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://yusbk.github.io/tags/link/</loc>
+    <lastmod>2021-12-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yusbk.github.io/categories/orgmode/</loc>
+    <lastmod>2021-12-22T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://yusbk.github.io/post/</loc>
+    <lastmod>2021-12-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yusbk.github.io/tags/reference/</loc>
     <lastmod>2021-12-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://yusbk.github.io/tags/</loc>
@@ -204,9 +219,6 @@
     <lastmod>2020-02-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://yusbk.github.io/2020/02/09/look-up-table/</loc>
-    <lastmod>2020-02-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://yusbk.github.io/tags/reference/</loc>
     <lastmod>2020-02-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://yusbk.github.io/tags/delete/</loc>

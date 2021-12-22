@@ -2,6 +2,16 @@
     
         
             {
+                "ref": "https://yusbk.github.io/2021/12/22/org-cross-ref/",
+                "title": "Cross-reference",
+                "section": "post",
+                "date" : "2021.12.22",
+                "body": "Reference to this is here.\nSection link The easierst is to use CUSTOM_ID as the example below and refer to it with text [[#sec:one][Section 1]] or reference with number only [[#sec:one]].\n* Section One :PROPERTIES: :CUSTOM_ID: sec:one :END: The link with text will be '..refer to it with text Section 1' and the link with number will be '..refer to it with text (1)'.\nReference to table or figure Use #+NAME: to reference an element within the buffer. Name should be put in the line before the element it refers to.\n#+NAME: tbl_target | a | item| |---+------| | 1 | text | Then refer to with =See table [[tbl_target]] or [[tbl_target][Name of something]].\nDedicated target When no description, then this will be linked as number and text link when description is added.\n1. Item one 2. \u0026lt;\u0026lt;target\u0026gt;\u0026gt;Item two Here we refer to item [[target]] or [[target][My target]] The last sentence will appear as 'Here we refer to item 2 or My target' when exported.\nWith store and insert link Use org-mode function org-store-link. Doom key uses SPC-m-n in normal mode or M-SPC-m-n in insert mode. Then insert the link with org-insert-link key C-c C-l or doom key SPC-m-l-l in normal mode or prefix M in insert mode.\n"
+            }
+        
+    ,
+        
+            {
                 "ref": "https://yusbk.github.io/2021/12/22/doom-emacs-tips/",
                 "title": "Doom tips",
                 "section": "post",

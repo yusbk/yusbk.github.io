@@ -1,0 +1,115 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>orgmode on 𝔂𝓾𝓼𝓴𝓪𝓶</title>
+		<link>https://yusbk.github.io/categories/orgmode/</link>
+		<description>Recent content in orgmode </description>
+		<generator>Hugo -- gohugo.io</generator>
+		
+  		<language>en</language>
+		
+		<managingEditor>Page(/categories/orgmode) (Yusman Kamaleri)</managingEditor>
+    	
+  		<lastBuildDate>Wed, 22 Dec 2021 00:00:00 +0000</lastBuildDate>
+		
+		<atom:link href="/categories/orgmode/" rel="self" type="application/rss+xml" />
+		
+		<item>
+			<title>Cross-reference</title>
+			<link>https://yusbk.github.io/2021/12/22/org-cross-ref/</link>
+			<pubDate>Wed, 22 Dec 2021 00:00:00 +0000</pubDate>
+			<guid>https://yusbk.github.io/2021/12/22/org-cross-ref/</guid>
+			<description>Reference to this is here.
+Section link The easierst is to use CUSTOM_ID as the example below and refer to it with text [[#sec:one][Section 1]] or reference with number only [[#sec:one]].
+* Section One :PROPERTIES: :CUSTOM_ID: sec:one :END: The link with text will be &#39;.</description>
+		</item>
+      	
+		<item>
+			<title>Doom tips</title>
+			<link>https://yusbk.github.io/2021/12/22/doom-emacs-tips/</link>
+			<pubDate>Wed, 22 Dec 2021 00:00:00 +0000</pubDate>
+			<guid>https://yusbk.github.io/2021/12/22/doom-emacs-tips/</guid>
+			<description>First published date: 2021-04-27
+Some tips to learn the keybindings in Doom and Evil in the process of migrating from my vanilla Emacs settings. For overview of keybindings type SPC-h-b-b. Other good references:
+ Narra&amp;rsquo;s Blog - Doom Tips and Howtos Org Mode Shortcuts for Emacs Doom Gist of Hjertnes Evil-mode collection  Doom leader-key is SPC and localleader-key is SPC-m.</description>
+		</item>
+      	
+		<item>
+			<title>Environment</title>
+			<link>https://yusbk.github.io/2021/12/08/r-environment/</link>
+			<pubDate>Wed, 08 Dec 2021 00:00:00 +0000</pubDate>
+			<guid>https://yusbk.github.io/2021/12/08/r-environment/</guid>
+			<description>Several nice blogs and references on the net to read on this stuff. Among those:
+ Environments in R How R Searches and Finds Stuff  This discussion from StackOverflow explains nicely with example on the difference between parent.env() and parent.</description>
+		</item>
+      	
+		<item>
+			<title>Ellipsis …</title>
+			<link>https://yusbk.github.io/2021/12/03/ellipsis/</link>
+			<pubDate>Fri, 03 Dec 2021 00:00:00 +0000</pubDate>
+			<guid>https://yusbk.github.io/2021/12/03/ellipsis/</guid>
+			<description>First published: 2020-12-12
+Just to remind me how I could use ellipsis or the three dots ... in my coding. There are three scenarios I find it useful:
+Function wrapper When creating a function wrapper and instead of providing all the arguments to be send further, you could just use .</description>
+		</item>
+      	
+		<item>
+			<title>MS Access Shutdown</title>
+			<link>https://yusbk.github.io/2021/11/09/access-shutdown/</link>
+			<pubDate>Tue, 09 Nov 2021 00:00:00 +0000</pubDate>
+			<guid>https://yusbk.github.io/2021/11/09/access-shutdown/</guid>
+			<description>How to shutdown all running Access when you need to do some changes. This is just a summary from Microsoft Docs. The steps are:
+Create empty text file  This file will be the key. Name the file to anything like checkfile.</description>
+		</item>
+      	
+		<item>
+			<title>Merge Selected File</title>
+			<link>https://yusbk.github.io/2021/09/30/git-merge-selected-file/</link>
+			<pubDate>Thu, 30 Sep 2021 00:00:00 +0000</pubDate>
+			<guid>https://yusbk.github.io/2021/09/30/git-merge-selected-file/</guid>
+			<description>This guide is from StackOverflow on how to selectively merge files form one branch to another.
+Basically it&amp;rsquo;s:
+git merge --no-ff --no-commit dev Where dev is the branch you want to merge from into the current branch.
+The --no-commit option will stage the files that have been merged by Git without actually committing them.</description>
+		</item>
+      	
+		<item>
+			<title>data.table special symbol</title>
+			<link>https://yusbk.github.io/2021/09/17/dt-special-symbol/</link>
+			<pubDate>Fri, 17 Sep 2021 00:00:00 +0000</pubDate>
+			<guid>https://yusbk.github.io/2021/09/17/dt-special-symbol/</guid>
+			<description>.N Mult .SD dan .SDcols .I .GRP dan rleid Contoh dari manual  First published: 2017-08-31
+Hari ni bersempena Hari kemerdekaan Malaysia ada masa untuk ulang kaji pakej data.table. Hari ni ialah mengenai Special Symbol seperti .N, .I, .GRP, .</description>
+		</item>
+      	
+		<item>
+			<title>data.table tips</title>
+			<link>https://yusbk.github.io/2021/09/17/datatable_tips/</link>
+			<pubDate>Fri, 17 Sep 2021 00:00:00 +0000</pubDate>
+			<guid>https://yusbk.github.io/2021/09/17/datatable_tips/</guid>
+			<description>First published: 2021-04-20
+Some tips for data.table that I came across while googling which might be useful.
+Print To print more rows that default can be done with either:
+options(datatable.print.topn = 70) print(DT, topn = 70) Using options will implement the changes globally.</description>
+		</item>
+      	
+		<item>
+			<title>names attribute</title>
+			<link>https://yusbk.github.io/2021/09/17/names-att/</link>
+			<pubDate>Fri, 17 Sep 2021 00:00:00 +0000</pubDate>
+			<guid>https://yusbk.github.io/2021/09/17/names-att/</guid>
+			<description>Sometime an object has attribute names for identification of the value with names instead of index. There are time you need to extract the names of a vector or object. The easiest way is to do:
+library(data.table) dt &amp;lt;- cars[1,] setDT(dt) str(dt) dt[, dist := as.</description>
+		</item>
+      	
+		<item>
+			<title>SSH-key with Git on Windows</title>
+			<link>https://yusbk.github.io/2021/09/06/git-ssh/</link>
+			<pubDate>Mon, 06 Sep 2021 14:11:00 +0200</pubDate>
+			<guid>https://yusbk.github.io/2021/09/06/git-ssh/</guid>
+			<description>First published: 2020-09-29
+Generally, these are what I did:
+ Install git-with-openssh Create SSH-key Add SSH-key to ssh-agent Create ~/.bashrc for auto-launching ssh-agent  Common problems  Unable to push to origin with this error message.  ssh: Could not resolve hostname personal: Name or service not known fatal: Could not read from remote repository.</description>
+		</item>
+      	
+	</channel>
+</rss>

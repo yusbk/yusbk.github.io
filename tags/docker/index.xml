@@ -14,6 +14,16 @@
 		<atom:link href="/tags/docker/" rel="self" type="application/rss+xml" />
 		
 		<item>
+			<title>Cross-reference</title>
+			<link>https://yusbk.github.io/2021/12/22/org-cross-ref/</link>
+			<pubDate>Wed, 22 Dec 2021 00:00:00 +0000</pubDate>
+			<guid>https://yusbk.github.io/2021/12/22/org-cross-ref/</guid>
+			<description>Reference to this is here.
+Section link The easierst is to use CUSTOM_ID as the example below and refer to it with text [[#sec:one][Section 1]] or reference with number only [[#sec:one]].
+* Section One :PROPERTIES: :CUSTOM_ID: sec:one :END: The link with text will be &#39;.</description>
+		</item>
+      	
+		<item>
 			<title>Doom tips</title>
 			<link>https://yusbk.github.io/2021/12/22/doom-emacs-tips/</link>
 			<pubDate>Wed, 22 Dec 2021 00:00:00 +0000</pubDate>
@@ -99,17 +109,6 @@ library(data.table) dt &amp;lt;- cars[1,] setDT(dt) str(dt) dt[, dist := as.</de
 			<description>First published: 2020-09-29
 Generally, these are what I did:
  Install git-with-openssh Create SSH-key Add SSH-key to ssh-agent Create ~/.bashrc for auto-launching ssh-agent  Common problems  Unable to push to origin with this error message.  ssh: Could not resolve hostname personal: Name or service not known fatal: Could not read from remote repository.</description>
-		</item>
-      	
-		<item>
-			<title>Git Rebase or Reset</title>
-			<link>https://yusbk.github.io/2021/09/06/git-rebase/</link>
-			<pubDate>Mon, 06 Sep 2021 00:00:00 +0000</pubDate>
-			<guid>https://yusbk.github.io/2021/09/06/git-rebase/</guid>
-			<description>First published: 2021-08-05
-Rebase to previous commit of a sepcific branch ie. master.
-git reset --hard origin/master git status or reset to any previous specific commit.
-git log --oneline --graph -5 git reset --hard &amp;lt;commit id&amp;gt; git push origin HEAD --force The steps above:</description>
 		</item>
       	
 	</channel>
