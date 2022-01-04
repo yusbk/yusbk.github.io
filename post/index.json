@@ -2,6 +2,16 @@
     
         
             {
+                "ref": "https://yusbk.github.io/2022/01/04/yesno-question/",
+                "title": "YesNo question",
+                "section": "post",
+                "date" : "2022.01.04",
+                "body": "Different ways to make your R session interactive for asking question and receive the answer as an input.\nreadline You can find some example in StackOverflow or Geeksforgeeks. Basically is just like this:\ncp \u0026lt;- as.integer(readline(prompt = \u0026#34;Vil du kopiere filen? Svar 0=Nei 1=Ja \u0026#34;)) utils::menu An example is from StackOverflow or from the documentation. You can use GUI is Windows or MacOS. This is how I use the functions:\nmsgs \u0026lt;- sprintf(\u0026#34;\\nWoops!! Table `%s` allready exists. What will you do?\u0026#34;, table) answer \u0026lt;- utils::menu(c(\u0026#34;Overwrite\u0026#34;, \u0026#34;Append\u0026#34;, \u0026#34;Cancel\u0026#34;), title = msgs) utils::askYesNo This gives the output as TRUE, FALSE or NA. You can read the documentation for some examples.\nout \u0026lt;- utils::askYesNo(\u0026#34;Do you can to proceed?\u0026#34;) "
+            }
+        
+    ,
+        
+            {
                 "ref": "https://yusbk.github.io/2021/12/22/magit-ediff/",
                 "title": "Smerge, ediff and diff",
                 "section": "post",

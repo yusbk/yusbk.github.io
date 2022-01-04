@@ -14,6 +14,16 @@
 		<atom:link href="/tags/ci/" rel="self" type="application/rss+xml" />
 		
 		<item>
+			<title>YesNo question</title>
+			<link>https://yusbk.github.io/2022/01/04/yesno-question/</link>
+			<pubDate>Tue, 04 Jan 2022 00:00:00 +0000</pubDate>
+			<guid>https://yusbk.github.io/2022/01/04/yesno-question/</guid>
+			<description>Different ways to make your R session interactive for asking question and receive the answer as an input.
+readline You can find some example in StackOverflow or Geeksforgeeks. Basically is just like this:
+cp &amp;lt;- as.integer(readline(prompt = &amp;#34;Vil du kopiere filen?</description>
+		</item>
+      	
+		<item>
 			<title>Smerge, ediff and diff</title>
 			<link>https://yusbk.github.io/2021/12/22/magit-ediff/</link>
 			<pubDate>Wed, 22 Dec 2021 15:27:00 +0100</pubDate>
@@ -101,15 +111,6 @@ Hari ni bersempena Hari kemerdekaan Malaysia ada masa untuk ulang kaji pakej dat
 Some tips for data.table that I came across while googling which might be useful.
 Print To print more rows that default can be done with either:
 options(datatable.print.topn = 70) print(DT, topn = 70) Using options will implement the changes globally.</description>
-		</item>
-      	
-		<item>
-			<title>names attribute</title>
-			<link>https://yusbk.github.io/2021/09/17/names-att/</link>
-			<pubDate>Fri, 17 Sep 2021 00:00:00 +0000</pubDate>
-			<guid>https://yusbk.github.io/2021/09/17/names-att/</guid>
-			<description>Sometime an object has attribute names for identification of the value with names instead of index. There are time you need to extract the names of a vector or object. The easiest way is to do:
-library(data.table) dt &amp;lt;- cars[1,] setDT(dt) str(dt) dt[, dist := as.</description>
 		</item>
       	
 	</channel>
