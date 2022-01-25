@@ -128,10 +128,30 @@
 <p>Sometimes it&rsquo;s nice to know where warnings is activated in the code. Then we can
 change the options to make warning as error.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">options</span>(warn <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>)
+</code></pre></div><h2 id="rstudio">RStudio</h2>
+<p>Though I don&rsquo;t use RStudio, it&rsquo;s good to know that RStudio has many RStudio
+specific commands that starts with <code>.rs.*</code> such as:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">.rs.restartR</span>()
+</code></pre></div><h2 id="package-inst-folder">Package inst folder</h2>
+<p>Folder <code>inst</code> can be used to save data for <code>testthat</code> or as example when
+creating an R package. It&rsquo;s easier to save it as <code>RDS</code> format with:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">saveRDS</span>(objName, <span style="color:#a6e22e">file.path</span>(<span style="color:#a6e22e">system.file</span>(package <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;pkgName&#34;</span>), <span style="color:#e6db74">&#34;folder/data.rds&#34;</span>))
+</code></pre></div><p><code>folder</code> is the folder inside <code>inst</code> folder in R package folder structure. To
+access the data then:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">obj <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">readRDS</span>(<span style="color:#a6e22e">system.file</span>(<span style="color:#e6db74">&#34;folder&#34;</span>, <span style="color:#e6db74">&#34;data.rds&#34;</span>, package <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;pkgName&#34;</span>))
 </code></pre></div>
 
 
 
+      
+        <div class="blog-tags">
+          
+            <a
+              href="https://yusbk.github.io/tags/debug/"
+              >debug</a
+            >&nbsp;
+          
+        </div>
       
     </article>
     

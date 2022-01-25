@@ -6,7 +6,7 @@
                 "title": "Good to know",
                 "section": "post",
                 "date" : "2022.01.25",
-                "body": "Things that I find it useful during my work:\nDebing warnings Sometimes it\u0026rsquo;s nice to know where warnings is activated in the code. Then we can change the options to make warning as error.\noptions(warn = 2) "
+                "body": "Things that I find it useful during my work:\nDebing warnings Sometimes it\u0026rsquo;s nice to know where warnings is activated in the code. Then we can change the options to make warning as error.\noptions(warn = 2) RStudio Though I don\u0026rsquo;t use RStudio, it\u0026rsquo;s good to know that RStudio has many RStudio specific commands that starts with .rs.* such as:\n.rs.restartR() Package inst folder Folder inst can be used to save data for testthat or as example when creating an R package. It\u0026rsquo;s easier to save it as RDS format with:\nsaveRDS(objName, file.path(system.file(package = \u0026#34;pkgName\u0026#34;), \u0026#34;folder/data.rds\u0026#34;)) folder is the folder inside inst folder in R package folder structure. To access the data then:\nobj \u0026lt;- readRDS(system.file(\u0026#34;folder\u0026#34;, \u0026#34;data.rds\u0026#34;, package = \u0026#34;pkgName\u0026#34;)) "
             }
         
     ,
