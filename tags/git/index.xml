@@ -19,8 +19,7 @@
 			<pubDate>Tue, 25 Jan 2022 00:00:00 +0000</pubDate>
 			<guid>https://yusbk.github.io/2022/01/25/good-to-know/</guid>
 			<description>Things that I find it useful during my work:
-Debing warnings Sometimes it&amp;rsquo;s nice to know where warnings is activated in the code. Then we can change the options to make warning as error.
-options(warn = 2) RStudio Though I don&amp;rsquo;t use RStudio, it&amp;rsquo;s good to know that RStudio has many RStudio specific commands that starts with .</description>
+Debuging warnings Sometimes it&amp;rsquo;s nice to know where in the code that generate warnings especially when it&amp;rsquo;s related to NA introduced by coercion. To do this we can change the options to make warning as error.</description>
 		</item>
       	
 		<item>
