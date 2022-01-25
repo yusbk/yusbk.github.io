@@ -14,6 +14,16 @@
 		<atom:link href="/tags/merge/" rel="self" type="application/rss+xml" />
 		
 		<item>
+			<title>Good to know</title>
+			<link>https://yusbk.github.io/2022/01/25/good-to-know/</link>
+			<pubDate>Tue, 25 Jan 2022 00:00:00 +0000</pubDate>
+			<guid>https://yusbk.github.io/2022/01/25/good-to-know/</guid>
+			<description>Things that I find it useful during my work:
+Debing warnings Sometimes it&amp;rsquo;s nice to know where warnings is activated in the code. Then we can change the options to make warning as error.
+options(warn = 2) </description>
+		</item>
+      	
+		<item>
 			<title>YesNo question</title>
 			<link>https://yusbk.github.io/2022/01/04/yesno-question/</link>
 			<pubDate>Tue, 04 Jan 2022 00:00:00 +0000</pubDate>
@@ -100,17 +110,6 @@ The --no-commit option will stage the files that have been merged by Git without
 			<guid>https://yusbk.github.io/2021/09/17/dt-special-symbol/</guid>
 			<description>.N Mult .SD dan .SDcols .I .GRP dan rleid Contoh dari manual  First published: 2017-08-31
 Hari ni bersempena Hari kemerdekaan Malaysia ada masa untuk ulang kaji pakej data.table. Hari ni ialah mengenai Special Symbol seperti .N, .I, .GRP, .</description>
-		</item>
-      	
-		<item>
-			<title>data.table tips</title>
-			<link>https://yusbk.github.io/2021/09/17/datatable_tips/</link>
-			<pubDate>Fri, 17 Sep 2021 00:00:00 +0000</pubDate>
-			<guid>https://yusbk.github.io/2021/09/17/datatable_tips/</guid>
-			<description>First published: 2021-04-20
-Some tips for data.table that I came across while googling which might be useful.
-Print To print more rows that default can be done with either:
-options(datatable.print.topn = 70) print(DT, topn = 70) Using options will implement the changes globally.</description>
 		</item>
       	
 	</channel>

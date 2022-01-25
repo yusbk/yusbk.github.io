@@ -2,6 +2,16 @@
     
         
             {
+                "ref": "https://yusbk.github.io/2022/01/25/good-to-know/",
+                "title": "Good to know",
+                "section": "post",
+                "date" : "2022.01.25",
+                "body": "Things that I find it useful during my work:\nDebing warnings Sometimes it\u0026rsquo;s nice to know where warnings is activated in the code. Then we can change the options to make warning as error.\noptions(warn = 2) "
+            }
+        
+    ,
+        
+            {
                 "ref": "https://yusbk.github.io/2022/01/04/yesno-question/",
                 "title": "YesNo question",
                 "section": "post",
