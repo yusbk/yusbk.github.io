@@ -14,6 +14,16 @@
 		<atom:link href="/tags/access/" rel="self" type="application/rss+xml" />
 		
 		<item>
+			<title>Mount drive</title>
+			<link>https://yusbk.github.io/2022/02/10/mount-drive/</link>
+			<pubDate>Thu, 10 Feb 2022 00:00:00 +0000</pubDate>
+			<guid>https://yusbk.github.io/2022/02/10/mount-drive/</guid>
+			<description>Install Mount manually Credential Auto mount Other option to mount Execute Access to folders  First published date: 2021-02-22
+This is only relevant to my personal reference at work.
+The address for drive F and N is as follow:</description>
+		</item>
+      	
+		<item>
 			<title>Good to know</title>
 			<link>https://yusbk.github.io/2022/01/25/good-to-know/</link>
 			<pubDate>Tue, 25 Jan 2022 00:00:00 +0000</pubDate>
@@ -100,15 +110,6 @@ Create empty text file  This file will be the key. Name the file to anything lik
 Basically it&amp;rsquo;s:
 git merge --no-ff --no-commit dev Where dev is the branch you want to merge from into the current branch.
 The --no-commit option will stage the files that have been merged by Git without actually committing them.</description>
-		</item>
-      	
-		<item>
-			<title>data.table special symbol</title>
-			<link>https://yusbk.github.io/2021/09/17/dt-special-symbol/</link>
-			<pubDate>Fri, 17 Sep 2021 00:00:00 +0000</pubDate>
-			<guid>https://yusbk.github.io/2021/09/17/dt-special-symbol/</guid>
-			<description>.N Mult .SD dan .SDcols .I .GRP dan rleid Contoh dari manual  First published: 2017-08-31
-Hari ni bersempena Hari kemerdekaan Malaysia ada masa untuk ulang kaji pakej data.table. Hari ni ialah mengenai Special Symbol seperti .N, .I, .GRP, .</description>
 		</item>
       	
 	</channel>
