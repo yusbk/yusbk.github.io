@@ -14,6 +14,16 @@
 		<atom:link href="/tags/names/" rel="self" type="application/rss+xml" />
 		
 		<item>
+			<title>Doom tips</title>
+			<link>https://yusbk.github.io/2022/02/18/doom-emacs-tips/</link>
+			<pubDate>Fri, 18 Feb 2022 00:00:00 +0100</pubDate>
+			<guid>https://yusbk.github.io/2022/02/18/doom-emacs-tips/</guid>
+			<description>First published date: 2021-04-27
+Some tips to learn the keybindings in Doom and Evil in the process of migrating from my vanilla Emacs settings. For overview of keybindings type SPC-h-b-b. Other good references:
+ Narra&amp;rsquo;s Blog - Doom Tips and Howtos Org Mode Shortcuts for Emacs Doom Gist of Hjertnes Evil-mode collection  Nice Doom Emacs Cheatsheet from niyumard.</description>
+		</item>
+      	
+		<item>
 			<title>Mount drive</title>
 			<link>https://yusbk.github.io/2022/02/10/mount-drive/</link>
 			<pubDate>Thu, 10 Feb 2022 00:00:00 +0100</pubDate>
@@ -50,16 +60,6 @@ cp &amp;lt;- as.integer(readline(prompt = &amp;#34;Vil du kopiere filen?</descri
 			<description>Reference to this is here.
 Section link The easierst is to use CUSTOM_ID as the example below and refer to it with text [[#sec:one][Section 1]] or reference with number only [[#sec:one]].
 * Section One :PROPERTIES: :CUSTOM_ID: sec:one :END: The link with text will be &#39;.</description>
-		</item>
-      	
-		<item>
-			<title>Doom tips</title>
-			<link>https://yusbk.github.io/2021/12/22/doom-emacs-tips/</link>
-			<pubDate>Wed, 22 Dec 2021 00:00:00 +0100</pubDate>
-			<guid>https://yusbk.github.io/2021/12/22/doom-emacs-tips/</guid>
-			<description>First published date: 2021-04-27
-Some tips to learn the keybindings in Doom and Evil in the process of migrating from my vanilla Emacs settings. For overview of keybindings type SPC-h-b-b. Other good references:
- Narra&amp;rsquo;s Blog - Doom Tips and Howtos Org Mode Shortcuts for Emacs Doom Gist of Hjertnes Evil-mode collection  Nice Doom Emacs Cheatsheet from niyumard.</description>
 		</item>
       	
 		<item>
