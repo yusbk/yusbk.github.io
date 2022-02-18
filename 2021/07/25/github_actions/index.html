@@ -23,7 +23,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="manifest" href="/site.webmanifest">
-<meta name="generator" content="Hugo 0.88.0" />
+<meta name="generator" content="Hugo 0.69.2" />
   </head>
   <body>
     
@@ -150,7 +150,7 @@ can check your remote origin with <code>git remote -v</code> in the terminal jus
 check where the repos origin is.</li>
 </ol>
 <!-- raw HTML omitted -->
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text"># with R usethis package
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text"># with R usethis package
 usethis::use_git_remote(&#34;origin&#34;, url = &#34;https://github.com/username/reponame.git&#34;, overwrite = TRUE)
 
 # from terminal
@@ -159,7 +159,7 @@ git remote add origin https://github.com/username/reponame
 <li>Get the CI url with:</li>
 </ol>
 <!-- raw HTML omitted -->
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">usethis::use_github_action_check_standard()
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">usethis::use_github_action_check_standard()
 </code></pre></div><ol>
 <li>Paste the URL to your README file. The URL is allready copy to your clipboard when running step 3.</li>
 <li>You can edit <code>R-CMD-check.yml</code> file in folder <code>.github/workflow</code> to suit your need.</li>
@@ -180,13 +180,13 @@ read general guide from this <a href="https://www.r-bloggers.com/2017/06/how-to-
 <li>
 <p>If you use a private repos, you need to add your token to <a href="https://app.codecov.io/gh/">codecov.io</a> by
 running this code:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">  covr::codecov(token = &#34;${{secret.CODECOV_TOKEN}}&#34;)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">  covr::codecov(token = &#34;${{secret.CODECOV_TOKEN}}&#34;)
 </code></pre></div></li>
 <li>
 <p>To check, run <code>covr::report()</code>. If you get error then you should run in
 a new session without loading your package. Basically this error happens only
 to Windows OS as <a href="https://github.com/r-lib/covr/issues/443">discussed here</a> by Jim Hester.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">  # Run R in your package folder without running devtools::load_all()
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">  # Run R in your package folder without running devtools::load_all()
   pkg &lt;- covr::package_coverage(path = getwd())
   covr::report(pkg)
 </code></pre></div></li>

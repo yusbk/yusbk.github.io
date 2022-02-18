@@ -23,7 +23,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="manifest" href="/site.webmanifest">
-<meta name="generator" content="Hugo 0.88.0" />
+<meta name="generator" content="Hugo 0.69.2" />
   </head>
   <body>
     
@@ -132,7 +132,7 @@
 </ul>
 <!-- raw HTML omitted -->
 <p>Important commands:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">  docker pull image-name
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">  docker pull image-name
   docker run local-name image-name
   docker ps
 
@@ -140,10 +140,10 @@
 </code></pre></div><h2 id="use-image">Use image</h2>
 <p>Some basic commands to start using <a href="https://docker-curriculum.com/">Docker</a>. Two things are important ie. <strong>Docker Image</strong> and <strong>Docker
 Container</strong>. To fetch RStudio image from <a href="https://hub.docker.com/">Docker Hub</a> run the command:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">  docker pull rocker/rstudio
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">  docker pull rocker/rstudio
 </code></pre></div><p>When the image has been pulled to the local Docker engine, you could create and run Docker container
 based on the pulled image with</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">  docker run --rm rocker/rstudio
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">  docker run --rm rocker/rstudio
 </code></pre></div><p>Here the option <code>--rm</code> is used to tell docker to delete the container when exiting. Running <code>docker run</code>
 is actually a short command to <code>docker create</code> and <code>docker start</code> of Docker container. Other options
 that often are used when using <code>docker run</code> command include:</p>
@@ -154,17 +154,17 @@ that often are used when using <code>docker run</code> command include:</p>
 <li><code>--name</code> to give a name we want for the container</li>
 </ul>
 <p>To expose port 8787 both for server inside the container and externally of image rocker/rstudio</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">  docker run -p 8787:8787 --name rstudio rocker/rtudio
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">  docker run -p 8787:8787 --name rstudio rocker/rtudio
 </code></pre></div><p>To access RStudio from the webbrowser run <a href="http://localhost:8787">http://localhost:8787</a></p>
 <p>To check all pulled images in the local machine, run <code>docker images</code> command. It is wise to delete
-containers and images that aren&rsquo;t used to reduce space. Deleting the images is done using <code>docker rmi image-name</code> command while deleting container if option <code>--rm</code> when running the container is <code>docker rm container-name</code>.</p>
+containers and images that aren&rsquo;t used to reduce space. Deleting the images is done using <code>docker rmi image-name</code> command while deleting container if option <code>--rm</code> when running the container is <code>docker rm container-name</code>.</p>
 <p>To list all containers, use either of these commands.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">  docker container ls -a
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">  docker container ls -a
   docker ps -a
 </code></pre></div><p>The options <code>-a</code> will also list the containers with <code>existed</code> status. To delete all containers that are
 already existed, use the command <code>docker container prune</code>. Else, ordinary bash method defining all the
 options as shown in the second command line below:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">  docker rm <span style="color:#66d9ef">$(</span>docker ps -a -q -f status<span style="color:#f92672">=</span>existed<span style="color:#66d9ef">)</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">  docker rm <span style="color:#66d9ef">$(</span>docker ps -a -q -f status<span style="color:#f92672">=</span>existed<span style="color:#66d9ef">)</span>
 </code></pre></div><p>Without defining the specific options will only remove a certain container ie. <code>docker rm rstudio</code>.
 The option <code>-q</code> for just returning the numeric ID and <code>-f</code> for filtering output based on conditions
 provided.</p>
@@ -172,7 +172,7 @@ provided.</p>
 <h2 id="create-image">Create Image</h2>
 <p>When no available image suits your need, than you can create one using <a href="https://docs.docker.com/engine/reference/builder/">Dockerfile</a> which is a text
 file consists of commands that Docker client will call while creating an image. Example of Dockerfile copied from <a href="https://docker-curriculum.com/#docker-images">tutorial.</a></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">  FROM python:3
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">  FROM python:3
 
   <span style="color:#75715e"># set a directory for the app</span>
   WORKDIR /usr/src/app
@@ -189,21 +189,21 @@ file consists of commands that Docker client will call while creating an image. 
   <span style="color:#75715e"># run the command</span>
   CMD <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;python&#34;</span>, <span style="color:#e6db74">&#34;./app.py&#34;</span><span style="color:#f92672">]</span>
 </code></pre></div><p>Then run <code>docker build</code> command from terminal as follows:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">  docker build -t yourusername/catnip .
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">  docker build -t yourusername/catnip .
 </code></pre></div><p>The option <code>-t</code> takes an optional tag name and a location of the directory containing the Dockerfile.
 <code>Yourusername</code> is the username from your <a href="https://hub.docker.com/">Docker Hub</a> account. When you will run the completed image,
 then run:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">  docker run -p 8888:5000 yourusername/catnip
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">  docker run -p 8888:5000 yourusername/catnip
 </code></pre></div><p>The command we just ran used port 5000 for the server inside the container and exposed this
 externally on port 8888. Head over to the URL with port 8888 with <a href="https://localhost:8888/">https://localhost:8888/</a></p>
 <h2 id="mount-directory">Mount directory</h2>
 <p>If you want to make local directory available in your container, the basic structure is as follow:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">  docker run -it --name &lt;WHATEVER&gt; -p &lt;LOCAL_PORT&gt;:&lt;CONTAINER_PORT&gt; -v &lt;LOCAL_PATH&gt;:&lt;CONTAINER_PATH&gt; -d &lt;IMAGE&gt;:&lt;TAG&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">  docker run -it --name &lt;WHATEVER&gt; -p &lt;LOCAL_PORT&gt;:&lt;CONTAINER_PORT&gt; -v &lt;LOCAL_PATH&gt;:&lt;CONTAINER_PATH&gt; -d &lt;IMAGE&gt;:&lt;TAG&gt;
 </code></pre></div><p>To implement then run:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">  docker run -v myfolder:/data/myfolder image-name
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">  docker run -v myfolder:/data/myfolder image-name
   docker run --rm -it -v /mnt/F:/F silex/emacs
 </code></pre></div><p>For multiple directory can be done with</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">  docker run -it --rm <span style="color:#ae81ff">\
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">  docker run -it --rm <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>         -v <span style="color:#e6db74">&#39;/mnt/F:/F&#39;</span> <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>         -v <span style="color:#e6db74">&#39;/mnt/F:/N&#39;</span> <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>         silex/emacs

@@ -23,7 +23,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="manifest" href="/site.webmanifest">
-<meta name="generator" content="Hugo 0.88.0" />
+<meta name="generator" content="Hugo 0.69.2" />
   </head>
   <body>
     
@@ -123,7 +123,7 @@ problem is I have to stash changes when switching back and forth. To avoid this 
 the branches you want to work seperately. Basically it creates a new folder and work independently.</p>
 <p>For instance, to start worktree with newfix from master branch. You can create newfix branch first
 then worktree or directly to create worktree with newfix branch</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">  git branch fix
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">  git branch fix
   git worktree add ./path/newfix fix
 
   <span style="color:#75715e"># direct from origin/master</span>
@@ -131,7 +131,7 @@ then worktree or directly to create worktree with newfix branch</p>
 </code></pre></div><p>This will create <em>fix</em> branch and <em>newfix</em> folder at <code>./path/newfix</code>. The example above uses <code>origin/master</code> which
 is the default and can be ignored. If you select different branch then you can specify
 <code>origin/fix</code>. To work with the new worktree newfix branch then you just need to change folder</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">  cd ./path/newfix
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">  cd ./path/newfix
 
   <span style="color:#75715e"># Check you are in fix branch</span>
   git status
@@ -139,7 +139,7 @@ is the default and can be ignored. If you select different branch then you can s
 deleting the folder directly and run <code>git worktree prune</code> to delete it from the list. If you have
 error because your branch already checked out then delete <code>.git/worktrees/newfix</code>. See
 <a href="https://www.saltycrane.com/blog/2017/05/git-worktree-notes/">https://www.saltycrane.com/blog/2017/05/git-worktree-notes/</a></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">  rm -rf path/newfix
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">  rm -rf path/newfix
   git worktree prune
   git branch -d fix
 </code></pre></div>

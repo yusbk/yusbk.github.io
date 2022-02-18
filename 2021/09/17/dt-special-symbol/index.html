@@ -23,7 +23,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="manifest" href="/site.webmanifest">
-<meta name="generator" content="Hugo 0.88.0" />
+<meta name="generator" content="Hugo 0.69.2" />
   </head>
   <body>
     
@@ -145,13 +145,13 @@
 Penerangan ini diambil dari manual di <code>data.table</code> tetapi diedit sedikit. Untuk
 rujukan di <a href="https://jangorecki.gitlab.io/data.cube/library/data.table/html/special-symbols.html">sini</a>.</p>
 <p>Ini data yang dipakai untuk membuat contoh:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">  DT <span style="color:#f92672">=</span> <span style="color:#a6e22e">data.table</span>(x<span style="color:#f92672">=</span><span style="color:#a6e22e">rep</span>(<span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;b&#34;</span>,<span style="color:#e6db74">&#34;a&#34;</span>,<span style="color:#e6db74">&#34;c&#34;</span>),each<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>), v<span style="color:#f92672">=</span><span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">2</span>), y<span style="color:#f92672">=</span><span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">6</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">7</span>,<span style="color:#ae81ff">8</span>), a<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">9</span>, b<span style="color:#f92672">=</span><span style="color:#ae81ff">9</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">  DT <span style="color:#f92672">=</span> <span style="color:#a6e22e">data.table</span>(x<span style="color:#f92672">=</span><span style="color:#a6e22e">rep</span>(<span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;b&#34;</span>,<span style="color:#e6db74">&#34;a&#34;</span>,<span style="color:#e6db74">&#34;c&#34;</span>),each<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>), v<span style="color:#f92672">=</span><span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">2</span>), y<span style="color:#f92672">=</span><span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">6</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">7</span>,<span style="color:#ae81ff">8</span>), a<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">9</span>, b<span style="color:#f92672">=</span><span style="color:#ae81ff">9</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>)
   X <span style="color:#f92672">=</span> <span style="color:#a6e22e">data.table</span>(x<span style="color:#f92672">=</span><span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;c&#34;</span>,<span style="color:#e6db74">&#34;b&#34;</span>), v<span style="color:#f92672">=</span><span style="color:#ae81ff">8</span><span style="color:#f92672">:</span><span style="color:#ae81ff">7</span>, foo<span style="color:#f92672">=</span><span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">2</span>))
 </code></pre></div><h2 id="dot-n">.N</h2>
 <p>Penggunaan <code>.N</code> selain dari untuk mendapatkan jumlah baris di dataset, <code>.N</code> boleh juga
 digunakan untuk melihat barisan terakhir di dataset. Untuk melihat barisan pertama
 guna <code>DT[1]</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">  DT[.N] <span style="color:#75715e"># last row, only special symbol allowed in &#39;i&#39; - nesten som Total</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">  DT[.N] <span style="color:#75715e"># last row, only special symbol allowed in &#39;i&#39; - nesten som Total</span>
   DT[, .N] <span style="color:#75715e"># total number of rows in DT</span>
   DT[, .N, by<span style="color:#f92672">=</span>x] <span style="color:#75715e"># number of rows in each group</span>
 </code></pre></div><h2 id="mult">Mult</h2>
@@ -160,7 +160,7 @@ fungsi mult ialah untuk menetapkan kombinasi barisan yang ingin ditunjukkan sama
 &ldquo;all&rdquo;, &ldquo;first&rdquo; atau &ldquo;last&rdquo;. Variable <code>x</code> dan <code>y</code> boleh disusun dengan menggunakan
 <code>setkey(DT, x, y)</code>. Sekiranya tidak disusun terlebih dahulu sebelum dipakai maka harus
 menggunakan fungsi <code>on</code> seperti contoh di bawah.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">  <span style="color:#75715e">## contoh data</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">  <span style="color:#75715e">## contoh data</span>
   dt <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">data.table</span>(x <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">7</span>),
                    y <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">6</span>))
 
@@ -171,7 +171,7 @@ menggunakan fungsi <code>on</code> seperti contoh di bawah.</p>
 
   <span style="color:#75715e">## buat kolom dengan nilai 0</span>
   dt[, <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;first&#34;</span>, <span style="color:#e6db74">&#34;last&#34;</span>) <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0L</span>][]
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">     x y first last
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">     x y first last
   1: 1 1     0    0
   2: 1 2     0    0
   3: 1 2     0    0
@@ -181,14 +181,14 @@ menggunakan fungsi <code>on</code> seperti contoh di bawah.</p>
 menunjukkan kombinasi pertama sahaja. Sekiranya kombinasi yang sama terdapat
 dipelbagai baris, hanya barisan yang pertama dimana kombinasi tersebut ditemui akan
 dipilih. Pemakaian <code>&quot;last&quot;</code> memilih barisan terakhir dimana kombinasi yang diingini ditemui.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">  <span style="color:#75715e">## Sekiranya kombinasi x,y yang pertama terdapat</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">  <span style="color:#75715e">## Sekiranya kombinasi x,y yang pertama terdapat</span>
   <span style="color:#75715e">## di data masukkan 1 di kolom &#34;first&#34;</span>
   dt[udt, first <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1L</span>, on <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;x&#34;</span>, <span style="color:#e6db74">&#34;y&#34;</span>), mult <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;first&#34;</span>][]
 
   <span style="color:#75715e">## Sekiranya kombinasi x,y yang terakhir terdapat</span>
   <span style="color:#75715e">## di data masukkan nilai 1 di kolom &#34;last&#34;</span>
   dt[udt, last <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1L</span>, on <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;x&#34;</span>, <span style="color:#e6db74">&#34;y&#34;</span>), mult <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;last&#34;</span>][]
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">     x y first last
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">     x y first last
   1: 1 1     1    1
   2: 1 2     1    0
   3: 3 3     1    1
@@ -196,14 +196,14 @@ dipilih. Pemakaian <code>&quot;last&quot;</code> memilih barisan terakhir dimana
   5: 7 6     1    1
 </code></pre></div><p>Contoh di bawah menunjukkan cara sekiranya hanya ingin mendapatkan index
 kombinasi yang diingini sahaja.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">  <span style="color:#75715e">## Untuk lihat indeks bagi kombinasi yang unik sahaja</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">  <span style="color:#75715e">## Untuk lihat indeks bagi kombinasi yang unik sahaja</span>
   dt<span style="color:#a6e22e">[unique</span>(dt), on <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;x&#34;</span>, <span style="color:#e6db74">&#34;y&#34;</span>), mult <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;first&#34;</span>, which <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>]
 
   [1] <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">2</span> <span style="color:#ae81ff">3</span> <span style="color:#ae81ff">5</span>
 </code></pre></div><p>Contoh lain menggunakan <code>mult</code>. Seperti kajian isi rumah (<em>household</em>) dimana &ldquo;id&rdquo;
 mewakili rumah. Semua ahli keluarga mempunyai id-rumah sama. Sekiranya ingin
 mencari ahli termuda atau tertua fungsi <code>mult</code> dapat memudahkan proses.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">  <span style="color:#a6e22e">set.seed</span>(<span style="color:#ae81ff">1234</span>)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">  <span style="color:#a6e22e">set.seed</span>(<span style="color:#ae81ff">1234</span>)
   dt <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">data.table</span>(id <span style="color:#f92672">=</span> <span style="color:#a6e22e">sample</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">10</span>, <span style="color:#66d9ef">TRUE</span>),
                    umur <span style="color:#f92672">=</span> <span style="color:#a6e22e">sample</span>(<span style="color:#ae81ff">20</span><span style="color:#f92672">:</span><span style="color:#ae81ff">35</span>, <span style="color:#ae81ff">10</span>, <span style="color:#66d9ef">TRUE</span>),
                    jentina <span style="color:#f92672">=</span> <span style="color:#a6e22e">sample</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">10</span>, <span style="color:#66d9ef">TRUE</span>),
@@ -231,7 +231,7 @@ di fungsi <code>setkey</code> dimana data disusun mengikut <code>id</code> kemud
 yang telah ditetapkan, pemilihan kolom unik boleh dibuat secara fungsi asas
 menggunakan <code>unique(dt[, c(&quot;kol1&quot;, &quot;kol2&quot;)])</code>. Penggunaan <code>on</code> boleh memakai cara
 <code>list</code> atau <code>concatenate</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">       id umur jentina kode muda tua KodePertama KodeAkhir
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">       id umur jentina kode muda tua KodePertama KodeAkhir
    1:  1   24       2    3    1  NA           1        NA
    2:  1   24       2    2   NA  NA           1         1
    3:  1   31       1    3   NA   1          NA         1
@@ -246,7 +246,7 @@ menggunakan <code>unique(dt[, c(&quot;kol1&quot;, &quot;kol2&quot;)])</code>. Pe
 <p>Penggunaan <code>.SD</code> juga boleh berasaskan <em>indeks barisan</em>. Contoh untuk menggunakan <code>.SDcols</code>
 seperti di bawah termasuk menggunakan fungsi <code>lapply</code>. Tetapi penggunaan <code>&quot;.SD&quot;</code> adalah
 lebih lambat berbanding menggunakan fungsi <code>&quot;on&quot;</code> seperti di atas.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">  <span style="color:#75715e"># pilih kolom &#39;x&#39; dan &#39;y&#39;</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">  <span style="color:#75715e"># pilih kolom &#39;x&#39; dan &#39;y&#39;</span>
   DT[, .SD, .SDcols <span style="color:#f92672">=</span> x<span style="color:#f92672">:</span>y]
   <span style="color:#75715e"># baris pertama di semua kolom</span>
   DT[, .SD[1]]
@@ -271,7 +271,7 @@ seperti menggunakan <code>DT[, id := seq_len(.N)</code></p>
 bagi setiap kumpulan di <code>x</code>. Untuk kumpulan <code>b</code> di kolom <code>x</code>, nilai pertama ialah di
 barisan <strong>1</strong>, nilai pertama bagi kumpulan <code>a</code> di kolom <code>x</code> ialah di barian ke <strong>4</strong> dan
 nilai pertama kumpulan <code>c</code> di barisan ke <strong>7</strong>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">  DT
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">  DT
      x v y a b
   <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span> b <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">9</span>
   <span style="color:#ae81ff">2</span><span style="color:#f92672">:</span> b <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">6</span> <span style="color:#ae81ff">2</span> <span style="color:#ae81ff">8</span>
@@ -299,7 +299,7 @@ nilai pertama kumpulan <code>c</code> di barisan ke <strong>7</strong>.</p>
 </code></pre></div><h3 id="dapatkan-barisan-nilai-maksium">Dapatkan barisan nilai maksium</h3>
 <p>Untuk dapatkan index bagi nilai maksimum mengikut kumpulan di kolom <code>x</code> boleh dibuat
 seperti cara di bawah.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">  DT[, .I<span style="color:#a6e22e">[which.max</span>(y)], by <span style="color:#f92672">=</span> x] <span style="color:#75715e"># which row number with the max &#39;y&#39; by &#39;x&#39;</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">  DT[, .I<span style="color:#a6e22e">[which.max</span>(y)], by <span style="color:#f92672">=</span> x] <span style="color:#75715e"># which row number with the max &#39;y&#39; by &#39;x&#39;</span>
 
      x V1
   <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span> b  <span style="color:#ae81ff">2</span>
@@ -307,14 +307,14 @@ seperti cara di bawah.</p>
   <span style="color:#ae81ff">3</span><span style="color:#f92672">:</span> c  <span style="color:#ae81ff">9</span>
 </code></pre></div><h3 id="buat-subset">Buat subset</h3>
 <p>Untuk membuat subset data berdasarkan nilai atau kategori tertentu seperti setiap tahun.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#75715e">## Dapatkan index barisan</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#75715e">## Dapatkan index barisan</span>
 DT[, .I<span style="color:#a6e22e">[sample</span>(age, <span style="color:#ae81ff">5</span>)], by <span style="color:#f92672">=</span> year]
 
 <span style="color:#75715e">## Subset data dari index</span>
 DT[DT[, I<span style="color:#a6e22e">[sample</span>(age, <span style="color:#ae81ff">5</span>)], by <span style="color:#f92672">=</span> year]<span style="color:#f92672">$</span>V1]
 </code></pre></div><h2 id="dot-grp-dan-rleid">.GRP dan rleid</h2>
 <p>Untuk mengkaji menggikut kumpulan secara penyusunan.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">  DT[, grp <span style="color:#f92672">:=</span> .GRP, by <span style="color:#f92672">=</span> x][] <span style="color:#75715e"># add a group counter</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">  DT[, grp <span style="color:#f92672">:=</span> .GRP, by <span style="color:#f92672">=</span> x][] <span style="color:#75715e"># add a group counter</span>
 
      x v y a b grp
   <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span> b <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">9</span>   <span style="color:#ae81ff">1</span>
@@ -343,7 +343,7 @@ DT[DT[, I<span style="color:#a6e22e">[sample</span>(age, <span style="color:#ae8
   <span style="color:#ae81ff">3</span><span style="color:#f92672">:</span>     <span style="color:#ae81ff">3</span>  <span style="color:#ae81ff">6</span> <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">6</span> <span style="color:#ae81ff">3</span>
   <span style="color:#ae81ff">4</span><span style="color:#f92672">:</span>     <span style="color:#ae81ff">4</span>  <span style="color:#ae81ff">7</span> <span style="color:#ae81ff">2</span> <span style="color:#ae81ff">3</span> <span style="color:#ae81ff">8</span> <span style="color:#ae81ff">1</span>
 </code></pre></div><p>Untuk gabungkan dua dataset. Tapi cara ini masih tidak difahami :-(</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">  X
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">  X
 
      x v foo
   <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span> c <span style="color:#ae81ff">8</span>   <span style="color:#ae81ff">4</span>
@@ -364,7 +364,7 @@ dipakai contohnya bila membuat kajian keluarga dan ingin memberikan kod tertentu
 membezakan keluarga 1 dan 2 dsb.</p>
 <p>Cara ini tidak <strong>hard code</strong> data. Kolom <code>c</code> tidak dimasukkan ke data dan hanya
 disimpan di <em>memory</em> sahaja. Untuk simpan harus <em>assign to save object</em> atau gunakan cara <code>mult</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">  <span style="color:#75715e">## Recode to 99 for first row in each group by x</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">  <span style="color:#75715e">## Recode to 99 for first row in each group by x</span>
   DT[, {vDT <span style="color:#f92672">=</span> <span style="color:#a6e22e">copy</span>(.SD) <span style="color:#75715e">#kopi semua kolom</span>
         vDT[1, c <span style="color:#f92672">:=</span> <span style="color:#ae81ff">99</span>] <span style="color:#75715e">#buat kolom C row pertama nilai 99</span>
         vDT},
@@ -384,7 +384,7 @@ disimpan di <em>memory</em> sahaja. Untuk simpan harus <em>assign to save object
   DT<span style="color:#a6e22e">[unique</span>(x), d<span style="color:#f92672">:=</span><span style="color:#ae81ff">99</span>, on <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;x&#34;</span>, mult <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;first&#34;</span>][]
 </code></pre></div><h2 id="contoh-dari-manual">Contoh dari manual</h2>
 <p>Ini ialah contoh dan penerangan dari manual sekiranya penerangan diatas tidak difahami.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">  <span style="color:#75715e">## Not run:</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">  <span style="color:#75715e">## Not run:</span>
   DT <span style="color:#f92672">=</span> <span style="color:#a6e22e">data.table</span>(x<span style="color:#f92672">=</span><span style="color:#a6e22e">rep</span>(<span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;b&#34;</span>,<span style="color:#e6db74">&#34;a&#34;</span>,<span style="color:#e6db74">&#34;c&#34;</span>),each<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>), v<span style="color:#f92672">=</span><span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">2</span>), y<span style="color:#f92672">=</span><span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">6</span>), a<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">9</span>, b<span style="color:#f92672">=</span><span style="color:#ae81ff">9</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>)
   DT
   X <span style="color:#f92672">=</span> <span style="color:#a6e22e">data.table</span>(x<span style="color:#f92672">=</span><span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;c&#34;</span>,<span style="color:#e6db74">&#34;b&#34;</span>), v<span style="color:#f92672">=</span><span style="color:#ae81ff">8</span><span style="color:#f92672">:</span><span style="color:#ae81ff">7</span>, foo<span style="color:#f92672">=</span><span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">2</span>))

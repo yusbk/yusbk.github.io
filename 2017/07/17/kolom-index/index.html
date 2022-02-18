@@ -23,7 +23,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="manifest" href="/site.webmanifest">
-<meta name="generator" content="Hugo 0.88.0" />
+<meta name="generator" content="Hugo 0.69.2" />
   </head>
   <body>
     
@@ -132,7 +132,7 @@
 <p>Walaubagaimanapun, sekiranya masih ingin memakai indeks kolom juga atas sebab-sebab tertentu, terdapat tiga cara yang boleh dipakai. Baca seterusnya untuk dapatkan penerangan.</p>
 <h1 id="nama-kolom">Nama kolom</h1>
 <p>Untuk memilih kolom berasaskan nama kolom, boleh memakai <code>get</code> untuk satu kolom atau <code>mget</code> untuk memilih pelbagai kolom <em>(multiple get)</em>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">library</span>(data.table)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">library</span>(data.table)
 DT <span style="color:#f92672">=</span> <span style="color:#a6e22e">data.table</span>(A <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">6</span>, B <span style="color:#f92672">=</span> <span style="color:#ae81ff">8</span><span style="color:#f92672">:</span><span style="color:#ae81ff">3</span>, C <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span><span style="color:#f92672">:</span><span style="color:#ae81ff">10</span>)
 
 <span style="color:#75715e">## Cara asas</span>
@@ -150,7 +150,7 @@ DT[, <span style="color:#a6e22e">mget</span>(vars)] <span style="color:#75715e">
 </code></pre></div><p>Sekiranya memakai <code>get</code> untuk memilih pelbagai kolom akan hanya menghasilkan vektor kolom pertama dan bukan data.table kolom A dan B.</p>
 <h1 id="indeks">Indeks</h1>
 <p>Untuk memilih hanya satu kolom sahaja, caranya:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">library</span>(data.table)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">library</span>(data.table)
 DT <span style="color:#f92672">=</span> <span style="color:#a6e22e">data.table</span>(A <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">6</span>, B <span style="color:#f92672">=</span> <span style="color:#ae81ff">8</span><span style="color:#f92672">:</span><span style="color:#ae81ff">3</span>, C <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span><span style="color:#f92672">:</span><span style="color:#ae81ff">10</span>)
 
 <span style="color:#75715e">## pilih kolom 2 (B) yang nilainya bersamaan 4</span>
@@ -173,12 +173,12 @@ vari <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">which<
 
 DT<span style="color:#a6e22e">[.</span>(<span style="color:#ae81ff">4</span>), on <span style="color:#f92672">=</span> <span style="color:#a6e22e">names</span>(DT)[vari]]
 </code></pre></div><p>Hasilnya untuk kode-kode di atas adalah seperti ini:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">A B C
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">A B C
 <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">3</span> <span style="color:#ae81ff">4</span> <span style="color:#ae81ff">5</span>
 </code></pre></div><p>Penggunaan <code>.()</code> di <code>i</code> stuktur <em>data.table</em> <code>DT[i, j, by]</code> adalah alias untuk penggunaan <code>list()</code>. Fungsi ini sama seperti cara 1 di atas.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">DT<span style="color:#a6e22e">[list</span>(<span style="color:#ae81ff">4</span>), on <span style="color:#f92672">=</span> <span style="color:#a6e22e">names</span>(DT)[2]]
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">DT<span style="color:#a6e22e">[list</span>(<span style="color:#ae81ff">4</span>), on <span style="color:#f92672">=</span> <span style="color:#a6e22e">names</span>(DT)[2]]
 </code></pre></div><p>Sekiranya ingin pakai index untuk di fungsi <code>by</code> adalah seperti di bawah. Cara ini ialah untuk mengira jumlah huruf-huruf i kolom A.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">DT1 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">data.table</span>(A <span style="color:#f92672">=</span> <span style="color:#66d9ef">letters</span>[1<span style="color:#f92672">:</span><span style="color:#ae81ff">5</span>], B <span style="color:#f92672">=</span> <span style="color:#a6e22e">rep</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">13</span>))
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">DT1 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">data.table</span>(A <span style="color:#f92672">=</span> <span style="color:#66d9ef">letters</span>[1<span style="color:#f92672">:</span><span style="color:#ae81ff">5</span>], B <span style="color:#f92672">=</span> <span style="color:#a6e22e">rep</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">13</span>))
 
 <span style="color:#75715e">## dapatkan index kolom menggunakan &#39;grep&#39;</span>
 ind <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">grep</span>(<span style="color:#e6db74">&#34;A&#34;</span>, <span style="color:#a6e22e">names</span>(DT1))
@@ -189,7 +189,7 @@ ind <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">which</
 <span style="color:#75715e">## jumlah setiap huruf</span>
 DT1[, .N, by <span style="color:#f92672">=</span> DT1[[ind]]]
 </code></pre></div><p>Hasilnya</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">   DT1 N
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">   DT1 N
 <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span>   a <span style="color:#ae81ff">3</span>
 <span style="color:#ae81ff">2</span><span style="color:#f92672">:</span>   b <span style="color:#ae81ff">3</span>
 <span style="color:#ae81ff">3</span><span style="color:#f92672">:</span>   c <span style="color:#ae81ff">3</span>

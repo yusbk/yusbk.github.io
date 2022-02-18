@@ -23,7 +23,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="manifest" href="/site.webmanifest">
-<meta name="generator" content="Hugo 0.88.0" />
+<meta name="generator" content="Hugo 0.69.2" />
   </head>
   <body>
     
@@ -128,7 +128,7 @@ big project, then <a href="https://airflow.apache.org/">Airflow</a> might be for
 codes, <a href="https://books.ropensci.org/drake/">drake</a> package will fullfilled your need.</p>
 <p>Here is the basic use of <code>drake</code>. The example here will be using a simple
 collections of functions.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">  fun1 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function</span>(x <span style="color:#f92672">=</span> <span style="color:#a6e22e">globalenv</span>()<span style="color:#f92672">$</span>x){
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">  fun1 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function</span>(x <span style="color:#f92672">=</span> <span style="color:#a6e22e">globalenv</span>()<span style="color:#f92672">$</span>x){
     x <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span>
   }
 
@@ -151,7 +151,7 @@ collections of functions.</p>
     x1 <span style="color:#f92672">+</span> x2 <span style="color:#f92672">+</span> x3
   }
 </code></pre></div><p>Install <code>drake</code> development version in Github <a href="https://github.com/ropensci/drake">here</a>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">  remotes<span style="color:#f92672">::</span><span style="color:#a6e22e">install_github</span>(<span style="color:#e6db74">&#34;ropensci/drake&#34;</span>)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">  remotes<span style="color:#f92672">::</span><span style="color:#a6e22e">install_github</span>(<span style="color:#e6db74">&#34;ropensci/drake&#34;</span>)
   <span style="color:#a6e22e">library</span>(drake)
 
   x <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>
@@ -163,11 +163,11 @@ collections of functions.</p>
 
   <span style="color:#a6e22e">make</span>(plan)
 </code></pre></div><p>Running <code>make(plan)</code> will give the overview what is in the plan, sort of like using <code>Make</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">  ▶ target x
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">  ▶ target x
   ▶ target z
   ▶ target output
 </code></pre></div><p>Then you can make the interactive network to see all the workflow. This can be done several ways.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">  <span style="color:#a6e22e">library</span>(<span style="color:#e6db74">&#34;visNetwork&#34;</span>)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">  <span style="color:#a6e22e">library</span>(<span style="color:#e6db74">&#34;visNetwork&#34;</span>)
   <span style="color:#a6e22e">vis_drake_graph</span>(plan, full_legend <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>)
 
   <span style="color:#75715e">## need networkD3 package</span>
@@ -182,9 +182,10 @@ collections of functions.</p>
 
   <span style="color:#75715e">## read the build target</span>
   <span style="color:#a6e22e">readd</span>(output)
-</code></pre></div><p>This how it looks like using <code>vis_drake_graph</code>. For interactive can be seen <a href="https://yusbk.github.io/drake%5Fexample.html">here</a>.</p>
-<figure><img src="/images/drake.png"
-         alt="drake network" width="500"/>
+</code></pre></div><p>This how it looks like using <code>vis_drake_graph</code>. For interactive can be seen <a href="https://yusbk.github.io/drake_example.html">here</a>.</p>
+<figure>
+    <img src="/images/drake.png"
+         alt="drake network" width="500"/> 
 </figure>
 
 

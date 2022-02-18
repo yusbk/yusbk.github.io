@@ -23,7 +23,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="manifest" href="/site.webmanifest">
-<meta name="generator" content="Hugo 0.88.0" />
+<meta name="generator" content="Hugo 0.69.2" />
   </head>
   <body>
     
@@ -131,14 +131,14 @@
   <p>Sometime an object has attribute names for identification of the value with
 names instead of index. There are time you need to extract the names of a vector
 or object. The easiest way is to do:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">library</span>(data.table)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">library</span>(data.table)
 dt <span style="color:#f92672">&lt;-</span> cars[1,]
 <span style="color:#a6e22e">setDT</span>(dt)
 <span style="color:#a6e22e">str</span>(dt)
 dt[, dist <span style="color:#f92672">:=</span> <span style="color:#a6e22e">as.character</span>(dist)]
 </code></pre></div><p>The above is just to make a toy data and convert column <code>dist</code> to character. In
 case we want to know later which column or names that we have converted to class `character`.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">bb <span style="color:#f92672">&lt;-</span> dt[, <span style="color:#a6e22e">lapply</span>(.SD, class)]
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">bb <span style="color:#f92672">&lt;-</span> dt[, <span style="color:#a6e22e">lapply</span>(.SD, class)]
 
 <span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">names</span>(bb)[bb <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;character&#34;</span>]
 [1] <span style="color:#e6db74">&#34;dist&#34;</span>

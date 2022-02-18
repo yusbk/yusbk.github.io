@@ -23,7 +23,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="manifest" href="/site.webmanifest">
-<meta name="generator" content="Hugo 0.88.0" />
+<meta name="generator" content="Hugo 0.69.2" />
   </head>
   <body>
     
@@ -122,11 +122,11 @@
 <pre><code>set(dt, i, j, value)
 </code></pre>
 <p>Contoh pemakainnya bila ingin menukarkan <code>NA</code> ke angka yang diinginkan sepert 99.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">for </span>(j in <span style="color:#a6e22e">seq_len</span>(<span style="color:#a6e22e">ncol</span>(DT))){
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">for </span>(j in <span style="color:#a6e22e">seq_len</span>(<span style="color:#a6e22e">ncol</span>(DT))){
   <span style="color:#a6e22e">set</span>(DT, <span style="color:#a6e22e">which</span>(<span style="color:#a6e22e">is.na</span>(DT[[j]])), j <span style="color:#f92672">=</span> j, value <span style="color:#f92672">=</span> <span style="color:#ae81ff">99</span>)
 }
 </code></pre></div><p>Contoh lain bila ingin membersihkan <em>whitespace</em> disemua kolom di data.table boleh dibuat seperti begini. <code>class</code> dipastikan sebagai <em>character</em> dahulu, kerana sekiranya <em>integer</em> atau <em>nummeric</em> maka ia tidak valid.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">for </span>(j in <span style="color:#a6e22e">seq_len</span>(<span style="color:#a6e22e">ncol</span>(DT))){
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">for </span>(j in <span style="color:#a6e22e">seq_len</span>(<span style="color:#a6e22e">ncol</span>(DT))){
   <span style="color:#a6e22e">if</span>(<span style="color:#a6e22e">class</span>(DT[[j]]) <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;character&#39;</span>)
     <span style="color:#a6e22e">set</span>(DT, j <span style="color:#f92672">=</span> j, value <span style="color:#f92672">=</span> <span style="color:#a6e22e">trimws</span>(DT[[j]]))
 }

@@ -23,7 +23,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="manifest" href="/site.webmanifest">
-<meta name="generator" content="Hugo 0.88.0" />
+<meta name="generator" content="Hugo 0.69.2" />
   </head>
   <body>
     
@@ -136,20 +136,20 @@ dt2013
 dt2014
 </code></pre>
 <p>Untuk dapatkan semua objekt-objekt diatas, boleh dikumpulkan menggunakan vector seperti begini:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">objAll <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">grep</span>(<span style="color:#e6db74">&#34;^(dt200|dt201)*$&#34;</span>, <span style="color:#a6e22e">ls</span>(), ignore.case <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>, value <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">objAll <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">grep</span>(<span style="color:#e6db74">&#34;^(dt200|dt201)*$&#34;</span>, <span style="color:#a6e22e">ls</span>(), ignore.case <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>, value <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>)
 
 objAll
 [1] <span style="color:#e6db74">&#34;dt2000&#34;</span> <span style="color:#e6db74">&#34;dt2001&#34;</span> <span style="color:#e6db74">&#34;dt2002&#34;</span> <span style="color:#e6db74">&#34;dt2013&#34;</span> <span style="color:#e6db74">&#34;dt2014&#34;</span>
 </code></pre></div><p>Untuk mencapai objekt2 itu melalui <code>objAll</code>, boleh menggunakan <em>sapply</em>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">sapply</span>(objAll, <span style="color:#a6e22e">function</span>(x) <span style="color:#a6e22e">setDT</span>(<span style="color:#a6e22e">get</span>(x)), USE.NAMES <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">sapply</span>(objAll, <span style="color:#a6e22e">function</span>(x) <span style="color:#a6e22e">setDT</span>(<span style="color:#a6e22e">get</span>(x)), USE.NAMES <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>)
 </code></pre></div><p>Atau untuk menggunakan fungsi lain:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#75715e">## Convert til excel</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#75715e">## Convert til excel</span>
 indK <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">grep</span>(<span style="color:#e6db74">&#34;^dt200&#34;</span>, <span style="color:#a6e22e">ls</span>(), value <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>)
 pathXL <span style="color:#f92672">&lt;-</span> <span style="color:#e6db74">&#34;~/Git-work/bdr/rapport/portal/excel/&#34;</span>
 <span style="color:#a6e22e">sapply</span>(indK, <span style="color:#a6e22e">function</span>(x) <span style="color:#a6e22e">write.xlsx</span>(<span style="color:#a6e22e">get</span>(x), <span style="color:#a6e22e">paste0</span>(pathXL, x, <span style="color:#e6db74">&#34;.xlsx&#34;</span>)), USE.NAMES <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>)
 </code></pre></div><p>Komando diatas menukarkan semua object di <code>objAll</code> ke <em>data.table</em>. Tanpa memakai <code>USE.NAMES</code> komando ini tidak akan berhasil kerana vector di <code>objAll</code> dibaca sebagai <em>character</em>. Selain itu penggunaan <em>get</em> juga penting untuk memastikan yang kandungan di <code>objAll</code> mempunyai nilai.</p>
 <p>Contoh komando untuk dapatkan semua nama kolom <code>sykehus</code> di semua data.table. Penggunaan <code>\\b</code> diawal dan akhir perkataan ialah untuk menetapkan nama kolom betul-betul hanya <code>sykehus</code> tanpa tambahan contohnya <code>inn_sykehus</code> atau <code>sykehus_2</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">sapply</span>(objAll, <span style="color:#a6e22e">function</span>(x), <span style="color:#a6e22e">grep</span>(<span style="color:#e6db74">&#34;\\bsykehus\\b&#34;</span>, <span style="color:#a6e22e">names</span>(<span style="color:#a6e22e">get</span>(x)), ignore.case <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>, value <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>), USE.NAMES <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">sapply</span>(objAll, <span style="color:#a6e22e">function</span>(x), <span style="color:#a6e22e">grep</span>(<span style="color:#e6db74">&#34;\\bsykehus\\b&#34;</span>, <span style="color:#a6e22e">names</span>(<span style="color:#a6e22e">get</span>(x)), ignore.case <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>, value <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>), USE.NAMES <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>)
 </code></pre></div>
 
 

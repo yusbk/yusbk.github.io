@@ -23,7 +23,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="manifest" href="/site.webmanifest">
-<meta name="generator" content="Hugo 0.88.0" />
+<meta name="generator" content="Hugo 0.69.2" />
   </head>
   <body>
     
@@ -127,24 +127,24 @@
 <p>Ini ialah beberapa penggunaan asas R yang amat berguna walaupun jarang dipakai. Antaranya:</p>
 <h1 id="pasang-pakej">Pasang pakej</h1>
 <p>Cara biasa untuk pasang pakej ialah menggunakan <code>install.packages()</code>. Tetapi sekiranya ingin memasang banyak pekej secara serentank dan memuatkan di R setelah pakej dipasang, cara begini boleh dipakai:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">list.of.packages <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;leaflet&#34;</span>,<span style="color:#e6db74">&#34;ggplot2&#34;</span>,<span style="color:#e6db74">&#34;dplyr&#34;</span>,<span style="color:#e6db74">&#34;gridExtra&#34;</span>,<span style="color:#e6db74">&#34;psych&#34;</span>,<span style="color:#e6db74">&#34;data.table&#34;</span>,<span style="color:#e6db74">&#34;sf&#34;</span>,<span style="color:#e6db74">&#34;ggrepel&#34;</span>)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">list.of.packages <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;leaflet&#34;</span>,<span style="color:#e6db74">&#34;ggplot2&#34;</span>,<span style="color:#e6db74">&#34;dplyr&#34;</span>,<span style="color:#e6db74">&#34;gridExtra&#34;</span>,<span style="color:#e6db74">&#34;psych&#34;</span>,<span style="color:#e6db74">&#34;data.table&#34;</span>,<span style="color:#e6db74">&#34;sf&#34;</span>,<span style="color:#e6db74">&#34;ggrepel&#34;</span>)
 
 new.packages <span style="color:#f92672">&lt;-</span> list.of.packages[<span style="color:#f92672">!</span>(list.of.packages <span style="color:#f92672">%in%</span> <span style="color:#a6e22e">installed.packages</span>()[,<span style="color:#e6db74">&#34;Package&#34;</span>])]
 <span style="color:#a6e22e">if</span>(<span style="color:#a6e22e">length</span>(new.packages)) <span style="color:#a6e22e">install.packages</span>(new.packages, repos <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://cloud.r-project.org/&#34;</span>)
 <span style="color:#a6e22e">sapply</span>(list.of.packages, require, character.only <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>)
 
 </code></pre></div><p>Untuk pasang satu pakej boleh juga buat sebegini:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">if</span>(<span style="color:#f92672">!</span><span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#34;rreg&#34;</span>)) {<span style="color:#a6e22e">install.packages</span>(<span style="color:#e6db74">&#34;rreg&#34;</span>)} else {<span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#34;rreg&#34;</span>)}
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">if</span>(<span style="color:#f92672">!</span><span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#34;rreg&#34;</span>)) {<span style="color:#a6e22e">install.packages</span>(<span style="color:#e6db74">&#34;rreg&#34;</span>)} else {<span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#34;rreg&#34;</span>)}
 </code></pre></div><p>Cara ini akan periksa sekiranya pakej <code>rreg</code> belum dipasang makan akan dipasang,
 sekiranya sudah ada maka akan diaktifkan.</p>
 <h1 id="pasang-pakej-dari-github">Pasang pakej dari Github</h1>
 <p>Untuk senang pasang pakej dari Github boleh guna pakej <code>devtools</code>. Boleh baca <a href="https://kbroman.org/pkg_primer/pages/github.html" title="sini">sini</a> untuk guide. Singkatannya:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">library</span>(devtools)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">library</span>(devtools)
 <span style="color:#a6e22e">install_github</span>(<span style="color:#e6db74">&#34;ybkamaleri/norgeo&#34;</span>)
 </code></pre></div><p>Untuk pasang dari <code>branch</code> tertentu contohnya branch <em>dev</em>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">install_github</span>(<span style="color:#e6db74">&#34;ybkamaleri/norgeo@dev&#34;</span>)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">install_github</span>(<span style="color:#e6db74">&#34;ybkamaleri/norgeo@dev&#34;</span>)
 </code></pre></div><p>Sekiranya package disimpan di subdirectory both pakai</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">install_github</span>(<span style="color:#e6db74">&#34;ybkamaleri/norgeo&#34;</span>, subdir <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;fhi&#34;</span>)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">install_github</span>(<span style="color:#e6db74">&#34;ybkamaleri/norgeo&#34;</span>, subdir <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;fhi&#34;</span>)
 </code></pre></div>
 
 

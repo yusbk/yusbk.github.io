@@ -23,7 +23,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="manifest" href="/site.webmanifest">
-<meta name="generator" content="Hugo 0.88.0" />
+<meta name="generator" content="Hugo 0.69.2" />
   </head>
   <body>
     
@@ -125,7 +125,7 @@
       
   <p>Several nice blogs and references on the net to read on this stuff. Among those:</p>
 <ul>
-<li><a href="https://www.r-bloggers.com/2011/06/environments-in-r/#google%5Fvignette">Environments in R</a></li>
+<li><a href="https://www.r-bloggers.com/2011/06/environments-in-r/#google_vignette">Environments in R</a></li>
 <li><a href="http://blog.obeautifulcode.com/R/How-R-Searches-And-Finds-Stuff/">How R Searches and Finds Stuff</a></li>
 </ul>
 <p>This discussion from <a href="https://stackoverflow.com/a/7439568/5372752">StackOverflow</a> explains nicely with example on the
@@ -137,7 +137,7 @@ first calling function. It&rsquo;s like using <code>parent.frame()</code> if you
 nested functions. But once your functions are nested, <code>sys.frames()</code> will be
 useful to access the first calling function.</p>
 <p>This is how I use it to assign a value to an object back to the calling function:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">main_function <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function</span>(var, val){
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">main_function <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function</span>(var, val){
   <span style="color:#a6e22e">sub_function</span>(var, val)
 }
 
@@ -150,7 +150,7 @@ is_assign_var <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22
 }
 </code></pre></div><p>If you don&rsquo;t have a nested function then using <code>parent.frame()</code> or
 <code>sys.frames()[[1]]</code> will be equivalent.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">main_function <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function</span>(var, val){
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">main_function <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function</span>(var, val){
   <span style="color:#a6e22e">is_assign_var_01</span>()
   <span style="color:#a6e22e">is_assign_var_02</span>()
 }

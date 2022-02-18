@@ -23,7 +23,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="manifest" href="/site.webmanifest">
-<meta name="generator" content="Hugo 0.88.0" />
+<meta name="generator" content="Hugo 0.69.2" />
   </head>
   <body>
     
@@ -129,7 +129,7 @@ scenarios I find it useful:</p>
 <h2 id="function-wrapper">Function wrapper</h2>
 <p>When creating a function wrapper and instead of providing all the arguments to be send further, you
 could just use <code>...</code> ellipsis. For example:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">  get_mean <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function</span>(x, print <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>){
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">  get_mean <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function</span>(x, print <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>){
 
     x1 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">mean</span>(x)
     <span style="color:#a6e22e">if </span>(print){
@@ -152,7 +152,7 @@ could just use <code>...</code> ellipsis. For example:</p>
 </code></pre></div><p>In <code>show_mean</code> the arguments given will be sent further to <code>get_mean</code> without the need to define explicitly in <code>show_mean</code> function.</p>
 <h2 id="get-values">Get values</h2>
 <p>When you want to provide certain values to a specific use or send to global value.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">  go_global <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function</span>(<span style="color:#66d9ef">...</span>) {
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">  go_global <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function</span>(<span style="color:#66d9ef">...</span>) {
     args <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">list</span>(<span style="color:#66d9ef">...</span>)
     <span style="color:#a6e22e">paste</span>(args)
 
@@ -168,7 +168,7 @@ could manipulate the value as you wish. The values in ellipsis should be capture
 <p>You could also capture the names of the list by <code>names(list(...))</code>.</p>
 <h2 id="input-arguments">Input arguments</h2>
 <p>To use it as input argument without quote. Use <code>eval(substitute(alist(...)))</code> and <code>deparse</code> as shown below:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">make_filegroups <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function</span>(<span style="color:#66d9ef">...</span>){
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">make_filegroups <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function</span>(<span style="color:#66d9ef">...</span>){
 
   fgp <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">tryCatch</span>({
     <span style="color:#a6e22e">unlist</span>(<span style="color:#a6e22e">list</span>(<span style="color:#66d9ef">...</span>))
@@ -189,7 +189,7 @@ could manipulate the value as you wish. The values in ellipsis should be capture
 
 <span style="color:#a6e22e">make_filegroups</span>(GROUP1, GROUP2)
 </code></pre></div><p>For the <code>go_global</code> example, can be written as:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">go_global <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function</span>(<span style="color:#66d9ef">...</span>){
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">go_global <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function</span>(<span style="color:#66d9ef">...</span>){
   dots <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">eval</span>(<span style="color:#a6e22e">substitute</span>(<span style="color:#a6e22e">alist</span>(<span style="color:#66d9ef">...</span>)))
   <span style="color:#a6e22e">sapply</span>(<span style="color:#a6e22e">as.list</span>(dots), deparse)
 }

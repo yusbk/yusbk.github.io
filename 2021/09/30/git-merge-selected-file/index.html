@@ -23,7 +23,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="manifest" href="/site.webmanifest">
-<meta name="generator" content="Hugo 0.88.0" />
+<meta name="generator" content="Hugo 0.69.2" />
   </head>
   <body>
     
@@ -121,7 +121,7 @@
   <p>This guide is from <a href="https://stackoverflow.com/a/7292109/5372752">StackOverflow</a> on how to selectively merge files form one
 branch to another.</p>
 <p>Basically it&rsquo;s:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git merge --no-ff --no-commit dev
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git merge --no-ff --no-commit dev
 </code></pre></div><p>Where <code>dev</code> is the branch you want to merge from into the current branch.</p>
 <p>The <code>--no-commit</code> option will stage the files that have been merged by Git
 without actually committing them. This will give opportunity to modify the
@@ -133,13 +133,13 @@ then commit them.</p>
 <h2 id="only-some-file-to-merge">Only some file to merge</h2>
 <p>You want to retain the version in the current branch eg. <code>main</code> and ignore the
 version in the branch you are merging from eg. <code>dev</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git checkout HEAD R/selected-file.R
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git checkout HEAD R/selected-file.R
 </code></pre></div><p>This retain the version of <code>selected-file.R</code> in the current branch and overwrite
 the <code>selected-file.R</code> automerged by Git.</p>
 <h2 id="only-the-version-in-branch-dev">Only the version in branch <code>dev</code></h2>
 <p>Retreive the version of <code>selected-file.R</code> in <code>dev</code> branch and overwrite
 <code>selected-file.R</code> auto-merged by Git with:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git checkout dev R/selected-file.R
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git checkout dev R/selected-file.R
 </code></pre></div><h2 id="select-only-specific-merges-in-selected-file-dot-r">Select only specific merges in <code>selected-file.R</code></h2>
 <p>You can edit the modified <code>selected-file.R</code> directly, update it to whatever
 version of <code>selected-file.R</code> you want, and then commit.</p>
@@ -148,28 +148,28 @@ version of <code>selected-file.R</code> you want, and then commit.</p>
 manually.</p>
 <h2 id="example">Example</h2>
 <p>To explain further with an example, let&rsquo;s say you want to merge branchX into the current branch:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git merge --no-ff --no-commit branchX
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git merge --no-ff --no-commit branchX
 </code></pre></div><p>You then run the <code>git status</code> command to view the status of modified files.</p>
 <p>For example:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">
 git status
 
 <span style="color:#75715e"># On branch master</span>
 <span style="color:#75715e"># Changes to be committed:</span>
-<span style="color:#75715e">#</span>
+#
 <span style="color:#75715e">#       modified:   file1</span>
 <span style="color:#75715e">#       modified:   file2</span>
 <span style="color:#75715e">#       modified:   file3</span>
 <span style="color:#75715e"># Unmerged paths:</span>
 <span style="color:#75715e">#   (use &#34;git add/rm &lt;file&gt;...&#34; as appropriate to mark resolution)</span>
-<span style="color:#75715e">#</span>
+#
 <span style="color:#75715e">#       both modified:      file4</span>
-<span style="color:#75715e">#</span>
+#
 </code></pre></div><p>Where file1, file2, and file3 are the files git have successfully auto-merged.</p>
 <p>What this means is that changes in the master and branchX for all those three
 files have been combined together without any conflicts.</p>
 <p>You can inspect how the merge was done by running the <code>git diff --cached</code>;</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">
 git diff --cached file1
 git diff --cached file2
 git diff --cached file3
@@ -181,10 +181,10 @@ git diff --cached file3
 </ul>
 <h3 id="if-you-don-t-want-to-merge-file1-and-want-to-retain-the-version-in-the-current-branch">If you don&rsquo;t want to merge file1 and want to retain the version in the current branch</h3>
 <p>Run</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git checkout HEAD file1
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git checkout HEAD file1
 </code></pre></div><h3 id="if-you-don-t-want-to-merge-file2-and-only-want-the-version-in-branchx">If you don&rsquo;t want to merge file2 and only want the version in branchX</h3>
 <p>Run</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git checkout branchX file2
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git checkout branchX file2
 </code></pre></div><h3 id="if-you-want-file3-to-be-merged-automatically-don-t-do-anything-dot">If you want file3 to be merged automatically, don&rsquo;t do anything.</h3>
 <p>Git has already merged it at this point.</p>
 <p>file4 above is a failed merge by Git. This means there are changes in both
