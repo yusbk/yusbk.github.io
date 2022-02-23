@@ -4,7 +4,27 @@
   
   <url>
     <loc>https://yusbk.github.io/categories/</loc>
-    <lastmod>2022-02-18T00:00:00+01:00</lastmod>
+    <lastmod>2022-02-23T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yusbk.github.io/categories/git/</loc>
+    <lastmod>2022-02-23T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yusbk.github.io/post/</loc>
+    <lastmod>2022-02-23T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yusbk.github.io/2022/02/23/git-rujukan-awam/</loc>
+    <lastmod>2022-02-23T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yusbk.github.io/</loc>
+    <lastmod>2022-02-23T00:00:00+01:00</lastmod>
   </url>
   
   <url>
@@ -23,22 +43,12 @@
   </url>
   
   <url>
-    <loc>https://yusbk.github.io/post/</loc>
-    <lastmod>2022-02-18T00:00:00+01:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://yusbk.github.io/tags/</loc>
     <lastmod>2022-02-18T00:00:00+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://yusbk.github.io/tags/tips/</loc>
-    <lastmod>2022-02-18T00:00:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/</loc>
     <lastmod>2022-02-18T00:00:00+01:00</lastmod>
   </url>
   
@@ -165,11 +175,6 @@
   <url>
     <loc>https://yusbk.github.io/2021/11/09/access-shutdown/</loc>
     <lastmod>2021-11-09T00:00:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/categories/git/</loc>
-    <lastmod>2021-09-30T00:00:00+02:00</lastmod>
   </url>
   
   <url>
@@ -722,10 +727,6 @@
   </url>
   
   <url>
-    <loc>https://yusbk.github.io/about/</loc>
-  </url>
-  
-  <url>
     <loc>https://yusbk.github.io/archives/</loc>
   </url>
   
@@ -735,6 +736,10 @@
   
   <url>
     <loc>https://yusbk.github.io/search/</loc>
+  </url>
+  
+  <url>
+    <loc>https://yusbk.github.io/about/</loc>
   </url>
   
 </urlset>

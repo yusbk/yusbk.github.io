@@ -14,6 +14,16 @@
 		<atom:link href="/tags/factor/" rel="self" type="application/rss+xml" />
 		
 		<item>
+			<title>Rujukan Awam Git dan Github</title>
+			<link>https://yusbk.github.io/2022/02/23/git-rujukan-awam/</link>
+			<pubDate>Wed, 23 Feb 2022 00:00:00 +0100</pubDate>
+			<guid>https://yusbk.github.io/2022/02/23/git-rujukan-awam/</guid>
+			<description>Global setting Tetapkan email dan nama di global.
+git config --global user.email &amp;#34;your@email.com&amp;#34; git config --global user.name &amp;#34;Your name&amp;#34; Buat git repo dan R pakej Langkah-langkah untuk buat R pakej dan kemudiannya menghantar ke Github
+ Buat repo di Github cth.</description>
+		</item>
+      	
+		<item>
 			<title>Doom tips</title>
 			<link>https://yusbk.github.io/2022/02/18/doom-emacs-tips/</link>
 			<pubDate>Fri, 18 Feb 2022 00:00:00 +0100</pubDate>
@@ -99,17 +109,6 @@ Function wrapper When creating a function wrapper and instead of providing all t
 			<guid>https://yusbk.github.io/2021/11/09/access-shutdown/</guid>
 			<description>How to shutdown all running Access when you need to do some changes. This is just a summary from Microsoft Docs. The steps are:
 Create empty text file  This file will be the key. Name the file to anything like checkfile.</description>
-		</item>
-      	
-		<item>
-			<title>Merge Selected File</title>
-			<link>https://yusbk.github.io/2021/09/30/git-merge-selected-file/</link>
-			<pubDate>Thu, 30 Sep 2021 00:00:00 +0200</pubDate>
-			<guid>https://yusbk.github.io/2021/09/30/git-merge-selected-file/</guid>
-			<description>This guide is from StackOverflow on how to selectively merge files form one branch to another.
-Basically it&amp;rsquo;s:
-git merge --no-ff --no-commit dev Where dev is the branch you want to merge from into the current branch.
-The --no-commit option will stage the files that have been merged by Git without actually committing them.</description>
 		</item>
       	
 	</channel>

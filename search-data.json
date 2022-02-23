@@ -5,6 +5,16 @@
         
             {
                 "id": 0,
+                "href": "https://yusbk.github.io/2022/02/23/git-rujukan-awam/",
+                "title": "Rujukan Awam Git dan Github",
+                "section": "post",
+                "date" : "2022.02.23",
+                "body": "Global setting Tetapkan email dan nama di global.\ngit config --global user.email \u0026#34;your@email.com\u0026#34; git config --global user.name \u0026#34;Your name\u0026#34; Buat git repo dan R pakej Langkah-langkah untuk buat R pakej dan kemudiannya menghantar ke Github\n Buat repo di Github cth. foo Buat R pakej di direktori yang diinginkan  setwd(\u0026#34;/path/for/package\u0026#34;) devtools::create(\u0026#34;foo\u0026#34;)  Masuk ke direktori foo Hantar semua fail-fail didalam direktori foo ke Github  git init git add . git commit -m \u0026#34;Mula foo\u0026#34; git remote add origin git@work:ybkamaleri/foo.git git push -u origin master Sila rujuk di GitHub Guides untuk penerangan selajutnya\nKopi branch di github ke lokal Bila membuat branch dari pc lain dan ingin membuat salinan branch yang sama di pc lain.\ngit checkout -b [new-branch-lokal] [remote]/[branch-remote] Contohnya\ngit checkout -b new_func_pc2 origin/func_pc1 Kopi branch tertentu cara lain Rujukan Stackoverflow\nYou need to create a local branch that tracks a remote branch. The following command will create a local branch named daves_branch, tracking the remote branch origin/daves_branch. When you push your changes the remote branch will be updated.\ngit checkout --track origin/daves_branch --track is shorthand for git checkout -b [branch] [remotename]/[branch] where [remotename] is origin in this case and [branch] is twice the same, daves_branch in this case.\nLog commit Untuk lihat apa yang sudak di commit\ngit log -p -2 git log sudah memadai tetapi dengan pilihan -p akan menunjukkan perbezaan di setiap \u0026ldquo;commit\u0026rdquo;. Dan penggunaan -2 untuk menetapkkan hanya menunjukkan DUA kemasukkan yang terbaru\nTidak dapat kesan email Bila \u0026ldquo;unable to auto-detect email\u0026rdquo; tetapkan begini\ngit config --global user.email \u0026#34;you@example.com\u0026#34; git config --global user.name \u0026#34;Your Name\u0026#34; Buat kekunci SSH dan daftarkan di Github Untuk rujukan boleh dibaca di Github Help.\nSebagai ringkasan, caranya seperti dibawah:\n$ ssh-keygen -t rsa -b 4096 -C \u0026#34;your_email@example.com\u0026#34; Ini akan membuat ssh menggunakan email sebagai label untuk rujukan. Sekiranya guna pelbagai git akaun, boleh tetapkan nama fail bila menetapkkan kekunci (key).\nEnter a file in which to save the key (/home/you/.ssh/id_rsa): /home/you/.ssh/id_sendiri Untuk daftarkan di Github, perlu login di akaun Github, kemudian kopi public key yang ditetapkan. Penggunaan program xclip memudahkan untuk mengkopi kekunci SSH\n$ sudo apt-get install xclip # Downloads and installs xclip. If you don\u0026#39;t have `apt-get`, you might need to use another installer (like `yum`) $ xclip -sel clip \u0026lt; ~/.ssh/id_rsa.pub # Copies the contents of the id_rsa.pub file to your clipboard Pelbagai akaun Untuk membuat pelbagai SSH akaun sila rujuk Create mulitple SSH accounts\nContoh untuk buat ssh-key. Tetapkan kekunci utk personal dan kerja seperti dibawah dan biarkan kosong utk passphrase\n$ ssh-keygen -t rsa -b 4096 -C \u0026#34;your-email-here\u0026#34; Enter file in which to save the key (/home/yourusername/.ssh/id_rsa): /home/yourusername/.ssh/id_work Enter passphrase (empty for no passphrase): Enter same passphrase again: Buka id_rsa_work.pub di gedit dan kopi kekunci untuk di masukkan ke Github SSH-key\nKemudian daftarkan ssh-key. OBS! Cara ini tidak dipakai dan hanya terus buat fail config untuk pelbagai akaun. Sekiranya tidak berhasil boleh cuba daftarkan ssh-key cara di bawah.\n$ ssh-add -K /path/to/private/key/file Buat fail config dan tambah di fail .ssh/config seperti dibawah\nHost personal HostName github.com User git IdentityFile ~/.ssh/id_personal Host work HostName github.com User git IdentityFile ~/.ssh/id_work Untuk memeriksa username yang dipakai\ngit config user.name Untuk mengklone pelbagai akaun\ngit clone git@personal:yusbk/nama_rep.git git clone git@work:ybkamaleri/nama_rep.git Untuk menggunakan akaun lain di Github dari yang sedang digunakan\ngit remote add origin-personal git@personal:yusbk/nama_rep.git git add nama_fail git commit -m \u0026#34;maklumat\u0026#34; git push -u origin-personal master Permission denied Sekiranya permission denied bile git push origin untuk repo gunakan user.name berlainan contohnya:\nERROR: Permission to user.ybk1/repo.git denied to user.ybk2. fatal: The remote end hung up unexpectedly Tukar user.name dengan apa yang sepatutnya\u0026hellip; contohnya bila username work diperlukan dan yang sedang dipakai ialah personal maka tukar ke work seperti begini\nssh-add ~/.ssh/id_rsa_work Sekiranya tidak berhasil boleh coba cara dibawah:\n Pilihan 1:  Diambil dari StackOverflow. Daftarkan semula\ngit remote set-url origin git@work:GitHubUserName/YouRepoName.git  Pilihan 2:  Periksa fail ~/.ssh/config yang url adalah betul\n[remote \u0026#34;origin\u0026#34;] fetch = +refs/heads/*:refs/remotes/origin/* url = git@work:nama_github/nama_repo.git Boleh juga masukkan di \u0026ldquo;command line\u0026rdquo; sebegini\ngit remote set-url origin git@work:nama_github/nama_repo.git  Pilihan 3:  Masukkan SSH semula di github. Tetapi sebelumnya harus buang ssh di cache dengan ssh-add -D kemudian boleh periksa key yang ada dengan ssh-add -l. Untuk memasukkan key-ssh, bukan fail cth id_rsa_work.pub dan kopi semua dan salin di Add-SSH di github.\nssh-agent refused operation Ini disebabkan file permission. Tukarkan ke 600\nchmod 600 ~/.ssh/id_rsa_personal chmod 600 ~/.ssh/* Cara kedua itu ialah bila ingin tukarkan permission untuk semua fail-fail di folder .ssh.\nBuat Repo melalui terminal Untuk buat repo kosong di Github sebelum memulakan projek perkongsian. bare harus sentiasa digunakan untuk berkongsi repo\nssh user@host git init --bare /path/to/repo.git Kemudian semua yang terlibat utk membangunkan repo boleh mengkelon repo tersebut\ngit clone ssh://user@host/path/to/repo.git Padam branch Untuk padamkan lokal branch\ngit branch -d \u0026lt;nama branch\u0026gt; Untuk padamkan remote branch\ngit push origin --delete \u0026lt;nama branch\u0026gt; Git Aliases Git aliases yang selalu dipakai\ngit config --global alias.ci commit git config --global alias.st status git config --global alias.co checkout git config --global alias.br branch Untuk menetapkkan git sentiasa memakai Emacs sebagai editor\ngit config --global core.editor emacs Undo atau Revert Untuk kembali ke sebelum pertukaran tetapi hanya fail-fail di direktori yang sedang dipakai. Cara pertama hanya menggembalikan unstaged changes\ngit checkout --l Untuk menggembalikan pertukaran-pertukaran yang sudah staged dan unstaged\ngit reset --hard git reset --hard HEAD Untuk membuang semua pertukaran-pertukaran lokal kerana ingin mendapatkan versi di GitHub\ngit reset --hard HEAD git pull git reset --hard a123412 #untuk id commit tertentu Untuk unstange semua fail-fail yang sudah di stage melalui git add\ngit reset Untuk menggembalikan fail tertentu atau direktori tertentu\ngit checkout \u0026lt;nama_dir atau nama_fail\u0026gt; Sekiranya ada konflik Untuk menyimpan pertukaran-pertukaran lokal sekiranya ada konflik dengan versi Github\ngit fetch origin git status git pull #if conflicts then? git add . git commit -m \u0026#34;message\u0026#34; git pull #ini akan bagi error message tapi tidak mengapa # buka fail yang ada konflik dan betulkan masalah konflik git add . git commit -m \u0026#34;fixed conflicts\u0026#34; git pull Release atau tag Cara biasa untuk buat tag dan masukkan maklumat ialah menggunakan -a annotate dan -m message\ngit tag -a v0.1.2 -m \u0026#34;Version baru 0.1.2\u0026#34; Bila sudah buat tag boleh lihat gunakan git show v0.1.2 atau git tag. Sekiranya tidak ingin memasukkan sebarang maklumat dan hanya ingin membaharui versi sahaja, boleh guna:\ngit tag v0.1.2 Sekiranya ingin memasukkan tag di git yang sudah di merge, boleh mendapatkan nombor commit menggunakan log kemudian tag commit tersebut. Contohnya ingin masukkan tag di commit \u0026ldquo;Contoh penting\u0026rdquo;.\n$ git log --pretty=oneline 15027957951b64cf874c3557a0f3547bd83b3ff6 Merge branch \u0026#39;experiment\u0026#39; a6b4c97498bd301d84096da251c98a07c7723e65 Contoh penting 0d52aaab4479697da7686c15f77a3d64d9165190 one more thing Hanya sebahagian sahaja daripada nombor commit yang perlu bila di tag dan dipakai dipenghujung komandonya.\ngit tag -a v0.1.3 a6b4c9 Untuk dikongsikan di GitHub boleh dibuat seperti biasa dengan push\ngit push origin v0.1.2 Tetapi sekiranya ada banyak tag boleh pakai git push --tags\nBuat gh-page Pakai option --orphan untuk buat root supaya tidak perlu sync dengan master.\n# create gh-pages branch git checkout --orphan gh-pages git rm -rf . touch README.md git add README.md git commit -m \u0026#39;initial gh-pages commit\u0026#39; git push origin gh-pages # add gh-pages as submodule git checkout master git submodule add -b gh-pages git@github.com:skratchdot/MYPROJECT.git _site git commit -m \u0026#34;added gh-pages as submodule\u0026#34; git push origin master git submodule init Here, the intention is to create a branch for github pages, which is typically not associated with the history of your repo (master and other branches) and hence the usage of git checkout --orphan atau git symbolic-ref. This creates a \u0026ldquo;root branch\u0026rdquo;, which is one without a previous history.\nWhy do we need to do all this, instead of just calling git branch gh-pages. Well, if you are at master and you do git branch gh-pages, gh-pages will be based off master.\nNote that it is also called an orphan branch and git checkout --orphan will now do the same thing as the git symbolic-ref that was being done before.\nCara lama pakai git symbolic-ref\ncd /path/to/repo-name git symbolic-ref HEAD refs/heads/gh-pages rm .git/index git clean -fdx echo \u0026#34;My GitHub Page\u0026#34; \u0026gt; index.html git add . git commit -a -m \u0026#34;First pages commit\u0026#34; git push origin gh-pages git config Ada dua jenis config untuk git, iaitu --local dan --global. Fail untuk local ialah project .git folder manakala untuk global di ~/.gitconfig. Contoh isi fail config global ialah:\n[user] name = Your Name email = your.user@gmail.com [diff] ignoreSubmodules = dirty "
+            }
+    
+        ,
+            {
+                "id": 1,
                 "href": "https://yusbk.github.io/2022/02/18/doom-emacs-tips/",
                 "title": "Doom tips",
                 "section": "post",
@@ -14,7 +24,7 @@
     
         ,
             {
-                "id": 1,
+                "id": 2,
                 "href": "https://yusbk.github.io/2022/02/10/mount-drive/",
                 "title": "Mount drive",
                 "section": "post",
@@ -24,7 +34,7 @@
     
         ,
             {
-                "id": 2,
+                "id": 3,
                 "href": "https://yusbk.github.io/2022/01/25/good-to-know/",
                 "title": "Good to know",
                 "section": "post",
@@ -34,7 +44,7 @@
     
         ,
             {
-                "id": 3,
+                "id": 4,
                 "href": "https://yusbk.github.io/2022/01/04/yesno-question/",
                 "title": "YesNo question",
                 "section": "post",
@@ -44,7 +54,7 @@
     
         ,
             {
-                "id": 4,
+                "id": 5,
                 "href": "https://yusbk.github.io/2021/12/22/org-cross-ref/",
                 "title": "Cross-reference",
                 "section": "post",
@@ -54,7 +64,7 @@
     
         ,
             {
-                "id": 5,
+                "id": 6,
                 "href": "https://yusbk.github.io/2021/12/22/magit-ediff/",
                 "title": "Smerge, ediff and diff",
                 "section": "post",
@@ -64,7 +74,7 @@
     
         ,
             {
-                "id": 6,
+                "id": 7,
                 "href": "https://yusbk.github.io/2021/12/08/r-environment/",
                 "title": "Environment",
                 "section": "post",
@@ -74,7 +84,7 @@
     
         ,
             {
-                "id": 7,
+                "id": 8,
                 "href": "https://yusbk.github.io/2021/12/03/ellipsis/",
                 "title": "Ellipsis …",
                 "section": "post",
@@ -84,7 +94,7 @@
     
         ,
             {
-                "id": 8,
+                "id": 9,
                 "href": "https://yusbk.github.io/2021/11/09/access-shutdown/",
                 "title": "MS Access Shutdown",
                 "section": "post",
@@ -94,7 +104,7 @@
     
         ,
             {
-                "id": 9,
+                "id": 10,
                 "href": "https://yusbk.github.io/2021/09/30/git-merge-selected-file/",
                 "title": "Merge Selected File",
                 "section": "post",
@@ -104,7 +114,7 @@
     
         ,
             {
-                "id": 10,
+                "id": 11,
                 "href": "https://yusbk.github.io/2021/09/17/dt-special-symbol/",
                 "title": "data.table special symbol",
                 "section": "post",
@@ -114,7 +124,7 @@
     
         ,
             {
-                "id": 11,
+                "id": 12,
                 "href": "https://yusbk.github.io/2021/09/17/datatable_tips/",
                 "title": "data.table tips",
                 "section": "post",
@@ -124,7 +134,7 @@
     
         ,
             {
-                "id": 12,
+                "id": 13,
                 "href": "https://yusbk.github.io/2021/09/17/names-att/",
                 "title": "names attribute",
                 "section": "post",
@@ -134,7 +144,7 @@
     
         ,
             {
-                "id": 13,
+                "id": 14,
                 "href": "https://yusbk.github.io/2021/09/06/git-ssh/",
                 "title": "SSH-key with Git on Windows",
                 "section": "post",
@@ -144,7 +154,7 @@
     
         ,
             {
-                "id": 14,
+                "id": 15,
                 "href": "https://yusbk.github.io/2021/09/06/git-rebase/",
                 "title": "Git Rebase or Reset",
                 "section": "post",
@@ -154,7 +164,7 @@
     
         ,
             {
-                "id": 15,
+                "id": 16,
                 "href": "https://yusbk.github.io/2021/09/03/data-attributes/",
                 "title": "Clean attributes",
                 "section": "post",
@@ -164,7 +174,7 @@
     
         ,
             {
-                "id": 16,
+                "id": 17,
                 "href": "https://yusbk.github.io/2021/08/20/azure-server/",
                 "title": "Connect to Azure with ssh",
                 "section": "post",
@@ -174,7 +184,7 @@
     
         ,
             {
-                "id": 17,
+                "id": 18,
                 "href": "https://yusbk.github.io/2021/08/17/access-split/",
                 "title": "MS Access split",
                 "section": "post",
@@ -184,7 +194,7 @@
     
         ,
             {
-                "id": 18,
+                "id": 19,
                 "href": "https://yusbk.github.io/2021/07/25/github_actions/",
                 "title": "CI/CD and Code Coverage",
                 "section": "post",
@@ -194,7 +204,7 @@
     
         ,
             {
-                "id": 19,
+                "id": 20,
                 "href": "https://yusbk.github.io/2021/05/06/ess-tips/",
                 "title": "ESS tips",
                 "section": "post",
@@ -204,7 +214,7 @@
     
         ,
             {
-                "id": 20,
+                "id": 21,
                 "href": "https://yusbk.github.io/2021/05/03/package-r/",
                 "title": "Pasang pakej di R",
                 "section": "post",
@@ -214,7 +224,7 @@
     
         ,
             {
-                "id": 21,
+                "id": 22,
                 "href": "https://yusbk.github.io/2021/04/29/biskut-italy/",
                 "title": "Biskut Italy",
                 "section": "post",
@@ -224,7 +234,7 @@
     
         ,
             {
-                "id": 22,
+                "id": 23,
                 "href": "https://yusbk.github.io/2021/02/17/docker-basic/",
                 "title": "Docker basic",
                 "section": "post",
@@ -234,7 +244,7 @@
     
         ,
             {
-                "id": 23,
+                "id": 24,
                 "href": "https://yusbk.github.io/2020/12/12/access-db/",
                 "title": "Connect to MS Access DB",
                 "section": "post",
@@ -244,7 +254,7 @@
     
         ,
             {
-                "id": 24,
+                "id": 25,
                 "href": "https://yusbk.github.io/2020/10/14/git-upstream/",
                 "title": "Git Upstream",
                 "section": "post",
@@ -254,7 +264,7 @@
     
         ,
             {
-                "id": 25,
+                "id": 26,
                 "href": "https://yusbk.github.io/2020/10/14/git-worktree/",
                 "title": "Git Worktree",
                 "section": "post",
@@ -264,7 +274,7 @@
     
         ,
             {
-                "id": 26,
+                "id": 27,
                 "href": "https://yusbk.github.io/2020/10/07/case-when/",
                 "title": "Case when",
                 "section": "post",
@@ -274,7 +284,7 @@
     
         ,
             {
-                "id": 27,
+                "id": 28,
                 "href": "https://yusbk.github.io/2020/09/28/git-account/",
                 "title": "Git Multiple account",
                 "section": "post",
@@ -284,7 +294,7 @@
     
         ,
             {
-                "id": 28,
+                "id": 29,
                 "href": "https://yusbk.github.io/2020/09/27/git-submodule/",
                 "title": "Git Submodule",
                 "section": "post",
@@ -294,7 +304,7 @@
     
         ,
             {
-                "id": 29,
+                "id": 30,
                 "href": "https://yusbk.github.io/2020/06/15/basic-drake/",
                 "title": "Basic use of drake",
                 "section": "post",
@@ -304,7 +314,7 @@
     
         ,
             {
-                "id": 30,
+                "id": 31,
                 "href": "https://yusbk.github.io/2020/06/14/git-clone/",
                 "title": "Git Clone",
                 "section": "post",
@@ -314,7 +324,7 @@
     
         ,
             {
-                "id": 31,
+                "id": 32,
                 "href": "https://yusbk.github.io/2020/02/09/look-up-table/",
                 "title": "Pemakaian lookup table",
                 "section": "post",
@@ -324,7 +334,7 @@
     
         ,
             {
-                "id": 32,
+                "id": 33,
                 "href": "https://yusbk.github.io/2019/08/21/row-delete/",
                 "title": "Padamkan barisan (row)",
                 "section": "post",
@@ -334,7 +344,7 @@
     
         ,
             {
-                "id": 33,
+                "id": 34,
                 "href": "https://yusbk.github.io/2019/08/01/static-encrypt/",
                 "title": "Static encrypting HTML",
                 "section": "post",
@@ -344,7 +354,7 @@
     
         ,
             {
-                "id": 34,
+                "id": 35,
                 "href": "https://yusbk.github.io/2019/07/31/loop-set/",
                 "title": "Loop atau set di data.table",
                 "section": "post",
@@ -354,7 +364,7 @@
     
         ,
             {
-                "id": 35,
+                "id": 36,
                 "href": "https://yusbk.github.io/2019/07/30/geom-line/",
                 "title": "Tips untuk guna geom_line",
                 "section": "post",
@@ -364,7 +374,7 @@
     
         ,
             {
-                "id": 36,
+                "id": 37,
                 "href": "https://yusbk.github.io/2019/07/24/ifelse/",
                 "title": "Pengunaan ifelse",
                 "section": "post",
@@ -374,7 +384,7 @@
     
         ,
             {
-                "id": 37,
+                "id": 38,
                 "href": "https://yusbk.github.io/2019/07/24/aliran-kerja/",
                 "title": "Aliran kerja buat kod R",
                 "section": "post",
@@ -384,7 +394,7 @@
     
         ,
             {
-                "id": 38,
+                "id": 39,
                 "href": "https://yusbk.github.io/2019/06/24/vector-object/",
                 "title": "Dapatkan objekt sebagai vektor",
                 "section": "post",
@@ -394,7 +404,7 @@
     
         ,
             {
-                "id": 39,
+                "id": 40,
                 "href": "https://yusbk.github.io/2019/02/25/peta-sf/",
                 "title": "Buat peta cara sf",
                 "section": "post",
@@ -404,7 +414,7 @@
     
         ,
             {
-                "id": 40,
+                "id": 41,
                 "href": "https://yusbk.github.io/2019/01/20/tetapkan-path/",
                 "title": "Tetapkan PATH",
                 "section": "post",
@@ -414,7 +424,7 @@
     
         ,
             {
-                "id": 41,
+                "id": 42,
                 "href": "https://yusbk.github.io/2018/10/15/nvim-termux/",
                 "title": "Pasang R di HP",
                 "section": "post",
@@ -424,7 +434,7 @@
     
         ,
             {
-                "id": 42,
+                "id": 43,
                 "href": "https://yusbk.github.io/2018/08/16/duplikasi/",
                 "title": "Duplikasi data atau unik",
                 "section": "post",
@@ -434,7 +444,7 @@
     
         ,
             {
-                "id": 43,
+                "id": 44,
                 "href": "https://yusbk.github.io/2018/07/25/encrypting-file/",
                 "title": "Encrypting guna EncFS",
                 "section": "post",
@@ -444,7 +454,7 @@
     
         ,
             {
-                "id": 44,
+                "id": 45,
                 "href": "https://yusbk.github.io/2018/07/02/basic-shiny/",
                 "title": "Cara deloy Shiny",
                 "section": "post",
@@ -454,7 +464,7 @@
     
         ,
             {
-                "id": 45,
+                "id": 46,
                 "href": "https://yusbk.github.io/2018/06/24/tambah-kolom/",
                 "title": "Tambah kolom pelbagai data.table",
                 "section": "post",
@@ -464,7 +474,7 @@
     
         ,
             {
-                "id": 46,
+                "id": 47,
                 "href": "https://yusbk.github.io/2018/02/21/grid/",
                 "title": "Pemakaian pekej Grid",
                 "section": "post",
@@ -474,7 +484,7 @@
     
         ,
             {
-                "id": 47,
+                "id": 48,
                 "href": "https://yusbk.github.io/2018/02/05/plot-table/",
                 "title": "Plot dan table",
                 "section": "post",
@@ -484,7 +494,7 @@
     
         ,
             {
-                "id": 48,
+                "id": 49,
                 "href": "https://yusbk.github.io/2018/01/28/legend-plot-banding/",
                 "title": "Legend untuk plot perbandingan",
                 "section": "post",
@@ -494,7 +504,7 @@
     
         ,
             {
-                "id": 49,
+                "id": 50,
                 "href": "https://yusbk.github.io/2018/01/22/tambah-jumlah/",
                 "title": "Tambah jumlah keseluruhan",
                 "section": "post",
@@ -504,7 +514,7 @@
     
         ,
             {
-                "id": 50,
+                "id": 51,
                 "href": "https://yusbk.github.io/2018/01/04/merge-join/",
                 "title": "Merge atau join",
                 "section": "post",
@@ -514,7 +524,7 @@
     
         ,
             {
-                "id": 51,
+                "id": 52,
                 "href": "https://yusbk.github.io/2018/01/02/recode/",
                 "title": "Recode atau compute data",
                 "section": "post",
@@ -524,7 +534,7 @@
     
         ,
             {
-                "id": 52,
+                "id": 53,
                 "href": "https://yusbk.github.io/2017/12/22/col-and-row/",
                 "title": "Rownames atau colnames",
                 "section": "post",
@@ -534,7 +544,7 @@
     
         ,
             {
-                "id": 53,
+                "id": 54,
                 "href": "https://yusbk.github.io/2017/11/09/pkg-rreg/",
                 "title": "R pakej `rreg`",
                 "section": "post",
@@ -544,7 +554,7 @@
     
         ,
             {
-                "id": 54,
+                "id": 55,
                 "href": "https://yusbk.github.io/2017/10/23/menamakan-level-di-faktor/",
                 "title": "Menamakan level di faktor",
                 "section": "post",
@@ -554,7 +564,7 @@
     
         ,
             {
-                "id": 55,
+                "id": 56,
                 "href": "https://yusbk.github.io/2017/10/11/susun-factor/",
                 "title": "Susun factor",
                 "section": "post",
@@ -564,7 +574,7 @@
     
         ,
             {
-                "id": 56,
+                "id": 57,
                 "href": "https://yusbk.github.io/2017/09/13/locale/",
                 "title": "Masalah locale",
                 "section": "post",
@@ -574,7 +584,7 @@
     
         ,
             {
-                "id": 57,
+                "id": 58,
                 "href": "https://yusbk.github.io/2017/09/10/hugo-blog-in-org-subtree-export/",
                 "title": "Writing Hugo blog in Org",
                 "section": "post",
@@ -584,7 +594,7 @@
     
         ,
             {
-                "id": 58,
+                "id": 59,
                 "href": "https://yusbk.github.io/2017/08/31/test-figure/",
                 "title": "Test figure",
                 "section": "post",
@@ -594,7 +604,7 @@
     
         ,
             {
-                "id": 59,
+                "id": 60,
                 "href": "https://yusbk.github.io/2017/07/17/kolom-index/",
                 "title": "Pilih kolom cara indeks atau nama kolom",
                 "section": "post",
@@ -604,7 +614,7 @@
     
         ,
             {
-                "id": 60,
+                "id": 61,
                 "href": "https://yusbk.github.io/1/01/01/blog-harbor/",
                 "title": "",
                 "section": "post",
@@ -614,12 +624,12 @@
     
         ,
             {
-                "id": 61,
+                "id": 62,
                 "href": "https://yusbk.github.io/about/",
-                "title": "About",
+                "title": "Why …",
                 "section": "page",
                 "date" : "0001.01.01",
-                "body": "This blog mainly aimed to be my personal reference for things that I often ended up googling everytime I intended to use. Else I use the blog posts as a learning process for new things I found interesting which might be useful to document from my own understanding. This elucidates the lack of pedagogical approach in my writing as the intended audience is I myself. But if you happen to read my posts and would like to contribute, you are very much welcome!\n"
+                "body": "This blog mainly aimed to be my personal reference for things that I often ended up googling when ever I intended to use. Else I use the blog posts as a learning process for new things I found interesting which might be useful to document from my own understanding. This elucidates the lack of pedagogical approach in my writing as the intended audience is I myself. But if you happen to read my posts and would like to contribute, you are very much welcome!\n"
             }
     
 ]
