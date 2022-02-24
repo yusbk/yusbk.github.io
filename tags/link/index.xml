@@ -14,6 +14,16 @@
 		<atom:link href="/tags/link/" rel="self" type="application/rss+xml" />
 		
 		<item>
+			<title>CI/CD and Code Coverage</title>
+			<link>https://yusbk.github.io/2022/02/24/github_actions/</link>
+			<pubDate>Thu, 24 Feb 2022 00:00:00 +0100</pubDate>
+			<guid>https://yusbk.github.io/2022/02/24/github_actions/</guid>
+			<description>First published date: 2021-06-04
+A simple guide to use CI/CD and Code coverage.
+CI/CD This is a simple process to implement CI/CD using GitHub Actions with usethis package. Basically the steps here is a summary from Dean Attali with slight changes:</description>
+		</item>
+      	
+		<item>
 			<title>Rujukan Awam Git dan Github</title>
 			<link>https://yusbk.github.io/2022/02/23/git-rujukan-awam/</link>
 			<pubDate>Wed, 23 Feb 2022 00:00:00 +0100</pubDate>
@@ -98,15 +108,6 @@ Smerge Basic workflow:
 			<description>First published: 2020-12-12
 Just to remind me how I could use ellipsis or the three dots ... in my coding. There are three scenarios I find it useful:
 Function wrapper When creating a function wrapper and instead of providing all the arguments to be send further, you could just use .</description>
-		</item>
-      	
-		<item>
-			<title>MS Access Shutdown</title>
-			<link>https://yusbk.github.io/2021/11/09/access-shutdown/</link>
-			<pubDate>Tue, 09 Nov 2021 00:00:00 +0100</pubDate>
-			<guid>https://yusbk.github.io/2021/11/09/access-shutdown/</guid>
-			<description>How to shutdown all running Access when you need to do some changes. This is just a summary from Microsoft Docs. The steps are:
-Create empty text file  This file will be the key. Name the file to anything like checkfile.</description>
 		</item>
       	
 	</channel>
