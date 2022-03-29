@@ -14,6 +14,15 @@
 		<atom:link href="/categories/orgmode/" rel="self" type="application/rss+xml" />
 		
 		<item>
+			<title>Subset DT</title>
+			<link>https://yusbk.github.io/2022/03/29/subset-data-table/</link>
+			<pubDate>Tue, 29 Mar 2022 00:00:00 +0200</pubDate>
+			<guid>https://yusbk.github.io/2022/03/29/subset-data-table/</guid>
+			<description>Subsetting data.table can be done using base R `subset` with S3 Class for `data.table` object. Alternatively is to use the recode approach as mentioned in StackOverflow.
+lookup &amp;lt;- list(v1 = 1:3, v2 = letters[5:7]) DT[lookup, on = names(lookup), nomatch = NULL] This will return all columns in DT that match lookup list.</description>
+		</item>
+      	
+		<item>
 			<title>CI/CD and Code Coverage</title>
 			<link>https://yusbk.github.io/2022/02/24/github_actions/</link>
 			<pubDate>Thu, 24 Feb 2022 00:00:00 +0100</pubDate>
@@ -98,16 +107,6 @@ Smerge Basic workflow:
 			<guid>https://yusbk.github.io/2021/12/08/r-environment/</guid>
 			<description>Several nice blogs and references on the net to read on this stuff. Among those:
  Environments in R How R Searches and Finds Stuff  This discussion from StackOverflow explains nicely with example on the difference between parent.env() and parent.</description>
-		</item>
-      	
-		<item>
-			<title>Ellipsis …</title>
-			<link>https://yusbk.github.io/2021/12/03/ellipsis/</link>
-			<pubDate>Fri, 03 Dec 2021 00:00:00 +0100</pubDate>
-			<guid>https://yusbk.github.io/2021/12/03/ellipsis/</guid>
-			<description>First published: 2020-12-12
-Just to remind me how I could use ellipsis or the three dots ... in my coding. There are three scenarios I find it useful:
-Function wrapper When creating a function wrapper and instead of providing all the arguments to be send further, you could just use .</description>
 		</item>
       	
 	</channel>

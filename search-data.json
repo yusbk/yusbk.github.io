@@ -5,6 +5,16 @@
         
             {
                 "id": 0,
+                "href": "https://yusbk.github.io/2022/03/29/subset-data-table/",
+                "title": "Subset DT",
+                "section": "post",
+                "date" : "2022.03.29",
+                "body": "Subsetting data.table can be done using base R `subset` with S3 Class for `data.table` object. Alternatively is to use the recode approach as mentioned in StackOverflow.\nlookup \u0026lt;- list(v1 = 1:3, v2 = letters[5:7]) DT[lookup, on = names(lookup), nomatch = NULL] This will return all columns in DT that match lookup list. By specifying with nomatch = 0 will exclude columns that don\u0026rsquo;t match lookup.\nAnother way to do dynamic subset is:\nDT[DT[, all(mapply(`%in%`, .SD, param)), by = 1:nrow(DT), .SDcols=names(param)]$V1] "
+            }
+    
+        ,
+            {
+                "id": 1,
                 "href": "https://yusbk.github.io/2022/02/24/github_actions/",
                 "title": "CI/CD and Code Coverage",
                 "section": "post",
@@ -14,7 +24,7 @@
     
         ,
             {
-                "id": 1,
+                "id": 2,
                 "href": "https://yusbk.github.io/2022/02/23/git-rujukan-awam/",
                 "title": "Rujukan Awam Git dan Github",
                 "section": "post",
@@ -24,7 +34,7 @@
     
         ,
             {
-                "id": 2,
+                "id": 3,
                 "href": "https://yusbk.github.io/2022/02/18/doom-emacs-tips/",
                 "title": "Doom tips",
                 "section": "post",
@@ -34,7 +44,7 @@
     
         ,
             {
-                "id": 3,
+                "id": 4,
                 "href": "https://yusbk.github.io/2022/02/10/mount-drive/",
                 "title": "Mount drive",
                 "section": "post",
@@ -44,7 +54,7 @@
     
         ,
             {
-                "id": 4,
+                "id": 5,
                 "href": "https://yusbk.github.io/2022/01/25/good-to-know/",
                 "title": "Good to know",
                 "section": "post",
@@ -54,7 +64,7 @@
     
         ,
             {
-                "id": 5,
+                "id": 6,
                 "href": "https://yusbk.github.io/2022/01/04/yesno-question/",
                 "title": "YesNo question",
                 "section": "post",
@@ -64,7 +74,7 @@
     
         ,
             {
-                "id": 6,
+                "id": 7,
                 "href": "https://yusbk.github.io/2021/12/22/org-cross-ref/",
                 "title": "Cross-reference",
                 "section": "post",
@@ -74,7 +84,7 @@
     
         ,
             {
-                "id": 7,
+                "id": 8,
                 "href": "https://yusbk.github.io/2021/12/22/magit-ediff/",
                 "title": "Smerge, ediff and diff",
                 "section": "post",
@@ -84,7 +94,7 @@
     
         ,
             {
-                "id": 8,
+                "id": 9,
                 "href": "https://yusbk.github.io/2021/12/08/r-environment/",
                 "title": "Environment",
                 "section": "post",
@@ -94,7 +104,7 @@
     
         ,
             {
-                "id": 9,
+                "id": 10,
                 "href": "https://yusbk.github.io/2021/12/03/ellipsis/",
                 "title": "Ellipsis …",
                 "section": "post",
@@ -104,7 +114,7 @@
     
         ,
             {
-                "id": 10,
+                "id": 11,
                 "href": "https://yusbk.github.io/2021/11/09/access-shutdown/",
                 "title": "MS Access Shutdown",
                 "section": "post",
@@ -114,7 +124,7 @@
     
         ,
             {
-                "id": 11,
+                "id": 12,
                 "href": "https://yusbk.github.io/2021/09/30/git-merge-selected-file/",
                 "title": "Merge Selected File",
                 "section": "post",
@@ -124,7 +134,7 @@
     
         ,
             {
-                "id": 12,
+                "id": 13,
                 "href": "https://yusbk.github.io/2021/09/17/dt-special-symbol/",
                 "title": "data.table special symbol",
                 "section": "post",
@@ -134,7 +144,7 @@
     
         ,
             {
-                "id": 13,
+                "id": 14,
                 "href": "https://yusbk.github.io/2021/09/17/datatable_tips/",
                 "title": "data.table tips",
                 "section": "post",
@@ -144,7 +154,7 @@
     
         ,
             {
-                "id": 14,
+                "id": 15,
                 "href": "https://yusbk.github.io/2021/09/17/names-att/",
                 "title": "names attribute",
                 "section": "post",
@@ -154,7 +164,7 @@
     
         ,
             {
-                "id": 15,
+                "id": 16,
                 "href": "https://yusbk.github.io/2021/09/06/git-ssh/",
                 "title": "SSH-key with Git on Windows",
                 "section": "post",
@@ -164,7 +174,7 @@
     
         ,
             {
-                "id": 16,
+                "id": 17,
                 "href": "https://yusbk.github.io/2021/09/06/git-rebase/",
                 "title": "Git Rebase or Reset",
                 "section": "post",
@@ -174,7 +184,7 @@
     
         ,
             {
-                "id": 17,
+                "id": 18,
                 "href": "https://yusbk.github.io/2021/09/03/data-attributes/",
                 "title": "Clean attributes",
                 "section": "post",
@@ -184,7 +194,7 @@
     
         ,
             {
-                "id": 18,
+                "id": 19,
                 "href": "https://yusbk.github.io/2021/08/20/azure-server/",
                 "title": "Connect to Azure with ssh",
                 "section": "post",
@@ -194,7 +204,7 @@
     
         ,
             {
-                "id": 19,
+                "id": 20,
                 "href": "https://yusbk.github.io/2021/08/17/access-split/",
                 "title": "MS Access split",
                 "section": "post",
@@ -204,7 +214,7 @@
     
         ,
             {
-                "id": 20,
+                "id": 21,
                 "href": "https://yusbk.github.io/2021/05/06/ess-tips/",
                 "title": "ESS tips",
                 "section": "post",
@@ -214,7 +224,7 @@
     
         ,
             {
-                "id": 21,
+                "id": 22,
                 "href": "https://yusbk.github.io/2021/05/03/package-r/",
                 "title": "Pasang pakej di R",
                 "section": "post",
@@ -224,7 +234,7 @@
     
         ,
             {
-                "id": 22,
+                "id": 23,
                 "href": "https://yusbk.github.io/2021/04/29/biskut-italy/",
                 "title": "Biskut Italy",
                 "section": "post",
@@ -234,7 +244,7 @@
     
         ,
             {
-                "id": 23,
+                "id": 24,
                 "href": "https://yusbk.github.io/2021/02/17/docker-basic/",
                 "title": "Docker basic",
                 "section": "post",
@@ -244,7 +254,7 @@
     
         ,
             {
-                "id": 24,
+                "id": 25,
                 "href": "https://yusbk.github.io/2020/12/12/access-db/",
                 "title": "Connect to MS Access DB",
                 "section": "post",
@@ -254,7 +264,7 @@
     
         ,
             {
-                "id": 25,
+                "id": 26,
                 "href": "https://yusbk.github.io/2020/10/14/git-upstream/",
                 "title": "Git Upstream",
                 "section": "post",
@@ -264,7 +274,7 @@
     
         ,
             {
-                "id": 26,
+                "id": 27,
                 "href": "https://yusbk.github.io/2020/10/14/git-worktree/",
                 "title": "Git Worktree",
                 "section": "post",
@@ -274,7 +284,7 @@
     
         ,
             {
-                "id": 27,
+                "id": 28,
                 "href": "https://yusbk.github.io/2020/10/07/case-when/",
                 "title": "Case when",
                 "section": "post",
@@ -284,7 +294,7 @@
     
         ,
             {
-                "id": 28,
+                "id": 29,
                 "href": "https://yusbk.github.io/2020/09/28/git-account/",
                 "title": "Git Multiple account",
                 "section": "post",
@@ -294,7 +304,7 @@
     
         ,
             {
-                "id": 29,
+                "id": 30,
                 "href": "https://yusbk.github.io/2020/09/27/git-submodule/",
                 "title": "Git Submodule",
                 "section": "post",
@@ -304,7 +314,7 @@
     
         ,
             {
-                "id": 30,
+                "id": 31,
                 "href": "https://yusbk.github.io/2020/06/15/basic-drake/",
                 "title": "Basic use of drake",
                 "section": "post",
@@ -314,7 +324,7 @@
     
         ,
             {
-                "id": 31,
+                "id": 32,
                 "href": "https://yusbk.github.io/2020/06/14/git-clone/",
                 "title": "Git Clone",
                 "section": "post",
@@ -324,7 +334,7 @@
     
         ,
             {
-                "id": 32,
+                "id": 33,
                 "href": "https://yusbk.github.io/2020/02/09/look-up-table/",
                 "title": "Pemakaian lookup table",
                 "section": "post",
@@ -334,7 +344,7 @@
     
         ,
             {
-                "id": 33,
+                "id": 34,
                 "href": "https://yusbk.github.io/2019/08/21/row-delete/",
                 "title": "Padamkan barisan (row)",
                 "section": "post",
@@ -344,7 +354,7 @@
     
         ,
             {
-                "id": 34,
+                "id": 35,
                 "href": "https://yusbk.github.io/2019/08/01/static-encrypt/",
                 "title": "Static encrypting HTML",
                 "section": "post",
@@ -354,7 +364,7 @@
     
         ,
             {
-                "id": 35,
+                "id": 36,
                 "href": "https://yusbk.github.io/2019/07/31/loop-set/",
                 "title": "Loop atau set di data.table",
                 "section": "post",
@@ -364,7 +374,7 @@
     
         ,
             {
-                "id": 36,
+                "id": 37,
                 "href": "https://yusbk.github.io/2019/07/30/geom-line/",
                 "title": "Tips untuk guna geom_line",
                 "section": "post",
@@ -374,7 +384,7 @@
     
         ,
             {
-                "id": 37,
+                "id": 38,
                 "href": "https://yusbk.github.io/2019/07/24/ifelse/",
                 "title": "Pengunaan ifelse",
                 "section": "post",
@@ -384,7 +394,7 @@
     
         ,
             {
-                "id": 38,
+                "id": 39,
                 "href": "https://yusbk.github.io/2019/07/24/aliran-kerja/",
                 "title": "Aliran kerja buat kod R",
                 "section": "post",
@@ -394,7 +404,7 @@
     
         ,
             {
-                "id": 39,
+                "id": 40,
                 "href": "https://yusbk.github.io/2019/06/24/vector-object/",
                 "title": "Dapatkan objekt sebagai vektor",
                 "section": "post",
@@ -404,7 +414,7 @@
     
         ,
             {
-                "id": 40,
+                "id": 41,
                 "href": "https://yusbk.github.io/2019/02/25/peta-sf/",
                 "title": "Buat peta cara sf",
                 "section": "post",
@@ -414,7 +424,7 @@
     
         ,
             {
-                "id": 41,
+                "id": 42,
                 "href": "https://yusbk.github.io/2019/01/20/tetapkan-path/",
                 "title": "Tetapkan PATH",
                 "section": "post",
@@ -424,7 +434,7 @@
     
         ,
             {
-                "id": 42,
+                "id": 43,
                 "href": "https://yusbk.github.io/2018/10/15/nvim-termux/",
                 "title": "Pasang R di HP",
                 "section": "post",
@@ -434,7 +444,7 @@
     
         ,
             {
-                "id": 43,
+                "id": 44,
                 "href": "https://yusbk.github.io/2018/08/16/duplikasi/",
                 "title": "Duplikasi data atau unik",
                 "section": "post",
@@ -444,7 +454,7 @@
     
         ,
             {
-                "id": 44,
+                "id": 45,
                 "href": "https://yusbk.github.io/2018/07/25/encrypting-file/",
                 "title": "Encrypting guna EncFS",
                 "section": "post",
@@ -454,7 +464,7 @@
     
         ,
             {
-                "id": 45,
+                "id": 46,
                 "href": "https://yusbk.github.io/2018/07/02/basic-shiny/",
                 "title": "Cara deloy Shiny",
                 "section": "post",
@@ -464,7 +474,7 @@
     
         ,
             {
-                "id": 46,
+                "id": 47,
                 "href": "https://yusbk.github.io/2018/06/24/tambah-kolom/",
                 "title": "Tambah kolom pelbagai data.table",
                 "section": "post",
@@ -474,7 +484,7 @@
     
         ,
             {
-                "id": 47,
+                "id": 48,
                 "href": "https://yusbk.github.io/2018/02/21/grid/",
                 "title": "Pemakaian pekej Grid",
                 "section": "post",
@@ -484,7 +494,7 @@
     
         ,
             {
-                "id": 48,
+                "id": 49,
                 "href": "https://yusbk.github.io/2018/02/05/plot-table/",
                 "title": "Plot dan table",
                 "section": "post",
@@ -494,7 +504,7 @@
     
         ,
             {
-                "id": 49,
+                "id": 50,
                 "href": "https://yusbk.github.io/2018/01/28/legend-plot-banding/",
                 "title": "Legend untuk plot perbandingan",
                 "section": "post",
@@ -504,7 +514,7 @@
     
         ,
             {
-                "id": 50,
+                "id": 51,
                 "href": "https://yusbk.github.io/2018/01/22/tambah-jumlah/",
                 "title": "Tambah jumlah keseluruhan",
                 "section": "post",
@@ -514,7 +524,7 @@
     
         ,
             {
-                "id": 51,
+                "id": 52,
                 "href": "https://yusbk.github.io/2018/01/04/merge-join/",
                 "title": "Merge atau join",
                 "section": "post",
@@ -524,7 +534,7 @@
     
         ,
             {
-                "id": 52,
+                "id": 53,
                 "href": "https://yusbk.github.io/2018/01/02/recode/",
                 "title": "Recode atau compute data",
                 "section": "post",
@@ -534,7 +544,7 @@
     
         ,
             {
-                "id": 53,
+                "id": 54,
                 "href": "https://yusbk.github.io/2017/12/22/col-and-row/",
                 "title": "Rownames atau colnames",
                 "section": "post",
@@ -544,7 +554,7 @@
     
         ,
             {
-                "id": 54,
+                "id": 55,
                 "href": "https://yusbk.github.io/2017/11/09/pkg-rreg/",
                 "title": "R pakej `rreg`",
                 "section": "post",
@@ -554,7 +564,7 @@
     
         ,
             {
-                "id": 55,
+                "id": 56,
                 "href": "https://yusbk.github.io/2017/10/23/menamakan-level-di-faktor/",
                 "title": "Menamakan level di faktor",
                 "section": "post",
@@ -564,7 +574,7 @@
     
         ,
             {
-                "id": 56,
+                "id": 57,
                 "href": "https://yusbk.github.io/2017/10/11/susun-factor/",
                 "title": "Susun factor",
                 "section": "post",
@@ -574,7 +584,7 @@
     
         ,
             {
-                "id": 57,
+                "id": 58,
                 "href": "https://yusbk.github.io/2017/09/13/locale/",
                 "title": "Masalah locale",
                 "section": "post",
@@ -584,7 +594,7 @@
     
         ,
             {
-                "id": 58,
+                "id": 59,
                 "href": "https://yusbk.github.io/2017/09/10/hugo-blog-in-org-subtree-export/",
                 "title": "Writing Hugo blog in Org",
                 "section": "post",
@@ -594,7 +604,7 @@
     
         ,
             {
-                "id": 59,
+                "id": 60,
                 "href": "https://yusbk.github.io/2017/08/31/test-figure/",
                 "title": "Test figure",
                 "section": "post",
@@ -604,7 +614,7 @@
     
         ,
             {
-                "id": 60,
+                "id": 61,
                 "href": "https://yusbk.github.io/2017/07/17/kolom-index/",
                 "title": "Pilih kolom cara indeks atau nama kolom",
                 "section": "post",
@@ -614,7 +624,7 @@
     
         ,
             {
-                "id": 61,
+                "id": 62,
                 "href": "https://yusbk.github.io/1/01/01/blog-harbor/",
                 "title": "",
                 "section": "post",
@@ -624,7 +634,7 @@
     
         ,
             {
-                "id": 62,
+                "id": 63,
                 "href": "https://yusbk.github.io/about/",
                 "title": "About",
                 "section": "page",
