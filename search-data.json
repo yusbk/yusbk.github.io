@@ -9,7 +9,7 @@
                 "title": "Subset DT",
                 "section": "post",
                 "date" : "2022.03.29",
-                "body": "Subsetting data.table can be done using base R `subset` with S3 Class for `data.table` object. Alternatively is to use the recode approach as mentioned in StackOverflow.\nlookup \u0026lt;- list(v1 = 1:3, v2 = letters[5:7]) DT[lookup, on = names(lookup), nomatch = NULL] This will return all columns in DT that match lookup list. By specifying with nomatch = 0 will exclude columns that don\u0026rsquo;t match lookup.\nAnother way to do dynamic subset is as below, but it\u0026rsquo;s a bit slower compared to the recode approach:\nDT[DT[, all(mapply(`%in%`, .SD, lookup)), by = 1:nrow(DT), .SDcols=names(lookup)]$V1] "
+                "body": "Subsetting data.table can be done using base R subset with S3 Class for data.table object. Alternatively is to use the recode approach as mentioned in StackOverflow.\nlookup \u0026lt;- list(v1 = 1:3, v2 = letters[5:7]) DT[lookup, on = names(lookup), nomatch = NULL] This will return all columns in DT that match lookup list. By specifying with nomatch = 0 will exclude columns that don\u0026rsquo;t match lookup.\nAnother way to do dynamic subset is as below, but it\u0026rsquo;s a bit slower compared to the recode approach:\nDT[DT[, all(mapply(`%in%`, .SD, lookup)), by = 1:nrow(DT), .SDcols=names(lookup)]$V1] A nice reading on table join for data.table which is very relevant to this case is the blog post by Scott Lyden.\n"
             }
     
         ,
