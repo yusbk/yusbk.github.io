@@ -20,7 +20,8 @@
 />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Git Worktree"/>
-<meta name="twitter:description" content="Normally I created a new branch when I intent to do some changes to the master branch. But the problem is I have to stash changes when switching back and forth. To avoid this create worktree for the branches you want to work seperately."/>
+<meta name="twitter:description" content="Updated: 01.04.2022
+Normally I created a new branch when I intent to do some changes to the master branch. But the problem is I have to stash changes when switching back and forth. To avoid this create worktree for the branches you want to work seperately."/>
 
 
 
@@ -160,10 +161,12 @@
   <div class="container" role="main">
     <article class="article" class="blog-post">
       
-  <p>Normally I created a new branch when I intent to do some changes to the master branch. But the
+  <p><em>Updated: 01.04.2022</em></p>
+<p>Normally I created a new branch when I intent to do some changes to the master branch. But the
 problem is I have to stash changes when switching back and forth. To avoid this create <em>worktree</em> for
 the branches you want to work seperately. Basically it creates a new folder and work independently.</p>
-<p>For instance, to start worktree with newfix from master branch. You can create newfix branch first
+<h2 id="create-new-worktree">Create new worktree</h2>
+<p>To start worktree with newfix from master branch. You can create newfix branch first
 then worktree or directly to create worktree with newfix branch</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">  git branch fix
   git worktree add ./path/newfix fix
@@ -177,7 +180,14 @@ is the default and can be ignored. If you select different branch then you can s
 
   <span style="color:#75715e"># Check you are in fix branch</span>
   git status
-</code></pre></div><p>To list down all the workrees you can use <code>git worktree list</code>. Deleting a worktree can be done by
+</code></pre></div><h2 id="copy-branch-to-a-worktree">Copy branch to a worktree</h2>
+<p>To copy en existing branch to a worktree:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git worktree add --track -b &lt;branch&gt; &lt;path&gt; &lt;remote&gt;/&lt;branch&gt;
+
+<span style="color:#75715e"># example</span>
+git worktree add --track -b user ../worktree/orgdata origin/user
+</code></pre></div><h2 id="delete-worktree">Delete worktree</h2>
+<p>To list down all the workrees you can use <code>git worktree list</code>. Deleting a worktree can be done by
 deleting the folder directly and run <code>git worktree prune</code> to delete it from the list. If you have
 error because your branch already checked out then delete <code>.git/worktrees/newfix</code>. See
 <a href="https://www.saltycrane.com/blog/2017/05/git-worktree-notes/">https://www.saltycrane.com/blog/2017/05/git-worktree-notes/</a></p>
