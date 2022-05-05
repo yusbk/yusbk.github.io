@@ -3,7 +3,9 @@
   <head>
     <meta charset="utf-8" />
 <title>Environment</title>
-
+<meta name="description" 
+      content=""
+>
 
   
 
@@ -20,8 +22,9 @@
 />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Environment"/>
-<meta name="twitter:description" content="Several nice blogs and references on the net to read on this stuff. Among those:
- Environments in R How R Searches and Finds Stuff  This discussion from StackOverflow explains nicely with example on the difference between parent.env() and parent."/>
+<meta name="twitter:description" content="Updated: 2022-04-12
+Several nice blogs and references on the net to read on this stuff. Among those:
+ Environments in R How R Searches and Finds Stuff  This discussion from StackOverflow and here explains nicely with example on the difference between parent."/>
 
 
 
@@ -66,7 +69,7 @@
 <script defer crossorigin="anonymous" src="/js/theme.js" integrity=""></script>
 
 
-<script defer crossorigin="anonymous" src="/js/instantpage.min.js" integrity=""></script><meta name="generator" content="Hugo 0.69.2" />
+<script defer crossorigin="anonymous" src="/js/instantpage.min.js" integrity=""></script><meta name="generator" content="Hugo 0.68.3" />
   </head>
   <body>
     
@@ -166,15 +169,23 @@
   <div class="container" role="main">
     <article class="article" class="blog-post">
       
-  <p>Several nice blogs and references on the net to read on this stuff. Among those:</p>
+  <p><em>Updated: 2022-04-12</em></p>
+<p>Several nice blogs and references on the net to read on this stuff. Among those:</p>
 <ul>
 <li><a href="https://www.r-bloggers.com/2011/06/environments-in-r/#google_vignette">Environments in R</a></li>
 <li><a href="http://blog.obeautifulcode.com/R/How-R-Searches-And-Finds-Stuff/">How R Searches and Finds Stuff</a></li>
 </ul>
-<p>This discussion from <a href="https://stackoverflow.com/a/7439568/5372752">StackOverflow</a> explains nicely with example on the
+<p>This discussion from <a href="https://stackoverflow.com/a/7439568/5372752">StackOverflow</a> and <a href="https://stackoverflow.com/questions/8771942/how-can-i-reference-the-local-environment-within-a-function-in-r/8773047#8773047">here</a> explains nicely with example on the
 difference between <code>parent.env()</code> and <code>parent.frame()</code>. Hadley wrote in <a href="https://adv-r.hadley.nz/environments.html">Advanced
 R</a> that use <code>parent.env()</code> to find&hellip; surprise! surprise! To the parent of an
 environment!</p>
+<h2 id="sys-dot-nframe">sys.nframe()</h2>
+<p>To know the current dept of an environment, use <code>sys.nframe()</code>. The available
+object in the specific environment can be accessed with <code>sys.nframe()</code> as well.
+For instance, to access all the objects in the environment of a second call
+stack in a nexted call.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">xx <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">sys.nframe</span>()[[2]]
+</code></pre></div><h2 id="sys-dot-frames">sys.frames()</h2>
 <p>Another useful options is <code>sys.frames()[[1]]</code> to access the environment of the
 first calling function. It&rsquo;s like using <code>parent.frame()</code> if you don&rsquo;t have a
 nested functions. But once your functions are nested, <code>sys.frames()</code> will be
@@ -218,6 +229,8 @@ is_assign_var_02 <span style="color:#f92672">&lt;-</span> <span style="color:#a6
             >&nbsp;
           
         </div>
+      
+
       
     </article>
     

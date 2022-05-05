@@ -3,7 +3,9 @@
   <head>
     <meta charset="utf-8" />
 <title>𝔂𝓾𝓼𝓴𝓪𝓶</title>
-
+<meta name="description" 
+      content=""
+>
 
   
 
@@ -65,7 +67,7 @@
 <script defer crossorigin="anonymous" src="/js/theme.js" integrity=""></script>
 
 
-<script defer crossorigin="anonymous" src="/js/instantpage.min.js" integrity=""></script><meta name="generator" content="Hugo 0.69.2" />
+<script defer crossorigin="anonymous" src="/js/instantpage.min.js" integrity=""></script><meta name="generator" content="Hugo 0.68.3" />
   </head>
   <body>
     
@@ -152,70 +154,6 @@
 
       
         <article class="post-preview">
-  <a href="https://yusbk.github.io/2021/12/03/ellipsis/">
-    <h2 class="post-title">Ellipsis …</h2>
-  </a>
-  <div class="post-entry">
-    
-      <p>First published: 2020-12-12
-Just to remind me how I could use ellipsis or the three dots ... in my coding. There are three scenarios I find it useful:
-Function wrapper When creating a function wrapper and instead of providing all the arguments to be send further, you could just use .</p>
-      <a href="https://yusbk.github.io/2021/12/03/ellipsis/" class="post-read-more"
-        >Read More</a
-      >
-    
-  </div>
-
-  <div class="postmeta">
-    <span class="meta-post">
-  <em class="fa fa-calendar-alt"></em
-  >&nbsp;Dec 3, 2021
-  
-    &nbsp;&nbsp;&nbsp;<em class="fa fa-folder-open"></em>&nbsp;
-    
-      <a
-        href="https://yusbk.github.io/categories/en/"
-        >en</a
-      >&nbsp;
-    
-      <a
-        href="https://yusbk.github.io/categories/r/"
-        >R</a
-      >&nbsp;
-    
-  
-</span>
-
-  </div>
-</article>
-
-      
-        <article class="post-preview">
-  <a href="https://yusbk.github.io/2021/11/09/access-shutdown/">
-    <h2 class="post-title">MS Access Shutdown</h2>
-  </a>
-  <div class="post-entry">
-    
-      <p>How to shutdown all running Access when you need to do some changes. This is just a summary from Microsoft Docs. The steps are:
-Create empty text file  This file will be the key. Name the file to anything like checkfile.</p>
-      <a href="https://yusbk.github.io/2021/11/09/access-shutdown/" class="post-read-more"
-        >Read More</a
-      >
-    
-  </div>
-
-  <div class="postmeta">
-    <span class="meta-post">
-  <em class="fa fa-calendar-alt"></em
-  >&nbsp;Nov 9, 2021
-  
-</span>
-
-  </div>
-</article>
-
-      
-        <article class="post-preview">
   <a href="https://yusbk.github.io/2021/09/30/git-merge-selected-file/">
     <h2 class="post-title">Merge Selected File</h2>
   </a>
@@ -294,16 +232,14 @@ Hari ni bersempena Hari kemerdekaan Malaysia ada masa untuk ulang kaji pakej dat
 
       
         <article class="post-preview">
-  <a href="https://yusbk.github.io/2021/09/17/datatable_tips/">
-    <h2 class="post-title">data.table tips</h2>
+  <a href="https://yusbk.github.io/2021/09/17/names-att/">
+    <h2 class="post-title">names attribute</h2>
   </a>
   <div class="post-entry">
     
-      <p>First published: 2021-04-20
-Some tips for data.table that I came across while googling which might be useful.
-Print To print more rows that default can be done with either:
-options(datatable.print.topn = 70) print(DT, topn = 70) Using options will implement the changes globally.</p>
-      <a href="https://yusbk.github.io/2021/09/17/datatable_tips/" class="post-read-more"
+      <p>Sometime an object has attribute names for identification of the value with names instead of index. There are time you need to extract the names of a vector or object. The easiest way is to do:
+library(data.table) dt &lt;- cars[1,] setDT(dt) str(dt) dt[, dist := as.</p>
+      <a href="https://yusbk.github.io/2021/09/17/names-att/" class="post-read-more"
         >Read More</a
       >
     
@@ -329,6 +265,75 @@ options(datatable.print.topn = 70) print(DT, topn = 70) Using options will imple
       <a
         href="https://yusbk.github.io/categories/dt/"
         >DT</a
+      >&nbsp;
+    
+  
+</span>
+
+  </div>
+</article>
+
+      
+        <article class="post-preview">
+  <a href="https://yusbk.github.io/2021/09/06/git-ssh/">
+    <h2 class="post-title">SSH-key with Git on Windows</h2>
+  </a>
+  <div class="post-entry">
+    
+      <p>First published: 2020-09-29
+Generally, these are what I did:
+ Install git-with-openssh Create SSH-key Add SSH-key to ssh-agent Create ~/.bashrc for auto-launching ssh-agent  Common problems  Unable to push to origin with this error message.  ssh: Could not resolve hostname personal: Name or service not known fatal: Could not read from remote repository.</p>
+      <a href="https://yusbk.github.io/2021/09/06/git-ssh/" class="post-read-more"
+        >Read More</a
+      >
+    
+  </div>
+
+  <div class="postmeta">
+    <span class="meta-post">
+  <em class="fa fa-calendar-alt"></em
+  >&nbsp;Sep 6, 2021
+  
+    &nbsp;&nbsp;&nbsp;<em class="fa fa-folder-open"></em>&nbsp;
+    
+      <a
+        href="https://yusbk.github.io/categories/emacs/"
+        >emacs</a
+      >&nbsp;
+    
+  
+</span>
+
+  </div>
+</article>
+
+      
+        <article class="post-preview">
+  <a href="https://yusbk.github.io/2021/09/06/git-rebase/">
+    <h2 class="post-title">Git Rebase or Reset</h2>
+  </a>
+  <div class="post-entry">
+    
+      <p>First published: 2021-08-05
+Rebase to previous commit of a sepcific branch ie. master.
+git reset --hard origin/master git status or reset to any previous specific commit.
+git log --oneline --graph -5 git reset --hard &lt;commit id&gt; git push origin HEAD --force The steps above:</p>
+      <a href="https://yusbk.github.io/2021/09/06/git-rebase/" class="post-read-more"
+        >Read More</a
+      >
+    
+  </div>
+
+  <div class="postmeta">
+    <span class="meta-post">
+  <em class="fa fa-calendar-alt"></em
+  >&nbsp;Sep 6, 2021
+  
+    &nbsp;&nbsp;&nbsp;<em class="fa fa-folder-open"></em>&nbsp;
+    
+      <a
+        href="https://yusbk.github.io/categories/git/"
+        >Git</a
       >&nbsp;
     
   

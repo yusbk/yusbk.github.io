@@ -2,27 +2,74 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-<title>Doom Emacs</title>
-
+<title>Doom tips</title>
+<meta name="description" 
+      content=""
+>
 
   
 
 
 
+
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="alternate" type="application/rss+xml" href="https://yusbk.github.io/index.xml" title="ყųʂƙąɱ">
+<link
+  rel="alternate"
+  type="application/rss+xml"
+  href="https://yusbk.github.io/index.xml"
+  title="𝔂𝓾𝓼𝓴𝓪𝓶"
+/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Doom tips"/>
+<meta name="twitter:description" content="Updated: 2022-05-05
+Some tips to learn the keybindings in Doom and Evil in the process of migrating from my vanilla Emacs settings. For overview of keybindings type SPC-h-b-b. Other good references:
+ Narra&rsquo;s Blog - Doom Tips and Howtos Org Mode Shortcuts for Emacs Doom Gist of Hjertnes Evil-mode collection  Nice Doom Emacs Cheatsheet from niyumard."/>
 
-<link id="dark-mode-theme" rel="stylesheet" href="https://yusbk.github.io/css/dark.css" />
+
+
 <link rel="stylesheet" href="https://yusbk.github.io/fontawesome/css/all.min.css" />
 
-<script src="https://yusbk.github.io/js/bundle.js"></script>
-<script src="https://yusbk.github.io/js/instantpage.js" type="module" defer></script>
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest">
-<meta name="generator" content="Hugo 0.80.0" />
+
+
+
+<link
+  crossorigin="anonymous"
+  href="/css/styles.min.css"
+  integrity=""
+  rel="preload stylesheet"
+  as="style"
+/>
+
+
+
+
+<link
+  id="dark-mode-theme"
+  crossorigin="anonymous"
+  href="/css/dark.min.css"
+  integrity=""
+  rel="preload stylesheet"
+  as="style"
+/>
+
+
+<script>
+  var darkTheme = document.getElementById('dark-mode-theme')
+  var storedTheme = localStorage.getItem('dark-mode-storage')
+
+  if (storedTheme === 'dark') {
+    darkTheme.disabled = false
+  } else if (storedTheme === 'light') {
+    darkTheme.disabled = true
+  }
+</script>
+
+
+<script defer crossorigin="anonymous" src="/js/theme.js" integrity=""></script>
+
+
+<script defer crossorigin="anonymous" src="/js/instantpage.min.js" integrity=""></script><meta name="generator" content="Hugo 0.68.3" />
   </head>
   <body>
     
@@ -35,14 +82,14 @@
     <nav class="navbar">
   <div class="nav">
     
-        <a href="https://yusbk.github.io/" class="nav-logo">
+      <a href="https://yusbk.github.io/" class="nav-logo">
         <img
           src="https://yusbk.github.io/images/yk.png"
           width="40"
           height="40"
           alt="Logo"
         />
-        </a>
+      </a>
     
 
     <ul class="nav-links">
@@ -88,7 +135,7 @@
         <div class="post-heading">
           
             <h1>
-              Doom Emacs
+              Doom tips
             </h1>
           
           
@@ -98,7 +145,9 @@
   
     &nbsp;&nbsp;&nbsp;<em class="fa fa-folder-open"></em>&nbsp;
     
-      <a href="https://yusbk.github.io/categories/emacs/">emacs</a
+      <a
+        href="https://yusbk.github.io/categories/emacs/"
+        >emacs</a
       >&nbsp;
     
   
@@ -115,36 +164,105 @@
   <div class="container" role="main">
     <article class="article" class="blog-post">
       
-  <h2 id="doom-tips">Doom tips</h2>
-<p>Some tips to learn the keybindings in Doom and Evil in the process of
-migrating from my vanilla Emacs settings.</p>
+  <p><em>Updated: 2022-05-05</em></p>
+<p>Some tips to learn the keybindings in Doom and Evil in the process of migrating
+from my vanilla Emacs settings. For overview of keybindings type
+<code>SPC-h-b-b</code>. Other good references:</p>
+<ul>
+<li><a href="https://narra.co.za/doom-tips-and-howtos/">Narra&rsquo;s Blog - Doom Tips and Howtos</a></li>
+<li><a href="https://cheatography.com/alexandresalome/cheat-sheets/emacs-doom-org-mode/">Org Mode Shortcuts for Emacs Doom</a></li>
+<li><a href="https://gist.github.com/hjertnes/9e14416e8962ff5f03c6b9871945b165">Gist of Hjertnes</a></li>
+<li><a href="https://github.com/emacs-evil/evil-collection">Evil-mode collection</a></li>
+</ul>
+<p>Nice Doom Emacs Cheatsheet from <a href="https://github.com/niyumard/Doom-Emacs-Cheat-Sheet">niyumard</a>.</p>
 <p>Doom leader-key is <code>SPC</code> and localleader-key is <code>SPC-m</code>. When in <em>Insert</em> mode
 use <code>M-SPC</code> or <code>M-SPC-m</code> to call the menu available as in the <em>Normal</em> mode.
 Else change mode with <code>ESC</code> or <code>jk</code> binding. To toggle between Emacs state and
 Evil use <code>C-z</code>.</p>
-<h3 id="navigation">Navigation</h3>
+<p>To show all your keybindings <code>SPC-h b b</code></p>
+<h2 id="most-used-keys">Most used keys</h2>
+<p>There are keys I mostly need to remember and there are also listen in their
+respective groups below:</p>
+<h3 id="normal-mode">Normal mode</h3>
+<ul>
+<li><code>zx</code> kill buffer</li>
+<li><code>SPC-w w</code> move to buffer</li>
+<li><code>zz</code> center line</li>
+<li><code>SPC-i r</code> insert from evil-register or <code>0p</code> when you know it&rsquo;s register number
+<code>0</code> in evil register or 1,2,&hellip;</li>
+<li><code>di(</code> and <code>yi(</code> is both delete and yank inner words respectively.</li>
+<li><code>ciw</code> change/clear the inner word under the cursor and move to inner mode.</li>
+<li><code>cw</code> change/clear from cursor position to next whitespace</li>
+<li><code>cs&quot;'</code> change/clear the surround or delimiter <code>&quot;</code> to <code>'</code> symbol</li>
+<li><code>SPC-s s</code> search word or <code>/</code>.</li>
+<li><code>SPC-TAB .</code> change workspace.</li>
+</ul>
+<h3 id="insert-mode">Insert mode</h3>
+<ul>
+<li><code>C-w</code> kill word bakword</li>
+<li><code>M-d</code> kill word forward</li>
+</ul>
+<h3 id="visual-mode--v--or-block-visual-mode--ctrl-v">Visual mode (v) or Block Visual mode (Ctrl-v)</h3>
+<ul>
+<li><code>viw</code> select word under cursor or <em>inner</em> word under the cursor</li>
+<li><code>vio</code> select all inner and inclding a symbol</li>
+<li><code>va(</code> selecte all around the bracket <code>(</code> or any specific symbol that you can specify eg. <code>va&quot;</code></li>
+<li><code>C-vjjI</code> edit <a href="#add-text-at-first-line-of-multiple-lines">multiple lines</a></li>
+</ul>
+<h2 id="navigation">Navigation</h2>
 <p>When in the <!-- raw HTML omitted -->Normal<!-- raw HTML omitted --> mode:</p>
 <ul>
 <li><code>C-b</code> and <code>C-f</code> for page backward and page forward (whole page)</li>
 <li><code>C-u</code> and <code>C-d</code> for half page up and down</li>
 <li><code>z-z</code> move line to center of screen</li>
-<li><code>gsj</code> and <code>gsk</code> go to line forward (j) or backward (k) ie. avy-goto</li>
-<li><code>gsf</code> and <code>gsF</code> go to forward (f) or backward(F)</li>
-<li><code>fw</code> and <code>Fw</code> find <code>w</code> or any word/symbols specified forward or backward</li>
+<li><code>gsj</code> and <code>gsk</code> go to line downward (j) or upward (k) ie. avy-goto</li>
+<li><code>gsf</code> and <code>gsF</code> go to forward (f) or backward(F) for selected letter</li>
+<li><code>fw</code> and <code>Fw</code> find <code>w</code> or any word/symbols specified forward or backward in a
+line. Move to next foward or backward with <code>f</code></li>
+<li><code>g;</code> go to last changed</li>
 <li><code>''</code> and <code> </code> `` jump to mark-line and goto-mark but works as jump cursor to previous position too</li>
 <li><code>C-i</code> and <code>C-o</code> jump to previous cursor forward or backward</li>
 <li><code>ma</code> to mark position as <strong>a</strong> and use <code>'a</code> to go to the line where the mark is
 or <code>`a</code> (backtick) to go to the position of the marked ie. <code>a</code></li>
 <li><code>Shift-L</code> and <code>Shift-H</code> moves cursor to lower (L) or higher (H) screen</li>
 <li><code>Shift-M</code> moves cursor to the middle of the screen</li>
+<li>Split windows with Evil shorcut <code>:sp</code> or <em>evil-window-split</em> <code>C-w s</code> or
+<em>evil-window-vsplit</em> <code>C-w v</code>.</li>
+<li><code>SPC-s d</code> search current directory or <code>Spc-s p</code> current project</li>
+<li><code>SPC-'</code> resume last search</li>
+<li><code>%</code> move to matching parantheses</li>
+<li><code>SPC-b-l</code> or <code>SPC-`</code> move to last buffer</li>
 </ul>
-<h3 id="editing">Editing</h3>
+<h2 id="editing">Editing</h2>
 <p>In <!-- raw HTML omitted -->Normal<!-- raw HTML omitted --> mode:</p>
 <ul>
 <li><code>db</code> delete backward till next whitespace</li>
 <li><code>d$</code> delete to end of line from cursor</li>
 <li><code>d0</code> delete to start of line from cursor</li>
 <li><code>ds(</code> delete columns or any parantheses specify after <code>s</code> ie. symbols</li>
+<li><code>cw</code> kill from cursor position to next whitespace</li>
+<li><code>4cw</code> kill 4 words (or any number) forward</li>
+<li><code>ci{</code> kill all within the curly bracket when the cursor is inside. Other
+symbols can also be specified and when cursor is inside the specified symbols
+all text inside will be deleted.</li>
+<li><code>[o</code> and <code>]o</code> will insert newline above or below respectively</li>
+<li><code>C-j</code> will cut/split the sentence</li>
+<li><code>gU</code> for UPPERCASE or <code>gu</code> lowercase or <code>g~</code> to toggle between</li>
+<li><code>:e</code> edit file</li>
+<li><code>:w</code> save file</li>
+<li><code>viw</code> select a word under the cursor</li>
+<li><code>*</code> select all word under the cursor in the buffer</li>
+<li><code>#</code> select all word in the same line</li>
+<li><code>/</code> search word</li>
+<li><code>vio</code> select all inner and inclding a symbol</li>
+<li><code>va(</code> selecte all around the bracket <code>(</code> or any specific symbol that you can specify eg. <code>va&quot;</code></li>
+<li><code>di(</code> and <code>yi(</code> is both delete and yank inner words respectively.</li>
+<li><code>ciw</code> change the inner word under the cursor and move to inner mode.</li>
+<li><code>Spc-s s</code> search word or <code>fw</code> and <code>Fw</code></li>
+<li><code>S-&quot;</code> surround the selected word ie. in visual mode, with selected symbol eg. <code>&quot;</code> in this case.</li>
+<li><code>g-S-&quot;</code> surround the selected word with symbol with additional newline</li>
+<li><code>cs&quot;'</code> change the surround or delimiter <code>&quot;</code> to <code>'</code> symbol</li>
+<li><code>ds&quot;</code> to delete the delimiters <code>&quot;</code></li>
 </ul>
 <p>In <!-- raw HTML omitted -->Insert<!-- raw HTML omitted --> mode:</p>
 <ul>
@@ -154,32 +272,114 @@ or <code>`a</code> (backtick) to go to the position of the marked ie. <code>a</c
 <ul>
 <li>Block all line and press <code>=</code> to do indentation</li>
 </ul>
-<h3 id="multiedit">Multiedit</h3>
+<h2 id="multiedit">Multiedit</h2>
+<h3 id="in-a-file-one-at-a-time">In a file one at a time</h3>
 <p>Doom uses <a href="https://github.com/hlissner/evil-multiedit">multiedit</a> package otherwise it&rsquo;s like <a href="https://github.com/magnars/multiple-cursors.el">multiple-cursors</a> package plus <a href="https://github.com/victorhge/iedit">iedit</a>
 package. Basic keybinding is <code>M-d</code> or <code>M-D</code>. It works both in Normal and
 Visual mode.</p>
-<p>In <strong>Normal</strong> mode, repeating <code>M-d</code> mark forward and <code>M-D</code> mark backward. In <strong>Visual</strong>
-mode, when you made selection pressing <code>R</code> will select all the marked section in
-the whole document.</p>
+<p>In <strong>Normal</strong> mode, when the course under a word, pressing <code>M-d</code> will select the
+word, repeating <code>M-d</code> mark forward and <code>M-D</code> mark backward. Use <code>C-n</code> and <code>C-p</code>
+for next and previous selected word. In <strong>Visual</strong> mode, when you have made
+selection pressing <code>R</code> will select all the marked section in the whole document.</p>
 <p>Press <code>Enter</code> to deselect or reselect the marked section.</p>
-<h3 id="org-related">Org related</h3>
+<h3 id="all-in-a-file">All in a file</h3>
+<p>Select the text then <code>R</code></p>
+<h3 id="search-and-replace-in-a-project">Search and replace in a project</h3>
+<ul>
+<li>Search the text with <code>SPC-s p</code>.</li>
+<li>When all the files are listed, enter swiper edit with <code>C-c C-e</code>.</li>
+<li>Select the word then multiedit all word with <code>R</code> key, then edit.</li>
+<li>Save the file with <code>C-c C-c</code> or cancel with <code>C-c C-k</code>.</li>
+</ul>
+<h3 id="add-text-at-first-line-of-multiple-lines">Add text at first line of multiple lines</h3>
+<p>This is when you want to change multiple first lines (<a href="https://stackoverflow.com/questions/9549729/vim-insert-the-same-characters-across-multiple-lines">Ref.</a>):</p>
+<ul>
+<li>Move cursor to the first line <code>0</code>.</li>
+<li>Enter visual block mode <code>Ctrl-v</code></li>
+<li>Press <code>j</code> multiple times (or <code>5j</code>) to jump by 5 lines, or <code>G</code> to jump to last
+line.</li>
+<li>Press <code>I</code> (capital i).</li>
+<li>Type the word to add. Note: it will only update the screen in the first line
+until <code>Esc</code> is pressed, then all lines will be updated.</li>
+<li>Press <code>Esc</code>.</li>
+</ul>
+<h2 id="org-related">Org related</h2>
 <ul>
 <li><code>SPC-m-h</code> to change to heading</li>
 <li><code>SPC-m-i</code> to change to item</li>
+<li><code>Shift-TAB</code> to move backward in table</li>
 </ul>
-
+<h2 id="good-to-know">Good to know</h2>
+<ul>
+<li><code>SPC-h-v</code> or <code>C-h v</code> to check the value or default value of any function.</li>
+<li><code>SPC-TAB-TAB</code> change workspace</li>
+<li><code>C-x C-t</code> transpose line</li>
+<li><code>M-t</code> transpose words</li>
+</ul>
+<h2 id="update-doom">Update Doom</h2>
+<p>Usually it should work to update Doom by running</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">~/.emacs.d/bin/doom upgrade
+~/.emacs.d/bin/doom sync
+</code></pre></div><p>But if it fails, you can delete the package that fails. For instance if package
+<code>gcmh</code> fails then</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">rm -rf ~/.emacs.d/.local/straight/gcmh
+doom sync
+</code></pre></div><p>The easiest is to delete folder <code>.local/straight</code> entirely before <code>doom sync</code>.
+Or pull everything and re-install</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">cd ~/.emacs.d
+rm -rf .local
+git pull
+bin/doom install
+</code></pre></div>
 
 
 
       
         <div class="blog-tags">
           
-            <a href="https://yusbk.github.io/tags/doom/">doom</a
+            <a
+              href="https://yusbk.github.io/tags/doom/"
+              >doom</a
+            >&nbsp;
+          
+            <a
+              href="https://yusbk.github.io/tags/tips/"
+              >tips</a
             >&nbsp;
           
         </div>
       
+
+      
     </article>
+    
+      <button onclick="topFunction()" id="backtotopButton">
+        <em class="fa fa-angle-up"></em>
+      </button>
+      <script>
+  var backtotopButton = document.getElementById('backtotopButton')
+
+  document.addEventListener('scroll', function () {
+    if (
+      document.body.scrollTop > 50 ||
+      document.documentElement.scrollTop > 50
+    ) {
+      backtotopButton.style.opacity = '1'
+    } else {
+      backtotopButton.style.opacity = '0'
+    }
+  })
+
+  function topFunction() {
+    document.body.scrollTop = 0 
+    document.documentElement.scrollTop = 0 
+  }
+
+  
+  document.dispatchEvent(new CustomEvent('scroll'))
+  backtotopButton.style.display = 'block'
+</script>
+
     
     
       
@@ -214,14 +414,20 @@ the whole document.</p>
 
     <footer>
   
-  <div>
-    
-      <a href="https://twitter.com/GoHugoIO" name="twitter"
-        ><em class="fab fa-twitter"></em
-      ></a>
-    
 
+<div class="social-icons">
+  
+    
+    
+      
+      <a href="https://twitter.com/GoHugoIO" name="twitter">
+        <em class="fab fa-twitter"></em>
+      </a>
+    
+  
 
+  
+</div>
 
 
   
@@ -229,10 +435,10 @@ the whole document.</p>
     <p class="credits copyright">
       <a href="https://yusbk.github.io/about">Yusman Kamaleri</a>
       &nbsp;&copy;
-      2021
+      2022
       
         &nbsp;/&nbsp;
-        <a href="https://yusbk.github.io/">ყųʂƙąɱ</a>
+        <a href="https://yusbk.github.io/">𝔂𝓾𝓼𝓴𝓪𝓶</a>
       
       &nbsp;&ndash;&nbsp;
       <em class="fas fa-moon" id="dark-mode-toggle"></em>

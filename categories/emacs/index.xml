@@ -9,7 +9,7 @@
 		
 		<managingEditor>Page(/categories/emacs) (Yusman Kamaleri)</managingEditor>
     	
-  		<lastBuildDate>Fri, 18 Feb 2022 00:00:00 +0100</lastBuildDate>
+  		<lastBuildDate>Wed, 22 Dec 2021 00:00:00 +0100</lastBuildDate>
 		
 		<atom:link href="/categories/emacs/" rel="self" type="application/rss+xml" />
 		
@@ -38,16 +38,6 @@ CI/CD This is a simple process to implement CI/CD using GitHub Actions with uset
 			<pubDate>Wed, 23 Feb 2022 00:00:00 +0100</pubDate>
 			<guid>https://yusbk.github.io/2022/02/23/git-rujukan-awam/</guid>
 			<description>Global setting Buat git repo dan R pakej Kopi branch di github ke lokal Kopi branch tertentu cara lain Log commit Tidak dapat kesan email Buat kekunci SSH dan daftarkan di Github Pelbagai akaun Permission denied ssh-agent refused operation Buat Repo melalui terminal Padam branch Git Aliases Undo atau Revert Sekiranya ada konflik Release atau tag Buat gh-page git config  Global setting Tetapkan email dan nama di global.</description>
-		</item>
-      	
-		<item>
-			<title>Doom tips</title>
-			<link>https://yusbk.github.io/2022/02/18/doom-emacs-tips/</link>
-			<pubDate>Fri, 18 Feb 2022 00:00:00 +0100</pubDate>
-			<guid>https://yusbk.github.io/2022/02/18/doom-emacs-tips/</guid>
-			<description>First published date: 2021-04-27
-Some tips to learn the keybindings in Doom and Evil in the process of migrating from my vanilla Emacs settings. For overview of keybindings type SPC-h-b-b. Other good references:
- Narra&amp;rsquo;s Blog - Doom Tips and Howtos Org Mode Shortcuts for Emacs Doom Gist of Hjertnes Evil-mode collection  Nice Doom Emacs Cheatsheet from niyumard.</description>
 		</item>
       	
 		<item>
@@ -105,8 +95,18 @@ Smerge Basic workflow:
 			<link>https://yusbk.github.io/2021/12/08/r-environment/</link>
 			<pubDate>Wed, 08 Dec 2021 00:00:00 +0100</pubDate>
 			<guid>https://yusbk.github.io/2021/12/08/r-environment/</guid>
-			<description>Several nice blogs and references on the net to read on this stuff. Among those:
- Environments in R How R Searches and Finds Stuff  This discussion from StackOverflow explains nicely with example on the difference between parent.env() and parent.</description>
+			<description>Updated: 2022-04-12
+Several nice blogs and references on the net to read on this stuff. Among those:
+ Environments in R How R Searches and Finds Stuff  This discussion from StackOverflow and here explains nicely with example on the difference between parent.</description>
+		</item>
+      	
+		<item>
+			<title>MS Access Shutdown</title>
+			<link>https://yusbk.github.io/2021/11/09/access-shutdown/</link>
+			<pubDate>Tue, 09 Nov 2021 00:00:00 +0100</pubDate>
+			<guid>https://yusbk.github.io/2021/11/09/access-shutdown/</guid>
+			<description>How to shutdown all running Access when you need to do some changes. This is just a summary from Microsoft Docs. The steps are:
+Create empty text file  This file will be the key. Name the file to anything like checkfile.</description>
 		</item>
       	
 	</channel>

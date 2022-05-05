@@ -3,7 +3,9 @@
   <head>
     <meta charset="utf-8" />
 <title>Ellipsis …</title>
-
+<meta name="description" 
+      content=""
+>
 
   
 
@@ -12,18 +14,62 @@
 
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="alternate" type="application/rss+xml" href="https://yusbk.github.io/index.xml" title="𝔂𝓾𝓼𝓴𝓪𝓶">
+<link
+  rel="alternate"
+  type="application/rss+xml"
+  href="https://yusbk.github.io/index.xml"
+  title="𝔂𝓾𝓼𝓴𝓪𝓶"
+/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Ellipsis …"/>
+<meta name="twitter:description" content="Updated: 2021-12-03
+Just to remind me how I could use ellipsis or the three dots ... in my coding. There are three scenarios I find it useful:
+Function wrapper When creating a function wrapper and instead of providing all the arguments to be send further, you could just use ."/>
 
-<link id="dark-mode-theme" rel="stylesheet" href="https://yusbk.github.io/css/dark.css" />
+
+
 <link rel="stylesheet" href="https://yusbk.github.io/fontawesome/css/all.min.css" />
 
-<script src="https://yusbk.github.io/js/bundle.js"></script>
-<script src="https://yusbk.github.io/js/instantpage.js" type="module" defer></script>
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest">
-<meta name="generator" content="Hugo 0.88.0" />
+
+
+
+<link
+  crossorigin="anonymous"
+  href="/css/styles.min.css"
+  integrity=""
+  rel="preload stylesheet"
+  as="style"
+/>
+
+
+
+
+<link
+  id="dark-mode-theme"
+  crossorigin="anonymous"
+  href="/css/dark.min.css"
+  integrity=""
+  rel="preload stylesheet"
+  as="style"
+/>
+
+
+<script>
+  var darkTheme = document.getElementById('dark-mode-theme')
+  var storedTheme = localStorage.getItem('dark-mode-storage')
+
+  if (storedTheme === 'dark') {
+    darkTheme.disabled = false
+  } else if (storedTheme === 'light') {
+    darkTheme.disabled = true
+  }
+</script>
+
+
+<script defer crossorigin="anonymous" src="/js/theme.js" integrity=""></script>
+
+
+<script defer crossorigin="anonymous" src="/js/instantpage.min.js" integrity=""></script><meta name="generator" content="Hugo 0.68.3" />
   </head>
   <body>
     
@@ -123,12 +169,13 @@
   <div class="container" role="main">
     <article class="article" class="blog-post">
       
-  <p>Just to remind me how I could use ellipsis or the three dots <code>...</code> in my coding. There are two
+  <p><em>Updated: 2021-12-03</em></p>
+<p>Just to remind me how I could use ellipsis or the three dots <code>...</code> in my coding. There are three
 scenarios I find it useful:</p>
 <h2 id="function-wrapper">Function wrapper</h2>
 <p>When creating a function wrapper and instead of providing all the arguments to be send further, you
 could just use <code>...</code> ellipsis. For example:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">  get_mean <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function</span>(x, print <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>){
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">  get_mean <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function</span>(x, print <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>){
 
     x1 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">mean</span>(x)
     <span style="color:#a6e22e">if </span>(print){
@@ -151,7 +198,7 @@ could just use <code>...</code> ellipsis. For example:</p>
 </code></pre></div><p>In <code>show_mean</code> the arguments given will be sent further to <code>get_mean</code> without the need to define explicitly in <code>show_mean</code> function.</p>
 <h2 id="get-values">Get values</h2>
 <p>When you want to provide certain values to a specific use or send to global value.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">  go_global <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function</span>(<span style="color:#66d9ef">...</span>) {
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">  go_global <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function</span>(<span style="color:#66d9ef">...</span>) {
     args <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">list</span>(<span style="color:#66d9ef">...</span>)
     <span style="color:#a6e22e">paste</span>(args)
 
@@ -165,9 +212,40 @@ could just use <code>...</code> ellipsis. For example:</p>
 </code></pre></div><p>This is of course not advisable sending value to global environment but here is just to show how you
 could manipulate the value as you wish. The values in ellipsis should be captured as a <code>list</code>.</p>
 <p>You could also capture the names of the list by <code>names(list(...))</code>.</p>
+<h2 id="input-arguments">Input arguments</h2>
+<p>To use it as input argument without quote. Use <code>eval(substitute(alist(...)))</code> and <code>deparse</code> as shown below:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">make_filegroups <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function</span>(<span style="color:#66d9ef">...</span>){
+
+  fgp <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">tryCatch</span>({
+    <span style="color:#a6e22e">unlist</span>(<span style="color:#a6e22e">list</span>(<span style="color:#66d9ef">...</span>))
+  },
+  error <span style="color:#f92672">=</span> <span style="color:#a6e22e">function</span>(err){err}
+  )
+
+  <span style="color:#a6e22e">if </span>(<span style="color:#a6e22e">is</span>(fgp, <span style="color:#e6db74">&#34;error&#34;</span>)){
+    dots <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">eval</span>(<span style="color:#a6e22e">substitute</span>(<span style="color:#a6e22e">alist</span>(<span style="color:#66d9ef">...</span>)))
+    fgp <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">sapply</span>(<span style="color:#a6e22e">as.list</span>(dots), deparse)
+  }
+
+  <span style="color:#a6e22e">for </span>(i in fgp){
+    i <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">trimws</span>(i)
+    <span style="color:#a6e22e">make_file</span>(i, save <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>)
+  }
+}
+
+<span style="color:#a6e22e">make_filegroups</span>(GROUP1, GROUP2)
+</code></pre></div><p>For the <code>go_global</code> example, can be written as:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">go_global <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function</span>(<span style="color:#66d9ef">...</span>){
+  dots <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">eval</span>(<span style="color:#a6e22e">substitute</span>(<span style="color:#a6e22e">alist</span>(<span style="color:#66d9ef">...</span>)))
+  <span style="color:#a6e22e">sapply</span>(<span style="color:#a6e22e">as.list</span>(dots), deparse)
+}
+
+<span style="color:#a6e22e">go_global</span>(Hello, World)
+</code></pre></div>
 
 
 
+      
 
       
     </article>
@@ -226,7 +304,7 @@ could manipulate the value as you wish. The values in ellipsis should be capture
     <p class="credits copyright">
       <a href="https://yusbk.github.io/about">Yusman Kamaleri</a>
       &nbsp;&copy;
-      2021
+      2022
       
         &nbsp;/&nbsp;
         <a href="https://yusbk.github.io/">𝔂𝓾𝓼𝓴𝓪𝓶</a>

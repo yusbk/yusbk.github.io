@@ -35,16 +35,6 @@
         ,
             {
                 "id": 3,
-                "href": "https://yusbk.github.io/2022/02/18/doom-emacs-tips/",
-                "title": "Doom tips",
-                "section": "post",
-                "date" : "2022.02.18",
-                "body": "First published date: 2021-04-27\nSome tips to learn the keybindings in Doom and Evil in the process of migrating from my vanilla Emacs settings. For overview of keybindings type SPC-h-b-b. Other good references:\n Narra\u0026rsquo;s Blog - Doom Tips and Howtos Org Mode Shortcuts for Emacs Doom Gist of Hjertnes Evil-mode collection  Nice Doom Emacs Cheatsheet from niyumard.\nDoom leader-key is SPC and localleader-key is SPC-m. When in Insert mode use M-SPC or M-SPC-m to call the menu available as in the Normal mode. Else change mode with ESC or jk binding. To toggle between Emacs state and Evil use C-z.\nTo show all your keybindings SPC-h b b\nMost used keys There are keys I mostly need to remember and there are also listen in their respective groups below:\nNormal mode  zx kill buffer SPC-w w move to buffer zz center line SPC-i r insert from evil-register or 0p when you know it\u0026rsquo;s register number 0 in evil register or 1,2,\u0026hellip; di( and yi( is both delete and yank inner words respectively. ciw change/clear the inner word under the cursor and move to inner mode. cw change/clear from cursor position to next whitespace cs\u0026quot;' change/clear the surround or delimiter \u0026quot; to ' symbol SPC-s s search word or /. SPC-TAB . change workspace.  Insert mode  C-w kill word bakword M-d kill word forward  Visual mode (v) or Block Visual mode (Ctrl-v)  viw select word under cursor or inner word under the cursor vio select all inner and inclding a symbol va( selecte all around the bracket ( or any specific symbol that you can specify eg. va\u0026quot; C-vjjI edit multiple lines  Navigation When in the Normalmode:\n C-b and C-f for page backward and page forward (whole page) C-u and C-d for half page up and down z-z move line to center of screen gsj and gsk go to line downward (j) or upward (k) ie. avy-goto gsf and gsF go to forward (f) or backward(F) for selected letter fw and Fw find w or any word/symbols specified forward or backward in a line. Move to next foward or backward with f g; go to last changed '' and   `` jump to mark-line and goto-mark but works as jump cursor to previous position too C-i and C-o jump to previous cursor forward or backward ma to mark position as a and use 'a to go to the line where the mark is or `a (backtick) to go to the position of the marked ie. a Shift-L and Shift-H moves cursor to lower (L) or higher (H) screen Shift-M moves cursor to the middle of the screen Split windows with Evil shorcut :sp or evil-window-split C-w s or evil-window-vsplit C-w v. SPC-s d search current directory or Spc-s p current project SPC-' resume last search % move to matching parantheses SPC-b-l or SPC-` move to last buffer  Editing In Normalmode:\n db delete backward till next whitespace d$ delete to end of line from cursor d0 delete to start of line from cursor ds( delete columns or any parantheses specify after s ie. symbols cw kill from cursor position to next whitespace 4cw kill 4 words (or any number) forward ci{ kill all within the curly bracket when the cursor is inside. Other symbols can also be specified and when cursor is inside the specified symbols all text inside will be deleted. [o and ]o will insert newline above or below respectively C-j will cut/split the sentence gU for UPPERCASE or gu lowercase or g~ to toggle between :e edit file :w save file viw select a word under the cursor * select all word under the cursor in the buffer # select all word in the same line / search word vio select all inner and inclding a symbol va( selecte all around the bracket ( or any specific symbol that you can specify eg. va\u0026quot; di( and yi( is both delete and yank inner words respectively. ciw change the inner word under the cursor and move to inner mode. Spc-s s search word or fw and Fw S-\u0026quot; surround the selected word ie. in visual mode, with selected symbol eg. \u0026quot; in this case. g-S-\u0026quot; surround the selected word with symbol with additional newline cs\u0026quot;' change the surround or delimiter \u0026quot; to ' symbol ds\u0026quot; to delete the delimiters \u0026quot;  In Insertmode:\n C-w delete word backward  In Visualmode:\n Block all line and press = to do indentation  Multiedit In a file one at a time Doom uses multiedit package otherwise it\u0026rsquo;s like multiple-cursors package plus iedit package. Basic keybinding is M-d or M-D. It works both in Normal and Visual mode.\nIn Normal mode, when the course under a word, pressing M-d will select the word, repeating M-d mark forward and M-D mark backward. Use C-n and C-p for next and previous selected word. In Visual mode, when you have made selection pressing R will select all the marked section in the whole document.\nPress Enter to deselect or reselect the marked section.\nAll in a file Select the text then R\nSearch and replace in a project  Search the text with SPC-s p. When all the files are listed, enter swiper edit with C-c C-e. Select the word then multiedit all word with R key, then edit. Save the file with C-c C-c or cancel with C-c C-k.  Add text at first line of multiple lines This is when you want to change multiple first lines (Ref.):\n Move cursor to the first line 0. Enter visual block mode Ctrl-v Press j multiple times (or 5j) to jump by 5 lines, or G to jump to last line. Press I (capital i). Type the word to add. Note: it will only update the screen in the first line until Esc is pressed, then all lines will be updated. Press Esc.  Org related  SPC-m-h to change to heading SPC-m-i to change to item Shift-TAB to move backward in table  Good to know  SPC-h-v or C-h v to check the value or default value of any function. SPC-TAB-TAB change workspace C-x C-t transpose line M-t transpose words  "
-            }
-    
-        ,
-            {
-                "id": 4,
                 "href": "https://yusbk.github.io/2022/02/10/mount-drive/",
                 "title": "Mount drive",
                 "section": "post",
@@ -54,7 +44,7 @@
     
         ,
             {
-                "id": 5,
+                "id": 4,
                 "href": "https://yusbk.github.io/2022/01/25/good-to-know/",
                 "title": "Good to know",
                 "section": "post",
@@ -64,7 +54,7 @@
     
         ,
             {
-                "id": 6,
+                "id": 5,
                 "href": "https://yusbk.github.io/2022/01/04/yesno-question/",
                 "title": "YesNo question",
                 "section": "post",
@@ -74,7 +64,7 @@
     
         ,
             {
-                "id": 7,
+                "id": 6,
                 "href": "https://yusbk.github.io/2021/12/22/org-cross-ref/",
                 "title": "Cross-reference",
                 "section": "post",
@@ -84,7 +74,7 @@
     
         ,
             {
-                "id": 8,
+                "id": 7,
                 "href": "https://yusbk.github.io/2021/12/22/magit-ediff/",
                 "title": "Smerge, ediff and diff",
                 "section": "post",
@@ -94,27 +84,17 @@
     
         ,
             {
-                "id": 9,
+                "id": 8,
                 "href": "https://yusbk.github.io/2021/12/08/r-environment/",
                 "title": "Environment",
                 "section": "post",
                 "date" : "2021.12.08",
-                "body": "Several nice blogs and references on the net to read on this stuff. Among those:\n Environments in R How R Searches and Finds Stuff  This discussion from StackOverflow explains nicely with example on the difference between parent.env() and parent.frame(). Hadley wrote in Advanced R that use parent.env() to find\u0026hellip; surprise! surprise! To the parent of an environment!\nAnother useful options is sys.frames()[[1]] to access the environment of the first calling function. It\u0026rsquo;s like using parent.frame() if you don\u0026rsquo;t have a nested functions. But once your functions are nested, sys.frames() will be useful to access the first calling function.\nThis is how I use it to assign a value to an object back to the calling function:\nmain_function \u0026lt;- function(var, val){ sub_function(var, val) } sub_function \u0026lt;- function(var, val){ is_assign_var(var, val) } is_assign_var \u0026lt;- function(var, val){ assign(var, val, envir = sys.frames()[[1]]) } If you don\u0026rsquo;t have a nested function then using parent.frame() or sys.frames()[[1]] will be equivalent.\nmain_function \u0026lt;- function(var, val){ is_assign_var_01() is_assign_var_02() } is_assign_var_01 \u0026lt;- function(var, val){ assign(var, val, envir = parent.frame()) } is_assign_var_02 \u0026lt;- function(var, val){ assign(var, val, envir = as.environment(sys.frames()[[1]])) } "
+                "body": "Updated: 2022-04-12\nSeveral nice blogs and references on the net to read on this stuff. Among those:\n Environments in R How R Searches and Finds Stuff  This discussion from StackOverflow and here explains nicely with example on the difference between parent.env() and parent.frame(). Hadley wrote in Advanced R that use parent.env() to find\u0026hellip; surprise! surprise! To the parent of an environment!\nsys.nframe() To know the current dept of an environment, use sys.nframe(). The available object in the specific environment can be accessed with sys.nframe() as well. For instance, to access all the objects in the environment of a second call stack in a nexted call.\nxx \u0026lt;- sys.nframe()[[2]] sys.frames() Another useful options is sys.frames()[[1]] to access the environment of the first calling function. It\u0026rsquo;s like using parent.frame() if you don\u0026rsquo;t have a nested functions. But once your functions are nested, sys.frames() will be useful to access the first calling function.\nThis is how I use it to assign a value to an object back to the calling function:\nmain_function \u0026lt;- function(var, val){ sub_function(var, val) } sub_function \u0026lt;- function(var, val){ is_assign_var(var, val) } is_assign_var \u0026lt;- function(var, val){ assign(var, val, envir = sys.frames()[[1]]) } If you don\u0026rsquo;t have a nested function then using parent.frame() or sys.frames()[[1]] will be equivalent.\nmain_function \u0026lt;- function(var, val){ is_assign_var_01() is_assign_var_02() } is_assign_var_01 \u0026lt;- function(var, val){ assign(var, val, envir = parent.frame()) } is_assign_var_02 \u0026lt;- function(var, val){ assign(var, val, envir = as.environment(sys.frames()[[1]])) } "
             }
     
         ,
             {
-                "id": 10,
-                "href": "https://yusbk.github.io/2021/12/03/ellipsis/",
-                "title": "Ellipsis …",
-                "section": "post",
-                "date" : "2021.12.03",
-                "body": "First published: 2020-12-12\nJust to remind me how I could use ellipsis or the three dots ... in my coding. There are three scenarios I find it useful:\nFunction wrapper When creating a function wrapper and instead of providing all the arguments to be send further, you could just use ... ellipsis. For example:\nget_mean \u0026lt;- function(x, print = TRUE){ x1 \u0026lt;- mean(x) if (print){ print(x1) }else{ print(\u0026#34;Nothing\u0026#34;) } } get_mean(1:10) show_mean \u0026lt;- function(...){ get_mean(...) } show_mean(x = 1:10, print = F) do.call(show_mean, list(x = 1:20)) do.call(show_it, list(x = 1:20, print = FALSE)) In show_mean the arguments given will be sent further to get_mean without the need to define explicitly in show_mean function.\nGet values When you want to provide certain values to a specific use or send to global value.\ngo_global \u0026lt;- function(...) { args \u0026lt;- list(...) paste(args) for(i in 1:length(args)) { assign(x = names(args)[i], value = args[[i]], envir = .GlobalEnv) } } go_global(\u0026#34;Hello\u0026#34;, \u0026#34;World\u0026#34;) This is of course not advisable sending value to global environment but here is just to show how you could manipulate the value as you wish. The values in ellipsis should be captured as a list.\nYou could also capture the names of the list by names(list(...)).\nInput arguments To use it as input argument without quote. Use eval(substitute(alist(...))) and deparse as shown below:\nmake_filegroups \u0026lt;- function(...){ fgp \u0026lt;- tryCatch({ unlist(list(...)) }, error = function(err){err} ) if (is(fgp, \u0026#34;error\u0026#34;)){ dots \u0026lt;- eval(substitute(alist(...))) fgp \u0026lt;- sapply(as.list(dots), deparse) } for (i in fgp){ i \u0026lt;- trimws(i) make_file(i, save = TRUE) } } make_filegroups(GROUP1, GROUP2) For the go_global example, can be written as:\ngo_global \u0026lt;- function(...){ dots \u0026lt;- eval(substitute(alist(...))) sapply(as.list(dots), deparse) } go_global(Hello, World) "
-            }
-    
-        ,
-            {
-                "id": 11,
+                "id": 9,
                 "href": "https://yusbk.github.io/2021/11/09/access-shutdown/",
                 "title": "MS Access Shutdown",
                 "section": "post",
@@ -124,7 +104,7 @@
     
         ,
             {
-                "id": 12,
+                "id": 10,
                 "href": "https://yusbk.github.io/2021/09/30/git-merge-selected-file/",
                 "title": "Merge Selected File",
                 "section": "post",
@@ -134,7 +114,7 @@
     
         ,
             {
-                "id": 13,
+                "id": 11,
                 "href": "https://yusbk.github.io/2021/09/17/dt-special-symbol/",
                 "title": "data.table special symbol",
                 "section": "post",
@@ -144,17 +124,7 @@
     
         ,
             {
-                "id": 14,
-                "href": "https://yusbk.github.io/2021/09/17/datatable_tips/",
-                "title": "data.table tips",
-                "section": "post",
-                "date" : "2021.09.17",
-                "body": "First published: 2021-04-20\nSome tips for data.table that I came across while googling which might be useful.\nPrint To print more rows that default can be done with either:\noptions(datatable.print.topn = 70) print(DT, topn = 70) Using options will implement the changes globally. Else to make print nicer is using:\noptions(datatable.prettyprint.char = 80L) NA Use nafill() to replace NA with specified value such as nafill(dt, fill==99) will replace all NA in dt with 99. To replace with front or back value of the vector then specify fill=\u0026quot;locf|nocb\u0026quot; accordingly, ie. locf (last observation carried forward) and nocb (next observation carried backward).\nJoining with roll and foverlaps For detail example you can read here. Basically when specifying DT[dt, on=.(key_col), roll=TRUE] or roll=Inf the data will be joined closest to the keyed value where dt \u0026gt;= DT. Specifying with roll=-Inf will be the opposite. With roll=\u0026quot;nearest\u0026quot; will roll both ways to the nearest value. Else you can specify an absolute value to roll on ie. roll=2 will roll to dt with key_col + 2.\nUsing foverlaps(DT, dt, type = \u0026quot;any\u0026quot;) will join DT and dt as long as the value ranges give a match to the key values. When using foverlaps() you need to specify two keys eg. key = c(\u0026quot;col1\u0026quot;, \u0026quot;col2\u0026quot;). As in the given example with both columns are the key columns:\nfoverlaps(dt4, dt3, type = \u0026#34;any\u0026#34;) ## min_y max_y x dt4_y dt4_y_end ## 1: 0 10 c 5.7 10 ## 2: 10 15 c 5.7 10 ## 3: 10 15 a 11.9 13 ## 4: 15 20 d 18.0 22 ## 5: 20 30 d 18.0 22 ## 6: 20 30 b 21.4 25 Else specifying type=\u0026quot;within\u0026quot; will join only those that match within the range.\nCreate empty data.table Sometime I need to create an empty data.table based on an exisiting columnames. Lots of other methods to do this but the easiest way is:\ncols \u0026lt;- names(DT) dt \u0026lt;- setnames(data.table(matrix(nrow = 0, ncol = length(cols))), cols) "
-            }
-    
-        ,
-            {
-                "id": 15,
+                "id": 12,
                 "href": "https://yusbk.github.io/2021/09/17/names-att/",
                 "title": "names attribute",
                 "section": "post",
@@ -164,7 +134,7 @@
     
         ,
             {
-                "id": 16,
+                "id": 13,
                 "href": "https://yusbk.github.io/2021/09/06/git-ssh/",
                 "title": "SSH-key with Git on Windows",
                 "section": "post",
@@ -174,7 +144,7 @@
     
         ,
             {
-                "id": 17,
+                "id": 14,
                 "href": "https://yusbk.github.io/2021/09/06/git-rebase/",
                 "title": "Git Rebase or Reset",
                 "section": "post",
@@ -184,7 +154,7 @@
     
         ,
             {
-                "id": 18,
+                "id": 15,
                 "href": "https://yusbk.github.io/2021/09/03/data-attributes/",
                 "title": "Clean attributes",
                 "section": "post",
@@ -194,7 +164,7 @@
     
         ,
             {
-                "id": 19,
+                "id": 16,
                 "href": "https://yusbk.github.io/2021/08/20/azure-server/",
                 "title": "Connect to Azure with ssh",
                 "section": "post",
@@ -204,7 +174,7 @@
     
         ,
             {
-                "id": 20,
+                "id": 17,
                 "href": "https://yusbk.github.io/2021/08/17/access-split/",
                 "title": "MS Access split",
                 "section": "post",
@@ -214,7 +184,7 @@
     
         ,
             {
-                "id": 21,
+                "id": 18,
                 "href": "https://yusbk.github.io/2021/05/06/ess-tips/",
                 "title": "ESS tips",
                 "section": "post",
@@ -224,7 +194,7 @@
     
         ,
             {
-                "id": 22,
+                "id": 19,
                 "href": "https://yusbk.github.io/2021/05/03/package-r/",
                 "title": "Pasang pakej di R",
                 "section": "post",
@@ -234,7 +204,7 @@
     
         ,
             {
-                "id": 23,
+                "id": 20,
                 "href": "https://yusbk.github.io/2021/04/29/biskut-italy/",
                 "title": "Biskut Italy",
                 "section": "post",
@@ -244,7 +214,27 @@
     
         ,
             {
-                "id": 24,
+                "id": 21,
+                "href": "https://yusbk.github.io/2021/04/27/doom-emacs-tips/",
+                "title": "Doom tips",
+                "section": "post",
+                "date" : "2021.04.27",
+                "body": "Updated: 2022-05-05\nSome tips to learn the keybindings in Doom and Evil in the process of migrating from my vanilla Emacs settings. For overview of keybindings type SPC-h-b-b. Other good references:\n Narra\u0026rsquo;s Blog - Doom Tips and Howtos Org Mode Shortcuts for Emacs Doom Gist of Hjertnes Evil-mode collection  Nice Doom Emacs Cheatsheet from niyumard.\nDoom leader-key is SPC and localleader-key is SPC-m. When in Insert mode use M-SPC or M-SPC-m to call the menu available as in the Normal mode. Else change mode with ESC or jk binding. To toggle between Emacs state and Evil use C-z.\nTo show all your keybindings SPC-h b b\nMost used keys There are keys I mostly need to remember and there are also listen in their respective groups below:\nNormal mode  zx kill buffer SPC-w w move to buffer zz center line SPC-i r insert from evil-register or 0p when you know it\u0026rsquo;s register number 0 in evil register or 1,2,\u0026hellip; di( and yi( is both delete and yank inner words respectively. ciw change/clear the inner word under the cursor and move to inner mode. cw change/clear from cursor position to next whitespace cs\u0026quot;' change/clear the surround or delimiter \u0026quot; to ' symbol SPC-s s search word or /. SPC-TAB . change workspace.  Insert mode  C-w kill word bakword M-d kill word forward  Visual mode (v) or Block Visual mode (Ctrl-v)  viw select word under cursor or inner word under the cursor vio select all inner and inclding a symbol va( selecte all around the bracket ( or any specific symbol that you can specify eg. va\u0026quot; C-vjjI edit multiple lines  Navigation When in the Normalmode:\n C-b and C-f for page backward and page forward (whole page) C-u and C-d for half page up and down z-z move line to center of screen gsj and gsk go to line downward (j) or upward (k) ie. avy-goto gsf and gsF go to forward (f) or backward(F) for selected letter fw and Fw find w or any word/symbols specified forward or backward in a line. Move to next foward or backward with f g; go to last changed '' and   `` jump to mark-line and goto-mark but works as jump cursor to previous position too C-i and C-o jump to previous cursor forward or backward ma to mark position as a and use 'a to go to the line where the mark is or `a (backtick) to go to the position of the marked ie. a Shift-L and Shift-H moves cursor to lower (L) or higher (H) screen Shift-M moves cursor to the middle of the screen Split windows with Evil shorcut :sp or evil-window-split C-w s or evil-window-vsplit C-w v. SPC-s d search current directory or Spc-s p current project SPC-' resume last search % move to matching parantheses SPC-b-l or SPC-` move to last buffer  Editing In Normalmode:\n db delete backward till next whitespace d$ delete to end of line from cursor d0 delete to start of line from cursor ds( delete columns or any parantheses specify after s ie. symbols cw kill from cursor position to next whitespace 4cw kill 4 words (or any number) forward ci{ kill all within the curly bracket when the cursor is inside. Other symbols can also be specified and when cursor is inside the specified symbols all text inside will be deleted. [o and ]o will insert newline above or below respectively C-j will cut/split the sentence gU for UPPERCASE or gu lowercase or g~ to toggle between :e edit file :w save file viw select a word under the cursor * select all word under the cursor in the buffer # select all word in the same line / search word vio select all inner and inclding a symbol va( selecte all around the bracket ( or any specific symbol that you can specify eg. va\u0026quot; di( and yi( is both delete and yank inner words respectively. ciw change the inner word under the cursor and move to inner mode. Spc-s s search word or fw and Fw S-\u0026quot; surround the selected word ie. in visual mode, with selected symbol eg. \u0026quot; in this case. g-S-\u0026quot; surround the selected word with symbol with additional newline cs\u0026quot;' change the surround or delimiter \u0026quot; to ' symbol ds\u0026quot; to delete the delimiters \u0026quot;  In Insertmode:\n C-w delete word backward  In Visualmode:\n Block all line and press = to do indentation  Multiedit In a file one at a time Doom uses multiedit package otherwise it\u0026rsquo;s like multiple-cursors package plus iedit package. Basic keybinding is M-d or M-D. It works both in Normal and Visual mode.\nIn Normal mode, when the course under a word, pressing M-d will select the word, repeating M-d mark forward and M-D mark backward. Use C-n and C-p for next and previous selected word. In Visual mode, when you have made selection pressing R will select all the marked section in the whole document.\nPress Enter to deselect or reselect the marked section.\nAll in a file Select the text then R\nSearch and replace in a project  Search the text with SPC-s p. When all the files are listed, enter swiper edit with C-c C-e. Select the word then multiedit all word with R key, then edit. Save the file with C-c C-c or cancel with C-c C-k.  Add text at first line of multiple lines This is when you want to change multiple first lines (Ref.):\n Move cursor to the first line 0. Enter visual block mode Ctrl-v Press j multiple times (or 5j) to jump by 5 lines, or G to jump to last line. Press I (capital i). Type the word to add. Note: it will only update the screen in the first line until Esc is pressed, then all lines will be updated. Press Esc.  Org related  SPC-m-h to change to heading SPC-m-i to change to item Shift-TAB to move backward in table  Good to know  SPC-h-v or C-h v to check the value or default value of any function. SPC-TAB-TAB change workspace C-x C-t transpose line M-t transpose words  Update Doom Usually it should work to update Doom by running\n~/.emacs.d/bin/doom upgrade ~/.emacs.d/bin/doom sync But if it fails, you can delete the package that fails. For instance if package gcmh fails then\nrm -rf ~/.emacs.d/.local/straight/gcmh doom sync The easiest is to delete folder .local/straight entirely before doom sync. Or pull everything and re-install\ncd ~/.emacs.d rm -rf .local git pull bin/doom install "
+            }
+    
+        ,
+            {
+                "id": 22,
+                "href": "https://yusbk.github.io/2021/04/20/datatable_tips/",
+                "title": "data.table tips",
+                "section": "post",
+                "date" : "2021.04.20",
+                "body": "Updated: 2021-09-17\nSome tips for data.table that I came across while googling which might be useful.\nPrint To print more rows that default can be done with either:\noptions(datatable.print.topn = 70) print(DT, topn = 70) Using options will implement the changes globally. Else to make print nicer is using:\noptions(datatable.prettyprint.char = 80L) NA Use nafill() to replace NA with specified value such as nafill(dt, fill==99) will replace all NA in dt with 99. To replace with front or back value of the vector then specify fill=\u0026quot;locf|nocb\u0026quot; accordingly, ie. locf (last observation carried forward) and nocb (next observation carried backward).\nJoining with roll and foverlaps For detail example you can read here. Basically when specifying DT[dt, on=.(key_col), roll=TRUE] or roll=Inf the data will be joined closest to the keyed value where dt \u0026gt;= DT. Specifying with roll=-Inf will be the opposite. With roll=\u0026quot;nearest\u0026quot; will roll both ways to the nearest value. Else you can specify an absolute value to roll on ie. roll=2 will roll to dt with key_col + 2.\nUsing foverlaps(DT, dt, type = \u0026quot;any\u0026quot;) will join DT and dt as long as the value ranges give a match to the key values. When using foverlaps() you need to specify two keys eg. key = c(\u0026quot;col1\u0026quot;, \u0026quot;col2\u0026quot;). As in the given example with both columns are the key columns:\nfoverlaps(dt4, dt3, type = \u0026#34;any\u0026#34;) ## min_y max_y x dt4_y dt4_y_end ## 1: 0 10 c 5.7 10 ## 2: 10 15 c 5.7 10 ## 3: 10 15 a 11.9 13 ## 4: 15 20 d 18.0 22 ## 5: 20 30 d 18.0 22 ## 6: 20 30 b 21.4 25 Else specifying type=\u0026quot;within\u0026quot; will join only those that match within the range.\nCreate empty data.table Sometime I need to create an empty data.table based on an exisiting columnames. Lots of other methods to do this but the easiest way is:\ncols \u0026lt;- names(DT) dt \u0026lt;- setnames(data.table(matrix(nrow = 0, ncol = length(cols))), cols) "
+            }
+    
+        ,
+            {
+                "id": 23,
                 "href": "https://yusbk.github.io/2021/02/17/docker-basic/",
                 "title": "Docker basic",
                 "section": "post",
@@ -254,12 +244,22 @@
     
         ,
             {
-                "id": 25,
+                "id": 24,
                 "href": "https://yusbk.github.io/2020/12/12/access-db/",
                 "title": "Connect to MS Access DB",
                 "section": "post",
                 "date" : "2020.12.12",
                 "body": "This article first published in 02.10.2020.\nBefore connecting to your Access DBMS via Windows OS, you can check if you have the MS Access driver installed in your machine by running\n## List everything odbc::odbcListDrivers() ## You will get the results someting like this.. ## ... truncated 26 Microsoft Access Driver (*.mdb, *.accdb) FileUsage 27 Microsoft Access Driver (*.mdb, *.accdb) FileExtns 28 Microsoft Access Driver (*.mdb, *.accdb) SQLLevel 29 Microsoft Excel Driver (*.xls, *.xlsx, *.xlsm, *.xlsb) UsageCount 30 Microsoft Excel Driver (*.xls, *.xlsx, *.xlsm, *.xlsb) APILevel 31 Microsoft Excel Driver (*.xls, *.xlsx, *.xlsm, *.xlsb) ConnectFunctions ## List only the driver sort(unique(odbcListDrivers()[[1]])) [1] \u0026#34;Microsoft Access dBASE Driver (*.dbf, *.ndx, *.mdx)\u0026#34; [2] \u0026#34;Microsoft Access Driver (*.mdb, *.accdb)\u0026#34; [3] \u0026#34;Microsoft Access Text Driver (*.txt, *.csv)\u0026#34; [4] \u0026#34;Microsoft Excel Driver (*.xls, *.xlsx, *.xlsm, *.xlsb)\u0026#34; [5] \u0026#34;ODBC Driver 13 for SQL Server\u0026#34; [6] \u0026#34;SQL Server\u0026#34; [7] \u0026#34;SQL Server Native Client 11.0\u0026#34; If you don\u0026rsquo;t get similar results then you have to set it up with this instruction. If you have trouble setting up Data Source Name (DSN) then you could try accessing the odbc driver by going to control panel -\u0026gt; administrative tools -\u0026gt; select data sources(ODBC) -\u0026gt; right click the file -\u0026gt; go to properties -\u0026gt; in the shortcut tab -\u0026gt; change the path from %windir%System32odbcad32.exe to %windir%SysWOW64odbcad32.exe. The reference is from here.\nSeveral packages can be used to access your data in your DBMS. I have used RODBC and DBI. Here is some examples how I have used them to connect to MS Access DBMS.\nDBI You need both DBI and odbc packages. Basically odbc is the connecting bridge from your R codes to Access file and DBI is the guy who do the actual work. I have to use a complete .connection_string to make it works.\npkg \u0026lt;- c(\u0026#34;odbc\u0026#34;, \u0026#34;DBI\u0026#34;, \u0026#34;glue\u0026#34;) sapply(pkg, require, character.only = TRUE) db_con \u0026lt;- \u0026#34;Driver={Microsoft Access Driver (*.mdb, *.accdb)};DBQ=\u0026#34; MDBPATH \u0026lt;- \u0026#34;C:\\\\enc\\\\DBtest\\\\STYRING\\\\KHELSA_dev.accdb\u0026#34; cs \u0026lt;- paste0(db_con, MDBPATH) con \u0026lt;- dbConnect(odbc::odbc(), .connection_string = cs) tblCols \u0026lt;- c(\u0026#34;FILID\u0026#34;,\u0026#34;FILNAVN\u0026#34;, \u0026#34;FORMAT\u0026#34;) orgTb \u0026lt;- \u0026#34;ORIGINALFILER\u0026#34; sqq \u0026lt;- glue::glue_sql(\u0026#34;SELECT TOP 5 {`tblCols`*} FROM {`orgTb`}\u0026#34;, .con = DBI::ANSI()) ## for interactive use dbGetquery DBI::dbGetQuery(con, sqq) ## dbSendQuery should use dbFetch and dbClearResult rq \u0026lt;- DBI::dbSendQuery(con, ) DBI::dbFetch(rq) DBI::dbClearResult(rq) DBI::dbDisconnect(con) RODBC This is how I use this package.\nlibrary(RODBC) ## Set up driver info and database path DRIVERINFO \u0026lt;- \u0026#34;Driver={Microsoft Access Driver (*.mdb, *.accdb)};DBQ=\u0026#34; ## accdb file MDBPATH \u0026lt;- \u0026#34;C:\\\\enc\\\\DBtest\\\\STYRING\\\\KHELSA_dev2.accdb\u0026#34; PATH \u0026lt;- paste0(DRIVERINFO, MDBPATH) ## Establish connection channel \u0026lt;- RODBC::odbcDriverConnect(PATH) ## Load data into R dataframe RODBC::sqlQuery(channel, \u0026#34;SELECT TOP 5 * FROM KH_DELER\u0026#34;) RODBC::sqlFetch(channel, \u0026#34;KH_DELER\u0026#34;, max = 5) ## Close and remove channel close(channel) rm(channel) R6 Class To implement R6 Class with connection to database could be basically done as follows:\nlibrary(R6) HelseProfil \u0026lt;- R6::R6Class( classname = \u0026#34;HelseProfil\u0026#34;, class = FALSE, cloneable = FALSE, public = list( dbname = NULL, dbconn = NULL, initialize = function(dbname = NULL){ if (is.null(dbname)) return(message(\u0026#34;\u0026gt;\u0026gt;\u0026gt; DB name is missing!\u0026#34;)) else { self$dbname \u0026lt;- dbname } }, db_connect = function(){ stopifnot(!is.null(self$dbname)) cs \u0026lt;- paste0(private$..drv, self$dbname) self$dbconn \u0026lt;- DBI::dbConnect(odbc::odbc(), .connection_string = cs, encoding = \u0026#34;latin1\u0026#34;) }, db_close = function(){ DBI::dbDisconnect(self$dbconn) } ), private = list( ..drv = \u0026#34;Driver={Microsoft Access Driver (*.mdb, *.accdb)};DBQ=\u0026#34;, finalize = function(){ DBI::dbDisconnect(self$dbconn) } ) ) Here I actively disable class and cloneable for speed which you can read from R\u0026amp; document.\n"
+            }
+    
+        ,
+            {
+                "id": 25,
+                "href": "https://yusbk.github.io/2020/12/12/ellipsis/",
+                "title": "Ellipsis …",
+                "section": "post",
+                "date" : "2020.12.12",
+                "body": "Updated: 2021-12-03\nJust to remind me how I could use ellipsis or the three dots ... in my coding. There are three scenarios I find it useful:\nFunction wrapper When creating a function wrapper and instead of providing all the arguments to be send further, you could just use ... ellipsis. For example:\nget_mean \u0026lt;- function(x, print = TRUE){ x1 \u0026lt;- mean(x) if (print){ print(x1) }else{ print(\u0026#34;Nothing\u0026#34;) } } get_mean(1:10) show_mean \u0026lt;- function(...){ get_mean(...) } show_mean(x = 1:10, print = F) do.call(show_mean, list(x = 1:20)) do.call(show_it, list(x = 1:20, print = FALSE)) In show_mean the arguments given will be sent further to get_mean without the need to define explicitly in show_mean function.\nGet values When you want to provide certain values to a specific use or send to global value.\ngo_global \u0026lt;- function(...) { args \u0026lt;- list(...) paste(args) for(i in 1:length(args)) { assign(x = names(args)[i], value = args[[i]], envir = .GlobalEnv) } } go_global(\u0026#34;Hello\u0026#34;, \u0026#34;World\u0026#34;) This is of course not advisable sending value to global environment but here is just to show how you could manipulate the value as you wish. The values in ellipsis should be captured as a list.\nYou could also capture the names of the list by names(list(...)).\nInput arguments To use it as input argument without quote. Use eval(substitute(alist(...))) and deparse as shown below:\nmake_filegroups \u0026lt;- function(...){ fgp \u0026lt;- tryCatch({ unlist(list(...)) }, error = function(err){err} ) if (is(fgp, \u0026#34;error\u0026#34;)){ dots \u0026lt;- eval(substitute(alist(...))) fgp \u0026lt;- sapply(as.list(dots), deparse) } for (i in fgp){ i \u0026lt;- trimws(i) make_file(i, save = TRUE) } } make_filegroups(GROUP1, GROUP2) For the go_global example, can be written as:\ngo_global \u0026lt;- function(...){ dots \u0026lt;- eval(substitute(alist(...))) sapply(as.list(dots), deparse) } go_global(Hello, World) "
             }
     
         ,
