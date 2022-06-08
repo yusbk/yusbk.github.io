@@ -37,7 +37,7 @@ CI/CD This is a simple process to implement CI/CD using GitHub Actions with uset
 			<link>https://yusbk.github.io/2022/02/23/git-rujukan-awam/</link>
 			<pubDate>Wed, 23 Feb 2022 00:00:00 +0000</pubDate>
 			<guid>https://yusbk.github.io/2022/02/23/git-rujukan-awam/</guid>
-			<description>Global setting Buat git repo dan R pakej Kopi branch di github ke lokal Kopi branch tertentu cara lain Log commit Tidak dapat kesan email Buat kekunci SSH dan daftarkan di Github Pelbagai akaun Permission denied ssh-agent refused operation Buat Repo melalui terminal Padam branch Git Aliases Undo atau Revert Sekiranya ada konflik Release atau tag Buat gh-page git config  Global setting Tetapkan email dan nama di global.</description>
+			<description>Global setting Buat git repo dan R pakej Kopi branch di github ke lokal Kopi branch tertentu cara lain Log commit Tidak dapat kesan email Buat kekunci SSH dan daftarkan di Github Pelbagai akaun Permission denied ssh-agent refused operation Buat Repo melalui terminal Padam branch Git Aliases Undo atau Revert Sekiranya ada konflik Release atau tag Buat gh-page git config Global setting Tetapkan email dan nama di global.</description>
 		</item>
       	
 		<item>
@@ -45,9 +45,10 @@ CI/CD This is a simple process to implement CI/CD using GitHub Actions with uset
 			<link>https://yusbk.github.io/2022/02/10/mount-drive/</link>
 			<pubDate>Thu, 10 Feb 2022 00:00:00 +0000</pubDate>
 			<guid>https://yusbk.github.io/2022/02/10/mount-drive/</guid>
-			<description>Install Mount manually Credential Auto mount Other option to mount Execute Access to folders  First published date: 2021-02-22
+			<description>Install Mount manually Credential Auto mount Other option to mount Execute Access to folders First published date: 2021-02-22
 This is only relevant to my personal reference at work.
-The address for drive F and N is as follow:</description>
+The address for drive F and N is as follow:
+F: = \\fhi.</description>
 		</item>
       	
 		<item>
@@ -87,7 +88,7 @@ Section link The easierst is to use CUSTOM_ID as the example below and refer to 
 			<description>First published: 2021-04-30
 For enditing conflict in git, use smerge or ediff.
 Smerge Basic workflow:
- Open magit status with SPC g g in Doom Identify the mark with Unmerged under Unstage list Go to the file and press Enter to open the file The base command for Smerge is C-c ^ You will see the conflict and selecting the upper with C-c ^ u and lower with C-c ^ l To select all &amp;lsquo;conflicting&amp;rsquo; changes press C-c ^ a To navigate the conflicts use C-c ^ n and C-c ^ p for next and previous conflict To see all the keybindings use C-c ^ h  With DOOM and hydra:</description>
+Open magit status with SPC g g in Doom Identify the mark with Unmerged under Unstage list Go to the file and press Enter to open the file The base command for Smerge is C-c ^ You will see the conflict and selecting the upper with C-c ^ u and lower with C-c ^ l To select all &amp;lsquo;conflicting&amp;rsquo; changes press C-c ^ a To navigate the conflicts use C-c ^ n and C-c ^ p for next and previous conflict To see all the keybindings use C-c ^ h With DOOM and hydra:</description>
 		</item>
       	
 		<item>
@@ -97,7 +98,7 @@ Smerge Basic workflow:
 			<guid>https://yusbk.github.io/2021/12/08/r-environment/</guid>
 			<description>Updated: 2022-04-12
 Several nice blogs and references on the net to read on this stuff. Among those:
- Environments in R How R Searches and Finds Stuff  This discussion from StackOverflow and here explains nicely with example on the difference between parent.</description>
+Environments in R How R Searches and Finds Stuff This discussion from StackOverflow and here explains nicely with example on the difference between parent.</description>
 		</item>
       	
 		<item>
@@ -106,7 +107,7 @@ Several nice blogs and references on the net to read on this stuff. Among those:
 			<pubDate>Tue, 09 Nov 2021 00:00:00 +0000</pubDate>
 			<guid>https://yusbk.github.io/2021/11/09/access-shutdown/</guid>
 			<description>How to shutdown all running Access when you need to do some changes. This is just a summary from Microsoft Docs. The steps are:
-Create empty text file  This file will be the key. Name the file to anything like checkfile.</description>
+Create empty text file This file will be the key. Name the file to anything like checkfile.</description>
 		</item>
       	
 	</channel>

@@ -67,7 +67,7 @@
 <script defer crossorigin="anonymous" src="/js/theme.js" integrity=""></script>
 
 
-<script defer crossorigin="anonymous" src="/js/instantpage.min.js" integrity=""></script><meta name="generator" content="Hugo 0.99.1" />
+<script defer crossorigin="anonymous" src="/js/instantpage.min.js" integrity=""></script><meta name="generator" content="Hugo 0.100.2" />
   </head>
   <body>
     
@@ -200,8 +200,8 @@ lookup &lt;- list(v1 = 1:3, v2 = letters[5:7]) DT[lookup, on = names(lookup), no
   </a>
   <div class="post-entry">
     
-      <p>.N Mult .SD dan .SDcols .I .GRP dan rleid Contoh dari manual  First published: 2017-08-31
-Hari ni bersempena Hari kemerdekaan Malaysia ada masa untuk ulang kaji pakej data.table. Hari ni ialah mengenai Special Symbol seperti .N, .I, .GRP, .</p>
+      <p>.N Mult .SD dan .SDcols .I .GRP dan rleid Contoh dari manual First published: 2017-08-31
+Hari ni bersempena Hari kemerdekaan Malaysia ada masa untuk ulang kaji pakej data.table. Hari ni ialah mengenai Special Symbol seperti .N, .I, .GRP, .BY. Penerangan ini diambil dari manual di data.</p>
       <a href="https://yusbk.github.io/2021/09/17/dt-special-symbol/" class="post-read-more"
         >Read More</a
       >
@@ -289,7 +289,7 @@ library(data.table) dt &lt;- cars[1,] setDT(dt) str(dt) dt[, dist := as.</p>
       <p>Updated: 2021-09-17
 Some tips for data.table that I came across while googling which might be useful.
 Print To print more rows that default can be done with either:
- options(datatable.print.topn = 70)  print(DT, topn = 70) Using options will implement the changes globally.</p>
+options(datatable.print.topn = 70) print(DT, topn = 70) Using options will implement the changes globally.</p>
       <a href="https://yusbk.github.io/2021/04/20/datatable_tips/" class="post-read-more"
         >Read More</a
       >
@@ -333,7 +333,7 @@ Print To print more rows that default can be done with either:
     
       <p>It&rsquo;s often easier to use ifelse to implement conditioning. The fast implementation in data.table of ifelse is fifelse. Other approach to do multiple conditioning is to use data.table::fcase or dplyr::case_when.
 fcase fcase can be used directly
- x &lt;- 1:6  data.</p>
+x &lt;- 1:6 data.table::fcase(x &lt; 3, 1, x &gt;= 4, 2) To implement in a data.</p>
       <a href="https://yusbk.github.io/2020/10/07/case-when/" class="post-read-more"
         >Read More</a
       >
