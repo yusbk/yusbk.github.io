@@ -9,14 +9,14 @@
 		
 		<managingEditor>Page(/tags/access) (Yusman Kamaleri)</managingEditor>
     	
-  		<lastBuildDate>Tue, 09 Nov 2021 00:00:00 +0100</lastBuildDate>
+  		<lastBuildDate>Tue, 09 Nov 2021 00:00:00 +0000</lastBuildDate>
 		
 		<atom:link href="/tags/access/" rel="self" type="application/rss+xml" />
 		
 		<item>
 			<title>Subset DT</title>
 			<link>https://yusbk.github.io/2022/03/29/subset-data-table/</link>
-			<pubDate>Tue, 29 Mar 2022 00:00:00 +0200</pubDate>
+			<pubDate>Tue, 29 Mar 2022 00:00:00 +0000</pubDate>
 			<guid>https://yusbk.github.io/2022/03/29/subset-data-table/</guid>
 			<description>Subsetting data.table can be done using base R subset with S3 Class for data.table object. Alternatively is to use the recode approach as mentioned in StackOverflow.
 lookup &amp;lt;- list(v1 = 1:3, v2 = letters[5:7]) DT[lookup, on = names(lookup), nomatch = NULL] This will return all columns in DT that match lookup list.</description>
@@ -25,7 +25,7 @@ lookup &amp;lt;- list(v1 = 1:3, v2 = letters[5:7]) DT[lookup, on = names(lookup)
 		<item>
 			<title>CI/CD and Code Coverage</title>
 			<link>https://yusbk.github.io/2022/02/24/github_actions/</link>
-			<pubDate>Thu, 24 Feb 2022 00:00:00 +0100</pubDate>
+			<pubDate>Thu, 24 Feb 2022 00:00:00 +0000</pubDate>
 			<guid>https://yusbk.github.io/2022/02/24/github_actions/</guid>
 			<description>First published date: 2021-06-04
 A simple guide to use CI/CD and Code coverage.
@@ -35,7 +35,7 @@ CI/CD This is a simple process to implement CI/CD using GitHub Actions with uset
 		<item>
 			<title>Rujukan Awam Git dan Github</title>
 			<link>https://yusbk.github.io/2022/02/23/git-rujukan-awam/</link>
-			<pubDate>Wed, 23 Feb 2022 00:00:00 +0100</pubDate>
+			<pubDate>Wed, 23 Feb 2022 00:00:00 +0000</pubDate>
 			<guid>https://yusbk.github.io/2022/02/23/git-rujukan-awam/</guid>
 			<description>Global setting Buat git repo dan R pakej Kopi branch di github ke lokal Kopi branch tertentu cara lain Log commit Tidak dapat kesan email Buat kekunci SSH dan daftarkan di Github Pelbagai akaun Permission denied ssh-agent refused operation Buat Repo melalui terminal Padam branch Git Aliases Undo atau Revert Sekiranya ada konflik Release atau tag Buat gh-page git config  Global setting Tetapkan email dan nama di global.</description>
 		</item>
@@ -43,7 +43,7 @@ CI/CD This is a simple process to implement CI/CD using GitHub Actions with uset
 		<item>
 			<title>Mount drive</title>
 			<link>https://yusbk.github.io/2022/02/10/mount-drive/</link>
-			<pubDate>Thu, 10 Feb 2022 00:00:00 +0100</pubDate>
+			<pubDate>Thu, 10 Feb 2022 00:00:00 +0000</pubDate>
 			<guid>https://yusbk.github.io/2022/02/10/mount-drive/</guid>
 			<description>Install Mount manually Credential Auto mount Other option to mount Execute Access to folders  First published date: 2021-02-22
 This is only relevant to my personal reference at work.
@@ -53,7 +53,7 @@ The address for drive F and N is as follow:</description>
 		<item>
 			<title>Good to know</title>
 			<link>https://yusbk.github.io/2022/01/25/good-to-know/</link>
-			<pubDate>Tue, 25 Jan 2022 00:00:00 +0100</pubDate>
+			<pubDate>Tue, 25 Jan 2022 00:00:00 +0000</pubDate>
 			<guid>https://yusbk.github.io/2022/01/25/good-to-know/</guid>
 			<description>Things that I find it useful during my work:
 Debuging warnings Sometimes it&amp;rsquo;s nice to know where in the code that generate warnings especially when it&amp;rsquo;s related to NA introduced by coercion. To do this we can change the options to make warning as error.</description>
@@ -62,7 +62,7 @@ Debuging warnings Sometimes it&amp;rsquo;s nice to know where in the code that g
 		<item>
 			<title>YesNo question</title>
 			<link>https://yusbk.github.io/2022/01/04/yesno-question/</link>
-			<pubDate>Tue, 04 Jan 2022 00:00:00 +0100</pubDate>
+			<pubDate>Tue, 04 Jan 2022 00:00:00 +0000</pubDate>
 			<guid>https://yusbk.github.io/2022/01/04/yesno-question/</guid>
 			<description>Different ways to make your R session interactive for asking question and receive the answer as an input.
 readline You can find some example in StackOverflow or Geeksforgeeks. Basically is just like this:
@@ -72,7 +72,7 @@ cp &amp;lt;- as.integer(readline(prompt = &amp;#34;Vil du kopiere filen?</descri
 		<item>
 			<title>Cross-reference</title>
 			<link>https://yusbk.github.io/2021/12/22/org-cross-ref/</link>
-			<pubDate>Wed, 22 Dec 2021 00:00:00 +0100</pubDate>
+			<pubDate>Wed, 22 Dec 2021 00:00:00 +0000</pubDate>
 			<guid>https://yusbk.github.io/2021/12/22/org-cross-ref/</guid>
 			<description>Reference to this is here.
 Section link The easierst is to use CUSTOM_ID as the example below and refer to it with text [[#sec:one][Section 1]] or reference with number only [[#sec:one]].
@@ -82,7 +82,7 @@ Section link The easierst is to use CUSTOM_ID as the example below and refer to 
 		<item>
 			<title>Smerge, ediff and diff</title>
 			<link>https://yusbk.github.io/2021/12/22/magit-ediff/</link>
-			<pubDate>Wed, 22 Dec 2021 00:00:00 +0100</pubDate>
+			<pubDate>Wed, 22 Dec 2021 00:00:00 +0000</pubDate>
 			<guid>https://yusbk.github.io/2021/12/22/magit-ediff/</guid>
 			<description>First published: 2021-04-30
 For enditing conflict in git, use smerge or ediff.
@@ -93,7 +93,7 @@ Smerge Basic workflow:
 		<item>
 			<title>Environment</title>
 			<link>https://yusbk.github.io/2021/12/08/r-environment/</link>
-			<pubDate>Wed, 08 Dec 2021 00:00:00 +0100</pubDate>
+			<pubDate>Wed, 08 Dec 2021 00:00:00 +0000</pubDate>
 			<guid>https://yusbk.github.io/2021/12/08/r-environment/</guid>
 			<description>Updated: 2022-04-12
 Several nice blogs and references on the net to read on this stuff. Among those:
@@ -103,7 +103,7 @@ Several nice blogs and references on the net to read on this stuff. Among those:
 		<item>
 			<title>MS Access Shutdown</title>
 			<link>https://yusbk.github.io/2021/11/09/access-shutdown/</link>
-			<pubDate>Tue, 09 Nov 2021 00:00:00 +0100</pubDate>
+			<pubDate>Tue, 09 Nov 2021 00:00:00 +0000</pubDate>
 			<guid>https://yusbk.github.io/2021/11/09/access-shutdown/</guid>
 			<description>How to shutdown all running Access when you need to do some changes. This is just a summary from Microsoft Docs. The steps are:
 Create empty text file  This file will be the key. Name the file to anything like checkfile.</description>

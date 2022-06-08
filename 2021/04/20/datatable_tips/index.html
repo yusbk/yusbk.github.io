@@ -25,7 +25,7 @@
 <meta name="twitter:description" content="Updated: 2021-09-17
 Some tips for data.table that I came across while googling which might be useful.
 Print To print more rows that default can be done with either:
-options(datatable.print.topn = 70) print(DT, topn = 70) Using options will implement the changes globally."/>
+ options(datatable.print.topn = 70)  print(DT, topn = 70) Using options will implement the changes globally."/>
 
 
 
@@ -70,7 +70,7 @@ options(datatable.print.topn = 70) print(DT, topn = 70) Using options will imple
 <script defer crossorigin="anonymous" src="/js/theme.js" integrity=""></script>
 
 
-<script defer crossorigin="anonymous" src="/js/instantpage.min.js" integrity=""></script><meta name="generator" content="Hugo 0.68.3" />
+<script defer crossorigin="anonymous" src="/js/instantpage.min.js" integrity=""></script><meta name="generator" content="Hugo 0.99.1" />
   </head>
   <body>
     
@@ -179,11 +179,11 @@ options(datatable.print.topn = 70) print(DT, topn = 70) Using options will imple
 <p>Some tips for <code>data.table</code> that I came across while googling which might be useful.</p>
 <h2 id="print">Print</h2>
 <p>To print more rows that default can be done with either:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">  options(datatable.print.topn = 70)
-  print(DT, topn = 70)
-</code></pre></div><p>Using <code>options</code> will implement the changes globally. Else to make print nicer is using:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">  options(datatable.prettyprint.char = 80L)
-</code></pre></div><h2 id="na">NA</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>  options(datatable.print.topn = 70)
+</span></span><span style="display:flex;"><span>  print(DT, topn = 70)
+</span></span></code></pre></div><p>Using <code>options</code> will implement the changes globally. Else to make print nicer is using:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>  options(datatable.prettyprint.char = 80L)
+</span></span></code></pre></div><h2 id="na">NA</h2>
 <p>Use <code>nafill()</code> to replace <code>NA</code> with specified value such as <code>nafill(dt, fill==99)</code> will replace all <code>NA</code> in
 <strong>dt</strong> with <code>99</code>. To replace with front or back value of the vector then specify <code>fill=&quot;locf|nocb&quot;</code>
 accordingly, ie. <code>locf</code> (last observation carried forward) and <code>nocb</code> (next observation carried
@@ -196,22 +196,22 @@ you can specify an absolute value to roll on ie. <code>roll=2</code> will roll t
 <p>Using <code>foverlaps(DT, dt, type = &quot;any&quot;)</code> will join <strong>DT</strong> and <strong>dt</strong> as long as the value ranges give a match
 to the key values. When using <code>foverlaps()</code> you need to specify two keys eg. <code>key = c(&quot;col1&quot;, &quot;col2&quot;)</code>.
 As in the given example with both columns are the key columns:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">  foverlaps(dt4, dt3, type = &#34;any&#34;)
-
-  ##    min_y max_y x dt4_y dt4_y_end
-  ## 1:     0    10 c   5.7        10
-  ## 2:    10    15 c   5.7        10
-  ## 3:    10    15 a  11.9        13
-  ## 4:    15    20 d  18.0        22
-  ## 5:    20    30 d  18.0        22
-  ## 6:    20    30 b  21.4        25
-</code></pre></div><p>Else specifying <code>type=&quot;within&quot;</code> will join only those that match within the range.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>  foverlaps(dt4, dt3, type = &#34;any&#34;)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  ##    min_y max_y x dt4_y dt4_y_end
+</span></span><span style="display:flex;"><span>  ## 1:     0    10 c   5.7        10
+</span></span><span style="display:flex;"><span>  ## 2:    10    15 c   5.7        10
+</span></span><span style="display:flex;"><span>  ## 3:    10    15 a  11.9        13
+</span></span><span style="display:flex;"><span>  ## 4:    15    20 d  18.0        22
+</span></span><span style="display:flex;"><span>  ## 5:    20    30 d  18.0        22
+</span></span><span style="display:flex;"><span>  ## 6:    20    30 b  21.4        25
+</span></span></code></pre></div><p>Else specifying <code>type=&quot;within&quot;</code> will join only those that match within the range.</p>
 <h2 id="create-empty-data-dot-table">Create empty data.table</h2>
 <p>Sometime I need to create an empty <code>data.table</code> based on an exisiting
 columnames. Lots of other methods to do this but the easiest way is:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">cols <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">names</span>(DT)
-dt <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">setnames</span>(<span style="color:#a6e22e">data.table</span>(<span style="color:#a6e22e">matrix</span>(nrow <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, ncol <span style="color:#f92672">=</span> <span style="color:#a6e22e">length</span>(cols))), cols)
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>cols <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">names</span>(DT)
+</span></span><span style="display:flex;"><span>dt <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">setnames</span>(<span style="color:#a6e22e">data.table</span>(<span style="color:#a6e22e">matrix</span>(nrow <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, ncol <span style="color:#f92672">=</span> <span style="color:#a6e22e">length</span>(cols))), cols)
+</span></span></code></pre></div>
 
 
 
