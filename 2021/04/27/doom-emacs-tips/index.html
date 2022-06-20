@@ -22,7 +22,7 @@
 />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Doom tips"/>
-<meta name="twitter:description" content="Most used keys Navigation Editing Multiedit Search Org related Good to know Update Doom Install required files  Updated: 2022-05-05
+<meta name="twitter:description" content="Most used keys Navigation Editing Multiedit Search Org related Good to know Update Doom Install required files  Updated: 2022-06-20
 Some tips to learn the keybindings in Doom and Evil in the process of migrating from my vanilla Emacs settings."/>
 
 
@@ -177,7 +177,7 @@ Some tips to learn the keybindings in Doom and Evil in the process of migrating 
 <li><a href="#install-required-files">Install required files</a></li>
 </ul>
 <!-- raw HTML omitted -->
-<p><em>Updated: 2022-05-05</em></p>
+<p><em>Updated: 2022-06-20</em></p>
 <p>Some tips to learn the keybindings in Doom and Evil in the process of migrating
 from my vanilla Emacs settings. For overview of keybindings type
 <code>SPC-h-b-b</code>. Other good references:</p>
@@ -221,6 +221,7 @@ respective groups below:</p>
 <li><code>vio</code> select all inner and inclding a symbol</li>
 <li><code>va(</code> selecte all around the bracket <code>(</code> or any specific symbol that you can specify eg. <code>va&quot;</code></li>
 <li><code>C-vjjI</code> edit <a href="#add-text-at-first-line-of-multiple-lines">multiple lines</a></li>
+<li><code>g ;</code> and <code>g ,</code> go to last change in the current buffer forward or backward</li>
 </ul>
 <h2 id="navigation">Navigation</h2>
 <p>When in the <!-- raw HTML omitted -->Normal<!-- raw HTML omitted --> mode:</p>
@@ -232,8 +233,8 @@ respective groups below:</p>
 <li><code>gsf</code> and <code>gsF</code> go to forward (f) or backward(F) for selected letter</li>
 <li><code>fw</code> and <code>Fw</code> find <code>w</code> or any word/symbols specified forward or backward in a
 line. Move to next foward or backward with <code>f</code></li>
-<li><code>g;</code> go to last changed</li>
-<li><code>''</code> and <code> </code> `` jump to mark-line and goto-mark but works as jump cursor to previous position too</li>
+<li><code>g;</code> and <code>g,</code> go to last changed same buffer forward and backward</li>
+<li><code>''</code> and <code> </code> `` jump to mark-line and goto-mark but works as jump cursor to previous edited position too</li>
 <li><code>C-i</code> and <code>C-o</code> jump to previous cursor forward or backward</li>
 <li><code>ma</code> to mark position as <strong>a</strong> and use <code>'a</code> to go to the line where the mark is
 or <code>`a</code> (backtick) to go to the position of the marked ie. <code>a</code></li>
