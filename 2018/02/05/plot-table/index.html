@@ -68,7 +68,7 @@ Untuk memastikan plot dan table akan sejajar, adalah penting untuk menggunakan s
 <script defer crossorigin="anonymous" src="/js/theme.js" integrity=""></script>
 
 
-<script defer crossorigin="anonymous" src="/js/instantpage.min.js" integrity=""></script><meta name="generator" content="Hugo 0.69.2" />
+<script defer crossorigin="anonymous" src="/js/instantpage.min.js" integrity=""></script><meta name="generator" content="Hugo 0.100.2" />
   </head>
   <body>
     
@@ -171,94 +171,92 @@ Untuk memastikan plot dan table akan sejajar, adalah penting untuk menggunakan s
   <p>Ini ialah aturaca membuat plot dan memasukkan table untuk informasi berkaitan plot menggunakan pakej <code>ggplot2</code>. Table untuk informasi juga akan dibuat menggunakan <code>ggplot2</code> yang kemudiannya digabungkan menggunakan pakej <code>gridExtra</code>.</p>
 <p>Untuk memastikan plot dan table akan sejajar, adalah penting untuk menggunakan skala yang sama. Skala ini boleh menggunakan nombor atau kumpulan (<em>category</em>). Bila menggunakan skala secara <em>category</em> adalah penting untuk menukarkan status kolom ke <em>factor</em>.</p>
 <p>Contoh data:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">library</span>(data.table)
-<span style="color:#a6e22e">library</span>(ggplot2)
-navn <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;Nama1&#34;</span>, <span style="color:#e6db74">&#34;Nama2 yang panjang&#34;</span>, <span style="color:#e6db74">&#34;Nama3&#34;</span>)
-N <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">112</span>, <span style="color:#ae81ff">210</span>, <span style="color:#ae81ff">150</span>)
-N2 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">200</span>, <span style="color:#ae81ff">250</span>, <span style="color:#ae81ff">170</span>)
-dat <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">data.table</span>(navn, N, N2)
-</code></pre></div><p>Untuk memastikan kedua-dua plot akan menggunakan skala yang sama, kita boleh buat <code>dummy</code> untuk rujukkan skala. Disini rujukkan skala bermula dari nombor 1 ke nombor 3.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#75715e">## create dummy reference</span>
-xrow <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">nrow</span>(dat)
-dat[, ref <span style="color:#f92672">:=</span> <span style="color:#a6e22e">seq.int</span>(xrow)]
-</code></pre></div><p>Untuk membolehkan kita menambah perkataan contohnya <code>Lokasi</code> atau <code>Negara</code>, kita perlu tambah skala rujukkan. Bila guna <code>fill=TRUE</code> di fungsi <code>rbindlist</code> maka <code>NA</code> akan dimasukkan di kolom yang kosong.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#75715e">## create ref til extra text eg. N or Total</span>
-xref <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">data.table</span>(ref <span style="color:#f92672">=</span> xrow <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>) <span style="color:#75715e">#locate at the end of the rows</span>
-dt <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">rbindlist</span>(<span style="color:#a6e22e">list</span>(dat, xref), fill <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>) <span style="color:#75715e">#bind to the end rows</span>
-</code></pre></div><p>Untuk mengelakkan <code>NA</code> akan dimasukkan diplot, maka kita perlu kosongkan <code>NA</code>. Kemudian kolom yang akan dipakai untuk menamakan plot dan rujukkan plot ditukarkan ke <em>factor</em>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#75715e">## navn with NA blir tom</span>
-dt<span style="color:#a6e22e">[is.na</span>(navn), navn <span style="color:#f92672">:=</span> <span style="color:#e6db74">&#34;&#34;</span>]
-
-<span style="color:#75715e">## konvertere dt$navn og dt$ref as facor</span>
-dt[, <span style="color:#a6e22e">`:=`</span>(navn <span style="color:#f92672">=</span> <span style="color:#a6e22e">as.factor</span>(navn), ref <span style="color:#f92672">=</span> <span style="color:#a6e22e">as.factor</span>(ref))]
-</code></pre></div><p>Setelah menukarkan kolom ke <em>factor</em> bolehlah mendapatkan kandungan kolom tersebut yang dipakai untuk menamakan plot dengan cara membuat <em>vector</em> menggunakan fungsi <code>levels</code>. Untuk tidak memasukkan <code>NA</code> diskala, hanya nama yang ada di <em>vector</em> sahaja yang dipakai.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#75715e">## get levels for navn etter at den er konvertert til factor</span>
-pnavn <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">levels</span>(dt<span style="color:#f92672">$</span>navn)
-dummyref <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">factor</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">:</span>xrow) <span style="color:#75715e">#brukes til scale_x_discrete for å legge labels til aksen eksludert dummy linje 4 som skal brukes senere til N</span>
-</code></pre></div><p>Selepas itu bolehlah buat plot menggunakan rujukkan <code>dummy</code> dan memastikan yang <code>ref</code> dipakai secara <em>factor</em>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#75715e">## plot etter at &#34;ref&#34; og &#34;navn&#34; er konvertert til factor</span>
-(plotMain <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">ggplot</span>(dt, <span style="color:#a6e22e">aes</span>(<span style="color:#a6e22e">factor</span>(ref), N)) <span style="color:#f92672">+</span>
-   <span style="color:#a6e22e">geom_bar</span>(stat <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;identity&#34;</span>) <span style="color:#f92672">+</span>
-   <span style="color:#a6e22e">coord_flip</span>() <span style="color:#f92672">+</span>
-   <span style="color:#a6e22e">scale_x_discrete</span>(breaks <span style="color:#f92672">=</span> <span style="color:#a6e22e">factor</span>(dt<span style="color:#f92672">$</span>ref), labels <span style="color:#f92672">=</span> dt<span style="color:#f92672">$</span>navn) <span style="color:#f92672">+</span>
-   <span style="color:#a6e22e">theme</span>( <span style="color:#75715e">#theme react on the current plot for x and y axis not before it&#39;s flip</span>
-     <span style="color:#75715e">#after flip then navn is current y-axis</span>
-     axis.text.y <span style="color:#f92672">=</span> <span style="color:#a6e22e">element_text</span>(color <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;blue&#34;</span>, size <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>, hjust <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>),
-     axis.title.y <span style="color:#f92672">=</span> <span style="color:#a6e22e">element_blank</span>(),
-     axis.line.y <span style="color:#f92672">=</span> <span style="color:#a6e22e">element_blank</span>(), <span style="color:#75715e">#ta bort linje på y-axis</span>
-     axis.ticks.y <span style="color:#f92672">=</span> <span style="color:#a6e22e">element_blank</span>(),
-     axis.line.x <span style="color:#f92672">=</span> <span style="color:#a6e22e">element_line</span>(color <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;black&#34;</span>),
-     panel.background <span style="color:#f92672">=</span> <span style="color:#a6e22e">element_blank</span>()
-   ))
-
-<span style="color:#75715e">## plot tom ramme til tekst</span>
-(rpp <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">ggplot</span>(dt, <span style="color:#a6e22e">aes</span>(<span style="color:#a6e22e">factor</span>(ref))) <span style="color:#f92672">+</span>
-   <span style="color:#a6e22e">scale_y_continuous</span>(limits <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>)) <span style="color:#f92672">+</span>
-   <span style="color:#a6e22e">coord_flip</span>() <span style="color:#f92672">+</span>
-   <span style="color:#a6e22e">theme</span>(
-     axis.line <span style="color:#f92672">=</span> <span style="color:#a6e22e">element_blank</span>(),
-     axis.text <span style="color:#f92672">=</span> <span style="color:#a6e22e">element_blank</span>(),
-     axis.title <span style="color:#f92672">=</span> <span style="color:#a6e22e">element_blank</span>(),
-     axis.ticks <span style="color:#f92672">=</span> <span style="color:#a6e22e">element_blank</span>(),
-     panel.background <span style="color:#f92672">=</span> <span style="color:#a6e22e">element_blank</span>()
-   ))
-
-<span style="color:#75715e">## plot text figure</span>
-(plotText <span style="color:#f92672">&lt;-</span> rpp <span style="color:#f92672">+</span>
-   <span style="color:#a6e22e">annotate</span>(<span style="color:#e6db74">&#34;text&#34;</span>, x <span style="color:#f92672">=</span> <span style="color:#a6e22e">factor</span>(<span style="color:#ae81ff">4</span>), y <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.25</span>, label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Local&#34;</span>) <span style="color:#f92672">+</span>
-   <span style="color:#a6e22e">annotate</span>(<span style="color:#e6db74">&#34;text&#34;</span>, x <span style="color:#f92672">=</span> <span style="color:#a6e22e">factor</span>(<span style="color:#ae81ff">4</span>), y <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.75</span>, label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Nation&#34;</span>) <span style="color:#f92672">+</span>
-   <span style="color:#a6e22e">annotate</span>(<span style="color:#e6db74">&#34;text&#34;</span>, x <span style="color:#f92672">=</span> <span style="color:#a6e22e">factor</span>(dt<span style="color:#f92672">$</span>ref), y <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.25</span>, label <span style="color:#f92672">=</span> dt<span style="color:#f92672">$</span>N, hjust <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">+</span>
-   <span style="color:#a6e22e">annotate</span>(<span style="color:#e6db74">&#34;text&#34;</span>, x <span style="color:#f92672">=</span> <span style="color:#a6e22e">factor</span>(dt<span style="color:#f92672">$</span>ref), y <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.75</span>, label <span style="color:#f92672">=</span> dt<span style="color:#f92672">$</span>N2, hjust <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">+</span>
-   <span style="color:#a6e22e">geom_vline</span>(xintercept <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">3.8</span>, <span style="color:#ae81ff">4.2</span>))
-)
-
-
-</code></pre></div><p>Untuk meletakkan plot dan table bersama boleh guna <code>grid.arrange</code> dari pakej <code>gridExtra</code>. Tetapi cara ini tidak memastikan yang y-aksis seragam.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">library</span>(gridExtra)
-(plotpp <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">grid.arrange</span>(<span style="color:#a6e22e">ggplotGrob</span>(plotMain),
-                        <span style="color:#a6e22e">ggplotGrob</span>(plotText),
-                        ncol <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>, widths <span style="color:#f92672">=</span> <span style="color:#a6e22e">unit</span>(<span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">0.8</span>, <span style="color:#ae81ff">0.2</span>), <span style="color:#e6db74">&#34;npc&#34;</span>))
-)
-</code></pre></div><p>Untuk meletakkan kedua-dua plot dan table bersama dan memastikan yang y-aksis seragam boleh menggunakan cara seperti di bawah. Guna <code>heights</code> utk menyeragamkan aksis y manakala <code>weights</code> untuk menyeragamkan aksis x. Contohnya <code>unit.pmax(pp1$weights)</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">pp1 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">ggplotGrob</span>(plotMain)
-pp2 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">ggplotGrob</span>(plotText)
-
-maxHeight <span style="color:#f92672">=</span> <span style="color:#a6e22e">unit.pmax</span>(pp1<span style="color:#f92672">$</span>heights, pp2<span style="color:#f92672">$</span>heights)
-
-pp1<span style="color:#f92672">$</span>heights <span style="color:#f92672">&lt;-</span> maxHeight
-pp2<span style="color:#f92672">$</span>heights <span style="color:#f92672">&lt;-</span> maxHeight
-
-<span style="color:#a6e22e">grid.arrange</span>(pp1, pp2, ncol <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>, widths <span style="color:#f92672">=</span> <span style="color:#a6e22e">unit</span>(<span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">0.8</span>, <span style="color:#ae81ff">0.2</span>), <span style="color:#e6db74">&#34;npc&#34;</span>))
-
-ggplot2<span style="color:#f92672">::</span><span style="color:#a6e22e">ggsave</span>(<span style="color:#e6db74">&#34;plottable1.svg&#34;</span>)
-</code></pre></div><p>Selain cara ini, boleh juga menggunakan fungsi <code>plot_grid</code> dari pakej <a href="https://cran.r-project.org/web/packages/cowplot/vignettes/introduction.html">Cowplot</a> dan menggunakan <code>align = &quot;h&quot;</code> untuk horizontal (sama y-aksis)</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">library</span>(cowplot)
-
-cplot <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">plot_grid</span>(plotMain, plotText, nrow <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>, align <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;h&#34;</span>, rel_widths <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">1</span>))
-
-cowplot<span style="color:#f92672">::</span><span style="color:#a6e22e">save_plot</span>(<span style="color:#e6db74">&#34;cowplot.svg&#34;</span>, cplot, ncol <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>, base_aspect_ratio <span style="color:#f92672">=</span> <span style="color:#ae81ff">1.3</span>)
-cowplot<span style="color:#f92672">::</span><span style="color:#a6e22e">ggsave</span>(<span style="color:#e6db74">&#34;cowplot2.svg&#34;</span>, cplot)
-</code></pre></div><p>Hasilnya ialah seperti ini:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#a6e22e">library</span>(data.table)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">library</span>(ggplot2)
+</span></span><span style="display:flex;"><span>navn <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;Nama1&#34;</span>, <span style="color:#e6db74">&#34;Nama2 yang panjang&#34;</span>, <span style="color:#e6db74">&#34;Nama3&#34;</span>)
+</span></span><span style="display:flex;"><span>N <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">112</span>, <span style="color:#ae81ff">210</span>, <span style="color:#ae81ff">150</span>)
+</span></span><span style="display:flex;"><span>N2 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">200</span>, <span style="color:#ae81ff">250</span>, <span style="color:#ae81ff">170</span>)
+</span></span><span style="display:flex;"><span>dat <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">data.table</span>(navn, N, N2)
+</span></span></code></pre></div><p>Untuk memastikan kedua-dua plot akan menggunakan skala yang sama, kita boleh buat <code>dummy</code> untuk rujukkan skala. Disini rujukkan skala bermula dari nombor 1 ke nombor 3.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#75715e">## create dummy reference</span>
+</span></span><span style="display:flex;"><span>xrow <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">nrow</span>(dat)
+</span></span><span style="display:flex;"><span>dat[, ref <span style="color:#f92672">:=</span> <span style="color:#a6e22e">seq.int</span>(xrow)]
+</span></span></code></pre></div><p>Untuk membolehkan kita menambah perkataan contohnya <code>Lokasi</code> atau <code>Negara</code>, kita perlu tambah skala rujukkan. Bila guna <code>fill=TRUE</code> di fungsi <code>rbindlist</code> maka <code>NA</code> akan dimasukkan di kolom yang kosong.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#75715e">## create ref til extra text eg. N or Total</span>
+</span></span><span style="display:flex;"><span>xref <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">data.table</span>(ref <span style="color:#f92672">=</span> xrow <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>) <span style="color:#75715e">#locate at the end of the rows</span>
+</span></span><span style="display:flex;"><span>dt <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">rbindlist</span>(<span style="color:#a6e22e">list</span>(dat, xref), fill <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>) <span style="color:#75715e">#bind to the end rows</span>
+</span></span></code></pre></div><p>Untuk mengelakkan <code>NA</code> akan dimasukkan diplot, maka kita perlu kosongkan <code>NA</code>. Kemudian kolom yang akan dipakai untuk menamakan plot dan rujukkan plot ditukarkan ke <em>factor</em>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#75715e">## navn with NA blir tom</span>
+</span></span><span style="display:flex;"><span>dt<span style="color:#a6e22e">[is.na</span>(navn), navn <span style="color:#f92672">:=</span> <span style="color:#e6db74">&#34;&#34;</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## konvertere dt$navn og dt$ref as facor</span>
+</span></span><span style="display:flex;"><span>dt[, <span style="color:#a6e22e">`:=`</span>(navn <span style="color:#f92672">=</span> <span style="color:#a6e22e">as.factor</span>(navn), ref <span style="color:#f92672">=</span> <span style="color:#a6e22e">as.factor</span>(ref))]
+</span></span></code></pre></div><p>Setelah menukarkan kolom ke <em>factor</em> bolehlah mendapatkan kandungan kolom tersebut yang dipakai untuk menamakan plot dengan cara membuat <em>vector</em> menggunakan fungsi <code>levels</code>. Untuk tidak memasukkan <code>NA</code> diskala, hanya nama yang ada di <em>vector</em> sahaja yang dipakai.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#75715e">## get levels for navn etter at den er konvertert til factor</span>
+</span></span><span style="display:flex;"><span>pnavn <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">levels</span>(dt<span style="color:#f92672">$</span>navn)
+</span></span><span style="display:flex;"><span>dummyref <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">factor</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">:</span>xrow) <span style="color:#75715e">#brukes til scale_x_discrete for å legge labels til aksen eksludert dummy linje 4 som skal brukes senere til N</span>
+</span></span></code></pre></div><p>Selepas itu bolehlah buat plot menggunakan rujukkan <code>dummy</code> dan memastikan yang <code>ref</code> dipakai secara <em>factor</em>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#75715e">## plot etter at &#34;ref&#34; og &#34;navn&#34; er konvertert til factor</span>
+</span></span><span style="display:flex;"><span>(plotMain <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">ggplot</span>(dt, <span style="color:#a6e22e">aes</span>(<span style="color:#a6e22e">factor</span>(ref), N)) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">geom_bar</span>(stat <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;identity&#34;</span>) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">coord_flip</span>() <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">scale_x_discrete</span>(breaks <span style="color:#f92672">=</span> <span style="color:#a6e22e">factor</span>(dt<span style="color:#f92672">$</span>ref), labels <span style="color:#f92672">=</span> dt<span style="color:#f92672">$</span>navn) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">theme</span>( <span style="color:#75715e">#theme react on the current plot for x and y axis not before it&#39;s flip</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#75715e">#after flip then navn is current y-axis</span>
+</span></span><span style="display:flex;"><span>     axis.text.y <span style="color:#f92672">=</span> <span style="color:#a6e22e">element_text</span>(color <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;blue&#34;</span>, size <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>, hjust <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>),
+</span></span><span style="display:flex;"><span>     axis.title.y <span style="color:#f92672">=</span> <span style="color:#a6e22e">element_blank</span>(),
+</span></span><span style="display:flex;"><span>     axis.line.y <span style="color:#f92672">=</span> <span style="color:#a6e22e">element_blank</span>(), <span style="color:#75715e">#ta bort linje på y-axis</span>
+</span></span><span style="display:flex;"><span>     axis.ticks.y <span style="color:#f92672">=</span> <span style="color:#a6e22e">element_blank</span>(),
+</span></span><span style="display:flex;"><span>     axis.line.x <span style="color:#f92672">=</span> <span style="color:#a6e22e">element_line</span>(color <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;black&#34;</span>),
+</span></span><span style="display:flex;"><span>     panel.background <span style="color:#f92672">=</span> <span style="color:#a6e22e">element_blank</span>()
+</span></span><span style="display:flex;"><span>   ))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## plot tom ramme til tekst</span>
+</span></span><span style="display:flex;"><span>(rpp <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">ggplot</span>(dt, <span style="color:#a6e22e">aes</span>(<span style="color:#a6e22e">factor</span>(ref))) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">scale_y_continuous</span>(limits <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>)) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">coord_flip</span>() <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">theme</span>(
+</span></span><span style="display:flex;"><span>     axis.line <span style="color:#f92672">=</span> <span style="color:#a6e22e">element_blank</span>(),
+</span></span><span style="display:flex;"><span>     axis.text <span style="color:#f92672">=</span> <span style="color:#a6e22e">element_blank</span>(),
+</span></span><span style="display:flex;"><span>     axis.title <span style="color:#f92672">=</span> <span style="color:#a6e22e">element_blank</span>(),
+</span></span><span style="display:flex;"><span>     axis.ticks <span style="color:#f92672">=</span> <span style="color:#a6e22e">element_blank</span>(),
+</span></span><span style="display:flex;"><span>     panel.background <span style="color:#f92672">=</span> <span style="color:#a6e22e">element_blank</span>()
+</span></span><span style="display:flex;"><span>   ))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## plot text figure</span>
+</span></span><span style="display:flex;"><span>(plotText <span style="color:#f92672">&lt;-</span> rpp <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">annotate</span>(<span style="color:#e6db74">&#34;text&#34;</span>, x <span style="color:#f92672">=</span> <span style="color:#a6e22e">factor</span>(<span style="color:#ae81ff">4</span>), y <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.25</span>, label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Local&#34;</span>) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">annotate</span>(<span style="color:#e6db74">&#34;text&#34;</span>, x <span style="color:#f92672">=</span> <span style="color:#a6e22e">factor</span>(<span style="color:#ae81ff">4</span>), y <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.75</span>, label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Nation&#34;</span>) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">annotate</span>(<span style="color:#e6db74">&#34;text&#34;</span>, x <span style="color:#f92672">=</span> <span style="color:#a6e22e">factor</span>(dt<span style="color:#f92672">$</span>ref), y <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.25</span>, label <span style="color:#f92672">=</span> dt<span style="color:#f92672">$</span>N, hjust <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">annotate</span>(<span style="color:#e6db74">&#34;text&#34;</span>, x <span style="color:#f92672">=</span> <span style="color:#a6e22e">factor</span>(dt<span style="color:#f92672">$</span>ref), y <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.75</span>, label <span style="color:#f92672">=</span> dt<span style="color:#f92672">$</span>N2, hjust <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">geom_vline</span>(xintercept <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">3.8</span>, <span style="color:#ae81ff">4.2</span>))
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><p>Untuk meletakkan plot dan table bersama boleh guna <code>grid.arrange</code> dari pakej <code>gridExtra</code>. Tetapi cara ini tidak memastikan yang y-aksis seragam.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#a6e22e">library</span>(gridExtra)
+</span></span><span style="display:flex;"><span>(plotpp <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">grid.arrange</span>(<span style="color:#a6e22e">ggplotGrob</span>(plotMain),
+</span></span><span style="display:flex;"><span>                        <span style="color:#a6e22e">ggplotGrob</span>(plotText),
+</span></span><span style="display:flex;"><span>                        ncol <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>, widths <span style="color:#f92672">=</span> <span style="color:#a6e22e">unit</span>(<span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">0.8</span>, <span style="color:#ae81ff">0.2</span>), <span style="color:#e6db74">&#34;npc&#34;</span>))
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><p>Untuk meletakkan kedua-dua plot dan table bersama dan memastikan yang y-aksis seragam boleh menggunakan cara seperti di bawah. Guna <code>heights</code> utk menyeragamkan aksis y manakala <code>weights</code> untuk menyeragamkan aksis x. Contohnya <code>unit.pmax(pp1$weights)</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>pp1 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">ggplotGrob</span>(plotMain)
+</span></span><span style="display:flex;"><span>pp2 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">ggplotGrob</span>(plotText)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>maxHeight <span style="color:#f92672">=</span> <span style="color:#a6e22e">unit.pmax</span>(pp1<span style="color:#f92672">$</span>heights, pp2<span style="color:#f92672">$</span>heights)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>pp1<span style="color:#f92672">$</span>heights <span style="color:#f92672">&lt;-</span> maxHeight
+</span></span><span style="display:flex;"><span>pp2<span style="color:#f92672">$</span>heights <span style="color:#f92672">&lt;-</span> maxHeight
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">grid.arrange</span>(pp1, pp2, ncol <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>, widths <span style="color:#f92672">=</span> <span style="color:#a6e22e">unit</span>(<span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">0.8</span>, <span style="color:#ae81ff">0.2</span>), <span style="color:#e6db74">&#34;npc&#34;</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ggplot2<span style="color:#f92672">::</span><span style="color:#a6e22e">ggsave</span>(<span style="color:#e6db74">&#34;plottable1.svg&#34;</span>)
+</span></span></code></pre></div><p>Selain cara ini, boleh juga menggunakan fungsi <code>plot_grid</code> dari pakej <a href="https://cran.r-project.org/web/packages/cowplot/vignettes/introduction.html">Cowplot</a> dan menggunakan <code>align = &quot;h&quot;</code> untuk horizontal (sama y-aksis)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#a6e22e">library</span>(cowplot)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>cplot <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">plot_grid</span>(plotMain, plotText, nrow <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>, align <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;h&#34;</span>, rel_widths <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">1</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>cowplot<span style="color:#f92672">::</span><span style="color:#a6e22e">save_plot</span>(<span style="color:#e6db74">&#34;cowplot.svg&#34;</span>, cplot, ncol <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>, base_aspect_ratio <span style="color:#f92672">=</span> <span style="color:#ae81ff">1.3</span>)
+</span></span><span style="display:flex;"><span>cowplot<span style="color:#f92672">::</span><span style="color:#a6e22e">ggsave</span>(<span style="color:#e6db74">&#34;cowplot2.svg&#34;</span>, cplot)
+</span></span></code></pre></div><p>Hasilnya ialah seperti ini:</p>
 <p><img src="/images/plottable1.jpg" alt="img"></p>
 
 

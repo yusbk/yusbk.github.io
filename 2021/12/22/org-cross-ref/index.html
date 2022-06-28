@@ -69,7 +69,7 @@ Section link The easierst is to use CUSTOM_ID as the example below and refer to 
 <script defer crossorigin="anonymous" src="/js/theme.js" integrity=""></script>
 
 
-<script defer crossorigin="anonymous" src="/js/instantpage.min.js" integrity=""></script><meta name="generator" content="Hugo 0.69.2" />
+<script defer crossorigin="anonymous" src="/js/instantpage.min.js" integrity=""></script><meta name="generator" content="Hugo 0.100.2" />
   </head>
   <body>
     
@@ -168,28 +168,28 @@ Section link The easierst is to use CUSTOM_ID as the example below and refer to 
 <h2 id="section-link">Section link</h2>
 <p>The easierst is to use <code>CUSTOM_ID</code> as the example below and refer to it with
 text <code>[[#sec:one][Section 1]]</code> or reference with number only <code>[[#sec:one]]</code>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">* Section One
-:PROPERTIES:
-:CUSTOM_ID: sec:one
-:END:
-</code></pre></div><p>The link with text will be <code>'..refer to it with text Section 1'</code> and the link
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>* Section One
+</span></span><span style="display:flex;"><span>:PROPERTIES:
+</span></span><span style="display:flex;"><span>:CUSTOM_ID: sec:one
+</span></span><span style="display:flex;"><span>:END:
+</span></span></code></pre></div><p>The link with text will be <code>'..refer to it with text Section 1'</code> and the link
 with number will be <code>'..refer to it with text (1)'</code>.</p>
 <h2 id="reference-to-table-or-figure">Reference to table or figure</h2>
 <p>Use <code>#+NAME:</code> to reference an element within the buffer. Name should be put in
 the line before the element it refers to.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">#+NAME: tbl_target
-| a |  item|
-|---+------|
-| 1 | text |
-</code></pre></div><p>Then refer to it with <code>See table [[tbl_target]]</code> or <code>[[tbl_target][Name of something]]</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>#+NAME: tbl_target
+</span></span><span style="display:flex;"><span>| a |  item|
+</span></span><span style="display:flex;"><span>|---+------|
+</span></span><span style="display:flex;"><span>| 1 | text |
+</span></span></code></pre></div><p>Then refer to it with <code>See table [[tbl_target]]</code> or <code>[[tbl_target][Name of something]]</code>.</p>
 <h2 id="dedicated-target">Dedicated target</h2>
 <p>When no description, then this will be linked as number and text link when
 description is added.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">1. Item one
-2. &lt;&lt;target&gt;&gt;Item two
-
-Here we refer to item [[target]] or [[target][My target]]
-</code></pre></div><p>The last sentence will appear as <code>'Here we refer to item 2 or My target'</code> when exported.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>1. Item one
+</span></span><span style="display:flex;"><span>2. &lt;&lt;target&gt;&gt;Item two
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Here we refer to item [[target]] or [[target][My target]]
+</span></span></code></pre></div><p>The last sentence will appear as <code>'Here we refer to item 2 or My target'</code> when exported.</p>
 <h2 id="with-store-and-insert-link">With store and insert link</h2>
 <p>Use <code>org-mode</code> function <code>org-store-link</code>. Doom key uses <code>SPC-m-n</code> in normal mode
 or <code>M-SPC-m-n</code> in insert mode. Then insert the link with <code>org-insert-link</code> key

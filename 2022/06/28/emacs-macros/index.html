@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+<title>Emacs macros</title>
+<meta name="description" 
+      content=""
+>
+
+  
+
+
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link
+  rel="alternate"
+  type="application/rss+xml"
+  href="https://yusbk.github.io/index.xml"
+  title="𝔂𝓾𝓼𝓴𝓪𝓶"
+/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Emacs macros"/>
+<meta name="twitter:description" content="How to use macros Emacs ways:
+C-x ( to start recording macro C-x ) to stop recording macro C-x e to execute the last macro defined M-x name-last-kbd-macro to name last defined macro M-x insert-kbd-macro to save named macro (copy result to ."/>
+
+
+
+<link rel="stylesheet" href="https://yusbk.github.io/fontawesome/css/all.min.css" />
+
+
+
+
+<link
+  crossorigin="anonymous"
+  href="/css/styles.min.css"
+  integrity=""
+  rel="preload stylesheet"
+  as="style"
+/>
+
+
+
+
+<link
+  id="dark-mode-theme"
+  crossorigin="anonymous"
+  href="/css/dark.min.css"
+  integrity=""
+  rel="preload stylesheet"
+  as="style"
+/>
+
+
+<script>
+  var darkTheme = document.getElementById('dark-mode-theme')
+  var storedTheme = localStorage.getItem('dark-mode-storage')
+
+  if (storedTheme === 'dark') {
+    darkTheme.disabled = false
+  } else if (storedTheme === 'light') {
+    darkTheme.disabled = true
+  }
+</script>
+
+
+<script defer crossorigin="anonymous" src="/js/theme.js" integrity=""></script>
+
+
+<script defer crossorigin="anonymous" src="/js/instantpage.min.js" integrity=""></script><meta name="generator" content="Hugo 0.100.2" />
+  </head>
+  <body>
+    
+  
+
+
+
+
+  <header>
+    <nav class="navbar">
+  <div class="nav">
+    
+      <a href="https://yusbk.github.io/" class="nav-logo">
+        <img
+          src="https://yusbk.github.io/images/yk.png"
+          width="40"
+          height="40"
+          alt="Logo"
+        />
+      </a>
+    
+
+    <ul class="nav-links">
+      
+        
+          <li>
+            <a href="/about" id="About"
+              ><em class="fas fa-user-secret fa-lg"></em
+            ></a>
+          </li>
+          
+      
+        
+          <li>
+            <a href="/categories" id="Categories"
+              ><em class="fas fa-folder-open fa-lg"></em
+            ></a>
+          </li>
+          
+      
+        
+          <li>
+            <a href="/tags" id="Tags"
+              ><em class="fas fa-tags fa-lg"></em
+            ></a>
+          </li>
+          
+      
+        
+          <li>
+            <a href="/search" id="Search"
+              ><em class="fas fa-search fa-lg"></em
+            ></a>
+          </li>
+          
+      
+    </ul>
+  </div>
+</nav>
+
+    <div class="intro-header">
+      <div class="container">
+        <div class="post-heading">
+          
+            <h1>
+              Emacs macros
+            </h1>
+          
+          
+            <span class="meta-post">
+  <em class="fa fa-calendar-alt"></em
+  >&nbsp;Jun 28, 2022
+  
+    &nbsp;&nbsp;&nbsp;<em class="fa fa-folder-open"></em>&nbsp;
+    
+      <a
+        href="https://yusbk.github.io/categories/emacs/"
+        >emacs</a
+      >&nbsp;
+    
+  
+</span>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+  
+
+    
+  <div class="container" role="main">
+    <article class="article" class="blog-post">
+      
+  <p>How to use macros <strong>Emacs</strong> ways:</p>
+<ul>
+<li><code>C-x (</code> to start recording macro</li>
+<li><code>C-x )</code> to stop recording macro</li>
+<li><code>C-x e</code> to execute the last macro defined</li>
+<li><code>M-x name-last-kbd-macro</code> to name last defined macro</li>
+<li><code>M-x insert-kbd-macro</code> to save named macro (copy result to .emacs file)</li>
+<li><code>M-x macro_name</code> to run your macro</li>
+</ul>
+<p>Find the reference from <a href="https://www.reddit.com/r/emacs/comments/9m0ha7/emacs_how_to_record_and_save_your_own_macros_for/">reddit</a></p>
+<p>How to use macros <strong>Vim</strong> ways:</p>
+<ul>
+<li><code>q a</code> letter to start recording a macro</li>
+<li><code>q</code> to stop recording</li>
+<li><code>@ a</code> letter to run the last recorded macro</li>
+</ul>
+<p>For for advance use eg. saving to file, please read in <a href="https://stackoverflow.com/a/22820324/5372752">StackOverflow</a></p>
+
+
+
+
+      
+        <div class="blog-tags">
+          
+            <a
+              href="https://yusbk.github.io/tags/macro/"
+              >macro</a
+            >&nbsp;
+          
+        </div>
+      
+
+      
+    </article>
+    
+    
+      
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+        (function() {
+            
+            
+            if (window.location.hostname == "localhost") return;
+
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            var disqus_shortname = 'yusbk-github-io';
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+  <noscript
+    >Please enable JavaScript to view the
+    <a href="https://disqus.com/?ref_noscript"
+      >comments powered by Disqus.</a
+    ></noscript
+  >
+  <a href="https://disqus.com/" class="dsq-brlink"
+    >comments powered by <span class="logo-disqus">Disqus</span></a
+  >
+
+
+    
+  </div>
+
+    <footer>
+  
+
+<div class="social-icons">
+  
+    
+    
+      
+      <a href="https://twitter.com/GoHugoIO" name="twitter">
+        <em class="fab fa-twitter"></em>
+      </a>
+    
+  
+
+  
+</div>
+
+
+  
+  <div class="container">
+    <p class="credits copyright">
+      <a href="https://yusbk.github.io/about">Yusman Kamaleri</a>
+      &nbsp;&copy;
+      2022
+      
+        &nbsp;/&nbsp;
+        <a href="https://yusbk.github.io/">𝔂𝓾𝓼𝓴𝓪𝓶</a>
+      
+      &nbsp;&ndash;&nbsp;
+      <em class="fas fa-moon" id="dark-mode-toggle"></em>
+    </p>
+
+    <p class="credits theme-by">
+      Powered By <a href="https://gohugo.io">Hugo</a>&nbsp;
+      Theme
+      <a href="https://github.com/matsuyoshi30/harbor">Harbor</a>
+    </p>
+  </div>
+</footer>
+
+  </body>
+</html>

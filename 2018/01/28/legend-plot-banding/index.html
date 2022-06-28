@@ -68,7 +68,7 @@ library(&#34;data.table&#34;) data &lt;- fread(&#34;https://raw.githubuserconten
 <script defer crossorigin="anonymous" src="/js/theme.js" integrity=""></script>
 
 
-<script defer crossorigin="anonymous" src="/js/instantpage.min.js" integrity=""></script><meta name="generator" content="Hugo 0.69.2" />
+<script defer crossorigin="anonymous" src="/js/instantpage.min.js" integrity=""></script><meta name="generator" content="Hugo 0.100.2" />
   </head>
   <body>
     
@@ -169,83 +169,83 @@ library(&#34;data.table&#34;) data &lt;- fread(&#34;https://raw.githubuserconten
     <article class="article" class="blog-post">
       
   <p>Tunjuk ajar ini ialah berasaskan penggunaan pekej <code>ggplot2</code>. Untuk membuat plot perbandingan dan memasukkan legend untuk perbandingan boleh dibuat seperti berikut.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">library</span>(<span style="color:#e6db74">&#34;data.table&#34;</span>)
-
-data <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">fread</span>(<span style="color:#e6db74">&#34;https://raw.githubusercontent.com/ybkamaleri/dataset/master/gdata.csv&#34;</span>)
-
-<span style="color:#75715e">## lage tabellen alder group</span>
-ageWyoming <span style="color:#f92672">&lt;-</span> data[location <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;Wyoming&#34;</span>, <span style="color:#a6e22e">list</span>(n <span style="color:#f92672">=</span> .N), by <span style="color:#f92672">=</span> .(agegp)]
-
-dataW <span style="color:#f92672">&lt;-</span> ageWyoming[, {
-  N <span style="color:#f92672">=</span> <span style="color:#a6e22e">sum</span>(n)
-  pros <span style="color:#f92672">=</span> <span style="color:#a6e22e">round</span>(n <span style="color:#f92672">/</span> N <span style="color:#f92672">*</span> <span style="color:#ae81ff">100</span>, digits <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>)
-  <span style="color:#a6e22e">list</span>(agegp <span style="color:#f92672">=</span> agegp,
-       n <span style="color:#f92672">=</span> n,
-       N <span style="color:#f92672">=</span> N,
-       pros <span style="color:#f92672">=</span> pros)}]
-
-dataW[, location <span style="color:#f92672">:=</span> <span style="color:#e6db74">&#34;Wyoming&#34;</span>]
-
-
-ageRest <span style="color:#f92672">&lt;-</span> data[location <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#34;Wyoming&#34;</span>, <span style="color:#a6e22e">list</span>(n <span style="color:#f92672">=</span> .N), by <span style="color:#f92672">=</span> .(agegp)]
-
-dataR <span style="color:#f92672">&lt;-</span> ageRest[, {
-  N <span style="color:#f92672">=</span> <span style="color:#a6e22e">sum</span>(n)
-  pros <span style="color:#f92672">=</span> <span style="color:#a6e22e">round</span>(n <span style="color:#f92672">/</span> N <span style="color:#f92672">*</span> <span style="color:#ae81ff">100</span>, digits <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>)
-  <span style="color:#a6e22e">list</span>(agegp <span style="color:#f92672">=</span> agegp,
-       n <span style="color:#f92672">=</span> n,
-       N <span style="color:#f92672">=</span> N,
-       pros <span style="color:#f92672">=</span> pros)}]
-
-dataR[, location <span style="color:#f92672">:=</span> <span style="color:#e6db74">&#34;National&#34;</span>]
-</code></pre></div><p>data telah tersedia, bolehlah menyediakan plot yang diinginkan</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">library</span>(<span style="color:#e6db74">&#34;ggplot2&#34;</span>)
-<span style="color:#a6e22e">ggplot</span>(<span style="color:#66d9ef">NULL</span>, <span style="color:#a6e22e">aes</span>(agegp, pros)) <span style="color:#f92672">+</span>
- <span style="color:#a6e22e">geom_bar</span>(data <span style="color:#f92672">=</span> dataW,
-          <span style="color:#75715e"># color = local di aes utk buat lagend</span>
-          mapping <span style="color:#f92672">=</span> <span style="color:#a6e22e">aes</span>(color <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;local&#34;</span>), stat <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;identity&#34;</span>, fill <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;lightblue&#34;</span>) <span style="color:#f92672">+</span>
-
-  <span style="color:#75715e"># point utk national</span>
-  <span style="color:#a6e22e">geom_point</span>(data <span style="color:#f92672">=</span> dataR,
-             <span style="color:#75715e"># fill eller color kan brukes som dummy for å produsere legend</span>
-             mapping <span style="color:#f92672">=</span> <span style="color:#a6e22e">aes</span>(fill <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;National&#34;</span>),
-
-             <span style="color:#75715e"># om color brukes som dummy til å lage legend så kan color ikke brukes her</span>
-             <span style="color:#75715e"># men spesifiseringen av farge gjøes i scale_color_manual(value = &#34;red&#34;)</span>
-             stat <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;identity&#34;</span>, size <span style="color:#f92672">=</span> <span style="color:#ae81ff">7</span>, shape <span style="color:#f92672">=</span> <span style="color:#ae81ff">18</span>, color <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;red&#34;</span>) <span style="color:#f92672">+</span> <span style="color:#75715e">#shape 18 diamon og 19 rund</span>
-
-  <span style="color:#75715e"># limits definere skale for y-aksen fra 0 til 50</span>
-  <span style="color:#75715e"># breaks gir delingen i skalen dvs. hver 10-ene</span>
-  <span style="color:#75715e"># expand gjør at det ikke er mellomrom mellom figuren og x-aksen</span>
-  <span style="color:#a6e22e">scale_y_continuous</span>(limits <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">50</span>), breaks <span style="color:#f92672">=</span> <span style="color:#a6e22e">seq</span>(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">50</span>, <span style="color:#ae81ff">10</span>), expand <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>)) <span style="color:#f92672">+</span>
-
-  <span style="color:#75715e"># Title, subtitle, x- og y-label</span>
-  <span style="color:#a6e22e">labs</span>(title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Title something&#34;</span>, subtitle <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Subtitle for graph is here&#34;</span>, x <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;x-label&#34;</span>, y <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;y-label&#34;</span>) <span style="color:#f92672">+</span>
-
-  <span style="color:#75715e"># snu figuren</span>
-  <span style="color:#a6e22e">coord_flip</span>() <span style="color:#f92672">+</span>
-
-  <span style="color:#75715e"># warna utk lagend local</span>
-  <span style="color:#a6e22e">scale_color_manual</span>(values <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;lightblue&#34;</span>) <span style="color:#f92672">+</span>
-
-  <span style="color:#75715e"># tema spesifikasjoner</span>
-  <span style="color:#a6e22e">theme</span>(
-    legend.position <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;top&#34;</span>,
-    legend.title <span style="color:#f92672">=</span> <span style="color:#a6e22e">element_blank</span>(),
-    legend.text <span style="color:#f92672">=</span> <span style="color:#a6e22e">element_text</span>(size <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>),
-    legend.key <span style="color:#f92672">=</span> <span style="color:#a6e22e">element_rect</span>(color <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;white&#34;</span>),
-    axis.text.y <span style="color:#f92672">=</span> <span style="color:#a6e22e">element_text</span>(color <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;black&#34;</span>, size <span style="color:#f92672">=</span> <span style="color:#ae81ff">9</span>),
-    plot.margin <span style="color:#f92672">=</span> <span style="color:#a6e22e">unit</span>(<span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0.5</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>), <span style="color:#e6db74">&#34;cm&#34;</span>),
-    panel.background <span style="color:#f92672">=</span> <span style="color:#a6e22e">element_blank</span>(),
-    panel.border <span style="color:#f92672">=</span> <span style="color:#a6e22e">element_blank</span>(),
-    panel.grid.major.y <span style="color:#f92672">=</span> <span style="color:#a6e22e">element_blank</span>(),
-    panel.grid.major.x <span style="color:#f92672">=</span> <span style="color:#a6e22e">element_line</span>(colour <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;grey&#34;</span>, size <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.4</span>, linetype <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>),
-    <span style="color:#75715e">## panel.grid.minor.x = element_line(colour = &#34;grey&#34;, size = 0.2, linetype = 2),</span>
-    axis.ticks.y <span style="color:#f92672">=</span> <span style="color:#a6e22e">element_blank</span>(),
-    axis.line.x <span style="color:#f92672">=</span> <span style="color:#a6e22e">element_line</span>(size <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.5</span>),
-    axis.title.y <span style="color:#f92672">=</span> <span style="color:#a6e22e">element_text</span>(size <span style="color:#f92672">=</span> <span style="color:#ae81ff">9</span>),
-    axis.title.x <span style="color:#f92672">=</span> <span style="color:#a6e22e">element_text</span>(size <span style="color:#f92672">=</span> <span style="color:#ae81ff">9</span>))
-</code></pre></div><p>Hasilnya seperti ini:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#a6e22e">library</span>(<span style="color:#e6db74">&#34;data.table&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>data <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">fread</span>(<span style="color:#e6db74">&#34;https://raw.githubusercontent.com/ybkamaleri/dataset/master/gdata.csv&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## lage tabellen alder group</span>
+</span></span><span style="display:flex;"><span>ageWyoming <span style="color:#f92672">&lt;-</span> data[location <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;Wyoming&#34;</span>, <span style="color:#a6e22e">list</span>(n <span style="color:#f92672">=</span> .N), by <span style="color:#f92672">=</span> .(agegp)]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>dataW <span style="color:#f92672">&lt;-</span> ageWyoming[, {
+</span></span><span style="display:flex;"><span>  N <span style="color:#f92672">=</span> <span style="color:#a6e22e">sum</span>(n)
+</span></span><span style="display:flex;"><span>  pros <span style="color:#f92672">=</span> <span style="color:#a6e22e">round</span>(n <span style="color:#f92672">/</span> N <span style="color:#f92672">*</span> <span style="color:#ae81ff">100</span>, digits <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">list</span>(agegp <span style="color:#f92672">=</span> agegp,
+</span></span><span style="display:flex;"><span>       n <span style="color:#f92672">=</span> n,
+</span></span><span style="display:flex;"><span>       N <span style="color:#f92672">=</span> N,
+</span></span><span style="display:flex;"><span>       pros <span style="color:#f92672">=</span> pros)}]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>dataW[, location <span style="color:#f92672">:=</span> <span style="color:#e6db74">&#34;Wyoming&#34;</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ageRest <span style="color:#f92672">&lt;-</span> data[location <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#34;Wyoming&#34;</span>, <span style="color:#a6e22e">list</span>(n <span style="color:#f92672">=</span> .N), by <span style="color:#f92672">=</span> .(agegp)]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>dataR <span style="color:#f92672">&lt;-</span> ageRest[, {
+</span></span><span style="display:flex;"><span>  N <span style="color:#f92672">=</span> <span style="color:#a6e22e">sum</span>(n)
+</span></span><span style="display:flex;"><span>  pros <span style="color:#f92672">=</span> <span style="color:#a6e22e">round</span>(n <span style="color:#f92672">/</span> N <span style="color:#f92672">*</span> <span style="color:#ae81ff">100</span>, digits <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">list</span>(agegp <span style="color:#f92672">=</span> agegp,
+</span></span><span style="display:flex;"><span>       n <span style="color:#f92672">=</span> n,
+</span></span><span style="display:flex;"><span>       N <span style="color:#f92672">=</span> N,
+</span></span><span style="display:flex;"><span>       pros <span style="color:#f92672">=</span> pros)}]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>dataR[, location <span style="color:#f92672">:=</span> <span style="color:#e6db74">&#34;National&#34;</span>]
+</span></span></code></pre></div><p>data telah tersedia, bolehlah menyediakan plot yang diinginkan</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#a6e22e">library</span>(<span style="color:#e6db74">&#34;ggplot2&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">ggplot</span>(<span style="color:#66d9ef">NULL</span>, <span style="color:#a6e22e">aes</span>(agegp, pros)) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span> <span style="color:#a6e22e">geom_bar</span>(data <span style="color:#f92672">=</span> dataW,
+</span></span><span style="display:flex;"><span>          <span style="color:#75715e"># color = local di aes utk buat lagend</span>
+</span></span><span style="display:flex;"><span>          mapping <span style="color:#f92672">=</span> <span style="color:#a6e22e">aes</span>(color <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;local&#34;</span>), stat <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;identity&#34;</span>, fill <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;lightblue&#34;</span>) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># point utk national</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">geom_point</span>(data <span style="color:#f92672">=</span> dataR,
+</span></span><span style="display:flex;"><span>             <span style="color:#75715e"># fill eller color kan brukes som dummy for å produsere legend</span>
+</span></span><span style="display:flex;"><span>             mapping <span style="color:#f92672">=</span> <span style="color:#a6e22e">aes</span>(fill <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;National&#34;</span>),
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>             <span style="color:#75715e"># om color brukes som dummy til å lage legend så kan color ikke brukes her</span>
+</span></span><span style="display:flex;"><span>             <span style="color:#75715e"># men spesifiseringen av farge gjøes i scale_color_manual(value = &#34;red&#34;)</span>
+</span></span><span style="display:flex;"><span>             stat <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;identity&#34;</span>, size <span style="color:#f92672">=</span> <span style="color:#ae81ff">7</span>, shape <span style="color:#f92672">=</span> <span style="color:#ae81ff">18</span>, color <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;red&#34;</span>) <span style="color:#f92672">+</span> <span style="color:#75715e">#shape 18 diamon og 19 rund</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># limits definere skale for y-aksen fra 0 til 50</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># breaks gir delingen i skalen dvs. hver 10-ene</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># expand gjør at det ikke er mellomrom mellom figuren og x-aksen</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">scale_y_continuous</span>(limits <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">50</span>), breaks <span style="color:#f92672">=</span> <span style="color:#a6e22e">seq</span>(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">50</span>, <span style="color:#ae81ff">10</span>), expand <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>)) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Title, subtitle, x- og y-label</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">labs</span>(title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Title something&#34;</span>, subtitle <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Subtitle for graph is here&#34;</span>, x <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;x-label&#34;</span>, y <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;y-label&#34;</span>) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># snu figuren</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">coord_flip</span>() <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># warna utk lagend local</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">scale_color_manual</span>(values <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;lightblue&#34;</span>) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># tema spesifikasjoner</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">theme</span>(
+</span></span><span style="display:flex;"><span>    legend.position <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;top&#34;</span>,
+</span></span><span style="display:flex;"><span>    legend.title <span style="color:#f92672">=</span> <span style="color:#a6e22e">element_blank</span>(),
+</span></span><span style="display:flex;"><span>    legend.text <span style="color:#f92672">=</span> <span style="color:#a6e22e">element_text</span>(size <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>),
+</span></span><span style="display:flex;"><span>    legend.key <span style="color:#f92672">=</span> <span style="color:#a6e22e">element_rect</span>(color <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;white&#34;</span>),
+</span></span><span style="display:flex;"><span>    axis.text.y <span style="color:#f92672">=</span> <span style="color:#a6e22e">element_text</span>(color <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;black&#34;</span>, size <span style="color:#f92672">=</span> <span style="color:#ae81ff">9</span>),
+</span></span><span style="display:flex;"><span>    plot.margin <span style="color:#f92672">=</span> <span style="color:#a6e22e">unit</span>(<span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0.5</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>), <span style="color:#e6db74">&#34;cm&#34;</span>),
+</span></span><span style="display:flex;"><span>    panel.background <span style="color:#f92672">=</span> <span style="color:#a6e22e">element_blank</span>(),
+</span></span><span style="display:flex;"><span>    panel.border <span style="color:#f92672">=</span> <span style="color:#a6e22e">element_blank</span>(),
+</span></span><span style="display:flex;"><span>    panel.grid.major.y <span style="color:#f92672">=</span> <span style="color:#a6e22e">element_blank</span>(),
+</span></span><span style="display:flex;"><span>    panel.grid.major.x <span style="color:#f92672">=</span> <span style="color:#a6e22e">element_line</span>(colour <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;grey&#34;</span>, size <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.4</span>, linetype <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>),
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">## panel.grid.minor.x = element_line(colour = &#34;grey&#34;, size = 0.2, linetype = 2),</span>
+</span></span><span style="display:flex;"><span>    axis.ticks.y <span style="color:#f92672">=</span> <span style="color:#a6e22e">element_blank</span>(),
+</span></span><span style="display:flex;"><span>    axis.line.x <span style="color:#f92672">=</span> <span style="color:#a6e22e">element_line</span>(size <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.5</span>),
+</span></span><span style="display:flex;"><span>    axis.title.y <span style="color:#f92672">=</span> <span style="color:#a6e22e">element_text</span>(size <span style="color:#f92672">=</span> <span style="color:#ae81ff">9</span>),
+</span></span><span style="display:flex;"><span>    axis.title.x <span style="color:#f92672">=</span> <span style="color:#a6e22e">element_text</span>(size <span style="color:#f92672">=</span> <span style="color:#ae81ff">9</span>))
+</span></span></code></pre></div><p>Hasilnya seperti ini:</p>
 <p><img src="/images/plot2.png" alt="plot_banding"></p>
 
 

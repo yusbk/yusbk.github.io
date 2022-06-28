@@ -68,7 +68,7 @@ List Cara pertama boleh dibuat dengan mebuat list untuk semua data.table dimana 
 <script defer crossorigin="anonymous" src="/js/theme.js" integrity=""></script>
 
 
-<script defer crossorigin="anonymous" src="/js/instantpage.min.js" integrity=""></script><meta name="generator" content="Hugo 0.69.2" />
+<script defer crossorigin="anonymous" src="/js/instantpage.min.js" integrity=""></script><meta name="generator" content="Hugo 0.100.2" />
   </head>
   <body>
     
@@ -176,36 +176,36 @@ List Cara pertama boleh dibuat dengan mebuat list untuk semua data.table dimana 
   <p>Untuk menambah kolom baru di data.table boleh menggunakan <code>:=</code>. Sekiranya ingin membuat kolom baru secara loop di pelbagai data.table, cara begini boleh dibuat. Cara-cara ini diambil dari <a href="https://stackoverflow.com/questions/37059663/data-table-adding-column-to-several-data-tables-in-loop">StackOverflow</a>.</p>
 <h1 id="list">List</h1>
 <p>Cara pertama boleh dibuat dengan mebuat <em>list</em> untuk semua data.table dimana kolom baru ingin ditambah.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">library</span>(data.table)
-
-my_dts <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">list </span>(
-  centro <span style="color:#f92672">=</span> <span style="color:#a6e22e">data.table</span>(x<span style="color:#f92672">=</span><span style="color:#66d9ef">letters</span>[1<span style="color:#f92672">:</span><span style="color:#ae81ff">5</span>], y <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">5</span>),
-  sur <span style="color:#f92672">=</span> <span style="color:#a6e22e">data.table</span>(x<span style="color:#f92672">=</span><span style="color:#66d9ef">letters</span>[2<span style="color:#f92672">:</span><span style="color:#ae81ff">7</span>], y <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span><span style="color:#f92672">:</span><span style="color:#ae81ff">8</span>),
-  norte <span style="color:#f92672">=</span> <span style="color:#a6e22e">data.table</span>(x<span style="color:#f92672">=</span><span style="color:#66d9ef">letters</span>[2<span style="color:#f92672">:</span><span style="color:#ae81ff">10</span>], y <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span><span style="color:#f92672">:</span><span style="color:#ae81ff">11</span>)
-)
-
-st <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;centro&#34;</span>, <span style="color:#e6db74">&#34;sur&#34;</span>, <span style="color:#e6db74">&#34;norte&#34;</span>)
-<span style="color:#a6e22e">for </span>(i in st) my_dts[[i]][, store <span style="color:#f92672">:=</span> i]
-</code></pre></div><p>Sekiranya rawdata belum disatukan, boleh dilaksanakan seperti begini. Cara ini membaca semua data sebagai <em>csv</em> dan disatukan sebagai list.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">st <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;centro&#34;</span>, <span style="color:#e6db74">&#34;sur&#34;</span>, <span style="color:#e6db74">&#34;norte&#34;</span>)
-
-all_stores <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">do.call</span>(
-  what <span style="color:#f92672">=</span> rbind,
-  args <span style="color:#f92672">=</span> <span style="color:#a6e22e">lapply</span>(
-    X <span style="color:#f92672">=</span> st,
-    FUN <span style="color:#f92672">=</span> <span style="color:#a6e22e">function</span>(storeNM){
-      temp <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">fread</span>(input <span style="color:#f92672">=</span> <span style="color:#a6e22e">paste0</span>(storeNM, <span style="color:#e6db74">&#39;.csv&#39;</span>))
-      temp[, store <span style="color:#f92672">:=</span> storeNM]
-      <span style="color:#a6e22e">return</span>(temp)
-    }
-  )
-)
-</code></pre></div><h1 id="vector">Vector</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#a6e22e">library</span>(data.table)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>my_dts <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">list </span>(
+</span></span><span style="display:flex;"><span>  centro <span style="color:#f92672">=</span> <span style="color:#a6e22e">data.table</span>(x<span style="color:#f92672">=</span><span style="color:#66d9ef">letters</span>[1<span style="color:#f92672">:</span><span style="color:#ae81ff">5</span>], y <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">5</span>),
+</span></span><span style="display:flex;"><span>  sur <span style="color:#f92672">=</span> <span style="color:#a6e22e">data.table</span>(x<span style="color:#f92672">=</span><span style="color:#66d9ef">letters</span>[2<span style="color:#f92672">:</span><span style="color:#ae81ff">7</span>], y <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span><span style="color:#f92672">:</span><span style="color:#ae81ff">8</span>),
+</span></span><span style="display:flex;"><span>  norte <span style="color:#f92672">=</span> <span style="color:#a6e22e">data.table</span>(x<span style="color:#f92672">=</span><span style="color:#66d9ef">letters</span>[2<span style="color:#f92672">:</span><span style="color:#ae81ff">10</span>], y <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span><span style="color:#f92672">:</span><span style="color:#ae81ff">11</span>)
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>st <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;centro&#34;</span>, <span style="color:#e6db74">&#34;sur&#34;</span>, <span style="color:#e6db74">&#34;norte&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">for </span>(i in st) my_dts[[i]][, store <span style="color:#f92672">:=</span> i]
+</span></span></code></pre></div><p>Sekiranya rawdata belum disatukan, boleh dilaksanakan seperti begini. Cara ini membaca semua data sebagai <em>csv</em> dan disatukan sebagai list.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>st <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;centro&#34;</span>, <span style="color:#e6db74">&#34;sur&#34;</span>, <span style="color:#e6db74">&#34;norte&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>all_stores <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">do.call</span>(
+</span></span><span style="display:flex;"><span>  what <span style="color:#f92672">=</span> rbind,
+</span></span><span style="display:flex;"><span>  args <span style="color:#f92672">=</span> <span style="color:#a6e22e">lapply</span>(
+</span></span><span style="display:flex;"><span>    X <span style="color:#f92672">=</span> st,
+</span></span><span style="display:flex;"><span>    FUN <span style="color:#f92672">=</span> <span style="color:#a6e22e">function</span>(storeNM){
+</span></span><span style="display:flex;"><span>      temp <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">fread</span>(input <span style="color:#f92672">=</span> <span style="color:#a6e22e">paste0</span>(storeNM, <span style="color:#e6db74">&#39;.csv&#39;</span>))
+</span></span><span style="display:flex;"><span>      temp[, store <span style="color:#f92672">:=</span> storeNM]
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">return</span>(temp)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  )
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><h1 id="vector">Vector</h1>
 <p>Semua data.table yang disatukan ke vektor. Cara ini menggunakan fungsi <em>assign</em> dan <em>get</em>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">for </span>(i in st){
-  <span style="color:#a6e22e">assign</span>(i, <span style="color:#a6e22e">get</span>(i)[, store <span style="color:#f92672">:=</span> i])
-}
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#a6e22e">for </span>(i in st){
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">assign</span>(i, <span style="color:#a6e22e">get</span>(i)[, store <span style="color:#f92672">:=</span> i])
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
 
 
 
