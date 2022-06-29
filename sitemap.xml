@@ -4,7 +4,47 @@
   
   <url>
     <loc>https://yusbk.github.io/categories/</loc>
-    <lastmod>2022-03-29T00:00:00+02:00</lastmod>
+    <lastmod>2022-06-28T16:01:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yusbk.github.io/tags/doom/</loc>
+    <lastmod>2022-06-28T16:01:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yusbk.github.io/categories/emacs/</loc>
+    <lastmod>2022-06-28T16:01:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yusbk.github.io/2022/06/28/emacs-macros/</loc>
+    <lastmod>2022-06-28T16:01:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yusbk.github.io/tags/macro/</loc>
+    <lastmod>2022-06-28T16:01:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yusbk.github.io/post/</loc>
+    <lastmod>2022-06-28T16:01:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yusbk.github.io/tags/</loc>
+    <lastmod>2022-06-28T16:01:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yusbk.github.io/tags/vim/</loc>
+    <lastmod>2022-06-28T16:01:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yusbk.github.io/</loc>
+    <lastmod>2022-06-28T16:01:00+02:00</lastmod>
   </url>
   
   <url>
@@ -18,22 +58,12 @@
   </url>
   
   <url>
-    <loc>https://yusbk.github.io/post/</loc>
-    <lastmod>2022-03-29T00:00:00+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://yusbk.github.io/categories/r/</loc>
     <lastmod>2022-03-29T00:00:00+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://yusbk.github.io/2022/03/29/subset-data-table/</loc>
-    <lastmod>2022-03-29T00:00:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/</loc>
     <lastmod>2022-03-29T00:00:00+02:00</lastmod>
   </url>
   
@@ -54,11 +84,6 @@
   
   <url>
     <loc>https://yusbk.github.io/categories/git/</loc>
-    <lastmod>2022-02-24T00:00:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/tags/</loc>
     <lastmod>2022-02-24T00:00:00+01:00</lastmod>
   </url>
   
@@ -119,11 +144,6 @@
   
   <url>
     <loc>https://yusbk.github.io/tags/diff/</loc>
-    <lastmod>2021-12-22T00:00:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/categories/emacs/</loc>
     <lastmod>2021-12-22T00:00:00+01:00</lastmod>
   </url>
   
@@ -295,11 +315,6 @@
   <url>
     <loc>https://yusbk.github.io/categories/recipe/</loc>
     <lastmod>2021-04-29T16:38:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yusbk.github.io/tags/doom/</loc>
-    <lastmod>2021-04-27T00:00:00+02:00</lastmod>
   </url>
   
   <url>

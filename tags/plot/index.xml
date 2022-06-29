@@ -14,6 +14,16 @@
 		<atom:link href="/tags/plot/" rel="self" type="application/rss+xml" />
 		
 		<item>
+			<title>Emacs macros</title>
+			<link>https://yusbk.github.io/2022/06/28/emacs-macros/</link>
+			<pubDate>Tue, 28 Jun 2022 16:01:00 +0200</pubDate>
+			<guid>https://yusbk.github.io/2022/06/28/emacs-macros/</guid>
+			<description>Apply macro in Emacs:
+Emacs How to use macros Emacs ways:
+ C-x ( to start recording macro C-x ) to stop recording macro C-x e to execute the last macro defined M-x name-last-kbd-macro to name last defined macro M-x insert-kbd-macro to save named macro (copy result to .</description>
+		</item>
+      	
+		<item>
 			<title>Subset DT</title>
 			<link>https://yusbk.github.io/2022/03/29/subset-data-table/</link>
 			<pubDate>Tue, 29 Mar 2022 00:00:00 +0200</pubDate>
@@ -99,15 +109,6 @@ Smerge Basic workflow:
 			<description>Updated: 2022-04-12
 Several nice blogs and references on the net to read on this stuff. Among those:
  Environments in R How R Searches and Finds Stuff  This discussion from StackOverflow and here explains nicely with example on the difference between parent.</description>
-		</item>
-      	
-		<item>
-			<title>MS Access Shutdown</title>
-			<link>https://yusbk.github.io/2021/11/09/access-shutdown/</link>
-			<pubDate>Tue, 09 Nov 2021 00:00:00 +0100</pubDate>
-			<guid>https://yusbk.github.io/2021/11/09/access-shutdown/</guid>
-			<description>How to shutdown all running Access when you need to do some changes. This is just a summary from Microsoft Docs. The steps are:
-Create empty text file  This file will be the key. Name the file to anything like checkfile.</description>
 		</item>
       	
 	</channel>
