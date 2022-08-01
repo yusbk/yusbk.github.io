@@ -68,7 +68,7 @@ list.of.packages &lt;- c(&#34;ggplot2&#34;,&#34;dplyr&#34;,&#34;sf&#34;,&#34;ggr
 <script defer crossorigin="anonymous" src="/js/theme.js" integrity=""></script>
 
 
-<script defer crossorigin="anonymous" src="/js/instantpage.min.js" integrity=""></script><meta name="generator" content="Hugo 0.69.2" />
+<script defer crossorigin="anonymous" src="/js/instantpage.min.js" integrity=""></script><meta name="generator" content="Hugo 0.101.0" />
   </head>
   <body>
     
@@ -169,20 +169,20 @@ list.of.packages &lt;- c(&#34;ggplot2&#34;,&#34;dplyr&#34;,&#34;sf&#34;,&#34;ggr
     <article class="article" class="blog-post">
       
   <p>Untuk membuat peta menggunakan R boleh memakai pelbagai jenis pakej. Cara yang senang ialah samada cara <code>sp</code> atau <code>sf</code>. Penerangan di sini menggunakan cara <code>sf</code>. Untuk mengikuti cara ini, pakej-pekej di bawah perlu dipasangkan terlebih dahulu.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">list.of.packages <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;ggplot2&#34;</span>,<span style="color:#e6db74">&#34;dplyr&#34;</span>,<span style="color:#e6db74">&#34;sf&#34;</span>,<span style="color:#e6db74">&#34;ggrepel&#34;</span>)
-
-new.packages <span style="color:#f92672">&lt;-</span> list.of.packages[<span style="color:#f92672">!</span>(list.of.packages <span style="color:#f92672">%in%</span> <span style="color:#a6e22e">installed.packages</span>()[,<span style="color:#e6db74">&#34;Package&#34;</span>])]
-<span style="color:#a6e22e">if</span>(<span style="color:#a6e22e">length</span>(new.packages)) <span style="color:#a6e22e">install.packages</span>(new.packages)
-<span style="color:#a6e22e">sapply</span>(list.of.packages, require, character.only <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>)
-
-kart_sf <span style="color:#f92672">=</span> sf<span style="color:#f92672">::</span><span style="color:#a6e22e">st_read</span>(<span style="color:#e6db74">&#34;~/Git-personal/Rujukan-R/norge/NOR_adm1.shp&#34;</span>, stringsAsFactors <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>)
-<span style="color:#a6e22e">class</span>(kart_sf)
-</code></pre></div><p>Sekiranya ada masalah memasang pekej <code>sf</code> di Linux disebabkan masalah di <code>gdal-config</code>, pasangkan <code>libgdal-dev</code> diterminal.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo apt install libgdal-dev
-</code></pre></div><p>kemudian bolehlah pasangkan pakej <code>sf</code> dengan <code>install.packages('sf')</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>list.of.packages <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;ggplot2&#34;</span>,<span style="color:#e6db74">&#34;dplyr&#34;</span>,<span style="color:#e6db74">&#34;sf&#34;</span>,<span style="color:#e6db74">&#34;ggrepel&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>new.packages <span style="color:#f92672">&lt;-</span> list.of.packages[<span style="color:#f92672">!</span>(list.of.packages <span style="color:#f92672">%in%</span> <span style="color:#a6e22e">installed.packages</span>()[,<span style="color:#e6db74">&#34;Package&#34;</span>])]
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">if</span>(<span style="color:#a6e22e">length</span>(new.packages)) <span style="color:#a6e22e">install.packages</span>(new.packages)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">sapply</span>(list.of.packages, require, character.only <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>kart_sf <span style="color:#f92672">=</span> sf<span style="color:#f92672">::</span><span style="color:#a6e22e">st_read</span>(<span style="color:#e6db74">&#34;~/Git-personal/Rujukan-R/norge/NOR_adm1.shp&#34;</span>, stringsAsFactors <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">class</span>(kart_sf)
+</span></span></code></pre></div><p>Sekiranya ada masalah memasang pekej <code>sf</code> di Linux disebabkan masalah di <code>gdal-config</code>, pasangkan <code>libgdal-dev</code> diterminal.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>sudo apt install libgdal-dev
+</span></span></code></pre></div><p>kemudian bolehlah pasangkan pakej <code>sf</code> dengan <code>install.packages('sf')</code>.</p>
 <p>Sekiranya masalah disebabkan oleh <code>libudunits2-0</code> dan <code>libudunits2-dev</code>, pasangkan <code>libudunits2-0</code> dan <code>libudunits2-dev</code> di terminal.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo apt install -y libudunits2-0 libudunits2-dev
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>sudo apt install -y libudunits2-0 libudunits2-dev
+</span></span></code></pre></div>
 
 
 
