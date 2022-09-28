@@ -22,7 +22,7 @@
 />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Connect to MS Access DB"/>
-<meta name="twitter:description" content="This article first published in 02.10.2020.
+<meta name="twitter:description" content="DBI RODBC R6 Class Debug Connection DBI Updated 15.09.2022.
 Before connecting to your Access DBMS via Windows OS, you can check if you have the MS Access driver installed in your machine by running
 ## List everything odbc::odbcListDrivers() ## You will get the results someting like this."/>
 
@@ -69,7 +69,7 @@ Before connecting to your Access DBMS via Windows OS, you can check if you have 
 <script defer crossorigin="anonymous" src="/js/theme.js" integrity=""></script>
 
 
-<script defer crossorigin="anonymous" src="/js/instantpage.min.js" integrity=""></script><meta name="generator" content="Hugo 0.101.0" />
+<script defer crossorigin="anonymous" src="/js/instantpage.min.js" integrity=""></script><meta name="generator" content="Hugo 0.104.1" />
   </head>
   <body>
     
@@ -169,7 +169,16 @@ Before connecting to your Access DBMS via Windows OS, you can check if you have 
   <div class="container" role="main">
     <article class="article" class="blog-post">
       
-  <p><em>This article first published in 02.10.2020.</em></p>
+  <!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<ul>
+<li><a href="#dbi">DBI</a></li>
+<li><a href="#rodbc">RODBC</a></li>
+<li><a href="#r6-class">R6 Class</a></li>
+<li><a href="#debug-connection-dbi">Debug Connection DBI</a></li>
+</ul>
+<!-- raw HTML omitted -->
+<p><em>Updated 15.09.2022.</em></p>
 <p>Before connecting to your Access DBMS via Windows OS, you can check if you have the MS Access driver
 installed in your machine by running</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>  <span style="color:#75715e">## List everything</span>
@@ -284,7 +293,10 @@ to make it works.</p>
 </span></span><span style="display:flex;"><span>                       )
 </span></span><span style="display:flex;"><span>                     )
 </span></span></code></pre></div><p>Here I actively disable <code>class</code> and <code>cloneable</code> for speed which you can read from <a href="https://r6.r-lib.org/articles/Performance.html">R&amp; document</a>.</p>
-
+<h2 id="debug-connection-dbi">Debug Connection DBI</h2>
+<p>Argument <code>debug = TRUE</code> can be used to debug and see the SQL code eg.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>DBI<span style="color:#f92672">::</span><span style="color:#a6e22e">dbConnect</span>(duckdb<span style="color:#f92672">::</span><span style="color:#a6e22e">duckdb</span>(), <span style="color:#a6e22e">file.path</span>(duckFile), debug <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>)
+</span></span></code></pre></div>
 
 
 

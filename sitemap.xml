@@ -3,7 +3,37 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://yusbk.github.io/categories/</loc>
-    <lastmod>2022-06-28T16:01:00+02:00</lastmod>
+    <lastmod>2022-09-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yusbk.github.io/2022/09/28/org-exp-latex/</loc>
+    <lastmod>2022-09-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yusbk.github.io/tags/latex/</loc>
+    <lastmod>2022-09-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yusbk.github.io/categories/orgmode/</loc>
+    <lastmod>2022-09-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yusbk.github.io/post/</loc>
+    <lastmod>2022-09-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yusbk.github.io/tags/</loc>
+    <lastmod>2022-09-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yusbk.github.io/</loc>
+    <lastmod>2022-09-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yusbk.github.io/categories/git/</loc>
+    <lastmod>2022-09-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yusbk.github.io/2022/09/13/git-squash/</loc>
+    <lastmod>2022-09-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yusbk.github.io/tags/merge/</loc>
+    <lastmod>2022-09-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yusbk.github.io/tags/squash/</loc>
+    <lastmod>2022-09-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://yusbk.github.io/tags/doom/</loc>
     <lastmod>2022-06-28T16:01:00+02:00</lastmod>
@@ -17,16 +47,7 @@
     <loc>https://yusbk.github.io/tags/macro/</loc>
     <lastmod>2022-06-28T16:01:00+02:00</lastmod>
   </url><url>
-    <loc>https://yusbk.github.io/post/</loc>
-    <lastmod>2022-06-28T16:01:00+02:00</lastmod>
-  </url><url>
-    <loc>https://yusbk.github.io/tags/</loc>
-    <lastmod>2022-06-28T16:01:00+02:00</lastmod>
-  </url><url>
     <loc>https://yusbk.github.io/tags/vim/</loc>
-    <lastmod>2022-06-28T16:01:00+02:00</lastmod>
-  </url><url>
-    <loc>https://yusbk.github.io/</loc>
     <lastmod>2022-06-28T16:01:00+02:00</lastmod>
   </url><url>
     <loc>https://yusbk.github.io/categories/dt/</loc>
@@ -48,9 +69,6 @@
     <lastmod>2022-02-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://yusbk.github.io/tags/cov/</loc>
-    <lastmod>2022-02-24T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://yusbk.github.io/categories/git/</loc>
     <lastmod>2022-02-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://yusbk.github.io/2022/02/23/git-rujukan-awam/</loc>
@@ -93,12 +111,6 @@
     <lastmod>2021-12-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://yusbk.github.io/tags/link/</loc>
-    <lastmod>2021-12-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://yusbk.github.io/tags/merge/</loc>
-    <lastmod>2021-12-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://yusbk.github.io/categories/orgmode/</loc>
     <lastmod>2021-12-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://yusbk.github.io/tags/reference/</loc>
@@ -209,9 +221,6 @@
     <loc>https://yusbk.github.io/2021/02/17/docker-basic/</loc>
     <lastmod>2021-02-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://yusbk.github.io/2020/12/12/access-db/</loc>
-    <lastmod>2020-12-12T12:49:00+01:00</lastmod>
-  </url><url>
     <loc>https://yusbk.github.io/2020/12/12/ellipsis/</loc>
     <lastmod>2020-12-12T00:00:00+00:00</lastmod>
   </url><url>
@@ -232,6 +241,9 @@
   </url><url>
     <loc>https://yusbk.github.io/2020/10/07/case-when/</loc>
     <lastmod>2020-10-07T22:58:00+02:00</lastmod>
+  </url><url>
+    <loc>https://yusbk.github.io/2020/10/02/access-db/</loc>
+    <lastmod>2020-10-02T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://yusbk.github.io/2020/09/28/git-account/</loc>
     <lastmod>2020-09-28T00:00:00+00:00</lastmod>

@@ -67,7 +67,7 @@
 <script defer crossorigin="anonymous" src="/js/theme.js" integrity=""></script>
 
 
-<script defer crossorigin="anonymous" src="/js/instantpage.min.js" integrity=""></script><meta name="generator" content="Hugo 0.101.0" />
+<script defer crossorigin="anonymous" src="/js/instantpage.min.js" integrity=""></script><meta name="generator" content="Hugo 0.104.1" />
   </head>
   <body>
     
@@ -139,7 +139,7 @@
           
             <span class="meta-post">
   <em class="fa fa-calendar-alt"></em
-  >&nbsp;Jun 28, 2022
+  >&nbsp;Sep 28, 2022
   
 </span>
 
@@ -159,15 +159,16 @@
 
       
         <article class="post-preview">
-  <a href="https://yusbk.github.io/2020/12/12/access-db/">
-    <h2 class="post-title">Connect to MS Access DB</h2>
+  <a href="https://yusbk.github.io/2021/04/20/datatable_tips/">
+    <h2 class="post-title">data.table tips</h2>
   </a>
   <div class="post-entry">
     
-      <p>This article first published in 02.10.2020.
-Before connecting to your Access DBMS via Windows OS, you can check if you have the MS Access driver installed in your machine by running
-## List everything odbc::odbcListDrivers() ## You will get the results someting like this.</p>
-      <a href="https://yusbk.github.io/2020/12/12/access-db/" class="post-read-more"
+      <p>Updated: 2021-09-17
+Some tips for data.table that I came across while googling which might be useful.
+Print To print more rows that default can be done with either:
+options(datatable.print.topn = 70) print(DT, topn = 70) Using options will implement the changes globally.</p>
+      <a href="https://yusbk.github.io/2021/04/20/datatable_tips/" class="post-read-more"
         >Read More</a
       >
     
@@ -176,7 +177,7 @@ Before connecting to your Access DBMS via Windows OS, you can check if you have 
   <div class="postmeta">
     <span class="meta-post">
   <em class="fa fa-calendar-alt"></em
-  >&nbsp;Dec 12, 2020
+  >&nbsp;Apr 20, 2021
   
     &nbsp;&nbsp;&nbsp;<em class="fa fa-folder-open"></em>&nbsp;
     
@@ -188,6 +189,49 @@ Before connecting to your Access DBMS via Windows OS, you can check if you have 
       <a
         href="https://yusbk.github.io/categories/r/"
         >R</a
+      >&nbsp;
+    
+      <a
+        href="https://yusbk.github.io/categories/dt/"
+        >DT</a
+      >&nbsp;
+    
+  
+</span>
+
+  </div>
+</article>
+
+      
+        <article class="post-preview">
+  <a href="https://yusbk.github.io/2021/02/17/docker-basic/">
+    <h2 class="post-title">Docker basic</h2>
+  </a>
+  <div class="post-entry">
+    
+      <p>Use image Create Image Mount directory Important commands:
+docker pull image-name docker run local-name image-name docker ps docker build Use image Some basic commands to start using Docker. Two things are important ie. Docker Image and Docker Container. To fetch RStudio image from Docker Hub run the command:</p>
+      <a href="https://yusbk.github.io/2021/02/17/docker-basic/" class="post-read-more"
+        >Read More</a
+      >
+    
+  </div>
+
+  <div class="postmeta">
+    <span class="meta-post">
+  <em class="fa fa-calendar-alt"></em
+  >&nbsp;Feb 17, 2021
+  
+    &nbsp;&nbsp;&nbsp;<em class="fa fa-folder-open"></em>&nbsp;
+    
+      <a
+        href="https://yusbk.github.io/categories/linux/"
+        >Linux</a
+      >&nbsp;
+    
+      <a
+        href="https://yusbk.github.io/categories/windows/"
+        >Windows</a
       >&nbsp;
     
   
@@ -292,50 +336,6 @@ Normally I created a new branch when I intent to do some changes to the master b
       <a
         href="https://yusbk.github.io/categories/git/"
         >Git</a
-      >&nbsp;
-    
-  
-</span>
-
-  </div>
-</article>
-
-      
-        <article class="post-preview">
-  <a href="https://yusbk.github.io/2020/10/07/case-when/">
-    <h2 class="post-title">Case when</h2>
-  </a>
-  <div class="post-entry">
-    
-      <p>It&rsquo;s often easier to use ifelse to implement conditioning. The fast implementation in data.table of ifelse is fifelse. Other approach to do multiple conditioning is to use data.table::fcase or dplyr::case_when.
-fcase fcase can be used directly
-x &lt;- 1:6 data.table::fcase(x &lt; 3, 1, x &gt;= 4, 2) To implement in a data.</p>
-      <a href="https://yusbk.github.io/2020/10/07/case-when/" class="post-read-more"
-        >Read More</a
-      >
-    
-  </div>
-
-  <div class="postmeta">
-    <span class="meta-post">
-  <em class="fa fa-calendar-alt"></em
-  >&nbsp;Oct 7, 2020
-  
-    &nbsp;&nbsp;&nbsp;<em class="fa fa-folder-open"></em>&nbsp;
-    
-      <a
-        href="https://yusbk.github.io/categories/en/"
-        >en</a
-      >&nbsp;
-    
-      <a
-        href="https://yusbk.github.io/categories/r/"
-        >R</a
-      >&nbsp;
-    
-      <a
-        href="https://yusbk.github.io/categories/dt/"
-        >DT</a
       >&nbsp;
     
   

@@ -5,6 +5,26 @@
         
             {
                 "id": 0,
+                "href": "https://yusbk.github.io/2022/09/28/org-exp-latex/",
+                "title": "Export to LaTeX",
+                "section": "post",
+                "date" : "2022.09.28",
+                "body": "This is what I have done to solve the problem in Windows mainly to be able to run in Emacs with either .org or .tex file.\nPerl To compile using latexmk require perl to be installed in your machine. Check the path with where and ensure it\u0026rsquo;s registered in your PATH.\nwhere.exe perl MikTex Install MikTex or pandoc.\nConfigure Define your org-latex-pdf-process\n(setq org-latex-pdf-process \u0026#39;(\u0026#34;pdflatex -interaction nonstopmode -output-directory %o %f\u0026#34; \u0026#34;bibtex %b\u0026#34; \u0026#34;pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f\u0026#34; \u0026#34;pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f\u0026#34;)) Referencing Read the post on referencing for org-mode. Else it can be done as the following:\nFigure [[fig:solve]] skal referere figuren nedenfor. ;; #+BEGIN_SRC latex :file solve.pdf :packages \u0026#39;((\u0026#34;\u0026#34; \u0026#34;tikz\u0026#34;)) :border 1em :results raw ;; \\usetikzlibrary{arrows, shapes, positioning} ;; \\begin{tikzpicture} ;; \\node [draw, minimum width = 2cm, rounded corners] (kode) {R-koder}; ;; \\node [fill=blue!30, text depth = 1.5cm, ;; minimum width=1.5cm, scale=2, right= of kode] (ereg) {eReg}; ;; \\node [draw, right=2.3cm of kode] (reg) {}; ;; \\path [-\u0026gt;, \u0026gt;=stealth, thick] (kode) edge[bend right] (reg); ;; \\end{tikzpicture} ;; #+END_SRC ;; #+RESULTS: solve-figure ;; #+CAPTION: Resultat løsning ;; #+NAME: fig:solve ;; #+ATTR_LaTeX: :height 5cm :placement [!htb] ;; [[file:solve.pdf]] "
+            }
+    
+        ,
+            {
+                "id": 1,
+                "href": "https://yusbk.github.io/2022/09/13/git-squash/",
+                "title": "Git squash",
+                "section": "post",
+                "date" : "2022.09.13",
+                "body": "Consider your new feature branch is called bugfix. You have done a lot of commits eg. 20 commits to the branch and want to squash all commits to one before merging to main.\nStandard squash The standard way is like this.\ngit checkout bugfix git rebase -i HEAD~20 Alternative 1 You only need to use git add . if there are new files other than the already tracked files.\ngit checkout bugfix git reset --soft master git add . git commit -m \u0026#34;Commit message\u0026#34; git push --force Alternative 2 git reset -i master Then you have to specify what to squash and to pick. Here is the example if bugfix have only 4 commits.\npick fda59df commit 1 squash x536897 commit 2 squash c01a668 commit 3 squash c01a668 commit 4 Then merge to main as normal procedure\ngit checkout main git merge --no-ff bugfix For detail can read here\nAlternative 3 git checkout main git merge --squash bugfix git commit --amend -m \u0026#34;Commit message to ammend to\u0026#34; "
+            }
+    
+        ,
+            {
+                "id": 2,
                 "href": "https://yusbk.github.io/2022/06/28/emacs-macros/",
                 "title": "Emacs macros",
                 "section": "post",
@@ -14,7 +34,7 @@
     
         ,
             {
-                "id": 1,
+                "id": 3,
                 "href": "https://yusbk.github.io/2022/03/29/subset-data-table/",
                 "title": "Subset DT",
                 "section": "post",
@@ -24,17 +44,17 @@
     
         ,
             {
-                "id": 2,
+                "id": 4,
                 "href": "https://yusbk.github.io/2022/02/24/github_actions/",
                 "title": "CI/CD and Code Coverage",
                 "section": "post",
                 "date" : "2022.02.24",
-                "body": "First published date: 2021-06-04\nA simple guide to use CI/CD and Code coverage.\nCI/CD This is a simple process to implement CI/CD using GitHub Actions with usethis package. Basically the steps here is a summary from Dean Attali with slight changes:\nIf you already use Travis and want to change to Github Actions, you have to delete all Travis related files and references. Easier to search with project SPC s p if you use Doom Emacs. Among those will be: .travis.yml link in README.md file in .Rbuildignore file I have multiple git accounts as explained here and usethis will not able to find the correct repo URL. I have to change the origin to Git repo url from git@work:helseprofil/myrepo.git using either terminal or usethis::use_git_remote() functions. You can check your remote origin with git remote -v in the terminal just to check where the repos origin is. # with R usethis package usethis::use_git_remote(\u0026#34;origin\u0026#34;, url = \u0026#34;https://github.com/username/reponame.git\u0026#34;, overwrite = TRUE) # from terminal git remote add origin https://github.com/username/reponame Get the CI url with: usethis::use_github_action_check_standard() Paste the URL to your README file. The URL is allready copy to your clipboard when running step 3. You can edit R-CMD-check.yml file in folder .github/workflow to suit your need. Covr For Code coverage we will use both covr and usethis packages. So don\u0026rsquo;t forget to install them first! You can also read general guide from this blog. This short guide below is especially relevant if you are using Github Action:\nWhen your package are loaded with devtools::load_all(), then run usethis::use_coverage() to add the batch to your README.Rmd file.\nRun usethis::use_github_action(\u0026quot;test-coverage\u0026quot;) to add file test-coverage.yaml in folder ./github/workflow.\nIf you use a private repos, you need to add your token to codecov.io by running this code:\ncovr::codecov(token = \u0026#34;${{secret.CODECOV_TOKEN}}\u0026#34;) To check, run covr::report(). If you get error then you should run in a new session without loading your package. Basically this error happens only to Windows OS as discussed here by Jim Hester.\n# Run R in your package folder without running devtools::load_all() pkg \u0026lt;- covr::package_coverage(path = getwd()) covr::report(pkg) "
+                "body": "First published date: 2021-06-04\nA simple guide to use CI/CD and Code coverage.\nCI/CD This is a simple process to implement CI/CD using GitHub Actions with usethis package. Basically the steps here is a summary from Dean Attali with slight changes:\nIf you already use Travis and want to change to Github Actions, you have to delete all Travis related files and references. Easier to search with project SPC s p if you use Doom Emacs. Among those will be: .travis.yml link in README.md file in .Rbuildignore file I have multiple git accounts as explained here and usethis will not able to find the correct repo URL. I have to change the origin to Git repo url from git@work:helseprofil/myrepo.git using either terminal or usethis::use_git_remote() functions. You can check your remote origin with git remote -v in the terminal just to check where the repos origin is. # with R usethis package usethis::use_git_remote(\u0026#34;origin\u0026#34;, url = \u0026#34;https://github.com/username/reponame.git\u0026#34;, overwrite = TRUE) # from terminal git remote add origin https://github.com/username/reponame Get the CI url with: usethis::use_github_action_check_standard() Paste the URL to your README file. The URL is allready copy to your clipboard when running step 3. You can edit R-CMD-check.yml file in folder .github/workflow to suit your need. Covr For Code coverage we will use both covr and usethis packages. So don\u0026rsquo;t forget to install them first! You can also read general guide from this blog. This short guide below is especially relevant if you are using Github Action:\nWhen your package are loaded with devtools::load_all(), then run usethis::use_coverage() to add the batch to your README.Rmd file. Run usethis::use_github_action(\u0026quot;test-coverage\u0026quot;) to add file test-coverage.yaml in folder ./github/workflow. If you use a private repos, you need to add your token to codecov.io by running this code: covr::codecov(token = \u0026#34;${{secret.CODECOV_TOKEN}}\u0026#34;) To check, run covr::report(). If you get error then you should run in a new session without loading your package. Basically this error happens only to Windows OS as discussed here by Jim Hester. # Run R in your package folder without running devtools::load_all() pkg \u0026lt;- covr::package_coverage(path = getwd()) covr::report(pkg) "
             }
     
         ,
             {
-                "id": 3,
+                "id": 5,
                 "href": "https://yusbk.github.io/2022/02/23/git-rujukan-awam/",
                 "title": "Rujukan Awam Git dan Github",
                 "section": "post",
@@ -44,7 +64,7 @@
     
         ,
             {
-                "id": 4,
+                "id": 6,
                 "href": "https://yusbk.github.io/2022/02/10/mount-drive/",
                 "title": "Mount drive",
                 "section": "post",
@@ -54,7 +74,7 @@
     
         ,
             {
-                "id": 5,
+                "id": 7,
                 "href": "https://yusbk.github.io/2022/01/25/good-to-know/",
                 "title": "Good to know",
                 "section": "post",
@@ -64,7 +84,7 @@
     
         ,
             {
-                "id": 6,
+                "id": 8,
                 "href": "https://yusbk.github.io/2022/01/04/yesno-question/",
                 "title": "YesNo question",
                 "section": "post",
@@ -74,7 +94,7 @@
     
         ,
             {
-                "id": 7,
+                "id": 9,
                 "href": "https://yusbk.github.io/2021/12/22/org-cross-ref/",
                 "title": "Cross-reference",
                 "section": "post",
@@ -84,7 +104,7 @@
     
         ,
             {
-                "id": 8,
+                "id": 10,
                 "href": "https://yusbk.github.io/2021/12/22/magit-ediff/",
                 "title": "Smerge, ediff and diff",
                 "section": "post",
@@ -94,7 +114,7 @@
     
         ,
             {
-                "id": 9,
+                "id": 11,
                 "href": "https://yusbk.github.io/2021/12/08/r-environment/",
                 "title": "Environment",
                 "section": "post",
@@ -104,7 +124,7 @@
     
         ,
             {
-                "id": 10,
+                "id": 12,
                 "href": "https://yusbk.github.io/2021/11/09/access-shutdown/",
                 "title": "MS Access Shutdown",
                 "section": "post",
@@ -114,7 +134,7 @@
     
         ,
             {
-                "id": 11,
+                "id": 13,
                 "href": "https://yusbk.github.io/2021/09/30/git-merge-selected-file/",
                 "title": "Merge Selected File",
                 "section": "post",
@@ -124,7 +144,7 @@
     
         ,
             {
-                "id": 12,
+                "id": 14,
                 "href": "https://yusbk.github.io/2021/09/17/dt-special-symbol/",
                 "title": "data.table special symbol",
                 "section": "post",
@@ -134,7 +154,7 @@
     
         ,
             {
-                "id": 13,
+                "id": 15,
                 "href": "https://yusbk.github.io/2021/09/17/names-att/",
                 "title": "names attribute",
                 "section": "post",
@@ -144,7 +164,7 @@
     
         ,
             {
-                "id": 14,
+                "id": 16,
                 "href": "https://yusbk.github.io/2021/09/06/git-ssh/",
                 "title": "SSH-key with Git on Windows",
                 "section": "post",
@@ -154,7 +174,7 @@
     
         ,
             {
-                "id": 15,
+                "id": 17,
                 "href": "https://yusbk.github.io/2021/09/06/git-rebase/",
                 "title": "Git Rebase or Reset",
                 "section": "post",
@@ -164,7 +184,7 @@
     
         ,
             {
-                "id": 16,
+                "id": 18,
                 "href": "https://yusbk.github.io/2021/09/03/data-attributes/",
                 "title": "Clean attributes",
                 "section": "post",
@@ -174,7 +194,7 @@
     
         ,
             {
-                "id": 17,
+                "id": 19,
                 "href": "https://yusbk.github.io/2021/08/20/azure-server/",
                 "title": "Connect to Azure with ssh",
                 "section": "post",
@@ -184,7 +204,7 @@
     
         ,
             {
-                "id": 18,
+                "id": 20,
                 "href": "https://yusbk.github.io/2021/08/17/access-split/",
                 "title": "MS Access split",
                 "section": "post",
@@ -194,7 +214,7 @@
     
         ,
             {
-                "id": 19,
+                "id": 21,
                 "href": "https://yusbk.github.io/2021/05/06/ess-tips/",
                 "title": "ESS tips",
                 "section": "post",
@@ -204,7 +224,7 @@
     
         ,
             {
-                "id": 20,
+                "id": 22,
                 "href": "https://yusbk.github.io/2021/05/03/package-r/",
                 "title": "Pasang pakej di R",
                 "section": "post",
@@ -214,7 +234,7 @@
     
         ,
             {
-                "id": 21,
+                "id": 23,
                 "href": "https://yusbk.github.io/2021/04/29/biskut-italy/",
                 "title": "Biskut Italy",
                 "section": "post",
@@ -224,7 +244,7 @@
     
         ,
             {
-                "id": 22,
+                "id": 24,
                 "href": "https://yusbk.github.io/2021/04/27/doom-emacs-tips/",
                 "title": "Doom tips",
                 "section": "post",
@@ -234,7 +254,7 @@
     
         ,
             {
-                "id": 23,
+                "id": 25,
                 "href": "https://yusbk.github.io/2021/04/20/datatable_tips/",
                 "title": "data.table tips",
                 "section": "post",
@@ -244,7 +264,7 @@
     
         ,
             {
-                "id": 24,
+                "id": 26,
                 "href": "https://yusbk.github.io/2021/02/17/docker-basic/",
                 "title": "Docker basic",
                 "section": "post",
@@ -254,17 +274,7 @@
     
         ,
             {
-                "id": 25,
-                "href": "https://yusbk.github.io/2020/12/12/access-db/",
-                "title": "Connect to MS Access DB",
-                "section": "post",
-                "date" : "2020.12.12",
-                "body": "This article first published in 02.10.2020.\nBefore connecting to your Access DBMS via Windows OS, you can check if you have the MS Access driver installed in your machine by running\n## List everything odbc::odbcListDrivers() ## You will get the results someting like this.. ## ... truncated 26 Microsoft Access Driver (*.mdb, *.accdb) FileUsage 27 Microsoft Access Driver (*.mdb, *.accdb) FileExtns 28 Microsoft Access Driver (*.mdb, *.accdb) SQLLevel 29 Microsoft Excel Driver (*.xls, *.xlsx, *.xlsm, *.xlsb) UsageCount 30 Microsoft Excel Driver (*.xls, *.xlsx, *.xlsm, *.xlsb) APILevel 31 Microsoft Excel Driver (*.xls, *.xlsx, *.xlsm, *.xlsb) ConnectFunctions ## List only the driver sort(unique(odbcListDrivers()[[1]])) [1] \u0026#34;Microsoft Access dBASE Driver (*.dbf, *.ndx, *.mdx)\u0026#34; [2] \u0026#34;Microsoft Access Driver (*.mdb, *.accdb)\u0026#34; [3] \u0026#34;Microsoft Access Text Driver (*.txt, *.csv)\u0026#34; [4] \u0026#34;Microsoft Excel Driver (*.xls, *.xlsx, *.xlsm, *.xlsb)\u0026#34; [5] \u0026#34;ODBC Driver 13 for SQL Server\u0026#34; [6] \u0026#34;SQL Server\u0026#34; [7] \u0026#34;SQL Server Native Client 11.0\u0026#34; If you don\u0026rsquo;t get similar results then you have to set it up with this instruction. If you have trouble setting up Data Source Name (DSN) then you could try accessing the odbc driver by going to control panel -\u0026gt; administrative tools -\u0026gt; select data sources(ODBC) -\u0026gt; right click the file -\u0026gt; go to properties -\u0026gt; in the shortcut tab -\u0026gt; change the path from %windir%System32odbcad32.exe to %windir%SysWOW64odbcad32.exe. The reference is from here.\nSeveral packages can be used to access your data in your DBMS. I have used RODBC and DBI. Here is some examples how I have used them to connect to MS Access DBMS.\nDBI You need both DBI and odbc packages. Basically odbc is the connecting bridge from your R codes to Access file and DBI is the guy who do the actual work. I have to use a complete .connection_string to make it works.\npkg \u0026lt;- c(\u0026#34;odbc\u0026#34;, \u0026#34;DBI\u0026#34;, \u0026#34;glue\u0026#34;) sapply(pkg, require, character.only = TRUE) db_con \u0026lt;- \u0026#34;Driver={Microsoft Access Driver (*.mdb, *.accdb)};DBQ=\u0026#34; MDBPATH \u0026lt;- \u0026#34;C:\\\\enc\\\\DBtest\\\\STYRING\\\\KHELSA_dev.accdb\u0026#34; cs \u0026lt;- paste0(db_con, MDBPATH) con \u0026lt;- dbConnect(odbc::odbc(), .connection_string = cs) tblCols \u0026lt;- c(\u0026#34;FILID\u0026#34;,\u0026#34;FILNAVN\u0026#34;, \u0026#34;FORMAT\u0026#34;) orgTb \u0026lt;- \u0026#34;ORIGINALFILER\u0026#34; sqq \u0026lt;- glue::glue_sql(\u0026#34;SELECT TOP 5 {`tblCols`*} FROM {`orgTb`}\u0026#34;, .con = DBI::ANSI()) ## for interactive use dbGetquery DBI::dbGetQuery(con, sqq) ## dbSendQuery should use dbFetch and dbClearResult rq \u0026lt;- DBI::dbSendQuery(con, ) DBI::dbFetch(rq) DBI::dbClearResult(rq) DBI::dbDisconnect(con) RODBC This is how I use this package.\nlibrary(RODBC) ## Set up driver info and database path DRIVERINFO \u0026lt;- \u0026#34;Driver={Microsoft Access Driver (*.mdb, *.accdb)};DBQ=\u0026#34; ## accdb file MDBPATH \u0026lt;- \u0026#34;C:\\\\enc\\\\DBtest\\\\STYRING\\\\KHELSA_dev2.accdb\u0026#34; PATH \u0026lt;- paste0(DRIVERINFO, MDBPATH) ## Establish connection channel \u0026lt;- RODBC::odbcDriverConnect(PATH) ## Load data into R dataframe RODBC::sqlQuery(channel, \u0026#34;SELECT TOP 5 * FROM KH_DELER\u0026#34;) RODBC::sqlFetch(channel, \u0026#34;KH_DELER\u0026#34;, max = 5) ## Close and remove channel close(channel) rm(channel) R6 Class To implement R6 Class with connection to database could be basically done as follows:\nlibrary(R6) HelseProfil \u0026lt;- R6::R6Class( classname = \u0026#34;HelseProfil\u0026#34;, class = FALSE, cloneable = FALSE, public = list( dbname = NULL, dbconn = NULL, initialize = function(dbname = NULL){ if (is.null(dbname)) return(message(\u0026#34;\u0026gt;\u0026gt;\u0026gt; DB name is missing!\u0026#34;)) else { self$dbname \u0026lt;- dbname } }, db_connect = function(){ stopifnot(!is.null(self$dbname)) cs \u0026lt;- paste0(private$..drv, self$dbname) self$dbconn \u0026lt;- DBI::dbConnect(odbc::odbc(), .connection_string = cs, encoding = \u0026#34;latin1\u0026#34;) }, db_close = function(){ DBI::dbDisconnect(self$dbconn) } ), private = list( ..drv = \u0026#34;Driver={Microsoft Access Driver (*.mdb, *.accdb)};DBQ=\u0026#34;, finalize = function(){ DBI::dbDisconnect(self$dbconn) } ) ) Here I actively disable class and cloneable for speed which you can read from R\u0026amp; document.\n"
-            }
-    
-        ,
-            {
-                "id": 26,
+                "id": 27,
                 "href": "https://yusbk.github.io/2020/12/12/ellipsis/",
                 "title": "Ellipsis …",
                 "section": "post",
@@ -274,7 +284,7 @@
     
         ,
             {
-                "id": 27,
+                "id": 28,
                 "href": "https://yusbk.github.io/2020/10/14/git-upstream/",
                 "title": "Git Upstream",
                 "section": "post",
@@ -284,7 +294,7 @@
     
         ,
             {
-                "id": 28,
+                "id": 29,
                 "href": "https://yusbk.github.io/2020/10/14/git-worktree/",
                 "title": "Git Worktree",
                 "section": "post",
@@ -294,7 +304,7 @@
     
         ,
             {
-                "id": 29,
+                "id": 30,
                 "href": "https://yusbk.github.io/2020/10/07/case-when/",
                 "title": "Case when",
                 "section": "post",
@@ -304,7 +314,17 @@
     
         ,
             {
-                "id": 30,
+                "id": 31,
+                "href": "https://yusbk.github.io/2020/10/02/access-db/",
+                "title": "Connect to MS Access DB",
+                "section": "post",
+                "date" : "2020.10.02",
+                "body": " DBI RODBC R6 Class Debug DBI Connection Updated 15.09.2022\nBefore connecting to your Access DBMS via Windows OS, you can check if you have the MS Access driver installed in your machine by running\n## List everything odbc::odbcListDrivers() ## You will get the results someting like this.. ## ... truncated 26 Microsoft Access Driver (*.mdb, *.accdb) FileUsage 27 Microsoft Access Driver (*.mdb, *.accdb) FileExtns 28 Microsoft Access Driver (*.mdb, *.accdb) SQLLevel 29 Microsoft Excel Driver (*.xls, *.xlsx, *.xlsm, *.xlsb) UsageCount 30 Microsoft Excel Driver (*.xls, *.xlsx, *.xlsm, *.xlsb) APILevel 31 Microsoft Excel Driver (*.xls, *.xlsx, *.xlsm, *.xlsb) ConnectFunctions ## List only the driver sort(unique(odbcListDrivers()[[1]])) [1] \u0026#34;Microsoft Access dBASE Driver (*.dbf, *.ndx, *.mdx)\u0026#34; [2] \u0026#34;Microsoft Access Driver (*.mdb, *.accdb)\u0026#34; [3] \u0026#34;Microsoft Access Text Driver (*.txt, *.csv)\u0026#34; [4] \u0026#34;Microsoft Excel Driver (*.xls, *.xlsx, *.xlsm, *.xlsb)\u0026#34; [5] \u0026#34;ODBC Driver 13 for SQL Server\u0026#34; [6] \u0026#34;SQL Server\u0026#34; [7] \u0026#34;SQL Server Native Client 11.0\u0026#34; If you don\u0026rsquo;t get similar results then you have to set it up with this instruction. If you have trouble setting up Data Source Name (DSN) then you could try accessing the odbc driver by going to control panel -\u0026gt; administrative tools -\u0026gt; select data sources(ODBC) -\u0026gt; right click the file -\u0026gt; go to properties -\u0026gt; in the shortcut tab -\u0026gt; change the path from %windir%System32odbcad32.exe to %windir%SysWOW64odbcad32.exe. The reference is from here.\nSeveral packages can be used to access your data in your DBMS. I have used RODBC and DBI. Here is some examples how I have used them to connect to MS Access DBMS.\nDBI You need both DBI and odbc packages. Basically odbc is the connecting bridge from your R codes to Access file and DBI is the guy who do the actual work. I have to use a complete .connection_string to make it works.\npkg \u0026lt;- c(\u0026#34;odbc\u0026#34;, \u0026#34;DBI\u0026#34;, \u0026#34;glue\u0026#34;) sapply(pkg, require, character.only = TRUE) db_con \u0026lt;- \u0026#34;Driver={Microsoft Access Driver (*.mdb, *.accdb)};DBQ=\u0026#34; MDBPATH \u0026lt;- \u0026#34;C:\\\\enc\\\\DBtest\\\\STYRING\\\\KHELSA_dev.accdb\u0026#34; cs \u0026lt;- paste0(db_con, MDBPATH) con \u0026lt;- dbConnect(odbc::odbc(), .connection_string = cs) tblCols \u0026lt;- c(\u0026#34;FILID\u0026#34;,\u0026#34;FILNAVN\u0026#34;, \u0026#34;FORMAT\u0026#34;) orgTb \u0026lt;- \u0026#34;ORIGINALFILER\u0026#34; sqq \u0026lt;- glue::glue_sql(\u0026#34;SELECT TOP 5 {`tblCols`*} FROM {`orgTb`}\u0026#34;, .con = DBI::ANSI()) ## for interactive use dbGetquery DBI::dbGetQuery(con, sqq) ## dbSendQuery should use dbFetch and dbClearResult rq \u0026lt;- DBI::dbSendQuery(con, ) DBI::dbFetch(rq) DBI::dbClearResult(rq) DBI::dbDisconnect(con) RODBC This is how I use this package.\nlibrary(RODBC) ## Set up driver info and database path DRIVERINFO \u0026lt;- \u0026#34;Driver={Microsoft Access Driver (*.mdb, *.accdb)};DBQ=\u0026#34; ## accdb file MDBPATH \u0026lt;- \u0026#34;C:\\\\enc\\\\DBtest\\\\STYRING\\\\KHELSA_dev2.accdb\u0026#34; PATH \u0026lt;- paste0(DRIVERINFO, MDBPATH) ## Establish connection channel \u0026lt;- RODBC::odbcDriverConnect(PATH) ## Load data into R dataframe RODBC::sqlQuery(channel, \u0026#34;SELECT TOP 5 * FROM KH_DELER\u0026#34;) RODBC::sqlFetch(channel, \u0026#34;KH_DELER\u0026#34;, max = 5) ## Close and remove channel close(channel) rm(channel) R6 Class To implement R6 Class with connection to database could be basically done as follows:\nlibrary(R6) HelseProfil \u0026lt;- R6::R6Class( classname = \u0026#34;HelseProfil\u0026#34;, class = FALSE, cloneable = FALSE, public = list( dbname = NULL, dbconn = NULL, initialize = function(dbname = NULL){ if (is.null(dbname)) return(message(\u0026#34;\u0026gt;\u0026gt;\u0026gt; DB name is missing!\u0026#34;)) else { self$dbname \u0026lt;- dbname } }, db_connect = function(){ stopifnot(!is.null(self$dbname)) cs \u0026lt;- paste0(private$..drv, self$dbname) self$dbconn \u0026lt;- DBI::dbConnect(odbc::odbc(), .connection_string = cs, encoding = \u0026#34;latin1\u0026#34;) }, db_close = function(){ DBI::dbDisconnect(self$dbconn) } ), private = list( ..drv = \u0026#34;Driver={Microsoft Access Driver (*.mdb, *.accdb)};DBQ=\u0026#34;, finalize = function(){ DBI::dbDisconnect(self$dbconn) } ) ) Here I actively disable class and cloneable for speed which you can read from R\u0026amp; document.\nDebug DBI Connection Argument debug = TRUE can be used to debug and see the SQL code eg.\nDBI::dbConnect(duckdb::duckdb(), file.path(duckFile), debug = TRUE) "
+            }
+    
+        ,
+            {
+                "id": 32,
                 "href": "https://yusbk.github.io/2020/09/28/git-account/",
                 "title": "Git Multiple account",
                 "section": "post",
@@ -314,7 +334,7 @@
     
         ,
             {
-                "id": 31,
+                "id": 33,
                 "href": "https://yusbk.github.io/2020/09/27/git-submodule/",
                 "title": "Git Submodule",
                 "section": "post",
@@ -324,7 +344,7 @@
     
         ,
             {
-                "id": 32,
+                "id": 34,
                 "href": "https://yusbk.github.io/2020/06/15/basic-drake/",
                 "title": "Basic use of drake",
                 "section": "post",
@@ -334,7 +354,7 @@
     
         ,
             {
-                "id": 33,
+                "id": 35,
                 "href": "https://yusbk.github.io/2020/06/14/git-clone/",
                 "title": "Git Clone",
                 "section": "post",
@@ -344,7 +364,7 @@
     
         ,
             {
-                "id": 34,
+                "id": 36,
                 "href": "https://yusbk.github.io/2020/02/09/look-up-table/",
                 "title": "Pemakaian lookup table",
                 "section": "post",
@@ -354,7 +374,7 @@
     
         ,
             {
-                "id": 35,
+                "id": 37,
                 "href": "https://yusbk.github.io/2019/08/21/row-delete/",
                 "title": "Padamkan barisan (row)",
                 "section": "post",
@@ -364,7 +384,7 @@
     
         ,
             {
-                "id": 36,
+                "id": 38,
                 "href": "https://yusbk.github.io/2019/08/01/static-encrypt/",
                 "title": "Static encrypting HTML",
                 "section": "post",
@@ -374,7 +394,7 @@
     
         ,
             {
-                "id": 37,
+                "id": 39,
                 "href": "https://yusbk.github.io/2019/07/31/loop-set/",
                 "title": "Loop atau set di data.table",
                 "section": "post",
@@ -384,7 +404,7 @@
     
         ,
             {
-                "id": 38,
+                "id": 40,
                 "href": "https://yusbk.github.io/2019/07/30/geom-line/",
                 "title": "Tips untuk guna geom_line",
                 "section": "post",
@@ -394,7 +414,7 @@
     
         ,
             {
-                "id": 39,
+                "id": 41,
                 "href": "https://yusbk.github.io/2019/07/24/aliran-kerja/",
                 "title": "Aliran kerja buat kod R",
                 "section": "post",
@@ -404,7 +424,7 @@
     
         ,
             {
-                "id": 40,
+                "id": 42,
                 "href": "https://yusbk.github.io/2019/07/24/ifelse/",
                 "title": "Pengunaan ifelse",
                 "section": "post",
@@ -414,7 +434,7 @@
     
         ,
             {
-                "id": 41,
+                "id": 43,
                 "href": "https://yusbk.github.io/2019/06/24/vector-object/",
                 "title": "Dapatkan objekt sebagai vektor",
                 "section": "post",
@@ -424,7 +444,7 @@
     
         ,
             {
-                "id": 42,
+                "id": 44,
                 "href": "https://yusbk.github.io/2019/02/25/peta-sf/",
                 "title": "Buat peta cara sf",
                 "section": "post",
@@ -434,7 +454,7 @@
     
         ,
             {
-                "id": 43,
+                "id": 45,
                 "href": "https://yusbk.github.io/2019/01/20/tetapkan-path/",
                 "title": "Tetapkan PATH",
                 "section": "post",
@@ -444,7 +464,7 @@
     
         ,
             {
-                "id": 44,
+                "id": 46,
                 "href": "https://yusbk.github.io/2018/10/15/nvim-termux/",
                 "title": "Pasang R di HP",
                 "section": "post",
@@ -454,7 +474,7 @@
     
         ,
             {
-                "id": 45,
+                "id": 47,
                 "href": "https://yusbk.github.io/2018/08/16/duplikasi/",
                 "title": "Duplikasi data atau unik",
                 "section": "post",
@@ -464,7 +484,7 @@
     
         ,
             {
-                "id": 46,
+                "id": 48,
                 "href": "https://yusbk.github.io/2018/07/25/encrypting-file/",
                 "title": "Encrypting guna EncFS",
                 "section": "post",
@@ -474,7 +494,7 @@
     
         ,
             {
-                "id": 47,
+                "id": 49,
                 "href": "https://yusbk.github.io/2018/07/02/basic-shiny/",
                 "title": "Cara deloy Shiny",
                 "section": "post",
@@ -484,7 +504,7 @@
     
         ,
             {
-                "id": 48,
+                "id": 50,
                 "href": "https://yusbk.github.io/2018/06/24/tambah-kolom/",
                 "title": "Tambah kolom pelbagai data.table",
                 "section": "post",
@@ -494,7 +514,7 @@
     
         ,
             {
-                "id": 49,
+                "id": 51,
                 "href": "https://yusbk.github.io/2018/02/21/grid/",
                 "title": "Pemakaian pekej Grid",
                 "section": "post",
@@ -504,7 +524,7 @@
     
         ,
             {
-                "id": 50,
+                "id": 52,
                 "href": "https://yusbk.github.io/2018/02/05/plot-table/",
                 "title": "Plot dan table",
                 "section": "post",
@@ -514,7 +534,7 @@
     
         ,
             {
-                "id": 51,
+                "id": 53,
                 "href": "https://yusbk.github.io/2018/01/28/legend-plot-banding/",
                 "title": "Legend untuk plot perbandingan",
                 "section": "post",
@@ -524,7 +544,7 @@
     
         ,
             {
-                "id": 52,
+                "id": 54,
                 "href": "https://yusbk.github.io/2018/01/22/tambah-jumlah/",
                 "title": "Tambah jumlah keseluruhan",
                 "section": "post",
@@ -534,7 +554,7 @@
     
         ,
             {
-                "id": 53,
+                "id": 55,
                 "href": "https://yusbk.github.io/2018/01/04/merge-join/",
                 "title": "Merge atau join",
                 "section": "post",
@@ -544,7 +564,7 @@
     
         ,
             {
-                "id": 54,
+                "id": 56,
                 "href": "https://yusbk.github.io/2018/01/02/recode/",
                 "title": "Recode atau compute data",
                 "section": "post",
@@ -554,7 +574,7 @@
     
         ,
             {
-                "id": 55,
+                "id": 57,
                 "href": "https://yusbk.github.io/2017/12/22/col-and-row/",
                 "title": "Rownames atau colnames",
                 "section": "post",
@@ -564,7 +584,7 @@
     
         ,
             {
-                "id": 56,
+                "id": 58,
                 "href": "https://yusbk.github.io/2017/11/09/pkg-rreg/",
                 "title": "R pakej `rreg`",
                 "section": "post",
@@ -574,7 +594,7 @@
     
         ,
             {
-                "id": 57,
+                "id": 59,
                 "href": "https://yusbk.github.io/2017/10/23/menamakan-level-di-faktor/",
                 "title": "Menamakan level di faktor",
                 "section": "post",
@@ -584,7 +604,7 @@
     
         ,
             {
-                "id": 58,
+                "id": 60,
                 "href": "https://yusbk.github.io/2017/10/11/susun-factor/",
                 "title": "Susun factor",
                 "section": "post",
@@ -594,7 +614,7 @@
     
         ,
             {
-                "id": 59,
+                "id": 61,
                 "href": "https://yusbk.github.io/2017/09/13/locale/",
                 "title": "Masalah locale",
                 "section": "post",
@@ -604,7 +624,7 @@
     
         ,
             {
-                "id": 60,
+                "id": 62,
                 "href": "https://yusbk.github.io/2017/09/10/hugo-blog-in-org-subtree-export/",
                 "title": "Writing Hugo blog in Org",
                 "section": "post",
@@ -614,7 +634,7 @@
     
         ,
             {
-                "id": 61,
+                "id": 63,
                 "href": "https://yusbk.github.io/2017/08/31/test-figure/",
                 "title": "Test figure",
                 "section": "post",
@@ -624,7 +644,7 @@
     
         ,
             {
-                "id": 62,
+                "id": 64,
                 "href": "https://yusbk.github.io/2017/07/17/kolom-index/",
                 "title": "Pilih kolom cara indeks atau nama kolom",
                 "section": "post",
@@ -634,7 +654,7 @@
     
         ,
             {
-                "id": 63,
+                "id": 65,
                 "href": "https://yusbk.github.io/1/01/01/blog-harbor/",
                 "title": "",
                 "section": "post",
@@ -644,7 +664,7 @@
     
         ,
             {
-                "id": 64,
+                "id": 66,
                 "href": "https://yusbk.github.io/about/",
                 "title": "About",
                 "section": "page",

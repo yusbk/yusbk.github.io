@@ -14,6 +14,24 @@
 		<atom:link href="/tags/row/" rel="self" type="application/rss+xml" />
 		
 		<item>
+			<title>Export to LaTeX</title>
+			<link>https://yusbk.github.io/2022/09/28/org-exp-latex/</link>
+			<pubDate>Wed, 28 Sep 2022 00:00:00 +0000</pubDate>
+			<guid>https://yusbk.github.io/2022/09/28/org-exp-latex/</guid>
+			<description>This is what I have done to solve the problem in Windows mainly to be able to run in Emacs with either .org or .tex file.
+Perl To compile using latexmk require perl to be installed in your machine. Check the path with where and ensure it&amp;rsquo;s registered in your PATH.</description>
+		</item>
+      	
+		<item>
+			<title>Git squash</title>
+			<link>https://yusbk.github.io/2022/09/13/git-squash/</link>
+			<pubDate>Tue, 13 Sep 2022 00:00:00 +0000</pubDate>
+			<guid>https://yusbk.github.io/2022/09/13/git-squash/</guid>
+			<description>Consider your new feature branch is called bugfix. You have done a lot of commits eg. 20 commits to the branch and want to squash all commits to one before merging to main.
+Standard squash The standard way is like this.</description>
+		</item>
+      	
+		<item>
 			<title>Emacs macros</title>
 			<link>https://yusbk.github.io/2022/06/28/emacs-macros/</link>
 			<pubDate>Tue, 28 Jun 2022 16:01:00 +0200</pubDate>
@@ -89,27 +107,6 @@ cp &amp;lt;- as.integer(readline(prompt = &amp;#34;Vil du kopiere filen?</descri
 			<description>Reference to this is here.
 Section link The easierst is to use CUSTOM_ID as the example below and refer to it with text [[#sec:one][Section 1]] or reference with number only [[#sec:one]].
 * Section One :PROPERTIES: :CUSTOM_ID: sec:one :END: The link with text will be &#39;.</description>
-		</item>
-      	
-		<item>
-			<title>Smerge, ediff and diff</title>
-			<link>https://yusbk.github.io/2021/12/22/magit-ediff/</link>
-			<pubDate>Wed, 22 Dec 2021 00:00:00 +0000</pubDate>
-			<guid>https://yusbk.github.io/2021/12/22/magit-ediff/</guid>
-			<description>First published: 2021-04-30
-For enditing conflict in git, use smerge or ediff.
-Smerge Basic workflow:
-Open magit status with SPC g g in Doom Identify the mark with Unmerged under Unstage list Go to the file and press Enter to open the file The base command for Smerge is C-c ^ You will see the conflict and selecting the upper with C-c ^ u and lower with C-c ^ l To select all &amp;lsquo;conflicting&amp;rsquo; changes press C-c ^ a To navigate the conflicts use C-c ^ n and C-c ^ p for next and previous conflict To see all the keybindings use C-c ^ h With DOOM and hydra:</description>
-		</item>
-      	
-		<item>
-			<title>Environment</title>
-			<link>https://yusbk.github.io/2021/12/08/r-environment/</link>
-			<pubDate>Wed, 08 Dec 2021 00:00:00 +0000</pubDate>
-			<guid>https://yusbk.github.io/2021/12/08/r-environment/</guid>
-			<description>Updated: 2022-04-12
-Several nice blogs and references on the net to read on this stuff. Among those:
-Environments in R How R Searches and Finds Stuff This discussion from StackOverflow and here explains nicely with example on the difference between parent.</description>
 		</item>
       	
 	</channel>

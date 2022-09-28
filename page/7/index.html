@@ -67,7 +67,7 @@
 <script defer crossorigin="anonymous" src="/js/theme.js" integrity=""></script>
 
 
-<script defer crossorigin="anonymous" src="/js/instantpage.min.js" integrity=""></script><meta name="generator" content="Hugo 0.101.0" />
+<script defer crossorigin="anonymous" src="/js/instantpage.min.js" integrity=""></script><meta name="generator" content="Hugo 0.104.1" />
   </head>
   <body>
     
@@ -151,6 +151,89 @@
       
         
         
+
+      
+        <article class="post-preview">
+  <a href="https://yusbk.github.io/2020/10/07/case-when/">
+    <h2 class="post-title">Case when</h2>
+  </a>
+  <div class="post-entry">
+    
+      <p>It&rsquo;s often easier to use ifelse to implement conditioning. The fast implementation in data.table of ifelse is fifelse. Other approach to do multiple conditioning is to use data.table::fcase or dplyr::case_when.
+fcase fcase can be used directly
+x &lt;- 1:6 data.table::fcase(x &lt; 3, 1, x &gt;= 4, 2) To implement in a data.</p>
+      <a href="https://yusbk.github.io/2020/10/07/case-when/" class="post-read-more"
+        >Read More</a
+      >
+    
+  </div>
+
+  <div class="postmeta">
+    <span class="meta-post">
+  <em class="fa fa-calendar-alt"></em
+  >&nbsp;Oct 7, 2020
+  
+    &nbsp;&nbsp;&nbsp;<em class="fa fa-folder-open"></em>&nbsp;
+    
+      <a
+        href="https://yusbk.github.io/categories/en/"
+        >en</a
+      >&nbsp;
+    
+      <a
+        href="https://yusbk.github.io/categories/r/"
+        >R</a
+      >&nbsp;
+    
+      <a
+        href="https://yusbk.github.io/categories/dt/"
+        >DT</a
+      >&nbsp;
+    
+  
+</span>
+
+  </div>
+</article>
+
+      
+        <article class="post-preview">
+  <a href="https://yusbk.github.io/2020/10/02/access-db/">
+    <h2 class="post-title">Connect to MS Access DB</h2>
+  </a>
+  <div class="post-entry">
+    
+      <p>DBI RODBC R6 Class Debug DBI Connection Updated 15.09.2022
+Before connecting to your Access DBMS via Windows OS, you can check if you have the MS Access driver installed in your machine by running
+## List everything odbc::odbcListDrivers() ## You will get the results someting like this.</p>
+      <a href="https://yusbk.github.io/2020/10/02/access-db/" class="post-read-more"
+        >Read More</a
+      >
+    
+  </div>
+
+  <div class="postmeta">
+    <span class="meta-post">
+  <em class="fa fa-calendar-alt"></em
+  >&nbsp;Oct 2, 2020
+  
+    &nbsp;&nbsp;&nbsp;<em class="fa fa-folder-open"></em>&nbsp;
+    
+      <a
+        href="https://yusbk.github.io/categories/en/"
+        >en</a
+      >&nbsp;
+    
+      <a
+        href="https://yusbk.github.io/categories/r/"
+        >R</a
+      >&nbsp;
+    
+  
+</span>
+
+  </div>
+</article>
 
       
         <article class="post-preview">
@@ -248,83 +331,6 @@ Here is the basic use of drake.</p>
       <a
         href="https://yusbk.github.io/categories/r/"
         >R</a
-      >&nbsp;
-    
-  
-</span>
-
-  </div>
-</article>
-
-      
-        <article class="post-preview">
-  <a href="https://yusbk.github.io/2020/06/14/git-clone/">
-    <h2 class="post-title">Git Clone</h2>
-  </a>
-  <div class="post-entry">
-    
-      <p>This is just 100% a copy from gist so I can check it when needed.
-So you&rsquo;ve cloned somebody&rsquo;s repo from github, but now you want to fork it and contribute back. Never fear!
-Technically, when you fork &ldquo;origin&rdquo; should be your fork and &ldquo;upstream&rdquo; should be the project you forked; however, if you&rsquo;re willing to break this convention then it&rsquo;s easy.</p>
-      <a href="https://yusbk.github.io/2020/06/14/git-clone/" class="post-read-more"
-        >Read More</a
-      >
-    
-  </div>
-
-  <div class="postmeta">
-    <span class="meta-post">
-  <em class="fa fa-calendar-alt"></em
-  >&nbsp;Jun 14, 2020
-  
-    &nbsp;&nbsp;&nbsp;<em class="fa fa-folder-open"></em>&nbsp;
-    
-      <a
-        href="https://yusbk.github.io/categories/git/"
-        >Git</a
-      >&nbsp;
-    
-  
-</span>
-
-  </div>
-</article>
-
-      
-        <article class="post-preview">
-  <a href="https://yusbk.github.io/2020/02/09/look-up-table/">
-    <h2 class="post-title">Pemakaian lookup table</h2>
-  </a>
-  <div class="post-entry">
-    
-      <p>Lookup table dipakai untuk mempercepatkan proses dan mengelakkan pemakaian ifelse. Untuk mempercepatkan proses, ordered index untuk data.table harus dipakai.
-Cara 1 Cara ini ialah untuk mendapakan nilai ScoreLU yang terdapat di dataset dt2 melalui kolom kekunci DSCRpd dikedua-dua data.table. Sekiranya nilai di DSCRpd di dt1 tidak sama dengan dt2, nilai yang berhampiran di DSCRpd dirujuk untuk mendapatkan nilai ScoreLU.</p>
-      <a href="https://yusbk.github.io/2020/02/09/look-up-table/" class="post-read-more"
-        >Read More</a
-      >
-    
-  </div>
-
-  <div class="postmeta">
-    <span class="meta-post">
-  <em class="fa fa-calendar-alt"></em
-  >&nbsp;Feb 9, 2020
-  
-    &nbsp;&nbsp;&nbsp;<em class="fa fa-folder-open"></em>&nbsp;
-    
-      <a
-        href="https://yusbk.github.io/categories/r/"
-        >R</a
-      >&nbsp;
-    
-      <a
-        href="https://yusbk.github.io/categories/my/"
-        >my</a
-      >&nbsp;
-    
-      <a
-        href="https://yusbk.github.io/categories/dt/"
-        >DT</a
       >&nbsp;
     
   

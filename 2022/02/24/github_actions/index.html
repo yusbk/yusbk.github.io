@@ -69,7 +69,7 @@ CI/CD This is a simple process to implement CI/CD using GitHub Actions with uset
 <script defer crossorigin="anonymous" src="/js/theme.js" integrity=""></script>
 
 
-<script defer crossorigin="anonymous" src="/js/instantpage.min.js" integrity=""></script><meta name="generator" content="Hugo 0.101.0" />
+<script defer crossorigin="anonymous" src="/js/instantpage.min.js" integrity=""></script><meta name="generator" content="Hugo 0.104.1" />
   </head>
   <body>
     
@@ -216,23 +216,17 @@ find the correct repo URL. I have to change the <code>origin</code> to Git repo 
 forget to install them first! You can also read general guide from this <a href="https://www.r-bloggers.com/2017/06/how-to-add-code-coverage-codecov-to-your-r-package/">blog</a>.
 This short guide below is especially relevant if you are using <strong>Github Action</strong>:</p>
 <ul>
-<li>
-<p>When your package are loaded with <code>devtools::load_all()</code>, then run
-<code>usethis::use_coverage()</code> to add the batch to your <code>README.Rmd</code> file.</p>
-</li>
-<li>
-<p>Run <code>usethis::use_github_action(&quot;test-coverage&quot;)</code> to add file
-<code>test-coverage.yaml</code> in folder <code>./github/workflow</code>.</p>
-</li>
-<li>
-<p>If you use a private repos, you need to add your token to <a href="https://app.codecov.io/gh/">codecov.io</a> by
-running this code:</p>
+<li>When your package are loaded with <code>devtools::load_all()</code>, then run
+<code>usethis::use_coverage()</code> to add the batch to your <code>README.Rmd</code> file.</li>
+<li>Run <code>usethis::use_github_action(&quot;test-coverage&quot;)</code> to add file
+<code>test-coverage.yaml</code> in folder <code>./github/workflow</code>.</li>
+<li>If you use a private repos, you need to add your token to <a href="https://app.codecov.io/gh/">codecov.io</a> by
+running this code:
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>  covr::codecov(token = &#34;${{secret.CODECOV_TOKEN}}&#34;)
 </span></span></code></pre></div></li>
-<li>
-<p>To check, run <code>covr::report()</code>. If you get error then you should run in
+<li>To check, run <code>covr::report()</code>. If you get error then you should run in
 a new session without loading your package. Basically this error happens only
-to Windows OS as <a href="https://github.com/r-lib/covr/issues/443">discussed here</a> by Jim Hester.</p>
+to Windows OS as <a href="https://github.com/r-lib/covr/issues/443">discussed here</a> by Jim Hester.
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>  # Run R in your package folder without running devtools::load_all()
 </span></span><span style="display:flex;"><span>  pkg &lt;- covr::package_coverage(path = getwd())
 </span></span><span style="display:flex;"><span>  covr::report(pkg)
