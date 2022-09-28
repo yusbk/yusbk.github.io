@@ -172,7 +172,7 @@ the path with <code>where</code> and ensure it&rsquo;s registered in your <code>
 </span></span></code></pre></div><h2 id="miktex">MikTex</h2>
 <p>Install <code>MikTex</code> or <code>pandoc</code>.</p>
 <h2 id="configure">Configure</h2>
-<p>Define your <code>org-latex-pdf-process</code></p>
+<p>Define your <code>org-latex-pdf-process</code> in <code>config.el</code> file.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span>(<span style="color:#66d9ef">setq</span> org-latex-pdf-process <span style="color:#f92672">&#39;</span>(<span style="color:#e6db74">&#34;pdflatex -interaction nonstopmode -output-directory %o %f&#34;</span> <span style="color:#e6db74">&#34;bibtex %b&#34;</span> <span style="color:#e6db74">&#34;pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f&#34;</span> <span style="color:#e6db74">&#34;pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f&#34;</span>))
 </span></span></code></pre></div><h2 id="referencing">Referencing</h2>
 <p>Read the post on <a href="https://yusbk.github.io/2021/12/22/org-cross-ref/">referencing</a> for <code>org-mode</code>. Else it can be done as the following:</p>
