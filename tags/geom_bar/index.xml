@@ -36,7 +36,7 @@ Standard squash The standard way is like this.</description>
 			<link>https://yusbk.github.io/2022/06/28/emacs-macros/</link>
 			<pubDate>Tue, 28 Jun 2022 16:01:00 +0200</pubDate>
 			<guid>https://yusbk.github.io/2022/06/28/emacs-macros/</guid>
-			<description>Updated 2022.09.29
+			<description>Updated 2022.10.02
 Apply macro in Emacs:
 Emacs How to use macros Emacs ways:
 C-x ( to start recording macro C-x ) to stop recording macro C-x e to execute the last macro defined M-x name-last-kbd-macro to name last defined macro M-x insert-kbd-macro to save named macro (copy result to .</description>

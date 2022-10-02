@@ -22,7 +22,7 @@
 />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Emacs macros"/>
-<meta name="twitter:description" content="Updated 2022.09.29
+<meta name="twitter:description" content="Updated 2022.10.02
 Apply macro in Emacs:
 Emacs How to use macros Emacs ways:
 C-x ( to start recording macro C-x ) to stop recording macro C-x e to execute the last macro defined M-x name-last-kbd-macro to name last defined macro M-x insert-kbd-macro to save named macro (copy result to ."/>
@@ -165,7 +165,7 @@ C-x ( to start recording macro C-x ) to stop recording macro C-x e to execute th
   <div class="container" role="main">
     <article class="article" class="blog-post">
       
-  <p><em>Updated 2022.09.29</em></p>
+  <p><em>Updated 2022.10.02</em></p>
 <p>Apply macro in Emacs:</p>
 <h2 id="emacs">Emacs</h2>
 <p>How to use macros <strong>Emacs</strong> ways:</p>
@@ -199,6 +199,13 @@ you need to add to <code>evil register</code>:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>;; make sure this is <span style="color:#66d9ef">done</span> after evil-mode has been loaded
 </span></span><span style="display:flex;"><span><span style="color:#f92672">(</span>evil-set-register ?a <span style="color:#f92672">[</span>?i ?f ?o ?o escape<span style="color:#f92672">])</span>
 </span></span></code></pre></div><p>For reference please read it in <a href="https://stackoverflow.com/a/22820324/5372752">StackOverflow</a></p>
+<h2 id="repeating">Repeating</h2>
+<p>To repeat or execute macro multiple times</p>
+<h3 id="emacs">Emacs</h3>
+<p>Emacs style with <code>C-u &lt;number&gt; C-x e</code> where <code>&lt;number&gt;</code> is the number of times to
+repeat the macro. Else can use <code>C-x e</code> then <code>C-x z</code> to repeat previous command.</p>
+<p>See more details in <a href="https://www.emacswiki.org/emacs/KeyboardMacros">Wiki</a>.</p>
+<h3 id="vim-doom">Vim/Doom</h3>
 <p>Use <a href="https://vimdoc.sourceforge.net/htmldoc/various.html#:normal">normal</a> command to run macro multiple times:</p>
 <p>To run macro saved in <code>@a</code> through line 5 to 10</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>:5,10norm! @a
@@ -207,6 +214,10 @@ you need to add to <code>evil register</code>:</p>
 </span></span></code></pre></div><p>To run macro saved in <code>@a</code> on all lines</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>:%norm! @a
 </span></span></code></pre></div><p>For reference please read in <a href="https://stackoverflow.com/questions/390174/in-vim-how-do-i-apply-a-macro-to-a-set-of-lines">StackOverflow</a></p>
+<p>To repeat macro <code>a</code> with a certain number of times eg. 5 times then <code>:5@a</code>. To
+repeat the last macro you can do <code>@ @</code> or to repead 12 times then type <code>12@@</code>.
+You can map it to another command eg. <code>:map , @@</code> to map <code>@@</code> to <code>,</code> for easy
+typing.</p>
 
 
 
