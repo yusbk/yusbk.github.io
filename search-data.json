@@ -9,7 +9,7 @@
                 "title": "C++ basic",
                 "section": "post",
                 "date" : "2022.10.04",
-                "body": "I just start playing around with C++ and how to combine it with Emacs. This website on cpp-programming is the starting point for me. The extended aim is to be able to write some C++ codes that can be part of R.\nStandard Hello World!.\n#include \u0026lt;iostream\u0026gt; using namespace std; int main(){ cout \u0026lt;\u0026lt; \u0026#34;Hello World!\u0026#34;; return 0 } To compile this basic code in Emacs then use make with the following:\nM-x compile or SPC c c in Doom. type make basic. This will use Makefile to find basic.cpp file to compile and use g++. An executable file named basic will be produced. Run the file eg. ./basic "
+                "body": "I just start playing around with C++ and how to combine it with Emacs. This website on cpp-programming is the starting point for me. The extended aim is to be able to write some C++ codes that can be part of R.\nStandard Hello World!.\n#include \u0026lt;iostream\u0026gt; using namespace std; int main(){ cout \u0026lt;\u0026lt; \u0026#34;Hello World!\u0026#34;; return 0 } To compile this basic code in Emacs then use make with the following:\nM-x compile or SPC c c in Doom.\ntype make basic. This will use Makefile to find basic.cpp file to compile and use g++.\nAn executable file named basic will be produced.\nRun the file eg. ./basic\nA nice description on using Makefile can also be found here doc.ic.ac.uk\n"
             }
     
         ,
