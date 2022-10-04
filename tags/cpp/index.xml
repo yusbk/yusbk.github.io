@@ -1,17 +1,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
-		<title>cross on 𝔂𝓾𝓼𝓴𝓪𝓶</title>
-		<link>https://yusbk.github.io/tags/cross/</link>
-		<description>Recent content in cross </description>
+		<title>cpp on 𝔂𝓾𝓼𝓴𝓪𝓶</title>
+		<link>https://yusbk.github.io/tags/cpp/</link>
+		<description>Recent content in cpp </description>
 		<generator>Hugo -- gohugo.io</generator>
 		
   		<language>en</language>
 		
-		<managingEditor>Page(/tags/cross) (Yusman Kamaleri)</managingEditor>
+		<managingEditor>Page(/tags/cpp) (Yusman Kamaleri)</managingEditor>
     	
-  		<lastBuildDate>Wed, 22 Dec 2021 00:00:00 +0000</lastBuildDate>
+  		<lastBuildDate>Tue, 04 Oct 2022 00:00:00 +0000</lastBuildDate>
 		
-		<atom:link href="/tags/cross/" rel="self" type="application/rss+xml" />
+		<atom:link href="/tags/cpp/" rel="self" type="application/rss+xml" />
 		
 		<item>
 			<title>C&#43;&#43; basic</title>
