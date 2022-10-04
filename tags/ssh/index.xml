@@ -14,6 +14,14 @@
 		<atom:link href="/tags/ssh/" rel="self" type="application/rss+xml" />
 		
 		<item>
+			<title>C&#43;&#43; basic</title>
+			<link>https://yusbk.github.io/2022/10/04/cpp-basic/</link>
+			<pubDate>Tue, 04 Oct 2022 00:00:00 +0000</pubDate>
+			<guid>https://yusbk.github.io/2022/10/04/cpp-basic/</guid>
+			<description>I just start playing around with C++ and how to combine it with Emacs. This website on cpp-programming is the starting point for me. The extended aim is to be able to write some C++ codes that can be part of R.</description>
+		</item>
+      	
+		<item>
 			<title>Export to LaTeX</title>
 			<link>https://yusbk.github.io/2022/09/28/org-exp-latex/</link>
 			<pubDate>Wed, 28 Sep 2022 00:00:00 +0000</pubDate>
@@ -98,16 +106,6 @@ Debuging warnings Sometimes it&amp;rsquo;s nice to know where in the code that g
 			<description>Different ways to make your R session interactive for asking question and receive the answer as an input.
 readline You can find some example in StackOverflow or Geeksforgeeks. Basically is just like this:
 cp &amp;lt;- as.integer(readline(prompt = &amp;#34;Vil du kopiere filen?</description>
-		</item>
-      	
-		<item>
-			<title>Cross-reference</title>
-			<link>https://yusbk.github.io/2021/12/22/org-cross-ref/</link>
-			<pubDate>Wed, 22 Dec 2021 00:00:00 +0000</pubDate>
-			<guid>https://yusbk.github.io/2021/12/22/org-cross-ref/</guid>
-			<description>Reference to this is here.
-Section link The easierst is to use CUSTOM_ID as the example below and refer to it with text [[#sec:one][Section 1]] or reference with number only [[#sec:one]].
-* Section One :PROPERTIES: :CUSTOM_ID: sec:one :END: The link with text will be &#39;.</description>
 		</item>
       	
 	</channel>
