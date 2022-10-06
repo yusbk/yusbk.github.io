@@ -14,6 +14,15 @@
 		<atom:link href="/tags/fork/" rel="self" type="application/rss+xml" />
 		
 		<item>
+			<title>Makefile</title>
+			<link>https://yusbk.github.io/2022/10/06/makefile/</link>
+			<pubDate>Thu, 06 Oct 2022 00:00:00 +0000</pubDate>
+			<guid>https://yusbk.github.io/2022/10/06/makefile/</guid>
+			<description>Here are some references to start using makefile:
+A minimal make is a good starting point by Karl Broman Automation with makefile gives a good example to use in R and Python Example of makefile for R package StackOverflow long answer and more links on makefile </description>
+		</item>
+      	
+		<item>
 			<title>C&#43;&#43; basic</title>
 			<link>https://yusbk.github.io/2022/10/04/cpp-basic/</link>
 			<pubDate>Tue, 04 Oct 2022 00:00:00 +0000</pubDate>
@@ -96,16 +105,6 @@ F: = \\fhi.</description>
 			<description>Updated: 2022-04-12
 Things that I find it useful during my work:
 Debuging warnings Sometimes it&amp;rsquo;s nice to know where in the code that generate warnings especially when it&amp;rsquo;s related to NA introduced by coercion. To do this we can change the options to make warning as error.</description>
-		</item>
-      	
-		<item>
-			<title>YesNo question</title>
-			<link>https://yusbk.github.io/2022/01/04/yesno-question/</link>
-			<pubDate>Tue, 04 Jan 2022 00:00:00 +0000</pubDate>
-			<guid>https://yusbk.github.io/2022/01/04/yesno-question/</guid>
-			<description>Different ways to make your R session interactive for asking question and receive the answer as an input.
-readline You can find some example in StackOverflow or Geeksforgeeks. Basically is just like this:
-cp &amp;lt;- as.integer(readline(prompt = &amp;#34;Vil du kopiere filen?</description>
 		</item>
       	
 	</channel>
