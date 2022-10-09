@@ -22,7 +22,7 @@
 />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Ellipsis …"/>
-<meta name="twitter:description" content="Updated: 2021-12-03
+<meta name="twitter:description" content="Updated: 2022-10-09
 Just to remind me how I could use ellipsis or the three dots ... in my coding. There are three scenarios I find it useful:
 Function wrapper When creating a function wrapper and instead of providing all the arguments to be send further, you could just use ."/>
 
@@ -169,7 +169,7 @@ Function wrapper When creating a function wrapper and instead of providing all t
   <div class="container" role="main">
     <article class="article" class="blog-post">
       
-  <p><em>Updated: 2021-12-03</em></p>
+  <p><em>Updated: 2022-10-09</em></p>
 <p>Just to remind me how I could use ellipsis or the three dots <code>...</code> in my coding. There are three
 scenarios I find it useful:</p>
 <h2 id="function-wrapper">Function wrapper</h2>
@@ -213,6 +213,8 @@ could just use <code>...</code> ellipsis. For example:</p>
 could manipulate the value as you wish. The values in ellipsis should be captured as a <code>list</code>.</p>
 <p>You could also capture the names of the list by <code>names(list(...))</code>.</p>
 <h2 id="input-arguments">Input arguments</h2>
+<p>To methods that I use to get input from ellipsis:</p>
+<h3 id="method-i">Method I</h3>
 <p>To use it as input argument without quote. Use <code>eval(substitute(alist(...)))</code> and <code>deparse</code> as shown below:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>make_filegroups <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function</span>(<span style="color:#66d9ef">...</span>){
 </span></span><span style="display:flex;"><span>
@@ -241,6 +243,18 @@ could manipulate the value as you wish. The values in ellipsis should be capture
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">go_global</span>(Hello, World)
+</span></span></code></pre></div><h3 id="method-ii">Method II</h3>
+<p>Use <code>match.call</code> function. Arg <code>char</code> here is just to make it flexible if you
+want to use vector but isn&rsquo;t necessary.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>go_global <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function</span>(<span style="color:#66d9ef">...</span>, char){
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">if </span>(<span style="color:#a6e22e">missing</span>(char)){
+</span></span><span style="display:flex;"><span>    dots <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">as.character</span>(<span style="color:#a6e22e">match.call</span>(expand.dots <span style="color:#f92672">=</span> <span style="color:#66d9ef">FALSE</span>)[[2]])
+</span></span><span style="display:flex;"><span>  } else {
+</span></span><span style="display:flex;"><span>    dots <span style="color:#f92672">&lt;-</span> char
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">return</span>(dots)
+</span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div>
 
 
