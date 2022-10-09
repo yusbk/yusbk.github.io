@@ -213,7 +213,7 @@ could just use <code>...</code> ellipsis. For example:</p>
 could manipulate the value as you wish. The values in ellipsis should be captured as a <code>list</code>.</p>
 <p>You could also capture the names of the list by <code>names(list(...))</code>.</p>
 <h2 id="input-arguments">Input arguments</h2>
-<p>To methods that I use to get input from ellipsis:</p>
+<p>Two methods that I use to get input from ellipsis:</p>
 <h3 id="method-i">Method I</h3>
 <p>To use it as input argument without quote. Use <code>eval(substitute(alist(...)))</code> and <code>deparse</code> as shown below:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>make_filegroups <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function</span>(<span style="color:#66d9ef">...</span>){
@@ -255,6 +255,11 @@ want to use vector but isn&rsquo;t necessary.</p>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">return</span>(dots)
 </span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">go_global</span>(hello, world)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>h <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;hello&#34;</span>, <span style="color:#e6db74">&#34;world&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">go_global</span>(char <span style="color:#f92672">=</span> h)
 </span></span></code></pre></div>
 
 
