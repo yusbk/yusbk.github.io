@@ -71,7 +71,7 @@
 <script defer crossorigin="anonymous" src="/js/theme.js" integrity=""></script>
 
 
-<script defer crossorigin="anonymous" src="/js/instantpage.min.js" integrity=""></script><meta name="generator" content="Hugo 0.104.3" />
+<script defer crossorigin="anonymous" src="/js/instantpage.min.js" integrity=""></script><meta name="generator" content="Hugo 0.104.1" />
   </head>
   <body>
     
@@ -1049,7 +1049,7 @@ arahan di bawah di <em>power shell</em> atau <em>terminal</em>:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>  echo %PATH%
 </span></span></code></pre></div><p>Sekiranya tidak pasti bagimana untuk membuka terminal, tulis di <em>search</em> samada
 <code>cmd</code> atau <code>powershell</code>.</p>
-<p>Kemudian buka <code>control panel</code> [kontrolpanel] &gt; <code>user</code> [brukerkontoer] &gt; <code>environment variable</code> [miljøvariablene]</p>
+<p>Kemudian buka <code>control panel</code> [kontrolpanel] &gt; <code>user</code> [brukerkontoer] &gt; <code>environment variable</code> [miljøvariablene]</p>
 <p>Window baru akan dibuka dan pilih <em>Variable</em> &gt; <em>Path</em> &gt; <em>edit</em> &gt; <em>new</em>.</p>
 <p>Masukkan path program yang menggandungi <code>.exe</code>. Penting tidak memasukkan nama fail
 <code>.exe</code>, cuma path ke fail tersebut sahaja. Contohnya:</p>
@@ -1086,7 +1086,7 @@ that often are used when using <code>docker run</code> command include:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>  docker run -p 8787:8787 --name rstudio rocker/rtudio
 </span></span></code></pre></div><p>To access RStudio from the webbrowser run <a href="http://localhost:8787">http://localhost:8787</a></p>
 <p>To check all pulled images in the local machine, run <code>docker images</code> command. It is wise to delete
-containers and images that aren&rsquo;t used to reduce space. Deleting the images is done using <code>docker rmi image-name</code> command while deleting container if option <code>--rm</code> when running the container is <code>docker rm container-name</code>.</p>
+containers and images that aren&rsquo;t used to reduce space. Deleting the images is done using <code>docker rmi image-name</code> command while deleting container if option <code>--rm</code> when running the container is <code>docker rm container-name</code>.</p>
 <p>To list all containers, use either of these commands.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>  docker container ls -a
 </span></span><span style="display:flex;"><span>  docker ps -a
@@ -1291,7 +1291,7 @@ parent repo sebelum push dari parent repos. Caranya:</p>
 </span></span><span style="display:flex;"><span>  git commit -am &#39;Tambah pertukaran di public submodule&#39;
 </span></span><span style="display:flex;"><span>  cd ..
 </span></span><span style="display:flex;"><span>  git push origin master --recurse-submodules=on-demand
-</span></span></code></pre></div><p>Bila tambah fail baru, jangan lupa daftarkan fail tersebut dengan <code>git add .</code> sebelum pakai <code>git commit</code>. Sekiranya HEAD detaching dengan submodule boleh guna script ini untuk kembali ke MASTER.
+</span></span></code></pre></div><p>Bila tambah fail baru, jangan lupa daftarkan fail tersebut dengan <code>git add .</code> sebelum pakai <code>git commit</code>. Sekiranya HEAD detaching dengan submodule boleh guna script ini untuk kembali ke MASTER.
 Rujukan di <a href="https://stackoverflow.com/questions/18770545/why-is-my-git-submodule-head-detached-from-master/49997119#49997119">StackOverflow</a>.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>  <span style="color:#75715e">#!/bin/bash</span>
 </span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;Building all submodules while checking out from MASTER branch.&#34;</span>
@@ -1427,7 +1427,7 @@ alternatives. Specifying <code>git log -10</code> will show the last 10 commits.
 </span></span><span style="display:flex;"><span>  git log --oneline --graph -10
 </span></span><span style="display:flex;"><span>  git log --since<span style="color:#f92672">=</span>2.day
 </span></span><span style="display:flex;"><span>  git show
-</span></span></code></pre></div><p>If you have error for displaying the <code>diff</code> you might have to specify editor with <code>-git config --global core.editor emacs</code>. In this case I use <em>emacs</em> as my diff editor.</p>
+</span></span></code></pre></div><p>If you have error for displaying the <code>diff</code> you might have to specify editor with <code>-git config --global core.editor emacs</code>. In this case I use <em>emacs</em> as my diff editor.</p>
 <p>When everything is updated without conflict then you can push to your origin. Sometime you get error
 when pushing to origin because your local copy have different HEAD from the origin. You could force
 push with</p>
@@ -1683,7 +1683,7 @@ selection pressing <code>R</code> will select all the marked section in the whol
 <ul>
 <li>
 <p>Ediff</p>
-<p>When you are in the file with conflict, type <code>M-x smerge-ediff</code> or <code>M-x vc-resolve-conflicts</code>. You will get 3 windows showing your HEAD and origin/HEAD
+<p>When you are in the file with conflict, type <code>M-x smerge-ediff</code> or <code>M-x vc-resolve-conflicts</code>. You will get 3 windows showing your HEAD and origin/HEAD
 that you have fetched and the outcome or end product. You can select A or B to
 select which you can to keep or delete. Use <code>?</code> to see all the shortcuts to use.</p>
 <p>This YouTube video explains it in more detail: <a href="https://www.youtube.com/watch?v=9S2pMZ6U5Tc">Smerge and Ediff</a></p>

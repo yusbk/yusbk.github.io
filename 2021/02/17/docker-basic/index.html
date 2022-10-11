@@ -68,7 +68,7 @@ docker pull image-name docker run local-name image-name docker ps docker build U
 <script defer crossorigin="anonymous" src="/js/theme.js" integrity=""></script>
 
 
-<script defer crossorigin="anonymous" src="/js/instantpage.min.js" integrity=""></script><meta name="generator" content="Hugo 0.104.3" />
+<script defer crossorigin="anonymous" src="/js/instantpage.min.js" integrity=""></script><meta name="generator" content="Hugo 0.104.1" />
   </head>
   <body>
     
@@ -202,7 +202,7 @@ that often are used when using <code>docker run</code> command include:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>  docker run -p 8787:8787 --name rstudio rocker/rtudio
 </span></span></code></pre></div><p>To access RStudio from the webbrowser run <a href="http://localhost:8787">http://localhost:8787</a></p>
 <p>To check all pulled images in the local machine, run <code>docker images</code> command. It is wise to delete
-containers and images that aren&rsquo;t used to reduce space. Deleting the images is done using <code>docker rmi image-name</code> command while deleting container if option <code>--rm</code> when running the container is <code>docker rm container-name</code>.</p>
+containers and images that aren&rsquo;t used to reduce space. Deleting the images is done using <code>docker rmi image-name</code> command while deleting container if option <code>--rm</code> when running the container is <code>docker rm container-name</code>.</p>
 <p>To list all containers, use either of these commands.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>  docker container ls -a
 </span></span><span style="display:flex;"><span>  docker ps -a

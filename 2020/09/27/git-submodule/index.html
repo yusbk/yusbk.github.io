@@ -68,7 +68,7 @@ Repo baru Bila buat repo baru dan ingin tetapkan submodule untuk tema harbor dan
 <script defer crossorigin="anonymous" src="/js/theme.js" integrity=""></script>
 
 
-<script defer crossorigin="anonymous" src="/js/instantpage.min.js" integrity=""></script><meta name="generator" content="Hugo 0.104.3" />
+<script defer crossorigin="anonymous" src="/js/instantpage.min.js" integrity=""></script><meta name="generator" content="Hugo 0.104.1" />
   </head>
   <body>
     
@@ -187,7 +187,7 @@ parent repo sebelum push dari parent repos. Caranya:</p>
 </span></span><span style="display:flex;"><span>  git commit -am &#39;Tambah pertukaran di public submodule&#39;
 </span></span><span style="display:flex;"><span>  cd ..
 </span></span><span style="display:flex;"><span>  git push origin master --recurse-submodules=on-demand
-</span></span></code></pre></div><p>Bila tambah fail baru, jangan lupa daftarkan fail tersebut dengan <code>git add .</code> sebelum pakai <code>git commit</code>. Sekiranya HEAD detaching dengan submodule boleh guna script ini untuk kembali ke MASTER.
+</span></span></code></pre></div><p>Bila tambah fail baru, jangan lupa daftarkan fail tersebut dengan <code>git add .</code> sebelum pakai <code>git commit</code>. Sekiranya HEAD detaching dengan submodule boleh guna script ini untuk kembali ke MASTER.
 Rujukan di <a href="https://stackoverflow.com/questions/18770545/why-is-my-git-submodule-head-detached-from-master/49997119#49997119">StackOverflow</a>.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>  <span style="color:#75715e">#!/bin/bash</span>
 </span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;Building all submodules while checking out from MASTER branch.&#34;</span>
