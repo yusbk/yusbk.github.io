@@ -14,6 +14,15 @@
 		<atom:link href="/tags/geom_point/" rel="self" type="application/rss+xml" />
 		
 		<item>
+			<title>Rscript command</title>
+			<link>https://yusbk.github.io/2022/10/13/rscript-command/</link>
+			<pubDate>Thu, 13 Oct 2022 11:01:00 +0200</pubDate>
+			<guid>https://yusbk.github.io/2022/10/13/rscript-command/</guid>
+			<description>Things to automate R workflow via bash that I have to explore. At the mean time, these are some references to start with:
+Other Rscript documentation Rscript documentation StackOverflow on running R script Rscript from Linux Different commands running R script How to run R script from command line (gives similar link to the pages above) </description>
+		</item>
+      	
+		<item>
 			<title>Makefile</title>
 			<link>https://yusbk.github.io/2022/10/06/makefile/</link>
 			<pubDate>Thu, 06 Oct 2022 00:00:00 +0000</pubDate>
@@ -95,16 +104,6 @@ CI/CD This is a simple process to implement CI/CD using GitHub Actions with uset
 This is only relevant to my personal reference at work.
 The address for drive F and N is as follow:
 F: = \\fhi.</description>
-		</item>
-      	
-		<item>
-			<title>Good to know</title>
-			<link>https://yusbk.github.io/2022/01/25/good-to-know/</link>
-			<pubDate>Tue, 25 Jan 2022 00:00:00 +0000</pubDate>
-			<guid>https://yusbk.github.io/2022/01/25/good-to-know/</guid>
-			<description>Updated: 2022-04-12
-Things that I find it useful during my work:
-Debuging warnings Sometimes it&amp;rsquo;s nice to know where in the code that generate warnings especially when it&amp;rsquo;s related to NA introduced by coercion. To do this we can change the options to make warning as error.</description>
 		</item>
       	
 	</channel>
