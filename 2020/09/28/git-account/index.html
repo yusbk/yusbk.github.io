@@ -68,7 +68,7 @@ Host personal HostName github.com User git IdentityFile ~/.ssh/id_rsa_personal H
 <script defer crossorigin="anonymous" src="/js/theme.js" integrity=""></script>
 
 
-<script defer crossorigin="anonymous" src="/js/instantpage.min.js" integrity=""></script><meta name="generator" content="Hugo 0.104.3" />
+<script defer crossorigin="anonymous" src="/js/instantpage.min.js" integrity=""></script><meta name="generator" content="Hugo 0.92.2" />
   </head>
   <body>
     
@@ -165,23 +165,23 @@ Host personal HostName github.com User git IdentityFile ~/.ssh/id_rsa_personal H
       
   <h2 id="config-file">config file</h2>
 <p>Create a <code>config</code> file in your <code>~/.ssh</code> folder that will manage your accounts.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>  Host personal
-</span></span><span style="display:flex;"><span>  HostName github.com
-</span></span><span style="display:flex;"><span>  User git
-</span></span><span style="display:flex;"><span>  IdentityFile ~/.ssh/id_rsa_personal
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  Host work
-</span></span><span style="display:flex;"><span>  HostName github.com
-</span></span><span style="display:flex;"><span>  User git
-</span></span><span style="display:flex;"><span>  IdentityFile ~/.ssh/id_rsa_work
-</span></span></code></pre></div><p>When cloning a new repo then you only have to specify hostname to your Git account. Example:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>  git clone git@personal:yusbk/nama_rep.git
-</span></span><span style="display:flex;"><span>  git clone git@work:ybkamaleri/nama_rep.git
-</span></span></code></pre></div><p>When your repo has <code>submodule</code> to be able to push changes to remote, I have to change this url</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>  url = https://github.com/yusbk/yusbk.github.io.git
-</span></span></code></pre></div><p>to a new url with reference to SSH-key</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>  url = git@personal:yusbk/yusbk.github.io.git
-</span></span></code></pre></div><p>in the <strong>config</strong> files in these folder:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">  Host personal
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/id_rsa_personal
+
+  Host work
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/id_rsa_work
+</code></pre></div><p>When cloning a new repo then you only have to specify hostname to your Git account. Example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">  git clone git@personal:yusbk/nama_rep.git
+  git clone git@work:ybkamaleri/nama_rep.git
+</code></pre></div><p>When your repo has <code>submodule</code> to be able to push changes to remote, I have to change this url</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">  url = https://github.com/yusbk/yusbk.github.io.git
+</code></pre></div><p>to a new url with reference to SSH-key</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">  url = git@personal:yusbk/yusbk.github.io.git
+</code></pre></div><p>in the <strong>config</strong> files in these folder:</p>
 <ul>
 <li><code>../cloned_repo/.git</code></li>
 <li><code>../cloned_repo/.git/modules/module_repo</code></li>
@@ -190,20 +190,20 @@ Host personal HostName github.com User git IdentityFile ~/.ssh/id_rsa_personal H
 <p>This is another setting when using multiple git accounts without needing to change hostname. After
 cloning repo inside a folder eg. <code>~/Git.work/</code> then you can edit config file called <code>~/.gitconfig</code> in
 HOME dir.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>  [user]
-</span></span><span style="display:flex;"><span>      name = Your Name
-</span></span><span style="display:flex;"><span>      email = your@email.com
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  [includeIf &#34;gitdir:~/Git-work/&#34;]
-</span></span><span style="display:flex;"><span>      path = .gitconfig-work
-</span></span></code></pre></div><p>Then create a file named <code>.gitconfig-work</code> with</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>  [user]
-</span></span><span style="display:flex;"><span>      name = Your Name
-</span></span><span style="display:flex;"><span>      email = your@email.com
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  [core]
-</span></span><span style="display:flex;"><span>      sshCommand = ssh -i ~/.ssh/id_work
-</span></span></code></pre></div><p>Here <code>-i</code> is identifying file. This setting makes all repositories under <code>~/Git-work</code> folder to use work
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">  [user]
+      name = Your Name
+      email = your@email.com
+
+  [includeIf &#34;gitdir:~/Git-work/&#34;]
+      path = .gitconfig-work
+</code></pre></div><p>Then create a file named <code>.gitconfig-work</code> with</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">  [user]
+      name = Your Name
+      email = your@email.com
+
+  [core]
+      sshCommand = ssh -i ~/.ssh/id_work
+</code></pre></div><p>Here <code>-i</code> is identifying file. This setting makes all repositories under <code>~/Git-work</code> folder to use work
 credentials automatically without needing to change hostname when cloning a repo.</p>
 
 

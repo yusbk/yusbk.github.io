@@ -68,7 +68,7 @@ Here are some references to start using makefile. It makes automation easily by 
 <script defer crossorigin="anonymous" src="/js/theme.js" integrity=""></script>
 
 
-<script defer crossorigin="anonymous" src="/js/instantpage.min.js" integrity=""></script><meta name="generator" content="Hugo 0.104.3" />
+<script defer crossorigin="anonymous" src="/js/instantpage.min.js" integrity=""></script><meta name="generator" content="Hugo 0.92.2" />
   </head>
   <body>
     
@@ -180,29 +180,29 @@ additionally with <a href="https://scoop.sh/#/apps?q=sed&amp;s=0&amp;d=1&amp;o=t
 <li><a href="https://stackoverflow.com/a/46936748/5372752">StackOverflow</a> long answer and more links on makefile</li>
 </ul>
 <p>Here is an example of my <code>Makefile</code> for R package.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>PKGNAME <span style="color:#f92672">=</span> <span style="color:#66d9ef">$(</span>shell sed -n <span style="color:#e6db74">&#34;s/Package: *\([^ ]*\)/\1/p&#34;</span> DESCRIPTION<span style="color:#66d9ef">)</span>
-</span></span><span style="display:flex;"><span>PKGVERS <span style="color:#f92672">=</span> <span style="color:#66d9ef">$(</span>shell sed -n <span style="color:#e6db74">&#34;s/Version: *\([^ ]*\)/\1/p&#34;</span> DESCRIPTION<span style="color:#66d9ef">)</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>all: check
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>build: install_deps
-</span></span><span style="display:flex;"><span>    R CMD build .
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>check: build
-</span></span><span style="display:flex;"><span>    R CMD check --no-manual <span style="color:#66d9ef">$(</span>PKGNAME<span style="color:#66d9ef">)</span>_<span style="color:#66d9ef">$(</span>PKGVERS<span style="color:#66d9ef">)</span>.tar.gz
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>install_deps:
-</span></span><span style="display:flex;"><span>    Rscript <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    -e <span style="color:#e6db74">&#39;if (!requireNamespace(&#34;remotes&#34;)) install.packages(&#34;remotes&#34;)&#39;</span> <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    -e <span style="color:#e6db74">&#39;remotes::install_deps(dependencies = TRUE)&#39;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>install: build
-</span></span><span style="display:flex;"><span>    R CMD INSTALL <span style="color:#66d9ef">$(</span>PKGNAME<span style="color:#66d9ef">)</span>_<span style="color:#66d9ef">$(</span>PKGVERS<span style="color:#66d9ef">)</span>.tar.gz
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>clean:
-</span></span><span style="display:flex;"><span>    @rm -rf <span style="color:#66d9ef">$(</span>PKGNAME<span style="color:#66d9ef">)</span>_<span style="color:#66d9ef">$(</span>PKGVERS<span style="color:#66d9ef">)</span>.tar.gz <span style="color:#66d9ef">$(</span>PKGNAME<span style="color:#66d9ef">)</span>.Rcheck
-</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">PKGNAME <span style="color:#f92672">=</span> <span style="color:#66d9ef">$(</span>shell sed -n <span style="color:#e6db74">&#34;s/Package: *\([^ ]*\)/\1/p&#34;</span> DESCRIPTION<span style="color:#66d9ef">)</span>
+PKGVERS <span style="color:#f92672">=</span> <span style="color:#66d9ef">$(</span>shell sed -n <span style="color:#e6db74">&#34;s/Version: *\([^ ]*\)/\1/p&#34;</span> DESCRIPTION<span style="color:#66d9ef">)</span>
+
+
+all: check
+
+build: install_deps
+    R CMD build .
+
+check: build
+    R CMD check --no-manual <span style="color:#66d9ef">$(</span>PKGNAME<span style="color:#66d9ef">)</span>_<span style="color:#66d9ef">$(</span>PKGVERS<span style="color:#66d9ef">)</span>.tar.gz
+
+install_deps:
+    Rscript <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    -e <span style="color:#e6db74">&#39;if (!requireNamespace(&#34;remotes&#34;)) install.packages(&#34;remotes&#34;)&#39;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    -e <span style="color:#e6db74">&#39;remotes::install_deps(dependencies = TRUE)&#39;</span>
+
+install: build
+    R CMD INSTALL <span style="color:#66d9ef">$(</span>PKGNAME<span style="color:#66d9ef">)</span>_<span style="color:#66d9ef">$(</span>PKGVERS<span style="color:#66d9ef">)</span>.tar.gz
+
+clean:
+    @rm -rf <span style="color:#66d9ef">$(</span>PKGNAME<span style="color:#66d9ef">)</span>_<span style="color:#66d9ef">$(</span>PKGVERS<span style="color:#66d9ef">)</span>.tar.gz <span style="color:#66d9ef">$(</span>PKGNAME<span style="color:#66d9ef">)</span>.Rcheck
+</code></pre></div>
 
 
 

@@ -9,7 +9,7 @@
 		
 		<managingEditor>Page(/categories/windows) (Yusman Kamaleri)</managingEditor>
     	
-  		<lastBuildDate>Thu, 10 Feb 2022 00:00:00 +0000</lastBuildDate>
+  		<lastBuildDate>Wed, 17 Feb 2021 00:00:00 +0000</lastBuildDate>
 		
 		<atom:link href="/categories/windows/" rel="self" type="application/rss+xml" />
 		
@@ -19,7 +19,7 @@
 			<pubDate>Thu, 13 Oct 2022 11:01:00 +0200</pubDate>
 			<guid>https://yusbk.github.io/2022/10/13/rscript-command/</guid>
 			<description>Things to automate R workflow via bash that I have to explore. At the mean time, these are some references to start with:
-Other Rscript documentation Rscript documentation StackOverflow on running R script Rscript from Linux Different commands running R script How to run R script from command line (gives similar link to the pages above) </description>
+ Other Rscript documentation Rscript documentation StackOverflow on running R script Rscript from Linux Different commands running R script How to run R script from command line (gives similar link to the pages above)  </description>
 		</item>
       	
 		<item>
@@ -65,7 +65,7 @@ Standard squash The standard way is like this.</description>
 			<description>Updated 2022.10.02
 Apply macro in Emacs:
 Emacs How to use macros Emacs ways:
-C-x ( to start recording macro C-x ) to stop recording macro C-x e to execute the last macro defined M-x name-last-kbd-macro to name last defined macro M-x insert-kbd-macro to save named macro (copy result to .</description>
+ C-x ( to start recording macro C-x ) to stop recording macro C-x e to execute the last macro defined M-x name-last-kbd-macro to name last defined macro M-x insert-kbd-macro to save named macro (copy result to .</description>
 		</item>
       	
 		<item>
@@ -92,18 +92,17 @@ CI/CD This is a simple process to implement CI/CD using GitHub Actions with uset
 			<link>https://yusbk.github.io/2022/02/23/git-rujukan-awam/</link>
 			<pubDate>Wed, 23 Feb 2022 00:00:00 +0000</pubDate>
 			<guid>https://yusbk.github.io/2022/02/23/git-rujukan-awam/</guid>
-			<description>Global setting Buat git repo dan R pakej Kopi branch di github ke lokal Kopi branch tertentu cara lain Log commit Tidak dapat kesan email Buat kekunci SSH dan daftarkan di Github Pelbagai akaun Permission denied ssh-agent refused operation Buat Repo melalui terminal Padam branch Git Aliases Undo atau Revert Sekiranya ada konflik Release atau tag Buat gh-page git config Global setting Tetapkan email dan nama di global.</description>
+			<description>Global setting Buat git repo dan R pakej Kopi branch di github ke lokal Kopi branch tertentu cara lain Log commit Tidak dapat kesan email Buat kekunci SSH dan daftarkan di Github Pelbagai akaun Permission denied ssh-agent refused operation Buat Repo melalui terminal Padam branch Git Aliases Undo atau Revert Sekiranya ada konflik Release atau tag Buat gh-page git config  Global setting Tetapkan email dan nama di global.</description>
 		</item>
       	
 		<item>
-			<title>Mount drive</title>
-			<link>https://yusbk.github.io/2022/02/10/mount-drive/</link>
-			<pubDate>Thu, 10 Feb 2022 00:00:00 +0000</pubDate>
-			<guid>https://yusbk.github.io/2022/02/10/mount-drive/</guid>
-			<description>Install Mount manually Credential Auto mount Other option to mount Execute Access to folders First published date: 2021-02-22
-This is only relevant to my personal reference at work.
-The address for drive F and N is as follow:
-F: = \\fhi.</description>
+			<title>Good to know</title>
+			<link>https://yusbk.github.io/2022/01/25/good-to-know/</link>
+			<pubDate>Tue, 25 Jan 2022 00:00:00 +0000</pubDate>
+			<guid>https://yusbk.github.io/2022/01/25/good-to-know/</guid>
+			<description>Updated: 2022-04-12
+Things that I find it useful during my work:
+Debuging warnings Sometimes it&amp;rsquo;s nice to know where in the code that generate warnings especially when it&amp;rsquo;s related to NA introduced by coercion. To do this we can change the options to make warning as error.</description>
 		</item>
       	
 	</channel>
