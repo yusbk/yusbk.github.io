@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-<title>Mount drive</title>
+<title>Mount drive 1</title>
 <meta name="description" 
       content=""
 >
@@ -21,11 +21,11 @@
   title="𝔂𝓾𝓼𝓴𝓪𝓶"
 />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Mount drive"/>
-<meta name="twitter:description" content="Install Mount manually Credential Auto mount Other option to mount Execute Access to folders  Updated: 2022-11-05
+<meta name="twitter:title" content="Mount drive 1"/>
+<meta name="twitter:description" content="Install Mount manually Credential Auto mount Other option to mount Execute  Updated: 2022-11-05
 This is only relevant to my personal reference at work.
 The address for drive F and N is as follow:
- F: = \\fhi."/>
+ F: = \\fhi.no\felles N: = \\fhi."/>
 
 
 
@@ -136,7 +136,7 @@ The address for drive F and N is as follow:
         <div class="post-heading">
           
             <h1>
-              Mount drive
+              Mount drive 1
             </h1>
           
           
@@ -179,7 +179,6 @@ The address for drive F and N is as follow:
 <li><a href="#auto-mount">Auto mount</a></li>
 <li><a href="#other-option-to-mount">Other option to mount</a></li>
 <li><a href="#execute">Execute</a></li>
-<li><a href="#access-to-folders">Access to folders</a></li>
 </ul>
 <!-- raw HTML omitted -->
 <p><em>Updated: 2022-11-05</em></p>
@@ -249,10 +248,6 @@ master map which may be changed accordingly. Open <code>auto.master</code> file 
   sudo systemctl start autofs
 </code></pre></div><p>Other options includes <code>restart</code> or <code>stop</code>. To check if you have access to directory <strong>F</strong> and <strong>N</strong> run this in terminal:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">  cd ~ <span style="color:#f92672">&amp;&amp;</span> cd /mnt/F <span style="color:#f92672">&amp;&amp;</span> ls
-</code></pre></div><h2 id="access-to-folders">Access to folders</h2>
-<p>Since it&rsquo;s defined in the file <code>/etc/auto.master</code> that mounting will be in <code>/mnt</code> to access the folders is done with:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">  cd /mnt/N
-  cd /mnt/F
 </code></pre></div>
 
 

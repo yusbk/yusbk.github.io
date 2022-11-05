@@ -259,7 +259,7 @@
                 "title": "Biskut Italy",
                 "section": "post",
                 "date" : "2021.04.29",
-                "body": "Care buat biskut simple. Biasa bah jumpa di Italy ini biskut dan namanya dorang panggek biscotti.\nBahan-bahannya    Unit Bahan     200 g kacang-kacang campuran sukak hati. Boleh jugak campur kismis sikit kalo mau.   1 sm kulit oren atau limau nipis. Mana-mana sak la yang ada. Limau nipis murah   100 g margerin atau mentega sak. Kalau ikut betul margerin lah tapi tengok budget la.   100 g gula kasar   2 st gula vanilla   1 biji telur   350 g tepung gandum   1 st baking powder    Cara-caranya Bahagian 1   Potong-potong kasar semua kekacang. Parut kulit atasan limau/oren yang sudah dicuci.\n Figure 1: Kekacang potong kasar\n    Gaul margerin, gula dan gula vanilla sehingga sebati. Letakkan telur dan gaul lagi sampai sebati.\n  Masukkan kekacang dan kulit limau.\n  Masukkan tempung dan baking powder. Gaul sebati. Kalau campuran tu masih telampau melekat ditangan boleh tambah sikit tepung.\n Figure 2: Gaul sampai sebati\n    Bahagian 2   Bahagi 3 atau 4 gaulan tadi dan gulung kemudian tekan sedikit. Pangang selama 15 minit dengan kepanasan oven 200 C dan sejukkan sedikit. Turunkan suhu oven ke 50 C.\n Figure 3: Gulung panjang\n    Sementara biskut masih sedikit panas-panas, potong melintang. Besarnya ikut kamu sak. Tebalikkan biskut dengan potongan di atas.\n Figure 4: Potong sesuka hati besarnya\n    Masukkan kembali ke oven yang panasnya 50 C selama dalam 45 minit.\n  Sudah siap bolehlah sejukkan di talam jaring-jaring dan tapau yang boleh tutup rapat supaya endak cepat abis.\n Figure 5: Siap untuk dihidang\n  Selamat mencobak!\n  Tips  Kalau rajin dan ndak mau potong panjang, boleh jugak buat bulat-bulat kecik biskutnya dan tekan. Boleh jugak masukkan coklat yang dipotong-potong kecik bersama kekacang.  "
+                "body": "Care buat biskut simple. Biasa bah jumpa di Italy ini biskut dan namanya dorang panggek biscotti.\nBahan-bahannya    Unit Bahan     200 g kacang-kacang campuran sukak hati. Boleh jugak campur kismis sikit kalo mau.   1 sm kulit oren atau limau nipis. Mana-mana sak la yang ada. Limau nipis murah   100 g margerin atau mentega sak. Kalau ikut betul margerin lah tapi tengok budget la.   100 g gula kasar   2 st gula vanilla   1 biji telur   350 g tepung gandum   1 st baking powder    Cara-caranya Bahagian 1   Potong-potong kasar semua kekacang. Parut kulit atasan limau/oren yang sudah dicuci.\n Figure 1: Kekacang potong kasar\n    Gaul margerin, gula dan gula vanilla sehingga sebati. Letakkan telur dan gaul lagi sampai sebati.\n  Masukkan kekacang dan kulit limau.\n  Masukkan tempung dan baking powder. Gaul sebati. Kalau campuran tu masih telampau melekat ditangan boleh tambah sikit tepung.\n Figure 2: Gaul sampai sebati\n    Bahagian 2   Bahagi 3 atau 4 gaulan tadi dan gulung kemudian tekan sedikit. Pangang selama 15 minit dengan kepanasan oven 200 C dan sejukkan sedikit. Turunkan suhu oven ke 50 C.\n Figure 1: Gulung panjang\n    Sementara biskut masih sedikit panas-panas, potong melintang. Besarnya ikut kamu sak. Tebalikkan biskut dengan potongan di atas.\n Figure 1: Potong sesuka hati besarnya\n    Masukkan kembali ke oven yang panasnya 50 C selama dalam 45 minit.\n  Sudah siap bolehlah sejukkan di talam jaring-jaring dan tapau yang boleh tutup rapat supaya endak cepat abis.\n Figure 1: Siap untuk dihidang\n  Selamat mencobak!\n  Tips  Kalau rajin dan ndak mau potong panjang, boleh jugak buat bulat-bulat kecik biskutnya dan tekan. Boleh jugak masukkan coklat yang dipotong-potong kecik bersama kekacang.  "
             }
     
         ,
@@ -295,16 +295,26 @@
         ,
             {
                 "id": 29,
-                "href": "https://yusbk.github.io/2021/02/11/mount-drive/",
-                "title": "Mount drive",
+                "href": "https://yusbk.github.io/2021/02/11/mount-drive-1/",
+                "title": "Mount drive 1",
                 "section": "post",
                 "date" : "2021.02.11",
-                "body": " Install Mount manually Credential Auto mount Other option to mount Execute Access to folders  Updated: 2022-11-05\nThis is only relevant to my personal reference at work.\nThe address for drive F and N is as follow:\n F: = \\\\fhi.no\\felles N: = \\\\fhi.no\\fil\\styrt H: = \\\\fhi.no\\home\\Brukere_Y$\\YOUR-USERNAME  To check the path where the folders are mounted, in Windows run command net use in terminal with cmd or PowerShell.\nInstall Install CIFS utilities package.\nsudo apt update sudo apt install cifs-utils autofs Mount manually Basically you can mount the drive every time you want to access it directly with the command below but this has to be done every time you login to you machine.\nsudo mkdir /mnt/F sudo mount -t cifs -o username=YourWindowsUserName,password=YourWindowsPassword //fhi.no/Felles /mnt/F You can run df -h to verify that mounting windows share folder in Linux was successful.\nCredential To ensure that your username and password secure, use credential file for example /etc/cifs-credentials with:\nusername=user password=password Then make it unreadable to others with\nsudo chown root: /etc/cifs-credentials sudo chmod 600 /etc/cifs-credentials Then to use the credentials run:\nsudo mount -t cifs -o credentials=/etc/cifs-credentials,file_mode=0777,dir_mode=0777 ://fhi.no/fil/styrt Read more here\nAuto mount Alternatively you can automount the drive. Here I use fstad. Edit file fstab\nsudo vim /etc/fstab Then add the following line to the file:\n//fhi.no/fil/felles /mnt/F cifs credentials=/etc/cifs-credentials,file_mode=0755,dir_mode=0755 0 0 //fhi.no/fil/fil/styrt /mnt/N cifs credentials=/etc/cifs-credentials,file_mode=0755,dir_mode=0755 0 0 //fhi.no/home/brukere_Y\\$//YBKA /mnt/H cifs credentials=/etc/cifs-credentials,file_mode=0755,dir_mode=0755 0 0 Then run the command to mount all the entries in /etc/fstab\nsudo mount -a To unmount any of the folder, eg. /mnt/F. The second command is used if the first command fails. The option -l is equal to --lazy. The command is umount and not unmount ie. without n in UN.\nsudo umount /mnt/F sudo umount -t cifs -l /mnt/F This guide is copied from here.\nOther option to mount To use autofs to automount instead of fstad. If you wonder the different between these methods then you can read here. To start with autofs create file auto.cifs in directory /etc/\nF -fstype=cifs,rw,credential=/etc/cifs-credentials,uid=1000,iocharset=utf8 ://fhi.no/Felles N -fstype=cifs,rw,credential=/etc/cifs-credentials,uid=1000,iocharset=utf8 ://fhi.no/fil/styrt H -fstype=cifs,rw,credential=/etc/cifs-credentials,uid=1000,iocharset=utf8 ://fhi.no/home/Brukere_Y\\$/MYUSERNAME NB! Look at dealing with special symbol such as folder name ie. Brukere_Y$ which should be written as Brukere_Y\\$. If these settings don\u0026rsquo;t work for you, try the settings below\nN -fstype=cifs,rw,username=\u0026lt;your-username\u0026gt;,password=\u0026lt;your-password\u0026gt;,vers=3.0,uid=1000,file_mode=0777,dir_mode=0777,users ://fhi.no/fil/styrt F -fstype=cifs,rw,username=\u0026lt;your-username\u0026gt;,password=\u0026lt;your-password\u0026gt;,vers=3.0,uid=1000,file_mode=0777,dir_mode=0777,users ://fhi.no/felles To understand how mount settings is done can be referred from this website on AUTOFS. Basically the structure is\nmount-point map-name options The primary configuration file for the automounter is /etc/auto.master, also referred to as the master map which may be changed accordingly. Open auto.master file and mounting directory to /mnt.\n/mnt /etc/auto.cifs Execute To run autofs the execute these command in terminal:\nsudo systemctl enable autofs sudo systemctl start autofs Other options includes restart or stop. To check if you have access to directory F and N run this in terminal:\ncd ~ \u0026amp;\u0026amp; cd /mnt/F \u0026amp;\u0026amp; ls Access to folders Since it\u0026rsquo;s defined in the file /etc/auto.master that mounting will be in /mnt to access the folders is done with:\ncd /mnt/N cd /mnt/F "
+                "body": " Install Mount manually Credential Auto mount Other option to mount Execute  Updated: 2022-11-05\nThis is only relevant to my personal reference at work.\nThe address for drive F and N is as follow:\n F: = \\\\fhi.no\\felles N: = \\\\fhi.no\\fil\\styrt H: = \\\\fhi.no\\home\\Brukere_Y$\\YOUR-USERNAME  To check the path where the folders are mounted, in Windows run command net use in terminal with cmd or PowerShell.\nInstall Install CIFS utilities package.\nsudo apt update sudo apt install cifs-utils autofs Mount manually Basically you can mount the drive every time you want to access it directly with the command below but this has to be done every time you login to you machine.\nsudo mkdir /mnt/F sudo mount -t cifs -o username=YourWindowsUserName,password=YourWindowsPassword //fhi.no/Felles /mnt/F You can run df -h to verify that mounting windows share folder in Linux was successful.\nCredential To ensure that your username and password secure, use credential file for example /etc/cifs-credentials with:\nusername=user password=password Then make it unreadable to others with\nsudo chown root: /etc/cifs-credentials sudo chmod 600 /etc/cifs-credentials Then to use the credentials run:\nsudo mount -t cifs -o credentials=/etc/cifs-credentials,file_mode=0777,dir_mode=0777 ://fhi.no/fil/styrt Read more here\nAuto mount Alternatively you can automount the drive. Here I use fstad. Edit file fstab\nsudo vim /etc/fstab Then add the following line to the file:\n//fhi.no/fil/felles /mnt/F cifs credentials=/etc/cifs-credentials,file_mode=0755,dir_mode=0755 0 0 //fhi.no/fil/fil/styrt /mnt/N cifs credentials=/etc/cifs-credentials,file_mode=0755,dir_mode=0755 0 0 //fhi.no/home/brukere_Y\\$//YBKA /mnt/H cifs credentials=/etc/cifs-credentials,file_mode=0755,dir_mode=0755 0 0 Then run the command to mount all the entries in /etc/fstab\nsudo mount -a To unmount any of the folder, eg. /mnt/F. The second command is used if the first command fails. The option -l is equal to --lazy. The command is umount and not unmount ie. without n in UN.\nsudo umount /mnt/F sudo umount -t cifs -l /mnt/F This guide is copied from here.\nOther option to mount To use autofs to automount instead of fstad. If you wonder the different between these methods then you can read here. To start with autofs create file auto.cifs in directory /etc/\nF -fstype=cifs,rw,credential=/etc/cifs-credentials,uid=1000,iocharset=utf8 ://fhi.no/Felles N -fstype=cifs,rw,credential=/etc/cifs-credentials,uid=1000,iocharset=utf8 ://fhi.no/fil/styrt H -fstype=cifs,rw,credential=/etc/cifs-credentials,uid=1000,iocharset=utf8 ://fhi.no/home/Brukere_Y\\$/MYUSERNAME NB! Look at dealing with special symbol such as folder name ie. Brukere_Y$ which should be written as Brukere_Y\\$. If these settings don\u0026rsquo;t work for you, try the settings below\nN -fstype=cifs,rw,username=\u0026lt;your-username\u0026gt;,password=\u0026lt;your-password\u0026gt;,vers=3.0,uid=1000,file_mode=0777,dir_mode=0777,users ://fhi.no/fil/styrt F -fstype=cifs,rw,username=\u0026lt;your-username\u0026gt;,password=\u0026lt;your-password\u0026gt;,vers=3.0,uid=1000,file_mode=0777,dir_mode=0777,users ://fhi.no/felles To understand how mount settings is done can be referred from this website on AUTOFS. Basically the structure is\nmount-point map-name options The primary configuration file for the automounter is /etc/auto.master, also referred to as the master map which may be changed accordingly. Open auto.master file and mounting directory to /mnt.\n/mnt /etc/auto.cifs Execute To run autofs the execute these command in terminal:\nsudo systemctl enable autofs sudo systemctl start autofs Other options includes restart or stop. To check if you have access to directory F and N run this in terminal:\ncd ~ \u0026amp;\u0026amp; cd /mnt/F \u0026amp;\u0026amp; ls "
             }
     
         ,
             {
                 "id": 30,
+                "href": "https://yusbk.github.io/2021/02/11/mount-drive-2/",
+                "title": "Mount drive 2",
+                "section": "post",
+                "date" : "2021.02.11",
+                "body": " Access to folders  Updated: 2022-11-05\nThis is a continuation of Mount drive 1.\nAccess to folders Since it\u0026rsquo;s defined in the file /etc/auto.master that mounting will be in /mnt to access the folders is done with:\ncd /mnt/N cd /mnt/F "
+            }
+    
+        ,
+            {
+                "id": 31,
                 "href": "https://yusbk.github.io/2020/12/12/ellipsis/",
                 "title": "Ellipsis …",
                 "section": "post",
@@ -314,7 +324,7 @@
     
         ,
             {
-                "id": 31,
+                "id": 32,
                 "href": "https://yusbk.github.io/2020/10/14/git-upstream/",
                 "title": "Git Upstream",
                 "section": "post",
@@ -324,7 +334,7 @@
     
         ,
             {
-                "id": 32,
+                "id": 33,
                 "href": "https://yusbk.github.io/2020/10/14/git-worktree/",
                 "title": "Git Worktree",
                 "section": "post",
@@ -334,7 +344,7 @@
     
         ,
             {
-                "id": 33,
+                "id": 34,
                 "href": "https://yusbk.github.io/2020/10/07/case-when/",
                 "title": "Case when",
                 "section": "post",
@@ -344,7 +354,7 @@
     
         ,
             {
-                "id": 34,
+                "id": 35,
                 "href": "https://yusbk.github.io/2020/10/02/access-db/",
                 "title": "Connect to MS Access DB",
                 "section": "post",
@@ -354,7 +364,7 @@
     
         ,
             {
-                "id": 35,
+                "id": 36,
                 "href": "https://yusbk.github.io/2020/09/28/git-account/",
                 "title": "Git Multiple account",
                 "section": "post",
@@ -364,7 +374,7 @@
     
         ,
             {
-                "id": 36,
+                "id": 37,
                 "href": "https://yusbk.github.io/2020/09/27/git-submodule/",
                 "title": "Git Submodule",
                 "section": "post",
@@ -374,7 +384,7 @@
     
         ,
             {
-                "id": 37,
+                "id": 38,
                 "href": "https://yusbk.github.io/2020/06/15/basic-drake/",
                 "title": "Basic use of drake",
                 "section": "post",
@@ -384,7 +394,7 @@
     
         ,
             {
-                "id": 38,
+                "id": 39,
                 "href": "https://yusbk.github.io/2020/06/14/git-clone/",
                 "title": "Git Clone",
                 "section": "post",
@@ -394,7 +404,7 @@
     
         ,
             {
-                "id": 39,
+                "id": 40,
                 "href": "https://yusbk.github.io/2020/02/09/look-up-table/",
                 "title": "Pemakaian lookup table",
                 "section": "post",
@@ -404,7 +414,7 @@
     
         ,
             {
-                "id": 40,
+                "id": 41,
                 "href": "https://yusbk.github.io/2019/08/21/row-delete/",
                 "title": "Padamkan barisan (row)",
                 "section": "post",
@@ -414,7 +424,7 @@
     
         ,
             {
-                "id": 41,
+                "id": 42,
                 "href": "https://yusbk.github.io/2019/08/01/static-encrypt/",
                 "title": "Static encrypting HTML",
                 "section": "post",
@@ -424,7 +434,7 @@
     
         ,
             {
-                "id": 42,
+                "id": 43,
                 "href": "https://yusbk.github.io/2019/07/31/loop-set/",
                 "title": "Loop atau set di data.table",
                 "section": "post",
@@ -434,7 +444,7 @@
     
         ,
             {
-                "id": 43,
+                "id": 44,
                 "href": "https://yusbk.github.io/2019/07/30/geom-line/",
                 "title": "Tips untuk guna geom_line",
                 "section": "post",
@@ -444,7 +454,7 @@
     
         ,
             {
-                "id": 44,
+                "id": 45,
                 "href": "https://yusbk.github.io/2019/07/24/aliran-kerja/",
                 "title": "Aliran kerja buat kod R",
                 "section": "post",
@@ -454,7 +464,7 @@
     
         ,
             {
-                "id": 45,
+                "id": 46,
                 "href": "https://yusbk.github.io/2019/07/24/ifelse/",
                 "title": "Pengunaan ifelse",
                 "section": "post",
@@ -464,7 +474,7 @@
     
         ,
             {
-                "id": 46,
+                "id": 47,
                 "href": "https://yusbk.github.io/2019/06/24/vector-object/",
                 "title": "Dapatkan objekt sebagai vektor",
                 "section": "post",
@@ -474,7 +484,7 @@
     
         ,
             {
-                "id": 47,
+                "id": 48,
                 "href": "https://yusbk.github.io/2019/02/25/peta-sf/",
                 "title": "Buat peta cara sf",
                 "section": "post",
@@ -484,7 +494,7 @@
     
         ,
             {
-                "id": 48,
+                "id": 49,
                 "href": "https://yusbk.github.io/2019/01/20/tetapkan-path/",
                 "title": "Tetapkan PATH",
                 "section": "post",
@@ -494,7 +504,7 @@
     
         ,
             {
-                "id": 49,
+                "id": 50,
                 "href": "https://yusbk.github.io/2018/10/15/nvim-termux/",
                 "title": "Pasang R di HP",
                 "section": "post",
@@ -504,7 +514,7 @@
     
         ,
             {
-                "id": 50,
+                "id": 51,
                 "href": "https://yusbk.github.io/2018/08/16/duplikasi/",
                 "title": "Duplikasi data atau unik",
                 "section": "post",
@@ -514,7 +524,7 @@
     
         ,
             {
-                "id": 51,
+                "id": 52,
                 "href": "https://yusbk.github.io/2018/07/25/encrypting-file/",
                 "title": "Encrypting guna EncFS",
                 "section": "post",
@@ -524,7 +534,7 @@
     
         ,
             {
-                "id": 52,
+                "id": 53,
                 "href": "https://yusbk.github.io/2018/07/02/basic-shiny/",
                 "title": "Cara deloy Shiny",
                 "section": "post",
@@ -534,7 +544,7 @@
     
         ,
             {
-                "id": 53,
+                "id": 54,
                 "href": "https://yusbk.github.io/2018/06/24/tambah-kolom/",
                 "title": "Tambah kolom pelbagai data.table",
                 "section": "post",
@@ -544,7 +554,7 @@
     
         ,
             {
-                "id": 54,
+                "id": 55,
                 "href": "https://yusbk.github.io/2018/02/21/grid/",
                 "title": "Pemakaian pekej Grid",
                 "section": "post",
@@ -554,7 +564,7 @@
     
         ,
             {
-                "id": 55,
+                "id": 56,
                 "href": "https://yusbk.github.io/2018/02/05/plot-table/",
                 "title": "Plot dan table",
                 "section": "post",
@@ -564,7 +574,7 @@
     
         ,
             {
-                "id": 56,
+                "id": 57,
                 "href": "https://yusbk.github.io/2018/01/28/legend-plot-banding/",
                 "title": "Legend untuk plot perbandingan",
                 "section": "post",
@@ -574,7 +584,7 @@
     
         ,
             {
-                "id": 57,
+                "id": 58,
                 "href": "https://yusbk.github.io/2018/01/22/tambah-jumlah/",
                 "title": "Tambah jumlah keseluruhan",
                 "section": "post",
@@ -584,7 +594,7 @@
     
         ,
             {
-                "id": 58,
+                "id": 59,
                 "href": "https://yusbk.github.io/2018/01/04/merge-join/",
                 "title": "Merge atau join",
                 "section": "post",
@@ -594,7 +604,7 @@
     
         ,
             {
-                "id": 59,
+                "id": 60,
                 "href": "https://yusbk.github.io/2018/01/02/recode/",
                 "title": "Recode atau compute data",
                 "section": "post",
@@ -604,7 +614,7 @@
     
         ,
             {
-                "id": 60,
+                "id": 61,
                 "href": "https://yusbk.github.io/2017/12/22/col-and-row/",
                 "title": "Rownames atau colnames",
                 "section": "post",
@@ -614,7 +624,7 @@
     
         ,
             {
-                "id": 61,
+                "id": 62,
                 "href": "https://yusbk.github.io/2017/11/09/pkg-rreg/",
                 "title": "R pakej `rreg`",
                 "section": "post",
@@ -624,7 +634,7 @@
     
         ,
             {
-                "id": 62,
+                "id": 63,
                 "href": "https://yusbk.github.io/2017/10/23/menamakan-level-di-faktor/",
                 "title": "Menamakan level di faktor",
                 "section": "post",
@@ -634,7 +644,7 @@
     
         ,
             {
-                "id": 63,
+                "id": 64,
                 "href": "https://yusbk.github.io/2017/10/11/susun-factor/",
                 "title": "Susun factor",
                 "section": "post",
@@ -644,7 +654,7 @@
     
         ,
             {
-                "id": 64,
+                "id": 65,
                 "href": "https://yusbk.github.io/2017/09/13/locale/",
                 "title": "Masalah locale",
                 "section": "post",
@@ -654,7 +664,7 @@
     
         ,
             {
-                "id": 65,
+                "id": 66,
                 "href": "https://yusbk.github.io/2017/09/10/hugo-blog-in-org-subtree-export/",
                 "title": "Writing Hugo blog in Org",
                 "section": "post",
@@ -664,7 +674,7 @@
     
         ,
             {
-                "id": 66,
+                "id": 67,
                 "href": "https://yusbk.github.io/2017/08/31/test-figure/",
                 "title": "Test figure",
                 "section": "post",
@@ -674,7 +684,7 @@
     
         ,
             {
-                "id": 67,
+                "id": 68,
                 "href": "https://yusbk.github.io/2017/07/17/kolom-index/",
                 "title": "Pilih kolom cara indeks atau nama kolom",
                 "section": "post",
@@ -684,7 +694,7 @@
     
         ,
             {
-                "id": 68,
+                "id": 69,
                 "href": "https://yusbk.github.io/1/01/01/blog-harbor/",
                 "title": "",
                 "section": "post",
@@ -694,7 +704,7 @@
     
         ,
             {
-                "id": 69,
+                "id": 70,
                 "href": "https://yusbk.github.io/about/",
                 "title": "About",
                 "section": "page",
