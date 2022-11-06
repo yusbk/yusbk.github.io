@@ -22,7 +22,7 @@
 />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Rujukan Awam Git dan Github"/>
-<meta name="twitter:description" content="Global setting Buat git repo dan R pakej Kopi branch di github ke lokal Kopi branch tertentu cara lain Log commit Tidak dapat kesan email Buat kekunci SSH dan daftarkan di Github Pelbagai akaun Permission denied ssh-agent refused operation Buat Repo melalui terminal Padam branch Git Aliases Undo atau Revert Sekiranya ada konflik Release atau tag Buat gh-page git config  Global setting Tetapkan email dan nama di global."/>
+<meta name="twitter:description" content="Global setting Buat git repo dan R pakej Kopi branch di github ke lokal Kopi branch tertentu cara lain Log commit Tidak dapat kesan email Buat kekunci SSH dan daftarkan di Github Pelbagai akaun Permission denied ssh-agent refused operation Buat Repo melalui terminal Padam branch Git Aliases Undo atau Revert Sekiranya ada konflik Release atau tag Buat gh-page git config  Tarikh kemaskini: 2022-11-07"/>
 
 
 
@@ -185,6 +185,7 @@
 <li><a href="#git-config">git config</a></li>
 </ul>
 <!-- raw HTML omitted -->
+<p><em>Tarikh kemaskini: 2022-11-07</em></p>
 <h2 id="global-setting">Global setting</h2>
 <p>Tetapkan email dan nama di global.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">git config --global user.email &#34;your@email.com&#34;
@@ -284,7 +285,11 @@ git push -u origin-personal master
 <p>Sekiranya <code>permission denied</code> bile <code>git push origin</code> untuk repo gunakan user.name berlainan contohnya:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">  ERROR: Permission to user.ybk1/repo.git denied to user.ybk2.
   fatal: The remote end hung up unexpectedly
-</code></pre></div><p>Tukar user.name dengan apa yang sepatutnya&hellip; contohnya bila username work diperlukan
+</code></pre></div><p>Buang SSH key di Github and daftarkan semula kekunci SSH tersebut ke GitHub account. Contohnya:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo apt install xclip
+xclip -sel clip &lt; ~/.ssh/id_work.pub
+</code></pre></div><h3 id="cara-cara-lain-yang-boleh-dicoba">Cara-cara lain yang boleh dicoba</h3>
+<p>Tukar user.name dengan apa yang sepatutnya&hellip; contohnya bila username work diperlukan
 dan yang sedang dipakai ialah personal maka tukar ke work seperti begini</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">  ssh-add ~/.ssh/id_rsa_work
 </code></pre></div><p>Sekiranya tidak berhasil boleh coba cara dibawah:</p>
