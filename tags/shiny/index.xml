@@ -14,6 +14,16 @@
 		<atom:link href="/tags/shiny/" rel="self" type="application/rss+xml" />
 		
 		<item>
+			<title>Error handling</title>
+			<link>https://yusbk.github.io/2022/11/07/error-handling/</link>
+			<pubDate>Mon, 07 Nov 2022 10:37:00 +0100</pubDate>
+			<guid>https://yusbk.github.io/2022/11/07/error-handling/</guid>
+			<description>Handling error in R can easily be done with debugger or by activating error options with recover.
+options(error = recover) Or to activate warning as error with:
+options(warn = 2) Nevertheless this blog post explain nicely other alternative including the code below that you can put in your .</description>
+		</item>
+      	
+		<item>
 			<title>Rscript command</title>
 			<link>https://yusbk.github.io/2022/10/13/rscript-command/</link>
 			<pubDate>Thu, 13 Oct 2022 11:01:00 +0200</pubDate>
@@ -93,16 +103,6 @@ CI/CD This is a simple process to implement CI/CD using GitHub Actions with uset
 			<pubDate>Wed, 23 Feb 2022 00:00:00 +0000</pubDate>
 			<guid>https://yusbk.github.io/2022/02/23/git-rujukan-awam/</guid>
 			<description>Global setting Buat git repo dan R pakej Kopi branch di github ke lokal Kopi branch tertentu cara lain Log commit Tidak dapat kesan email Buat kekunci SSH dan daftarkan di Github Pelbagai akaun Permission denied ssh-agent refused operation Buat Repo melalui terminal Padam branch Git Aliases Undo atau Revert Sekiranya ada konflik Release atau tag Buat gh-page git config  Tarikh kemaskini: 2022-11-07</description>
-		</item>
-      	
-		<item>
-			<title>Good to know</title>
-			<link>https://yusbk.github.io/2022/01/25/good-to-know/</link>
-			<pubDate>Tue, 25 Jan 2022 00:00:00 +0000</pubDate>
-			<guid>https://yusbk.github.io/2022/01/25/good-to-know/</guid>
-			<description>Updated: 2022-04-12
-Things that I find it useful during my work:
-Debuging warnings Sometimes it&amp;rsquo;s nice to know where in the code that generate warnings especially when it&amp;rsquo;s related to NA introduced by coercion. To do this we can change the options to make warning as error.</description>
 		</item>
       	
 	</channel>
