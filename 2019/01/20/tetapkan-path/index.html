@@ -22,7 +22,8 @@
 />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Tetapkan PATH"/>
-<meta name="twitter:description" content="Ubuntu Windows  Bila ingin memakai program di Ubuntu atau Windows melalui terminal, perlu daftarkan program tersebut di PATH. Disini saya terangkan caranya di Ubuntu dan Windows.
+<meta name="twitter:description" content="Ubuntu Windows  Kemaskini: 2022-11-10
+Bila ingin memakai program di Ubuntu atau Windows melalui terminal, perlu daftarkan program tersebut di PATH. Disini saya terangkan caranya di Ubuntu dan Windows.
 Ubuntu Bila pasang program di Ubuntu melalui source boleh tetapkan dimana program disimpan melalui penetapkan --prefix bila melarikan ."/>
 
 
@@ -175,6 +176,7 @@ Ubuntu Bila pasang program di Ubuntu melalui source boleh tetapkan dimana progra
 <li><a href="#windows">Windows</a></li>
 </ul>
 <!-- raw HTML omitted -->
+<p><em>Kemaskini: 2022-11-10</em></p>
 <p>Bila ingin memakai program di Ubuntu atau Windows melalui terminal, perlu
 daftarkan program tersebut di <strong>PATH</strong>. Disini saya terangkan caranya di Ubuntu dan Windows.</p>
 <h2 id="ubuntu">Ubuntu</h2>
@@ -203,10 +205,8 @@ memasukkan PATH di fail <code>/.profile</code> atau <code>/.bashrc</code>.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">  &gt; export PATH=&#34;$PATH:/path/folder&#34;
 </code></pre></div><p>Bila melarikan komando <code>export</code> penetapan di <code>$PATH</code> hanya sementara dan hilang bila
 mematikan komputer. Untuk memasukan folder yang ditetapkan di <code>--prefix</code> ke <code>$PATH</code>
-selama-lamanya, harus larikan:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">  source ~/.profile
-  <span style="color:#75715e"># atau</span>
-  source ~/.bashrc
+selama-lamanya, harus masukkan code diatas ke dalam file <code>.bashrc</code> file kemudian larikan:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">source ~/.bashrc
 </code></pre></div><p>Sekiranya tidak menetapkan di <code>$PATH</code> boleh juga menggunakan <code>symlink</code></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">  sudo ln -s /path/ke/folder/baru/ ~/bin
 </code></pre></div><h2 id="windows">Windows</h2>
