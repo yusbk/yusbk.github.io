@@ -23,7 +23,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Note taking with org-roam"/>
 <meta name="twitter:description" content="I need to document the basic workflow using org-roam. As far as I understood so these are the basic:
- Start with org-roam-node-find for creating note. Write the node ie. filename. It creates the file if not already found. You should make template to capture this node."/>
+ Start with org-roam-capture to create a node with a selected capture template. Buffer will be close after the capture and back to previous buffer."/>
 
 
 
@@ -163,14 +163,23 @@
   <div class="container" role="main">
     <article class="article" class="blog-post">
       
-  <p>I need to document the basic workflow using org-roam. As far as I understood so these are the basic:</p>
+  <p>I need to document the basic workflow using org-roam. As far as I understood so
+these are the basic:</p>
 <ul>
-<li>Start with <code>org-roam-node-find</code> for creating note. Write the <em>node</em> ie. filename. It creates the file if not already found.</li>
-<li>You should make template to capture this node. Meaning if the node is a default, reference document etc.</li>
+<li>Start with <code>org-roam-capture</code> to create a node with a selected capture
+template. Buffer will be close after the capture and back to previous buffer.</li>
+<li>Use <code>org-roam-node-find</code> to open a node or creating it if doesn&rsquo;t exist just
+like <code>org-raom-capture</code>. Write the <em>node</em> ie. filename. The buffer with the
+node will be open after capture for further notes taking, and not going back
+to the previous buffer. This is the different between <code>org-roam-capture</code>.</li>
+<li>You should make template to capture to use in <code>org-roam-capture</code> or
+<code>org-roam-node-find</code>. Meaning if the node is a default with specified default
+template or reference with ref template etc.</li>
 <li>Use <code>org-roam-buffer-toggle</code> to display the relationship for the nodes</li>
 <li>Use <code>org-roam-node-insert</code> to link the node to the current open node.</li>
-<li>You can add <em>tags</em> with <code>org-roam-tag-add</code> for easy searching</li>
-<li>You can add <em>alias</em> with <code>org-roam-alias-add</code> for easy referencing</li>
+<li>You can add <em>tags</em> with <code>org-roam-tag-add</code> for easy searching.</li>
+<li>You can add <em>alias</em> to the node with <code>org-roam-alias-add</code> for easy referencing
+instead of using the whole title.</li>
 </ul>
 <p>This blogs give some basic idea of org-roam</p>
 <ul>
