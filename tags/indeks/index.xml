@@ -14,6 +14,15 @@
 		<atom:link href="/tags/indeks/" rel="self" type="application/rss+xml" />
 		
 		<item>
+			<title>Note taking with org-roam</title>
+			<link>https://yusbk.github.io/2022/11/14/note-taking-org-roam/</link>
+			<pubDate>Mon, 14 Nov 2022 00:00:00 +0100</pubDate>
+			<guid>https://yusbk.github.io/2022/11/14/note-taking-org-roam/</guid>
+			<description>I need to document the basic workflow using org-roam. As far as I understood so these are the basic:
+ Start with org-roam-node-find for creating note. Write the node ie. filename. It creates the file if not already found. You should make template to capture this node.</description>
+		</item>
+      	
+		<item>
 			<title>Error handling</title>
 			<link>https://yusbk.github.io/2022/11/07/error-handling/</link>
 			<pubDate>Mon, 07 Nov 2022 10:37:00 +0100</pubDate>
@@ -95,14 +104,6 @@ lookup &amp;lt;- list(v1 = 1:3, v2 = letters[5:7]) DT[lookup, on = names(lookup)
 			<description>First published date: 2021-06-04
 A simple guide to use CI/CD and Code coverage.
 CI/CD This is a simple process to implement CI/CD using GitHub Actions with usethis package. Basically the steps here is a summary from Dean Attali with slight changes:</description>
-		</item>
-      	
-		<item>
-			<title>Rujukan Awam Git dan Github</title>
-			<link>https://yusbk.github.io/2022/02/23/git-rujukan-awam/</link>
-			<pubDate>Wed, 23 Feb 2022 00:00:00 +0000</pubDate>
-			<guid>https://yusbk.github.io/2022/02/23/git-rujukan-awam/</guid>
-			<description>Global setting Buat git repo dan R pakej Kopi branch di github ke lokal Kopi branch tertentu cara lain Log commit Tidak dapat kesan email Buat kekunci SSH dan daftarkan di Github Pelbagai akaun Permission denied ssh-agent refused operation Buat Repo melalui terminal Padam branch Git Aliases Undo atau Revert Sekiranya ada konflik Release atau tag Buat gh-page git config  Tarikh kemaskini: 2022-11-07</description>
 		</item>
       	
 	</channel>
