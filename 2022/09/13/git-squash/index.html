@@ -170,14 +170,25 @@ commits eg. 20 commits to the branch and want to squash all commits to one befor
 <p>The standard way is like this.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git checkout bugfix
 git rebase -i HEAD~20
-</code></pre></div><h2 id="alternative-1">Alternative 1</h2>
+</code></pre></div><h2 id="alternative-1--tried">Alternative 1 (tried)</h2>
 <p>You only need to use <code>git add .</code> if there are new files other than the already tracked files.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git checkout bugfix
 git reset --soft master
 git add .
 git commit -m <span style="color:#e6db74">&#34;Commit message&#34;</span>
 git push --force
-</code></pre></div><h2 id="alternative-2">Alternative 2</h2>
+</code></pre></div><h2 id="alternative-2--tried">Alternative 2 (tried)</h2>
+<p>This method unfortunately doesn&rsquo;t work when running in Emacs. You need to use
+the terminal. If the commits e.g 4 commits, have been pushed, then you can merge
+these commits by doing:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git checkout main
+git reset --soft HEAD~4
+git git commit -m <span style="color:#e6db74">&#34;Your new commit message&#34;</span>
+git push origin +main
+</code></pre></div><p>Use of plus sign eg. <code>+main</code> is to ensure to force push to only one branch.
+Using <code>--force</code> might overwrite multiple push destinations configured with
+<code>remote.*.push</code> other than the current branch.</p>
+<h2 id="alternative-3">Alternative 3</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git rebase -i master
 </code></pre></div><p>Then you have to specify what to squash and to pick. Here is the example if
 <code>bugfix</code> have only 4 commits.</p>
@@ -189,11 +200,12 @@ squash c01a668 commit <span style="color:#ae81ff">4</span>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git checkout main
 git merge --no-ff bugfix
 </code></pre></div><p>For detail can read <a href="https://makandracards.com/makandra/527-squashing-several-git-commits-into-a-single-commit">here</a></p>
-<h2 id="alternative-3">Alternative 3</h2>
+<h2 id="alternative-4">Alternative 4</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git checkout main
 git merge --squash bugfix
 git commit --amend -m <span style="color:#e6db74">&#34;Commit message to ammend to&#34;</span>
-</code></pre></div>
+</code></pre></div><p>You can also read from others eg. <a href="https://gist.github.com/patik/b8a9dc5cd356f9f6f980">Gist</a></p>
+
 
 
 
