@@ -202,8 +202,13 @@ git merge --no-ff bugfix
 </code></pre></div><p>For detail can read <a href="https://makandracards.com/makandra/527-squashing-several-git-commits-into-a-single-commit">here</a></p>
 <h2 id="alternative-4">Alternative 4</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git checkout main
+git pull
 git merge --squash bugfix
 git commit --amend -m <span style="color:#e6db74">&#34;Commit message to ammend to&#34;</span>
+git push --set-upstream origin main
+
+<span style="color:#75715e">#or</span>
+git push origin +main
 </code></pre></div><p>You can also read from others eg. <a href="https://gist.github.com/patik/b8a9dc5cd356f9f6f980">Gist</a></p>
 
 
