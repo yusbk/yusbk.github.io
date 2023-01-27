@@ -178,7 +178,7 @@ git add .
 git commit -m <span style="color:#e6db74">&#34;Commit message&#34;</span>
 git push --force
 </code></pre></div><h2 id="alternative-2">Alternative 2</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git reset -i master
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git rebase -i master
 </code></pre></div><p>Then you have to specify what to squash and to pick. Here is the example if
 <code>bugfix</code> have only 4 commits.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">pick fda59df commit <span style="color:#ae81ff">1</span>
