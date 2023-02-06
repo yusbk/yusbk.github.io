@@ -23,8 +23,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Note taking with org-roam"/>
 <meta name="twitter:description" content="First published: 14.11.2022
-Add nodes connected to references via citar When citar-org-roam is installed than you can use citar-open-note with SPCn b to add notes to the selected reference. This will search your references from Zetoro database.
-The ROAM_REFS in the property drawer will be added automatically."/>
+Add nodes connected to references via citar When citar-org-roam is installed then you can use citar-open-note with SPCn b to add notes to the selected reference. This will open a list of your references in Zetoro database."/>
 
 
 
@@ -166,19 +165,19 @@ The ROAM_REFS in the property drawer will be added automatically."/>
       
   <p><em>First published: 14.11.2022</em></p>
 <h2 id="add-nodes-connected-to-references-via-citar">Add nodes connected to references via <code>citar</code></h2>
-<p>When <code>citar-org-roam</code> is installed than you can use <code>citar-open-note</code> with <code>SPC n b</code> to add notes to the selected reference. This will search your references
-from <em>Zetoro</em> database.</p>
-<p>The <code>ROAM_REFS</code> in the property drawer will be added automatically. Else you can
-edit the <code>citar-org-roam-note-title-template</code> as explained <a href="https://github.com/emacs-citar/citar-org-roam#configuration">here</a>.</p>
+<p>When <code>citar-org-roam</code> is installed then you can use <code>citar-open-note</code> with <code>SPC n b</code> to add notes to the selected reference. This will open a list of your
+references in <em>Zetoro</em> database.</p>
+<p>The <code>ROAM_REFS</code> will be added automatically in the property drawer. You could
+also edit the <code>citar-org-roam-note-title-template</code> to your taste as explained <a href="https://github.com/emacs-citar/citar-org-roam#configuration">here</a>.</p>
 <h2 id="add-nodes-via-roam-capture">Add nodes via <code>roam capture</code></h2>
-<p>I need to document the basic workflow using org-roam. As far as I understood so
+<p>I need to document the basic work flow using org-roam. As far as I understood so
 these are the basic steps. Suppose you want to write note for an idea you have:</p>
 <ul>
 <li>Start with <code>org-roam-capture</code> or <code>SPC n r n</code> to create a node with a selected
 capture template. Buffer will be close after the capture and back to previous
 buffer.</li>
 <li>Use <code>org-roam-node-find</code> or <code>SPC n r f</code> to open a node or creating it if doesn&rsquo;t
-exist just like <code>org-raom-capture</code>. Write the <em>node</em> ie. filename. The buffer
+exist just like <code>org-roam-capture</code>. Write the <em>node</em> ie. filename. The buffer
 with the node will be open after capture for further notes taking, and not
 going back to the previous buffer. This is the different between
 <code>org-roam-capture</code>.</li>
@@ -199,6 +198,7 @@ with <code>+filetags: TagName</code>.</li>
 instead of using the whole title. You can then reference to it with
 <code>+filetags: TagName</code>.</li>
 </ul>
+<h2 id="some-references">Some references</h2>
 <p>This blogs give some basic idea of org-roam</p>
 <ul>
 <li><a href="https://www.lucacambiaghi.com/posts/discovering-org-roam.html">Discovering org-roam</a></li>
