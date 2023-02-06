@@ -68,7 +68,7 @@ Cara 1 Cara ini ialah untuk mendapakan nilai ScoreLU yang terdapat di dataset dt
 <script defer crossorigin="anonymous" src="/js/theme.js" integrity=""></script>
 
 
-<script defer crossorigin="anonymous" src="/js/instantpage.min.js" integrity=""></script><meta name="generator" content="Hugo 0.92.2" />
+<script defer crossorigin="anonymous" src="/js/instantpage.min.js" integrity=""></script><meta name="generator" content="Hugo 0.110.0">
   </head>
   <body>
     
@@ -180,100 +180,100 @@ mempercepatkan proses, <code>ordered index</code> untuk data.table harus dipakai
 kekunci <code>DSCRpd</code> dikedua-dua data.table. Sekiranya nilai di <code>DSCRpd</code> di <strong>dt1</strong> tidak sama dengan
 <strong>dt2</strong>, nilai yang berhampiran di <code>DSCRpd</code> dirujuk untuk mendapatkan nilai <code>ScoreLU</code>.</p>
 <!-- raw HTML omitted -->
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">dt1
-   DSCRpd Leverage         TCB
-<span style="color:#ae81ff">1</span>  <span style="color:#ae81ff">1.3730682</span> <span style="color:#ae81ff">2.010122</span> <span style="color:#ae81ff">-1590099.11</span>
-<span style="color:#ae81ff">2</span>  <span style="color:#ae81ff">1.0449597</span> <span style="color:#ae81ff">2.680051</span>   <span style="color:#ae81ff">493370.85</span>
-<span style="color:#ae81ff">3</span>  <span style="color:#ae81ff">1.0311141</span> <span style="color:#ae81ff">4.790531</span>    <span style="color:#ae81ff">21594.63</span>
-<span style="color:#ae81ff">4</span>  <span style="color:#ae81ff">1.3923007</span> <span style="color:#ae81ff">3.279903</span>  <span style="color:#ae81ff">-499326.76</span>
-
-dt2
-   ScoreLU DSCRpd Leverage     TCB
- <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span>       <span style="color:#ae81ff">0</span>   <span style="color:#ae81ff">0.65</span>      <span style="color:#ae81ff">5.0</span>       <span style="color:#ae81ff">0</span>
- <span style="color:#ae81ff">2</span><span style="color:#f92672">:</span>      <span style="color:#ae81ff">10</span>   <span style="color:#ae81ff">0.80</span>      <span style="color:#ae81ff">4.5</span>  <span style="color:#ae81ff">100000</span>
- <span style="color:#ae81ff">3</span><span style="color:#f92672">:</span>      <span style="color:#ae81ff">20</span>   <span style="color:#ae81ff">0.95</span>      <span style="color:#ae81ff">4.0</span>  <span style="color:#ae81ff">250000</span>
- <span style="color:#ae81ff">4</span><span style="color:#f92672">:</span>      <span style="color:#ae81ff">30</span>   <span style="color:#ae81ff">1.10</span>      <span style="color:#ae81ff">3.5</span>  <span style="color:#ae81ff">500000</span>
- <span style="color:#ae81ff">5</span><span style="color:#f92672">:</span>      <span style="color:#ae81ff">40</span>   <span style="color:#ae81ff">1.20</span>      <span style="color:#ae81ff">3.0</span>  <span style="color:#ae81ff">850000</span>
- <span style="color:#ae81ff">6</span><span style="color:#f92672">:</span>      <span style="color:#ae81ff">50</span>   <span style="color:#ae81ff">1.26</span>      <span style="color:#ae81ff">2.5</span> <span style="color:#ae81ff">1250000</span>
- <span style="color:#ae81ff">7</span><span style="color:#f92672">:</span>      <span style="color:#ae81ff">60</span>   <span style="color:#ae81ff">1.35</span>      <span style="color:#ae81ff">2.0</span> <span style="color:#ae81ff">1700000</span>
-</code></pre></div><p>Kode ini dipakai sekiranya ingin mendapakan nilai di lookup tabel yang berhampiran <code>roll = &quot;nearest&quot;</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">setDT</span>(df1)[, ScoreLU  <span style="color:#f92672">:=</span> <span style="color:#a6e22e">setDT</span>(df2)[df1, ScoreLU , on <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;DSCRpd&#34;</span>, roll <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;nearest&#34;</span>]]
-</code></pre></div><p>Nilai <code>ScoreLU</code> bagi kekunci <code>DSCRpd</code> 1.3730682 dan 1.3923007 di <strong>dt1</strong> ialah 60 kerana nilai
-<code>DSCRpd</code> yang berhampiran di data <strong>dt2</strong> ialah 1.35. Hasil yang sama dilihat untuk <code>dt1$DSCRpd %in% c(1.0449597 , 1.0311141)</code> yang hampir dengan <code>dt2$DSCRpd == 1.10</code> yang memberikan nilai <code>ScoreLU == 30</code>. Hasilnay seperti begini:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">      DSCRpd Leverage         TCB ScoreLU
- <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1.3730682</span> <span style="color:#ae81ff">2.010122</span> <span style="color:#ae81ff">-1590099.11</span>      <span style="color:#ae81ff">60</span>
- <span style="color:#ae81ff">2</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1.0449597</span> <span style="color:#ae81ff">2.680051</span>   <span style="color:#ae81ff">493370.85</span>      <span style="color:#ae81ff">30</span>
- <span style="color:#ae81ff">3</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1.0311141</span> <span style="color:#ae81ff">4.790531</span>    <span style="color:#ae81ff">21594.63</span>      <span style="color:#ae81ff">30</span>
- <span style="color:#ae81ff">4</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1.3923007</span> <span style="color:#ae81ff">3.279903</span>  <span style="color:#ae81ff">-499326.76</span>      <span style="color:#ae81ff">60</span>
- <span style="color:#ae81ff">5</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1.6443938</span> <span style="color:#ae81ff">3.853003</span>   <span style="color:#ae81ff">988780.79</span>      <span style="color:#ae81ff">70</span>
- <span style="color:#ae81ff">6</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0.6265976</span> <span style="color:#ae81ff">1.814359</span>  <span style="color:#ae81ff">1003736.73</span>       <span style="color:#ae81ff">0</span>
- <span style="color:#ae81ff">7</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2.1025253</span> <span style="color:#ae81ff">4.412528</span>  <span style="color:#ae81ff">1245305.83</span>      <span style="color:#ae81ff">80</span>
- <span style="color:#ae81ff">8</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1.2872873</span> <span style="color:#ae81ff">2.074424</span>  <span style="color:#ae81ff">-688305.83</span>      <span style="color:#ae81ff">50</span>
- <span style="color:#ae81ff">9</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0.5088294</span> <span style="color:#ae81ff">2.504510</span>  <span style="color:#ae81ff">1406986.68</span>       <span style="color:#ae81ff">0</span>
-<span style="color:#ae81ff">10</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1.7794307</span> <span style="color:#ae81ff">3.724905</span>  <span style="color:#ae81ff">1132513.33</span>      <span style="color:#ae81ff">70</span>
-</code></pre></div><h1 id="cara-2">Cara 2</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>dt1
+</span></span><span style="display:flex;"><span>   DSCRpd Leverage         TCB
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">1</span>  <span style="color:#ae81ff">1.3730682</span> <span style="color:#ae81ff">2.010122</span> <span style="color:#ae81ff">-1590099.11</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">2</span>  <span style="color:#ae81ff">1.0449597</span> <span style="color:#ae81ff">2.680051</span>   <span style="color:#ae81ff">493370.85</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">3</span>  <span style="color:#ae81ff">1.0311141</span> <span style="color:#ae81ff">4.790531</span>    <span style="color:#ae81ff">21594.63</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">4</span>  <span style="color:#ae81ff">1.3923007</span> <span style="color:#ae81ff">3.279903</span>  <span style="color:#ae81ff">-499326.76</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>dt2
+</span></span><span style="display:flex;"><span>   ScoreLU DSCRpd Leverage     TCB
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span>       <span style="color:#ae81ff">0</span>   <span style="color:#ae81ff">0.65</span>      <span style="color:#ae81ff">5.0</span>       <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">2</span><span style="color:#f92672">:</span>      <span style="color:#ae81ff">10</span>   <span style="color:#ae81ff">0.80</span>      <span style="color:#ae81ff">4.5</span>  <span style="color:#ae81ff">100000</span>
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">3</span><span style="color:#f92672">:</span>      <span style="color:#ae81ff">20</span>   <span style="color:#ae81ff">0.95</span>      <span style="color:#ae81ff">4.0</span>  <span style="color:#ae81ff">250000</span>
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">4</span><span style="color:#f92672">:</span>      <span style="color:#ae81ff">30</span>   <span style="color:#ae81ff">1.10</span>      <span style="color:#ae81ff">3.5</span>  <span style="color:#ae81ff">500000</span>
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">5</span><span style="color:#f92672">:</span>      <span style="color:#ae81ff">40</span>   <span style="color:#ae81ff">1.20</span>      <span style="color:#ae81ff">3.0</span>  <span style="color:#ae81ff">850000</span>
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">6</span><span style="color:#f92672">:</span>      <span style="color:#ae81ff">50</span>   <span style="color:#ae81ff">1.26</span>      <span style="color:#ae81ff">2.5</span> <span style="color:#ae81ff">1250000</span>
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">7</span><span style="color:#f92672">:</span>      <span style="color:#ae81ff">60</span>   <span style="color:#ae81ff">1.35</span>      <span style="color:#ae81ff">2.0</span> <span style="color:#ae81ff">1700000</span>
+</span></span></code></pre></div><p>Kode ini dipakai sekiranya ingin mendapakan nilai di lookup tabel yang berhampiran <code>roll = &quot;nearest&quot;</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#a6e22e">setDT</span>(df1)[, ScoreLU  <span style="color:#f92672">:=</span> <span style="color:#a6e22e">setDT</span>(df2)[df1, ScoreLU , on <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;DSCRpd&#34;</span>, roll <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;nearest&#34;</span>]]
+</span></span></code></pre></div><p>Nilai <code>ScoreLU</code> bagi kekunci <code>DSCRpd</code> 1.3730682 dan 1.3923007 di <strong>dt1</strong> ialah 60 kerana nilai
+<code>DSCRpd</code> yang berhampiran di data <strong>dt2</strong> ialah 1.35. Hasil yang sama dilihat untuk <code>dt1$DSCRpd %in% c(1.0449597 , 1.0311141)</code> yang hampir dengan <code>dt2$DSCRpd == 1.10</code> yang memberikan nilai <code>ScoreLU == 30</code>. Hasilnay seperti begini:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>      DSCRpd Leverage         TCB ScoreLU
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1.3730682</span> <span style="color:#ae81ff">2.010122</span> <span style="color:#ae81ff">-1590099.11</span>      <span style="color:#ae81ff">60</span>
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">2</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1.0449597</span> <span style="color:#ae81ff">2.680051</span>   <span style="color:#ae81ff">493370.85</span>      <span style="color:#ae81ff">30</span>
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">3</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1.0311141</span> <span style="color:#ae81ff">4.790531</span>    <span style="color:#ae81ff">21594.63</span>      <span style="color:#ae81ff">30</span>
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">4</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1.3923007</span> <span style="color:#ae81ff">3.279903</span>  <span style="color:#ae81ff">-499326.76</span>      <span style="color:#ae81ff">60</span>
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">5</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1.6443938</span> <span style="color:#ae81ff">3.853003</span>   <span style="color:#ae81ff">988780.79</span>      <span style="color:#ae81ff">70</span>
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">6</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0.6265976</span> <span style="color:#ae81ff">1.814359</span>  <span style="color:#ae81ff">1003736.73</span>       <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">7</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2.1025253</span> <span style="color:#ae81ff">4.412528</span>  <span style="color:#ae81ff">1245305.83</span>      <span style="color:#ae81ff">80</span>
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">8</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1.2872873</span> <span style="color:#ae81ff">2.074424</span>  <span style="color:#ae81ff">-688305.83</span>      <span style="color:#ae81ff">50</span>
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">9</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0.5088294</span> <span style="color:#ae81ff">2.504510</span>  <span style="color:#ae81ff">1406986.68</span>       <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">10</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1.7794307</span> <span style="color:#ae81ff">3.724905</span>  <span style="color:#ae81ff">1132513.33</span>      <span style="color:#ae81ff">70</span>
+</span></span></code></pre></div><h1 id="cara-2">Cara 2</h1>
 <p>Cara ini sama seperti di atas cuma diterangkan secara mudah. Untuk menunjukkan cara ini kita buatkan data sebagai contoh:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">DT <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">data.table</span>(V1<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span><span style="color:#f92672">:</span><span style="color:#ae81ff">2</span>,
-                 V2<span style="color:#f92672">=</span><span style="color:#66d9ef">LETTERS</span>[1<span style="color:#f92672">:</span><span style="color:#ae81ff">3</span>],
-                 V4<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">12</span>)
-                 
-    V1 V2 V4
- <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span>  <span style="color:#ae81ff">0</span>  A  <span style="color:#ae81ff">1</span>
- <span style="color:#ae81ff">2</span><span style="color:#f92672">:</span>  <span style="color:#ae81ff">1</span>  B  <span style="color:#ae81ff">2</span>
- <span style="color:#ae81ff">3</span><span style="color:#f92672">:</span>  <span style="color:#ae81ff">2</span>  C  <span style="color:#ae81ff">3</span>
- <span style="color:#ae81ff">4</span><span style="color:#f92672">:</span>  <span style="color:#ae81ff">0</span>  A  <span style="color:#ae81ff">4</span>
- <span style="color:#ae81ff">5</span><span style="color:#f92672">:</span>  <span style="color:#ae81ff">1</span>  B  <span style="color:#ae81ff">5</span>
- <span style="color:#ae81ff">6</span><span style="color:#f92672">:</span>  <span style="color:#ae81ff">2</span>  C  <span style="color:#ae81ff">6</span>
- ...truncated
-</code></pre></div><p>Untuk tukarkan <code>V1</code> dari nilai <code>c(1,2)</code> ke nilai <code>c(0,1)</code> atau tukar huruf, caranya:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">DT<span style="color:#a6e22e">[.</span>(V1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">2</span>, to <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>), on <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;V1&#34;</span>, V1 <span style="color:#f92672">:=</span> i.to]
-
-    V1 V2 V4
- <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span>  <span style="color:#ae81ff">0</span>  A  <span style="color:#ae81ff">1</span>
- <span style="color:#ae81ff">2</span><span style="color:#f92672">:</span>  <span style="color:#ae81ff">0</span>  B  <span style="color:#ae81ff">2</span>
- <span style="color:#ae81ff">3</span><span style="color:#f92672">:</span>  <span style="color:#ae81ff">1</span>  C  <span style="color:#ae81ff">3</span>
- <span style="color:#ae81ff">4</span><span style="color:#f92672">:</span>  <span style="color:#ae81ff">0</span>  A  <span style="color:#ae81ff">4</span>
- <span style="color:#ae81ff">5</span><span style="color:#f92672">:</span>  <span style="color:#ae81ff">0</span>  B  <span style="color:#ae81ff">5</span>
- <span style="color:#ae81ff">6</span><span style="color:#f92672">:</span>  <span style="color:#ae81ff">1</span>  C  <span style="color:#ae81ff">6</span>
- ...truncated
-
-DT<span style="color:#a6e22e">[.</span>(V2 <span style="color:#f92672">=</span> <span style="color:#66d9ef">LETTERS</span>[1<span style="color:#f92672">:</span><span style="color:#ae81ff">3</span>], to <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;T&#34;</span>, <span style="color:#e6db74">&#34;K&#34;</span>, <span style="color:#e6db74">&#34;D&#34;</span>)), on <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;V2&#34;</span>, V2 <span style="color:#f92672">:=</span> i.to]
-
-    V1 V2 V4
- <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span>  <span style="color:#ae81ff">0</span>  T  <span style="color:#ae81ff">1</span>
- <span style="color:#ae81ff">2</span><span style="color:#f92672">:</span>  <span style="color:#ae81ff">0</span>  K  <span style="color:#ae81ff">2</span>
- <span style="color:#ae81ff">3</span><span style="color:#f92672">:</span>  <span style="color:#ae81ff">1</span>  D  <span style="color:#ae81ff">3</span>
- <span style="color:#ae81ff">4</span><span style="color:#f92672">:</span>  <span style="color:#ae81ff">0</span>  T  <span style="color:#ae81ff">4</span>
- <span style="color:#ae81ff">5</span><span style="color:#f92672">:</span>  <span style="color:#ae81ff">0</span>  K  <span style="color:#ae81ff">5</span>
- <span style="color:#ae81ff">6</span><span style="color:#f92672">:</span>  <span style="color:#ae81ff">1</span>  D  <span style="color:#ae81ff">6</span>
- ...truncated
-</code></pre></div><p>Di sini <code>.(V1 = 1:2, to = 0:1)</code> ialah sebagai table rujukan. Sekiranya rujukkan (<em>lookup table)</em> tidak tersedia, boleh di buat berasingan:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">lut1 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">data.table</span>(V2 <span style="color:#f92672">=</span> <span style="color:#66d9ef">LETTERS</span>[1<span style="color:#f92672">:</span><span style="color:#ae81ff">3</span>], to <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;T&#34;</span>, <span style="color:#e6db74">&#34;K&#34;</span>, <span style="color:#e6db74">&#34;D&#34;</span>))
-
-   V2 to
-<span style="color:#ae81ff">1</span><span style="color:#f92672">:</span>  A  T
-<span style="color:#ae81ff">2</span><span style="color:#f92672">:</span>  B  K
-<span style="color:#ae81ff">3</span><span style="color:#f92672">:</span>  C  D
-
-<span style="color:#75715e">## Pakai 2 kekunci</span>
-lut2 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">data.table</span>(V1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">2</span>, V4 <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">:</span><span style="color:#ae81ff">3</span>, to <span style="color:#f92672">=</span> <span style="color:#ae81ff">11</span><span style="color:#f92672">:</span><span style="color:#ae81ff">12</span>)
-
-   V1 V4 to
-<span style="color:#ae81ff">1</span><span style="color:#f92672">:</span>  <span style="color:#ae81ff">1</span>  <span style="color:#ae81ff">2</span> <span style="color:#ae81ff">11</span>
-<span style="color:#ae81ff">2</span><span style="color:#f92672">:</span>  <span style="color:#ae81ff">2</span>  <span style="color:#ae81ff">3</span> <span style="color:#ae81ff">12</span>
-</code></pre></div><p>Kemudian bolehlah di <em>update joins</em> data:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">DT[lut1, on <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;V2&#34;</span>, V2 <span style="color:#f92672">:=</span> i.to]
-DT[lut2, on <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;V1&#34;</span>, <span style="color:#e6db74">&#34;V4&#34;</span>), V1 <span style="color:#f92672">:=</span> i.to]
-
-    V1 V2 V4
- <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span>  <span style="color:#ae81ff">0</span>  A  <span style="color:#ae81ff">1</span>
- <span style="color:#ae81ff">2</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">11</span>  B  <span style="color:#ae81ff">2</span>
- <span style="color:#ae81ff">3</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">12</span>  C  <span style="color:#ae81ff">3</span>
- <span style="color:#ae81ff">4</span><span style="color:#f92672">:</span>  <span style="color:#ae81ff">0</span>  A  <span style="color:#ae81ff">4</span>
- <span style="color:#ae81ff">5</span><span style="color:#f92672">:</span>  <span style="color:#ae81ff">1</span>  B  <span style="color:#ae81ff">5</span>
- <span style="color:#ae81ff">6</span><span style="color:#f92672">:</span>  <span style="color:#ae81ff">2</span>  C  <span style="color:#ae81ff">6</span>
- .. truncated
-</code></pre></div><p>Cara ini diambil dari <a href="https://stackoverflow.com/questions/44590935/recode-a-variable-using-data-table">stackoverflow</a>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>DT <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">data.table</span>(V1<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span><span style="color:#f92672">:</span><span style="color:#ae81ff">2</span>,
+</span></span><span style="display:flex;"><span>                 V2<span style="color:#f92672">=</span><span style="color:#66d9ef">LETTERS</span>[1<span style="color:#f92672">:</span><span style="color:#ae81ff">3</span>],
+</span></span><span style="display:flex;"><span>                 V4<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">12</span>)
+</span></span><span style="display:flex;"><span>                 
+</span></span><span style="display:flex;"><span>    V1 V2 V4
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span>  <span style="color:#ae81ff">0</span>  A  <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">2</span><span style="color:#f92672">:</span>  <span style="color:#ae81ff">1</span>  B  <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">3</span><span style="color:#f92672">:</span>  <span style="color:#ae81ff">2</span>  C  <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">4</span><span style="color:#f92672">:</span>  <span style="color:#ae81ff">0</span>  A  <span style="color:#ae81ff">4</span>
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">5</span><span style="color:#f92672">:</span>  <span style="color:#ae81ff">1</span>  B  <span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">6</span><span style="color:#f92672">:</span>  <span style="color:#ae81ff">2</span>  C  <span style="color:#ae81ff">6</span>
+</span></span><span style="display:flex;"><span> ...truncated
+</span></span></code></pre></div><p>Untuk tukarkan <code>V1</code> dari nilai <code>c(1,2)</code> ke nilai <code>c(0,1)</code> atau tukar huruf, caranya:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>DT<span style="color:#a6e22e">[.</span>(V1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">2</span>, to <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>), on <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;V1&#34;</span>, V1 <span style="color:#f92672">:=</span> i.to]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    V1 V2 V4
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span>  <span style="color:#ae81ff">0</span>  A  <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">2</span><span style="color:#f92672">:</span>  <span style="color:#ae81ff">0</span>  B  <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">3</span><span style="color:#f92672">:</span>  <span style="color:#ae81ff">1</span>  C  <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">4</span><span style="color:#f92672">:</span>  <span style="color:#ae81ff">0</span>  A  <span style="color:#ae81ff">4</span>
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">5</span><span style="color:#f92672">:</span>  <span style="color:#ae81ff">0</span>  B  <span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">6</span><span style="color:#f92672">:</span>  <span style="color:#ae81ff">1</span>  C  <span style="color:#ae81ff">6</span>
+</span></span><span style="display:flex;"><span> ...truncated
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>DT<span style="color:#a6e22e">[.</span>(V2 <span style="color:#f92672">=</span> <span style="color:#66d9ef">LETTERS</span>[1<span style="color:#f92672">:</span><span style="color:#ae81ff">3</span>], to <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;T&#34;</span>, <span style="color:#e6db74">&#34;K&#34;</span>, <span style="color:#e6db74">&#34;D&#34;</span>)), on <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;V2&#34;</span>, V2 <span style="color:#f92672">:=</span> i.to]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    V1 V2 V4
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span>  <span style="color:#ae81ff">0</span>  T  <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">2</span><span style="color:#f92672">:</span>  <span style="color:#ae81ff">0</span>  K  <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">3</span><span style="color:#f92672">:</span>  <span style="color:#ae81ff">1</span>  D  <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">4</span><span style="color:#f92672">:</span>  <span style="color:#ae81ff">0</span>  T  <span style="color:#ae81ff">4</span>
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">5</span><span style="color:#f92672">:</span>  <span style="color:#ae81ff">0</span>  K  <span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">6</span><span style="color:#f92672">:</span>  <span style="color:#ae81ff">1</span>  D  <span style="color:#ae81ff">6</span>
+</span></span><span style="display:flex;"><span> ...truncated
+</span></span></code></pre></div><p>Di sini <code>.(V1 = 1:2, to = 0:1)</code> ialah sebagai table rujukan. Sekiranya rujukkan (<em>lookup table)</em> tidak tersedia, boleh di buat berasingan:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>lut1 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">data.table</span>(V2 <span style="color:#f92672">=</span> <span style="color:#66d9ef">LETTERS</span>[1<span style="color:#f92672">:</span><span style="color:#ae81ff">3</span>], to <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;T&#34;</span>, <span style="color:#e6db74">&#34;K&#34;</span>, <span style="color:#e6db74">&#34;D&#34;</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>   V2 to
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">1</span><span style="color:#f92672">:</span>  A  T
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">2</span><span style="color:#f92672">:</span>  B  K
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">3</span><span style="color:#f92672">:</span>  C  D
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## Pakai 2 kekunci</span>
+</span></span><span style="display:flex;"><span>lut2 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">data.table</span>(V1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">2</span>, V4 <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">:</span><span style="color:#ae81ff">3</span>, to <span style="color:#f92672">=</span> <span style="color:#ae81ff">11</span><span style="color:#f92672">:</span><span style="color:#ae81ff">12</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>   V1 V4 to
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">1</span><span style="color:#f92672">:</span>  <span style="color:#ae81ff">1</span>  <span style="color:#ae81ff">2</span> <span style="color:#ae81ff">11</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">2</span><span style="color:#f92672">:</span>  <span style="color:#ae81ff">2</span>  <span style="color:#ae81ff">3</span> <span style="color:#ae81ff">12</span>
+</span></span></code></pre></div><p>Kemudian bolehlah di <em>update joins</em> data:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>DT[lut1, on <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;V2&#34;</span>, V2 <span style="color:#f92672">:=</span> i.to]
+</span></span><span style="display:flex;"><span>DT[lut2, on <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;V1&#34;</span>, <span style="color:#e6db74">&#34;V4&#34;</span>), V1 <span style="color:#f92672">:=</span> i.to]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    V1 V2 V4
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span>  <span style="color:#ae81ff">0</span>  A  <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">2</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">11</span>  B  <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">3</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">12</span>  C  <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">4</span><span style="color:#f92672">:</span>  <span style="color:#ae81ff">0</span>  A  <span style="color:#ae81ff">4</span>
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">5</span><span style="color:#f92672">:</span>  <span style="color:#ae81ff">1</span>  B  <span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">6</span><span style="color:#f92672">:</span>  <span style="color:#ae81ff">2</span>  C  <span style="color:#ae81ff">6</span>
+</span></span><span style="display:flex;"><span> .. truncated
+</span></span></code></pre></div><p>Cara ini diambil dari <a href="https://stackoverflow.com/questions/44590935/recode-a-variable-using-data-table">stackoverflow</a>.</p>
 
 
 
@@ -356,7 +356,7 @@ DT[lut2, on <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</
     <p class="credits copyright">
       <a href="https://yusbk.github.io/about">Yusman Kamaleri</a>
       &nbsp;&copy;
-      2022
+      2023
       
         &nbsp;/&nbsp;
         <a href="https://yusbk.github.io/">𝔂𝓾𝓼𝓴𝓪𝓶</a>
