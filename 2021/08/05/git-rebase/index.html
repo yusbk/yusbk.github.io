@@ -22,10 +22,9 @@
 />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Git Rebase or Reset"/>
-<meta name="twitter:description" content="Updated: 2021-09-06
-Rebase to previous commit of a sepcific branch ie. master.
-git reset --hard origin/master git status or reset to any previous specific commit.
-git log --oneline --graph -5 git reset --hard &lt;commit id&gt; git push origin HEAD --force The steps above:"/>
+<meta name="twitter:description" content="Updated: 2023-02-08
+Rebase to previous commit of a sepcific branch ie. master can be done in many ways. Probably the article on squash will also be of interest.
+Standard way git reset --hard origin/master git status or reset to any previous specific commit."/>
 
 
 
@@ -165,22 +164,29 @@ git log --oneline --graph -5 git reset --hard &lt;commit id&gt; git push origin 
   <div class="container" role="main">
     <article class="article" class="blog-post">
       
-  <p><em>Updated: 2021-09-06</em></p>
-<p>Rebase to previous commit of a sepcific branch ie. <code>master</code>.</p>
+  <p><em>Updated: 2023-02-08</em></p>
+<p>Rebase to previous commit of a sepcific branch ie. <code>master</code> can be done in many
+ways. Probably the article on <a href="https://yusbk.github.io/2022/09/13/git-squash/">squash</a> will also be of interest.</p>
+<h2 id="standard-way">Standard way</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git reset --hard origin/master
 git status
 </code></pre></div><p>or reset to any previous specific commit.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git log --oneline --graph -5
 git reset --hard &lt;commit id&gt;
-git push origin HEAD --force
 </code></pre></div><p>The steps above:</p>
 <ul>
 <li>Look at the previous 5 lines with <code>-5</code> or any number you like. You will also
 find the commit id there</li>
 <li>Rebase to the selected commit id</li>
-<li>Force it back to the origin ie. rewriting the history :(</li>
 </ul>
-<p>Other alternative is to use interactive rebase.</p>
+<p>Push back to origin by force ie. rewriting the history :(</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git push origin +master
+<span style="color:#75715e"># or</span>
+git push origin HEAD --force
+</code></pre></div><p>Use of plus sign eg. <code>+main</code> is to ensure to force push to only one branch.
+Using <code>--force</code> might overwrite multiple push destinations configured with
+<code>remote.*.push</code> other than the current branch.</p>
+<h2 id="other-alternative-is-to-use-interactive-rebase-dot">Other alternative is to use interactive rebase.</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git rebase -i HEAD~5
 </code></pre></div><p>You will be presented with somethig like this:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">drop 3fg501 ...
