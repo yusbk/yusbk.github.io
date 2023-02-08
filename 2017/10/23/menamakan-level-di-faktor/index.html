@@ -67,7 +67,7 @@
 <script defer crossorigin="anonymous" src="/js/theme.js" integrity=""></script>
 
 
-<script defer crossorigin="anonymous" src="/js/instantpage.min.js" integrity=""></script><meta name="generator" content="Hugo 0.110.0">
+<script defer crossorigin="anonymous" src="/js/instantpage.min.js" integrity=""></script><meta name="generator" content="Hugo 0.92.2" />
   </head>
   <body>
     
@@ -175,62 +175,62 @@
   <p>Kekadang nama untuk level yang diberikan di faktor bagi variabel jenis kumpulan (<em>category</em>) tidak bersesuaian dengan yang kita inginkan. Untuk menukarkan nama level tersebut kepada nama-nama yang lain, beberapa cara boleh dipakai. Sesetengah cara yang ditunjukkan di sini bergantung dengan jenis data yang dipakai iaitu <code>data.frame</code> atau <code>data.table</code>.</p>
 <h1 id="data-frame">Data frame</h1>
 <p>Untuk menggunakan cara <code>data.frame</code> ialah seperti di bawah. Sekiranya <code>df$bandar</code> tidak ditukarkan ke <code>factor</code>, nilai levels yang ditetapkan iaitu nama bandar-bandar hanya akan diketahui bila melihat struktur data dengan <code>str</code> (<em>structure</em>) atau <code>attr</code> (<em>attribute</em>).</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>var <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">LETTERS</span>[1<span style="color:#f92672">:</span><span style="color:#ae81ff">5</span>]
-</span></span><span style="display:flex;"><span>bandar <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">9</span>) <span style="color:#75715e">#sebagai numeric</span>
-</span></span><span style="display:flex;"><span>df <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">data.frame</span>(var, bandar)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">levels</span>(df<span style="color:#f92672">$</span>bandar) <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;Tawau&#34;</span>, <span style="color:#e6db74">&#34;Semporna&#34;</span>, <span style="color:#e6db74">&#34;Kunak&#34;</span>, <span style="color:#e6db74">&#34;Lahad Datu&#34;</span>, <span style="color:#e6db74">&#34;lain-lain&#34;</span>)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">## untuk lihat attribute variabel bandar yang ditetapkan seperti di atas</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">str</span>(df)
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">attr</span>(df<span style="color:#f92672">$</span>bandar, <span style="color:#e6db74">&#34;levels&#34;</span>)
-</span></span></code></pre></div><p>Levels nilai iaitu nama bandar-bandar boleh dilihat dengan menukarkan variable <code>bandar</code> dari jenis nombor (<em>numeric</em>) ke faktor (<em>factor</em>).</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#75715e">## tukar &#39;bandar&#39; ke factor</span>
-</span></span><span style="display:flex;"><span>df2 <span style="color:#f92672">&lt;-</span> df
-</span></span><span style="display:flex;"><span>df2<span style="color:#f92672">$</span>bandar <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">factor</span>(df2<span style="color:#f92672">$</span>bandar)
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">levels</span>(df2<span style="color:#f92672">$</span>bandar) <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;Tawau&#34;</span>, <span style="color:#e6db74">&#34;Semporna&#34;</span>, <span style="color:#e6db74">&#34;Kunak&#34;</span>, <span style="color:#e6db74">&#34;Lahad Datu&#34;</span>, <span style="color:#e6db74">&#34;lain-lain&#34;</span>)
-</span></span></code></pre></div><p>Sekiranya ingin menetapkan <code>labels</code> (nama bandar-badar di residensi Tawau) bagi <code>levels</code> tertentu contohnya nilai <code>c(1,2,3,4,9)</code>, cara ini boleh dipakai:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>nilai <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;Tawau&#34;</span>, <span style="color:#e6db74">&#34;Semporna&#34;</span>, <span style="color:#e6db74">&#34;Kunak&#34;</span>, <span style="color:#e6db74">&#34;Lahad Datu&#34;</span>, <span style="color:#e6db74">&#34;lain-lain&#34;</span>)
-</span></span><span style="display:flex;"><span>df<span style="color:#f92672">$</span>bandar <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">factor</span>(df<span style="color:#f92672">$</span>bandar, levels <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">9</span>), labels <span style="color:#f92672">=</span> nilai)
-</span></span></code></pre></div><p>Cara ini untuk mengelakkan kesilapkan menamakan (labels) untuk levels.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">var <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">LETTERS</span>[1<span style="color:#f92672">:</span><span style="color:#ae81ff">5</span>]
+bandar <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">9</span>) <span style="color:#75715e">#sebagai numeric</span>
+df <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">data.frame</span>(var, bandar)
+
+<span style="color:#a6e22e">levels</span>(df<span style="color:#f92672">$</span>bandar) <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;Tawau&#34;</span>, <span style="color:#e6db74">&#34;Semporna&#34;</span>, <span style="color:#e6db74">&#34;Kunak&#34;</span>, <span style="color:#e6db74">&#34;Lahad Datu&#34;</span>, <span style="color:#e6db74">&#34;lain-lain&#34;</span>)
+
+<span style="color:#75715e">## untuk lihat attribute variabel bandar yang ditetapkan seperti di atas</span>
+<span style="color:#a6e22e">str</span>(df)
+<span style="color:#a6e22e">attr</span>(df<span style="color:#f92672">$</span>bandar, <span style="color:#e6db74">&#34;levels&#34;</span>)
+</code></pre></div><p>Levels nilai iaitu nama bandar-bandar boleh dilihat dengan menukarkan variable <code>bandar</code> dari jenis nombor (<em>numeric</em>) ke faktor (<em>factor</em>).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#75715e">## tukar &#39;bandar&#39; ke factor</span>
+df2 <span style="color:#f92672">&lt;-</span> df
+df2<span style="color:#f92672">$</span>bandar <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">factor</span>(df2<span style="color:#f92672">$</span>bandar)
+<span style="color:#a6e22e">levels</span>(df2<span style="color:#f92672">$</span>bandar) <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;Tawau&#34;</span>, <span style="color:#e6db74">&#34;Semporna&#34;</span>, <span style="color:#e6db74">&#34;Kunak&#34;</span>, <span style="color:#e6db74">&#34;Lahad Datu&#34;</span>, <span style="color:#e6db74">&#34;lain-lain&#34;</span>)
+</code></pre></div><p>Sekiranya ingin menetapkan <code>labels</code> (nama bandar-badar di residensi Tawau) bagi <code>levels</code> tertentu contohnya nilai <code>c(1,2,3,4,9)</code>, cara ini boleh dipakai:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">nilai <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;Tawau&#34;</span>, <span style="color:#e6db74">&#34;Semporna&#34;</span>, <span style="color:#e6db74">&#34;Kunak&#34;</span>, <span style="color:#e6db74">&#34;Lahad Datu&#34;</span>, <span style="color:#e6db74">&#34;lain-lain&#34;</span>)
+df<span style="color:#f92672">$</span>bandar <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">factor</span>(df<span style="color:#f92672">$</span>bandar, levels <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">9</span>), labels <span style="color:#f92672">=</span> nilai)
+</code></pre></div><p>Cara ini untuk mengelakkan kesilapkan menamakan (labels) untuk levels.</p>
 <h1 id="data-table">Data table</h1>
 <p>Sekiranya ingin memakai cara <code>data.table</code>, data harus dikonvert ke data.table contohnya <code>setDT(df)</code> sebelum memakai fungsi yang ditunjukkan di sini. Cara yang dibuat untuk data frame juga boleh dipakai di data.table tetapi untuk mempercepatkan proses, cara data.table adalah seperti berikut:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#a6e22e">library</span>(data.table)
-</span></span><span style="display:flex;"><span>DT <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">data.table</span>(a<span style="color:#f92672">=</span><span style="color:#a6e22e">rep</span>(<span style="color:#ae81ff">0</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">5</span>), b<span style="color:#f92672">=</span><span style="color:#66d9ef">letters</span>[1<span style="color:#f92672">:</span><span style="color:#ae81ff">10</span>])
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>val <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;no&#34;</span>, <span style="color:#e6db74">&#34;yes&#34;</span>) <span style="color:#75715e"># 0=No, 1=Yes</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">## Boleh pakai cara biasa</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">levels</span>(DT<span style="color:#f92672">$</span>a) <span style="color:#f92672">&lt;-</span> val
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">## Tukar melalui rujukan tanpa buat salinan</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">setattr</span>(DT<span style="color:#f92672">$</span>a, <span style="color:#e6db74">&#34;levels&#34;</span>, <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;no&#34;</span>, <span style="color:#e6db74">&#34;yes&#34;</span>))
-</span></span></code></pre></div><p>Sekiranya ingin membuat salinan di kolom, boleh buat seperti untuk menukarkan kode</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>DT<span style="color:#a6e22e">[.</span>(a <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>, new <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;no&#34;</span>, <span style="color:#e6db74">&#34;yes&#34;</span>)), on <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;a&#34;</span>]
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    a b new
-</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span> a  no
-</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">2</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span> c  no
-</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">3</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span> e  no
-</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">4</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span> g  no
-</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">5</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span> i  no
-</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">6</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span> b yes
-</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">7</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span> d yes
-</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">8</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span> f yes
-</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">9</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span> h yes
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">10</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span> j yes
-</span></span></code></pre></div><p>Cara lain ialah menggunakan fungsi <code>setattr</code>. Tetapi cara ini harus digunakan dengan berhati-hati kerana labels harus tepat dengan jumlah levels.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>df3 <span style="color:#f92672">&lt;-</span> df
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">setDT</span>(df3)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">## tukar bandar ke faktor</span>
-</span></span><span style="display:flex;"><span>df3[, bandar <span style="color:#f92672">:=</span> <span style="color:#a6e22e">as.factor</span>(bandar)]
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">## tetapkan levels untuk bandar</span>
-</span></span><span style="display:flex;"><span>df3[, <span style="color:#a6e22e">setattr</span>(x <span style="color:#f92672">=</span> bandar,
-</span></span><span style="display:flex;"><span>              name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;levels&#34;</span>,
-</span></span><span style="display:flex;"><span>              value <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;Tawau&#34;</span>, <span style="color:#e6db74">&#34;Semporna&#34;</span>, <span style="color:#e6db74">&#34;Kunak&#34;</span>, <span style="color:#e6db74">&#34;Lahad Datu&#34;</span>, <span style="color:#e6db74">&#34;lain-lain&#34;</span>))]
-</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">library</span>(data.table)
+DT <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">data.table</span>(a<span style="color:#f92672">=</span><span style="color:#a6e22e">rep</span>(<span style="color:#ae81ff">0</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">5</span>), b<span style="color:#f92672">=</span><span style="color:#66d9ef">letters</span>[1<span style="color:#f92672">:</span><span style="color:#ae81ff">10</span>])
+
+val <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;no&#34;</span>, <span style="color:#e6db74">&#34;yes&#34;</span>) <span style="color:#75715e"># 0=No, 1=Yes</span>
+
+<span style="color:#75715e">## Boleh pakai cara biasa</span>
+<span style="color:#a6e22e">levels</span>(DT<span style="color:#f92672">$</span>a) <span style="color:#f92672">&lt;-</span> val
+
+<span style="color:#75715e">## Tukar melalui rujukan tanpa buat salinan</span>
+<span style="color:#a6e22e">setattr</span>(DT<span style="color:#f92672">$</span>a, <span style="color:#e6db74">&#34;levels&#34;</span>, <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;no&#34;</span>, <span style="color:#e6db74">&#34;yes&#34;</span>))
+</code></pre></div><p>Sekiranya ingin membuat salinan di kolom, boleh buat seperti untuk menukarkan kode</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">DT<span style="color:#a6e22e">[.</span>(a <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>, new <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;no&#34;</span>, <span style="color:#e6db74">&#34;yes&#34;</span>)), on <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;a&#34;</span>]
+
+    a b new
+ <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span> a  no
+ <span style="color:#ae81ff">2</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span> c  no
+ <span style="color:#ae81ff">3</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span> e  no
+ <span style="color:#ae81ff">4</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span> g  no
+ <span style="color:#ae81ff">5</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span> i  no
+ <span style="color:#ae81ff">6</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span> b yes
+ <span style="color:#ae81ff">7</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span> d yes
+ <span style="color:#ae81ff">8</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span> f yes
+ <span style="color:#ae81ff">9</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span> h yes
+<span style="color:#ae81ff">10</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span> j yes
+</code></pre></div><p>Cara lain ialah menggunakan fungsi <code>setattr</code>. Tetapi cara ini harus digunakan dengan berhati-hati kerana labels harus tepat dengan jumlah levels.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">df3 <span style="color:#f92672">&lt;-</span> df
+<span style="color:#a6e22e">setDT</span>(df3)
+
+<span style="color:#75715e">## tukar bandar ke faktor</span>
+df3[, bandar <span style="color:#f92672">:=</span> <span style="color:#a6e22e">as.factor</span>(bandar)]
+
+<span style="color:#75715e">## tetapkan levels untuk bandar</span>
+df3[, <span style="color:#a6e22e">setattr</span>(x <span style="color:#f92672">=</span> bandar,
+              name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;levels&#34;</span>,
+              value <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;Tawau&#34;</span>, <span style="color:#e6db74">&#34;Semporna&#34;</span>, <span style="color:#e6db74">&#34;Kunak&#34;</span>, <span style="color:#e6db74">&#34;Lahad Datu&#34;</span>, <span style="color:#e6db74">&#34;lain-lain&#34;</span>))]
+</code></pre></div>
 
 
 

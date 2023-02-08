@@ -69,7 +69,7 @@ options(warn = 2) Nevertheless this blog post explain nicely other alternative i
 <script defer crossorigin="anonymous" src="/js/theme.js" integrity=""></script>
 
 
-<script defer crossorigin="anonymous" src="/js/instantpage.min.js" integrity=""></script><meta name="generator" content="Hugo 0.110.0">
+<script defer crossorigin="anonymous" src="/js/instantpage.min.js" integrity=""></script><meta name="generator" content="Hugo 0.92.2" />
   </head>
   <body>
     
@@ -171,27 +171,27 @@ options(warn = 2) Nevertheless this blog post explain nicely other alternative i
       
   <p>Handling error in R can easily be done with <a href="https://stat.ethz.ch/R-manual/R-devel/library/utils/html/debugger.html">debugger</a> or by activating <code>error</code>
 options with <a href="https://stat.ethz.ch/R-manual/R-devel/library/utils/html/recover.html">recover</a>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#a6e22e">options</span>(error <span style="color:#f92672">=</span> recover)
-</span></span></code></pre></div><p>Or to activate <code>warning</code> as error with:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#a6e22e">options</span>(warn <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>)
-</span></span></code></pre></div><p>Nevertheless this <a href="https://renkun.me/2020/03/31/a-simple-way-to-show-stack-trace-on-error-in-r/">blog post</a> explain nicely other alternative including the code
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#a6e22e">options</span>(error <span style="color:#f92672">=</span> recover)
+</code></pre></div><p>Or to activate <code>warning</code> as error with:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#a6e22e">options</span>(warn <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>)
+</code></pre></div><p>Nevertheless this <a href="https://renkun.me/2020/03/31/a-simple-way-to-show-stack-trace-on-error-in-r/">blog post</a> explain nicely other alternative including the code
 below that you can put in your <code>.Rprofile</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#a6e22e">options</span>(error <span style="color:#f92672">=</span> <span style="color:#a6e22e">function</span>() {
-</span></span><span style="display:flex;"><span>  calls <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">sys.calls</span>()
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">if </span>(<span style="color:#a6e22e">length</span>(calls) <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">2L</span>) {
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">sink</span>(<span style="color:#a6e22e">stderr</span>())
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">on.exit</span>(<span style="color:#a6e22e">sink</span>(<span style="color:#66d9ef">NULL</span>))
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">cat</span>(<span style="color:#e6db74">&#34;Backtrace:\n&#34;</span>)
-</span></span><span style="display:flex;"><span>    calls <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">rev</span>(calls[<span style="color:#f92672">-</span><span style="color:#a6e22e">length</span>(calls)])
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">for </span>(i in <span style="color:#a6e22e">seq_along</span>(calls)) {
-</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">cat</span>(i, <span style="color:#e6db74">&#34;: &#34;</span>, <span style="color:#a6e22e">deparse</span>(calls[[i]], nlines <span style="color:#f92672">=</span> <span style="color:#ae81ff">1L</span>), <span style="color:#e6db74">&#34;\n&#34;</span>, sep <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>)
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>  }
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">if </span>(<span style="color:#f92672">!</span><span style="color:#a6e22e">interactive</span>()) {
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">q</span>(status <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>)
-</span></span><span style="display:flex;"><span>  }
-</span></span><span style="display:flex;"><span>})
-</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#a6e22e">options</span>(error <span style="color:#f92672">=</span> <span style="color:#a6e22e">function</span>() {
+  calls <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">sys.calls</span>()
+  <span style="color:#a6e22e">if </span>(<span style="color:#a6e22e">length</span>(calls) <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">2L</span>) {
+    <span style="color:#a6e22e">sink</span>(<span style="color:#a6e22e">stderr</span>())
+    <span style="color:#a6e22e">on.exit</span>(<span style="color:#a6e22e">sink</span>(<span style="color:#66d9ef">NULL</span>))
+    <span style="color:#a6e22e">cat</span>(<span style="color:#e6db74">&#34;Backtrace:\n&#34;</span>)
+    calls <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">rev</span>(calls[<span style="color:#f92672">-</span><span style="color:#a6e22e">length</span>(calls)])
+    <span style="color:#a6e22e">for </span>(i in <span style="color:#a6e22e">seq_along</span>(calls)) {
+      <span style="color:#a6e22e">cat</span>(i, <span style="color:#e6db74">&#34;: &#34;</span>, <span style="color:#a6e22e">deparse</span>(calls[[i]], nlines <span style="color:#f92672">=</span> <span style="color:#ae81ff">1L</span>), <span style="color:#e6db74">&#34;\n&#34;</span>, sep <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>)
+    }
+  }
+  <span style="color:#a6e22e">if </span>(<span style="color:#f92672">!</span><span style="color:#a6e22e">interactive</span>()) {
+    <span style="color:#a6e22e">q</span>(status <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>)
+  }
+})
+</code></pre></div>
 
 
 
