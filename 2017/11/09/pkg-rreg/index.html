@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+<title>R pakej `rreg`</title>
+<meta name="description" 
+      content=""
+>
+
+  
+
+
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link
+  rel="alternate"
+  type="application/rss+xml"
+  href="https://yusbk.github.io/index.xml"
+  title="𝔂𝓾𝓼𝓴𝓪𝓶"
+/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="R pakej `rreg`"/>
+<meta name="twitter:description" content="Pakej rreg sudah dimuatkan di CRAN pada 8 Ogos 2017. Pakej ini dibuat untuk memudahkan kerja-kerja visualisasi untuk data-data daripada pendaftaran kesihatan di Nasjonalt Servicemiljø for medisinske kvalitetsregistre. Untuk memakai pakej rreg boleh dipasang secara langsung dari CRAN.
+install.packages(&#34;rreg&#34;, dependencies = TRUE) Pakaj ini menggandungi beberapa fungsi untuk visualisasi data."/>
+
+
+
+<link rel="stylesheet" href="https://yusbk.github.io/fontawesome/css/all.min.css" />
+
+
+
+
+<link
+  crossorigin="anonymous"
+  href="/css/styles.min.css"
+  integrity=""
+  rel="preload stylesheet"
+  as="style"
+/>
+
+
+
+
+<link
+  id="dark-mode-theme"
+  crossorigin="anonymous"
+  href="/css/dark.min.css"
+  integrity=""
+  rel="preload stylesheet"
+  as="style"
+/>
+
+
+<script>
+  var darkTheme = document.getElementById('dark-mode-theme')
+  var storedTheme = localStorage.getItem('dark-mode-storage')
+
+  if (storedTheme === 'dark') {
+    darkTheme.disabled = false
+  } else if (storedTheme === 'light') {
+    darkTheme.disabled = true
+  }
+</script>
+
+
+<script defer crossorigin="anonymous" src="/js/theme.js" integrity=""></script>
+
+
+<script defer crossorigin="anonymous" src="/js/instantpage.min.js" integrity=""></script><meta name="generator" content="Hugo 0.92.2" />
+  </head>
+  <body>
+    
+  
+
+
+
+
+  <header>
+    <nav class="navbar">
+  <div class="nav">
+    
+      <a href="https://yusbk.github.io/" class="nav-logo">
+        <img
+          src="https://yusbk.github.io/images/yk.png"
+          width="40"
+          height="40"
+          alt="Logo"
+        />
+      </a>
+    
+
+    <ul class="nav-links">
+      
+        
+          <li>
+            <a href="/about" id="About"
+              ><em class="fas fa-user-secret fa-lg"></em
+            ></a>
+          </li>
+          
+      
+        
+          <li>
+            <a href="/categories" id="Categories"
+              ><em class="fas fa-folder-open fa-lg"></em
+            ></a>
+          </li>
+          
+      
+        
+          <li>
+            <a href="/tags" id="Tags"
+              ><em class="fas fa-tags fa-lg"></em
+            ></a>
+          </li>
+          
+      
+        
+          <li>
+            <a href="/search" id="Search"
+              ><em class="fas fa-search fa-lg"></em
+            ></a>
+          </li>
+          
+      
+    </ul>
+  </div>
+</nav>
+
+    <div class="intro-header">
+      <div class="container">
+        <div class="post-heading">
+          
+            <h1>
+              R pakej `rreg`
+            </h1>
+          
+          
+            <span class="meta-post">
+  <em class="fa fa-calendar-alt"></em
+  >&nbsp;Nov 9, 2017
+  
+    &nbsp;&nbsp;&nbsp;<em class="fa fa-folder-open"></em>&nbsp;
+    
+      <a
+        href="https://yusbk.github.io/categories/r/"
+        >R</a
+      >&nbsp;
+    
+      <a
+        href="https://yusbk.github.io/categories/my/"
+        >my</a
+      >&nbsp;
+    
+  
+</span>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+  
+
+    
+  <div class="container" role="main">
+    <article class="article" class="blog-post">
+      
+  <p>Pakej <code>rreg</code> sudah dimuatkan di <a href="https://cran.r-project.org/">CRAN</a> pada 8 Ogos 2017. Pakej ini dibuat untuk memudahkan kerja-kerja visualisasi untuk data-data daripada pendaftaran kesihatan di <a href="https://www.kvalitetsregistre.no">Nasjonalt Servicemiljø for medisinske kvalitetsregistre</a>. Untuk memakai pakej <code>rreg</code> boleh dipasang secara langsung dari CRAN.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">install.packages</span>(<span style="color:#e6db74">&#34;rreg&#34;</span>, dependencies <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>)
+</code></pre></div><p>Pakaj ini menggandungi beberapa fungsi untuk visualisasi data. Fungsi-fungsi berikut ialah:</p>
+<ol>
+<li>Bar chart dengan <code>regbar</code></li>
+<li>Radar diagram menggunakan <code>regrad</code></li>
+<li>Untuk menunjukkan tren dengan <code>regline</code></li>
+<li>Menggunakan &ldquo;confidence interval&rdquo; atau &ldquo;standard error&rdquo; dengan <code>regerr</code></li>
+</ol>
+<p>Contoh penggunaan boleh dilihat dengan melarikan contoh-contoh yang tersedia dengan menggunakan fungsi <code>example</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">library</span>(rreg)
+<span style="color:#a6e22e">example</span>(regbar)
+</code></pre></div>
+
+
+
+      
+        <div class="blog-tags">
+          
+            <a
+              href="https://yusbk.github.io/tags/plot/"
+              >plot</a
+            >&nbsp;
+          
+        </div>
+      
+
+      
+    </article>
+    
+    
+      
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+        (function() {
+            
+            
+            if (window.location.hostname == "localhost") return;
+
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            var disqus_shortname = 'yusbk-github-io';
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+  <noscript
+    >Please enable JavaScript to view the
+    <a href="https://disqus.com/?ref_noscript"
+      >comments powered by Disqus.</a
+    ></noscript
+  >
+  <a href="https://disqus.com/" class="dsq-brlink"
+    >comments powered by <span class="logo-disqus">Disqus</span></a
+  >
+
+
+    
+  </div>
+
+    <footer>
+  
+
+<div class="social-icons">
+  
+    
+    
+      
+      <a href="https://twitter.com/GoHugoIO" name="twitter">
+        <em class="fab fa-twitter"></em>
+      </a>
+    
+  
+
+  
+</div>
+
+
+  
+  <div class="container">
+    <p class="credits copyright">
+      <a href="https://yusbk.github.io/about">Yusman Kamaleri</a>
+      &nbsp;&copy;
+      2022
+      
+        &nbsp;/&nbsp;
+        <a href="https://yusbk.github.io/">𝔂𝓾𝓼𝓴𝓪𝓶</a>
+      
+      &nbsp;&ndash;&nbsp;
+      <em class="fas fa-moon" id="dark-mode-toggle"></em>
+    </p>
+
+    <p class="credits theme-by">
+      Powered By <a href="https://gohugo.io">Hugo</a>&nbsp;
+      Theme
+      <a href="https://github.com/matsuyoshi30/harbor">Harbor</a>
+    </p>
+  </div>
+</footer>
+
+  </body>
+</html>

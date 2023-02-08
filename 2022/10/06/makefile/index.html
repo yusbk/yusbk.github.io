@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+<title>Makefile</title>
+<meta name="description" 
+      content=""
+>
+
+  
+
+
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link
+  rel="alternate"
+  type="application/rss+xml"
+  href="https://yusbk.github.io/index.xml"
+  title="𝔂𝓾𝓼𝓴𝓪𝓶"
+/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Makefile"/>
+<meta name="twitter:description" content="Updated: 11.10.2022
+Here are some references to start using makefile. It makes automation easily by just running make. Nevertheless, some Apps need to be installed if running in Windows. The easiest way to install Apps is to use scoop to install make and additionally with sed."/>
+
+
+
+<link rel="stylesheet" href="https://yusbk.github.io/fontawesome/css/all.min.css" />
+
+
+
+
+<link
+  crossorigin="anonymous"
+  href="/css/styles.min.css"
+  integrity=""
+  rel="preload stylesheet"
+  as="style"
+/>
+
+
+
+
+<link
+  id="dark-mode-theme"
+  crossorigin="anonymous"
+  href="/css/dark.min.css"
+  integrity=""
+  rel="preload stylesheet"
+  as="style"
+/>
+
+
+<script>
+  var darkTheme = document.getElementById('dark-mode-theme')
+  var storedTheme = localStorage.getItem('dark-mode-storage')
+
+  if (storedTheme === 'dark') {
+    darkTheme.disabled = false
+  } else if (storedTheme === 'light') {
+    darkTheme.disabled = true
+  }
+</script>
+
+
+<script defer crossorigin="anonymous" src="/js/theme.js" integrity=""></script>
+
+
+<script defer crossorigin="anonymous" src="/js/instantpage.min.js" integrity=""></script><meta name="generator" content="Hugo 0.92.2" />
+  </head>
+  <body>
+    
+  
+
+
+
+
+  <header>
+    <nav class="navbar">
+  <div class="nav">
+    
+      <a href="https://yusbk.github.io/" class="nav-logo">
+        <img
+          src="https://yusbk.github.io/images/yk.png"
+          width="40"
+          height="40"
+          alt="Logo"
+        />
+      </a>
+    
+
+    <ul class="nav-links">
+      
+        
+          <li>
+            <a href="/about" id="About"
+              ><em class="fas fa-user-secret fa-lg"></em
+            ></a>
+          </li>
+          
+      
+        
+          <li>
+            <a href="/categories" id="Categories"
+              ><em class="fas fa-folder-open fa-lg"></em
+            ></a>
+          </li>
+          
+      
+        
+          <li>
+            <a href="/tags" id="Tags"
+              ><em class="fas fa-tags fa-lg"></em
+            ></a>
+          </li>
+          
+      
+        
+          <li>
+            <a href="/search" id="Search"
+              ><em class="fas fa-search fa-lg"></em
+            ></a>
+          </li>
+          
+      
+    </ul>
+  </div>
+</nav>
+
+    <div class="intro-header">
+      <div class="container">
+        <div class="post-heading">
+          
+            <h1>
+              Makefile
+            </h1>
+          
+          
+            <span class="meta-post">
+  <em class="fa fa-calendar-alt"></em
+  >&nbsp;Oct 6, 2022
+  
+    &nbsp;&nbsp;&nbsp;<em class="fa fa-folder-open"></em>&nbsp;
+    
+      <a
+        href="https://yusbk.github.io/categories/programming/"
+        >Programming</a
+      >&nbsp;
+    
+      <a
+        href="https://yusbk.github.io/categories/r/"
+        >R</a
+      >&nbsp;
+    
+  
+</span>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+  
+
+    
+  <div class="container" role="main">
+    <article class="article" class="blog-post">
+      
+  <p><em>Updated: 11.10.2022</em></p>
+<p>Here are some references to start using <code>makefile</code>. It makes automation easily
+by just running <code>make</code>. Nevertheless, some Apps need to be installed if running
+in Windows. The easiest way to install Apps is to use <a href="https://scoop.sh/">scoop</a> to install <a href="https://scoop.sh/#/apps?q=make&amp;s=0&amp;d=1&amp;o=true">make</a> and
+additionally with <a href="https://scoop.sh/#/apps?q=sed&amp;s=0&amp;d=1&amp;o=true">sed</a>.</p>
+<ul>
+<li><a href="https://kbroman.org/minimal_make/">A minimal make</a> is a good starting point by Karl Broman</li>
+<li><a href="https://monashbioinformaticsplatform.github.io/2017-11-16-open-science-training/topics/automation.html">Automation with makefile</a> gives a good example to use in R and Python</li>
+<li><a href="https://gist.github.com/halpo/1374344/1d676eda07da6d12deaeaf86e33d595c42b3a1c0">Example</a> of makefile for R package</li>
+<li><a href="https://stackoverflow.com/a/46936748/5372752">StackOverflow</a> long answer and more links on makefile</li>
+</ul>
+<p>Here is an example of my <code>Makefile</code> for R package.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">PKGNAME <span style="color:#f92672">=</span> <span style="color:#66d9ef">$(</span>shell sed -n <span style="color:#e6db74">&#34;s/Package: *\([^ ]*\)/\1/p&#34;</span> DESCRIPTION<span style="color:#66d9ef">)</span>
+PKGVERS <span style="color:#f92672">=</span> <span style="color:#66d9ef">$(</span>shell sed -n <span style="color:#e6db74">&#34;s/Version: *\([^ ]*\)/\1/p&#34;</span> DESCRIPTION<span style="color:#66d9ef">)</span>
+
+
+all: check
+
+build: install_deps
+    R CMD build .
+
+check: build
+    R CMD check --no-manual <span style="color:#66d9ef">$(</span>PKGNAME<span style="color:#66d9ef">)</span>_<span style="color:#66d9ef">$(</span>PKGVERS<span style="color:#66d9ef">)</span>.tar.gz
+
+install_deps:
+    Rscript <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    -e <span style="color:#e6db74">&#39;if (!requireNamespace(&#34;remotes&#34;)) install.packages(&#34;remotes&#34;)&#39;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    -e <span style="color:#e6db74">&#39;remotes::install_deps(dependencies = TRUE)&#39;</span>
+
+install: build
+    R CMD INSTALL <span style="color:#66d9ef">$(</span>PKGNAME<span style="color:#66d9ef">)</span>_<span style="color:#66d9ef">$(</span>PKGVERS<span style="color:#66d9ef">)</span>.tar.gz
+
+clean:
+    @rm -rf <span style="color:#66d9ef">$(</span>PKGNAME<span style="color:#66d9ef">)</span>_<span style="color:#66d9ef">$(</span>PKGVERS<span style="color:#66d9ef">)</span>.tar.gz <span style="color:#66d9ef">$(</span>PKGNAME<span style="color:#66d9ef">)</span>.Rcheck
+</code></pre></div>
+
+
+
+      
+        <div class="blog-tags">
+          
+            <a
+              href="https://yusbk.github.io/tags/makefile/"
+              >makefile</a
+            >&nbsp;
+          
+            <a
+              href="https://yusbk.github.io/tags/make/"
+              >make</a
+            >&nbsp;
+          
+        </div>
+      
+
+      
+    </article>
+    
+    
+      
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+        (function() {
+            
+            
+            if (window.location.hostname == "localhost") return;
+
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            var disqus_shortname = 'yusbk-github-io';
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+  <noscript
+    >Please enable JavaScript to view the
+    <a href="https://disqus.com/?ref_noscript"
+      >comments powered by Disqus.</a
+    ></noscript
+  >
+  <a href="https://disqus.com/" class="dsq-brlink"
+    >comments powered by <span class="logo-disqus">Disqus</span></a
+  >
+
+
+    
+  </div>
+
+    <footer>
+  
+
+<div class="social-icons">
+  
+    
+    
+      
+      <a href="https://twitter.com/GoHugoIO" name="twitter">
+        <em class="fab fa-twitter"></em>
+      </a>
+    
+  
+
+  
+</div>
+
+
+  
+  <div class="container">
+    <p class="credits copyright">
+      <a href="https://yusbk.github.io/about">Yusman Kamaleri</a>
+      &nbsp;&copy;
+      2022
+      
+        &nbsp;/&nbsp;
+        <a href="https://yusbk.github.io/">𝔂𝓾𝓼𝓴𝓪𝓶</a>
+      
+      &nbsp;&ndash;&nbsp;
+      <em class="fas fa-moon" id="dark-mode-toggle"></em>
+    </p>
+
+    <p class="credits theme-by">
+      Powered By <a href="https://gohugo.io">Hugo</a>&nbsp;
+      Theme
+      <a href="https://github.com/matsuyoshi30/harbor">Harbor</a>
+    </p>
+  </div>
+</footer>
+
+  </body>
+</html>
