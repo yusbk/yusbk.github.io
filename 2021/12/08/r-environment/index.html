@@ -24,7 +24,7 @@
 <meta name="twitter:title" content="Environment"/>
 <meta name="twitter:description" content="Updated: 2022-04-12
 Several nice blogs and references on the net to read on this stuff. Among those:
- Environments in R How R Searches and Finds Stuff  This discussion from StackOverflow and here explains nicely with example on the difference between parent."/>
+Environments in R How R Searches and Finds Stuff This discussion from StackOverflow and here explains nicely with example on the difference between parent."/>
 
 
 
@@ -69,7 +69,7 @@ Several nice blogs and references on the net to read on this stuff. Among those:
 <script defer crossorigin="anonymous" src="/js/theme.js" integrity=""></script>
 
 
-<script defer crossorigin="anonymous" src="/js/instantpage.min.js" integrity=""></script><meta name="generator" content="Hugo 0.92.2" />
+<script defer crossorigin="anonymous" src="/js/instantpage.min.js" integrity=""></script><meta name="generator" content="Hugo 0.110.0">
   </head>
   <body>
     
@@ -184,39 +184,39 @@ environment!</p>
 object in the specific environment can be accessed with <code>sys.nframe()</code> as well.
 For instance, to access all the objects in the environment of a second call
 stack in a nexted call.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">xx <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">sys.nframe</span>()[[2]]
-</code></pre></div><h2 id="sys-dot-frames">sys.frames()</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>xx <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">sys.nframe</span>()[[2]]
+</span></span></code></pre></div><h2 id="sys-dot-frames">sys.frames()</h2>
 <p>Another useful options is <code>sys.frames()[[1]]</code> to access the environment of the
 first calling function. It&rsquo;s like using <code>parent.frame()</code> if you don&rsquo;t have a
 nested functions. But once your functions are nested, <code>sys.frames()</code> will be
 useful to access the first calling function.</p>
 <p>This is how I use it to assign a value to an object back to the calling function:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">main_function <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function</span>(var, val){
-  <span style="color:#a6e22e">sub_function</span>(var, val)
-}
-
-sub_function <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function</span>(var, val){
-  <span style="color:#a6e22e">is_assign_var</span>(var, val)
-}
-
-is_assign_var <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function</span>(var, val){
-  <span style="color:#a6e22e">assign</span>(var, val, envir <span style="color:#f92672">=</span> <span style="color:#a6e22e">sys.frames</span>()[[1]])
-}
-</code></pre></div><p>If you don&rsquo;t have a nested function then using <code>parent.frame()</code> or
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>main_function <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function</span>(var, val){
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">sub_function</span>(var, val)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sub_function <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function</span>(var, val){
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">is_assign_var</span>(var, val)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>is_assign_var <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function</span>(var, val){
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">assign</span>(var, val, envir <span style="color:#f92672">=</span> <span style="color:#a6e22e">sys.frames</span>()[[1]])
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>If you don&rsquo;t have a nested function then using <code>parent.frame()</code> or
 <code>sys.frames()[[1]]</code> will be equivalent.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">main_function <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function</span>(var, val){
-  <span style="color:#a6e22e">is_assign_var_01</span>()
-  <span style="color:#a6e22e">is_assign_var_02</span>()
-}
-
-is_assign_var_01 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function</span>(var, val){
-  <span style="color:#a6e22e">assign</span>(var, val, envir <span style="color:#f92672">=</span> <span style="color:#a6e22e">parent.frame</span>())
-}
-
-is_assign_var_02 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function</span>(var, val){
-  <span style="color:#a6e22e">assign</span>(var, val, envir <span style="color:#f92672">=</span> <span style="color:#a6e22e">as.environment</span>(<span style="color:#a6e22e">sys.frames</span>()[[1]]))
-}
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>main_function <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function</span>(var, val){
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">is_assign_var_01</span>()
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">is_assign_var_02</span>()
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>is_assign_var_01 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function</span>(var, val){
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">assign</span>(var, val, envir <span style="color:#f92672">=</span> <span style="color:#a6e22e">parent.frame</span>())
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>is_assign_var_02 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function</span>(var, val){
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">assign</span>(var, val, envir <span style="color:#f92672">=</span> <span style="color:#a6e22e">as.environment</span>(<span style="color:#a6e22e">sys.frames</span>()[[1]]))
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
 
 
 
@@ -288,7 +288,7 @@ is_assign_var_02 <span style="color:#f92672">&lt;-</span> <span style="color:#a6
     <p class="credits copyright">
       <a href="https://yusbk.github.io/about">Yusman K</a>
       &nbsp;&copy;
-      2022
+      2023
       
         &nbsp;/&nbsp;
         <a href="https://yusbk.github.io/">𝔂𝓾𝓼𝓴𝓪𝓶</a>

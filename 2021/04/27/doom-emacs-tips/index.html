@@ -22,8 +22,8 @@
 />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Doom tips"/>
-<meta name="twitter:description" content="Most used keys Navigation Editing Multiedit Search Org related Good to know Update Doom Install required files  Updated: 2022-08-01
-Some tips to learn the keybindings in Doom and Evil in the process of migrating from my vanilla Emacs settings."/>
+<meta name="twitter:description" content="Most used keys Navigation Editing Multiedit Search Org related Good to know Update Doom Install required files Updated: 2022-08-01
+Some tips to learn the keybindings in Doom and Evil in the process of migrating from my vanilla Emacs settings. For overview of keybindings type SPC-h-b-b."/>
 
 
 
@@ -68,7 +68,7 @@ Some tips to learn the keybindings in Doom and Evil in the process of migrating 
 <script defer crossorigin="anonymous" src="/js/theme.js" integrity=""></script>
 
 
-<script defer crossorigin="anonymous" src="/js/instantpage.min.js" integrity=""></script><meta name="generator" content="Hugo 0.92.2" />
+<script defer crossorigin="anonymous" src="/js/instantpage.min.js" integrity=""></script><meta name="generator" content="Hugo 0.110.0">
   </head>
   <body>
     
@@ -359,19 +359,19 @@ until <code>Esc</code> is pressed, then all lines will be updated.</li>
 </ul>
 <h2 id="update-doom">Update Doom</h2>
 <p>Usually it should work to update Doom by running</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">~/.emacs.d/bin/doom upgrade
-~/.emacs.d/bin/doom sync
-</code></pre></div><p>But if it fails, you can delete the package that fails. For instance if package
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>~/.emacs.d/bin/doom upgrade
+</span></span><span style="display:flex;"><span>~/.emacs.d/bin/doom sync
+</span></span></code></pre></div><p>But if it fails, you can delete the package that fails. For instance if package
 <code>gcmh</code> fails then</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">rm -rf ~/.emacs.d/.local/straight/gcmh
-doom sync
-</code></pre></div><p>The easiest is to delete folder <code>.local/straight</code> entirely before <code>doom sync</code>.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>rm -rf ~/.emacs.d/.local/straight/gcmh
+</span></span><span style="display:flex;"><span>doom sync
+</span></span></code></pre></div><p>The easiest is to delete folder <code>.local/straight</code> entirely before <code>doom sync</code>.
 Or pull everything and re-install</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">cd ~/.emacs.d
-rm -rf .local
-git pull
-bin/doom install
-</code></pre></div><h2 id="install-required-files">Install required files</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cd ~/.emacs.d
+</span></span><span style="display:flex;"><span>rm -rf .local
+</span></span><span style="display:flex;"><span>git pull
+</span></span><span style="display:flex;"><span>bin/doom install
+</span></span></code></pre></div><h2 id="install-required-files">Install required files</h2>
 <p>You need to install some prerequisite to make doom work properly. Among them:</p>
 <ul>
 <li>
@@ -380,18 +380,18 @@ bin/doom install
 </li>
 </ul>
 <!-- raw HTML omitted -->
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">cd ~/Downloads
-curl -LO https://github.com/BurntSushi/ripgrep/releases/download/13.0.0/ripgrep_13.0.0_amd64.deb
-sudo dpkg -i ripgrep_13.0.0_amd64.deb
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cd ~/Downloads
+</span></span><span style="display:flex;"><span>curl -LO https://github.com/BurntSushi/ripgrep/releases/download/13.0.0/ripgrep_13.0.0_amd64.deb
+</span></span><span style="display:flex;"><span>sudo dpkg -i ripgrep_13.0.0_amd64.deb
+</span></span></code></pre></div><ul>
 <li>
 <p>+spell</p>
 <p>If you use <code>+spell</code> then you need to install <code>hunspell</code>.</p>
 </li>
 </ul>
 <!-- raw HTML omitted -->
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo apt install hunspell
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo apt install hunspell
+</span></span></code></pre></div>
 
 
 
@@ -496,7 +496,7 @@ sudo dpkg -i ripgrep_13.0.0_amd64.deb
     <p class="credits copyright">
       <a href="https://yusbk.github.io/about">Yusman K</a>
       &nbsp;&copy;
-      2022
+      2023
       
         &nbsp;/&nbsp;
         <a href="https://yusbk.github.io/">𝔂𝓾𝓼𝓴𝓪𝓶</a>

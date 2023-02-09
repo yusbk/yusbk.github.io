@@ -68,7 +68,7 @@ Unik Untuk mendapatkan barisan yang unik di dataset atau unik di kolom tertentu 
 <script defer crossorigin="anonymous" src="/js/theme.js" integrity=""></script>
 
 
-<script defer crossorigin="anonymous" src="/js/instantpage.min.js" integrity=""></script><meta name="generator" content="Hugo 0.92.2" />
+<script defer crossorigin="anonymous" src="/js/instantpage.min.js" integrity=""></script><meta name="generator" content="Hugo 0.110.0">
   </head>
   <body>
     
@@ -270,56 +270,56 @@ dat &lt;- data.table(a = c(12, 15,16, rep(11:12, 2),15, rep(12,3), 17, 17, 18),
 14: 18    q FALSE
 </code></pre>
 <p>Untuk melihat kolom tertentu yang berpendua boleh dibuat seperti cara dibawah dimana kolom <strong>a</strong> dipilih dan semua yang berpendua di kolom tersebut dibariskan:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">dat<span style="color:#a6e22e">[duplicated</span>(a)<span style="color:#f92672">|</span><span style="color:#a6e22e">duplicated</span>(a, fromLast <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>), <span style="color:#a6e22e">list</span>(dd<span style="color:#f92672">=</span><span style="color:#a6e22e">sort</span>(a))]
-
-    dd
- <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">11</span>
- <span style="color:#ae81ff">2</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">11</span>
- <span style="color:#ae81ff">3</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">12</span>
- <span style="color:#ae81ff">4</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">12</span>
- <span style="color:#ae81ff">5</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">12</span>
- <span style="color:#ae81ff">6</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">12</span>
- <span style="color:#ae81ff">7</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">12</span>
- <span style="color:#ae81ff">8</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">12</span>
- <span style="color:#ae81ff">9</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">15</span>
-<span style="color:#ae81ff">10</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">15</span>
-<span style="color:#ae81ff">11</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">17</span>
-<span style="color:#ae81ff">12</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">17</span>
-</code></pre></div><p>Penggunaan <code>fromLast=TRUE</code> ialah untuk mendapatkan barisan terakhir yang berpendua. Sekiranya hanya memakai <code>fromLast=TRUE</code> barisan berpendua yang pertama tidak dikira.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>dat<span style="color:#a6e22e">[duplicated</span>(a)<span style="color:#f92672">|</span><span style="color:#a6e22e">duplicated</span>(a, fromLast <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>), <span style="color:#a6e22e">list</span>(dd<span style="color:#f92672">=</span><span style="color:#a6e22e">sort</span>(a))]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    dd
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">11</span>
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">2</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">11</span>
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">3</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">12</span>
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">4</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">12</span>
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">5</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">12</span>
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">6</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">12</span>
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">7</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">12</span>
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">8</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">12</span>
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">9</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">15</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">10</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">15</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">11</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">17</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">12</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">17</span>
+</span></span></code></pre></div><p>Penggunaan <code>fromLast=TRUE</code> ialah untuk mendapatkan barisan terakhir yang berpendua. Sekiranya hanya memakai <code>fromLast=TRUE</code> barisan berpendua yang pertama tidak dikira.</p>
 <h1 id="kekunci">Kekunci</h1>
 <p>Sekiranya ingin membuang semua yang berpendua berasaskan kekunci boleh dibuat seperti contoh dibawah. Contoh ini diambil dari <a href="https://stackoverflow.com/questions/19392332/find-all-duplicated-records-in-data-table-not-all-but-one">StackOverflow</a>. Cara ini hanya akan berfungsi selepas menetapkan kekunci di data.table dengan <code>setkey</code> atau <code>setkeyv</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">library</span>(data.table)
-myDT <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">fread</span>(
-<span style="color:#e6db74">&#34;id,fB,fC
-</span><span style="color:#e6db74"> 1, b1,c1
-</span><span style="color:#e6db74"> 2, b2,c2
-</span><span style="color:#e6db74"> 3, b1,c1
-</span><span style="color:#e6db74"> 4, b3,c3
-</span><span style="color:#e6db74"> 5, b1,c1
-</span><span style="color:#e6db74">&#34;</span>)
-
-<span style="color:#75715e">## Tetapkan kekunci</span>
-<span style="color:#a6e22e">setkeyv</span>(myDT, <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#39;fB&#39;</span>, <span style="color:#e6db74">&#39;fC&#39;</span>))
-</code></pre></div><p>Untuk dapatkan barisan berpendua berasaskan kekunci <code>fB</code> dan <code>fC</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">dups <span style="color:#f92672">=</span> <span style="color:#a6e22e">duplicated</span>(myDT, by <span style="color:#f92672">=</span> <span style="color:#a6e22e">key</span>(myDT));
-myDT[, fD <span style="color:#f92672">:=</span> dups <span style="color:#f92672">|</span> <span style="color:#a6e22e">c</span>(<span style="color:#a6e22e">tail</span>(dups, <span style="color:#ae81ff">-1</span>), <span style="color:#66d9ef">FALSE</span>)] <span style="color:#75715e">#shift dups to 1 position ie. -1</span>
-
-<span style="color:#75715e">## Cara lama dan agak lambat</span>
-myDT[, fD <span style="color:#f92672">:=</span> .N <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1</span>, by<span style="color:#f92672">=</span><span style="color:#a6e22e">key</span>(myDT)]
-
-<span style="color:#75715e">## hasilnya</span>
-myDT
-   id fB fC    fD
-<span style="color:#ae81ff">1</span><span style="color:#f92672">:</span>  <span style="color:#ae81ff">1</span> b1 c1  <span style="color:#66d9ef">TRUE</span>
-<span style="color:#ae81ff">2</span><span style="color:#f92672">:</span>  <span style="color:#ae81ff">3</span> b1 c1  <span style="color:#66d9ef">TRUE</span>
-<span style="color:#ae81ff">3</span><span style="color:#f92672">:</span>  <span style="color:#ae81ff">5</span> b1 c1  <span style="color:#66d9ef">TRUE</span>
-<span style="color:#ae81ff">4</span><span style="color:#f92672">:</span>  <span style="color:#ae81ff">2</span> b2 c2 <span style="color:#66d9ef">FALSE</span>
-<span style="color:#ae81ff">5</span><span style="color:#f92672">:</span>  <span style="color:#ae81ff">4</span> b3 c3 <span style="color:#66d9ef">FALSE</span>
-</code></pre></div><h1 id="indeks-barisan">Indeks barisan</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#a6e22e">library</span>(data.table)
+</span></span><span style="display:flex;"><span>myDT <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">fread</span>(
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;id,fB,fC
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"> 1, b1,c1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"> 2, b2,c2
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"> 3, b1,c1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"> 4, b3,c3
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"> 5, b1,c1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## Tetapkan kekunci</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">setkeyv</span>(myDT, <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#39;fB&#39;</span>, <span style="color:#e6db74">&#39;fC&#39;</span>))
+</span></span></code></pre></div><p>Untuk dapatkan barisan berpendua berasaskan kekunci <code>fB</code> dan <code>fC</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>dups <span style="color:#f92672">=</span> <span style="color:#a6e22e">duplicated</span>(myDT, by <span style="color:#f92672">=</span> <span style="color:#a6e22e">key</span>(myDT));
+</span></span><span style="display:flex;"><span>myDT[, fD <span style="color:#f92672">:=</span> dups <span style="color:#f92672">|</span> <span style="color:#a6e22e">c</span>(<span style="color:#a6e22e">tail</span>(dups, <span style="color:#ae81ff">-1</span>), <span style="color:#66d9ef">FALSE</span>)] <span style="color:#75715e">#shift dups to 1 position ie. -1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## Cara lama dan agak lambat</span>
+</span></span><span style="display:flex;"><span>myDT[, fD <span style="color:#f92672">:=</span> .N <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1</span>, by<span style="color:#f92672">=</span><span style="color:#a6e22e">key</span>(myDT)]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## hasilnya</span>
+</span></span><span style="display:flex;"><span>myDT
+</span></span><span style="display:flex;"><span>   id fB fC    fD
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">1</span><span style="color:#f92672">:</span>  <span style="color:#ae81ff">1</span> b1 c1  <span style="color:#66d9ef">TRUE</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">2</span><span style="color:#f92672">:</span>  <span style="color:#ae81ff">3</span> b1 c1  <span style="color:#66d9ef">TRUE</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">3</span><span style="color:#f92672">:</span>  <span style="color:#ae81ff">5</span> b1 c1  <span style="color:#66d9ef">TRUE</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">4</span><span style="color:#f92672">:</span>  <span style="color:#ae81ff">2</span> b2 c2 <span style="color:#66d9ef">FALSE</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">5</span><span style="color:#f92672">:</span>  <span style="color:#ae81ff">4</span> b3 c3 <span style="color:#66d9ef">FALSE</span>
+</span></span></code></pre></div><h1 id="indeks-barisan">Indeks barisan</h1>
 <p>Kadang-kadang kita hanya ingin dapatkan indeks barisan yang berpendua tanpa perlu mendapatkan data. Cara ini memerlukan fungi <code>which</code>. Contohnya:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">which</span>(<span style="color:#a6e22e">duplicated</span>(dat))
-[1] <span style="color:#ae81ff">10</span> <span style="color:#ae81ff">11</span>
-</code></pre></div><p>Untuk menggunakan pendekatan cara <em>data.table</em> adalah seperti dibawah. Cara pertama dan kedua hanya memberikan index barisan terakhir atau pertama yang berpendua manakala cara ketiga memberikan semua barisan yang berpendua.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">which</span>(<span style="color:#a6e22e">duplicated</span>(dat))
+</span></span><span style="display:flex;"><span>[1] <span style="color:#ae81ff">10</span> <span style="color:#ae81ff">11</span>
+</span></span></code></pre></div><p>Untuk menggunakan pendekatan cara <em>data.table</em> adalah seperti dibawah. Cara pertama dan kedua hanya memberikan index barisan terakhir atau pertama yang berpendua manakala cara ketiga memberikan semua barisan yang berpendua.</p>
 <pre><code>&gt; dat[duplicated(dat), which=TRUE]
 [1] 10 11
 
@@ -408,7 +408,7 @@ myDT
     <p class="credits copyright">
       <a href="https://yusbk.github.io/about">Yusman K</a>
       &nbsp;&copy;
-      2022
+      2023
       
         &nbsp;/&nbsp;
         <a href="https://yusbk.github.io/">𝔂𝓾𝓼𝓴𝓪𝓶</a>

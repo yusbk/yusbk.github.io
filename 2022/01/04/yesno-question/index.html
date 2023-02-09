@@ -69,7 +69,7 @@ cp &lt;- as.integer(readline(prompt = &#34;Vil du kopiere filen?"/>
 <script defer crossorigin="anonymous" src="/js/theme.js" integrity=""></script>
 
 
-<script defer crossorigin="anonymous" src="/js/instantpage.min.js" integrity=""></script><meta name="generator" content="Hugo 0.92.2" />
+<script defer crossorigin="anonymous" src="/js/instantpage.min.js" integrity=""></script><meta name="generator" content="Hugo 0.110.0">
   </head>
   <body>
     
@@ -174,17 +174,17 @@ receive the answer as an input.</p>
 <h2 id="readline">readline</h2>
 <p>You can find some example in <a href="https://stackoverflow.com/a/11007431/5372752">StackOverflow</a> or <a href="https://www.geeksforgeeks.org/taking-input-from-user-in-r-programming/">Geeksforgeeks</a>. Basically is just
 like this:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">cp <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">as.integer</span>(<span style="color:#a6e22e">readline</span>(prompt <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Vil du kopiere filen? Svar 0=Nei 1=Ja &#34;</span>))
-</code></pre></div><h2 id="utils-menu">utils::menu</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>cp <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">as.integer</span>(<span style="color:#a6e22e">readline</span>(prompt <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Vil du kopiere filen? Svar 0=Nei 1=Ja &#34;</span>))
+</span></span></code></pre></div><h2 id="utils-menu">utils::menu</h2>
 <p>An example is from <a href="https://stackoverflow.com/a/41227909/5372752">StackOverflow</a> or from the <a href="https://stat.ethz.ch/R-manual/R-devel/library/utils/html/menu.html">documentation.</a> You can use GUI is
 Windows or MacOS. This is how I use the functions:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">    msgs <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">sprintf</span>(<span style="color:#e6db74">&#34;\nWoops!! Table `%s allready exists. What will you do?&#34;</span>, table)
-    answer <span style="color:#f92672">&lt;-</span> utils<span style="color:#f92672">::</span><span style="color:#a6e22e">menu</span>(<span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;Overwrite&#34;</span>, <span style="color:#e6db74">&#34;Append&#34;</span>, <span style="color:#e6db74">&#34;Cancel&#34;</span>), title <span style="color:#f92672">=</span> msgs)
-</code></pre></div><h2 id="utils-askyesno">utils::askYesNo</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>    msgs <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">sprintf</span>(<span style="color:#e6db74">&#34;\nWoops!! Table `%s allready exists. What will you do?&#34;</span>, table)
+</span></span><span style="display:flex;"><span>    answer <span style="color:#f92672">&lt;-</span> utils<span style="color:#f92672">::</span><span style="color:#a6e22e">menu</span>(<span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;Overwrite&#34;</span>, <span style="color:#e6db74">&#34;Append&#34;</span>, <span style="color:#e6db74">&#34;Cancel&#34;</span>), title <span style="color:#f92672">=</span> msgs)
+</span></span></code></pre></div><h2 id="utils-askyesno">utils::askYesNo</h2>
 <p>This gives the output as <code>TRUE</code>, <code>FALSE</code> or <code>NA</code>. You can read the <a href="https://stat.ethz.ch/R-manual/R-devel/library/utils/html/askYesNo.html">documentation</a>
 for some examples.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">out <span style="color:#f92672">&lt;-</span> utils<span style="color:#f92672">::</span><span style="color:#a6e22e">askYesNo</span>(<span style="color:#e6db74">&#34;Do you can to proceed?&#34;</span>)
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>out <span style="color:#f92672">&lt;-</span> utils<span style="color:#f92672">::</span><span style="color:#a6e22e">askYesNo</span>(<span style="color:#e6db74">&#34;Do you can to proceed?&#34;</span>)
+</span></span></code></pre></div>
 
 
 
@@ -256,7 +256,7 @@ for some examples.</p>
     <p class="credits copyright">
       <a href="https://yusbk.github.io/about">Yusman K</a>
       &nbsp;&copy;
-      2022
+      2023
       
         &nbsp;/&nbsp;
         <a href="https://yusbk.github.io/">𝔂𝓾𝓼𝓴𝓪𝓶</a>
