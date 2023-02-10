@@ -22,7 +22,7 @@
 />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Cara deloy Shiny"/>
-<meta name="twitter:description" content="Menggunakan runApp() Menggunakan shinyAppDir() Tips lain Terdapat pelbagai cara untuk larikan Shiny App. Sebagai rujukan boleh dibaca di laman Shiny. Penggunaan fungsi runApp() dan shinyAppDir() akan diterangkan disini.
+<meta name="twitter:description" content="Menggunakan runApp() Menggunakan shinyAppDir() Tips lain  Terdapat pelbagai cara untuk larikan Shiny App. Sebagai rujukan boleh dibaca di laman Shiny. Penggunaan fungsi runApp() dan shinyAppDir() akan diterangkan disini.
 Menggunakan runApp() Satu fail app.R Untuk menggunakan fungsi runApp(), cara yang senang digunakan ialah dengan menyediakan fail app."/>
 
 
@@ -68,7 +68,7 @@ Menggunakan runApp() Satu fail app.R Untuk menggunakan fungsi runApp(), cara yan
 <script defer crossorigin="anonymous" src="/js/theme.js" integrity=""></script>
 
 
-<script defer crossorigin="anonymous" src="/js/instantpage.min.js" integrity=""></script><meta name="generator" content="Hugo 0.110.0">
+<script defer crossorigin="anonymous" src="/js/instantpage.min.js" integrity=""></script><meta name="generator" content="Hugo 0.92.2" />
   </head>
   <body>
     
@@ -185,16 +185,16 @@ diterangkan disini.</p>
 <p>Untuk menggunakan fungsi <em>runApp()</em>, cara yang senang digunakan ialah
 dengan menyediakan fail <em>app.R</em>. Fail ini harus mengandungi <strong>ui</strong> dan
 <strong>server</strong>. Contohnya:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>  <span style="color:#a6e22e">library</span>(shiny)
-</span></span><span style="display:flex;"><span>  ui <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">fluidPage</span>()
-</span></span><span style="display:flex;"><span>  server <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function</span>(input, output) {}
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">shinyApp</span>(ui <span style="color:#f92672">=</span> ui, server <span style="color:#f92672">=</span> server)
-</span></span></code></pre></div><p>Sekiranya menggunakan program <em>RStudio</em> maka butang <em>Run App</em> akan
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">  <span style="color:#a6e22e">library</span>(shiny)
+  ui <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">fluidPage</span>()
+  server <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function</span>(input, output) {}
+  <span style="color:#a6e22e">shinyApp</span>(ui <span style="color:#f92672">=</span> ui, server <span style="color:#f92672">=</span> server)
+</code></pre></div><p>Sekiranya menggunakan program <em>RStudio</em> maka butang <em>Run App</em> akan
 keluar dan boleh digunakan untuk melarikan app. Sekiranya mengunakan
 program lain contohnya <em>Emacs ESS</em> maka boleh larikan dengan cara :</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span>  library(shiny)
-</span></span><span style="display:flex;"><span>  runApp(<span style="color:#e6db74">&#34;app.R&#34;</span>)
-</span></span></code></pre></div><h4 id="pelbagai-fail-di-folder">Pelbagai fail di folder</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  library(shiny)
+  runApp(<span style="color:#e6db74">&#34;app.R&#34;</span>)
+</code></pre></div><h4 id="pelbagai-fail-di-folder">Pelbagai fail di folder</h4>
 <p>Sekiranya app mengandungi kod yang panjang dimana <em>ui</em> dan <em>server</em> di
 letakkan di fail-fail berasingan, fail-fail ini harus diletakkan di
 folder sendiri bersama dengan fail-fail lain contohnya <em>global.R</em>,
@@ -202,36 +202,36 @@ folder sendiri bersama dengan fail-fail lain contohnya <em>global.R</em>,
 tidak diperlukan untuk melarikan app ini. Penggunaan <em>runApp()</em> boleh
 digunakan dengan menetapkan nama folder dimana fail-fail tersebut
 diletakkan. Contohnya isi kandungan di folder <em>myApp</em></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>  /home/Git/myApp/
-</span></span><span style="display:flex;"><span>  ├── data.R
-</span></span><span style="display:flex;"><span>  ├── global.R
-</span></span><span style="display:flex;"><span>  ├── server.R
-</span></span><span style="display:flex;"><span>  ├── ui.R
-</span></span><span style="display:flex;"><span>  └── www
-</span></span><span style="display:flex;"><span>      └── custom.css
-</span></span></code></pre></div><p>Folder <em>www</em> digunakan untuk menyimpan elemen-element lain seperti
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">  /home/Git/myApp/
+  ├── data.R
+  ├── global.R
+  ├── server.R
+  ├── ui.R
+  └── www
+      └── custom.css
+</code></pre></div><p>Folder <em>www</em> digunakan untuk menyimpan elemen-element lain seperti
 gambar, javaScript, CSS dan lain-lainnya. Untuk melayarkan app boleh
 dilakukan pelbagai cara. Antaranya:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span>  library(shiny)
-</span></span><span style="display:flex;"><span>  runApp(<span style="color:#e6db74">&#34;myApp&#34;</span>)
-</span></span></code></pre></div><p>Sekiranya Shinyapps dibuat sebagai object.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>  app &lt;- shinyApp(ui = ui, server = server)
-</span></span><span style="display:flex;"><span>  runApp(app)
-</span></span></code></pre></div><p>Atau hanya terus melarikan <em>app</em> di console tanpa mengunakan <em>runApp</em></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>  app &lt;- shinyApp(ui = ui, server = server)
-</span></span><span style="display:flex;"><span>  app
-</span></span></code></pre></div><h2 id="menggunakan-shinyappdir">Menggunakan <code>shinyAppDir()</code></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">  library(shiny)
+  runApp(<span style="color:#e6db74">&#34;myApp&#34;</span>)
+</code></pre></div><p>Sekiranya Shinyapps dibuat sebagai object.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">  app &lt;- shinyApp(ui = ui, server = server)
+  runApp(app)
+</code></pre></div><p>Atau hanya terus melarikan <em>app</em> di console tanpa mengunakan <em>runApp</em></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">  app &lt;- shinyApp(ui = ui, server = server)
+  app
+</code></pre></div><h2 id="menggunakan-shinyappdir">Menggunakan <code>shinyAppDir()</code></h2>
 <p>Melarikan app dengan menetapkan folder sekiranya folder tidak terletak
 di folder yang sedang digunakan.</p>
 <h2 id="tips-lain">Tips lain</h2>
 <p>Sekiranya ingin dapatkan <em>clientData</em> boleh menggunakan <em>session</em>.
 Contohnya:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>  <span style="color:#a6e22e">function</span>(input, output, session) {
-</span></span><span style="display:flex;"><span>    output<span style="color:#f92672">$</span>txt <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">renderPrint</span>({
-</span></span><span style="display:flex;"><span>      session<span style="color:#f92672">$</span>clientData
-</span></span><span style="display:flex;"><span>    })
-</span></span><span style="display:flex;"><span>  }
-</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">  <span style="color:#a6e22e">function</span>(input, output, session) {
+    output<span style="color:#f92672">$</span>txt <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">renderPrint</span>({
+      session<span style="color:#f92672">$</span>clientData
+    })
+  }
+</code></pre></div>
 
 
 

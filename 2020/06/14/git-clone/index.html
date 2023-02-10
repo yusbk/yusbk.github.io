@@ -69,7 +69,7 @@ Technically, when you fork &ldquo;origin&rdquo; should be your fork and &ldquo;u
 <script defer crossorigin="anonymous" src="/js/theme.js" integrity=""></script>
 
 
-<script defer crossorigin="anonymous" src="/js/instantpage.min.js" integrity=""></script><meta name="generator" content="Hugo 0.110.0">
+<script defer crossorigin="anonymous" src="/js/instantpage.min.js" integrity=""></script><meta name="generator" content="Hugo 0.92.2" />
   </head>
   <body>
     
@@ -173,28 +173,28 @@ Technically, when you fork &ldquo;origin&rdquo; should be your fork and &ldquo;u
 <li>In your local, add a new remote to your fork; then fetch it, and push your changes up to it</li>
 </ol>
 <!-- raw HTML omitted -->
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>  git remote add my-fork git@github...my-fork.git
-</span></span><span style="display:flex;"><span>  git fetch my-fork
-</span></span><span style="display:flex;"><span>  git push my-fork
-</span></span></code></pre></div><p>Otherwise, if you want to follow convention:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">  git remote add my-fork git@github...my-fork.git
+  git fetch my-fork
+  git push my-fork
+</code></pre></div><p>Otherwise, if you want to follow convention:</p>
 <ol>
 <li>Fork their repo on Github</li>
 <li>In your local, rename your origin remote to upstream</li>
 </ol>
 <!-- raw HTML omitted -->
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>  git remote rename origin upstream
-</span></span></code></pre></div><ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">  git remote rename origin upstream
+</code></pre></div><ol>
 <li>Add a new origin</li>
 </ol>
 <!-- raw HTML omitted -->
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>  git remote add origin git@github...my-fork
-</span></span></code></pre></div><ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">  git remote add origin git@github...my-fork
+</code></pre></div><ol>
 <li>Fetch &amp; push</li>
 </ol>
 <!-- raw HTML omitted -->
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>  git fetch origin
-</span></span><span style="display:flex;"><span>  git push origin
-</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">  git fetch origin
+  git push origin
+</code></pre></div>
 
 
 
