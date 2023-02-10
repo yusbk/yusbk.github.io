@@ -14,12 +14,12 @@
 		<atom:link href="/tags/squash/" rel="self" type="application/rss+xml" />
 		
 		<item>
-			<title>Change default HOME with Git Bash</title>
+			<title>Change default HOME</title>
 			<link>https://yusbk.github.io/2023/02/09/change-default-home-with-git-bash/</link>
 			<pubDate>Thu, 09 Feb 2023 10:32:00 +0100</pubDate>
 			<guid>https://yusbk.github.io/2023/02/09/change-default-home-with-git-bash/</guid>
-			<description>Sometime you need to change the location of your default Git directory to locate your .ssh keys for easy access. This can be done as follows:
-Via Git Bash Use git bash to change HOME to C:\Users\ybk. You can use pwd or echo $HOME to check your current HOME directory.</description>
+			<description>Git Bash is used in the example. Sometime you need to change the location of your default Git directory to locate your .ssh keys for easy access. This can be done as follows:
+Via Git Bash Use git bash to change HOME to C:\Users\ybk.</description>
 		</item>
       	
 		<item>

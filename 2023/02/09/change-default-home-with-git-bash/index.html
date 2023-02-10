@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-<title>Change default HOME with Git Bash</title>
+<title>Change default HOME</title>
 <meta name="description" 
       content=""
 >
@@ -21,9 +21,9 @@
   title="𝔂𝓾𝓼𝓴𝓪𝓶"
 />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Change default HOME with Git Bash"/>
-<meta name="twitter:description" content="Sometime you need to change the location of your default Git directory to locate your .ssh keys for easy access. This can be done as follows:
-Via Git Bash Use git bash to change HOME to C:\Users\ybk. You can use pwd or echo $HOME to check your current HOME directory."/>
+<meta name="twitter:title" content="Change default HOME"/>
+<meta name="twitter:description" content="Git Bash is used in the example. Sometime you need to change the location of your default Git directory to locate your .ssh keys for easy access. This can be done as follows:
+Via Git Bash Use git bash to change HOME to C:\Users\ybk."/>
 
 
 
@@ -134,7 +134,7 @@ Via Git Bash Use git bash to change HOME to C:\Users\ybk. You can use pwd or ech
         <div class="post-heading">
           
             <h1>
-              Change default HOME with Git Bash
+              Change default HOME
             </h1>
           
           
@@ -163,10 +163,11 @@ Via Git Bash Use git bash to change HOME to C:\Users\ybk. You can use pwd or ech
   <div class="container" role="main">
     <article class="article" class="blog-post">
       
-  <p>Sometime you need to change the location of your default Git directory to locate
-your <code>.ssh</code> keys for easy access. This can be done as follows:</p>
+  <p><code>Git Bash</code> is used in the example. Sometime you need to change the location of
+your default Git directory to locate your <code>.ssh</code> keys for easy access. This can
+be done as follows:</p>
 <h2 id="via-git-bash">Via Git Bash</h2>
-<p>Use git bash to change <code>HOME</code> to <code>C:\Users\ybk</code>. You can use <code>pwd</code> or <code>echo $HOME</code> to check your current <code>HOME</code> directory.</p>
+<p>Use git bash to change <code>HOME</code> to <code>C:\Users\ybk</code>. You can use <code>pwd</code> or <code>echo $HOME</code> to check your current <code>HOME</code> directory.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">pwd
 setx HOME <span style="color:#e6db74">&#34;/c/Users/ybk/&#34;</span>
 </code></pre></div><p>As a reminder, this will change the <code>HOME</code> directory for all programs that need
