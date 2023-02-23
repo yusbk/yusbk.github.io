@@ -22,7 +22,7 @@
 />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Mount drive"/>
-<meta name="twitter:description" content="Install Mount manually Credential Auto mount Other option to mount Execute Access to folders SSH Copy file OneDrive  Updated: 2022-11-05
+<meta name="twitter:description" content="Install Mount manually Credential Auto mount Other option to mount Execute Access to folders SSH Copy file OneDrive Updated: 2022-11-05
 This is only relevant to my personal reference at work.
 The address for drive F and N is as follow:"/>
 
@@ -69,7 +69,7 @@ The address for drive F and N is as follow:"/>
 <script defer crossorigin="anonymous" src="/js/theme.js" integrity=""></script>
 
 
-<script defer crossorigin="anonymous" src="/js/instantpage.min.js" integrity=""></script><meta name="generator" content="Hugo 0.92.2" />
+<script defer crossorigin="anonymous" src="/js/instantpage.min.js" integrity=""></script><meta name="generator" content="Hugo 0.110.0">
   </head>
   <body>
     
@@ -196,80 +196,80 @@ The address for drive F and N is as follow:"/>
 or PowerShell.</p>
 <h2 id="install">Install</h2>
 <p>Install CIFS utilities package.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">  sudo apt update
-  sudo apt install cifs-utils autofs
-</code></pre></div><h2 id="mount-manually">Mount manually</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>  sudo apt update
+</span></span><span style="display:flex;"><span>  sudo apt install cifs-utils autofs
+</span></span></code></pre></div><h2 id="mount-manually">Mount manually</h2>
 <p>Basically you can mount the drive every time you want to access it directly with the command below
 but this has to be done every time you login to you machine.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">sudo mkdir /mnt/F
-sudo mount -t cifs -o username=YourWindowsUserName,password=YourWindowsPassword //fhi.no/Felles /mnt/F
-</code></pre></div><p>You can run <code>df -h</code> to verify that mounting windows share folder in Linux was successful.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>sudo mkdir /mnt/F
+</span></span><span style="display:flex;"><span>sudo mount -t cifs -o username=YourWindowsUserName,password=YourWindowsPassword //fhi.no/Felles /mnt/F
+</span></span></code></pre></div><p>You can run <code>df -h</code> to verify that mounting windows share folder in Linux was successful.</p>
 <h2 id="credential">Credential</h2>
 <p>To ensure that your username and password secure, use credential file for example <code>/etc/cifs-credentials</code> with:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">  username=user
-  password=password
-</code></pre></div><p>Then make it unreadable to others with</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">  sudo chown root: /etc/cifs-credentials
-  sudo chmod <span style="color:#ae81ff">600</span> /etc/cifs-credentials
-</code></pre></div><p>Then to use the credentials run:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">  sudo mount -t cifs -o credentials<span style="color:#f92672">=</span>/etc/cifs-credentials,file_mode<span style="color:#f92672">=</span>0777,dir_mode<span style="color:#f92672">=</span><span style="color:#ae81ff">0777</span> ://fhi.no/fil/styrt
-</code></pre></div><p>Read more <a href="https://linuxize.com/post/how-to-mount-cifs-windows-share-on-linux/">here</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>  username=user
+</span></span><span style="display:flex;"><span>  password=password
+</span></span></code></pre></div><p>Then make it unreadable to others with</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>  sudo chown root: /etc/cifs-credentials
+</span></span><span style="display:flex;"><span>  sudo chmod <span style="color:#ae81ff">600</span> /etc/cifs-credentials
+</span></span></code></pre></div><p>Then to use the credentials run:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>  sudo mount -t cifs -o credentials<span style="color:#f92672">=</span>/etc/cifs-credentials,file_mode<span style="color:#f92672">=</span>0777,dir_mode<span style="color:#f92672">=</span><span style="color:#ae81ff">0777</span> ://fhi.no/fil/styrt
+</span></span></code></pre></div><p>Read more <a href="https://linuxize.com/post/how-to-mount-cifs-windows-share-on-linux/">here</a></p>
 <h2 id="auto-mount">Auto mount</h2>
 <p>Alternatively you can automount the drive. Here I use <code>fstad</code>. Edit file <code>fstab</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo vim /etc/fstab
-</code></pre></div><p>Then add the following line to the file:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">//fhi.no/fil/felles /mnt/F cifs credentials=/etc/cifs-credentials,file_mode=0755,dir_mode=0755 0 0
-//fhi.no/fil/fil/styrt /mnt/N cifs credentials=/etc/cifs-credentials,file_mode=0755,dir_mode=0755 0 0
-//fhi.no/home/brukere_Y\$//YBKA /mnt/H cifs credentials=/etc/cifs-credentials,file_mode=0755,dir_mode=0755 0 0
-</code></pre></div><p>Then run the command to mount all the entries in <code>/etc/fstab</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo mount -a
-</code></pre></div><p>To unmount any of the folder, eg. <code>/mnt/F</code>. The second command is used if the
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>sudo vim /etc/fstab
+</span></span></code></pre></div><p>Then add the following line to the file:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>//fhi.no/fil/felles /mnt/F cifs credentials=/etc/cifs-credentials,file_mode=0755,dir_mode=0755 0 0
+</span></span><span style="display:flex;"><span>//fhi.no/fil/fil/styrt /mnt/N cifs credentials=/etc/cifs-credentials,file_mode=0755,dir_mode=0755 0 0
+</span></span><span style="display:flex;"><span>//fhi.no/home/brukere_Y\$//YBKA /mnt/H cifs credentials=/etc/cifs-credentials,file_mode=0755,dir_mode=0755 0 0
+</span></span></code></pre></div><p>Then run the command to mount all the entries in <code>/etc/fstab</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>sudo mount -a
+</span></span></code></pre></div><p>To unmount any of the folder, eg. <code>/mnt/F</code>. The second command is used if the
 first command fails. The option <code>-l</code> is equal to <code>--lazy</code>. The command is
 <code>umount</code> and not <code>unmount</code> ie. without <code>n</code> in <strong>UN</strong>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo umount /mnt/F
-sudo umount -t cifs -l /mnt/F
-</code></pre></div><p>This guide is copied from <a href="https://linoxide.com/mount-windows-share-on-ubuntu-linux/">here</a>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>sudo umount /mnt/F
+</span></span><span style="display:flex;"><span>sudo umount -t cifs -l /mnt/F
+</span></span></code></pre></div><p>This guide is copied from <a href="https://linoxide.com/mount-windows-share-on-ubuntu-linux/">here</a>.</p>
 <h2 id="other-option-to-mount">Other option to mount</h2>
 <p>To use <a href="https://help.ubuntu.com/community/Autofs#The_Master_Map_File">autofs</a> to automount instead of <code>fstad</code>. If you wonder the different
 between these methods then you can read <a href="https://www.linux.com/topic/desktop/how-configure-autofs-automount-linux/">here.</a> To start with <code>autofs</code> create file
 <code>auto.cifs</code> in directory <code>/etc/</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">  F -fstype=cifs,rw,credential=/etc/cifs-credentials,uid=1000,iocharset=utf8 ://fhi.no/Felles
-  N -fstype=cifs,rw,credential=/etc/cifs-credentials,uid=1000,iocharset=utf8 ://fhi.no/fil/styrt
-  H -fstype=cifs,rw,credential=/etc/cifs-credentials,uid=1000,iocharset=utf8 ://fhi.no/home/Brukere_Y\$/MYUSERNAME
-</code></pre></div><p><strong>NB!</strong> Look at dealing with special symbol such as folder name ie. <code>Brukere_Y$</code> which should be written
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>  F -fstype=cifs,rw,credential=/etc/cifs-credentials,uid=1000,iocharset=utf8 ://fhi.no/Felles
+</span></span><span style="display:flex;"><span>  N -fstype=cifs,rw,credential=/etc/cifs-credentials,uid=1000,iocharset=utf8 ://fhi.no/fil/styrt
+</span></span><span style="display:flex;"><span>  H -fstype=cifs,rw,credential=/etc/cifs-credentials,uid=1000,iocharset=utf8 ://fhi.no/home/Brukere_Y\$/MYUSERNAME
+</span></span></code></pre></div><p><strong>NB!</strong> Look at dealing with special symbol such as folder name ie. <code>Brukere_Y$</code> which should be written
 as <code>Brukere_Y\$</code>. If these settings don&rsquo;t work for you, try the settings below</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">  N -fstype=cifs,rw,username=&lt;your-username&gt;,password=&lt;your-password&gt;,vers=3.0,uid=1000,file_mode=0777,dir_mode=0777,users ://fhi.no/fil/styrt
-  F -fstype=cifs,rw,username=&lt;your-username&gt;,password=&lt;your-password&gt;,vers=3.0,uid=1000,file_mode=0777,dir_mode=0777,users ://fhi.no/felles
-</code></pre></div><p>To understand how mount settings is done can be referred from this <a href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/storage_administration_guide/nfs-autofs">website on AUTOFS</a>. Basically the structure is</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">mount-point map-name options
-</code></pre></div><p>The primary configuration file for the automounter is <code>/etc/auto.master</code>, also referred to as the
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>  N -fstype=cifs,rw,username=&lt;your-username&gt;,password=&lt;your-password&gt;,vers=3.0,uid=1000,file_mode=0777,dir_mode=0777,users ://fhi.no/fil/styrt
+</span></span><span style="display:flex;"><span>  F -fstype=cifs,rw,username=&lt;your-username&gt;,password=&lt;your-password&gt;,vers=3.0,uid=1000,file_mode=0777,dir_mode=0777,users ://fhi.no/felles
+</span></span></code></pre></div><p>To understand how mount settings is done can be referred from this <a href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/storage_administration_guide/nfs-autofs">website on AUTOFS</a>. Basically the structure is</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>mount-point map-name options
+</span></span></code></pre></div><p>The primary configuration file for the automounter is <code>/etc/auto.master</code>, also referred to as the
 master map which may be changed accordingly. Open <code>auto.master</code> file and mounting directory to <code>/mnt</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">  /mnt /etc/auto.cifs
-</code></pre></div><h2 id="execute">Execute</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>  /mnt /etc/auto.cifs
+</span></span></code></pre></div><h2 id="execute">Execute</h2>
 <p>To run <code>autofs</code> the execute these command in terminal:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">  sudo systemctl enable autofs
-  sudo systemctl start autofs
-</code></pre></div><p>Other options includes <code>restart</code> or <code>stop</code>. To check if you have access to directory <strong>F</strong> and <strong>N</strong> run this in terminal:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">  cd ~ <span style="color:#f92672">&amp;&amp;</span> cd /mnt/F <span style="color:#f92672">&amp;&amp;</span> ls
-</code></pre></div><h2 id="access-to-folders">Access to folders</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>  sudo systemctl enable autofs
+</span></span><span style="display:flex;"><span>  sudo systemctl start autofs
+</span></span></code></pre></div><p>Other options includes <code>restart</code> or <code>stop</code>. To check if you have access to directory <strong>F</strong> and <strong>N</strong> run this in terminal:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>  cd ~ <span style="color:#f92672">&amp;&amp;</span> cd /mnt/F <span style="color:#f92672">&amp;&amp;</span> ls
+</span></span></code></pre></div><h2 id="access-to-folders">Access to folders</h2>
 <p>Since it&rsquo;s defined in the file <code>/etc/auto.master</code> that mounting will be in <code>/mnt</code> to access the folders is done with:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">  cd /mnt/N
-  cd /mnt/F
-</code></pre></div><h2 id="ssh">SSH</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>  cd /mnt/N
+</span></span><span style="display:flex;"><span>  cd /mnt/F
+</span></span></code></pre></div><h2 id="ssh">SSH</h2>
 <p>Install SSH to be able to access the mounted drive from other machine.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">sudo apt update
-sudo apt install openssh-server
-</code></pre></div><p>If port 22 SSH in firewall not enable, then enable it by</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">sudo ufw allow 22
-</code></pre></div><p>To check if SSH is running</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">sudo systemctl status ssh
-</code></pre></div><p>You can actively initiate SSH if it&rsquo;s not already running or stop SSH</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">sudo systemctl start ssh
-sudo systemctl stop ssh
-</code></pre></div><h2 id="copy-file">Copy file</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>sudo apt update
+</span></span><span style="display:flex;"><span>sudo apt install openssh-server
+</span></span></code></pre></div><p>If port 22 SSH in firewall not enable, then enable it by</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>sudo ufw allow 22
+</span></span></code></pre></div><p>To check if SSH is running</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>sudo systemctl status ssh
+</span></span></code></pre></div><p>You can actively initiate SSH if it&rsquo;s not already running or stop SSH</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>sudo systemctl start ssh
+</span></span><span style="display:flex;"><span>sudo systemctl stop ssh
+</span></span></code></pre></div><h2 id="copy-file">Copy file</h2>
 <p>To copy files to remote machine</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">scp FilePathWindows username@UbuntuIP:UbuntuPath
-</code></pre></div><p>For example <code>scp C:/Docs/MyData.csv ybk@ipAddress:/home/usr/</code>. Wildcard pattern
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>scp FilePathWindows username@UbuntuIP:UbuntuPath
+</span></span></code></pre></div><p>For example <code>scp C:/Docs/MyData.csv ybk@ipAddress:/home/usr/</code>. Wildcard pattern
 with <code>*</code> could also be used. You can also read <a href="https://bharatdwarkani.medium.com/copying-a-file-from-windows-to-linux-through-ssh-17f4f4c2eca8">here</a>.</p>
 <h2 id="onedrive">OneDrive</h2>
 <p>Currently, I use this guide to mount OneDrive

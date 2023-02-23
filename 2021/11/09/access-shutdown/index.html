@@ -23,7 +23,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="MS Access Shutdown"/>
 <meta name="twitter:description" content="How to shutdown all running Access when you need to do some changes. This is just a summary from Microsoft Docs. The steps are:
-Create empty text file  This file will be the key. Name the file to anything like checkfile."/>
+Create empty text file This file will be the key. Name the file to anything like checkfile."/>
 
 
 
@@ -68,7 +68,7 @@ Create empty text file  This file will be the key. Name the file to anything lik
 <script defer crossorigin="anonymous" src="/js/theme.js" integrity=""></script>
 
 
-<script defer crossorigin="anonymous" src="/js/instantpage.min.js" integrity=""></script><meta name="generator" content="Hugo 0.92.2" />
+<script defer crossorigin="anonymous" src="/js/instantpage.min.js" integrity=""></script><meta name="generator" content="Hugo 0.110.0">
   </head>
   <body>
     
@@ -181,54 +181,54 @@ called in english version) specify 60000 milliseconds (1 minute) or any numbers.
 can paste the VB code below with changes to the form names accordingly.</li>
 </ul>
 <!-- raw HTML omitted -->
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c">Option Explicit
-Dim boolCountDown As Boolean
-Dim intCountDownMinutes As Integer
-
-Private Sub Form_Open(Cancel As Integer)
-    <span style="color:#960050;background-color:#1e0010">&#39;</span> Set Count Down variable to false
-    <span style="color:#960050;background-color:#1e0010">&#39;</span> on the initial opening of the form.
-    boolCountDown <span style="color:#f92672">=</span> False
-End Sub
-
-Private Sub Form_Timer()
-On Error GoTo Err_Form_Timer
-    Dim strFileName As String
-    strFileName <span style="color:#f92672">=</span> Dir(<span style="color:#e6db74">&#34;c:\MyData\chkfile.ozx&#34;</span>)
-    If boolCountDown <span style="color:#f92672">=</span> False Then
-        <span style="color:#960050;background-color:#1e0010">&#39;</span> Do nothing unless the check file is missing.
-        If strFileName <span style="color:#f92672">&lt;&gt;</span> <span style="color:#e6db74">&#34;chkfile.ozx&#34;</span> Then
-            <span style="color:#960050;background-color:#1e0010">&#39;</span> The check file is not found so
-            <span style="color:#960050;background-color:#1e0010">&#39;</span> set the count down variable to true and
-            <span style="color:#960050;background-color:#1e0010">&#39;</span> number of minutes until this session
-            <span style="color:#960050;background-color:#1e0010">&#39;</span> of Access will be shut down.
-            boolCountDown <span style="color:#f92672">=</span> True
-            intCountDownMinutes <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>
-        End If
-    Else
-        <span style="color:#960050;background-color:#1e0010">&#39;</span> Count down variable is true so warn
-        <span style="color:#960050;background-color:#1e0010">&#39;</span> the user that the application will be shut down
-        <span style="color:#960050;background-color:#1e0010">&#39;</span> in X number of minutes.  The number of minutes
-        <span style="color:#960050;background-color:#1e0010">&#39;</span> will be <span style="color:#ae81ff">1</span> less than the initial value of the
-        <span style="color:#960050;background-color:#1e0010">&#39;</span> intCountDownMinutes variable because the form timer
-        <span style="color:#960050;background-color:#1e0010">&#39;</span> event is set to fire every <span style="color:#ae81ff">60</span> seconds
-        intCountDownMinutes <span style="color:#f92672">=</span> intCountDownMinutes <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>
-        DoCmd.OpenForm <span style="color:#e6db74">&#34;frmAppShutDownWarn&#34;</span>
-        Forms<span style="color:#f92672">!</span>frmAppShutDownWarn<span style="color:#f92672">!</span>txtWarning <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;This application will be shut down in approximately &#34;</span> <span style="color:#f92672">&amp;</span> intCountDownMinutes <span style="color:#f92672">&amp;</span> <span style="color:#e6db74">&#34; minute(s).  Please save all work.&#34;</span>
-        If intCountDownMinutes <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">1</span> Then
-            <span style="color:#960050;background-color:#1e0010">&#39;</span> Shut down Access <span style="color:#66d9ef">if</span> the countdown is zero,
-            <span style="color:#960050;background-color:#1e0010">&#39;</span> saving all work by <span style="color:#66d9ef">default</span>.
-            Application.Quit acQuitSaveAll
-        End If
-    End If
-
-Exit_Form_Timer:
-    Exit Sub
-
-Err_Form_Timer:
-    Resume Next
-End Sub
-</code></pre></div><h2 id="create-form-to-give-warning">Create form to give warning</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>Option Explicit
+</span></span><span style="display:flex;"><span>Dim boolCountDown As Boolean
+</span></span><span style="display:flex;"><span>Dim intCountDownMinutes As Integer
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Private Sub <span style="color:#a6e22e">Form_Open</span>(Cancel As Integer)
+</span></span><span style="display:flex;"><span>    <span style="color:#960050;background-color:#1e0010">&#39;</span> Set Count Down variable to false
+</span></span><span style="display:flex;"><span>    <span style="color:#960050;background-color:#1e0010">&#39;</span> on the initial opening of the form.
+</span></span><span style="display:flex;"><span>    boolCountDown <span style="color:#f92672">=</span> False
+</span></span><span style="display:flex;"><span>End Sub
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Private Sub <span style="color:#a6e22e">Form_Timer</span>()
+</span></span><span style="display:flex;"><span>On Error GoTo Err_Form_Timer
+</span></span><span style="display:flex;"><span>    Dim strFileName As String
+</span></span><span style="display:flex;"><span>    strFileName <span style="color:#f92672">=</span> <span style="color:#a6e22e">Dir</span>(<span style="color:#e6db74">&#34;c:\MyData\chkfile.ozx&#34;</span>)
+</span></span><span style="display:flex;"><span>    If boolCountDown <span style="color:#f92672">=</span> False Then
+</span></span><span style="display:flex;"><span>        <span style="color:#960050;background-color:#1e0010">&#39;</span> Do nothing unless the check file is missing.
+</span></span><span style="display:flex;"><span>        If strFileName <span style="color:#f92672">&lt;&gt;</span> <span style="color:#e6db74">&#34;chkfile.ozx&#34;</span> Then
+</span></span><span style="display:flex;"><span>            <span style="color:#960050;background-color:#1e0010">&#39;</span> The check file is not found so
+</span></span><span style="display:flex;"><span>            <span style="color:#960050;background-color:#1e0010">&#39;</span> set the count down variable to true and
+</span></span><span style="display:flex;"><span>            <span style="color:#960050;background-color:#1e0010">&#39;</span> number of minutes until this session
+</span></span><span style="display:flex;"><span>            <span style="color:#960050;background-color:#1e0010">&#39;</span> of Access will be shut down.
+</span></span><span style="display:flex;"><span>            boolCountDown <span style="color:#f92672">=</span> True
+</span></span><span style="display:flex;"><span>            intCountDownMinutes <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>        End If
+</span></span><span style="display:flex;"><span>    Else
+</span></span><span style="display:flex;"><span>        <span style="color:#960050;background-color:#1e0010">&#39;</span> Count down variable is true so warn
+</span></span><span style="display:flex;"><span>        <span style="color:#960050;background-color:#1e0010">&#39;</span> the user that the application will be shut down
+</span></span><span style="display:flex;"><span>        <span style="color:#960050;background-color:#1e0010">&#39;</span> in X number of minutes.  The number of minutes
+</span></span><span style="display:flex;"><span>        <span style="color:#960050;background-color:#1e0010">&#39;</span> will be <span style="color:#ae81ff">1</span> less than the initial value of the
+</span></span><span style="display:flex;"><span>        <span style="color:#960050;background-color:#1e0010">&#39;</span> intCountDownMinutes variable because the form timer
+</span></span><span style="display:flex;"><span>        <span style="color:#960050;background-color:#1e0010">&#39;</span> event is set to fire every <span style="color:#ae81ff">60</span> seconds
+</span></span><span style="display:flex;"><span>        intCountDownMinutes <span style="color:#f92672">=</span> intCountDownMinutes <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>        DoCmd.OpenForm <span style="color:#e6db74">&#34;frmAppShutDownWarn&#34;</span>
+</span></span><span style="display:flex;"><span>        Forms<span style="color:#f92672">!</span>frmAppShutDownWarn<span style="color:#f92672">!</span>txtWarning <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;This application will be shut down in approximately &#34;</span> <span style="color:#f92672">&amp;</span> intCountDownMinutes <span style="color:#f92672">&amp;</span> <span style="color:#e6db74">&#34; minute(s).  Please save all work.&#34;</span>
+</span></span><span style="display:flex;"><span>        If intCountDownMinutes <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">1</span> Then
+</span></span><span style="display:flex;"><span>            <span style="color:#960050;background-color:#1e0010">&#39;</span> Shut down Access <span style="color:#66d9ef">if</span> the countdown is zero,
+</span></span><span style="display:flex;"><span>            <span style="color:#960050;background-color:#1e0010">&#39;</span> saving all work by <span style="color:#66d9ef">default</span>.
+</span></span><span style="display:flex;"><span>            Application.Quit acQuitSaveAll
+</span></span><span style="display:flex;"><span>        End If
+</span></span><span style="display:flex;"><span>    End If
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Exit_Form_Timer:
+</span></span><span style="display:flex;"><span>    Exit Sub
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Err_Form_Timer:
+</span></span><span style="display:flex;"><span>    Resume Next
+</span></span><span style="display:flex;"><span>End Sub
+</span></span></code></pre></div><h2 id="create-form-to-give-warning">Create form to give warning</h2>
 <ul>
 <li>Create an empty form and called it <code>frm_ShutDownWarn</code>.</li>
 <li>While in the <code>Design</code> mode, add <code>text box</code> from options and put in the form.</li>
