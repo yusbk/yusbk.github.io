@@ -22,7 +22,8 @@
 />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Git Upstream"/>
-<meta name="twitter:description" content="When you forked a repo then your copy of forked-repo in your Github profile will be referred to as origin while upstream refers to the real origin where the repo was forked from. If you cloned a repo then you will only have local copy of the repo."/>
+<meta name="twitter:description" content="Updated: 24.02.2023
+When you forked a repo then your copy of forked-repo in your Github profile will be referred to as origin while upstream refers to the real origin where the repo was forked from. If you cloned a repo then you will have local copy of the origin repo."/>
 
 
 
@@ -162,10 +163,13 @@
   <div class="container" role="main">
     <article class="article" class="blog-post">
       
-  <p>When you forked a repo then your copy of forked-repo in your Github profile will be referred to as
+  <p><em>Updated: 24.02.2023</em></p>
+<p>When you forked a repo then your copy of forked-repo in your Github profile will be referred to as
 <em>origin</em> while <em>upstream</em> refers to the real origin where the repo was forked from. If you cloned a repo
-then you will only have local copy of the repo. You can read <a href="https://yusbk.github.io/2020/06/14/git-clone/">here</a> to convert it as a forked repo.</p>
-<p>To sync your forked repo then you have to add the upstream url.</p>
+then you will have local copy of the <em>origin</em> repo. You can read <a href="https://yusbk.github.io/2020/06/14/git-clone/">here</a> to convert it as a forked repo.</p>
+<p>Use this command to see the <em>origin</em> of the repo or its <em>upstream</em> if it&rsquo;s added.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git remote -v
+</code></pre></div><p>To sync your forked repo then you have to add the upstream url.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">  git remote add upstream https://github.com/repo-name.git
   git fetch upstream
   git checkout master
@@ -178,7 +182,7 @@ alternatives. Specifying <code>git log -10</code> will show the last 10 commits.
   git log --oneline --graph -10
   git log --since<span style="color:#f92672">=</span>2.day
   git show
-</code></pre></div><p>If you have error for displaying the <code>diff</code> you might have to specify editor with <code>-git config --global core.editor emacs</code>. In this case I use <em>emacs</em> as my diff editor.</p>
+</code></pre></div><p>If you have error for displaying the <code>diff</code> you might have to specify editor with <code>-git config --global core.editor emacs</code>. In this case I use <em>emacs</em> as my diff editor.</p>
 <p>When everything is updated without conflict then you can push to your origin. Sometime you get error
 when pushing to origin because your local copy have different HEAD from the origin. You could force
 push with</p>
