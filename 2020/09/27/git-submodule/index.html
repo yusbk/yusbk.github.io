@@ -68,7 +68,7 @@ Repo baru Bila buat repo baru dan ingin tetapkan submodule untuk tema harbor dan
 <script defer crossorigin="anonymous" src="/js/theme.js" integrity=""></script>
 
 
-<script defer crossorigin="anonymous" src="/js/instantpage.min.js" integrity=""></script><meta name="generator" content="Hugo 0.110.0">
+<script defer crossorigin="anonymous" src="/js/instantpage.min.js" integrity=""></script><meta name="generator" content="Hugo 0.92.2" />
   </head>
   <body>
     
@@ -171,97 +171,97 @@ struktur.</p>
 repos sendiri ie. subfolder di folder utama repos.</p>
 <p>Contoh dibawah ialah untuk memasukkan folder <em>harbor</em> ke dalam folder <em>themes</em> di folder utama.
 Subfolder <em>public</em> pula ialah submodule dari repo blog di <a href="https://github.com/yusbk/yusbk.github.io">Github</a>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>  # themes
-</span></span><span style="display:flex;"><span>  git submodule add https://github.com/matsuyoshi30/harbor.git themes/harbor
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  # yusbk.github.io master branch
-</span></span><span style="display:flex;"><span>  git submodule add -b master git@personal:yusbk/yusbk.github.io.git public
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  # update
-</span></span><span style="display:flex;"><span>  git submodule init
-</span></span><span style="display:flex;"><span>  git submodule update --remote --merge
-</span></span></code></pre></div><p>Untuk update submodule pakai komando di bawah. Penting commit submodule dahulu kemudian commit
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">  # themes
+  git submodule add https://github.com/matsuyoshi30/harbor.git themes/harbor
+
+  # yusbk.github.io master branch
+  git submodule add -b master git@personal:yusbk/yusbk.github.io.git public
+
+  # update
+  git submodule init
+  git submodule update --remote --merge
+</code></pre></div><p>Untuk update submodule pakai komando di bawah. Penting commit submodule dahulu kemudian commit
 parent repo sebelum push dari parent repos. Caranya:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>  cd public
-</span></span><span style="display:flex;"><span>  git add .
-</span></span><span style="display:flex;"><span>  git commit -am &#39;Tambah pertukaran di public submodule&#39;
-</span></span><span style="display:flex;"><span>  cd ..
-</span></span><span style="display:flex;"><span>  git push origin master --recurse-submodules=on-demand
-</span></span></code></pre></div><p>Bila tambah fail baru, jangan lupa daftarkan fail tersebut dengan <code>git add .</code> sebelum pakai <code>git commit</code>. Sekiranya HEAD detaching dengan submodule boleh guna script ini untuk kembali ke MASTER.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">  cd public
+  git add .
+  git commit -am &#39;Tambah pertukaran di public submodule&#39;
+  cd ..
+  git push origin master --recurse-submodules=on-demand
+</code></pre></div><p>Bila tambah fail baru, jangan lupa daftarkan fail tersebut dengan <code>git add .</code> sebelum pakai <code>git commit</code>. Sekiranya HEAD detaching dengan submodule boleh guna script ini untuk kembali ke MASTER.
 Rujukan di <a href="https://stackoverflow.com/questions/18770545/why-is-my-git-submodule-head-detached-from-master/49997119#49997119">StackOverflow</a>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>  <span style="color:#75715e">#!/bin/bash</span>
-</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;Building all submodules while checking out from MASTER branch.&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  git submodule update
-</span></span><span style="display:flex;"><span>  git submodule foreach git checkout master
-</span></span><span style="display:flex;"><span>  git submodule foreach git pull origin master
-</span></span></code></pre></div><h2 id="clone">Clone</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">  <span style="color:#75715e">#!/bin/bash</span>
+  echo <span style="color:#e6db74">&#34;Building all submodules while checking out from MASTER branch.&#34;</span>
+
+  git submodule update
+  git submodule foreach git checkout master
+  git submodule foreach git pull origin master
+</code></pre></div><h2 id="clone">Clone</h2>
 <p>Untuk clone repo termasuk semua submodules di repo boleh guna <code>--recursive</code> :</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>  git clone --recursive <span style="color:#f92672">[</span>URL to repo<span style="color:#f92672">]</span>
-</span></span></code></pre></div><p>Bila selesai compile dengan <code>hugo -D</code>, ikut cara ini untuk <em>push</em> pertama kali:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>cd public
-</span></span><span style="display:flex;"><span>git add .
-</span></span><span style="display:flex;"><span>git commit -am <span style="color:#e6db74">&#34;you commit message&#34;</span>
-</span></span><span style="display:flex;"><span>git push origin HEAD:master
-</span></span><span style="display:flex;"><span>cd ..
-</span></span><span style="display:flex;"><span>git submodule update --remote
-</span></span><span style="display:flex;"><span>git add .
-</span></span><span style="display:flex;"><span>git commit -am <span style="color:#e6db74">&#34;your commit message&#34;</span>
-</span></span><span style="display:flex;"><span>git push --recurse-submodules<span style="color:#f92672">=</span>on-demand
-</span></span></code></pre></div><p>Bila clone repos tanpa <code>--recursive</code> yang mempunyai submodules, folder-folder submodule akan hanya
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">  git clone --recursive <span style="color:#f92672">[</span>URL to repo<span style="color:#f92672">]</span>
+</code></pre></div><p>Bila selesai compile dengan <code>hugo -D</code>, ikut cara ini untuk <em>push</em> pertama kali:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cd public
+git add .
+git commit -am <span style="color:#e6db74">&#34;you commit message&#34;</span>
+git push origin HEAD:master
+cd ..
+git submodule update --remote
+git add .
+git commit -am <span style="color:#e6db74">&#34;your commit message&#34;</span>
+git push --recurse-submodules<span style="color:#f92672">=</span>on-demand
+</code></pre></div><p>Bila clone repos tanpa <code>--recursive</code> yang mempunyai submodules, folder-folder submodule akan hanya
 kosong. Untuk dapatkan isi kandungan submodels tersebut harus larikan komando:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>  git submodule update --init
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e">## sekiranya ada nested submodules</span>
-</span></span><span style="display:flex;"><span>  git submodule update --init --recursive
-</span></span><span style="display:flex;"><span>  git submodule update --rebase --merge
-</span></span></code></pre></div><p>Sekiranya masih kosong, boleh letak <code>--recursive</code> disebabkan nested submodules <code>../themes/harbor</code>. Bila
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">  git submodule update --init
+  <span style="color:#75715e">## sekiranya ada nested submodules</span>
+  git submodule update --init --recursive
+  git submodule update --rebase --merge
+</code></pre></div><p>Sekiranya masih kosong, boleh letak <code>--recursive</code> disebabkan nested submodules <code>../themes/harbor</code>. Bila
 sudah selesai pasang aturcara, bolehlah kemaskini submodule dengan <code>fetch/pull</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>  <span style="color:#75715e"># pull all changes in the repo including changes in the submodules</span>
-</span></span><span style="display:flex;"><span>  git pull --recurse-submodules
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># pull all changes for the submodules</span>
-</span></span><span style="display:flex;"><span>  git submodule update --remote
-</span></span></code></pre></div><p>Sekiranya masih tidak berhasil, padamkan folder submodule <code>harbor</code> dan larikan semua komando:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>  git submodule set-url themes/harbor https://github.com/matsuyoshi30/harbor.git
-</span></span><span style="display:flex;"><span>  git submodule sync
-</span></span><span style="display:flex;"><span>  git submodule update --rebase --remote --merge --recursive
-</span></span></code></pre></div><p>Sekiranya <code>HEAD detached</code>, boleh coba <code>checkout master</code> dan <code>pull</code> semula. Cara seperti diatas,</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>  git submodule foreach git checkout master
-</span></span><span style="display:flex;"><span>  git submodule foreach git pull origin master
-</span></span></code></pre></div><p>Atau buat <code>pull request</code> dengan cara:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>  cd public
-</span></span><span style="display:flex;"><span>  git push origin HEAD:refs/heads/37f62cf
-</span></span></code></pre></div><p>Nombor <code>37f62cf</code> ialah contoh rujukan HEAD semasa dari GitHub commit.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">  <span style="color:#75715e"># pull all changes in the repo including changes in the submodules</span>
+  git pull --recurse-submodules
+
+  <span style="color:#75715e"># pull all changes for the submodules</span>
+  git submodule update --remote
+</code></pre></div><p>Sekiranya masih tidak berhasil, padamkan folder submodule <code>harbor</code> dan larikan semua komando:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">  git submodule set-url themes/harbor https://github.com/matsuyoshi30/harbor.git
+  git submodule sync
+  git submodule update --rebase --remote --merge --recursive
+</code></pre></div><p>Sekiranya <code>HEAD detached</code>, boleh coba <code>checkout master</code> dan <code>pull</code> semula. Cara seperti diatas,</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">  git submodule foreach git checkout master
+  git submodule foreach git pull origin master
+</code></pre></div><p>Atau buat <code>pull request</code> dengan cara:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">  cd public
+  git push origin HEAD:refs/heads/37f62cf
+</code></pre></div><p>Nombor <code>37f62cf</code> ialah contoh rujukan HEAD semasa dari GitHub commit.</p>
 <p>Coba tukar branch ke <code>master</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>  git checkout master
-</span></span></code></pre></div><h2 id="repo-already-exists-in-the-index">repo already exists in the index</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">  git checkout master
+</code></pre></div><h2 id="repo-already-exists-in-the-index">repo already exists in the index</h2>
 <p>Bila repo masih ada di indeks walaupun telah dibuang dengan <code>rm -r harbor</code>. Bila
 larikan</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>rm -r harbor
-</span></span><span style="display:flex;"><span>git submodule add https://github.com/matsuyoshi30/harbor.git harbor
-</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#39;rack&#39;</span> already exists in the index
-</span></span></code></pre></div><p>Harus unstage harbor direktori terlebih dahulu sebelum tambahkan submodule
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">rm -r harbor
+git submodule add https://github.com/matsuyoshi30/harbor.git harbor
+<span style="color:#e6db74">&#39;rack&#39;</span> already exists in the index
+</code></pre></div><p>Harus unstage harbor direktori terlebih dahulu sebelum tambahkan submodule
 harbor.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>git rm -r harbor
-</span></span><span style="display:flex;"><span>git submodule add https://github.com/matsuyoshi30/harbor.git harbor
-</span></span></code></pre></div><h2 id="kekunci-ssh">Kekunci ssh</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git rm -r harbor
+git submodule add https://github.com/matsuyoshi30/harbor.git harbor
+</code></pre></div><h2 id="kekunci-ssh">Kekunci ssh</h2>
 <p>Sekiranya ingin pakai kekunci <code>ssh</code> boleh tukar di file <code>config</code> di:</p>
 <ul>
 <li>.git/config</li>
 </ul>
 <!-- raw HTML omitted -->
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>  <span style="color:#f92672">[</span>submodule <span style="color:#e6db74">&#34;public&#34;</span><span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># url = https://github.com/yusbk/yusbk.github.io.git</span>
-</span></span><span style="display:flex;"><span>            url <span style="color:#f92672">=</span> git@personal:yusbk/yusbk.github.io.git
-</span></span></code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">  <span style="color:#f92672">[</span>submodule <span style="color:#e6db74">&#34;public&#34;</span><span style="color:#f92672">]</span>
+            <span style="color:#75715e"># url = https://github.com/yusbk/yusbk.github.io.git</span>
+            url <span style="color:#f92672">=</span> git@personal:yusbk/yusbk.github.io.git
+</code></pre></div><ul>
 <li>.git/module/public/config</li>
 </ul>
 <!-- raw HTML omitted -->
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>  <span style="color:#f92672">[</span>remote <span style="color:#e6db74">&#34;origin&#34;</span><span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>          <span style="color:#75715e"># url = https://github.com/yusbk/yusbk.github.io.git</span>
-</span></span><span style="display:flex;"><span>          url <span style="color:#f92672">=</span> git@personal:yusbk/yusbk.github.io.git
-</span></span><span style="display:flex;"><span>          fetch <span style="color:#f92672">=</span> +refs/heads/*:refs/remotes/origin/*
-</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">  <span style="color:#f92672">[</span>remote <span style="color:#e6db74">&#34;origin&#34;</span><span style="color:#f92672">]</span>
+          <span style="color:#75715e"># url = https://github.com/yusbk/yusbk.github.io.git</span>
+          url <span style="color:#f92672">=</span> git@personal:yusbk/yusbk.github.io.git
+          fetch <span style="color:#f92672">=</span> +refs/heads/*:refs/remotes/origin/*
+</code></pre></div>
 
 
 
