@@ -22,7 +22,7 @@
 />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Git Rebase or Reset"/>
-<meta name="twitter:description" content="Updated: 2023-02-08
+<meta name="twitter:description" content="Updated: 2023-02-24
 Rebase to previous commit of a sepcific branch ie. master can be done in many ways. Probably the article on squash will also be of interest.
 Standard way git reset --hard origin/master git status or reset to any previous specific commit."/>
 
@@ -164,7 +164,7 @@ Standard way git reset --hard origin/master git status or reset to any previous 
   <div class="container" role="main">
     <article class="article" class="blog-post">
       
-  <p><em>Updated: 2023-02-08</em></p>
+  <p><em>Updated: 2023-02-24</em></p>
 <p>Rebase to previous commit of a sepcific branch ie. <code>master</code> can be done in many
 ways. Probably the article on <a href="https://yusbk.github.io/2022/09/13/git-squash/">squash</a> will also be of interest.</p>
 <h2 id="standard-way">Standard way</h2>
@@ -187,7 +187,17 @@ git push origin HEAD --force
 </code></pre></div><p>Use of plus sign eg. <code>+main</code> is to ensure to force push to only one branch.
 Using <code>--force</code> might overwrite multiple push destinations configured with
 <code>remote.*.push</code> other than the current branch.</p>
-<h2 id="other-alternative-is-to-use-interactive-rebase-dot">Other alternative is to use interactive rebase.</h2>
+<h2 id="shortcut-way">Shortcut way</h2>
+<p>To know the reference can be done by:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git show --oneline --no-patch
+bf050948 ...
+<span style="color:#75715e">#OR</span>
+git rev-parse @
+bf050948 ...
+</code></pre></div><p>You can change the <code>diff</code> with <code>git diff bf050948</code> if interested or even simpler
+with <code>git diff @{1}</code>. To reset then</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git reset --hard @<span style="color:#f92672">{</span>1<span style="color:#f92672">}</span>
+</code></pre></div><h2 id="other-alternative-is-to-use-interactive-rebase-dot">Other alternative is to use interactive rebase.</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git rebase -i HEAD~5
 </code></pre></div><p>You will be presented with somethig like this:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">drop 3fg501 ...
