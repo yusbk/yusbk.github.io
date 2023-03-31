@@ -68,7 +68,7 @@ Situasi ini adalah disebabkan nama tersebut ialah nama untuk barisan sahaja i."/
 <script defer crossorigin="anonymous" src="/js/theme.js" integrity=""></script>
 
 
-<script defer crossorigin="anonymous" src="/js/instantpage.min.js" integrity=""></script><meta name="generator" content="Hugo 0.92.2" />
+<script defer crossorigin="anonymous" src="/js/instantpage.min.js" integrity=""></script><meta name="generator" content="Hugo 0.111.3">
   </head>
   <body>
     
@@ -171,9 +171,9 @@ Situasi ini adalah disebabkan nama tersebut ialah nama untuk barisan sahaja i."/
   <h1 id="rownames">Rownames</h1>
 <p>Pernahkah melihat data frame dimana kolom pertama tidak ada nama dan anda tidak tahu bagaimana untuk merujuk kolom tersebut? Sekiranya anda pernah menemui masalah tersebut sila baca penerangan dan penyelesaian di sini.</p>
 <p>Situasi ini adalah disebabkan nama tersebut ialah nama untuk barisan sahaja i.e <code>rownames</code>, seperti nama untuk kolom i.e <code>colnames</code>. Contohnya:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">DT <span style="color:#f92672">&lt;-</span> mtcars[1<span style="color:#f92672">:</span><span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">5</span>]
-DT
-</code></pre></div><p>Di sini anda lihat kolom pertama tidak mempunyai nama. Untuk mengetahui nama barisan boleh gunakan <code>rownames(DT)</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>DT <span style="color:#f92672">&lt;-</span> mtcars[1<span style="color:#f92672">:</span><span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">5</span>]
+</span></span><span style="display:flex;"><span>DT
+</span></span></code></pre></div><p>Di sini anda lihat kolom pertama tidak mempunyai nama. Untuk mengetahui nama barisan boleh gunakan <code>rownames(DT)</code>.</p>
 <pre><code>:                    mpg cyl disp  hp drat
 : Mazda RX4         21.0   6  160 110 3.90
 : Mazda RX4 Wag     21.0   6  160 110 3.90
@@ -182,36 +182,36 @@ DT
 : Hornet Sportabout 18.7   8  360 175 3.15
 </code></pre>
 <p>Untuk menggunakan kolom pertama dalam kode-kode, kolom pertama harus diberikan nama kolom. Hanya menggunakan <code>DT[1]</code> tidak akan berjaya. Cara untuk menukarkan rownames ke colnames boleh dibuat seperti berikut:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">DT <span style="color:#f92672">&lt;-</span> mtcars[1<span style="color:#f92672">:</span><span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">5</span>]
-
-<span style="color:#75715e">## cara 1</span>
-DT2 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">cbind</span>(<span style="color:#a6e22e">rownames</span>(DT), DT)
-<span style="color:#a6e22e">rownames</span>(DT2) <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">NULL</span>
-<span style="color:#a6e22e">names</span>(DT2)[1] <span style="color:#f92672">&lt;-</span> <span style="color:#e6db74">&#34;nama&#34;</span>
-
-<span style="color:#75715e">## cara 2</span>
-DT3 <span style="color:#f92672">&lt;-</span> DT
-namesDT <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">names</span>(DT3)
-DT3 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">setNames</span>(<span style="color:#a6e22e">cbind</span>(<span style="color:#a6e22e">rownames</span>(DT3), DT3, row.names <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>),
-                <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;nama&#34;</span>, namesDT))
-
-R<span style="color:#f92672">&gt;</span> DT3
-               nama  mpg cyl disp  hp drat
-<span style="color:#ae81ff">1</span>         Mazda RX4 <span style="color:#ae81ff">21.0</span>   <span style="color:#ae81ff">6</span>  <span style="color:#ae81ff">160</span> <span style="color:#ae81ff">110</span> <span style="color:#ae81ff">3.90</span>
-<span style="color:#ae81ff">2</span>     Mazda RX4 Wag <span style="color:#ae81ff">21.0</span>   <span style="color:#ae81ff">6</span>  <span style="color:#ae81ff">160</span> <span style="color:#ae81ff">110</span> <span style="color:#ae81ff">3.90</span>
-<span style="color:#ae81ff">3</span>        Datsun <span style="color:#ae81ff">710</span> <span style="color:#ae81ff">22.8</span>   <span style="color:#ae81ff">4</span>  <span style="color:#ae81ff">108</span>  <span style="color:#ae81ff">93</span> <span style="color:#ae81ff">3.85</span>
-<span style="color:#ae81ff">4</span>    Hornet <span style="color:#ae81ff">4</span> Drive <span style="color:#ae81ff">21.4</span>   <span style="color:#ae81ff">6</span>  <span style="color:#ae81ff">258</span> <span style="color:#ae81ff">110</span> <span style="color:#ae81ff">3.08</span>
-<span style="color:#ae81ff">5</span> Hornet Sportabout <span style="color:#ae81ff">18.7</span>   <span style="color:#ae81ff">8</span>  <span style="color:#ae81ff">360</span> <span style="color:#ae81ff">175</span> <span style="color:#ae81ff">3.15</span>
-</code></pre></div><p>Sekarang kolom pertama mempunyai nama dan boleh dirujuk dalam memanipulasi data. Rownames sekarang digantikan ke nombor 1 ke 5.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>DT <span style="color:#f92672">&lt;-</span> mtcars[1<span style="color:#f92672">:</span><span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">5</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## cara 1</span>
+</span></span><span style="display:flex;"><span>DT2 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">cbind</span>(<span style="color:#a6e22e">rownames</span>(DT), DT)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">rownames</span>(DT2) <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">NULL</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">names</span>(DT2)[1] <span style="color:#f92672">&lt;-</span> <span style="color:#e6db74">&#34;nama&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## cara 2</span>
+</span></span><span style="display:flex;"><span>DT3 <span style="color:#f92672">&lt;-</span> DT
+</span></span><span style="display:flex;"><span>namesDT <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">names</span>(DT3)
+</span></span><span style="display:flex;"><span>DT3 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">setNames</span>(<span style="color:#a6e22e">cbind</span>(<span style="color:#a6e22e">rownames</span>(DT3), DT3, row.names <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>),
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;nama&#34;</span>, namesDT))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>R<span style="color:#f92672">&gt;</span> DT3
+</span></span><span style="display:flex;"><span>               nama  mpg cyl disp  hp drat
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">1</span>         Mazda RX4 <span style="color:#ae81ff">21.0</span>   <span style="color:#ae81ff">6</span>  <span style="color:#ae81ff">160</span> <span style="color:#ae81ff">110</span> <span style="color:#ae81ff">3.90</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">2</span>     Mazda RX4 Wag <span style="color:#ae81ff">21.0</span>   <span style="color:#ae81ff">6</span>  <span style="color:#ae81ff">160</span> <span style="color:#ae81ff">110</span> <span style="color:#ae81ff">3.90</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">3</span>        Datsun <span style="color:#ae81ff">710</span> <span style="color:#ae81ff">22.8</span>   <span style="color:#ae81ff">4</span>  <span style="color:#ae81ff">108</span>  <span style="color:#ae81ff">93</span> <span style="color:#ae81ff">3.85</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">4</span>    Hornet <span style="color:#ae81ff">4</span> Drive <span style="color:#ae81ff">21.4</span>   <span style="color:#ae81ff">6</span>  <span style="color:#ae81ff">258</span> <span style="color:#ae81ff">110</span> <span style="color:#ae81ff">3.08</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">5</span> Hornet Sportabout <span style="color:#ae81ff">18.7</span>   <span style="color:#ae81ff">8</span>  <span style="color:#ae81ff">360</span> <span style="color:#ae81ff">175</span> <span style="color:#ae81ff">3.15</span>
+</span></span></code></pre></div><p>Sekarang kolom pertama mempunyai nama dan boleh dirujuk dalam memanipulasi data. Rownames sekarang digantikan ke nombor 1 ke 5.</p>
 <p>Untuk menggunakan cara <code>data.table</code> adalah seperti begini:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">DT4 <span style="color:#f92672">&lt;-</span> mtcars[1<span style="color:#f92672">:</span><span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">5</span>]
-nama2 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">rownames</span>(DT4)
-
-<span style="color:#a6e22e">library</span>(data.table)
-<span style="color:#a6e22e">setDT</span>(DT4)
-DT4[, nama <span style="color:#f92672">:=</span> nama2]
-DT4
-</code></pre></div><p>Kolom nama daripada <code>rownames</code> dimasukkan</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>DT4 <span style="color:#f92672">&lt;-</span> mtcars[1<span style="color:#f92672">:</span><span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">5</span>]
+</span></span><span style="display:flex;"><span>nama2 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">rownames</span>(DT4)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">library</span>(data.table)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">setDT</span>(DT4)
+</span></span><span style="display:flex;"><span>DT4[, nama <span style="color:#f92672">:=</span> nama2]
+</span></span><span style="display:flex;"><span>DT4
+</span></span></code></pre></div><p>Kolom nama daripada <code>rownames</code> dimasukkan</p>
 <pre><code>:     mpg cyl disp  hp drat              nama
 : 1: 21.0   6  160 110 3.90         Mazda RX4
 : 2: 21.0   6  160 110 3.90     Mazda RX4 Wag
@@ -221,12 +221,12 @@ DT4
 </code></pre>
 <h1 id="colnames">Colnames</h1>
 <p>Kadang-kadang kita ingin menukarkan nama kolom ke nama lain. Untuk menukarkan nama kolom boleh dibuat dengan pelbagai cara. Cara <a href="#org14ed729">setNames</a> boleh dirujuk seperti di atas. Antara cara-cara lain ialah seperti berikut:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">DT <span style="color:#f92672">&lt;-</span> mtcars[1<span style="color:#f92672">:</span><span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">5</span>]
-
-nama1 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;cth1&#34;</span>, <span style="color:#e6db74">&#34;cth2&#34;</span>)
-<span style="color:#a6e22e">names</span>(DT)<span style="color:#a6e22e">[c</span>(<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">5</span>)] <span style="color:#f92672">&lt;-</span> nama1
-DT
-</code></pre></div><p>Nama untuk kolom 3 dan 5 ditukar</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>DT <span style="color:#f92672">&lt;-</span> mtcars[1<span style="color:#f92672">:</span><span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">5</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>nama1 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;cth1&#34;</span>, <span style="color:#e6db74">&#34;cth2&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">names</span>(DT)<span style="color:#a6e22e">[c</span>(<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">5</span>)] <span style="color:#f92672">&lt;-</span> nama1
+</span></span><span style="display:flex;"><span>DT
+</span></span></code></pre></div><p>Nama untuk kolom 3 dan 5 ditukar</p>
 <pre><code>:                    mpg cyl cth1  hp cth2
 : Mazda RX4         21.0   6  160 110 3.90
 : Mazda RX4 Wag     21.0   6  160 110 3.90
@@ -235,15 +235,15 @@ DT
 : Hornet Sportabout 18.7   8  360 175 3.15
 </code></pre>
 <p>Cara lain ialah menggunakan pakaj <code>data.table</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">DT <span style="color:#f92672">&lt;-</span> mtcars[1<span style="color:#f92672">:</span><span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">5</span>]
-
-<span style="color:#a6e22e">library</span>(data.table)
-<span style="color:#a6e22e">setDT</span>(DT)
-
-nama2 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;kol1&#34;</span>, <span style="color:#e6db74">&#34;kol2&#34;</span>)
-<span style="color:#a6e22e">setnames</span>(DT, <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;mpg&#34;</span>, <span style="color:#e6db74">&#34;hp&#34;</span>), nama2)
-DT
-</code></pre></div><p>Kolom <code>mpg</code> dan <code>hp</code> ditukarkan ke <code>kol1</code> dan <code>kol2</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>DT <span style="color:#f92672">&lt;-</span> mtcars[1<span style="color:#f92672">:</span><span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">5</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">library</span>(data.table)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">setDT</span>(DT)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>nama2 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;kol1&#34;</span>, <span style="color:#e6db74">&#34;kol2&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">setnames</span>(DT, <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;mpg&#34;</span>, <span style="color:#e6db74">&#34;hp&#34;</span>), nama2)
+</span></span><span style="display:flex;"><span>DT
+</span></span></code></pre></div><p>Kolom <code>mpg</code> dan <code>hp</code> ditukarkan ke <code>kol1</code> dan <code>kol2</code>.</p>
 <pre><code>:    kol1 cyl disp kol2 drat
 : 1: 21.0   6  160  110 3.90
 : 2: 21.0   6  160  110 3.90

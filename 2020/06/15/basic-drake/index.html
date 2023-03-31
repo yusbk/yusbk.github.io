@@ -68,7 +68,7 @@ Here is the basic use of drake."/>
 <script defer crossorigin="anonymous" src="/js/theme.js" integrity=""></script>
 
 
-<script defer crossorigin="anonymous" src="/js/instantpage.min.js" integrity=""></script><meta name="generator" content="Hugo 0.92.2" />
+<script defer crossorigin="anonymous" src="/js/instantpage.min.js" integrity=""></script><meta name="generator" content="Hugo 0.111.3">
   </head>
   <body>
     
@@ -173,61 +173,61 @@ big project, then <a href="https://airflow.apache.org/">Airflow</a> might be for
 codes, <a href="https://books.ropensci.org/drake/">drake</a> package will fullfilled your need.</p>
 <p>Here is the basic use of <code>drake</code>. The example here will be using a simple
 collections of functions.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">  fun1 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function</span>(x <span style="color:#f92672">=</span> <span style="color:#a6e22e">globalenv</span>()<span style="color:#f92672">$</span>x){
-    x <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span>
-  }
-
-  fun2 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function</span>(i <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>){
-    i <span style="color:#f92672">*</span> <span style="color:#ae81ff">10</span>
-  }
-
-  fun3 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function</span>(){
-    x1 <span style="color:#f92672">=</span> <span style="color:#a6e22e">fun1</span>()
-    x2 <span style="color:#f92672">=</span> <span style="color:#a6e22e">fun2</span>(<span style="color:#ae81ff">5</span>)
-
-    x1 <span style="color:#f92672">+</span> x2
-  }
-
-  fun4 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function</span>(z <span style="color:#f92672">=</span> <span style="color:#a6e22e">globalenv</span>()<span style="color:#f92672">$</span>z){
-    x1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">+</span> z
-    x2 <span style="color:#f92672">=</span> <span style="color:#a6e22e">fun2</span>(<span style="color:#ae81ff">2</span>)
-    x3 <span style="color:#f92672">=</span> <span style="color:#a6e22e">fun3</span>()
-
-    x1 <span style="color:#f92672">+</span> x2 <span style="color:#f92672">+</span> x3
-  }
-</code></pre></div><p>Install <code>drake</code> development version in Github <a href="https://github.com/ropensci/drake">here</a>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">  remotes<span style="color:#f92672">::</span><span style="color:#a6e22e">install_github</span>(<span style="color:#e6db74">&#34;ropensci/drake&#34;</span>)
-  <span style="color:#a6e22e">library</span>(drake)
-
-  x <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>
-  z <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>
-
-  plan <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">drake_plan</span>(
-    output <span style="color:#f92672">=</span> <span style="color:#a6e22e">fun4</span>()
-  )
-
-  <span style="color:#a6e22e">make</span>(plan)
-</code></pre></div><p>Running <code>make(plan)</code> will give the overview what is in the plan, sort of like using <code>Make</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">  ▶ target x
-  ▶ target z
-  ▶ target output
-</code></pre></div><p>Then you can make the interactive network to see all the workflow. This can be done several ways.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">  <span style="color:#a6e22e">library</span>(<span style="color:#e6db74">&#34;visNetwork&#34;</span>)
-  <span style="color:#a6e22e">vis_drake_graph</span>(plan, full_legend <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>)
-
-  <span style="color:#75715e">## need networkD3 package</span>
-  <span style="color:#a6e22e">library</span>(networkD3)
-  <span style="color:#a6e22e">sankey_drake_graph</span>(plan)
-
-  <span style="color:#a6e22e">library</span>(ggraph)
-  <span style="color:#a6e22e">drake_ggraph</span>(plan)
-
-  <span style="color:#75715e">## To show only target and dependency</span>
-  <span style="color:#a6e22e">plot</span>(plan)
-
-  <span style="color:#75715e">## read the build target</span>
-  <span style="color:#a6e22e">readd</span>(output)
-</code></pre></div><p>This how it looks like using <code>vis_drake_graph</code>. For interactive can be seen <a href="https://yusbk.github.io/drake_example.html">here</a>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>  fun1 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function</span>(x <span style="color:#f92672">=</span> <span style="color:#a6e22e">globalenv</span>()<span style="color:#f92672">$</span>x){
+</span></span><span style="display:flex;"><span>    x <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  fun2 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function</span>(i <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>){
+</span></span><span style="display:flex;"><span>    i <span style="color:#f92672">*</span> <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  fun3 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function</span>(){
+</span></span><span style="display:flex;"><span>    x1 <span style="color:#f92672">=</span> <span style="color:#a6e22e">fun1</span>()
+</span></span><span style="display:flex;"><span>    x2 <span style="color:#f92672">=</span> <span style="color:#a6e22e">fun2</span>(<span style="color:#ae81ff">5</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    x1 <span style="color:#f92672">+</span> x2
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  fun4 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function</span>(z <span style="color:#f92672">=</span> <span style="color:#a6e22e">globalenv</span>()<span style="color:#f92672">$</span>z){
+</span></span><span style="display:flex;"><span>    x1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">+</span> z
+</span></span><span style="display:flex;"><span>    x2 <span style="color:#f92672">=</span> <span style="color:#a6e22e">fun2</span>(<span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>    x3 <span style="color:#f92672">=</span> <span style="color:#a6e22e">fun3</span>()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    x1 <span style="color:#f92672">+</span> x2 <span style="color:#f92672">+</span> x3
+</span></span><span style="display:flex;"><span>  }
+</span></span></code></pre></div><p>Install <code>drake</code> development version in Github <a href="https://github.com/ropensci/drake">here</a>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>  remotes<span style="color:#f92672">::</span><span style="color:#a6e22e">install_github</span>(<span style="color:#e6db74">&#34;ropensci/drake&#34;</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">library</span>(drake)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  x <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>  z <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  plan <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">drake_plan</span>(
+</span></span><span style="display:flex;"><span>    output <span style="color:#f92672">=</span> <span style="color:#a6e22e">fun4</span>()
+</span></span><span style="display:flex;"><span>  )
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">make</span>(plan)
+</span></span></code></pre></div><p>Running <code>make(plan)</code> will give the overview what is in the plan, sort of like using <code>Make</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>  ▶ target x
+</span></span><span style="display:flex;"><span>  ▶ target z
+</span></span><span style="display:flex;"><span>  ▶ target output
+</span></span></code></pre></div><p>Then you can make the interactive network to see all the workflow. This can be done several ways.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>  <span style="color:#a6e22e">library</span>(<span style="color:#e6db74">&#34;visNetwork&#34;</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">vis_drake_graph</span>(plan, full_legend <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">## need networkD3 package</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">library</span>(networkD3)
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">sankey_drake_graph</span>(plan)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">library</span>(ggraph)
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">drake_ggraph</span>(plan)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">## To show only target and dependency</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">plot</span>(plan)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">## read the build target</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">readd</span>(output)
+</span></span></code></pre></div><p>This how it looks like using <code>vis_drake_graph</code>. For interactive can be seen <a href="https://yusbk.github.io/drake_example.html">here</a>.</p>
 <figure><img src="/images/drake.png"
          alt="drake network" width="500"/>
 </figure>
