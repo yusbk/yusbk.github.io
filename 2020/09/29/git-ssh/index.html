@@ -193,7 +193,8 @@ Install git-with-openssh Create SSH-key Add SSH-key to ssh-agent Create ~/.bashr
 </span></span><span style="display:flex;"><span>It is also possible that a host key has just been changed.
 </span></span></code></pre></div><p>You need to remove the old key in <code>known_hosts</code> file in folder <code>.ssh</code> by running this command in <code>Git bash</code></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>ssh-keygen -R github.com
-</span></span></code></pre></div><h2 id="openssh">openSSH</h2>
+</span></span></code></pre></div><p>The next git connection will ask you if you trust the new SSH key.</p>
+<h2 id="openssh">openSSH</h2>
 <p>Windows 10 include <strong>openSSH</strong>. But I can&rsquo;t make it work with git so I use <strong>git-with-openssh</strong> installed
 via <a href="https://scoop-docs.now.sh/docs/overview/So-What.html#why-should-you-care-about-scoop">scoop</a>. This will install Git and openSSH together. After installation, it&rsquo;s important to check
 where is your <code>~/.ssh</code> root folder via <code>Git bash.</code> This is the folder where you will save your SSH-key.</p>
