@@ -69,7 +69,7 @@ Untuk memasang hanya NVM, boleh dibuat seperti dibawah atau dibaca di sini:"/>
 <script defer crossorigin="anonymous" src="/js/theme.js" integrity=""></script>
 
 
-<script defer crossorigin="anonymous" src="/js/instantpage.min.js" integrity=""></script><meta name="generator" content="Hugo 0.111.3">
+<script defer crossorigin="anonymous" src="/js/instantpage.min.js" integrity=""></script><meta name="generator" content="Hugo 0.92.2" />
   </head>
   <body>
     
@@ -168,43 +168,43 @@ Untuk memasang hanya NVM, boleh dibuat seperti dibawah atau dibaca di sini:"/>
 <h1 id="pemasangan">Pemasangan</h1>
 <p><strong>NVM</strong> (Node Version Manager) diperlukan untuk memudahkan pemasangan Node.js dan program <em>staticrypt</em>. Curl diperlukan untuk dapatkan Node.js.</p>
 <p>Untuk memasang hanya NVM, boleh dibuat seperti dibawah atau dibaca di <a href="https://tecadmin.net/install-nodejs-with-nvm/">sini</a>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>sudo apt-get install curl
-</span></span><span style="display:flex;"><span>curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
-</span></span></code></pre></div><p>Kemudian harus reload environment sebelum memakai komando <code>nvm</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>source ~/.profile
-</span></span></code></pre></div><p>Kemudian boleh memasang versi Node. yang diingini, samapada versi LTS atau versi terbaru. Untuk memeriksa versi yang ada guna fungsi <code>ls-remote</code> :</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>nvm ls-remote
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>       ...
-</span></span><span style="display:flex;"><span>       ...
-</span></span><span style="display:flex;"><span>       v10.15.2   <span style="color:#f92672">(</span>LTS: Dubnium<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>       v10.15.3   <span style="color:#f92672">(</span>LTS: Dubnium<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>       v10.16.0   <span style="color:#f92672">(</span>LTS: Dubnium<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>       v10.16.1   <span style="color:#f92672">(</span>LTS: Dubnium<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>       v10.16.2   <span style="color:#f92672">(</span>Latest LTS: Dubnium<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>        ...
-</span></span><span style="display:flex;"><span>        ...
-</span></span><span style="display:flex;"><span>        v12.5.0
-</span></span><span style="display:flex;"><span>        v12.6.0
-</span></span><span style="display:flex;"><span>        v12.7.0
-</span></span><span style="display:flex;"><span>        v12.8.0
-</span></span></code></pre></div><p>Kemudian bolehlah memasang node.js yang diinginkan. Contohnya versi LTS terakhir:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>nvm install v10.16.2
-</span></span></code></pre></div><p>Untuk memasang Node.js terus melalui PPA tanpa memansang NVM, boleh buat begini:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>sudo apt-get install curl
-</span></span><span style="display:flex;"><span>curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
-</span></span></code></pre></div><p>Kemudian staticrypt boleh dipasang dengan <code>sudo</code> :</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>npm install -g staticrypt
-</span></span></code></pre></div><h1 id="satu-fail">Satu fail</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo apt-get install curl
+curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
+</code></pre></div><p>Kemudian harus reload environment sebelum memakai komando <code>nvm</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">source ~/.profile
+</code></pre></div><p>Kemudian boleh memasang versi Node. yang diingini, samapada versi LTS atau versi terbaru. Untuk memeriksa versi yang ada guna fungsi <code>ls-remote</code> :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">nvm ls-remote
+
+       ...
+       ...
+       v10.15.2   <span style="color:#f92672">(</span>LTS: Dubnium<span style="color:#f92672">)</span>
+       v10.15.3   <span style="color:#f92672">(</span>LTS: Dubnium<span style="color:#f92672">)</span>
+       v10.16.0   <span style="color:#f92672">(</span>LTS: Dubnium<span style="color:#f92672">)</span>
+       v10.16.1   <span style="color:#f92672">(</span>LTS: Dubnium<span style="color:#f92672">)</span>
+       v10.16.2   <span style="color:#f92672">(</span>Latest LTS: Dubnium<span style="color:#f92672">)</span>
+        ...
+        ...
+        v12.5.0
+        v12.6.0
+        v12.7.0
+        v12.8.0
+</code></pre></div><p>Kemudian bolehlah memasang node.js yang diinginkan. Contohnya versi LTS terakhir:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">nvm install v10.16.2
+</code></pre></div><p>Untuk memasang Node.js terus melalui PPA tanpa memansang NVM, boleh buat begini:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo apt-get install curl
+curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+</code></pre></div><p>Kemudian staticrypt boleh dipasang dengan <code>sudo</code> :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">npm install -g staticrypt
+</code></pre></div><h1 id="satu-fail">Satu fail</h1>
 <p>Bila ingin encryp hanya satu fail HTML boleh larikan:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>staticrypt contoh.html mypassword
-</span></span></code></pre></div><p>Komando ini akan menghasilkan fail HTML <code>contoh_encrypted.html</code>. Untuk option lainnya boleh dibaca di rujukan. Contohnya untuk bagi nama baru:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>staticrypt myfile.html mypassword -o <span style="color:#e6db74">&#34;myfile_safe.html&#34;</span> -t <span style="color:#e6db74">&#34;Tanya siapa?&#34;</span> -i <span style="color:#e6db74">&#34;One click only&#34;</span>
-</span></span></code></pre></div><p>Akan menghasilkan file baru yang bernama <code>myfile_safe.html</code> dan bila dibuka untuk login akan bertanjuk <em>Tanya siapa?</em> dan di bawah tajuk tersebu tertulis <em>One click only</em>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">staticrypt contoh.html mypassword
+</code></pre></div><p>Komando ini akan menghasilkan fail HTML <code>contoh_encrypted.html</code>. Untuk option lainnya boleh dibaca di rujukan. Contohnya untuk bagi nama baru:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">staticrypt myfile.html mypassword -o <span style="color:#e6db74">&#34;myfile_safe.html&#34;</span> -t <span style="color:#e6db74">&#34;Tanya siapa?&#34;</span> -i <span style="color:#e6db74">&#34;One click only&#34;</span>
+</code></pre></div><p>Akan menghasilkan file baru yang bernama <code>myfile_safe.html</code> dan bila dibuka untuk login akan bertanjuk <em>Tanya siapa?</em> dan di bawah tajuk tersebu tertulis <em>One click only</em>.</p>
 <h1 id="satu-folder">Satu folder</h1>
 <p>Untuk encrypt semua HTML fail di satu folder boleh buat begini:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>find . -type f -name <span style="color:#e6db74">&#34;*.html&#34;</span> -exec staticrypt <span style="color:#f92672">{}</span> mypassword <span style="color:#ae81ff">\;</span>
-</span></span></code></pre></div><p>Semua fail-fail HTML di folder dimana komando dilarikan akan menjadi <code>namafile_encrypted.html</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">find . -type f -name <span style="color:#e6db74">&#34;*.html&#34;</span> -exec staticrypt <span style="color:#f92672">{}</span> mypassword <span style="color:#ae81ff">\;</span>
+</code></pre></div><p>Semua fail-fail HTML di folder dimana komando dilarikan akan menjadi <code>namafile_encrypted.html</code>.</p>
 
 
 

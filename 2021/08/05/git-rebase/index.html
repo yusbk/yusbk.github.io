@@ -69,7 +69,7 @@ Standard way git reset --hard origin/master git status or reset to any previous 
 <script defer crossorigin="anonymous" src="/js/theme.js" integrity=""></script>
 
 
-<script defer crossorigin="anonymous" src="/js/instantpage.min.js" integrity=""></script><meta name="generator" content="Hugo 0.111.3">
+<script defer crossorigin="anonymous" src="/js/instantpage.min.js" integrity=""></script><meta name="generator" content="Hugo 0.92.2" />
   </head>
   <body>
     
@@ -168,12 +168,12 @@ Standard way git reset --hard origin/master git status or reset to any previous 
 <p>Rebase to previous commit of a sepcific branch ie. <code>master</code> can be done in many
 ways. Probably the article on <a href="https://yusbk.github.io/2022/09/13/git-squash/">squash</a> will also be of interest.</p>
 <h2 id="standard-way">Standard way</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>git reset --hard origin/master
-</span></span><span style="display:flex;"><span>git status
-</span></span></code></pre></div><p>or reset to any previous specific commit.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git log --oneline --graph -5
-</span></span><span style="display:flex;"><span>git reset --hard &lt;commit id&gt;
-</span></span></code></pre></div><p>The steps above:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git reset --hard origin/master
+git status
+</code></pre></div><p>or reset to any previous specific commit.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git log --oneline --graph -5
+git reset --hard &lt;commit id&gt;
+</code></pre></div><p>The steps above:</p>
 <ul>
 <li>Look at the previous 5 lines with <code>-5</code> or any number you like. You will also
 find the commit id there</li>
@@ -181,34 +181,34 @@ find the commit id there</li>
 </ul>
 <p>Then you have to push the changes back to origin by force ie. rewriting the
 history &amp;#128531;</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git push origin +master
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># or</span>
-</span></span><span style="display:flex;"><span>git push origin HEAD --force
-</span></span></code></pre></div><p>Use of plus sign eg. <code>+main</code> is to ensure to force push to only one branch.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git push origin +master
+<span style="color:#75715e"># or</span>
+git push origin HEAD --force
+</code></pre></div><p>Use of plus sign eg. <code>+main</code> is to ensure to force push to only one branch.
 Using <code>--force</code> might overwrite multiple push destinations configured with
 <code>remote.*.push</code> other than the current branch.</p>
 <h2 id="shortcut-way">Shortcut way</h2>
 <p>To know the reference can be done by:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git show --oneline --no-patch
-</span></span><span style="display:flex;"><span>bf050948 ...
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># OR</span>
-</span></span><span style="display:flex;"><span>git rev-parse @
-</span></span><span style="display:flex;"><span>bf050948 ...
-</span></span></code></pre></div><p>If you run <code>git pull</code> then you can see the added stuff with <code>git diff bf050948</code>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git show --oneline --no-patch
+bf050948 ...
+<span style="color:#75715e"># OR</span>
+git rev-parse @
+bf050948 ...
+</code></pre></div><p>If you run <code>git pull</code> then you can see the added stuff with <code>git diff bf050948</code>
 if interested or even simpler with <code>git diff @{1}</code>. To reset back to previous
 state ie. <code>bf050948</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git reset --hard @<span style="color:#f92672">{</span>1<span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># OR</span>
-</span></span><span style="display:flex;"><span>git reset --hard bf050948
-</span></span></code></pre></div><h2 id="other-alternative-is-to-use-interactive-rebase-dot">Other alternative is to use interactive rebase.</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git rebase -i HEAD~5
-</span></span></code></pre></div><p>You will be presented with somethig like this:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>drop 3fg501 ...
-</span></span><span style="display:flex;"><span>pick ab401s ...
-</span></span><span style="display:flex;"><span>pick fas6ta ...
-</span></span><span style="display:flex;"><span>pick 60gfab ...
-</span></span><span style="display:flex;"><span>pick 4abs40 ...
-</span></span></code></pre></div><p>When you change to <code>drop</code> then the commit will be deleted.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git reset --hard @<span style="color:#f92672">{</span>1<span style="color:#f92672">}</span>
+<span style="color:#75715e"># OR</span>
+git reset --hard bf050948
+</code></pre></div><h2 id="other-alternative-is-to-use-interactive-rebase-dot">Other alternative is to use interactive rebase.</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git rebase -i HEAD~5
+</code></pre></div><p>You will be presented with somethig like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">drop 3fg501 ...
+pick ab401s ...
+pick fas6ta ...
+pick 60gfab ...
+pick 4abs40 ...
+</code></pre></div><p>When you change to <code>drop</code> then the commit will be deleted.</p>
 
 
 
