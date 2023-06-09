@@ -22,7 +22,7 @@
 />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Good to know"/>
-<meta name="twitter:description" content="Updated: 2022-04-12
+<meta name="twitter:description" content="Updated: 2023-06-09
 Things that I find it useful during my work:
 Debuging warnings Sometimes it&rsquo;s nice to know where in the code that generate warnings especially when it&rsquo;s related to NA introduced by coercion. To do this we can change the options to make warning as error."/>
 
@@ -169,7 +169,7 @@ Debuging warnings Sometimes it&rsquo;s nice to know where in the code that gener
   <div class="container" role="main">
     <article class="article" class="blog-post">
       
-  <p><em>Updated: 2022-04-12</em></p>
+  <p><em>Updated: 2023-06-09</em></p>
 <p>Things that I find it useful during my work:</p>
 <h2 id="debuging-warnings">Debuging warnings</h2>
 <p>Sometimes it&rsquo;s nice to know where in the code that generate warnings especially
@@ -210,6 +210,13 @@ tot <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">eval</s
 
 <span style="color:#75715e">## or</span>
 tot <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">eval</span>(<span style="color:#a6e22e">paste</span>(text <span style="color:#f92672">=</span> txt))
+</code></pre></div><h2 id="show-all-functions-in-a-package">Show all functions in a package</h2>
+<p>The easiest way to show all functions in a package is using:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">library</span>(norgeo)
+<span style="color:#a6e22e">ls</span>(<span style="color:#e6db74">&#34;package:norgeo&#34;</span>)
+</code></pre></div><p>This approach require that you have to load the package first. An alternative to
+do it without loading the package is by specifying <code>envir</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">ls</span>(<span style="color:#e6db74">&#34;package:norgeo&#34;</span>, envir <span style="color:#f92672">=</span> <span style="color:#a6e22e">loadNamespace</span>(<span style="color:#e6db74">&#34;norgeo&#34;</span>))
 </code></pre></div>
 
 
