@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+<title>Moving Averange</title>
+<meta name="description" 
+      content=""
+>
+
+  
+
+
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link
+  rel="alternate"
+  type="application/rss+xml"
+  href="https://yusbk.github.io/index.xml"
+  title="𝔂𝓾𝓼𝓴𝓪𝓶"
+/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Moving Averange"/>
+<meta name="twitter:description" content="Short examples for moving average and cumulative average.
+Moving average Some alternatives to do moving average, sometimes called running mean or rolling mean. You can use base R, data.table or zoo package.
+Use function frollmean from data.table package or rollmean from zoo package."/>
+
+
+
+<link rel="stylesheet" href="https://yusbk.github.io/fontawesome/css/all.min.css" />
+
+
+
+
+<link
+  crossorigin="anonymous"
+  href="/css/styles.min.css"
+  integrity=""
+  rel="preload stylesheet"
+  as="style"
+/>
+
+
+
+
+<link
+  id="dark-mode-theme"
+  crossorigin="anonymous"
+  href="/css/dark.min.css"
+  integrity=""
+  rel="preload stylesheet"
+  as="style"
+/>
+
+
+<script>
+  var darkTheme = document.getElementById('dark-mode-theme')
+  var storedTheme = localStorage.getItem('dark-mode-storage')
+
+  if (storedTheme === 'dark') {
+    darkTheme.disabled = false
+  } else if (storedTheme === 'light') {
+    darkTheme.disabled = true
+  }
+</script>
+
+
+<script defer crossorigin="anonymous" src="/js/theme.js" integrity=""></script>
+
+
+<script defer crossorigin="anonymous" src="/js/instantpage.min.js" integrity=""></script><meta name="generator" content="Hugo 0.92.2" />
+  </head>
+  <body>
+    
+  
+
+
+
+
+  <header>
+    <nav class="navbar">
+  <div class="nav">
+    
+      <a href="https://yusbk.github.io/" class="nav-logo">
+        <img
+          src="https://yusbk.github.io/images/yk.png"
+          width="40"
+          height="40"
+          alt="Logo"
+        />
+      </a>
+    
+
+    <ul class="nav-links">
+      
+        
+          <li>
+            <a href="/about" id="About"
+              ><em class="fas fa-user-secret fa-lg"></em
+            ></a>
+          </li>
+          
+      
+        
+          <li>
+            <a href="/categories" id="Categories"
+              ><em class="fas fa-folder-open fa-lg"></em
+            ></a>
+          </li>
+          
+      
+        
+          <li>
+            <a href="/tags" id="Tags"
+              ><em class="fas fa-tags fa-lg"></em
+            ></a>
+          </li>
+          
+      
+        
+          <li>
+            <a href="/search" id="Search"
+              ><em class="fas fa-search fa-lg"></em
+            ></a>
+          </li>
+          
+      
+    </ul>
+  </div>
+</nav>
+
+    <div class="intro-header">
+      <div class="container">
+        <div class="post-heading">
+          
+            <h1>
+              Moving Averange
+            </h1>
+          
+          
+            <span class="meta-post">
+  <em class="fa fa-calendar-alt"></em
+  >&nbsp;Nov 3, 2023
+  
+    &nbsp;&nbsp;&nbsp;<em class="fa fa-folder-open"></em>&nbsp;
+    
+      <a
+        href="https://yusbk.github.io/categories/en/"
+        >en</a
+      >&nbsp;
+    
+      <a
+        href="https://yusbk.github.io/categories/r/"
+        >R</a
+      >&nbsp;
+    
+      <a
+        href="https://yusbk.github.io/categories/dt/"
+        >DT</a
+      >&nbsp;
+    
+  
+</span>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+  
+
+    
+  <div class="container" role="main">
+    <article class="article" class="blog-post">
+      
+  <p>Short examples for moving average and cumulative average.</p>
+<h2 id="moving-average">Moving average</h2>
+<p>Some alternatives to do moving average, sometimes called running mean or
+rolling mean. You can use base R, <em>data.table</em> or <em>zoo</em> package.</p>
+<p>Use function <strong>frollmean</strong> from <em>data.table</em> package or <strong>rollmean</strong> from <em>zoo</em>
+package.</p>
+<p>Example of using <em>frollmean</em> can be seen <a href="https://stackoverflow.com/a/53896714/5372752">here</a>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">library</span>(data.table)
+d <span style="color:#f92672">=</span> <span style="color:#a6e22e">as.data.table</span>(<span style="color:#a6e22e">list</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">6</span><span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span><span style="color:#f92672">:</span><span style="color:#ae81ff">8</span><span style="color:#f92672">/</span><span style="color:#ae81ff">4</span>))
+
+<span style="color:#75715e">## rollmean of single vector and single window</span>
+<span style="color:#a6e22e">frollmean</span>(d[, V1], <span style="color:#ae81ff">3</span>)
+
+<span style="color:#75715e">## multiple columns at once</span>
+<span style="color:#a6e22e">frollmean</span>(d, <span style="color:#ae81ff">3</span>)
+
+<span style="color:#75715e">## multiple windows at once</span>
+<span style="color:#a6e22e">frollmean</span>(d[, .(V1)], <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>))
+
+<span style="color:#75715e">## multiple columns and multiple windows at once</span>
+<span style="color:#a6e22e">frollmean</span>(d, <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>))
+
+<span style="color:#75715e">## three above are embarrassingly parallel using openmp</span>
+</code></pre></div><p>With base R, you can use <em>filter</em> as proposed <a href="https://stackoverflow.com/a/4862334/5372752">here</a>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">ma <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function</span>(x, n <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>){stats<span style="color:#f92672">::</span><span style="color:#a6e22e">filter</span>(x, <span style="color:#a6e22e">rep</span>(<span style="color:#ae81ff">1</span> <span style="color:#f92672">/</span> n, n), sides <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>)}
+</code></pre></div><p>This function using moving average of 5 values ie. <em>n = 5</em> and allocates the
+result to the center of these 5 values ie. <em>slides = 2</em>. This is simlar to using
+<em>align</em> in <em>data.table::frollmean</em> or <em>zoo:rollmean</em>. The example of the
+different alignment can be seen <a href="https://stackoverflow.com/a/61777773/5372752">here</a>.</p>
+<h2 id="cumulative-average">Cumulative average</h2>
+<p>Function <em>cumsum</em> and <em>seq_along</em> can be used from base R but be careful to
+check that there isn&rsquo;t any <em>NA</em> in the dataset. Example of using it as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">data <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">9</span>, <span style="color:#ae81ff">12</span>)
+ds <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">cumsum</span>(data)
+ds<span style="color:#f92672">/</span><span style="color:#a6e22e">seq_along</span>(data)
+</code></pre></div><p>The result will give a cumulative of the first 1 value cumulative average, then
+the first 2 values, the first 3 values etc.</p>
+
+
+
+
+      
+        <div class="blog-tags">
+          
+            <a
+              href="https://yusbk.github.io/tags/statistics/"
+              >statistics</a
+            >&nbsp;
+          
+        </div>
+      
+
+      
+    </article>
+    
+    
+      
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+        (function() {
+            
+            
+            if (window.location.hostname == "localhost") return;
+
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            var disqus_shortname = 'yusbk-github-io';
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+  <noscript
+    >Please enable JavaScript to view the
+    <a href="https://disqus.com/?ref_noscript"
+      >comments powered by Disqus.</a
+    ></noscript
+  >
+  <a href="https://disqus.com/" class="dsq-brlink"
+    >comments powered by <span class="logo-disqus">Disqus</span></a
+  >
+
+
+    
+  </div>
+
+    <footer>
+  
+
+<div class="social-icons">
+  
+    
+    
+      
+      <a href="https://twitter.com/GoHugoIO" name="twitter">
+        <em class="fab fa-twitter"></em>
+      </a>
+    
+  
+
+  
+</div>
+
+
+  
+  <div class="container">
+    <p class="credits copyright">
+      <a href="https://yusbk.github.io/about">Yusman K</a>
+      &nbsp;&copy;
+      2023
+      
+        &nbsp;/&nbsp;
+        <a href="https://yusbk.github.io/">𝔂𝓾𝓼𝓴𝓪𝓶</a>
+      
+      &nbsp;&ndash;&nbsp;
+      <em class="fas fa-moon" id="dark-mode-toggle"></em>
+    </p>
+
+    <p class="credits theme-by">
+      Powered By <a href="https://gohugo.io">Hugo</a>&nbsp;
+      Theme
+      <a href="https://github.com/matsuyoshi30/harbor">Harbor</a>
+    </p>
+  </div>
+</footer>
+
+  </body>
+</html>

@@ -3,7 +3,31 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://yusbk.github.io/categories/</loc>
-    <lastmod>2023-02-09T10:32:00+01:00</lastmod>
+    <lastmod>2023-11-03T17:17:01+01:00</lastmod>
+  </url><url>
+    <loc>https://yusbk.github.io/categories/dt/</loc>
+    <lastmod>2023-11-03T17:17:01+01:00</lastmod>
+  </url><url>
+    <loc>https://yusbk.github.io/categories/en/</loc>
+    <lastmod>2023-11-03T17:17:01+01:00</lastmod>
+  </url><url>
+    <loc>https://yusbk.github.io/2023/11/03/moving-averange/</loc>
+    <lastmod>2023-11-03T17:17:01+01:00</lastmod>
+  </url><url>
+    <loc>https://yusbk.github.io/post/</loc>
+    <lastmod>2023-11-03T17:17:01+01:00</lastmod>
+  </url><url>
+    <loc>https://yusbk.github.io/categories/r/</loc>
+    <lastmod>2023-11-03T17:17:01+01:00</lastmod>
+  </url><url>
+    <loc>https://yusbk.github.io/tags/statistics/</loc>
+    <lastmod>2023-11-03T17:17:01+01:00</lastmod>
+  </url><url>
+    <loc>https://yusbk.github.io/tags/</loc>
+    <lastmod>2023-11-03T17:17:01+01:00</lastmod>
+  </url><url>
+    <loc>https://yusbk.github.io/</loc>
+    <lastmod>2023-11-03T17:17:01+01:00</lastmod>
   </url><url>
     <loc>https://yusbk.github.io/2023/02/09/change-default-home-with-git-bash/</loc>
     <lastmod>2023-02-09T10:32:00+01:00</lastmod>
@@ -15,15 +39,6 @@
     <lastmod>2023-02-09T10:32:00+01:00</lastmod>
   </url><url>
     <loc>https://yusbk.github.io/tags/path/</loc>
-    <lastmod>2023-02-09T10:32:00+01:00</lastmod>
-  </url><url>
-    <loc>https://yusbk.github.io/post/</loc>
-    <lastmod>2023-02-09T10:32:00+01:00</lastmod>
-  </url><url>
-    <loc>https://yusbk.github.io/tags/</loc>
-    <lastmod>2023-02-09T10:32:00+01:00</lastmod>
-  </url><url>
-    <loc>https://yusbk.github.io/</loc>
     <lastmod>2023-02-09T10:32:00+01:00</lastmod>
   </url><url>
     <loc>https://yusbk.github.io/categories/emacs/</loc>
@@ -38,16 +53,10 @@
     <loc>https://yusbk.github.io/tags/roam/</loc>
     <lastmod>2022-11-14T00:00:00+01:00</lastmod>
   </url><url>
-    <loc>https://yusbk.github.io/categories/en/</loc>
-    <lastmod>2022-11-07T10:37:00+01:00</lastmod>
-  </url><url>
     <loc>https://yusbk.github.io/tags/error/</loc>
     <lastmod>2022-11-07T10:37:00+01:00</lastmod>
   </url><url>
     <loc>https://yusbk.github.io/2022/11/07/error-handling/</loc>
-    <lastmod>2022-11-07T10:37:00+01:00</lastmod>
-  </url><url>
-    <loc>https://yusbk.github.io/categories/r/</loc>
     <lastmod>2022-11-07T10:37:00+01:00</lastmod>
   </url><url>
     <loc>https://yusbk.github.io/tags/warning/</loc>
@@ -109,9 +118,6 @@
   </url><url>
     <loc>https://yusbk.github.io/tags/vim/</loc>
     <lastmod>2022-06-28T16:01:00+02:00</lastmod>
-  </url><url>
-    <loc>https://yusbk.github.io/categories/dt/</loc>
-    <lastmod>2022-03-29T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://yusbk.github.io/2022/03/29/subset-data-table/</loc>
     <lastmod>2022-03-29T00:00:00+00:00</lastmod>

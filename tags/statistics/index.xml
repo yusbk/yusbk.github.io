@@ -1,0 +1,110 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>statistics on 𝔂𝓾𝓼𝓴𝓪𝓶</title>
+		<link>https://yusbk.github.io/tags/statistics/</link>
+		<description>Recent content in statistics </description>
+		<generator>Hugo -- gohugo.io</generator>
+		
+  		<language>en</language>
+		
+		<managingEditor>Page(/tags/statistics) (Yusman K)</managingEditor>
+    	
+  		<lastBuildDate>Fri, 03 Nov 2023 17:17:01 +0100</lastBuildDate>
+		
+		<atom:link href="/tags/statistics/" rel="self" type="application/rss+xml" />
+		
+		<item>
+			<title>Moving Averange</title>
+			<link>https://yusbk.github.io/2023/11/03/moving-averange/</link>
+			<pubDate>Fri, 03 Nov 2023 17:17:01 +0100</pubDate>
+			<guid>https://yusbk.github.io/2023/11/03/moving-averange/</guid>
+			<description>Short examples for moving average and cumulative average.
+Moving average Some alternatives to do moving average, sometimes called running mean or rolling mean. You can use base R, data.table or zoo package.
+Use function frollmean from data.table package or rollmean from zoo package.</description>
+		</item>
+      	
+		<item>
+			<title>Change default HOME</title>
+			<link>https://yusbk.github.io/2023/02/09/change-default-home-with-git-bash/</link>
+			<pubDate>Thu, 09 Feb 2023 10:32:00 +0100</pubDate>
+			<guid>https://yusbk.github.io/2023/02/09/change-default-home-with-git-bash/</guid>
+			<description>Git Bash is used in the example. Sometime you need to change the location of your default Git directory to locate your .ssh keys for easy access. This can be done as follows:
+Via Git Bash Use git bash to change HOME to C:\Users\ybk.</description>
+		</item>
+      	
+		<item>
+			<title>Note taking with org-roam</title>
+			<link>https://yusbk.github.io/2022/11/14/note-taking-org-roam/</link>
+			<pubDate>Mon, 14 Nov 2022 00:00:00 +0100</pubDate>
+			<guid>https://yusbk.github.io/2022/11/14/note-taking-org-roam/</guid>
+			<description>Updated: 2023-02-06
+Add nodes connected to references via citar When citar-org-roam is installed then you can use citar-open-note with SPC n b to add notes to the selected reference. This will open a list of your references in Zetoro database.</description>
+		</item>
+      	
+		<item>
+			<title>Error handling</title>
+			<link>https://yusbk.github.io/2022/11/07/error-handling/</link>
+			<pubDate>Mon, 07 Nov 2022 10:37:00 +0100</pubDate>
+			<guid>https://yusbk.github.io/2022/11/07/error-handling/</guid>
+			<description>Handling error in R can easily be done with debugger or by activating error options with recover.
+options(error = recover) Or to activate warning as error with:
+options(warn = 2) Nevertheless this blog post explain nicely other alternative including the code below that you can put in your .</description>
+		</item>
+      	
+		<item>
+			<title>Rscript command</title>
+			<link>https://yusbk.github.io/2022/10/13/rscript-command/</link>
+			<pubDate>Thu, 13 Oct 2022 11:01:00 +0200</pubDate>
+			<guid>https://yusbk.github.io/2022/10/13/rscript-command/</guid>
+			<description>Things to automate R workflow via bash that I have to explore. At the mean time, these are some references to start with:
+ Other Rscript documentation Rscript documentation StackOverflow on running R script Rscript from Linux Different commands running R script How to run R script from command line (gives similar link to the pages above)  </description>
+		</item>
+      	
+		<item>
+			<title>Makefile</title>
+			<link>https://yusbk.github.io/2022/10/06/makefile/</link>
+			<pubDate>Thu, 06 Oct 2022 00:00:00 +0000</pubDate>
+			<guid>https://yusbk.github.io/2022/10/06/makefile/</guid>
+			<description>Updated: 11.10.2022
+Here are some references to start using makefile. It makes automation easily by just running make. Nevertheless, some Apps need to be installed if running in Windows. The easiest way to install Apps is to use scoop to install make and additionally with sed.</description>
+		</item>
+      	
+		<item>
+			<title>C&#43;&#43; basic</title>
+			<link>https://yusbk.github.io/2022/10/04/cpp-basic/</link>
+			<pubDate>Tue, 04 Oct 2022 00:00:00 +0000</pubDate>
+			<guid>https://yusbk.github.io/2022/10/04/cpp-basic/</guid>
+			<description>I just start playing around with C++ and how to combine it with Emacs. This website on cpp-programming and Intro to C++ are the starting point for me. The extended aim is to be able to write some C++ codes that can be part of R.</description>
+		</item>
+      	
+		<item>
+			<title>Export to LaTeX</title>
+			<link>https://yusbk.github.io/2022/09/28/org-exp-latex/</link>
+			<pubDate>Wed, 28 Sep 2022 00:00:00 +0000</pubDate>
+			<guid>https://yusbk.github.io/2022/09/28/org-exp-latex/</guid>
+			<description>This is what I have done to solve the problem in Windows mainly to be able to run in Emacs with either .org or .tex file.
+Perl To compile using latexmk require perl to be installed in your machine. Check the path with where and ensure it&amp;rsquo;s registered in your PATH.</description>
+		</item>
+      	
+		<item>
+			<title>Git squash</title>
+			<link>https://yusbk.github.io/2022/09/13/git-squash/</link>
+			<pubDate>Tue, 13 Sep 2022 00:00:00 +0000</pubDate>
+			<guid>https://yusbk.github.io/2022/09/13/git-squash/</guid>
+			<description>Consider your new feature branch is called bugfix. You have done a lot of commits eg. 20 commits to the branch and want to squash all commits to one before merging to main.
+Standard squash The standard way is like this.</description>
+		</item>
+      	
+		<item>
+			<title>Emacs macros</title>
+			<link>https://yusbk.github.io/2022/06/28/emacs-macros/</link>
+			<pubDate>Tue, 28 Jun 2022 16:01:00 +0200</pubDate>
+			<guid>https://yusbk.github.io/2022/06/28/emacs-macros/</guid>
+			<description>Updated 2022.10.02
+Apply macro in Emacs:
+Emacs How to use macros Emacs ways:
+ C-x ( to start recording macro C-x ) to stop recording macro C-x e to execute the last macro defined M-x name-last-kbd-macro to name last defined macro M-x insert-kbd-macro to save named macro (copy result to .</description>
+		</item>
+      	
+	</channel>
+</rss>
