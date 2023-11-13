@@ -22,7 +22,7 @@
 />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Rujukan Awam Git dan Github"/>
-<meta name="twitter:description" content="Global setting Buat git repo dan R pakej Kopi branch di github ke lokal Kopi branch tertentu cara lain Log commit Tidak dapat kesan email Buat kekunci SSH dan daftarkan di Github Pelbagai akaun Permission denied ssh-agent refused operation Buat Repo melalui terminal Padam branch Git Aliases Undo atau Revert Sekiranya ada konflik Release atau tag Buat gh-page git config  Tarikh kemaskini: 2022-11-07"/>
+<meta name="twitter:description" content="Global setting Buat git repo dan R pakej Kopi branch di github ke lokal Kopi branch tertentu cara lain Log commit Tidak dapat kesan email Buat kekunci SSH dan daftarkan di Github Pelbagai akaun Permission denied ssh-agent refused operation Buat Repo melalui terminal Padam branch Git Aliases Undo atau Revert Sekiranya ada konflik Release atau tag Buat gh-page git config Tarikh kemaskini: 2022-11-07"/>
 
 
 
@@ -67,7 +67,7 @@
 <script defer crossorigin="anonymous" src="/js/theme.js" integrity=""></script>
 
 
-<script defer crossorigin="anonymous" src="/js/instantpage.min.js" integrity=""></script><meta name="generator" content="Hugo 0.92.2" />
+<script defer crossorigin="anonymous" src="/js/instantpage.min.js" integrity=""></script><meta name="generator" content="Hugo 0.117.0">
   </head>
   <body>
     
@@ -188,129 +188,129 @@
 <p><em>Tarikh kemaskini: 2022-11-07</em></p>
 <h2 id="global-setting">Global setting</h2>
 <p>Tetapkan email dan nama di global.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">git config --global user.email &#34;your@email.com&#34;
-git config --global user.name &#34;Your name&#34;
-</code></pre></div><h2 id="buat-git-repo-dan-r-pakej">Buat git repo dan R pakej</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>git config --global user.email &#34;your@email.com&#34;
+</span></span><span style="display:flex;"><span>git config --global user.name &#34;Your name&#34;
+</span></span></code></pre></div><h2 id="buat-git-repo-dan-r-pakej">Buat git repo dan R pakej</h2>
 <p>Langkah-langkah untuk buat R pakej dan kemudiannya menghantar ke Github</p>
 <ul>
 <li>Buat <strong>repo</strong> di Github cth. foo</li>
 <li>Buat R pakej di direktori yang diinginkan</li>
 </ul>
 <!-- raw HTML omitted -->
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">setwd(&#34;/path/for/package&#34;)
-devtools::create(&#34;foo&#34;)
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>setwd(&#34;/path/for/package&#34;)
+</span></span><span style="display:flex;"><span>devtools::create(&#34;foo&#34;)
+</span></span></code></pre></div><ul>
 <li>Masuk ke direktori <em>foo</em></li>
 <li>Hantar semua fail-fail didalam direktori <em>foo</em> ke Github</li>
 </ul>
 <!-- raw HTML omitted -->
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">git init
-git add .
-git commit -m &#34;Mula foo&#34;
-git remote add origin git@work:ybkamaleri/foo.git
-git push -u origin master
-</code></pre></div><p>Sila rujuk di <a href="https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/">GitHub Guides</a> untuk penerangan selajutnya</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>git init
+</span></span><span style="display:flex;"><span>git add .
+</span></span><span style="display:flex;"><span>git commit -m &#34;Mula foo&#34;
+</span></span><span style="display:flex;"><span>git remote add origin git@work:ybkamaleri/foo.git
+</span></span><span style="display:flex;"><span>git push -u origin master
+</span></span></code></pre></div><p>Sila rujuk di <a href="https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/">GitHub Guides</a> untuk penerangan selajutnya</p>
 <h2 id="kopi-branch-di-github-ke-lokal">Kopi branch di github ke lokal</h2>
 <p>Bila membuat branch dari pc lain dan ingin membuat salinan branch yang sama di pc
 lain.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">git checkout -b [new-branch-lokal] [remote]/[branch-remote]
-</code></pre></div><p>Contohnya</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">git checkout -b new_func_pc2 origin/func_pc1
-</code></pre></div><h2 id="kopi-branch-tertentu-cara-lain">Kopi branch tertentu cara lain</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>git checkout -b [new-branch-lokal] [remote]/[branch-remote]
+</span></span></code></pre></div><p>Contohnya</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>git checkout -b new_func_pc2 origin/func_pc1
+</span></span></code></pre></div><h2 id="kopi-branch-tertentu-cara-lain">Kopi branch tertentu cara lain</h2>
 <p>Rujukan <a href="https://stackoverflow.com/questions/9537392/git-fetch-remote-branch">Stackoverflow</a></p>
 <p>You need to create a local branch that tracks a remote branch. The following command
 will create a local branch named daves_branch, tracking the remote branch
 origin/daves_branch. When you push your changes the remote branch will be updated.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">git checkout --track origin/daves_branch
-</code></pre></div><p><code>--track</code> is shorthand for <code>git checkout -b [branch] [remotename]/[branch]</code> where
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>git checkout --track origin/daves_branch
+</span></span></code></pre></div><p><code>--track</code> is shorthand for <code>git checkout -b [branch] [remotename]/[branch]</code> where
 [remotename] is origin in this case and [branch] is twice the same, daves_branch in
 this case.</p>
 <h2 id="log-commit">Log commit</h2>
 <p>Untuk lihat apa yang sudak di commit</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">  git log -p -2
-</code></pre></div><p><code>git log</code> sudah memadai tetapi dengan pilihan <code>-p</code> akan menunjukkan perbezaan di setiap
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>  git log -p -2
+</span></span></code></pre></div><p><code>git log</code> sudah memadai tetapi dengan pilihan <code>-p</code> akan menunjukkan perbezaan di setiap
 &ldquo;commit&rdquo;. Dan penggunaan <code>-2</code> untuk menetapkkan hanya menunjukkan DUA kemasukkan yang terbaru</p>
 <h2 id="tidak-dapat-kesan-email">Tidak dapat kesan email</h2>
 <p>Bila &ldquo;unable to auto-detect email&rdquo; tetapkan begini</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">git config --global user.email &#34;you@example.com&#34;
-git config --global user.name &#34;Your Name&#34;
-</code></pre></div><h2 id="buat-kekunci-ssh-dan-daftarkan-di-github">Buat kekunci SSH dan daftarkan di Github</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>git config --global user.email &#34;you@example.com&#34;
+</span></span><span style="display:flex;"><span>git config --global user.name &#34;Your Name&#34;
+</span></span></code></pre></div><h2 id="buat-kekunci-ssh-dan-daftarkan-di-github">Buat kekunci SSH dan daftarkan di Github</h2>
 <p>Untuk rujukan boleh dibaca di <a href="https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/">Github Help</a>.</p>
 <p>Sebagai ringkasan, caranya seperti dibawah:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">  $ ssh-keygen -t rsa -b 4096 -C &#34;your_email@example.com&#34;
-</code></pre></div><p>Ini akan membuat ssh menggunakan email sebagai label untuk rujukan. Sekiranya guna
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>  $ ssh-keygen -t rsa -b 4096 -C &#34;your_email@example.com&#34;
+</span></span></code></pre></div><p>Ini akan membuat ssh menggunakan email sebagai label untuk rujukan. Sekiranya guna
 pelbagai git akaun, boleh tetapkan nama fail bila menetapkkan kekunci (<em>key</em>).</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">  Enter a file in which to save the key (/home/you/.ssh/id_rsa): /home/you/.ssh/id_sendiri
-</code></pre></div><p>Untuk daftarkan di Github, perlu <em>login</em> di akaun Github, kemudian kopi <em>public key</em>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>  Enter a file in which to save the key (/home/you/.ssh/id_rsa): /home/you/.ssh/id_sendiri
+</span></span></code></pre></div><p>Untuk daftarkan di Github, perlu <em>login</em> di akaun Github, kemudian kopi <em>public key</em>
 yang ditetapkan. Penggunaan program <em>xclip</em> memudahkan untuk mengkopi kekunci SSH</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">  $ sudo apt-get install xclip
-  # Downloads and installs xclip. If you don&#39;t have `apt-get`, you might need to use another installer (like `yum`)
-
-  $ xclip -sel clip &lt; ~/.ssh/id_rsa.pub
-  # Copies the contents of the id_rsa.pub file to your clipboard
-</code></pre></div><h2 id="pelbagai-akaun">Pelbagai akaun</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>  $ sudo apt-get install xclip
+</span></span><span style="display:flex;"><span>  # Downloads and installs xclip. If you don&#39;t have `apt-get`, you might need to use another installer (like `yum`)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  $ xclip -sel clip &lt; ~/.ssh/id_rsa.pub
+</span></span><span style="display:flex;"><span>  # Copies the contents of the id_rsa.pub file to your clipboard
+</span></span></code></pre></div><h2 id="pelbagai-akaun">Pelbagai akaun</h2>
 <p>Untuk membuat pelbagai <strong>SSH</strong> akaun sila rujuk <a href="https://gist.github.com/jexchan/2351996">Create mulitple SSH accounts</a></p>
 <p>Contoh untuk buat <code>ssh-key</code>. Tetapkan kekunci utk personal dan kerja seperti dibawah
 dan biarkan kosong utk passphrase</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">$ ssh-keygen -t rsa -b 4096 -C &#34;your-email-here&#34;
-
-Enter file in which to save the key (/home/yourusername/.ssh/id_rsa): /home/yourusername/.ssh/id_work
-Enter passphrase (empty for no passphrase):
-Enter same passphrase again:
-</code></pre></div><p>Buka <code>id_rsa_work.pub</code> di gedit dan kopi kekunci untuk di masukkan ke Github SSH-key</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>$ ssh-keygen -t rsa -b 4096 -C &#34;your-email-here&#34;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Enter file in which to save the key (/home/yourusername/.ssh/id_rsa): /home/yourusername/.ssh/id_work
+</span></span><span style="display:flex;"><span>Enter passphrase (empty for no passphrase):
+</span></span><span style="display:flex;"><span>Enter same passphrase again:
+</span></span></code></pre></div><p>Buka <code>id_rsa_work.pub</code> di gedit dan kopi kekunci untuk di masukkan ke Github SSH-key</p>
 <p>Kemudian daftarkan ssh-key. <strong>OBS!</strong> Cara ini tidak dipakai dan hanya terus buat fail <em>config</em>
 untuk pelbagai akaun. Sekiranya tidak berhasil boleh cuba daftarkan ssh-key cara di bawah.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">$ ssh-add -K /path/to/private/key/file
-</code></pre></div><p>Buat fail <em>config</em> dan tambah di fail <code>.ssh/config</code> seperti dibawah</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Host personal
-HostName github.com
-User git
-IdentityFile ~/.ssh/id_personal
-
-Host work
-HostName github.com
-User git
-IdentityFile ~/.ssh/id_work
-</code></pre></div><p>Untuk memeriksa username yang dipakai</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">git config user.name
-</code></pre></div><p>Untuk mengklone pelbagai akaun</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">git clone git@personal:yusbk/nama_rep.git
-git clone git@work:ybkamaleri/nama_rep.git
-</code></pre></div><p>Untuk menggunakan akaun lain di Github dari yang sedang digunakan</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">git remote add origin-personal git@personal:yusbk/nama_rep.git
-git add nama_fail
-git commit -m &#34;maklumat&#34;
-git push -u origin-personal master
-</code></pre></div><h2 id="permission-denied">Permission denied</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>$ ssh-add -K /path/to/private/key/file
+</span></span></code></pre></div><p>Buat fail <em>config</em> dan tambah di fail <code>.ssh/config</code> seperti dibawah</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Host personal
+</span></span><span style="display:flex;"><span>HostName github.com
+</span></span><span style="display:flex;"><span>User git
+</span></span><span style="display:flex;"><span>IdentityFile ~/.ssh/id_personal
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Host work
+</span></span><span style="display:flex;"><span>HostName github.com
+</span></span><span style="display:flex;"><span>User git
+</span></span><span style="display:flex;"><span>IdentityFile ~/.ssh/id_work
+</span></span></code></pre></div><p>Untuk memeriksa username yang dipakai</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>git config user.name
+</span></span></code></pre></div><p>Untuk mengklone pelbagai akaun</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>git clone git@personal:yusbk/nama_rep.git
+</span></span><span style="display:flex;"><span>git clone git@work:ybkamaleri/nama_rep.git
+</span></span></code></pre></div><p>Untuk menggunakan akaun lain di Github dari yang sedang digunakan</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>git remote add origin-personal git@personal:yusbk/nama_rep.git
+</span></span><span style="display:flex;"><span>git add nama_fail
+</span></span><span style="display:flex;"><span>git commit -m &#34;maklumat&#34;
+</span></span><span style="display:flex;"><span>git push -u origin-personal master
+</span></span></code></pre></div><h2 id="permission-denied">Permission denied</h2>
 <p>Sekiranya <code>permission denied</code> bile <code>git push origin</code> untuk repo gunakan user.name berlainan contohnya:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">  ERROR: Permission to user.ybk1/repo.git denied to user.ybk2.
-  fatal: The remote end hung up unexpectedly
-</code></pre></div><p>Buang SSH key di Github and daftarkan semula kekunci SSH tersebut ke GitHub
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>  ERROR: Permission to user.ybk1/repo.git denied to user.ybk2.
+</span></span><span style="display:flex;"><span>  fatal: The remote end hung up unexpectedly
+</span></span></code></pre></div><p>Buang SSH key di Github and daftarkan semula kekunci SSH tersebut ke GitHub
 account. Contohnya bila username untuk <em>work</em> dinafikan, boleh daftarkan semula begini:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo apt install xclip
-xclip -sel clip &lt; ~/.ssh/id_work.pub
-</code></pre></div><p><em>xclip</em> akan kopikan kekunci SSH di clipboard yang kemudian pulah di <em>paste</em> di Github.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>sudo apt install xclip
+</span></span><span style="display:flex;"><span>xclip -sel clip &lt; ~/.ssh/id_work.pub
+</span></span></code></pre></div><p><em>xclip</em> akan kopikan kekunci SSH di clipboard yang kemudian pulah di <em>paste</em> di Github.</p>
 <h3 id="cara-cara-lain-yang-boleh-dicoba">Cara-cara lain yang boleh dicoba</h3>
 <p>Tukar user.name dengan apa yang sepatutnya&hellip; contohnya bila username work diperlukan
 dan yang sedang dipakai ialah personal maka tukar ke work seperti begini</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">  ssh-add ~/.ssh/id_rsa_work
-</code></pre></div><p>Sekiranya tidak berhasil boleh coba cara dibawah:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>  ssh-add ~/.ssh/id_rsa_work
+</span></span></code></pre></div><p>Sekiranya tidak berhasil boleh coba cara dibawah:</p>
 <ul>
 <li>Pilihan 1:</li>
 </ul>
 <p>Diambil dari <a href="https://stackoverflow.com/questions/59621263/permission-denied-with-mutiple-github-accounts">StackOverflow</a>.
 Daftarkan semula</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">git remote set-url origin git@work:GitHubUserName/YouRepoName.git
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>git remote set-url origin git@work:GitHubUserName/YouRepoName.git
+</span></span></code></pre></div><ul>
 <li>Pilihan 2:</li>
 </ul>
 <p>Periksa fail <code>~/.ssh/config</code> yang <code>url</code> adalah betul</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">  [remote &#34;origin&#34;]
-      fetch = +refs/heads/*:refs/remotes/origin/*
-      url = git@work:nama_github/nama_repo.git
-</code></pre></div><p>Boleh juga masukkan di &ldquo;command line&rdquo; sebegini</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">  git remote set-url origin git@work:nama_github/nama_repo.git
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>  [remote &#34;origin&#34;]
+</span></span><span style="display:flex;"><span>      fetch = +refs/heads/*:refs/remotes/origin/*
+</span></span><span style="display:flex;"><span>      url = git@work:nama_github/nama_repo.git
+</span></span></code></pre></div><p>Boleh juga masukkan di &ldquo;command line&rdquo; sebegini</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>  git remote set-url origin git@work:nama_github/nama_repo.git
+</span></span></code></pre></div><ul>
 <li>Pilihan 3:</li>
 </ul>
 <p>Masukkan <code>SSH</code> semula di github. Tetapi sebelumnya harus buang ssh di cache dengan
@@ -319,99 +319,99 @@ key-ssh, bukan fail cth <code>id_rsa_work.pub</code> dan kopi semua dan salin di
 github.</p>
 <h2 id="ssh-agent-refused-operation">ssh-agent refused operation</h2>
 <p>Ini disebabkan file permission. Tukarkan ke 600</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">  chmod 600 ~/.ssh/id_rsa_personal
-  chmod 600 ~/.ssh/*
-</code></pre></div><p>Cara kedua itu ialah bila ingin tukarkan permission untuk semua fail-fail di folder <code>.ssh</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>  chmod 600 ~/.ssh/id_rsa_personal
+</span></span><span style="display:flex;"><span>  chmod 600 ~/.ssh/*
+</span></span></code></pre></div><p>Cara kedua itu ialah bila ingin tukarkan permission untuk semua fail-fail di folder <code>.ssh</code>.</p>
 <h2 id="buat-repo-melalui-terminal">Buat Repo melalui terminal</h2>
 <p>Untuk buat repo kosong di Github sebelum memulakan projek perkongsian. <code>bare</code> harus
 sentiasa digunakan untuk berkongsi <code>repo</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">ssh user@host git init --bare /path/to/repo.git
-</code></pre></div><p>Kemudian semua yang terlibat utk membangunkan <code>repo</code> boleh mengkelon <code>repo</code> tersebut</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">git clone ssh://user@host/path/to/repo.git
-</code></pre></div><h2 id="padam-branch">Padam branch</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>ssh user@host git init --bare /path/to/repo.git
+</span></span></code></pre></div><p>Kemudian semua yang terlibat utk membangunkan <code>repo</code> boleh mengkelon <code>repo</code> tersebut</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>git clone ssh://user@host/path/to/repo.git
+</span></span></code></pre></div><h2 id="padam-branch">Padam branch</h2>
 <p>Untuk padamkan lokal branch</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">git branch -d &lt;nama branch&gt;
-</code></pre></div><p>Untuk padamkan remote branch</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">git push origin --delete &lt;nama branch&gt;
-</code></pre></div><h2 id="git-aliases">Git Aliases</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>git branch -d &lt;nama branch&gt;
+</span></span></code></pre></div><p>Untuk padamkan remote branch</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>git push origin --delete &lt;nama branch&gt;
+</span></span></code></pre></div><h2 id="git-aliases">Git Aliases</h2>
 <p>Git aliases yang selalu dipakai</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">git config --global alias.ci commit
-git config --global alias.st status
-git config --global alias.co checkout
-git config --global alias.br branch
-</code></pre></div><p>Untuk menetapkkan git sentiasa memakai <code>Emacs</code> sebagai editor</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">git config --global core.editor emacs
-</code></pre></div><h2 id="undo-atau-revert">Undo atau Revert</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>git config --global alias.ci commit
+</span></span><span style="display:flex;"><span>git config --global alias.st status
+</span></span><span style="display:flex;"><span>git config --global alias.co checkout
+</span></span><span style="display:flex;"><span>git config --global alias.br branch
+</span></span></code></pre></div><p>Untuk menetapkkan git sentiasa memakai <code>Emacs</code> sebagai editor</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>git config --global core.editor emacs
+</span></span></code></pre></div><h2 id="undo-atau-revert">Undo atau Revert</h2>
 <p>Untuk kembali ke sebelum pertukaran tetapi hanya fail-fail di direktori yang sedang
 dipakai. Cara pertama hanya menggembalikan <code>unstaged changes</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">git checkout --l
-</code></pre></div><p>Untuk menggembalikan pertukaran-pertukaran yang sudah <code>staged</code> dan <code>unstaged</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">git reset --hard
-git reset --hard HEAD
-</code></pre></div><p>Untuk membuang semua pertukaran-pertukaran lokal kerana ingin mendapatkan versi di GitHub</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">git reset --hard HEAD
-git pull
-
-git reset --hard a123412 #untuk id commit tertentu
-</code></pre></div><p>Untuk <em>unstange</em> semua fail-fail yang sudah di <em>stage</em> melalui <code>git add</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">git reset
-</code></pre></div><p>Untuk menggembalikan fail tertentu atau direktori tertentu</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">git checkout &lt;nama_dir atau nama_fail&gt;
-</code></pre></div><h2 id="sekiranya-ada-konflik">Sekiranya ada konflik</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>git checkout --l
+</span></span></code></pre></div><p>Untuk menggembalikan pertukaran-pertukaran yang sudah <code>staged</code> dan <code>unstaged</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>git reset --hard
+</span></span><span style="display:flex;"><span>git reset --hard HEAD
+</span></span></code></pre></div><p>Untuk membuang semua pertukaran-pertukaran lokal kerana ingin mendapatkan versi di GitHub</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>git reset --hard HEAD
+</span></span><span style="display:flex;"><span>git pull
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>git reset --hard a123412 #untuk id commit tertentu
+</span></span></code></pre></div><p>Untuk <em>unstange</em> semua fail-fail yang sudah di <em>stage</em> melalui <code>git add</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>git reset
+</span></span></code></pre></div><p>Untuk menggembalikan fail tertentu atau direktori tertentu</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>git checkout &lt;nama_dir atau nama_fail&gt;
+</span></span></code></pre></div><h2 id="sekiranya-ada-konflik">Sekiranya ada konflik</h2>
 <p>Untuk menyimpan pertukaran-pertukaran lokal sekiranya ada konflik dengan versi Github</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">git fetch origin
-git status
-git pull
-
-#if conflicts then?
-
-git add .
-git commit -m &#34;message&#34;
-git pull #ini akan bagi error message tapi tidak mengapa
-
-# buka fail yang ada konflik dan betulkan masalah konflik
-
-git add .
-git commit -m &#34;fixed conflicts&#34;
-git pull
-</code></pre></div><h2 id="release-atau-tag">Release atau tag</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>git fetch origin
+</span></span><span style="display:flex;"><span>git status
+</span></span><span style="display:flex;"><span>git pull
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>#if conflicts then?
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>git add .
+</span></span><span style="display:flex;"><span>git commit -m &#34;message&#34;
+</span></span><span style="display:flex;"><span>git pull #ini akan bagi error message tapi tidak mengapa
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span># buka fail yang ada konflik dan betulkan masalah konflik
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>git add .
+</span></span><span style="display:flex;"><span>git commit -m &#34;fixed conflicts&#34;
+</span></span><span style="display:flex;"><span>git pull
+</span></span></code></pre></div><h2 id="release-atau-tag">Release atau tag</h2>
 <p>Cara biasa untuk buat tag dan masukkan maklumat ialah menggunakan <code>-a</code> <em>annotate</em> dan
 <code>-m</code> <em>message</em></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">git tag -a v0.1.2 -m &#34;Version baru 0.1.2&#34;
-</code></pre></div><p>Bila sudah buat <code>tag</code> boleh lihat gunakan <code>git show v0.1.2</code> atau <code>git tag</code>. Sekiranya
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>git tag -a v0.1.2 -m &#34;Version baru 0.1.2&#34;
+</span></span></code></pre></div><p>Bila sudah buat <code>tag</code> boleh lihat gunakan <code>git show v0.1.2</code> atau <code>git tag</code>. Sekiranya
 tidak ingin memasukkan sebarang maklumat dan hanya ingin membaharui versi sahaja,
 boleh guna:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">git tag v0.1.2
-</code></pre></div><p>Sekiranya ingin memasukkan <code>tag</code> di git yang sudah di merge, boleh mendapatkan nombor
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>git tag v0.1.2
+</span></span></code></pre></div><p>Sekiranya ingin memasukkan <code>tag</code> di git yang sudah di merge, boleh mendapatkan nombor
 commit menggunakan log kemudian tag commit tersebut. Contohnya ingin masukkan tag di
 commit &ldquo;Contoh penting&rdquo;.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">$ git log --pretty=oneline
-15027957951b64cf874c3557a0f3547bd83b3ff6 Merge branch &#39;experiment&#39;
-a6b4c97498bd301d84096da251c98a07c7723e65 Contoh penting
-0d52aaab4479697da7686c15f77a3d64d9165190 one more thing
-</code></pre></div><p>Hanya sebahagian sahaja daripada nombor commit yang perlu bila di tag dan dipakai
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>$ git log --pretty=oneline
+</span></span><span style="display:flex;"><span>15027957951b64cf874c3557a0f3547bd83b3ff6 Merge branch &#39;experiment&#39;
+</span></span><span style="display:flex;"><span>a6b4c97498bd301d84096da251c98a07c7723e65 Contoh penting
+</span></span><span style="display:flex;"><span>0d52aaab4479697da7686c15f77a3d64d9165190 one more thing
+</span></span></code></pre></div><p>Hanya sebahagian sahaja daripada nombor commit yang perlu bila di tag dan dipakai
 dipenghujung komandonya.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">git tag -a v0.1.3 a6b4c9
-</code></pre></div><p>Untuk dikongsikan di GitHub boleh dibuat seperti biasa dengan <code>push</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">git push origin v0.1.2
-</code></pre></div><p>Tetapi sekiranya ada banyak tag boleh pakai <code>git push --tags</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>git tag -a v0.1.3 a6b4c9
+</span></span></code></pre></div><p>Untuk dikongsikan di GitHub boleh dibuat seperti biasa dengan <code>push</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>git push origin v0.1.2
+</span></span></code></pre></div><p>Tetapi sekiranya ada banyak tag boleh pakai <code>git push --tags</code></p>
 <h2 id="buat-gh-page">Buat gh-page</h2>
 <p>Pakai option <code>--orphan</code> untuk buat root supaya tidak perlu sync dengan <code>master</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">  <span style="color:#75715e"># create gh-pages branch</span>
-  git checkout --orphan gh-pages
-  git rm -rf .
-  touch README.md
-  git add README.md
-  git commit -m <span style="color:#e6db74">&#39;initial gh-pages commit&#39;</span>
-  git push origin gh-pages
-
-  <span style="color:#75715e"># add gh-pages as submodule</span>
-  git checkout master
-  git submodule add -b gh-pages git@github.com:skratchdot/MYPROJECT.git _site
-  git commit -m <span style="color:#e6db74">&#34;added gh-pages as submodule&#34;</span>
-  git push origin master
-  git submodule init
-</code></pre></div><p>Here, the intention is to create a branch for github pages, which is typically not
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>  <span style="color:#75715e"># create gh-pages branch</span>
+</span></span><span style="display:flex;"><span>  git checkout --orphan gh-pages
+</span></span><span style="display:flex;"><span>  git rm -rf .
+</span></span><span style="display:flex;"><span>  touch README.md
+</span></span><span style="display:flex;"><span>  git add README.md
+</span></span><span style="display:flex;"><span>  git commit -m <span style="color:#e6db74">&#39;initial gh-pages commit&#39;</span>
+</span></span><span style="display:flex;"><span>  git push origin gh-pages
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># add gh-pages as submodule</span>
+</span></span><span style="display:flex;"><span>  git checkout master
+</span></span><span style="display:flex;"><span>  git submodule add -b gh-pages git@github.com:skratchdot/MYPROJECT.git _site
+</span></span><span style="display:flex;"><span>  git commit -m <span style="color:#e6db74">&#34;added gh-pages as submodule&#34;</span>
+</span></span><span style="display:flex;"><span>  git push origin master
+</span></span><span style="display:flex;"><span>  git submodule init
+</span></span></code></pre></div><p>Here, the intention is to create a branch for github pages, which is typically not
 associated with the history of your repo (master and other branches) and hence the
 usage of <code>git checkout --orphan</code> atau <code>git symbolic-ref</code>. This creates a &ldquo;root branch&rdquo;, which is one without a
 previous history.</p>
@@ -420,24 +420,24 @@ you are at master and you do git branch gh-pages, gh-pages will be based off mas
 <p>Note that it is also called an orphan branch and <code>git checkout --orphan</code> will now do
 the same thing as the <code>git symbolic-ref</code> that was being done before.</p>
 <p>Cara lama pakai <code>git symbolic-ref</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">  cd /path/to/repo-name
-  git symbolic-ref HEAD refs/heads/gh-pages
-  rm .git/index
-  git clean -fdx
-  echo <span style="color:#e6db74">&#34;My GitHub Page&#34;</span> &gt; index.html
-  git add .
-  git commit -a -m <span style="color:#e6db74">&#34;First pages commit&#34;</span>
-  git push origin gh-pages
-</code></pre></div><h2 id="git-config">git config</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>  cd /path/to/repo-name
+</span></span><span style="display:flex;"><span>  git symbolic-ref HEAD refs/heads/gh-pages
+</span></span><span style="display:flex;"><span>  rm .git/index
+</span></span><span style="display:flex;"><span>  git clean -fdx
+</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;My GitHub Page&#34;</span> &gt; index.html
+</span></span><span style="display:flex;"><span>  git add .
+</span></span><span style="display:flex;"><span>  git commit -a -m <span style="color:#e6db74">&#34;First pages commit&#34;</span>
+</span></span><span style="display:flex;"><span>  git push origin gh-pages
+</span></span></code></pre></div><h2 id="git-config">git config</h2>
 <p>Ada dua jenis <code>config</code> untuk git, iaitu <code>--local</code> dan <code>--global</code>. Fail untuk local ialah project <code>.git</code>
 folder manakala untuk global di <code>~/.gitconfig</code>. Contoh isi fail config global ialah:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">  [user]
-     name = Your Name
-     email = your.user@gmail.com
-
-  [diff]
-     ignoreSubmodules = dirty
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>  [user]
+</span></span><span style="display:flex;"><span>     name = Your Name
+</span></span><span style="display:flex;"><span>     email = your.user@gmail.com
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  [diff]
+</span></span><span style="display:flex;"><span>     ignoreSubmodules = dirty
+</span></span></code></pre></div>
 
 
 

@@ -68,7 +68,7 @@ delete &lt;- function(DT, del.idxs) { # pls note &#39;del.idxs&#39; vs. &#39;kee
 <script defer crossorigin="anonymous" src="/js/theme.js" integrity=""></script>
 
 
-<script defer crossorigin="anonymous" src="/js/instantpage.min.js" integrity=""></script><meta name="generator" content="Hugo 0.92.2" />
+<script defer crossorigin="anonymous" src="/js/instantpage.min.js" integrity=""></script><meta name="generator" content="Hugo 0.117.0">
   </head>
   <body>
     
@@ -174,20 +174,20 @@ delete &lt;- function(DT, del.idxs) { # pls note &#39;del.idxs&#39; vs. &#39;kee
     <article class="article" class="blog-post">
       
   <p>Untuk memadamkan barisan di <em>data.table</em> menggunakan reference seperti penggunaan <code>.SD</code> masih belum dilaksanakan. Cara ini diambil dari perbincangan di <a href="https://github.com/Rdatatable/data.table/issues/635">GitHub</a> data.table. Fungsi <code>delete</code> dibuat seperti begini:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">delete <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function</span>(DT, del.idxs) {           <span style="color:#75715e"># pls note &#39;del.idxs&#39; vs. &#39;keep.idxs&#39;</span>
-  keep.idxs <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">setdiff</span>(DT[, .I], del.idxs);  <span style="color:#75715e"># select row indexes to keep</span>
-  cols <span style="color:#f92672">=</span> <span style="color:#a6e22e">names</span>(DT);
-  DT.subset <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">data.table</span>(DT[[1]][keep.idxs]); <span style="color:#75715e"># this is the subsetted table</span>
-  <span style="color:#a6e22e">setnames</span>(DT.subset, cols[1]);
-  <span style="color:#a6e22e">for </span>(col in cols[2<span style="color:#f92672">:</span><span style="color:#a6e22e">length</span>(cols)]) {
-    DT.subset[, (col) <span style="color:#f92672">:=</span> DT[[col]][keep.idxs]];
-    DT[, (col) <span style="color:#f92672">:=</span> <span style="color:#66d9ef">NULL</span>];  <span style="color:#75715e"># delete</span>
-  }
-   <span style="color:#a6e22e">return</span>(DT.subset);
-}
-</code></pre></div><p>Cara pemakaiannya ialah seperti dibawah. Barisan yang dibuang di <code>DT</code> memerlukan indeks barisan. Untuk dapatkan indeks untuk barisan yang ingin dipadakan boleh dibaca di baway tajuk <a href="https://yusbk.github.io/data%2520mining/2018/08/16/duplikasi/#orgcc091f9">duplikasi</a>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">DT <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">delete</span>(DT, del.idxs)
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>delete <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">function</span>(DT, del.idxs) {           <span style="color:#75715e"># pls note &#39;del.idxs&#39; vs. &#39;keep.idxs&#39;</span>
+</span></span><span style="display:flex;"><span>  keep.idxs <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">setdiff</span>(DT[, .I], del.idxs);  <span style="color:#75715e"># select row indexes to keep</span>
+</span></span><span style="display:flex;"><span>  cols <span style="color:#f92672">=</span> <span style="color:#a6e22e">names</span>(DT);
+</span></span><span style="display:flex;"><span>  DT.subset <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">data.table</span>(DT[[1]][keep.idxs]); <span style="color:#75715e"># this is the subsetted table</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">setnames</span>(DT.subset, cols[1]);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">for </span>(col in cols[2<span style="color:#f92672">:</span><span style="color:#a6e22e">length</span>(cols)]) {
+</span></span><span style="display:flex;"><span>    DT.subset[, (col) <span style="color:#f92672">:=</span> DT[[col]][keep.idxs]];
+</span></span><span style="display:flex;"><span>    DT[, (col) <span style="color:#f92672">:=</span> <span style="color:#66d9ef">NULL</span>];  <span style="color:#75715e"># delete</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">return</span>(DT.subset);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Cara pemakaiannya ialah seperti dibawah. Barisan yang dibuang di <code>DT</code> memerlukan indeks barisan. Untuk dapatkan indeks untuk barisan yang ingin dipadakan boleh dibaca di baway tajuk <a href="https://yusbk.github.io/data%2520mining/2018/08/16/duplikasi/#orgcc091f9">duplikasi</a>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>DT <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">delete</span>(DT, del.idxs)
+</span></span></code></pre></div>
 
 
 
