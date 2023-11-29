@@ -69,7 +69,7 @@ Debuging warnings Sometimes it&rsquo;s nice to know where in the code that gener
 <script defer crossorigin="anonymous" src="/js/theme.js" integrity=""></script>
 
 
-<script defer crossorigin="anonymous" src="/js/instantpage.min.js" integrity=""></script><meta name="generator" content="Hugo 0.117.0">
+<script defer crossorigin="anonymous" src="/js/instantpage.min.js" integrity=""></script><meta name="generator" content="Hugo 0.92.2" />
   </head>
   <body>
     
@@ -175,19 +175,19 @@ Debuging warnings Sometimes it&rsquo;s nice to know where in the code that gener
 <p>Sometimes it&rsquo;s nice to know where in the code that generate warnings especially
 when it&rsquo;s related to <code>NA introduced by coercion</code>. To do this we can change the
 options to make warning as error.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#a6e22e">options</span>(warn <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>)
-</span></span></code></pre></div><h2 id="rstudio">RStudio</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">options</span>(warn <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>)
+</code></pre></div><h2 id="rstudio">RStudio</h2>
 <p>Though I don&rsquo;t use RStudio as my main IDE, it&rsquo;s good to know that RStudio has
 many RStudio specific commands that starts with <code>.rs.*</code> such as:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#a6e22e">.rs.restartR</span>()
-</span></span></code></pre></div><h2 id="package-dot-dot-inst-folder">Package ..\inst folder</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">.rs.restartR</span>()
+</code></pre></div><h2 id="package-dot-dot-inst-folder">Package ..\inst folder</h2>
 <p>Folder <code>inst</code> can be used to save data for <code>testthat</code> or as example when
 creating an R package. It&rsquo;s easier to save it as <code>RDS</code> format with:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#a6e22e">saveRDS</span>(objName, <span style="color:#a6e22e">file.path</span>(<span style="color:#a6e22e">system.file</span>(package <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;pkgName&#34;</span>), <span style="color:#e6db74">&#34;folder/data.rds&#34;</span>))
-</span></span></code></pre></div><p><code>folder</code> is the folder inside <code>inst</code> folder in R package folder structure. To
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">saveRDS</span>(objName, <span style="color:#a6e22e">file.path</span>(<span style="color:#a6e22e">system.file</span>(package <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;pkgName&#34;</span>), <span style="color:#e6db74">&#34;folder/data.rds&#34;</span>))
+</code></pre></div><p><code>folder</code> is the folder inside <code>inst</code> folder in R package folder structure. To
 access the data then:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>obj <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">readRDS</span>(<span style="color:#a6e22e">system.file</span>(<span style="color:#e6db74">&#34;folder&#34;</span>, <span style="color:#e6db74">&#34;data.rds&#34;</span>, package <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;pkgName&#34;</span>))
-</span></span></code></pre></div><h2 id="withr-package">withr package</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">obj <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">readRDS</span>(<span style="color:#a6e22e">system.file</span>(<span style="color:#e6db74">&#34;folder&#34;</span>, <span style="color:#e6db74">&#34;data.rds&#34;</span>, package <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;pkgName&#34;</span>))
+</code></pre></div><h2 id="withr-package">withr package</h2>
 <p>Good to have this package to isolate options eg. <code>withr::local_options()</code>.</p>
 <h2 id="evaluate-string">Evaluate string</h2>
 <p>When you need to evaluate string or text command, you could use:</p>
@@ -205,19 +205,19 @@ sources such as Access, SQLite etc. Example to use it:</p>
 </li>
 </ul>
 <!-- raw HTML omitted -->
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>txt <span style="color:#f92672">&lt;-</span> <span style="color:#e6db74">&#34;5 + 5&#34;</span>
-</span></span><span style="display:flex;"><span>tot <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">eval</span>(<span style="color:#a6e22e">str2lang</span>(txt))
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">## or</span>
-</span></span><span style="display:flex;"><span>tot <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">eval</span>(<span style="color:#a6e22e">paste</span>(text <span style="color:#f92672">=</span> txt))
-</span></span></code></pre></div><h2 id="show-all-functions-in-a-package">Show all functions in a package</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">txt <span style="color:#f92672">&lt;-</span> <span style="color:#e6db74">&#34;5 + 5&#34;</span>
+tot <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">eval</span>(<span style="color:#a6e22e">str2lang</span>(txt))
+
+<span style="color:#75715e">## or</span>
+tot <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">eval</span>(<span style="color:#a6e22e">paste</span>(text <span style="color:#f92672">=</span> txt))
+</code></pre></div><h2 id="show-all-functions-in-a-package">Show all functions in a package</h2>
 <p>The easiest way to show all functions in a package is using:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#a6e22e">library</span>(norgeo)
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">ls</span>(<span style="color:#e6db74">&#34;package:norgeo&#34;</span>)
-</span></span></code></pre></div><p>This approach require that you have to load the package first. An alternative to
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">library</span>(norgeo)
+<span style="color:#a6e22e">ls</span>(<span style="color:#e6db74">&#34;package:norgeo&#34;</span>)
+</code></pre></div><p>This approach require that you have to load the package first. An alternative to
 do it without loading the package is by specifying <code>envir</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#a6e22e">ls</span>(<span style="color:#e6db74">&#34;package:norgeo&#34;</span>, envir <span style="color:#f92672">=</span> <span style="color:#a6e22e">loadNamespace</span>(<span style="color:#e6db74">&#34;norgeo&#34;</span>))
-</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">ls</span>(<span style="color:#e6db74">&#34;package:norgeo&#34;</span>, envir <span style="color:#f92672">=</span> <span style="color:#a6e22e">loadNamespace</span>(<span style="color:#e6db74">&#34;norgeo&#34;</span>))
+</code></pre></div>
 
 
 

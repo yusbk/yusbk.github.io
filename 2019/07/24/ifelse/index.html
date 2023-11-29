@@ -23,7 +23,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Pengunaan ifelse"/>
 <meta name="twitter:description" content="Terbaru [08.10.2020]
-Sila lihat cara data.table::fcase Fungsi fifelse lebih laju dari ifelse biase. Untuk menukarkan kode penggunaan ifelse adalah cara yang senang dipakai. Akan tetapi penggunaannya di base R memakai masa yang panjang terutama sekirannya melarikan di data yang besar. Ini kerana penggunaan ifelse di base terlebih dahulu menyusun data sebelum membuat pilihan."/>
+ Sila lihat cara data.table::fcase Fungsi fifelse lebih laju dari ifelse biase.  Untuk menukarkan kode penggunaan ifelse adalah cara yang senang dipakai. Akan tetapi penggunaannya di base R memakai masa yang panjang terutama sekirannya melarikan di data yang besar."/>
 
 
 
@@ -68,7 +68,7 @@ Sila lihat cara data.table::fcase Fungsi fifelse lebih laju dari ifelse biase. U
 <script defer crossorigin="anonymous" src="/js/theme.js" integrity=""></script>
 
 
-<script defer crossorigin="anonymous" src="/js/instantpage.min.js" integrity=""></script><meta name="generator" content="Hugo 0.117.0">
+<script defer crossorigin="anonymous" src="/js/instantpage.min.js" integrity=""></script><meta name="generator" content="Hugo 0.92.2" />
   </head>
   <body>
     
@@ -182,50 +182,50 @@ Sila lihat cara data.table::fcase Fungsi fifelse lebih laju dari ifelse biase. U
 <p>Cara yang diterangkan disini ialah untuk pemakaian <em>ifelse</em> di <strong>data.table</strong> dan cara-cara lain yang diperkenalkan di pakej <strong>dplyr</strong> atau pakej yang lainnya.</p>
 <h1 id="cara-datatable">Cara data.table</h1>
 <p>Cara yang biasa di <em>data.table</em> ialah menggunakan teknik <code>DT[i,j,by]</code>. Contoh lain bila ingin menukarkan <code>var2</code> kepada angka 2 sekiranya <code>var1</code> ialah <em>ja</em>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>DT[var1 <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;ja&#34;</span>, var2 <span style="color:#f92672">:=</span> <span style="color:#ae81ff">2</span>]
-</span></span></code></pre></div><p>Contoh di bawah menggunakan cara piping dengan <a href="https://cran.r-project.org/web/packages/magrittr/vignettes/magrittr.html">magrittr</a>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>ispDT[, ispad2 <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>] <span style="color:#f92672">%&gt;%</span>
-</span></span><span style="display:flex;"><span>  .[alder <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">10</span> <span style="color:#f92672">&amp;</span> diagVar <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">2</span>, ispad2  <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>] <span style="color:#f92672">%&gt;%</span>
-</span></span><span style="display:flex;"><span>  .[alder <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">10</span> <span style="color:#f92672">&amp;</span> diagVar <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">5</span>, ispad2 <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>]
-</span></span></code></pre></div><p>Sekiranya ingin menukarkan pelbagai nilai di <code>var1</code> contohnya <code>ja = 1</code> dan <code>nei = 2</code> di <code>var2</code> boleh juga dibuat seperti cara begini menggunakan prinsip di SQL:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>DT<span style="color:#a6e22e">[.</span>(var1 <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;ja&#34;</span>, <span style="color:#e6db74">&#34;nei&#34;</span>), to <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">2</span>), on <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;var1&#34;</span>, var2 <span style="color:#f92672">:=</span> i.to]
-</span></span></code></pre></div><p>Pengunaan <em>set</em> juga disarankan untuk mempercepatkan proses di data.table sekiranya ingin memakai <em>loop</em>. Contoh bila ingin menukarkan semua kolom yang menggandungi angka 3 atau 5 kepada nilai <em>NA</em> boleh dibuat seperti begini:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#a6e22e">for</span>(j in <span style="color:#a6e22e">seq_along</span>(DT)) {
-</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">set</span>(DT, i<span style="color:#f92672">=</span><span style="color:#a6e22e">which</span>(DT[[j]] <span style="color:#f92672">%in%</span> <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">5</span>)), j<span style="color:#f92672">=</span>j, value<span style="color:#f92672">=</span><span style="color:#66d9ef">NA</span>)
-</span></span><span style="display:flex;"><span>  }
-</span></span></code></pre></div><p>Cara yang lebih advance boleh dibaca di <a href="https://stackoverflow.com/questions/37776942/nested-ifelse-with-varying-columns-in-data-table">Stack Overflow</a>. Ringkasan penerangan cara ini:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">DT[var1 <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;ja&#34;</span>, var2 <span style="color:#f92672">:=</span> <span style="color:#ae81ff">2</span>]
+</code></pre></div><p>Contoh di bawah menggunakan cara piping dengan <a href="https://cran.r-project.org/web/packages/magrittr/vignettes/magrittr.html">magrittr</a>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">ispDT[, ispad2 <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>] <span style="color:#f92672">%&gt;%</span>
+  .[alder <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">10</span> <span style="color:#f92672">&amp;</span> diagVar <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">2</span>, ispad2  <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>] <span style="color:#f92672">%&gt;%</span>
+  .[alder <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">10</span> <span style="color:#f92672">&amp;</span> diagVar <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">5</span>, ispad2 <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>]
+</code></pre></div><p>Sekiranya ingin menukarkan pelbagai nilai di <code>var1</code> contohnya <code>ja = 1</code> dan <code>nei = 2</code> di <code>var2</code> boleh juga dibuat seperti cara begini menggunakan prinsip di SQL:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">DT<span style="color:#a6e22e">[.</span>(var1 <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;ja&#34;</span>, <span style="color:#e6db74">&#34;nei&#34;</span>), to <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">2</span>), on <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;var1&#34;</span>, var2 <span style="color:#f92672">:=</span> i.to]
+</code></pre></div><p>Pengunaan <em>set</em> juga disarankan untuk mempercepatkan proses di data.table sekiranya ingin memakai <em>loop</em>. Contoh bila ingin menukarkan semua kolom yang menggandungi angka 3 atau 5 kepada nilai <em>NA</em> boleh dibuat seperti begini:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">for</span>(j in <span style="color:#a6e22e">seq_along</span>(DT)) {
+      <span style="color:#a6e22e">set</span>(DT, i<span style="color:#f92672">=</span><span style="color:#a6e22e">which</span>(DT[[j]] <span style="color:#f92672">%in%</span> <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">5</span>)), j<span style="color:#f92672">=</span>j, value<span style="color:#f92672">=</span><span style="color:#66d9ef">NA</span>)
+  }
+</code></pre></div><p>Cara yang lebih advance boleh dibaca di <a href="https://stackoverflow.com/questions/37776942/nested-ifelse-with-varying-columns-in-data-table">Stack Overflow</a>. Ringkasan penerangan cara ini:</p>
 <p>We specify the &lsquo;selected<!-- raw HTML omitted -->cols<!-- raw HTML omitted -->&rsquo; in .SDcols, grouped by sequence of rows, we unlist the Subset of Data.table (unlist(.SD)), get the index of the first non-NA value (&lsquo;j1&rsquo;), use that to get the &lsquo;v1&rsquo; corresponding to the index and the column names, assign (:=) to create two new columns.</p>
 <p>Aim is to get the best value for each row which is the value of the first non-NA column in the given order of selected columns.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#a6e22e">library</span>(data.table)
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">library</span>(magrittr)
-</span></span><span style="display:flex;"><span>n <span style="color:#f92672">&lt;-</span> <span style="color:#ae81ff">7</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">set.seed</span>(<span style="color:#ae81ff">1234</span>)
-</span></span><span style="display:flex;"><span>dt <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">sample.int</span>(<span style="color:#ae81ff">100</span>, n<span style="color:#f92672">*</span><span style="color:#ae81ff">5</span>, replace <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>) <span style="color:#f92672">%&gt;%</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">ifelse</span>(. <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">35</span>, <span style="color:#66d9ef">NA</span>, .) <span style="color:#f92672">%&gt;%</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">matrix</span>(, nrow <span style="color:#f92672">=</span> n) <span style="color:#f92672">%&gt;%</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">as.data.table</span>()
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>selected_cols <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;V3&#34;</span>, <span style="color:#e6db74">&#34;V4&#34;</span>, <span style="color:#e6db74">&#34;V1&#34;</span>)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>dt[, <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;best_val&#34;</span>, <span style="color:#e6db74">&#34;best_col&#34;</span>) <span style="color:#f92672">:=</span> {v1 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">unlist</span>(.SD)
-</span></span><span style="display:flex;"><span>     j1 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">which</span>(<span style="color:#f92672">!</span><span style="color:#a6e22e">is.na</span>(v1))[1]
-</span></span><span style="display:flex;"><span>     <span style="color:#a6e22e">list</span>(v1[j1], <span style="color:#a6e22e">names</span>(.SD)[j1]) },
-</span></span><span style="display:flex;"><span>        .SDcols <span style="color:#f92672">=</span> selected_cols, by <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#a6e22e">nrow</span>(dt)]
-</span></span><span style="display:flex;"><span>dt
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#   V1 V2 V3 V4 V5 best_val best_col</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#1: NA NA NA NA 84       NA       NA</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#2: 63 67 84 NA NA       84       V3</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#3: 61 52 NA NA 46       61       V1</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#4: 63 70 NA NA NA       63       V1</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#5: 87 55 NA 82 NA       82       V4</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#6: 65 NA NA 53 51       53       V4</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#7: NA 93 NA 92 NA       92       V4</span>
-</span></span></code></pre></div><h1 id="cara-dplyr">Cara dplyr</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R"><span style="color:#a6e22e">library</span>(data.table)
+<span style="color:#a6e22e">library</span>(magrittr)
+n <span style="color:#f92672">&lt;-</span> <span style="color:#ae81ff">7</span>
+<span style="color:#a6e22e">set.seed</span>(<span style="color:#ae81ff">1234</span>)
+dt <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">sample.int</span>(<span style="color:#ae81ff">100</span>, n<span style="color:#f92672">*</span><span style="color:#ae81ff">5</span>, replace <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>) <span style="color:#f92672">%&gt;%</span>
+  <span style="color:#a6e22e">ifelse</span>(. <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">35</span>, <span style="color:#66d9ef">NA</span>, .) <span style="color:#f92672">%&gt;%</span>
+  <span style="color:#a6e22e">matrix</span>(, nrow <span style="color:#f92672">=</span> n) <span style="color:#f92672">%&gt;%</span>
+  <span style="color:#a6e22e">as.data.table</span>()
+
+selected_cols <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;V3&#34;</span>, <span style="color:#e6db74">&#34;V4&#34;</span>, <span style="color:#e6db74">&#34;V1&#34;</span>)
+
+dt[, <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;best_val&#34;</span>, <span style="color:#e6db74">&#34;best_col&#34;</span>) <span style="color:#f92672">:=</span> {v1 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">unlist</span>(.SD)
+     j1 <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">which</span>(<span style="color:#f92672">!</span><span style="color:#a6e22e">is.na</span>(v1))[1]
+     <span style="color:#a6e22e">list</span>(v1[j1], <span style="color:#a6e22e">names</span>(.SD)[j1]) },
+        .SDcols <span style="color:#f92672">=</span> selected_cols, by <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#a6e22e">nrow</span>(dt)]
+dt
+<span style="color:#75715e">#   V1 V2 V3 V4 V5 best_val best_col</span>
+<span style="color:#75715e">#1: NA NA NA NA 84       NA       NA</span>
+<span style="color:#75715e">#2: 63 67 84 NA NA       84       V3</span>
+<span style="color:#75715e">#3: 61 52 NA NA 46       61       V1</span>
+<span style="color:#75715e">#4: 63 70 NA NA NA       63       V1</span>
+<span style="color:#75715e">#5: 87 55 NA 82 NA       82       V4</span>
+<span style="color:#75715e">#6: 65 NA NA 53 51       53       V4</span>
+<span style="color:#75715e">#7: NA 93 NA 92 NA       92       V4</span>
+</code></pre></div><h1 id="cara-dplyr">Cara dplyr</h1>
 <p>Menggunakan fungsi <em>if<!-- raw HTML omitted -->else<!-- raw HTML omitted --></em> dimana ianya lebih cepat dari base R <em>ifelse</em>. Penerangan lanjut boleh dibaca di blog <a href="https://medium.com/@HollyEmblem/chaining-if-else-statements-using-the-superheroes-dataset-with-dplyr-b13121777b4">Holly Emblem</a>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>ispDT[, ispad1 <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>]
-</span></span><span style="display:flex;"><span>ispDT[, ispad1 <span style="color:#f92672">:=</span> dplyr<span style="color:#f92672">::</span><span style="color:#a6e22e">if_else</span>(alder <span style="color:#f92672">&gt;=</span><span style="color:#ae81ff">10</span> <span style="color:#f92672">&amp;</span> diagVar <span style="color:#f92672">&gt;=</span><span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>)]
-</span></span><span style="display:flex;"><span>ispDT[, ispad1 <span style="color:#f92672">:=</span> dplyr<span style="color:#f92672">::</span><span style="color:#a6e22e">if_else</span>(alder <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">10</span> <span style="color:#f92672">&amp;</span> diagVar <span style="color:#f92672">&gt;=</span><span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">1</span>, ispad1)]
-</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">ispDT[, ispad1 <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>]
+ispDT[, ispad1 <span style="color:#f92672">:=</span> dplyr<span style="color:#f92672">::</span><span style="color:#a6e22e">if_else</span>(alder <span style="color:#f92672">&gt;=</span><span style="color:#ae81ff">10</span> <span style="color:#f92672">&amp;</span> diagVar <span style="color:#f92672">&gt;=</span><span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>)]
+ispDT[, ispad1 <span style="color:#f92672">:=</span> dplyr<span style="color:#f92672">::</span><span style="color:#a6e22e">if_else</span>(alder <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">10</span> <span style="color:#f92672">&amp;</span> diagVar <span style="color:#f92672">&gt;=</span><span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">1</span>, ispad1)]
+</code></pre></div>
 
 
 

@@ -68,7 +68,7 @@ lookup &lt;- list(v1 = 1:3, v2 = letters[5:7]) DT[lookup, on = names(lookup), no
 <script defer crossorigin="anonymous" src="/js/theme.js" integrity=""></script>
 
 
-<script defer crossorigin="anonymous" src="/js/instantpage.min.js" integrity=""></script><meta name="generator" content="Hugo 0.117.0">
+<script defer crossorigin="anonymous" src="/js/instantpage.min.js" integrity=""></script><meta name="generator" content="Hugo 0.92.2" />
   </head>
   <body>
     
@@ -176,15 +176,15 @@ lookup &lt;- list(v1 = 1:3, v2 = letters[5:7]) DT[lookup, on = names(lookup), no
   <p>Subsetting data.table can be done using base R <code>subset</code> with S3 Class for
 <code>data.table</code> object. Alternatively is to use the <a href="https://yusbk.github.io/2018/01/02/recode/">recode</a> approach as mentioned in
 <a href="https://stackoverflow.com/a/55731803/5372752">StackOverflow</a>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>lookup <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">list</span>(v1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">3</span>, v2 <span style="color:#f92672">=</span> <span style="color:#66d9ef">letters</span>[5<span style="color:#f92672">:</span><span style="color:#ae81ff">7</span>])
-</span></span><span style="display:flex;"><span>DT[lookup, on <span style="color:#f92672">=</span> <span style="color:#a6e22e">names</span>(lookup), nomatch <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>]
-</span></span></code></pre></div><p>This will return all columns in <em>DT</em> that match <em>lookup</em> list. Specifying with
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-R" data-lang="R">lookup <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">list</span>(v1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">3</span>, v2 <span style="color:#f92672">=</span> <span style="color:#66d9ef">letters</span>[5<span style="color:#f92672">:</span><span style="color:#ae81ff">7</span>])
+DT[lookup, on <span style="color:#f92672">=</span> <span style="color:#a6e22e">names</span>(lookup), nomatch <span style="color:#f92672">=</span> <span style="color:#66d9ef">NULL</span>]
+</code></pre></div><p>This will return all columns in <em>DT</em> that match <em>lookup</em> list. Specifying with
 <code>nomatch = NULL</code> or <code>nomatch = 0</code> will exclude rows in <em>DT</em> that don&rsquo;t match
 <em>lookup</em>.</p>
 <p>Another way to do dynamic subset is as below, but it&rsquo;s a bit slower compared to
 the recode approach:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>DT[DT[, <span style="color:#a6e22e">all</span>(<span style="color:#a6e22e">mapply</span>(`%in%`, .SD, lookup)), by <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#a6e22e">nrow</span>(DT), .SDcols<span style="color:#f92672">=</span><span style="color:#a6e22e">names</span>(lookup)]<span style="color:#f92672">$</span>V1]
-</span></span></code></pre></div><p>A nice reading on table <em>join</em> for data.table which is very relevant to this
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">DT[DT[, <span style="color:#a6e22e">all</span>(<span style="color:#a6e22e">mapply</span>(`%in%`, .SD, lookup)), by <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#a6e22e">nrow</span>(DT), .SDcols<span style="color:#f92672">=</span><span style="color:#a6e22e">names</span>(lookup)]<span style="color:#f92672">$</span>V1]
+</code></pre></div><p>A nice reading on table <em>join</em> for data.table which is very relevant to this
 case is the blog post by <a href="https://medium.com/analytics-vidhya/r-data-table-joins-48f00b46ce29">Scott Lyden</a>.</p>
 
 
